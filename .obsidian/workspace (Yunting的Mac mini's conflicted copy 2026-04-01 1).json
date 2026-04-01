@@ -4,12 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "98bc8f87294f7079",
+        "id": "3df9d801da747550",
         "type": "tabs",
-        "dimension": 44.44444444444444,
         "children": [
           {
-            "id": "c241c09f4b4d4133",
+            "id": "447f8dcf9e07bb77",
             "type": "leaf",
             "state": {
               "type": "pdf",
@@ -23,22 +22,21 @@
         ]
       },
       {
-        "id": "56bca6ddc1eec5fb",
+        "id": "cd4d59cd30c169c3",
         "type": "tabs",
-        "dimension": 55.55555555555556,
         "children": [
           {
-            "id": "447f8dcf9e07bb77",
+            "id": "23878f70c51d1847",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PhD-Course/Asset Pricing/Part4-卡片/CARA-Normal framework - 均值方差等价与最优需求.md",
-                "mode": "preview",
+                "file": "PhD-Course/Asset Pricing/Part1.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CARA-Normal framework - 均值方差等价与最优需求"
+              "title": "Part1"
             }
           }
         ]
@@ -123,8 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 219.5024757385254,
-    "collapsed": true
+    "width": 234.50390243530273
   },
   "right": {
     "id": "249932a61790a4c4",
@@ -168,7 +165,7 @@
             }
           },
           {
-            "id": "cc473bab7e4286e9",
+            "id": "92c0165d4b20ad6c",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -183,7 +180,7 @@
             }
           },
           {
-            "id": "997a96200c8503dc",
+            "id": "1b65644d734e650d",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -197,7 +194,7 @@
             }
           },
           {
-            "id": "83663bbd03597072",
+            "id": "4e473c8ca94043ac",
             "type": "leaf",
             "state": {
               "type": "claudian-view",
@@ -211,7 +208,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 399.5
+    "width": 360.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -229,36 +226,47 @@
       "notebook-navigator:笔记本导航器": false,
       "terminal:Open terminal": false,
       "obsidian42-brat:BRAT": false,
-      "claudian:Open Claudian": false,
-      "obsidian-git:Open Git source control": false
+      "claudian:Open Claudian": false
     }
   },
-  "active": "447f8dcf9e07bb77",
+  "active": "4e473c8ca94043ac",
   "lastOpenFiles": [
     "PhD-Course/Asset Pricing/Part4-卡片/Grossman-Stiglitz Exercise 1 - 价格系数求解.md",
-    "PhD-Course/Asset Pricing/Part4-卡片/Grossman-Stiglitz - 信息价值与支付意愿.md",
-    "PhD-Course/Asset Pricing/Part4-Information, Beliefs, and Learning.md",
-    "PhD-Course/Asset Pricing/EF8077_slides.pdf",
     "PhD-Course/Asset Pricing/Part4-卡片/矩母函数（MGF）- 定义与正态分布公式.md",
     "PhD-Course/Asset Pricing/Part4-卡片/贝叶斯更新 - 先验、信号、似然、后验.md",
-    "PhD-Course/Asset Pricing/Part1.md",
+    "PhD-Course/Asset Pricing/Part2-卡片/Long-run risk 定价.md",
+    "PhD-Course/Asset Pricing/Part2-卡片/Epstein-Zin 偏好与 Euler 方程.md",
+    "PhD-Course/Asset Pricing/Part2-卡片/Lucas tree model 与代表性消费者均衡.md",
+    "PhD-Course/Asset Pricing/Part2-卡片/CCAPM 与 Equity Premium Puzzle.md",
+    "PhD-Course/Asset Pricing/Part2-卡片/最优停止与 smooth pasting.md",
+    "PhD-Course/Asset Pricing/Part2-卡片/Merton 问题 - 最优消费与投资.md",
+    "PhD-Course/Asset Pricing/Part2-卡片/连续时间最优组合规则.md",
+    "PhD-Course/Asset Pricing/Part2-卡片/HJB 方程与动态规划.md",
+    "PhD-Course/Asset Pricing/Part2-卡片/鞅方法下的最优消费与最优交易策略.md",
+    "PhD-Course/Asset Pricing/Part2-卡片/冗余证券、复制与完备市场.md",
+    "PhD-Course/Asset Pricing/Part2-卡片/状态价格密度、EMM 与鞅定价.md",
+    "PhD-Course/Asset Pricing/Part2-卡片/多期证券市场、交易策略与自融资.md",
+    "PhD-Course/Asset Pricing/Part1-卡片/竞争均衡、帕累托最优与代表性投资者.md",
+    "PhD-Course/Asset Pricing/Part1-卡片/因子模型与 Jensen alpha.md",
+    "PhD-Course/Asset Pricing/Part1-卡片/CAPM 与 Security Market Line.md",
+    "PhD-Course/Asset Pricing/Part1-卡片/CML 与 Tangency Portfolio.md",
     "PhD-Course/Asset Pricing/Part2.md",
-    "PhD-Course/Asset Pricing/Part4-卡片/Back 模型 - 相关扩展.md",
-    "PhD-Course/Asset Pricing/Part4-信息、信念与学习.md",
-    "PhD-Course/Asset Pricing/Part4-卡片/Back 1992 - 对数正态终值练习.md",
-    "PhD-Course/Asset Pricing/Part3-Bond.md",
-    "PhD-Course/Asset Pricing/Part4-卡片/OU 滤波 - Riccati 方程.md",
-    "PhD-Course/Asset Pricing/Part4-卡片/Kalman-Bucy - 一般公式.md",
-    "PhD-Course/Asset Pricing/Part4-卡片/Back 1992 - HJB 分解.md",
-    "PhD-Course/Asset Pricing/Part4-卡片/Back 1992 - Brownian bridge.md",
-    "PhD-Course/Asset Pricing/Part4-卡片/Back 1992 - 验证定理.md",
-    "PhD-Course/Asset Pricing/Part4-卡片/Back 1992 - 净订单流 SDE.md",
-    "PhD-Course/Asset Pricing/Part4-卡片/异质信念 - 创新布朗运动与状态价格密度.md",
-    "PhD-Course/Asset Pricing/Part4-卡片/正态-正态更新 - 常数漂移学习.md",
-    "PhD-Course/Asset Pricing/Part4-卡片",
-    "PhD-Course/Asset Pricing/Part3-SDF.md",
-    "PhD-Course/Econometrics/ART-Chap3 Single-Equation GMM.md",
-    "Research/Project1-Bond+News+LLM/notes/20260329.md",
+    "PhD-Course/Asset Pricing/Part1.md",
+    "PhD-Course/Asset Pricing/Part2-卡片/Mean-Variance Efficiency.md",
+    "PhD-Course/Asset Pricing/Part2-卡片/Two-Fund Separation Theorem.md",
+    "PhD-Course/Asset Pricing/Part2-卡片/Mean-Variance Frontier - 无风险资产缺失情形.md",
+    "PhD-Course/Asset Pricing/Part2-卡片/GMV 组合 - 全局最小方差组合.md",
+    "PhD-Course/Asset Pricing/Part2-卡片/Hansen-Jagannathan bound.md",
+    "PhD-Course/Asset Pricing/Part2-卡片",
+    "PhD-Course/Asset Pricing/Part1-卡片",
+    "PhD-Course/Asset Pricing/EF8077_slides.pdf",
+    "PhD-Course/Asset Pricing/EF8083_slides.pdf",
+    "PhD-Course/Asset Pricing/EF8083_part1 2.pdf",
+    "PhD-Course/Asset Pricing/EF8083_part1.pdf",
+    "PhD-Course/Asset Pricing/Slides-2 2.pdf",
+    "PhD-Course/Asset Pricing/EF8083_part3.pdf",
+    "PhD-Course/Asset Pricing/Lecture 1_Intro 2.pdf",
+    "PhD-Course/Asset Pricing/Lecture 4_Beliefs_new.pdf",
     "PhD-Course/attachment/Pasted image 20260329210247.png",
     "PhD-Course/attachment/Pasted image 20260329205856.png",
     "PhD-Course/attachment/Pasted image 20260329205240.png",
@@ -268,18 +276,6 @@
     "PhD-Course/attachment/Pasted image 20260329193444.png",
     "PhD-Course/attachment/Pasted image 20260329192627.png",
     "PhD-Course/attachment/Pasted image 20260329190403.png",
-    "PhD-Course/attachment/Pasted image 20260329173221.png",
-    "Research/Project1-Bond+News+LLM/notes/design_ref.md",
-    "Research/Project1-Bond+News+LLM/notes/20260327.md",
-    "Research/Project1-Bond+News+LLM/GPT-Pro-file/20260323.md",
-    "Research/Project1-Bond+News+LLM/notes/literature.md",
-    "Research/Project1-Bond+News+LLM/未确认 912915.crdownload",
-    "Research/Project1-Bond+News+LLM/20260317/main.pdf",
-    "Research/Project1-Bond+News+LLM/slides/ref.bib",
-    "Research/Project1-Bond+News+LLM/slides",
-    "Research/Project1-Bond+News+LLM/未确认 979626.crdownload",
-    "Research/Project1-Bond+News+LLM/20260323/main.pdf",
-    "PhD-Course/Asset Pricing/Part4_raw.txt",
-    "PhD-Course/Corporate Finance/Section_1_Empirical_CF/_section1_eq_pages.txt"
+    "PhD-Course/attachment/Pasted image 20260329173221.png"
   ]
 }
