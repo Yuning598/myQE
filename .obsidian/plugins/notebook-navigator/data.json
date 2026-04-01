@@ -142,7 +142,7 @@
   "pinNavigationBanner": true,
   "showNoteCount": true,
   "separateNoteCounts": true,
-  "showIndentGuides": false,
+  "showIndentGuides": true,
   "rootLevelSpacing": 0,
   "navIndent": 16,
   "navItemHeight": 28,

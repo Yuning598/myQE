@@ -6,7 +6,7 @@
       {
         "id": "98bc8f87294f7079",
         "type": "tabs",
-        "dimension": 45.638629283489095,
+        "dimension": 44.44444444444444,
         "children": [
           {
             "id": "c241c09f4b4d4133",
@@ -25,7 +25,7 @@
       {
         "id": "56bca6ddc1eec5fb",
         "type": "tabs",
-        "dimension": 54.361370716510905,
+        "dimension": 55.55555555555556,
         "children": [
           {
             "id": "447f8dcf9e07bb77",
@@ -138,7 +138,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 219.5024757385254
+    "width": 219.5024757385254,
+    "collapsed": true
   },
   "right": {
     "id": "249932a61790a4c4",
@@ -243,14 +244,15 @@
       "notebook-navigator:笔记本导航器": false,
       "terminal:Open terminal": false,
       "obsidian42-brat:BRAT": false,
-      "claudian:Open Claudian": false
+      "claudian:Open Claudian": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "3755374a9043a3f9",
   "lastOpenFiles": [
     "PhD-Course/Asset Pricing/EF8077_slides.pdf",
-    "PhD-Course/Asset Pricing/Part4-卡片/矩母函数（MGF）- 定义与正态分布公式.md",
     "PhD-Course/Asset Pricing/Part4-Information, Beliefs, and Learning.md",
+    "PhD-Course/Asset Pricing/Part4-卡片/矩母函数（MGF）- 定义与正态分布公式.md",
     "PhD-Course/Asset Pricing/Part4-卡片/贝叶斯更新 - 先验、信号、似然、后验.md",
     "PhD-Course/Asset Pricing/Part1.md",
     "PhD-Course/Asset Pricing/Part2.md",
