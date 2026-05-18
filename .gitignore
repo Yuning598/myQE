@@ -1,3 +1,19 @@
+.claude/
+.obsidian/
+.omx/
+.smart-env/
+.tmp/
+.tmp_div_smoothing/
+.dropbox
+Desktop.ini
+
 .dropbox
 .dropbox.cache
 Desktop.ini
+.omx/
+
+
+
+
+# Ignore Smart Environment folder
+.smart-env
