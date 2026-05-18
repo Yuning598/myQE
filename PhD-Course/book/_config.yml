@@ -27,7 +27,7 @@ sphinx:
       - toc.not_included
     html_theme_options:
       repository_url: https://github.com/Yuning598/PhD-Course
-      repository_branch: master
+      repository_branch: main
       path_to_docs: book
       use_edit_page_button: true
       use_repository_button: true
