@@ -213,6 +213,35 @@ $$
 
 Let $u_n:=U(L^n)$. Then $U(L)=\sum_np_nu_n$.
 
+:::{admonition} Proposition (Expected utility implies independence)
+If the preference relation $\succeq$ on $\mathcal L$ is represented by a utility function $U(\cdot)$ with expected utility form, then $\succeq$ satisfies the independence axiom.
+:::
+
+Proof:
+Assume that $\succeq$ is represented by an expected utility function
+
+$$
+U(L)=\sum_n u_np_n,\qquad L=(p_1,\ldots,p_N)\in\mathcal L.
+$$
+
+Let $L=(p_1,\ldots,p_N)$, $L'=(p'_1,\ldots,p'_N)$, $L''=(p''_1,\ldots,p''_N)$, and $\alpha\in(0,1)$. Then
+
+$$
+\begin{aligned}
+L\succeq L'
+&\Longleftrightarrow U(L)\ge U(L')\\
+&\Longleftrightarrow \sum_n u_np_n\ge \sum_n u_np'_n\\
+&\Longleftrightarrow \alpha\sum_n u_np_n+(1-\alpha)\sum_n u_np''_n
+\ge \alpha\sum_n u_np'_n+(1-\alpha)\sum_n u_np''_n\\
+&\Longleftrightarrow \sum_n u_n(\alpha p_n+(1-\alpha)p''_n)
+\ge \sum_n u_n(\alpha p'_n+(1-\alpha)p''_n)\\
+&\Longleftrightarrow U(\alpha L+(1-\alpha)L'')\ge U(\alpha L'+(1-\alpha)L'')\\
+&\Longleftrightarrow \alpha L+(1-\alpha)L''\succeq \alpha L'+(1-\alpha)L'',
+\end{aligned}
+$$
+
+which is independence for weak preference. The same chain with strict inequalities gives the strict-preference and indifference versions.
+
 ## 5. Expected utility theorem
 
 :::{admonition} Expected utility theorem
