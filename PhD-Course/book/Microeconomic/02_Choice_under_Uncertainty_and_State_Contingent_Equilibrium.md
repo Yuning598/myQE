@@ -553,31 +553,433 @@ This is the expected utility form.
 
 ## 5. Positive affine uniqueness
 
-In ordinary consumer theory, any strictly increasing transformation preserves representation. In VNM theory, the EU **form** is preserved only by positive affine transformations.
-
-**Claim:** If $U$ is a VNM utility representation, then $V$ is also a VNM utility representation for the same $\succeq$ iff
+:::{admonition} Positive affine uniqueness
+For vNM expected utility, the only utility transformations that preserve both the preference representation and the lottery-mixture linearity are positive affine maps:
 
 $$
-V(L)=aU(L)+b,\qquad a>0,\ b\in\mathbb R.
+V(L)=aU(L)+b,\qquad a>0.
+$$
+:::
+
+Goal：说明 vNM expected utility 的唯一性不是“任意严格递增变换”，而是“正仿射变换”。
+
+$$
+\left\{
+\begin{aligned}
+&U:\mathcal L\to\mathbb R \text{ is a vNM expected utility representation}\\
+&V:\mathcal L\to\mathbb R \text{ is another representation of the same }\succeq\\
+&\text{WTS: }V\text{ is vNM for }\succeq
+\iff
+V(L)=aU(L)+b,\quad a>0
+\end{aligned}
+\right.
 $$
 
-Sufficiency:
+#### 核心区别
+
+普通效用表示只要求保持排序：
+
+$$
+x\succeq y
+\iff
+u(x)\ge u(y).
+$$
+
+所以任意严格递增变换 $f(u)$ 都仍然表示同一个偏好。
+
+但 vNM 效用还要求对彩票混合线性：
+
+$$
+U\left(\sum_k\alpha_kL^k\right)
+=
+\sum_k\alpha_kU(L^k),
+\qquad
+\alpha_k\ge0,\quad \sum_k\alpha_k=1.
+$$
+
+因此不能任意做严格递增变换。因为一般来说，
+
+$$
+f\left(\sum_k\alpha_kU(L^k)\right)
+\neq
+\sum_k\alpha_kf(U(L^k)).
+$$
+
+只有正仿射变换
+
+$$
+V(L)=aU(L)+b,\qquad a>0
+$$
+
+既保持排序，又保持线性结构。
+
+#### Sufficiency
+
+假设
+
+$$
+V(L)=aU(L)+b,\qquad a>0.
+$$
+
+先证明 $V$ 表示同一个偏好：
+
+$$
+\begin{aligned}
+L\succeq L'
+&\iff U(L)\ge U(L')\\
+&\iff aU(L)+b\ge aU(L')+b\\
+&\iff V(L)\ge V(L').
+\end{aligned}
+$$
+
+所以 $V$ 与 $U$ 表示同一个 $\succeq$。
+
+再证明 $V$ 仍然具有 expected utility form。对任意 lotteries $L^1,\dots,L^K$ 和权重 $\alpha_1,\dots,\alpha_K$：
+
+$$
+\left\{
+\begin{aligned}
+&\alpha_k\ge0\\
+&\sum_{k=1}^K\alpha_k=1\\
+&L=\sum_{k=1}^K\alpha_kL^k
+\end{aligned}
+\right.
+$$
+
+有
+
+$$
+\begin{aligned}
+V\left(\sum_{k=1}^K\alpha_kL^k\right)
+&=aU\left(\sum_{k=1}^K\alpha_kL^k\right)+b\\
+&=a\sum_{k=1}^K\alpha_kU(L^k)+b\\
+&=a\sum_{k=1}^K\alpha_kU(L^k)+b\sum_{k=1}^K\alpha_k\\
+&=\sum_{k=1}^K\alpha_k[aU(L^k)+b]\\
+&=\sum_{k=1}^K\alpha_kV(L^k).
+\end{aligned}
+$$
+
+因此 $V$ 也是 vNM expected utility representation。
+
+其中关键一步是：
+
+$$
+b=b\sum_{k=1}^K\alpha_k,
+$$
+
+因为混合权重满足
+
+$$
+\sum_{k=1}^K\alpha_k=1.
+$$
+
+#### Necessity
+
+现在反过来，假设 $U$ 和 $V$ 都是同一偏好 $\succeq$ 的 vNM expected utility representation。要证明存在 $a>0,b\in\mathbb R$，使得
+
+$$
+V(L)=aU(L)+b.
+$$
+
+取 best lottery 和 worst lottery：
+
+$$
+\bar L\succ \underline L,
+\qquad
+\bar L\succeq L\succeq \underline L,\quad \forall L\in\mathcal L.
+$$
+
+因为 $U,V$ 表示同一偏好，所以
+
+$$
+U(\bar L)>U(\underline L),
+\qquad
+V(\bar L)>V(\underline L).
+$$
+
+对任意 $L\in\mathcal L$，定义
+
+$$
+\lambda_L
+=
+\frac{U(L)-U(\underline L)}
+{U(\bar L)-U(\underline L)}.
+$$
+
+由于
+
+$$
+\bar L\succeq L\succeq \underline L,
+$$
+
+所以
+
+$$
+\lambda_L\in[0,1].
+$$
+
+并且
+
+$$
+\begin{aligned}
+U(L)
+&=
+\lambda_LU(\bar L)+(1-\lambda_L)U(\underline L)\\
+&=
+U\bigl(\lambda_L\bar L+(1-\lambda_L)\underline L\bigr),
+\end{aligned}
+$$
+
+其中第二步使用 $U$ 的线性。
+
+因为 $U$ 表示 $\succeq$，所以
+
+$$
+L\sim \lambda_L\bar L+(1-\lambda_L)\underline L.
+$$
+
+又因为 $V$ 也表示同一个 $\succeq$，所以
+
+$$
+V(L)
+=
+V\bigl(\lambda_L\bar L+(1-\lambda_L)\underline L\bigr).
+$$
+
+由 $V$ 的线性：
+
+$$
+\begin{aligned}
+V(L)
+&=
+\lambda_LV(\bar L)+(1-\lambda_L)V(\underline L)\\
+&=
+\lambda_L[V(\bar L)-V(\underline L)]+V(\underline L).
+\end{aligned}
+$$
+
+代入 $\lambda_L$：
+
+$$
+\begin{aligned}
+V(L)
+&=
+\frac{U(L)-U(\underline L)}
+{U(\bar L)-U(\underline L)}
+[V(\bar L)-V(\underline L)]
++V(\underline L)\\
+&=
+\frac{V(\bar L)-V(\underline L)}
+{U(\bar L)-U(\underline L)}
+U(L)
++
+\left[
+V(\underline L)
+-
+\frac{V(\bar L)-V(\underline L)}
+{U(\bar L)-U(\underline L)}
+U(\underline L)
+\right].
+\end{aligned}
+$$
+
+定义
+
+$$
+a=
+\frac{V(\bar L)-V(\underline L)}
+{U(\bar L)-U(\underline L)},
+\qquad
+b=
+V(\underline L)-aU(\underline L).
+$$
+
+由于
+
+$$
+V(\bar L)>V(\underline L),
+\qquad
+U(\bar L)>U(\underline L),
+$$
+
+所以
+
+$$
+a>0.
+$$
+
+因此
+
+$$
+\boxed{
+V(L)=aU(L)+b,\qquad a>0.
+}
+$$
+
+#### 为什么非线性单调变换不行
+
+假设
+
+$$
+V(L)=f(U(L)),
+$$
+
+其中 $f$ 严格递增但不是仿射函数。它仍然保序：
+
+$$
+U(L)\ge U(L')
+\iff
+f(U(L))\ge f(U(L')).
+$$
+
+所以 $V$ 可以表示同一个 ordinal preference。
+
+但是它一般不保持 expected utility 的线性结构：
+
+$$
+\begin{aligned}
+V\bigl(\alpha L+(1-\alpha)L'\bigr)
+&=
+f\bigl(U(\alpha L+(1-\alpha)L')\bigr)\\
+&=
+f\bigl(\alpha U(L)+(1-\alpha)U(L')\bigr),
+\end{aligned}
+$$
+
+而
+
+$$
+\alpha V(L)+(1-\alpha)V(L')
+=
+\alpha f(U(L))+(1-\alpha)f(U(L')).
+$$
+
+一般来说，
+
+$$
+f\bigl(\alpha U(L)+(1-\alpha)U(L')\bigr)
+\neq
+\alpha f(U(L))+(1-\alpha)f(U(L')).
+$$
+
+所以非线性单调变换虽然保持排序，但通常破坏 vNM expected utility form。
+
+#### 经济含义
+
+vNM utility 的数值不是完全 ordinal 的。它允许改变单位和零点：
+
+$$
+U\mapsto aU+b,\qquad a>0.
+$$
+
+但不允许任意改变曲率。原因是 vNM 效用必须保持彩票混合上的线性：
+
+$$
+U(\alpha L+(1-\alpha)L')
+=
+\alpha U(L)+(1-\alpha)U(L').
+$$
+
+正仿射变换保持这种结构；非线性变换一般不保持这种结构。
+
+这也解释了为什么风险厌恶可以用 $u''$ 判断。若
+
+$$
+V(w)=au(w)+b,\qquad a>0,
+$$
+
+则
+
+$$
+V''(w)=au''(w).
+$$
+
+因此
+
+$$
+\operatorname{sign}V''(w)=\operatorname{sign}u''(w).
+$$
+
+所以正仿射变换不会改变风险厌恶、风险中性或风险偏好的判断。
+
+
+vNM expected utility representation is unique up to positive affine transformations.
+
+若 $U$ 是一个 vNM representation，且
+
+$$
+V(L)=aU(L)+b,\qquad a>0,
+$$
+
+则
+
+$$
+L\succeq L'
+\iff
+U(L)\ge U(L')
+\iff
+V(L)\ge V(L'),
+$$
+
+所以 $V$ 表示同一个偏好。同时，
 
 $$
 \begin{aligned}
 V\left(\sum_k\alpha_kL^k\right)
-&=
-aU\left(\sum_k\alpha_kL^k\right)+b\\
-&=
-a\sum_k\alpha_kU(L^k)+b\\
-&=
-\sum_k\alpha_k[aU(L^k)+b]\\
-&=
-\sum_k\alpha_k V(L^k).
+&=aU\left(\sum_k\alpha_kL^k\right)+b\\
+&=a\sum_k\alpha_kU(L^k)+b\sum_k\alpha_k\\
+&=\sum_k\alpha_k[aU(L^k)+b]\\
+&=\sum_k\alpha_kV(L^k),
 \end{aligned}
 $$
 
-Necessity uses the best/worst normalization: both $U$ and $V$ must assign values linearly along $\alpha\overline L+(1-\alpha)\underline L$, so $V$ must be an affine rescaling of $U$.
+所以 \(V\) 仍是 vNM expected utility representation。
+
+反过来，若 $U,V$ 都是同一偏好的 vNM representation，取 best 和 worst lotteries $\bar L,\underline L$。对任意 $L$，定义
+
+$$
+\lambda_L
+=
+\frac{U(L)-U(\underline L)}
+{U(\bar L)-U(\underline L)}.
+$$
+
+则
+
+$$
+L\sim \lambda_L\bar L+(1-\lambda_L)\underline L.
+$$
+
+因为 $V$ 表示同一个偏好且具有线性：
+
+$$
+\begin{aligned}
+V(L)
+&=
+V\bigl(\lambda_L\bar L+(1-\lambda_L)\underline L\bigr)\\
+&=
+\lambda_LV(\bar L)+(1-\lambda_L)V(\underline L).
+\end{aligned}
+$$
+
+代入 $\lambda_L$，得到
+
+$$
+V(L)=aU(L)+b,
+$$
+
+其中
+
+$$
+a=
+\frac{V(\bar L)-V(\underline L)}
+{U(\bar L)-U(\underline L)}>0,
+\qquad
+b=
+V(\underline L)-aU(\underline L).
+$$
+
+结论：普通效用只要求保序，因此允许任意严格递增变换；vNM 效用还要求对彩票混合线性，因此唯一允许的变换是正仿射变换。
 
 ## 6. Risk aversion and Jensen
 
