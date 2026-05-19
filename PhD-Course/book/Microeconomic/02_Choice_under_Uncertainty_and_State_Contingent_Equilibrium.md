@@ -257,7 +257,7 @@ $$
 The slide proof assumes a best lottery $\overline L$ and worst lottery $\underline L$.
 
 :::{admonition} Expected utility theorem, proof roadmap
-WTS: Construct a utility representation $U(L)=\alpha_L$, then show $U$ is linear.
+Construct a utility representation $U(L)=\alpha_L$, then show $U$ is linear.
 :::
 
 ### Proof roadmap
@@ -310,13 +310,15 @@ L\succeq L'
 \end{aligned}
 $$
 
-Step 5. Show linearity.
-
-**WTS:**
+:::{admonition} Linearity step
+Show that
 
 $$
 U(\beta L+(1-\beta)L')=\beta U(L)+(1-\beta)U(L').
 $$
+:::
+
+Proof:
 
 Use
 
@@ -481,10 +483,10 @@ $$
 :::
 
 :::{admonition} No arbitrage from positive state prices
-WTS: If $q=A^\top\psi$ with $\psi\gg0$, then no arbitrage.
+If $q=A^\top\psi$ with $\psi\gg0$, then no arbitrage.
 :::
 
-### Easy direction proof
+Proof:
 
 Suppose $\theta$ is an arbitrage with $q^\top\theta\le0$ and $A\theta>0$. Then
 
