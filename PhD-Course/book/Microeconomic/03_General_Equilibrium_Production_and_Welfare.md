@@ -19,13 +19,6 @@ tags:
 
 # 03 General Equilibrium, Production, and Welfare
 
-## Roadmap
-
-- **Part I:** pure exchange equilibrium
-- **Part II:** welfare theorems
-- **Part III:** planner characterization and Edgeworth box
-- **Part IV:** existence and Walras' law
-
 ## Part I. Pure exchange economy
 
 ### Environment
