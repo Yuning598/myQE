@@ -882,3 +882,27 @@ $$
 $$
 
 provided $d$ is spanned by traded payoffs. In a complete market this is automatic; in an incomplete market, the price may be nonunique or the asset may not be replicated.
+
+## 13. Chapter purpose
+
+This chapter is not about lotteries as objects in themselves. Its role is to turn preference over uncertainty into a computable expected-utility form, so later chapters can study risk aversion, insurance, portfolio choice, and choice under uncertainty with ordinary optimization tools.
+
+The logic is:
+
+$$
+\text{preference axioms}
+\;\Longrightarrow\;
+\text{expected utility representation}
+\;\Longrightarrow\;
+\text{maximize } \sum_n p_nu_n.
+$$
+
+Once the preference relation is written as
+
+$$
+L\succeq L'
+\Longleftrightarrow
+\sum_n p_nu_n\ge \sum_n p_n'u_n,
+$$
+
+the rest of the uncertainty chapter becomes a standard maximization problem over probability-weighted payoffs. Positive affine transformations are the only admissible relabelings because they preserve the linear structure of expected utility.
