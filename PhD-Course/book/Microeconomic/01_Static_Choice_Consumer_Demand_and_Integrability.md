@@ -796,7 +796,9 @@ For any $z\in\mathbb R^n$,
 $$
 z^\top S z\le 0.
 $$
+:::
 
+Proof:
 It is enough to show $e(p,u)$ is concave in $p$. Fix $p,p'$, $\alpha\in[0,1]$, and set $p''=\alpha p+(1-\alpha)p'$. Since $h(p'',u)$ attains at least utility $u$,
 
 $$
@@ -819,7 +821,6 @@ e(p'',u)
 $$
 
 This is the concavity inequality. Therefore the Hessian $\nabla^2_{pp}e(p,u)$ is negative semidefinite, and since $S=\nabla^2_{pp}e$, the Slutsky matrix is negative semidefinite.
-:::
 
 ## 8. Integrability theorem
 
@@ -833,6 +834,9 @@ p\cdot x(p,w)&=w,\\
 S(p,w)&=S(p,w)^\top,\qquad z^\top S(p,w)z\le 0\quad \forall z.
 \end{aligned}
 $$
+:::
+
+Proof sketch:
+The restrictions are the standard necessities collected from the earlier sections: homogeneity and Walras' law follow from the consumer problem, while symmetry and negative semidefiniteness come from Shephard's lemma and the concavity of the expenditure function. Together they characterize rationalizable demand under the regularity conditions stated above.
 
 Exam interpretation: empirical demand systems should be checked against these restrictions. Homogeneity and Walras' law are accounting/scale restrictions; Slutsky symmetry and negative semidefiniteness encode optimizing behavior.
-:::
