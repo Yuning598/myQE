@@ -263,7 +263,7 @@ Construct a utility representation $U(L)=\alpha_L$, then show $U$ is linear.
 
 ### Proof roadmap
 
-Step 1. Mixtures lie between better and worse lotteries.
+**Step 1.** Mixtures lie between better and worse lotteries.
 
 If $L\succ L'$ and $\alpha\in(0,1)$, then
 
@@ -273,7 +273,7 @@ $$
 
 Reason: use independence to mix $L\succ L'$ with $L$ or $L'$.
 
-Step 2. Along the line between best and worst lotteries, more of the best lottery is better:
+**Step 2.** Along the line between best and worst lotteries, more of the best lottery is better:
 
 $$
 \begin{aligned}
@@ -285,13 +285,13 @@ $$
 \end{aligned}
 $$
 
-Step 3. For every $L$, continuity gives a unique $\alpha_L\in[0,1]$ such that
+**Step 3.** For every $L$, continuity gives a unique $\alpha_L\in[0,1]$ such that
 
 $$
 L\sim \alpha_L\overline L+(1-\alpha_L)\underline L.
 $$
 
-Step 4. Define
+**Step 4.** Define
 
 $$
 U(L):=\alpha_L.
@@ -311,15 +311,14 @@ L\succeq L'
 \end{aligned}
 $$
 
-### Linearity step
+**Step 5.** The utility function $U(\cdot)$ that assigns $U(L)=\alpha_L$ for all $L\in\mathcal L$ is linear and therefore has the expected utility form.
 
-Show that
+Proof:
+We want to show that for any $L,L'\in\mathcal L$ and $\beta\in[0,1]$, we have:
 
 $$
 U(\beta L+(1-\beta)L')=\beta U(L)+(1-\beta)U(L').
 $$
-
-Proof:
 
 Use
 
