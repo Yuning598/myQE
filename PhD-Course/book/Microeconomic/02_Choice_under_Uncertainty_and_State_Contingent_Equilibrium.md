@@ -1287,24 +1287,86 @@ provided $d$ is spanned by traded payoffs. In a complete market this is automati
 
 ## 13. Chapter purpose
 
-This chapter is not about lotteries as objects in themselves. Its role is to turn preference over uncertainty into a computable expected-utility form, so later chapters can study risk aversion, insurance, portfolio choice, and choice under uncertainty with ordinary optimization tools.
-
-The logic is:
+这一章不是为了研究赌博或 lottery 本身，而是为了把“不确定性下的选择”变成可推导、可优化的偏好模型。Lottery language 的作用是把随机结果统一写成概率分布上的选择对象：
 
 $$
-\text{preference axioms}
-\;\Longrightarrow\;
-\text{expected utility representation}
-\;\Longrightarrow\;
-\text{maximize } \sum_n p_nu_n.
+L=(p_1,x_1;\ldots;p_N,x_N),\qquad \sum_{i=1}^N p_i=1.
 $$
 
-Once the preference relation is written as
+核心问题是：面对两个随机对象 $L,L'$，如何比较？
 
 $$
 L\succeq L'
 \Longleftrightarrow
-\sum_n p_nu_n\ge \sum_n p_n'u_n,
+U(L)\ge U(L').
 $$
 
-the rest of the uncertainty chapter becomes a standard maximization problem over probability-weighted payoffs. Positive affine transformations are the only admissible relabelings because they preserve the linear structure of expected utility.
+The logic is:
+
+$$
+\text{risk-choice axioms}
+\;\Longrightarrow\;
+\text{vNM expected utility representation}
+\;\Longrightarrow\;
+\text{maximize } \sum_i p_iu(x_i).
+$$
+
+The vNM theorem gives the key representation:
+
+$$
+L\succeq L'
+\Longleftrightarrow
+\sum_i p_iu(x_i)\ge \sum_i q_iu(y_i).
+$$
+
+So the chapter does not simply assume agents maximize expected utility. It shows that, under completeness, transitivity, continuity, and independence, preferences over lotteries can be represented by
+
+$$
+\boxed{
+U(L)=\mathbb E[u(x)].
+}
+$$
+
+Positive affine uniqueness matters because vNM utility must preserve the linear structure in probabilities:
+
+$$
+V(x)=au(x)+b,\qquad a>0
+\quad\Longrightarrow\quad
+V(L)=aU(L)+b.
+$$
+
+Unlike ordinary ordinal utility, arbitrary strictly increasing transformations generally destroy expected-utility linearity.
+
+This is what makes the rest of the chapter possible. Risk aversion follows from Jensen:
+
+$$
+u''<0
+\Longrightarrow
+u(\mathbb E[x])>\mathbb E[u(x)],
+$$
+
+so certainty equivalents and risk premia are defined by
+
+$$
+u(CE)=\mathbb E[u(x)],
+\qquad
+\pi=\mathbb E[x]-CE.
+$$
+
+Insurance and portfolio choice then become expected-utility maximization problems:
+
+$$
+\max_q \mathbb E[u(W(q))],
+\qquad
+\max_\theta \mathbb E[u(W(\theta))].
+$$
+
+In asset pricing, future payoffs are also state-contingent random objects. The same vNM utility delivers the stochastic discount factor logic:
+
+$$
+p_t=\mathbb E_t[m_{t+1}x_{t+1}],
+\qquad
+m_{t+1}=\beta\frac{u'(c_{t+1})}{u'(c_t)}.
+$$
+
+Thus the lottery chapter is the entry point for the whole uncertainty block: it formalizes random choice objects, derives expected utility, explains positive affine uniqueness, and sets up risk aversion, insurance demand, portfolio choice, and asset pricing.
