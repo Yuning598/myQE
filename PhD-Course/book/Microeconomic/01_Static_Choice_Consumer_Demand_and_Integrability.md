@@ -382,7 +382,7 @@ $$
 
 The indirect utility function and expenditure function are value functions, so Roy's identity and Shephard's lemma are envelope-theorem applications.
 
-![Envelope theorem](../attachment/Pasted%20image%2020260519133638.png)
+![Envelope theorem](../attachment/Pasted image 20260519133638.png)
 ## 5. Consumer problem: Marshallian demand and indirect utility
 
 :::{admonition} Definition (Consumer problem)
@@ -587,7 +587,7 @@ $$
 
 ## 7. Duality: Roy, Shephard, and identities
 
-![Duality](../attachment/Pasted%20image%2020260519143615.png)
+![Duality](../attachment/Pasted image 20260519143615.png)
 
 :::{admonition} Roy's identity
 For Marshallian demand,
@@ -681,7 +681,7 @@ $$
 
 If $\bar u=v(p,w)$, then $x(p,w)$ is feasible for EMP and achieves expenditure $w$, so $e(p,v(p,w))\le w$. If $e(p,v(p,w))<w$, a bundle with the same utility and lower expenditure would contradict minimality, hence $e(p,v(p,w))=w$. Symmetrically, if $w=e(p,\bar u)$, then $h(p,\bar u)$ is feasible for UMP and achieves utility $\bar u$, so $v(p,e(p,\bar u))=\bar u$. Under uniqueness, the optimizers coincide, hence $h(p,v(p,w))=x(p,w)$ and $x(p,e(p,\bar u))=h(p,\bar u)$.
 
-![UMPnEMP](../attachment/Pasted%20image%2020260519144638.png)
+![UMPnEMP](../attachment/Pasted image 20260519144638.png)
 
 :::{admonition} Law of demand
 For every $p,p'\gg 0$ and every $u$,
@@ -728,7 +728,7 @@ $$
 The law of demand is the clean comparative-static statement on the EMP side.
 :::
 
-## 9. Demand restrictions and Slutsky matrix
+## 8. Demand restrictions and Slutsky matrix
 
 :::{admonition} Property summary
 
@@ -832,7 +832,7 @@ $$
 
 This is the concavity inequality. Therefore the Hessian $\nabla^2_{pp}e(p,u)$ is negative semidefinite, and since $S=\nabla^2_{pp}e$, the Slutsky matrix is negative semidefinite.
 
-## 10. Integrability theorem
+## 9. Integrability theorem
 
 **Theorem:** A Marshallian demand $x(p,w)$ is rationalizable by utility maximization if and only if it satisfies:
 
@@ -846,7 +846,7 @@ $$
 
 Exam interpretation: empirical demand systems should be checked against these restrictions. Homogeneity and Walras' law are accounting/scale restrictions; Slutsky symmetry and negative semidefiniteness encode optimizing behavior.
 
-## 11. Common QE traps
+## 10. Common QE traps
 
 1. **Forgetting monotonicity.** Walras' law requires local nonsatiation or strong monotonicity.
 2. **Mixing Marshallian and Hicksian demand.** Marshallian holds wealth fixed; Hicksian holds utility fixed.
@@ -863,7 +863,7 @@ Exam interpretation: empirical demand systems should be checked against these re
 4. **Using arbitrary monotone transformations under expected utility.** In certainty utility, any strictly increasing transform preserves preferences. Under VNM expected utility, only positive affine transformations preserve the EU form.
 5. **Treating WARP as always sufficient.** The slides use a finite/rich choice-domain condition. Consumer budget sets require stronger integrability restrictions.
 
-## 12. Practice set
+## 11. Practice set
 
 ### Basic checks
 
@@ -883,7 +883,7 @@ Exam interpretation: empirical demand systems should be checked against these re
 2. Show that Cobb-Douglas goods are normal, but explain why normality is not implied by all utility functions.
 3. Give an example where Marshallian demand slopes upward but Hicksian demand still obeys negative semidefiniteness.
 
-## 13. Mastery target
+## 12. Mastery target
 
 For QE, you should be able to reproduce without notes:
 
