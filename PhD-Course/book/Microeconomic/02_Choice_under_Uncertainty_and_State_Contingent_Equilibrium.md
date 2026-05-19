@@ -93,10 +93,48 @@ L\sim L'
 \alpha L+(1-\alpha)L''\sim \alpha L'+(1-\alpha)L''.
 $$
 
-:::
+::: 
 
 Proof:
-The strict-preference equivalence follows by applying independence to both the weak part and the negated reverse weak preference. The indifference equivalence follows by applying independence to $L\succeq L'$ and $L'\succeq L$.
+For the strict-preference statement, suppose $L\succ L'$. Then $L\succeq L'$ and not $L'\succeq L$. By independence,
+
+$$
+L\succeq L'
+\Longleftrightarrow
+\alpha L+(1-\alpha)L''\succeq \alpha L'+(1-\alpha)L'',
+$$
+
+and
+
+$$
+L'\succeq L
+\Longleftrightarrow
+\alpha L'+(1-\alpha)L''\succeq \alpha L+(1-\alpha)L''.
+$$
+
+Therefore not $L'\succeq L$ implies not $\alpha L'+(1-\alpha)L''\succeq \alpha L+(1-\alpha)L''$, so
+
+$$
+\alpha L+(1-\alpha)L''\succ \alpha L'+(1-\alpha)L''.
+$$
+
+The reverse direction is the same argument in reverse.
+
+For the indifference statement, if $L\sim L'$, then $L\succeq L'$ and $L'\succeq L$. Independence gives
+
+$$
+\alpha L+(1-\alpha)L''\succeq \alpha L'+(1-\alpha)L''
+\quad\text{and}\quad
+\alpha L'+(1-\alpha)L''\succeq \alpha L+(1-\alpha)L'',
+$$
+
+hence
+
+$$
+\alpha L+(1-\alpha)L''\sim \alpha L'+(1-\alpha)L''.
+$$
+
+The converse again follows by reversing the argument.
 
 :::{admonition} Lemma 2
 If the preference relation $\succeq$ on $\mathcal L$ satisfies the independence axiom, then for all $\alpha\in(0,1)$ and $L,L',L'',L'''\in\mathcal L$, if $L\succ L'$ and $L''\succ L'''$, then
