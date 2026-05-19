@@ -70,9 +70,11 @@ $$
 
 **Theorem:** If \((p,(c^h))\) is a Walrasian equilibrium and preferences are locally nonsatiated/increasing, then \((c^h)\) is Pareto efficient.
 
-### Proof in QE style
+::{admonition} First Welfare Theorem in pure exchange
+WTS: No feasible allocation \((x^h)\) Pareto dominates \((c^h)\).
+:::
 
-**WTS:** No feasible allocation \((x^h)\) Pareto dominates \((c^h)\).
+### Proof in QE style
 
 Suppose, toward contradiction, that \((x^h)\) is feasible and Pareto improves:
 
@@ -311,13 +313,15 @@ $$
 Y=\{(-x,y):x\ge0,\ y\le f(x)\}.
 $$
 
-### Part A: \(f\) concave \(\Rightarrow Y\) convex
-
-**WTS:** For any \((-x^1,y^1),(-x^2,y^2)\in Y\) and \(\lambda\in[0,1]\),
+::{admonition} \(f\) concave implies \(Y\) convex
+WTS: For any \((-x^1,y^1),(-x^2,y^2)\in Y\) and \(\lambda\in[0,1]\),
 
 $$
 \lambda(-x^1,y^1)+(1-\lambda)(-x^2,y^2)\in Y.
 $$
+:::
+
+### Part A: \(f\) concave \(\Rightarrow Y\) convex
 
 Since both points are feasible,
 
@@ -346,15 +350,17 @@ $$
 
 Hence \((-\bar x,\bar y)\in Y\). Therefore \(Y\) is convex.
 
-### Part B: \(Y\) convex \(\Rightarrow f\) concave
-
-**WTS:**
+::{admonition} \(Y\) convex implies \(f\) concave
+WTS:
 
 $$
 f(\lambda x^1+(1-\lambda)x^2)
 \ge
 \lambda f(x^1)+(1-\lambda)f(x^2).
 $$
+:::
+
+### Part B: \(Y\) convex \(\Rightarrow f\) concave
 
 By definition,
 
@@ -594,9 +600,11 @@ $$
 
 Here \(\delta_k^h\) is household \(h\)'s ownership share of firm \(k\).
 
-### First Welfare Theorem with production
+::{admonition} First Welfare Theorem with production
+WTS: If consumers maximize utility and firms maximize profits at prices \(p\), then the allocation-production plan is Pareto efficient.
+:::
 
-**WTS:** If consumers maximize utility and firms maximize profits at prices \(p\), then the allocation-production plan is Pareto efficient.
+### First Welfare Theorem with production
 
 Suppose an alternative \((x^h,\tilde y^k)\) Pareto dominates. Consumer revealed preference implies
 

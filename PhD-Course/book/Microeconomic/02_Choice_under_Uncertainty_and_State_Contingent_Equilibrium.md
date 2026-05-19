@@ -93,12 +93,14 @@ $$
 
 :::
 
-**Proof for strict preference.**
-
-**WTS:**
+:::{admonition} Independence lemma, strict preference
+WTS:
 \[
 L\succ L'\Rightarrow \alpha L+(1-\alpha)L''\succ \alpha L'+(1-\alpha)L''.
 \]
+:::
+
+Proof for strict preference:
 
 Start from the definition:
 
@@ -220,9 +222,11 @@ $$
 
 The slide proof assumes a best lottery \(\overline L\) and worst lottery \(\underline L\).
 
-### Proof roadmap in QE style
+:::{admonition} Expected utility theorem, proof roadmap
+WTS: Construct a utility representation \(U(L)=\alpha_L\), then show \(U\) is linear.
+:::
 
-**WTS:** Construct a utility representation \(U(L)=\alpha_L\), then show \(U\) is linear.
+### Proof roadmap in QE style
 
 Step 1. Mixtures lie between better and worse lotteries.
 
@@ -440,9 +444,11 @@ $$
 q=A^\top\psi.
 $$
 
-### Easy direction proof
+:::{admonition} No arbitrage from positive state prices
+WTS: If \(q=A^\top\psi\) with \(\psi\gg0\), then no arbitrage.
+:::
 
-**WTS:** If \(q=A^\top\psi\) with \(\psi\gg0\), then no arbitrage.
+### Easy direction proof
 
 Suppose \(\theta\) is an arbitrage with \(q^\top\theta\le0\) and \(A\theta>0\). Then
 

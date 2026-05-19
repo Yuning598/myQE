@@ -737,8 +737,7 @@ t(\hat\theta)-\theta q(\hat\theta)
 \qquad \forall \theta,\hat\theta.
 $$
 
-:::{admonition} Lemma
-IC monotonicity and envelope
+:::{admonition} IC monotonicity and envelope
 A direct mechanism \((q(\cdot),t(\cdot))\) is IC iff \(q(\theta)\) is nonincreasing and
 
 $$
@@ -747,8 +746,7 @@ $$
 
 :::
 
-Proof: IC implies monotonicity
--
+Proof:
 
 Let \(\theta_1>\theta_0\). IC gives
 
