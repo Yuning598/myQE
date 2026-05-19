@@ -637,7 +637,11 @@ $$
 
 So risk aversion, risk neutrality, and risk loving are invariant under admissible vNM transformations.
 
-## 6. Risk aversion and Jensen
+## 6. Applications and extensions
+
+The remaining material uses expected utility as a tool. These are applications of the lottery/EU framework rather than separate foundational chapters.
+
+### Risk aversion and Jensen
 
 :::{admonition} Risk aversion
 For monetary outcomes, an agent with Bernoulli utility $u$ is risk averse iff for every gamble $X$,
@@ -684,7 +688,7 @@ $$
 \max_\theta \mathbb E[u(W(\theta))].
 $$
 
-## 7. Arrow-Debreu uncertainty model
+### Arrow-Debreu uncertainty model
 
 At date $0$, the state is known. At date $1$, one state $s\in\{1,\ldots,S\}$ realizes. There are $L$ physical commodities in each state, so a complete contingent consumption plan is
 
@@ -704,7 +708,7 @@ $$
 
 The Arrow-Debreu model treats each commodity-state pair as a different good. Therefore the standard existence and welfare theorems apply if all contingent commodities are traded.
 
-## 8. Arrow securities and Debreu prices
+### Arrow securities and Debreu prices
 
 Arrow securities pay one unit of the numeraire in a specified future state.
 
@@ -724,7 +728,7 @@ $$
 
 If Arrow securities for all states are traded, households can transfer wealth across states exactly as in the complete Arrow-Debreu model.
 
-## 9. General asset markets and no arbitrage
+### General asset markets and no arbitrage
 
 Let $A\in\mathbb R^{S\times J}$ be the payoff matrix of $J$ assets across $S$ states, where column $j$ is the payoff vector of asset $j$. Let $q\in\mathbb R^J$ be the vector of asset prices.
 
@@ -804,7 +808,7 @@ $$
 
 Set $\psi=\mu/\mu_0\gg0$.
 
-## 10. Complete and incomplete markets
+### Complete and incomplete markets
 
 :::{admonition} Definition (Complete markets)
 The asset structure is complete if its payoff matrix spans all state-contingent wealth transfers:
@@ -840,7 +844,7 @@ If $\operatorname{rank}(A)<S$, markets are incomplete. Then:
 
 Slides example: with two future states and only a risk-free bond paying $(1,1)$, agents cannot trade state-contingent risk. Equilibrium may involve no trade even though a full-insurance allocation Pareto dominates the endowment allocation.
 
-## 11. Full insurance and belief differences
+### Full insurance and belief differences
 
 There is one consumption good, two states, and two consumers. Utility is expected utility:
 
@@ -935,7 +939,7 @@ $$
 
 Consumer 2 overconsumes in the state she views as relatively more likely. Full insurance fails because prices reflect the risk-neutral consumer's beliefs, not consumer 2's beliefs.
 
-## 12. Pricing by arbitrage template
+### Pricing by arbitrage template
 
 Given asset payoff matrix $A$ and prices $q$, compute $\psi$ from
 
@@ -951,7 +955,7 @@ $$
 
 provided $d$ is spanned by traded payoffs. In a complete market this is automatic; in an incomplete market, the price may be nonunique or the asset may not be replicated.
 
-## 13. Chapter purpose
+## 7. Chapter purpose
 
 这一章不是为了研究赌博或 lottery 本身，而是为了把“不确定性下的选择”变成可推导、可优化的偏好模型。Lottery language 的作用是把随机结果统一写成概率分布上的选择对象：
 
