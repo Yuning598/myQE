@@ -271,7 +271,24 @@ $$
 L\succ \alpha L+(1-\alpha)L'\succ L'.
 $$
 
-Reason: use independence to mix $L\succ L'$ with $L$ or $L'$.
+Proof:
+If $L\succ L'$ and $\alpha\in(0,1)$, then the independence axiom implies (use Lemma 1)
+
+$$
+L=\alpha L+(1-\alpha)L\succ \alpha L+(1-\alpha)L'
+$$
+
+and
+
+$$
+\alpha L+(1-\alpha)L'\succ \alpha L'+(1-\alpha)L'=L'.
+$$
+
+Thus,
+
+$$
+L\succ \alpha L+(1-\alpha)L'\succ L'.
+$$
 
 **Step 2.** Along the line between best and worst lotteries, more of the best lottery is better:
 
@@ -285,11 +302,69 @@ $$
 \end{aligned}
 $$
 
+Proof:
+Suppose $\beta>\alpha$. Note that we can write
+
+$$
+\beta \overline L+(1-\beta)\underline L
+=
+\gamma \overline L+(1-\gamma)\big[\alpha \overline L+(1-\alpha)\underline L\big],
+$$
+
+where
+
+$$
+\gamma=\frac{\beta-\alpha}{1-\alpha}\in(0,1].
+$$
+
+Since $\overline L\succ \underline L$, by Step 1 we have
+
+$$
+\overline L\succ \alpha \overline L+(1-\alpha)\underline L.
+$$
+
+Applying Step 1 again, mixing $\overline L$ with $\alpha \overline L+(1-\alpha)\underline L$ gives
+
+$$
+\gamma \overline L+(1-\gamma)\big[\alpha \overline L+(1-\alpha)\underline L\big]
+\succ
+\alpha \overline L+(1-\alpha)\underline L.
+$$
+
+Thus,
+
+$$
+\beta \overline L+(1-\beta)\underline L \succ \alpha \overline L+(1-\alpha)\underline L.
+$$
+
+The converse that if $\beta \overline L+(1-\beta)\underline L \succ \alpha \overline L+(1-\alpha)\underline L$ then $\beta>\alpha$ follows by contradiction. Suppose not, then either $\beta=\alpha$ or $\beta<\alpha$. You will find either
+
+$$
+\beta \overline L+(1-\beta)\underline L \sim \alpha \overline L+(1-\alpha)\underline L
+$$
+
+or
+
+$$
+\alpha \overline L+(1-\alpha)\underline L \succ \beta \overline L+(1-\beta)\underline L,
+$$
+
+both contradictions. Therefore $\beta>\alpha$.
+
 **Step 3.** For every $L$, continuity gives a unique $\alpha_L\in[0,1]$ such that
 
 $$
 L\sim \alpha_L\overline L+(1-\alpha_L)\underline L.
 $$
+
+Proof:
+Existence of $\alpha_L$ is implied by continuity of $\succeq$. Recall that the continuity axiom implies that, given $\overline L\succ L\succ \underline L$, there exists $\alpha_L\in(0,1)$ such that
+
+$$
+\alpha_L\overline L+(1-\alpha_L)\underline L\sim L.
+$$
+
+Uniqueness follows from Step 2: if $\alpha_L$ is not unique, then you get a contradiction because two different values would imply a strict preference between lotteries that are supposed to be indifferent.
 
 **Step 4.** Define
 
@@ -310,6 +385,34 @@ L\succeq L'
 &\Longleftrightarrow U(L)\ge U(L').
 \end{aligned}
 $$
+
+Proof:
+By Step 3, for any two lotteries $L,L'\in\mathcal L$, we have
+
+$$
+\alpha_L\overline L+(1-\alpha_L)\underline L\sim L
+\qquad\text{and}\qquad
+\alpha_{L'}\overline L+(1-\alpha_{L'})\underline L\sim L'.
+$$
+
+Then,
+
+$$
+L\succeq L'
+\Longleftrightarrow
+\alpha_L\overline L+(1-\alpha_L)\underline L
+\succeq
+\alpha_{L'}\overline L+(1-\alpha_{L'})\underline L.
+$$
+
+Thus, by Step 2,
+
+$$
+L\succeq L'
+\Longleftrightarrow \alpha_L\ge \alpha_{L'}.
+$$
+
+Therefore, $U(L)=\alpha_L$ for all $L\in\mathcal L$ represents $\succeq$.
 
 **Step 5.** The utility function $U(\cdot)$ that assigns $U(L)=\alpha_L$ for all $L\in\mathcal L$ is linear and therefore has the expected utility form.
 
