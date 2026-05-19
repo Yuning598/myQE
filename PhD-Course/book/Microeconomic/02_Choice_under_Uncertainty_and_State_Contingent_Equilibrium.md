@@ -74,7 +74,7 @@ for all $L,L',L''\in\mathcal L$ and $\alpha\in(0,1)$.
 
 The independence axiom is the source of linearity in probabilities. It says common probability branches cancel.
 
-## 3. H2 Q1: independence preserves strict preference and indifference
+## 3. Independence preserves strict preference and indifference
 
 :::{admonition} Lemma
 Independence lemma
@@ -228,7 +228,7 @@ The slide proof assumes a best lottery $\overline L$ and worst lottery $\underli
 WTS: Construct a utility representation $U(L)=\alpha_L$, then show $U$ is linear.
 :::
 
-### Proof roadmap in QE style
+### Proof roadmap
 
 Step 1. Mixtures lie between better and worse lotteries.
 
@@ -541,7 +541,7 @@ If $\operatorname{rank}(A)<S$, markets are incomplete. Then:
 
 Slides example: with two future states and only a risk-free bond paying $(1,1)$, agents cannot trade state-contingent risk. Equilibrium may involve no trade even though a full-insurance allocation Pareto dominates the endowment allocation.
 
-## 12. H4 Q1-Q2: full insurance and belief differences
+## 12. Full insurance and belief differences
 
 There is one consumption good, two states, and two consumers. Utility is expected utility:
 
@@ -552,7 +552,7 @@ U_2(x_{12},x_{22})&=\pi_{12}u_2(x_{12})+\pi_{22}u_2(x_{22}).
 \end{aligned}
 $$
 
-### Same beliefs and consumer 1 risk neutral
+#### Same beliefs and consumer 1 risk neutral
 
 Assume consumer 1 is risk neutral and both consumers have the same probabilities:
 
@@ -592,7 +592,7 @@ $$
 
 Strict concavity gives $u_2'$ strictly decreasing, so equality of marginal utilities implies equal consumption: full insurance.
 
-### Different beliefs
+#### Different beliefs
 
 Now consumer 1 is risk neutral but probabilities differ. Still,
 
@@ -636,7 +636,7 @@ $$
 
 Consumer 2 overconsumes in the state she views as relatively more likely. Full insurance fails because prices reflect the risk-neutral consumer's beliefs, not consumer 2's beliefs.
 
-## 13. H4 Q3: pricing by arbitrage template
+## 13. Pricing by arbitrage template
 
 Given asset payoff matrix $A$ and prices $q$, compute $\psi$ from
 
