@@ -941,120 +941,513 @@ Thus, with $L$ goods, clearing $L-1$ markets implies the last market clears.
 ### 4.6 FWT and SWT widget
 
 ```{raw} html
-<div id="wt-container" style="font-family: system-ui, -apple-system, sans-serif; max-width: 450px; margin: 20px auto; padding: 15px; border: 1px solid #e1e4e8; border-radius: 8px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-    <h3 style="margin-top: 0; font-size: 1.2rem; color: #333; text-align: center; margin-bottom: 5px;">第一与第二福利定理 (FWT & SWT)</h3>
-    <p style="text-align: center; color: #666; font-size: 0.85rem; margin-top: 0; margin-bottom: 15px;">(Cobb-Douglas 偏好：平滑无差异曲线)</p>
-    
-    <div style="position: relative; width: 400px; height: 400px; margin: 0 auto; border: 2px solid #333; background-color: #fafbfc; cursor: crosshair;">
-        <canvas id="wt-canvas" width="400" height="400" style="display: block;"></canvas>
-        <div style="position: absolute; bottom: -25px; left: -10px; font-weight: bold;">O₁</div>
-        <div style="position: absolute; top: -25px; right: -10px; font-weight: bold;">O₂</div>
+<div class="wt-card" id="wt-container">
+  <style>
+    .wt-card {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --border: #d9e2ec;
+      --grid: #edf2f7;
+      --axis: #0f172a;
+      --blue: #2563eb;
+      --red: #dc2626;
+      --orange: #ea580c;
+      --green: #16a34a;
+      --purple: #7c3aed;
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+      width: min(100%, 520px);
+      margin: 20px auto;
+      padding: 20px;
+      color: var(--text);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      user-select: none;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .wt-card * { box-sizing: border-box; }
+    .wt-header { margin-bottom: 14px; text-align: center; }
+    .wt-header h3 {
+      margin: 0;
+      color: var(--text);
+      font-size: 1.2rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+    .wt-header p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+    .wt-stage {
+      position: relative;
+      width: min(100%, 400px);
+      aspect-ratio: 1 / 1;
+      margin: 0 auto;
+      overflow: visible;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 2px solid var(--axis);
+      border-radius: 12px;
+      cursor: crosshair;
+      touch-action: none;
+    }
+    .wt-stage canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      touch-action: none;
+    }
+    .wt-origin {
+      position: absolute;
+      color: var(--axis);
+      font-weight: 800;
+      pointer-events: none;
+    }
+    .wt-origin--one { left: -10px; bottom: -28px; }
+    .wt-origin--two { top: -28px; right: -10px; }
+    .wt-panel {
+      margin-top: 36px;
+      padding: 14px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 0.92rem;
+    }
+    .wt-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+    .wt-label { font-weight: 780; white-space: nowrap; }
+    .wt-label--w { color: var(--blue); }
+    .wt-label--e { color: var(--red); }
+    .wt-value { color: var(--text); font-variant-numeric: tabular-nums; }
+    .wt-value--mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .wt-divider {
+      height: 1px;
+      margin: 12px 0;
+      background: var(--border);
+      border: 0;
+    }
+    .wt-notes {
+      display: grid;
+      gap: 8px;
+      color: #334155;
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+    .wt-note strong { color: var(--text); }
+    .wt-note span {
+      display: inline-block;
+      width: 1.3rem;
+      text-align: center;
+    }
+    @media (max-width: 520px) {
+      .wt-card { padding: 16px; }
+      .wt-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+      .wt-label { white-space: normal; }
+    }
+  </style>
+
+  <header class="wt-header">
+    <h3>第一与第二福利定理 (FWT & SWT)</h3>
+    <p>Cobb-Douglas 偏好：平滑无差异曲线</p>
+  </header>
+
+  <div class="wt-stage">
+    <canvas id="wt-canvas"></canvas>
+    <div class="wt-origin wt-origin--one">O₁</div>
+    <div class="wt-origin wt-origin--two">O₂</div>
+  </div>
+
+  <section class="wt-panel" aria-live="polite">
+    <div class="wt-row">
+      <span class="wt-label wt-label--w">禀赋 W（拖动）</span>
+      <span class="wt-value" id="wt-val-w"></span>
     </div>
 
-    <div style="margin-top: 35px; padding: 12px; background: #f6f8fa; border-radius: 6px; font-size: 0.95rem;">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-            <span style="color: #0366d6;"><strong>禀赋 W (拖动):</strong> <span id="wt-val-w"></span></span>
-            <span style="color: #d73a49;"><strong>均衡 E*:</strong> <span id="wt-val-e"></span></span>
-        </div>
-        <div style="margin-bottom: 12px;">
-            <span><strong>均衡价格比 (p₁/p₂):</strong> <span id="wt-val-p" style="font-family: monospace;"></span></span>
-        </div>
-        <hr style="border: none; border-top: 1px solid #e1e4e8; margin: 10px 0;">
-        <div style="font-size: 0.85rem; color: #444; line-height: 1.4;">
-            <div style="margin-bottom: 6px;">🎯 <strong>FWT:</strong> 拖动蓝点 W，均衡 E* 始终落在契约曲线（黑线）上，且两曲线相切。</div>
-            <div>⚖️ <strong>SWT:</strong> 沿橙色虚线（预算线）拖动 W，你会发现均衡 E* 岿然不动！</div>
-        </div>
+    <div class="wt-row">
+      <span class="wt-label wt-label--e">均衡 E*</span>
+      <span class="wt-value" id="wt-val-e"></span>
     </div>
+
+    <div class="wt-row">
+      <span class="wt-label">均衡价格比 (p₁/p₂)</span>
+      <span class="wt-value wt-value--mono" id="wt-val-p"></span>
+    </div>
+
+    <hr class="wt-divider" />
+
+    <div class="wt-notes">
+      <div class="wt-note">
+        <span>🎯</span><strong>FWT:</strong> 拖动蓝点 W，均衡 E* 始终落在契约曲线（黑线）上，且两曲线相切。
+      </div>
+      <div class="wt-note">
+        <span>⚖️</span><strong>SWT:</strong> 沿橙色虚线（预算线）拖动 W，你会发现均衡 E* 岿然不动！
+      </div>
+    </div>
+  </section>
 </div>
 
 <script>
-(function() {
-    const canvas = document.getElementById('wt-canvas');
-    const ctx = canvas.getContext('2d');
-    const TOTAL = 100, S = 400;
-    
-    const toPx = (x, y) => ({ cx: (x / TOTAL) * S, cy: S - (y / TOTAL) * S });
-    const toMath = (cx, cy) => ({ x: (cx / S) * TOTAL, y: ((S - cy) / S) * TOTAL });
+  (() => {
+    const canvas = document.querySelector("#wt-canvas");
+    const ctx = canvas.getContext("2d");
 
-    let w_math = { x: 20, y: 80 }; 
-    let W = toPx(w_math.x, w_math.y);
-    let isDragging = false;
+    const valueW = document.querySelector("#wt-val-w");
+    const valueE = document.querySelector("#wt-val-e");
+    const valueP = document.querySelector("#wt-val-p");
 
-    function draw() {
-        ctx.clearRect(0, 0, S, S);
+    const config = {
+      total: 100,
+      hitRadius: 24,
+      alpha1: 0.3,
+      alpha2: 0.7,
+    };
 
-        const p = (70 - 0.4 * w_math.y) / (30 + 0.4 * w_math.x);
-        const Income1 = p * w_math.x + w_math.y;
-        const e_x = 0.3 * (Income1 / p);
-        const e_y = 0.7 * Income1;
-        const E = toPx(e_x, e_y);
+    const colors = {
+      text: "#1f2937",
+      muted: "#64748b",
+      grid: "#edf2f7",
+      contract: "#111827",
+      budget: "#ea580c",
+      ic1: "#16a34a",
+      ic2: "#7c3aed",
+      equilibrium: "#dc2626",
+      endowment: "#2563eb",
+      white: "#ffffff",
+    };
 
-        ctx.beginPath(); ctx.lineWidth = 3; ctx.strokeStyle = '#333';
-        for(let x = 0; x <= 100; x += 1) {
-            let y = (490 * x) / (90 + 4 * x);
-            let pt = toPx(x, y);
-            if(x === 0) ctx.moveTo(pt.cx, pt.cy); else ctx.lineTo(pt.cx, pt.cy);
-        }
-        ctx.stroke();
+    const state = {
+      isDragging: false,
+      w: { x: 20, y: 80 },
+    };
 
-        ctx.beginPath(); ctx.lineWidth = 1.5; ctx.strokeStyle = '#f66a0a'; ctx.setLineDash([4, 4]);
-        const y_at_0 = p * w_math.x + w_math.y;
-        const y_at_100 = -p * 100 + y_at_0;
-        ctx.moveTo(toPx(0, y_at_0).cx, toPx(0, y_at_0).cy);
-        ctx.lineTo(toPx(100, y_at_100).cx, toPx(100, y_at_100).cy);
-        ctx.stroke(); ctx.setLineDash([]);
-
-        const u1_val = Math.pow(e_x, 0.3) * Math.pow(e_y, 0.7);
-        ctx.beginPath(); ctx.lineWidth = 2; ctx.strokeStyle = '#28a745';
-        for(let x = 0.5; x <= 100; x += 0.5) {
-            let y = Math.pow(u1_val / Math.pow(x, 0.3), 1/0.7);
-            if (y > 100) continue;
-            let pt = toPx(x, y);
-            ctx.lineTo(pt.cx, pt.cy);
-        }
-        ctx.stroke();
-
-        const u2_val = Math.pow(100 - e_x, 0.7) * Math.pow(100 - e_y, 0.3);
-        ctx.beginPath(); ctx.strokeStyle = '#6f42c1';
-        for(let x = 0; x < 99.5; x += 0.5) {
-            let y = 100 - Math.pow(u2_val / Math.pow(100 - x, 0.7), 1/0.3);
-            if (y < 0) continue;
-            let pt = toPx(x, y);
-            ctx.lineTo(pt.cx, pt.cy);
-        }
-        ctx.stroke();
-
-        ctx.beginPath(); ctx.fillStyle = '#d73a49'; ctx.arc(E.cx, E.cy, 6, 0, Math.PI * 2); ctx.fill();
-        ctx.fillStyle = '#000'; ctx.fillText("E*", E.cx + 8, E.cy - 8);
-
-        ctx.beginPath(); ctx.fillStyle = '#0366d6'; ctx.arc(W.cx, W.cy, 7, 0, Math.PI * 2); ctx.fill();
-        ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
-        ctx.fillStyle = '#000'; ctx.fillText("W", W.cx + 8, W.cy + 15);
-
-        document.getElementById('wt-val-w').innerText = `(${w_math.x.toFixed(1)}, ${w_math.y.toFixed(1)})`;
-        document.getElementById('wt-val-e').innerText = `(${e_x.toFixed(1)}, ${e_y.toFixed(1)})`;
-        document.getElementById('wt-val-p').innerText = p.toFixed(3);
+    function getCanvasSize() {
+      return Number(canvas.dataset.cssSize) || canvas.clientWidth || 400;
     }
 
-    canvas.addEventListener('mousedown', (e) => {
-        const rect = canvas.getBoundingClientRect();
-        const dist = Math.hypot((e.clientX - rect.left) - W.cx, (e.clientY - rect.top) - W.cy);
-        if (dist < 15) isDragging = true;
-    });
+    function setupCanvasForHiDpi() {
+      const ratio = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      const size = Math.min(rect.width, rect.height);
 
-    window.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        const rect = canvas.getBoundingClientRect();
-        W.cx = Math.max(0, Math.min(S, e.clientX - rect.left));
-        W.cy = Math.max(0, Math.min(S, e.clientY - rect.top));
-        w_math = toMath(W.cx, W.cy);
+      canvas.width = Math.round(size * ratio);
+      canvas.height = Math.round(size * ratio);
+      canvas.dataset.cssSize = size;
+
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    }
+
+    function toCanvasPoint({ x, y }) {
+      const size = getCanvasSize();
+      return {
+        x: (x / config.total) * size,
+        y: size - (y / config.total) * size,
+      };
+    }
+
+    function toModelPoint({ x, y }) {
+      const size = getCanvasSize();
+      return {
+        x: (x / size) * config.total,
+        y: ((size - y) / size) * config.total,
+      };
+    }
+
+    function clamp(value, min, max) {
+      return Math.max(min, Math.min(max, value));
+    }
+
+    function formatPoint({ x, y }, digits = 1) {
+      return `(${x.toFixed(digits)}, ${y.toFixed(digits)})`;
+    }
+
+    function getPointerPosition(event) {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        x: event.clientX - rect.left,
+        y: event.clientY - rect.top,
+      };
+    }
+
+    function getEquilibrium() {
+      const p = (70 - 0.4 * state.w.y) / (30 + 0.4 * state.w.x);
+      const income1 = p * state.w.x + state.w.y;
+      const x = config.alpha1 * (income1 / p);
+      const y = config.alpha2 * income1;
+      return { p, income1, point: { x, y } };
+    }
+
+    function drawGrid() {
+      const size = getCanvasSize();
+      const step = size / 4;
+
+      ctx.save();
+      ctx.strokeStyle = colors.grid;
+      ctx.lineWidth = 1;
+
+      for (let i = 1; i < 4; i += 1) {
+        const p = i * step;
+
+        ctx.beginPath();
+        ctx.moveTo(p, 0);
+        ctx.lineTo(p, size);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(0, p);
+        ctx.lineTo(size, p);
+        ctx.stroke();
+      }
+
+      ctx.restore();
+    }
+
+    function drawLine(from, to, options = {}) {
+      ctx.save();
+      ctx.strokeStyle = options.color ?? colors.text;
+      ctx.lineWidth = options.width ?? 2;
+      ctx.setLineDash(options.dashed ? [6, 6] : []);
+      ctx.beginPath();
+      ctx.moveTo(from.x, from.y);
+      ctx.lineTo(to.x, to.y);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawLabel(text, point, options = {}) {
+      ctx.save();
+      ctx.font = `${options.weight ?? 700} ${options.size ?? 13}px system-ui, sans-serif`;
+      ctx.textAlign = options.align ?? "left";
+      ctx.textBaseline = options.baseline ?? "middle";
+
+      if (options.halo !== false) {
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = "rgba(255,255,255,0.92)";
+        ctx.strokeText(text, point.x, point.y);
+      }
+
+      ctx.fillStyle = options.color ?? colors.text;
+      ctx.fillText(text, point.x, point.y);
+      ctx.restore();
+    }
+
+    function drawPoint(point, options) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.fillStyle = options.fill;
+      ctx.arc(point.x, point.y, options.radius, 0, Math.PI * 2);
+      ctx.fill();
+
+      if (options.stroke) {
+        ctx.strokeStyle = options.stroke;
+        ctx.lineWidth = options.strokeWidth ?? 2;
+        ctx.stroke();
+      }
+
+      ctx.restore();
+    }
+
+    function drawCurve(points, options = {}) {
+      ctx.save();
+      ctx.strokeStyle = options.color ?? colors.text;
+      ctx.lineWidth = options.width ?? 2;
+      ctx.setLineDash(options.dashed ? [6, 6] : []);
+      ctx.beginPath();
+
+      let started = false;
+      for (const point of points) {
+        if (!Number.isFinite(point.x) || !Number.isFinite(point.y)) {
+          started = false;
+          continue;
+        }
+
+        const pt = toCanvasPoint(point);
+        if (!started) {
+          ctx.moveTo(pt.x, pt.y);
+          started = true;
+        } else {
+          ctx.lineTo(pt.x, pt.y);
+        }
+      }
+
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawContractCurve() {
+      const points = [];
+
+      for (let x = 0.2; x <= 99.8; x += 0.4) {
+        const y = (490 * x) / (90 + 4 * x);
+        if (y >= 0 && y <= 100) points.push({ x, y });
+      }
+
+      drawCurve(points, {
+        color: colors.contract,
+        width: 2.8,
+      });
+    }
+
+    function getBudgetSegment(p, income) {
+      const candidates = [];
+      const total = config.total;
+
+      const yAtLeft = income;
+      if (yAtLeft >= 0 && yAtLeft <= total) candidates.push({ x: 0, y: yAtLeft });
+
+      const yAtRight = income - p * total;
+      if (yAtRight >= 0 && yAtRight <= total) candidates.push({ x: total, y: yAtRight });
+
+      const xAtBottom = income / p;
+      if (xAtBottom >= 0 && xAtBottom <= total) candidates.push({ x: xAtBottom, y: 0 });
+
+      const xAtTop = (income - total) / p;
+      if (xAtTop >= 0 && xAtTop <= total) candidates.push({ x: xAtTop, y: total });
+
+      if (candidates.length < 2) return null;
+      return [toCanvasPoint(candidates[0]), toCanvasPoint(candidates[1])];
+    }
+
+    function drawBudgetLine(p, income) {
+      const segment = getBudgetSegment(p, income);
+      if (!segment) return;
+
+      drawLine(segment[0], segment[1], {
+        color: colors.budget,
+        width: 2,
+        dashed: true,
+      });
+    }
+
+    function drawIndifferenceCurves(equilibrium) {
+      const { x: ex, y: ey } = equilibrium;
+      const u1 = Math.pow(ex, 0.3) * Math.pow(ey, 0.7);
+      const u2 = Math.pow(100 - ex, 0.7) * Math.pow(100 - ey, 0.3);
+
+      const curve1 = [];
+      for (let x = 0.5; x <= 100; x += 0.4) {
+        const y = Math.pow(u1 / Math.pow(x, 0.3), 1 / 0.7);
+        if (y >= 0 && y <= 100) curve1.push({ x, y });
+      }
+
+      const curve2 = [];
+      for (let x = 0; x < 99.5; x += 0.4) {
+        const y = 100 - Math.pow(u2 / Math.pow(100 - x, 0.7), 1 / 0.3);
+        if (y >= 0 && y <= 100) curve2.push({ x, y });
+      }
+
+      drawCurve(curve1, {
+        color: colors.ic1,
+        width: 2,
+      });
+
+      drawCurve(curve2, {
+        color: colors.ic2,
+        width: 2,
+      });
+    }
+
+    function updatePanel(equilibriumData) {
+      valueW.textContent = formatPoint(state.w, 1);
+      valueE.textContent = formatPoint(equilibriumData.point, 1);
+      valueP.textContent = equilibriumData.p.toFixed(3);
+    }
+
+    function draw() {
+      const size = getCanvasSize();
+      const equilibriumData = getEquilibrium();
+      const e = toCanvasPoint(equilibriumData.point);
+      const w = toCanvasPoint(state.w);
+
+      ctx.clearRect(0, 0, size, size);
+
+      drawGrid();
+      drawContractCurve();
+      drawBudgetLine(equilibriumData.p, equilibriumData.income1);
+      drawIndifferenceCurves(equilibriumData.point);
+
+      drawPoint(e, {
+        fill: colors.equilibrium,
+        radius: 6,
+      });
+      drawLabel("E*", { x: e.x + 9, y: e.y - 9 }, { color: colors.equilibrium });
+
+      drawPoint(w, {
+        fill: colors.endowment,
+        stroke: colors.white,
+        strokeWidth: 2,
+        radius: 8,
+      });
+      drawLabel("W", { x: w.x + 9, y: w.y + 15 }, { color: colors.endowment });
+
+      updatePanel(equilibriumData);
+    }
+
+    function startDrag(event) {
+      event.preventDefault();
+
+      const pointer = getPointerPosition(event);
+      const w = toCanvasPoint(state.w);
+      const distance = Math.hypot(pointer.x - w.x, pointer.y - w.y);
+
+      if (distance > config.hitRadius) return;
+
+      state.isDragging = true;
+      canvas.setPointerCapture?.(event.pointerId);
+    }
+
+    function doDrag(event) {
+      if (!state.isDragging) return;
+      event.preventDefault();
+
+      const size = getCanvasSize();
+      const pointer = getPointerPosition(event);
+      const bounded = {
+        x: clamp(pointer.x, 0, size),
+        y: clamp(pointer.y, 0, size),
+      };
+
+      state.w = toModelPoint(bounded);
+      draw();
+    }
+
+    function endDrag(event) {
+      if (!state.isDragging) return;
+      state.isDragging = false;
+      canvas.releasePointerCapture?.(event.pointerId);
+    }
+
+    function initialize() {
+      setupCanvasForHiDpi();
+      draw();
+
+      canvas.addEventListener("pointerdown", startDrag);
+      canvas.addEventListener("pointermove", doDrag);
+      canvas.addEventListener("pointerup", endDrag);
+      canvas.addEventListener("pointercancel", endDrag);
+      canvas.addEventListener("pointerleave", endDrag);
+
+      window.addEventListener("resize", () => {
+        setupCanvasForHiDpi();
         draw();
-    });
+      });
+    }
 
-    window.addEventListener('mouseup', () => isDragging = false);
-    window.addEventListener('mouseleave', () => isDragging = false);
-    draw();
-})();
+    initialize();
+  })();
 </script>
 ```
 
