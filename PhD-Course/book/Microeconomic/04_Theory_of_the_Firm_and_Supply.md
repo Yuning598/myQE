@@ -39,7 +39,7 @@ Items 1--4 are the minimal regularity assumptions used in the standard theory. I
 
 ```{raw} html
 <div style="width:100%;max-width:1120px;margin:0 auto;">
-  <iframe src="../attachment/production-set-assumptions.html" title="Production Set Assumptions" loading="lazy" style="width:100%;height:1120px;border:0;display:block;border-radius:16px;"></iframe>
+  <iframe src="/PhD-Course/attachment/production-set-assumptions.html" title="Production Set Assumptions" loading="lazy" style="width:100%;height:1120px;border:0;display:block;border-radius:16px;"></iframe>
 </div>
 ```
 
