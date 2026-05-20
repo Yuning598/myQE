@@ -79,6 +79,12 @@ $$
 \end{aligned}
 $$
 
+These are theorem-specific, not all needed at once:
+
+- FWT only needs increasing or local nonsatiation to turn a utility improvement into a budget contradiction.
+- SWF and the supporting-price argument strengthen A2 to strongly increasing and A4 to strictly concave so the preferred sets behave well and separation works cleanly.
+- The planner / contract-curve sections only need concavity unless uniqueness or sharper interior FOCs are desired.
+
 ## 2. Welfare theorems in pure exchange
 
 ### 2.1 First Welfare Theorem
@@ -181,6 +187,7 @@ $$
 
 Let $z^h=y^h-\bar e^h\in K^h$. Then $p\cdot z^h\le0$. But separation says any strictly preferred net trade must satisfy $p\cdot z^h\ge0$, and with monotonicity/interiority one obtains the required strict budget violation. Hence no strictly preferred affordable bundle exists.
 
+![](../attachment/image-20260520.png)
 ## 3. Planner characterization of Pareto efficiency
 
 For interior allocations, Pareto efficiency can be characterized by weighted utility maximization:
