@@ -67,6 +67,7 @@ parts:
       - file: Microeconomic/03_General_Equilibrium_Production_and_Welfare
       - file: Microeconomic/04_Theory_of_the_Firm_and_Supply
       - file: Microeconomic/05_Production_in_Arrow_Debreu
+      - file: Microeconomic/06_Equilibrium_Under_Uncertainty
       - file: Microeconomic/07_Principal-Agent_Models_Moral_Hazard_and_Screening
   - caption: Cross-Course Links
     chapters:
