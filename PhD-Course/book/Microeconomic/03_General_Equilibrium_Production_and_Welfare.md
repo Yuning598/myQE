@@ -419,6 +419,7 @@ Thus, with $L$ goods, clearing $L-1$ markets implies the last market clears.
 
 ### 4.5 Transfer paradox widget
 
+```{raw} html
 <div id="tp-container" style="font-family: system-ui, -apple-system, sans-serif; max-width: 450px; margin: 20px auto; padding: 15px; border: 1px solid #e1e4e8; border-radius: 8px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
     <h3 style="margin-top: 0; font-size: 1.2rem; color: #333; text-align: center;">转移悖论 (Transfer Paradox)</h3>
     <p style="text-align: center; color: #666; font-size: 0.85rem; margin-top: 0; margin-bottom: 15px;">(Leontief 偏好：完全互补)</p>
@@ -511,9 +512,11 @@ Thus, with $L$ goods, clearing $L-1$ markets implies the last market clears.
     draw();
 })();
 </script>
+```
 
 ### 4.6 FWT and SWT widget
 
+```{raw} html
 <div id="wt-container" style="font-family: system-ui, -apple-system, sans-serif; max-width: 450px; margin: 20px auto; padding: 15px; border: 1px solid #e1e4e8; border-radius: 8px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
     <h3 style="margin-top: 0; font-size: 1.2rem; color: #333; text-align: center; margin-bottom: 5px;">第一与第二福利定理 (FWT & SWT)</h3>
     <p style="text-align: center; color: #666; font-size: 0.85rem; margin-top: 0; margin-bottom: 15px;">(Cobb-Douglas 偏好：平滑无差异曲线)</p>
@@ -629,6 +632,7 @@ Thus, with $L$ goods, clearing $L-1$ markets implies the last market clears.
     draw();
 })();
 </script>
+```
 
 ## 5. Core
 
