@@ -287,14 +287,8 @@ $$
 :::
 
 :::{admonition} Two slight problems with the theorem
-$$
-\begin{aligned}
-z(p^*)\le0,\quad z_\ell(p^*)=0\ \text{if }p_\ell^*>0
-&\Longrightarrow \text{quasi-equilibrium},\\
-u^h \text{ strongly increasing}
-&\Longrightarrow p^*\gg0 \Longrightarrow z(p^*)=0.
-\end{aligned}
-$$
+1. $z(p^*)\le0,\ z_\ell(p^*)=0$ if $p_\ell^*>0$ only gives a quasi-equilibrium.
+2. If $u^h$ is strongly increasing, then $p^*\gg0$ and therefore $z(p^*)=0$.
 
 To keep $z$ continuous away from the boundary, work on the trimmed simplex
 
