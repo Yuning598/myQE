@@ -81,9 +81,31 @@ $$
 
 These are theorem-specific, not all needed at once:
 
-- FWT only needs increasing or local nonsatiation to turn a utility improvement into a budget contradiction.
-- SWF and the supporting-price argument strengthen A2 to strongly increasing and A4 to strictly concave so the preferred sets behave well and separation works cleanly.
-- The planner / contract-curve sections only need concavity unless uniqueness or sharper interior FOCs are desired.
+$$
+\begin{aligned}
+\text{FWT:}\quad &u^h \text{ increasing / locally nonsatiated},\\
+\text{SWF:}\quad &(A2')\ \ u^h \text{ strongly increasing},\quad (A4')\ \ u^h \text{ strictly concave},\\
+\text{Existence:}\quad &z \text{ continuous},\quad z(\lambda p)=z(p),\quad p\cdot z(p)=0.
+\end{aligned}
+$$
+
+If $u^h$ is increasing and strictly concave, then it is strongly increasing:
+
+$$
+\begin{aligned}
+x>y,\ u^h(x)=u^h(y)
+\ &\Longrightarrow\ 
+u^h(\lambda x+(1-\lambda)y)
+>
+\lambda u^h(x)+(1-\lambda)u^h(y)\\
+&=
+u^h(x),\qquad \lambda\in(0,1),\\
+\lambda x+(1-\lambda)y&<x,\\
+\Rightarrow\ u^h(\lambda x+(1-\lambda)y)&<u^h(x),
+\end{aligned}
+$$
+
+so $x>y\Rightarrow u^h(x)>u^h(y)$.
 
 ## 2. Welfare theorems in pure exchange
 
@@ -215,19 +237,25 @@ This is the standard Edgeworth box contract curve condition. H4 Q5 is a direct a
 
 ### 4.1 Aggregate excess demand
 
-Let $f^h(p,e^h)$ be household $h$'s demand, and define aggregate excess demand
+For each household,
+
+$$
+f^h(p,e^h)\in\arg\max_{x\in\mathbb R_+^L}\{u^h(x):p\cdot x\le p\cdot e^h\}.
+$$
+
+Define aggregate excess demand
 
 $$
 z(p)=\sum_h f^h(p,e^h)-\sum_h e^h.
 $$
 
-The slides use three properties:
+Then
 
 $$
 \begin{aligned}
-\text{Continuity:}\quad &z(p)\text{ continuous on the normalized price simplex},\\
-\text{Homogeneity:}\quad &z(\lambda p)=z(p),\quad \lambda>0,\\
-\text{Walras' law:}\quad &p\cdot z(p)=0.
+\text{Continuity:}\quad &z(p)\text{ continuous},\\
+\text{Homogeneity:}\quad &f^h(\lambda p,e^h)=f^h(p,e^h)\ \Rightarrow\ z(\lambda p)=z(p),\quad \lambda>0,\\
+\text{Walras' law:}\quad &p\cdot f^h(p,e^h)=p\cdot e^h\ \Rightarrow\ p\cdot z(p)=0.
 \end{aligned}
 $$
 
@@ -242,22 +270,30 @@ z_\ell(p^*)=0\ \text{whenever }p_\ell^*>0.
 $$
 :::
 
-With strong monotonicity, equilibrium prices are strictly positive and all markets clear exactly.
+On the normalized simplex
 
-### 4.3 Proof sketch
-Use Brouwer's fixed point theorem on the normalized price simplex. The exam version usually expects the mapping idea, not every topological detail.
+$$
+\Delta=\Bigl\{p\in\mathbb R_+^L:\sum_{\ell=1}^Lp_\ell=1\Bigr\},
+$$
+
+the standard normalized excess-demand map $\phi:\Delta\to\Delta$ is continuous. Brouwer gives a fixed point $p^*=\phi(p^*)$, and the usual normalization argument converts the fixed point into
+
+$$
+\begin{aligned}
+z(p^*)&\le 0,\\
+p_\ell^*&>0\ \Longrightarrow\ z_\ell(p^*)&=0.
+\end{aligned}
+$$
+
+With strong monotonicity, $p^*\gg0$, hence $z(p^*)=0$.
 
 ### 4.4 Walras' law
 
-#### 4.4.1 Household budget identity
-
-In any household budget problem with locally nonsatiated preferences,
+For locally nonsatiated preferences,
 
 $$
 p\cdot x^h(p)=p\cdot e^h.
 $$
-
-Sum over $h$:
 
 $$
 \begin{aligned}
