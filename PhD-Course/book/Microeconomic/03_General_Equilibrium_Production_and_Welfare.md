@@ -402,7 +402,7 @@ $$
 
 Thus, with $L$ goods, clearing $L-1$ markets implies the last market clears.
 
-## 7. Core
+## 5. Core
 
 :::{admonition} Definition (Core)
 A feasible allocation $(c^h)$ is in the core if there is no coalition $S\subseteq H$ and allocation $(\tilde c^h)_{h\in S}$ such that
@@ -423,7 +423,7 @@ with strict inequality for at least one member of $S$.
 
 Core convergence theorem in the slides: in replica economies, as the number of replicas grows, core allocations converge to Walrasian allocations. Intuition: large markets make individual/coalitional market power vanish.
 
-## 8. Theory of the firm: production set
+## 6. Theory of the firm: production set
 
 :::{admonition} Definition (Production set)
 A production plan is $y\in\mathbb R^L$, where positive components are outputs and negative components are inputs. The production set $Y\subseteq\mathbb R^L$ contains feasible production plans.
@@ -453,7 +453,7 @@ $$
 MRTS_{ij}(x)=\frac{f_i(x)}{f_j(x)}.
 $$
 
-## 9. Production function concavity and convex production set
+## 7. Production function concavity and convex production set
 
 Let
 
@@ -531,7 +531,7 @@ $$
 
 Thus $f$ is concave.
 
-## 10. CRS iff production set is a cone
+## 8. CRS iff production set is a cone
 
 :::{admonition} CRS iff production set is a cone
 Under free disposal, a single-output production function has constant returns to scale iff the associated production set is a cone.
@@ -579,7 +579,7 @@ $$
 
 contradicting the definition of $f(x)$. Therefore $f(\lambda x)=\lambda f(x)$.
 
-## 11. Profit maximization
+## 9. Profit maximization
 
 :::{admonition} Definition (Profit maximization problem)
 Given price vector $p\in\mathbb R^L$, the firm's profit function is
@@ -631,7 +631,7 @@ $$
 
 Interpretation: value of marginal product equals factor price.
 
-## 12. Supply and input demand comparative statics
+## 10. Supply and input demand comparative statics
 
 By Hotelling's lemma/envelope theorem,
 
@@ -674,7 +674,7 @@ $$
 
 With strict concavity and negative cross partial assumptions, one derives $\partial z_\ell/\partial w_k<0$ for $k\neq \ell$ in the homework setting.
 
-## 13. Cost minimization and supply
+## 11. Cost minimization and supply
 
 If $x^*$ maximizes profit and $y^*=f(x^*)$, then $x^*$ solves the cost minimization problem for output $y^*$:
 
@@ -716,7 +716,7 @@ $$
 
 This gives the supply curve as inverse marginal cost.
 
-## 14. Production in Arrow-Debreu
+## 12. Production in Arrow-Debreu
 
 There are $K$ firms with production sets $Y^k\subseteq\mathbb R^L$. A production economy equilibrium is
 
@@ -782,7 +782,7 @@ Using $p\cdot y^k\ge p\cdot \tilde y^k$, the RHS inequality contradicts $\sum_hp
 
 Under convex production sets and convex preferences, every interior Pareto efficient allocation-production plan can be supported by prices after redistribution. Nonconvex production, increasing returns, and externalities are classic failure cases.
 
-## 15. Firms vs household production
+## 13. Firms vs household production
 
 The slides show that if households own firm technologies by shares $\delta_k^h$, we can define household production sets
 
