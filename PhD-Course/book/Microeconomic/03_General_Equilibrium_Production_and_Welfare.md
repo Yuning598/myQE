@@ -419,12 +419,98 @@ Thus, with $L$ goods, clearing $L-1$ markets implies the last market clears.
 
 ### 4.5 Transfer paradox widget
 
-<iframe
-  src="../attachment/transfer_paradox_widget.html"
-  title="Transfer Paradox Widget"
-  style="width: 100%; max-width: 470px; height: 660px; border: 0; display: block; margin: 0 auto;"
-  loading="lazy"
-></iframe>
+<div id="tp-container" style="font-family: system-ui, -apple-system, sans-serif; max-width: 450px; margin: 20px auto; padding: 15px; border: 1px solid #e1e4e8; border-radius: 8px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+    <h3 style="margin-top: 0; font-size: 1.2rem; color: #333; text-align: center;">转移悖论 (Transfer Paradox)</h3>
+    <p style="text-align: center; color: #666; font-size: 0.85rem; margin-top: 0; margin-bottom: 15px;">(Leontief 偏好：完全互补)</p>
+    
+    <div style="position: relative; width: 400px; height: 400px; margin: 0 auto; border: 2px solid #333; background-color: #fafbfc; cursor: crosshair;">
+        <canvas id="tp-canvas" width="400" height="400" style="display: block;"></canvas>
+        <div style="position: absolute; bottom: -25px; left: -10px; font-weight: bold;">O₁</div>
+        <div style="position: absolute; top: -25px; right: -10px; font-weight: bold;">O₂</div>
+    </div>
+
+    <div style="margin-top: 35px; padding: 12px; background: #f6f8fa; border-radius: 6px; font-size: 0.95rem;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+            <span style="color: #0366d6;"><strong>禀赋点 W (拖动):</strong> <span id="tp-val-w"></span></span>
+            <span style="color: #d73a49;"><strong>均衡点 E* (固定):</strong> <span id="tp-val-e"></span></span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+            <span><strong>预算线斜率 (p₁/p₂):</strong> <span id="tp-val-p" style="font-family: monospace;"></span></span>
+        </div>
+        <div id="tp-msg" style="margin-top: 10px; color: #28a745; font-weight: bold; text-align: center; height: 20px; font-size: 0.9rem;"></div>
+    </div>
+</div>
+
+<script>
+(function() {
+    const canvas = document.getElementById('tp-canvas');
+    const ctx = canvas.getContext('2d');
+    const a1 = 0.5, a2 = 2.0, TOTAL = 3, S = 400;
+    
+    const toPx = (x, y) => ({ cx: (x / TOTAL) * S, cy: S - (y / TOTAL) * S });
+    const toMath = (cx, cy) => ({ x: (cx / S) * TOTAL, y: ((S - cy) / S) * TOTAL });
+
+    const e_x = TOTAL * (a2 - 1) / (a2 - a1);
+    const e_y = a1 * e_x;
+    const E = toPx(e_x, e_y);
+
+    let w_math = { x: 1, y: 1 };
+    let W = toPx(w_math.x, w_math.y);
+    let isDragging = false;
+
+    function draw() {
+        ctx.clearRect(0, 0, S, S);
+        
+        ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.strokeStyle = 'rgba(0, 0, 0, 0.2)'; ctx.setLineDash([5, 5]);
+        const r1_end = toPx(TOTAL, a1 * TOTAL);
+        ctx.moveTo(0, S); ctx.lineTo(r1_end.cx, r1_end.cy); ctx.stroke();
+        
+        ctx.beginPath();
+        const r2_start = toPx(0, TOTAL - a2 * TOTAL);
+        ctx.moveTo(S, 0); ctx.lineTo(r2_start.cx, r2_start.cy); ctx.stroke();
+        ctx.setLineDash([]);
+
+        ctx.beginPath(); ctx.strokeStyle = '#f66a0a'; ctx.lineWidth = 2;
+        const dx = W.cx - E.cx, dy = W.cy - E.cy;
+        if (Math.abs(dx) > 0.01 || Math.abs(dy) > 0.01) {
+            ctx.moveTo(E.cx - dx * 10, E.cy - dy * 10); ctx.lineTo(E.cx + dx * 10, E.cy + dy * 10);
+        }
+        ctx.stroke();
+
+        ctx.beginPath(); ctx.fillStyle = '#d73a49'; ctx.arc(E.cx, E.cy, 6, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = '#000'; ctx.fillText("E*", E.cx + 10, E.cy - 10);
+
+        ctx.beginPath(); ctx.fillStyle = '#0366d6'; ctx.arc(W.cx, W.cy, 8, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
+        ctx.fillStyle = '#000'; ctx.fillText("W", W.cx + 10, W.cy + 15);
+
+        document.getElementById('tp-val-e').innerText = `(${e_x.toFixed(2)}, ${e_y.toFixed(2)})`;
+        document.getElementById('tp-val-w').innerText = `(${w_math.x.toFixed(2)}, ${w_math.y.toFixed(2)})`;
+        let priceRatio = "∞";
+        if (Math.abs(w_math.x - e_x) > 0.001) priceRatio = Math.abs((w_math.y - e_y) / (w_math.x - e_x)).toFixed(2);
+        document.getElementById('tp-val-p').innerText = priceRatio;
+    }
+
+    canvas.addEventListener('mousedown', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const dist = Math.hypot((e.clientX - rect.left) - W.cx, (e.clientY - rect.top) - W.cy);
+        if (dist < 15) { isDragging = true; document.getElementById('tp-msg').innerText = "发生财富转移：价格调整，均衡未变！"; }
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const rect = canvas.getBoundingClientRect();
+        W.cx = Math.max(0, Math.min(S, e.clientX - rect.left));
+        W.cy = Math.max(0, Math.min(S, e.clientY - rect.top));
+        w_math = toMath(W.cx, W.cy);
+        draw();
+    });
+
+    window.addEventListener('mouseup', () => { if(isDragging) { isDragging = false; setTimeout(() => document.getElementById('tp-msg').innerText = "", 2000); }});
+    draw();
+})();
+</script>
 
 ## 5. Core
 
