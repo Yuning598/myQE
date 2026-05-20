@@ -39,7 +39,7 @@ Items 1--4 are the minimal regularity assumptions used in the standard theory. I
 
 ```{raw} html
 <div style="width:100%;max-width:1120px;margin:0 auto;">
-  <iframe src="/PhD-Course/attachment/production-set-assumptions.html" title="Production Set Assumptions" loading="lazy" style="width:100%;height:1120px;border:0;display:block;border-radius:16px;"></iframe>
+  <iframe src="/PhD-Course/production-set-assumptions.html" title="Production Set Assumptions" loading="lazy" style="width:100%;height:1120px;border:0;display:block;border-radius:16px;"></iframe>
 </div>
 ```
 
@@ -55,12 +55,19 @@ $$
 MRTS_{ij}(x)=\frac{f_i(x)}{f_j(x)}.
 $$
 
+```{raw} html
+<div style="width:100%;max-width:1120px;margin:0 auto;">
+  <iframe src="/PhD-Course/firm-properties-visualization.html" title="Production Firm Properties Visualization" loading="lazy" style="width:100%;height:1320px;border:0;display:block;border-radius:16px;"></iframe>
+</div>
+```
+
 :::{admonition} Production-function shape implications
-The slide-level judgment belongs here, right after the definition of $f$ and before the $f \leftrightarrow Y$ equivalence:
+The slide-level judgments can be written together as
 
 $$
 \begin{aligned}
-f \text{ is quasiconcave}
+f \text{ concave}
+\ &\implies\ f \text{ quasiconcave},\\
 \ &\implies\ \{x\in\mathbb R_+^{L-1}: f(x)\ge y\}\ \text{is convex for each }y>0,\\
 \ &\implies\ MRTS_{ij}(x)\ \text{is diminishing}.
 \end{aligned}
@@ -70,18 +77,10 @@ If $f$ is twice differentiable, then
 
 $$
 \begin{aligned}
-f \text{ is concave}
-\ &\implies\ f_{ii}(x)\le 0\\
+f \text{ concave}
+\ &\implies\ f_{ii}(x)\le 0,\\
 \ &\implies\ \text{diminishing marginal productivity of input }i.
 \end{aligned}
-$$
-
-Under the single-output representation $Y=\{(-x,y):x\ge0,\ y\le f(x)\}$, the convexity link is
-
-$$
-Y \text{ convex}
-\ \Longleftrightarrow\
-f \text{ concave}.
 $$
 :::
 
@@ -93,11 +92,26 @@ $$
 Y=\{(-x,y):x\ge0,\ y\le f(x)\}.
 $$
 
-:::{admonition} $f$ concave implies $Y$ convex
-If $f$ is concave and $Y=\{(-x,y):x\ge0,\ y\le f(x)\}$, then $Y$ is convex.
+:::{admonition} Proposition
+Assume free disposal and $Y=\{(-x,y):x\ge0,\ y\le f(x)\}$. Then
+
+$$
+Y \text{ convex}
+\iff
+f \text{ concave}.
+$$
 :::
 
-Proof:
+Proof.
+
+$$
+\begin{aligned}
+f \text{ concave}
+\implies
+Y \text{ convex}
+\end{aligned}
+$$
+
 Take any $(-x^1,y^1),(-x^2,y^2)\in Y$ and $\lambda\in[0,1]$. Since both points are feasible,
 
 $$
@@ -125,17 +139,14 @@ $$
 
 Hence $(-\bar x,\bar y)\in Y$. Therefore $Y$ is convex.
 
-:::{admonition} $Y$ convex implies $f$ concave
-If $Y=\{(-x,y):x\ge0,\ y\le f(x)\}$ is convex, then $f$ is concave:
-
 $$
-f(\lambda x^1+(1-\lambda)x^2)
-\ge
-\lambda f(x^1)+(1-\lambda)f(x^2).
+\begin{aligned}
+Y \text{ convex}
+\implies
+f \text{ concave}
+\end{aligned}
 $$
-:::
 
-Proof:
 By definition,
 
 $$
@@ -156,18 +167,35 @@ $$
 By definition of $f$,
 
 $$
-\lambda f(x^1)+(1-\lambda)f(x^2)
-\le
-f(\bar x).
+\begin{aligned}
+f(\bar x)
+&\ge \lambda f(x^1)+(1-\lambda)f(x^2).
+\end{aligned}
 $$
 
 Thus $f$ is concave.
 
 ## 3. CRS iff production set is a cone
 
-:::{admonition} CRS iff production set is a cone
-Under free disposal, a single-output production function has constant returns to scale iff the associated production set is a cone.
+:::{admonition} Proposition
+Under free disposal,
+
+$$
+f \text{ exhibits CRS}
+\iff
+Y \text{ is a cone}.
+$$
 :::
+
+Proof.
+
+$$
+\begin{aligned}
+f \text{ exhibits CRS}
+\implies
+Y \text{ is a cone}
+\end{aligned}
+$$
 
 Assume free disposal and define constant returns to scale as
 
@@ -191,7 +219,13 @@ $$
 
 Thus $(-\lambda x,\lambda y)\in Y$. Therefore $Y$ is a cone.
 
-### $Y$ cone $\Rightarrow$ CRS
+$$
+\begin{aligned}
+Y \text{ is a cone}
+\implies
+f \text{ exhibits CRS}
+\end{aligned}
+$$
 
 Let $y=f(x)$, so $(-x,y)\in Y$. Since $Y$ is a cone,
 

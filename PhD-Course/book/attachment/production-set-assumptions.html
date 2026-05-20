@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Production Set Assumptions Visualization</title>
+
   <style>
     :root {
       --bg: #f6f8fb;
@@ -23,26 +24,39 @@
       --radius: 18px;
     }
 
-    * { box-sizing: border-box; }
-    html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
 
     body {
       min-height: 100vh;
       margin: 0;
-      padding: clamp(12px, 2vw, 24px);
+      padding: clamp(10px, 1.8vw, 22px);
       color: var(--text);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: radial-gradient(circle at top left, #eef4ff 0, var(--bg) 34rem);
     }
 
+    .ps-wrapper {
+      width: min(100%, 1060px);
+      margin: 0 auto;
+      container-type: inline-size;
+    }
+
     .app {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.85fr);
-      gap: clamp(14px, 2vw, 22px);
+      grid-template-columns: minmax(320px, 1.2fr) minmax(245px, 0.8fr);
+      gap: clamp(12px, 1.6vw, 18px);
       align-items: start;
-      width: min(100%, 1120px);
+      width: 100%;
       max-width: 100%;
-      margin: 0 auto;
     }
 
     .card {
@@ -53,73 +67,87 @@
       box-shadow: var(--shadow);
     }
 
-    .canvas-card { padding: clamp(14px, 1.8vw, 20px); }
+    .canvas-card {
+      padding: clamp(12px, 1.6vw, 18px);
+    }
 
     .canvas-title {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(180px, 0.8fr);
-      gap: 10px 16px;
+      grid-template-columns: minmax(0, 0.95fr) minmax(150px, 1fr);
+      gap: 8px 14px;
       align-items: start;
       margin-bottom: 10px;
     }
 
     .canvas-title h1 {
       margin: 0;
-      font-size: clamp(1.02rem, 1.6vw, 1.18rem);
-      line-height: 1.25;
+      font-size: clamp(1rem, 1.35vw, 1.18rem);
+      line-height: 1.22;
       letter-spacing: -0.01em;
     }
 
     .canvas-title p {
       margin: 0;
       color: var(--muted);
-      font-size: clamp(0.76rem, 1.15vw, 0.82rem);
-      line-height: 1.4;
+      font-size: clamp(0.73rem, 1vw, 0.82rem);
+      line-height: 1.38;
     }
 
-    .canvas-title .title-sub { margin-top: 6px; max-width: 280px; }
-    .canvas-title .title-note { max-width: 320px; text-align: right; }
+    .canvas-title .title-sub {
+      margin-top: 6px;
+      max-width: 260px;
+    }
+
+    .canvas-title .title-note {
+      max-width: 310px;
+      text-align: right;
+    }
 
     .canvas-wrap {
       position: relative;
-      width: 100%;
+      width: min(100%, 620px);
       aspect-ratio: 1 / 1;
+      margin: 0 auto;
       overflow: hidden;
       background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
       border: 1px solid var(--border);
       border-radius: 14px;
     }
 
-    canvas { display: block; width: 100%; height: 100%; }
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
 
     .controls {
-      padding: clamp(14px, 1.8vw, 20px);
+      padding: clamp(12px, 1.6vw, 18px);
       overflow: hidden;
     }
 
     .controls h2 {
-      margin: 0 0 14px;
-      padding-bottom: 10px;
-      font-size: clamp(1rem, 1.5vw, 1.1rem);
+      margin: 0 0 12px;
+      padding-bottom: 9px;
+      font-size: clamp(1rem, 1.3vw, 1.1rem);
       border-bottom: 2px solid var(--blue);
     }
 
     .toolbar {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 14px;
+      gap: 8px;
+      margin-bottom: 12px;
     }
 
     .toolbar button {
       min-width: 0;
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 10px 12px;
+      padding: 9px 10px;
       color: var(--text);
       background: #f8fafc;
       font-weight: 700;
-      font-size: 0.92rem;
+      font-size: clamp(0.78rem, 1vw, 0.9rem);
       cursor: pointer;
     }
 
@@ -128,14 +156,17 @@
       border-color: #bfd2ff;
     }
 
-    .control-list { display: grid; gap: 10px; }
+    .control-list {
+      display: grid;
+      gap: 8px;
+    }
 
     .control-item {
       display: grid;
-      grid-template-columns: 24px minmax(0, 1fr);
-      gap: 10px;
+      grid-template-columns: 22px minmax(0, 1fr);
+      gap: 9px;
       align-items: start;
-      padding: 11px 12px;
+      padding: 9px 10px;
       border: 1px solid #dbe3ef;
       border-radius: 12px;
       background: #fcfdff;
@@ -149,8 +180,8 @@
     }
 
     .control-item input {
-      width: 20px;
-      height: 20px;
+      width: 19px;
+      height: 19px;
       margin: 3px 0 0;
       accent-color: var(--blue);
       cursor: pointer;
@@ -160,176 +191,280 @@
       display: block;
       overflow-wrap: anywhere;
       font-weight: 780;
-      font-size: clamp(0.9rem, 1.2vw, 0.98rem);
-      line-height: 1.25;
+      font-size: clamp(0.82rem, 1vw, 0.95rem);
+      line-height: 1.24;
       cursor: pointer;
       user-select: none;
     }
 
     .control-item p {
-      margin: 5px 0 0;
+      margin: 4px 0 0;
       color: var(--muted);
-      font-size: clamp(0.76rem, 1vw, 0.82rem);
-      line-height: 1.38;
+      font-size: clamp(0.72rem, 0.9vw, 0.8rem);
+      line-height: 1.34;
       overflow-wrap: anywhere;
     }
 
     .formula {
-      margin-top: 16px;
-      padding: 12px 14px;
+      margin-top: 14px;
+      padding: 11px 12px;
       color: #0f172a;
       background: #eef4ff;
       border: 1px solid #dbe7ff;
       border-radius: 12px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: clamp(0.78rem, 1.05vw, 0.95rem);
+      font-size: clamp(0.8rem, 1vw, 0.92rem);
       line-height: 1.55;
-      overflow-wrap: anywhere;
+      overflow-x: auto;
+      white-space: nowrap;
     }
 
-    @media (max-width: 1100px) {
+    .math {
+      font-family: "Times New Roman", Cambria, Georgia, serif;
+      letter-spacing: 0.01em;
+    }
+
+    .math sup,
+    .math sub {
+      font-size: 0.72em;
+      line-height: 0;
+    }
+
+    @container (max-width: 620px) {
       .app {
-        grid-template-columns: minmax(0, 1.05fr) minmax(260px, 0.95fr);
-        width: 100%;
+        grid-template-columns: 1fr;
       }
 
-      .control-item { padding: 10px; }
-    }
+      .canvas-title {
+        grid-template-columns: 1fr;
+      }
 
-    @media (max-width: 860px) {
-      .app { grid-template-columns: 1fr; }
-      .canvas-title { grid-template-columns: 1fr; }
-      .canvas-title .title-note { max-width: unset; text-align: left; }
+      .canvas-title .title-note {
+        max-width: unset;
+        text-align: left;
+      }
+
+      .canvas-wrap {
+        width: min(100%, 560px);
+      }
     }
   </style>
 </head>
-<body>
-  <main class="app">
-    <section class="card canvas-card" aria-label="Production set diagram">
-      <div class="canvas-title">
-        <div>
-          <h1>Production Set Assumptions</h1>
-          <p class="title-sub">净产出空间：正值表示 net output，负值表示 net input。</p>
-        </div>
-        <p class="title-note">图中固定展示一个满足六条性质的标准生产集；勾选项只用于高亮相应几何含义。</p>
-      </div>
-      <div class="canvas-wrap"><canvas id="productionCanvas"></canvas></div>
-    </section>
 
-    <aside class="card controls" aria-label="Production set controls">
-      <h2>生产集假设</h2>
-      <div class="toolbar">
-        <button type="button" id="selectAll">全选</button>
-        <button type="button" id="clearAll">清空</button>
-      </div>
-      <div class="control-list" id="controlList"></div>
-      <div class="formula">Y = { y ∈ R² : y₂ ≤ −a y₁ }, a &gt; 0</div>
-    </aside>
-  </main>
+<body>
+  <div class="ps-wrapper">
+    <main class="app">
+      <section class="card canvas-card" aria-label="Production set diagram">
+        <div class="canvas-title">
+          <div>
+            <h1>Production Set Assumptions</h1>
+            <p class="title-sub">净产出空间：正值表示 net output，负值表示 net input。</p>
+          </div>
+          <p class="title-note">
+            图中固定展示一个满足六条性质的标准生产集；勾选项只用于高亮相应几何含义。
+          </p>
+        </div>
+
+        <div class="canvas-wrap">
+          <canvas id="productionCanvas"></canvas>
+        </div>
+      </section>
+
+      <aside class="card controls" aria-label="Production set controls">
+        <h2>生产集假设</h2>
+
+        <div class="toolbar">
+          <button type="button" id="selectAll">全选</button>
+          <button type="button" id="clearAll">清空</button>
+        </div>
+
+        <div class="control-list" id="controlList"></div>
+
+        <div class="formula">
+          <span class="math">Y = { y ∈ ℝ<sup>2</sup> : y<sub>2</sub> ≤ −a y<sub>1</sub> }, a &gt; 0</span>
+        </div>
+      </aside>
+    </main>
+  </div>
 
   <script>
     (() => {
-      const canvas = document.getElementById('productionCanvas');
-      const ctx = canvas.getContext('2d');
-      const controlList = document.getElementById('controlList');
-      const selectAllButton = document.getElementById('selectAll');
-      const clearAllButton = document.getElementById('clearAll');
+      const canvas = document.querySelector("#productionCanvas");
+      const ctx = canvas.getContext("2d");
+      const controlList = document.querySelector("#controlList");
+      const selectAllButton = document.querySelector("#selectAll");
+      const clearAllButton = document.querySelector("#clearAll");
 
       const assumptions = [
-        { id: 'inaction', title: '1. 停产可能性 (Inaction)', desc: '原点属于生产集：0 ∈ Y。', color: '#0f172a', checked: true },
-        { id: 'closed', title: '2. 闭集 (Closed)', desc: '边界 y₂ = −a y₁ 属于 Y。', color: '#2563eb', checked: true },
-        { id: 'freeDisposal', title: '3. 自由处置 (Free disposal)', desc: '若 y ∈ Y 且 ŷ ≤ y，则 ŷ ∈ Y。', color: '#16a34a', checked: true },
-        { id: 'noFreeLunch', title: '4. 无免费午餐 (No free lunch)', desc: 'Y 与正正交体只在原点相交。', color: '#dc2626', checked: true },
-        { id: 'convex', title: '5. 凸集 (Convex)', desc: '两个可行计划的 convex combination 仍可行。', color: '#7c3aed', checked: true },
-        { id: 'cone', title: '6. 锥体 (Cone / CRS)', desc: '若 y ∈ Y 且 λ > 0，则 λy ∈ Y。', color: '#ea580c', checked: true }
+        {
+          id: "inaction",
+          title: "1. 停产可能性 (Inaction)",
+          desc: "原点属于生产集：0 ∈ Y。",
+          color: "#0f172a",
+          checked: true,
+        },
+        {
+          id: "closed",
+          title: "2. 闭集 (Closed)",
+          desc: "边界 y₂ = −a y₁ 属于 Y。",
+          color: "#2563eb",
+          checked: true,
+        },
+        {
+          id: "freeDisposal",
+          title: "3. 自由处置 (Free disposal)",
+          desc: "若 y ∈ Y 且 ŷ ≤ y，则 ŷ ∈ Y。",
+          color: "#16a34a",
+          checked: true,
+        },
+        {
+          id: "noFreeLunch",
+          title: "4. 无免费午餐 (No free lunch)",
+          desc: "Y 与正正交体只在原点相交。",
+          color: "#dc2626",
+          checked: true,
+        },
+        {
+          id: "convex",
+          title: "5. 凸集 (Convex)",
+          desc: "两个可行计划的 convex combination 仍可行。",
+          color: "#7c3aed",
+          checked: true,
+        },
+        {
+          id: "cone",
+          title: "6. 锥体 (Cone / CRS)",
+          desc: "若 y ∈ Y 且 λ > 0，则 λy ∈ Y。",
+          color: "#ea580c",
+          checked: true,
+        },
       ];
 
-      const state = Object.fromEntries(assumptions.map((a) => [a.id, a.checked]));
-      const view = { minX: -4, maxX: 3, minY: -3, maxY: 4, padding: 54 };
-      const tech = { a: 0.65 };
+      const state = Object.fromEntries(
+        assumptions.map((item) => [item.id, item.checked])
+      );
 
-      function css(name) {
-        return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+      const view = {
+        minX: -4,
+        maxX: 3,
+        minY: -3,
+        maxY: 4,
+        padding: 54,
+      };
+
+      const technology = {
+        a: 0.65,
+      };
+
+      function getCssVar(name) {
+        return getComputedStyle(document.documentElement)
+          .getPropertyValue(name)
+          .trim();
       }
 
-      function size() {
+      function setupCanvasForHiDpi() {
+        const ratio = window.devicePixelRatio || 1;
         const rect = canvas.getBoundingClientRect();
-        const dpr = window.devicePixelRatio || 1;
-        canvas.width = Math.round(rect.width * dpr);
-        canvas.height = Math.round(rect.height * dpr);
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        return { w: rect.width, h: rect.height };
+
+        canvas.width = Math.round(rect.width * ratio);
+        canvas.height = Math.round(rect.height * ratio);
+
+        ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+        canvas.dataset.cssWidth = rect.width;
+        canvas.dataset.cssHeight = rect.height;
       }
 
-      function W() { return canvas.clientWidth || 720; }
-      function H() { return canvas.clientHeight || 720; }
+      function cssWidth() {
+        return Number(canvas.dataset.cssWidth) || canvas.clientWidth || 620;
+      }
 
-      function P({ x, y }) {
-        const w = W() - 2 * view.padding;
-        const h = H() - 2 * view.padding;
+      function cssHeight() {
+        return Number(canvas.dataset.cssHeight) || canvas.clientHeight || 620;
+      }
+
+      function toCanvas({ x, y }) {
+        const width = cssWidth() - 2 * view.padding;
+        const height = cssHeight() - 2 * view.padding;
+
         return {
-          x: view.padding + ((x - view.minX) / (view.maxX - view.minX)) * w,
-          y: view.padding + ((view.maxY - y) / (view.maxY - view.minY)) * h
+          x: view.padding + ((x - view.minX) / (view.maxX - view.minX)) * width,
+          y: view.padding + ((view.maxY - y) / (view.maxY - view.minY)) * height,
         };
       }
 
-      function path(points) {
+      function drawPath(points) {
         ctx.beginPath();
-        points.forEach((pt, i) => {
-          const p = P(pt);
-          if (i === 0) ctx.moveTo(p.x, p.y);
+        points.forEach((point, index) => {
+          const p = toCanvas(point);
+          if (index === 0) ctx.moveTo(p.x, p.y);
           else ctx.lineTo(p.x, p.y);
         });
       }
 
-      function arrow(from, to, color, width = 2, dashed = false) {
-        const a = P(from);
-        const b = P(to);
-        const ang = Math.atan2(b.y - a.y, b.x - a.x);
+      function drawArrow(from, to, color, width = 2, dashed = false) {
+        const a = toCanvas(from);
+        const b = toCanvas(to);
+        const angle = Math.atan2(b.y - a.y, b.x - a.x);
+
         ctx.save();
         ctx.strokeStyle = color;
         ctx.fillStyle = color;
         ctx.lineWidth = width;
         ctx.setLineDash(dashed ? [7, 6] : []);
+
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(b.x, b.y);
         ctx.stroke();
+
         ctx.setLineDash([]);
         ctx.beginPath();
         ctx.moveTo(b.x, b.y);
-        ctx.lineTo(b.x - 11 * Math.cos(ang - Math.PI / 6), b.y - 11 * Math.sin(ang - Math.PI / 6));
-        ctx.lineTo(b.x - 11 * Math.cos(ang + Math.PI / 6), b.y - 11 * Math.sin(ang + Math.PI / 6));
+        ctx.lineTo(
+          b.x - 11 * Math.cos(angle - Math.PI / 6),
+          b.y - 11 * Math.sin(angle - Math.PI / 6)
+        );
+        ctx.lineTo(
+          b.x - 11 * Math.cos(angle + Math.PI / 6),
+          b.y - 11 * Math.sin(angle + Math.PI / 6)
+        );
         ctx.closePath();
         ctx.fill();
         ctx.restore();
       }
 
-      function label(text, point, opts = {}) {
-        const p = P(point);
+      function drawLabel(text, point, options = {}) {
+        const p = toCanvas(point);
+
         ctx.save();
-        ctx.font = `${opts.weight ?? 600} ${opts.size ?? 14}px system-ui, sans-serif`;
-        ctx.textAlign = opts.align ?? 'left';
-        ctx.textBaseline = opts.baseline ?? 'middle';
-        const lines = String(text).split('\n');
-        const lh = opts.lineHeight ?? 16;
-        const x = p.x + (opts.dx ?? 0);
-        const y = p.y + (opts.dy ?? 0);
-        lines.forEach((line, i) => {
-          const yy = y + i * lh;
-          if (opts.halo !== false) {
-            ctx.lineWidth = opts.haloWidth ?? 4;
-            ctx.strokeStyle = 'rgba(255,255,255,0.92)';
+        ctx.font = `${options.weight ?? 600} ${options.size ?? 14}px system-ui, sans-serif`;
+        ctx.textAlign = options.align ?? "left";
+        ctx.textBaseline = options.baseline ?? "middle";
+
+        const lines = String(text).split("\n");
+        const lineHeight = options.lineHeight ?? 16;
+        const x = p.x + (options.dx ?? 0);
+        const y = p.y + (options.dy ?? 0);
+
+        lines.forEach((line, index) => {
+          const yy = y + index * lineHeight;
+
+          if (options.halo !== false) {
+            ctx.lineWidth = options.haloWidth ?? 4;
+            ctx.strokeStyle = "rgba(255, 255, 255, 0.92)";
             ctx.strokeText(line, x, yy);
           }
-          ctx.fillStyle = opts.color ?? '#1f2937';
+
+          ctx.fillStyle = options.color ?? "#1f2937";
           ctx.fillText(line, x, yy);
         });
+
         ctx.restore();
       }
 
-      function dot(point, color, radius = 5) {
-        const p = P(point);
+      function drawDot(point, color, radius = 5) {
+        const p = toCanvas(point);
+
         ctx.save();
         ctx.fillStyle = color;
         ctx.beginPath();
@@ -339,187 +474,307 @@
       }
 
       function frontierY(x) {
-        return -tech.a * x;
+        return -technology.a * x;
       }
 
-      function axes() {
-        ctx.clearRect(0, 0, W(), H());
+      function drawAxes() {
+        ctx.clearRect(0, 0, cssWidth(), cssHeight());
+
         ctx.save();
-        ctx.strokeStyle = css('--grid');
+        ctx.strokeStyle = getCssVar("--grid");
         ctx.lineWidth = 1;
 
         for (let x = Math.ceil(view.minX); x <= Math.floor(view.maxX); x += 1) {
-          const a = P({ x, y: view.minY });
-          const b = P({ x, y: view.maxY });
+          const a = toCanvas({ x, y: view.minY });
+          const b = toCanvas({ x, y: view.maxY });
+
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
           ctx.stroke();
         }
+
         for (let y = Math.ceil(view.minY); y <= Math.floor(view.maxY); y += 1) {
-          const a = P({ x: view.minX, y });
-          const b = P({ x: view.maxX, y });
+          const a = toCanvas({ x: view.minX, y });
+          const b = toCanvas({ x: view.maxX, y });
+
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
           ctx.stroke();
         }
+
         ctx.restore();
 
-        arrow({ x: view.minX, y: 0 }, { x: view.maxX - 0.12, y: 0 }, css('--axis'), 2);
-        arrow({ x: 0, y: view.minY }, { x: 0, y: view.maxY - 0.12 }, css('--axis'), 2);
-        label('y₁', { x: view.maxX - 0.38, y: -0.38 }, { size: 17, weight: 800 });
-        label('y₂', { x: 0.18, y: view.maxY - 0.42 }, { size: 17, weight: 800 });
-        label('net output', { x: 0.68, y: 0.34 }, { size: 12, color: '#64748b' });
-        label('net input', { x: -3.72, y: -0.34 }, { size: 12, color: '#64748b' });
+        drawArrow(
+          { x: view.minX, y: 0 },
+          { x: view.maxX - 0.12, y: 0 },
+          getCssVar("--axis"),
+          2
+        );
+
+        drawArrow(
+          { x: 0, y: view.minY },
+          { x: 0, y: view.maxY - 0.12 },
+          getCssVar("--axis"),
+          2
+        );
+
+        drawLabel("y₁", { x: view.maxX - 0.38, y: -0.38 }, {
+          size: 17,
+          weight: 800,
+        });
+
+        drawLabel("y₂", { x: 0.18, y: view.maxY - 0.42 }, {
+          size: 17,
+          weight: 800,
+        });
+
+        drawLabel("net output", { x: 0.68, y: 0.34 }, {
+          size: 12,
+          color: "#64748b",
+        });
+
+        drawLabel("net input", { x: -3.72, y: -0.34 }, {
+          size: 12,
+          color: "#64748b",
+        });
       }
 
-      function productionSet() {
+      function drawProductionSet() {
         const upperLeft = { x: view.minX, y: frontierY(view.minX) };
         const origin = { x: 0, y: 0 };
         const lowerRight = { x: view.maxX, y: view.minY };
         const lowerLeft = { x: view.minX, y: view.minY };
 
         ctx.save();
-        ctx.fillStyle = css('--blue-soft');
-        path([upperLeft, origin, lowerRight, lowerLeft]);
+
+        ctx.fillStyle = getCssVar("--blue-soft");
+        drawPath([upperLeft, origin, lowerRight, lowerLeft]);
         ctx.closePath();
         ctx.fill();
 
-        ctx.strokeStyle = css('--blue');
+        ctx.strokeStyle = getCssVar("--blue");
         ctx.lineWidth = state.closed ? 3 : 2.5;
         ctx.setLineDash(state.closed ? [] : [10, 8]);
-        path([upperLeft, origin, lowerRight]);
+        drawPath([upperLeft, origin, lowerRight]);
         ctx.stroke();
+
         ctx.restore();
 
-        label('Y', { x: -2.85, y: -1.9 }, { color: css('--blue'), size: 22, weight: 850 });
+        drawLabel("Y", { x: -2.85, y: -1.9 }, {
+          color: getCssVar("--blue"),
+          size: 22,
+          weight: 850,
+        });
+
         if (state.closed) {
-          label('closed frontier', { x: -3.85, y: 3.15 }, { color: css('--blue'), size: 13, weight: 700 });
+          drawLabel("closed frontier", { x: -3.85, y: 3.15 }, {
+            color: getCssVar("--blue"),
+            size: 13,
+            weight: 700,
+          });
         }
       }
 
-      function inaction() {
+      function drawInaction() {
         if (!state.inaction) return;
-        dot({ x: 0, y: 0 }, css('--axis'), 6);
-        label('0 ∈ Y', { x: 0.15, y: 0.38 }, { size: 14, weight: 800 });
+
+        drawDot({ x: 0, y: 0 }, getCssVar("--axis"), 6);
+
+        drawLabel("0 ∈ Y", { x: 0.15, y: 0.38 }, {
+          size: 14,
+          weight: 800,
+        });
       }
 
-      function freeDisposal() {
+      function drawFreeDisposal() {
         if (!state.freeDisposal) return;
+
         const y = { x: -1.35, y: 0.95 };
         const yHat = { x: -2.55, y: -0.55 };
-        dot(y, css('--green'), 6);
-        dot(yHat, css('--green'), 5);
-        arrow(y, yHat, css('--green'), 2, true);
-        label('y', { x: -1.10, y: 1.28 }, { color: css('--green'), size: 14, weight: 800 });
-        label('ŷ ≤ y', { x: -3.22, y: -0.96 }, { color: css('--green'), size: 14, weight: 800 });
+
+        drawDot(y, getCssVar("--green"), 6);
+        drawDot(yHat, getCssVar("--green"), 5);
+
+        drawArrow(y, yHat, getCssVar("--green"), 2, true);
+
+        drawLabel("y", { x: -1.10, y: 1.28 }, {
+          color: getCssVar("--green"),
+          size: 14,
+          weight: 800,
+        });
+
+        drawLabel("ŷ ≤ y", { x: -3.22, y: -0.96 }, {
+          color: getCssVar("--green"),
+          size: 14,
+          weight: 800,
+        });
       }
 
-      function noFreeLunch() {
+      function drawNoFreeLunch() {
         if (!state.noFreeLunch) return;
+
         const points = [
           { x: 0, y: 0 },
           { x: view.maxX, y: 0 },
           { x: view.maxX, y: view.maxY },
-          { x: 0, y: view.maxY }
+          { x: 0, y: view.maxY },
         ];
+
         ctx.save();
-        ctx.fillStyle = 'rgba(220, 38, 38, 0.10)';
-        path(points);
+
+        ctx.fillStyle = "rgba(220, 38, 38, 0.10)";
+        drawPath(points);
         ctx.closePath();
         ctx.fill();
-        ctx.strokeStyle = 'rgba(220, 38, 38, 0.55)';
+
+        ctx.strokeStyle = "rgba(220, 38, 38, 0.55)";
         ctx.lineWidth = 2;
         ctx.setLineDash([8, 6]);
-        path(points);
+        drawPath(points);
         ctx.closePath();
         ctx.stroke();
+
         ctx.restore();
-        label('no free lunch', { x: 0.38, y: 3.25 }, { color: css('--red'), size: 14, weight: 800 });
-        label('Y ∩ R²₊ = {0}', { x: 0.38, y: 2.92 }, { color: css('--red'), size: 13 });
+
+        drawLabel("no free lunch", { x: 0.38, y: 3.25 }, {
+          color: getCssVar("--red"),
+          size: 14,
+          weight: 800,
+        });
+
+        drawLabel("Y ∩ R²₊ = {0}", { x: 0.38, y: 2.92 }, {
+          color: getCssVar("--red"),
+          size: 13,
+        });
       }
 
-      function convexity() {
+      function drawConvexity() {
         if (!state.convex) return;
+
         const a = { x: -2.85, y: -1.55 };
         const b = { x: -0.72, y: 0.36 };
-        const combo = { x: 0.55 * a.x + 0.45 * b.x, y: 0.55 * a.y + 0.45 * b.y };
-        dot(a, css('--purple'), 5);
-        dot(b, css('--purple'), 5);
-        dot(combo, css('--purple'), 5);
+        const combo = {
+          x: 0.55 * a.x + 0.45 * b.x,
+          y: 0.55 * a.y + 0.45 * b.y,
+        };
+
+        drawDot(a, getCssVar("--purple"), 5);
+        drawDot(b, getCssVar("--purple"), 5);
+        drawDot(combo, getCssVar("--purple"), 5);
+
         ctx.save();
-        ctx.strokeStyle = css('--purple');
+        ctx.strokeStyle = getCssVar("--purple");
         ctx.lineWidth = 2;
         ctx.setLineDash([6, 4]);
-        path([a, b]);
+        drawPath([a, b]);
         ctx.stroke();
         ctx.restore();
-        label('convex\ncombination', { x: -2.85, y: -0.18 }, { color: css('--purple'), size: 12.5, weight: 800, lineHeight: 14 });
+
+        drawLabel("convex\ncombination", { x: -2.85, y: -0.18 }, {
+          color: getCssVar("--purple"),
+          size: 12.5,
+          weight: 800,
+          lineHeight: 14,
+        });
       }
 
-      function cone() {
+      function drawCone() {
         if (!state.cone) return;
+
         const y = { x: -1.05, y: 0.68 };
-        const up = { x: -3.05, y: 1.98 };
-        const down = { x: -0.42, y: 0.27 };
-        dot(y, css('--orange'), 5);
-        arrow(y, up, css('--orange'), 2.5);
-        arrow(y, down, css('--orange'), 2.5);
-        label('λ > 1', { x: -3.42, y: 2.34 }, { color: css('--orange'), size: 13, weight: 800 });
-        label('0 < λ < 1', { x: 0.02, y: 0.66 }, { color: css('--orange'), size: 12.5, weight: 800 });
+        const scaledUp = { x: -3.05, y: 1.98 };
+        const scaledDown = { x: -0.42, y: 0.27 };
+
+        drawDot(y, getCssVar("--orange"), 5);
+
+        drawArrow(y, scaledUp, getCssVar("--orange"), 2.5);
+        drawArrow(y, scaledDown, getCssVar("--orange"), 2.5);
+
+        drawLabel("λ > 1", { x: -3.42, y: 2.34 }, {
+          color: getCssVar("--orange"),
+          size: 13,
+          weight: 800,
+        });
+
+        drawLabel("0 < λ < 1", { x: 0.02, y: 0.66 }, {
+          color: getCssVar("--orange"),
+          size: 12.5,
+          weight: 800,
+        });
       }
 
       function draw() {
-        axes();
-        productionSet();
-        noFreeLunch();
-        freeDisposal();
-        convexity();
-        cone();
-        inaction();
-      }
-
-      function renderControls() {
-        controlList.replaceChildren(...assumptions.map((item) => {
-          const wrapper = document.createElement('div');
-          wrapper.className = 'control-item';
-          const input = document.createElement('input');
-          input.type = 'checkbox';
-          input.id = item.id;
-          input.checked = item.checked;
-          input.addEventListener('change', () => {
-            state[item.id] = input.checked;
-            draw();
-          });
-          const text = document.createElement('div');
-          const labelEl = document.createElement('label');
-          labelEl.htmlFor = item.id;
-          labelEl.textContent = item.title;
-          labelEl.style.color = item.color;
-          const desc = document.createElement('p');
-          desc.textContent = item.desc;
-          text.append(labelEl, desc);
-          wrapper.append(input, text);
-          return wrapper;
-        }));
+        drawAxes();
+        drawProductionSet();
+        drawNoFreeLunch();
+        drawFreeDisposal();
+        drawConvexity();
+        drawCone();
+        drawInaction();
       }
 
       function setAllControls(value) {
         assumptions.forEach((item) => {
           state[item.id] = value;
-          const input = document.getElementById(item.id);
+
+          const input = document.querySelector(`#${item.id}`);
           if (input) input.checked = value;
         });
+
         draw();
       }
 
-      renderControls();
-      size();
-      draw();
-      selectAllButton.addEventListener('click', () => setAllControls(true));
-      clearAllButton.addEventListener('click', () => setAllControls(false));
-      window.addEventListener('resize', () => { size(); draw(); });
+      function renderControls() {
+        controlList.replaceChildren(
+          ...assumptions.map((item) => {
+            const wrapper = document.createElement("div");
+            wrapper.className = "control-item";
+
+            const input = document.createElement("input");
+            input.type = "checkbox";
+            input.id = item.id;
+            input.checked = item.checked;
+
+            input.addEventListener("change", () => {
+              state[item.id] = input.checked;
+              draw();
+            });
+
+            const text = document.createElement("div");
+
+            const label = document.createElement("label");
+            label.htmlFor = item.id;
+            label.textContent = item.title;
+            label.style.color = item.color;
+
+            const desc = document.createElement("p");
+            desc.textContent = item.desc;
+
+            text.append(label, desc);
+            wrapper.append(input, text);
+
+            return wrapper;
+          })
+        );
+      }
+
+      function initialize() {
+        renderControls();
+        setupCanvasForHiDpi();
+        draw();
+
+        selectAllButton.addEventListener("click", () => setAllControls(true));
+        clearAllButton.addEventListener("click", () => setAllControls(false));
+
+        window.addEventListener("resize", () => {
+          setupCanvasForHiDpi();
+          draw();
+        });
+      }
+
+      initialize();
     })();
   </script>
 </body>

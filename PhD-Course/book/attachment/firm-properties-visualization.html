@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Production Firm Properties Visualization</title>
+
+
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --border: #d9e2ec;
+      --grid: #edf2f7;
+      --axis: #0f172a;
+      --blue: #2563eb;
+      --blue-soft: rgba(37, 99, 235, 0.12);
+      --green: #16a34a;
+      --green-soft: rgba(22, 163, 74, 0.15);
+      --red: #dc2626;
+      --red-soft: rgba(220, 38, 38, 0.12);
+      --orange: #ea580c;
+      --purple: #7c3aed;
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: clamp(12px, 2vw, 24px);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #eef4ff 0, var(--bg) 34rem);
+    }
+
+    .fp-shell {
+      width: min(100%, 1120px);
+      margin: 0 auto;
+    }
+
+    .fp-title {
+      margin: 0 0 16px;
+      text-align: center;
+    }
+
+    .fp-title h2 {
+      margin: 0;
+      font-size: clamp(1.18rem, 2vw, 1.45rem);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .fp-title p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .fp-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(14px, 2vw, 22px);
+      align-items: start;
+    }
+
+    .fp-card {
+      min-width: 0;
+      padding: clamp(14px, 1.8vw, 20px);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .fp-card h3 {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    .fp-card p {
+      min-height: 3.1em;
+      margin: 8px 0 12px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .fp-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding: 10px 12px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .fp-controls input {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--blue);
+      cursor: pointer;
+    }
+
+    .fp-controls label {
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 780;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .canvas-wrap {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .formula-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(14px, 2vw, 22px);
+      margin-top: 14px;
+    }
+
+    .formula {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 14px;
+      color: #0f172a;
+      background: #eef4ff;
+      border: 1px solid #dbe7ff;
+      border-radius: 12px;
+      font-size: clamp(0.86rem, 1.05vw, 0.96rem);
+      line-height: 1.55;
+      overflow-x: auto;
+    }
+
+    .formula-line {
+      width: 100%;
+    }
+
+    .math-line {
+      display: flex;
+      align-items: center;
+      min-height: 1.55em;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    .math {
+      font-family: "Times New Roman", Cambria, Georgia, serif;
+      font-size: 1.02em;
+      line-height: 1.55;
+    }
+
+    .math .op {
+      margin: 0 0.22em;
+    }
+
+    .math .set {
+      white-space: nowrap;
+    }
+
+    .math sup,
+    .math sub {
+      font-size: 0.72em;
+      line-height: 0;
+    }
+
+    @media (max-width: 840px) {
+      .fp-grid,
+      .formula-row {
+        grid-template-columns: 1fr;
+      }
+
+      .fp-card p {
+        min-height: unset;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="fp-shell">
+    <header class="fp-title">
+      <h2>生产函数性质 (Firm Properties)</h2>
+      <p>左图强调拟凹性与投入需求集；右图强调凹性与边际生产力递减。</p>
+    </header>
+
+    <section class="fp-grid">
+      <article class="fp-card">
+        <h3>1. 拟凹性 (Quasiconcavity)</h3>
+        <p>在投入空间中，等产量线凸向原点，投入需求集 V(q) 是凸集，因此 MRTS 递减。</p>
+        <div class="fp-controls">
+          <input type="checkbox" id="quasiToggle" checked />
+          <label for="quasiToggle">f 是拟凹的 (Quasiconcave)</label>
+        </div>
+        <div class="canvas-wrap">
+          <canvas id="quasiCanvas"></canvas>
+        </div>
+      </article>
+
+      <article class="fp-card">
+        <h3>2. 凹性 (Concavity)</h3>
+        <p>在单一投入情形中，生产函数凹意味着切线斜率下降，即边际生产力递减。</p>
+        <div class="fp-controls">
+          <input type="checkbox" id="concaveToggle" checked />
+          <label for="concaveToggle">f 是凹函数 (Concave)</label>
+        </div>
+        <div class="canvas-wrap">
+          <canvas id="concaveCanvas"></canvas>
+        </div>
+      </article>
+    </section>
+
+    <section class="formula-row" aria-label="Key formulas">
+      <div class="formula">
+        <div class="formula-line math-line">
+          <span class="math"><span class="set">V(q) = {x ≥ 0 : f(x) ≥ q}</span> is a convex subset of ℝ<sup>L−1</sup><sub>+</sub>.</span>
+        </div>
+        <div class="formula-line math-line">
+          <span class="math">⇒ f is quasiconcave.</span>
+        </div>
+      </div>
+
+      <div class="formula">
+        <div class="formula-line math-line">
+          <span class="math">f(λx + (1−λ)x′) ≥ λf(x) + (1−λ)f(x′).</span>
+        </div>
+        <div class="formula-line math-line">
+          <span class="math">⇒ f<sub>ii</sub>(x) ≤ 0 <span class="op">(diminishing marginal productivity).</span></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const quasiCanvas = document.querySelector("#quasiCanvas");
+      const concaveCanvas = document.querySelector("#concaveCanvas");
+      const quasiToggle = document.querySelector("#quasiToggle");
+      const concaveToggle = document.querySelector("#concaveToggle");
+
+      const colors = {
+        text: "#1f2937",
+        muted: "#64748b",
+        grid: "#edf2f7",
+        axis: "#0f172a",
+        blue: "#2563eb",
+        green: "#16a34a",
+        greenSoft: "rgba(22, 163, 74, 0.15)",
+        red: "#dc2626",
+        redSoft: "rgba(220, 38, 38, 0.12)",
+        orange: "#ea580c",
+        purple: "#7c3aed",
+        white: "rgba(255,255,255,0.92)",
+      };
+
+      const view = {
+        quasi: { minX: 0, maxX: 10, minY: 0, maxY: 10, padding: 46 },
+        concave: { minX: 0, maxX: 10, minY: 0, maxY: 10, padding: 46 },
+      };
+
+      function setupCanvasForHiDpi(canvas) {
+        const ratio = window.devicePixelRatio || 1;
+        const rect = canvas.getBoundingClientRect();
+        const size = Math.min(rect.width, rect.height);
+
+        canvas.width = Math.round(size * ratio);
+        canvas.height = Math.round(size * ratio);
+        canvas.dataset.cssSize = size;
+
+        const ctx = canvas.getContext("2d");
+        ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+      }
+
+      function cssSize(canvas) {
+        return Number(canvas.dataset.cssSize) || canvas.clientWidth || 350;
+      }
+
+      function toCanvas(point, canvas, currentView) {
+        const size = cssSize(canvas);
+        const width = size - 2 * currentView.padding;
+        const height = size - 2 * currentView.padding;
+
+        return {
+          x: currentView.padding + ((point.x - currentView.minX) / (currentView.maxX - currentView.minX)) * width,
+          y: currentView.padding + ((currentView.maxY - point.y) / (currentView.maxY - currentView.minY)) * height,
+        };
+      }
+
+      function drawLabel(ctx, canvas, currentView, text, point, options = {}) {
+        const p = toCanvas(point, canvas, currentView);
+
+        ctx.save();
+        ctx.font = `${options.weight ?? 700} ${options.size ?? 13}px system-ui, sans-serif`;
+        ctx.textAlign = options.align ?? "left";
+        ctx.textBaseline = options.baseline ?? "middle";
+
+        const lines = String(text).split("\n");
+        const lineHeight = options.lineHeight ?? 15;
+        const x = p.x + (options.dx ?? 0);
+        const y = p.y + (options.dy ?? 0);
+
+        lines.forEach((line, index) => {
+          const yy = y + index * lineHeight;
+          if (options.halo !== false) {
+            ctx.lineWidth = options.haloWidth ?? 4;
+            ctx.strokeStyle = colors.white;
+            ctx.strokeText(line, x, yy);
+          }
+          ctx.fillStyle = options.color ?? colors.text;
+          ctx.fillText(line, x, yy);
+        });
+
+        ctx.restore();
+      }
+
+      function drawDot(ctx, canvas, currentView, point, color, radius = 5) {
+        const p = toCanvas(point, canvas, currentView);
+        ctx.save();
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      function drawCurve(ctx, canvas, currentView, points, options = {}) {
+        ctx.save();
+        ctx.strokeStyle = options.color ?? colors.text;
+        ctx.lineWidth = options.width ?? 2;
+        ctx.setLineDash(options.dashed ? [6, 6] : []);
+        ctx.beginPath();
+
+        points.forEach((point, index) => {
+          const p = toCanvas(point, canvas, currentView);
+          if (index === 0) ctx.moveTo(p.x, p.y);
+          else ctx.lineTo(p.x, p.y);
+        });
+
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      function drawGridAndAxes(ctx, canvas, currentView, xLabel, yLabel) {
+        const size = cssSize(canvas);
+        ctx.clearRect(0, 0, size, size);
+
+        ctx.save();
+        ctx.strokeStyle = colors.grid;
+        ctx.lineWidth = 1;
+
+        for (let i = 0; i <= 10; i += 2) {
+          const xA = toCanvas({ x: i, y: 0 }, canvas, currentView);
+          const xB = toCanvas({ x: i, y: 10 }, canvas, currentView);
+          const yA = toCanvas({ x: 0, y: i }, canvas, currentView);
+          const yB = toCanvas({ x: 10, y: i }, canvas, currentView);
+
+          ctx.beginPath();
+          ctx.moveTo(xA.x, xA.y);
+          ctx.lineTo(xB.x, xB.y);
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(yA.x, yA.y);
+          ctx.lineTo(yB.x, yB.y);
+          ctx.stroke();
+        }
+        ctx.restore();
+
+        const origin = toCanvas({ x: 0, y: 0 }, canvas, currentView);
+        const xEnd = toCanvas({ x: 10, y: 0 }, canvas, currentView);
+        const yEnd = toCanvas({ x: 0, y: 10 }, canvas, currentView);
+
+        ctx.save();
+        ctx.strokeStyle = colors.axis;
+        ctx.fillStyle = colors.axis;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(origin.x, origin.y);
+        ctx.lineTo(xEnd.x, xEnd.y);
+        ctx.lineTo(xEnd.x - 10, xEnd.y - 5);
+        ctx.moveTo(xEnd.x, xEnd.y);
+        ctx.lineTo(xEnd.x - 10, xEnd.y + 5);
+        ctx.moveTo(origin.x, origin.y);
+        ctx.lineTo(yEnd.x, yEnd.y);
+        ctx.lineTo(yEnd.x - 5, yEnd.y + 10);
+        ctx.moveTo(yEnd.x, yEnd.y);
+        ctx.lineTo(yEnd.x + 5, yEnd.y + 10);
+        ctx.stroke();
+        ctx.restore();
+
+        drawLabel(ctx, canvas, currentView, xLabel, { x: 7.1, y: -0.55 }, { size: 12, color: colors.text });
+        drawLabel(ctx, canvas, currentView, yLabel, { x: -0.7, y: 10.2 }, { size: 12, color: colors.text });
+        drawLabel(ctx, canvas, currentView, "0", { x: -0.35, y: -0.45 }, { size: 12, color: colors.muted });
+      }
+
+      function quasiBoundary(x, isQuasi) {
+        if (isQuasi) return 18 / x;
+        return 8.2 - 1.25 * Math.sqrt(x);
+      }
+
+      function drawRequirementSet(ctx, canvas, currentView, isQuasi, curve) {
+        const polygon = [];
+        const validCurve = curve.filter((p) => p.y >= 0 && p.y <= 10);
+        if (!validCurve.length) return;
+
+        const first = validCurve[0];
+        const last = validCurve[validCurve.length - 1];
+
+        polygon.push({ x: first.x, y: 10 });
+        polygon.push({ x: 10, y: 10 });
+        polygon.push({ x: 10, y: last.y });
+        for (let i = validCurve.length - 1; i >= 0; i -= 1) polygon.push(validCurve[i]);
+
+        ctx.save();
+        ctx.fillStyle = isQuasi ? colors.greenSoft : colors.redSoft;
+        ctx.beginPath();
+        polygon.forEach((point, index) => {
+          const p = toCanvas(point, canvas, currentView);
+          if (index === 0) ctx.moveTo(p.x, p.y);
+          else ctx.lineTo(p.x, p.y);
+        });
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+      }
+
+      function drawQuasi() {
+        const isQuasi = quasiToggle.checked;
+        const ctx = quasiCanvas.getContext("2d");
+        const currentView = view.quasi;
+
+        drawGridAndAxes(ctx, quasiCanvas, currentView, "Input x₁", "Input x₂");
+
+        const curve = [];
+        for (let x = 1.8; x <= 10; x += 0.05) {
+          const y = quasiBoundary(x, isQuasi);
+          if (y >= 0 && y <= 10) curve.push({ x, y });
+        }
+
+        drawRequirementSet(ctx, quasiCanvas, currentView, isQuasi, curve);
+        drawCurve(ctx, quasiCanvas, currentView, curve, {
+          color: isQuasi ? colors.green : colors.red,
+          width: 3,
+        });
+
+        if (isQuasi) {
+          const a = { x: 3.0, y: 7.2 };
+          const b = { x: 8.6, y: 4.0 };
+          const m = { x: 0.5 * a.x + 0.5 * b.x, y: 0.5 * a.y + 0.5 * b.y };
+
+          drawCurve(ctx, quasiCanvas, currentView, [a, b], { color: colors.purple, width: 2, dashed: true });
+          drawDot(ctx, quasiCanvas, currentView, a, colors.purple, 5);
+          drawDot(ctx, quasiCanvas, currentView, b, colors.purple, 5);
+          drawDot(ctx, quasiCanvas, currentView, m, colors.purple, 5);
+
+          drawLabel(ctx, quasiCanvas, currentView, "V(q): convex", { x: 5.25, y: 8.4 }, {
+            color: colors.green,
+            size: 13,
+            weight: 800,
+          });
+          drawLabel(ctx, quasiCanvas, currentView, "isoquant", { x: 7.3, y: 2.25 }, {
+            color: colors.green,
+            size: 13,
+            weight: 800,
+          });
+        } else {
+          const a = { x: 2.2, y: 6.4 };
+          const b = { x: 8.8, y: 4.8 };
+          const m = { x: 0.5 * a.x + 0.5 * b.x, y: 0.5 * a.y + 0.5 * b.y };
+
+          drawCurve(ctx, quasiCanvas, currentView, [a, b], { color: colors.purple, width: 2, dashed: true });
+          drawDot(ctx, quasiCanvas, currentView, a, colors.purple, 5);
+          drawDot(ctx, quasiCanvas, currentView, b, colors.purple, 5);
+          drawDot(ctx, quasiCanvas, currentView, m, colors.red, 5);
+
+          drawLabel(ctx, quasiCanvas, currentView, "not convex", { x: 5.5, y: 8.4 }, {
+            color: colors.red,
+            size: 13,
+            weight: 800,
+          });
+          drawLabel(ctx, quasiCanvas, currentView, "midpoint falls out", { x: 4.25, y: 3.1 }, {
+            color: colors.red,
+            size: 12,
+            weight: 800,
+          });
+        }
+      }
+
+      function productionY(x, isConcave) {
+        if (isConcave) return 3.05 * Math.sqrt(x);
+        return 0.08 * x * x;
+      }
+
+      function drawTangent(ctx, canvas, currentView, x0, isConcave, label) {
+        const y0 = productionY(x0, isConcave);
+        const h = 0.01;
+        const slope = (productionY(x0 + h, isConcave) - productionY(x0 - h, isConcave)) / (2 * h);
+        const x1 = Math.max(0, x0 - 1.4);
+        const x2 = Math.min(10, x0 + 1.4);
+        const tangent = [
+          { x: x1, y: y0 + slope * (x1 - x0) },
+          { x: x2, y: y0 + slope * (x2 - x0) },
+        ];
+
+        drawCurve(ctx, canvas, currentView, tangent, { color: colors.orange, width: 2, dashed: true });
+        drawDot(ctx, canvas, currentView, { x: x0, y: y0 }, colors.orange, 5);
+        drawLabel(ctx, canvas, currentView, label, { x: x0 + 0.18, y: y0 + 0.7 }, {
+          color: colors.orange,
+          size: 12,
+          weight: 800,
+        });
+      }
+
+      function drawConcave() {
+        const isConcave = concaveToggle.checked;
+        const ctx = concaveCanvas.getContext("2d");
+        const currentView = view.concave;
+
+        drawGridAndAxes(ctx, concaveCanvas, currentView, "Input xᵢ", "Output y");
+
+        const curve = [];
+        for (let x = 0; x <= 10; x += 0.05) {
+          const y = productionY(x, isConcave);
+          if (y >= 0 && y <= 10) curve.push({ x, y });
+        }
+
+        drawCurve(ctx, concaveCanvas, currentView, curve, {
+          color: colors.blue,
+          width: 3,
+        });
+
+        drawTangent(ctx, concaveCanvas, currentView, 2.2, isConcave, isConcave ? "high MP" : "low MP");
+        drawTangent(ctx, concaveCanvas, currentView, 7.4, isConcave, isConcave ? "low MP" : "high MP");
+
+        if (isConcave) {
+          drawLabel(ctx, concaveCanvas, currentView, "slope decreases\nfᵢᵢ(x) ≤ 0", { x: 4.75, y: 4.1 }, {
+            color: colors.green,
+            size: 13,
+            weight: 800,
+            lineHeight: 15,
+          });
+        } else {
+          drawLabel(ctx, concaveCanvas, currentView, "slope increases\nfᵢᵢ(x) > 0", { x: 3.8, y: 3.1 }, {
+            color: colors.red,
+            size: 13,
+            weight: 800,
+            lineHeight: 15,
+          });
+        }
+      }
+
+      function initialize() {
+        setupCanvasForHiDpi(quasiCanvas);
+        setupCanvasForHiDpi(concaveCanvas);
+        drawQuasi();
+        drawConcave();
+
+        quasiToggle.addEventListener("change", drawQuasi);
+        concaveToggle.addEventListener("change", drawConcave);
+
+        window.addEventListener("resize", () => {
+          setupCanvasForHiDpi(quasiCanvas);
+          setupCanvasForHiDpi(concaveCanvas);
+          drawQuasi();
+          drawConcave();
+        });
+      }
+
+      initialize();
+    })();
+  </script>
+</body>
+</html>

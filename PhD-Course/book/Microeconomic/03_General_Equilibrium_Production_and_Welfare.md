@@ -415,13 +415,13 @@ Thus, with $L$ goods, clearing $L-1$ markets implies the last market clears.
 ### 4.5 Transfer paradox widget
 
 <div style="width:100%;max-width:1120px;margin:0 auto;">
-  <iframe src="/PhD-Course/attachment/transfer-paradox.html" title="Transfer Paradox" loading="lazy" style="width:100%;height:920px;border:0;display:block;border-radius:16px;"></iframe>
+  <iframe src="/PhD-Course/transfer-paradox.html" title="Transfer Paradox" loading="lazy" style="width:100%;height:620px;border:0;display:block;border-radius:16px;"></iframe>
 </div>
 
 ### 4.6 FWT and SWT widget
 
 <div style="width:100%;max-width:1120px;margin:0 auto;">
-  <iframe src="/PhD-Course/attachment/fwt-swt-widget.html" title="FWT and SWT Widget" loading="lazy" style="width:100%;height:1040px;border:0;display:block;border-radius:16px;"></iframe>
+  <iframe src="/PhD-Course/fwt-swt-widget.html" title="FWT and SWT Widget" loading="lazy" style="width:100%;height:700px;border:0;display:block;border-radius:16px;"></iframe>
 </div>
 
 ## 5. Core
