@@ -36,24 +36,24 @@
     }
 
     body {
-      min-height: 100vh;
+      min-height: 0;
       margin: 0;
-      padding: clamp(10px, 1.8vw, 22px);
+      padding: clamp(8px, 1.4vw, 16px);
       color: var(--text);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: radial-gradient(circle at top left, #eef4ff 0, var(--bg) 34rem);
     }
 
     .ps-wrapper {
-      width: min(100%, 1060px);
+      width: min(100%, 1000px);
       margin: 0 auto;
       container-type: inline-size;
     }
 
     .app {
       display: grid;
-      grid-template-columns: minmax(320px, 1.2fr) minmax(245px, 0.8fr);
-      gap: clamp(12px, 1.6vw, 18px);
+      grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+      gap: clamp(10px, 1.2vw, 14px);
       align-items: start;
       width: 100%;
       max-width: 100%;
@@ -68,7 +68,7 @@
     }
 
     .canvas-card {
-      padding: clamp(12px, 1.6vw, 18px);
+      padding: clamp(10px, 1.2vw, 14px);
     }
 
     .canvas-title {
@@ -76,12 +76,12 @@
       grid-template-columns: minmax(0, 0.95fr) minmax(150px, 1fr);
       gap: 8px 14px;
       align-items: start;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .canvas-title h1 {
       margin: 0;
-      font-size: clamp(1rem, 1.35vw, 1.18rem);
+      font-size: clamp(0.98rem, 1.25vw, 1.12rem);
       line-height: 1.22;
       letter-spacing: -0.01em;
     }
@@ -89,23 +89,23 @@
     .canvas-title p {
       margin: 0;
       color: var(--muted);
-      font-size: clamp(0.73rem, 1vw, 0.82rem);
+      font-size: clamp(0.72rem, 0.96vw, 0.8rem);
       line-height: 1.38;
     }
 
     .canvas-title .title-sub {
-      margin-top: 6px;
-      max-width: 260px;
+      margin-top: 5px;
+      max-width: 240px;
     }
 
     .canvas-title .title-note {
-      max-width: 310px;
+      max-width: 290px;
       text-align: right;
     }
 
     .canvas-wrap {
       position: relative;
-      width: min(100%, 620px);
+      width: 100%;
       aspect-ratio: 1 / 1;
       margin: 0 auto;
       overflow: hidden;
@@ -121,13 +121,13 @@
     }
 
     .controls {
-      padding: clamp(12px, 1.6vw, 18px);
+      padding: clamp(10px, 1.2vw, 14px);
       overflow: hidden;
     }
 
     .controls h2 {
-      margin: 0 0 12px;
-      padding-bottom: 9px;
+      margin: 0 0 10px;
+      padding-bottom: 8px;
       font-size: clamp(1rem, 1.3vw, 1.1rem);
       border-bottom: 2px solid var(--blue);
     }
@@ -136,14 +136,14 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .toolbar button {
       min-width: 0;
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 9px 10px;
+      padding: 8px 10px;
       color: var(--text);
       background: #f8fafc;
       font-weight: 700;
@@ -158,15 +158,15 @@
 
     .control-list {
       display: grid;
-      gap: 8px;
+      gap: 7px;
     }
 
     .control-item {
       display: grid;
       grid-template-columns: 22px minmax(0, 1fr);
-      gap: 9px;
+      gap: 8px;
       align-items: start;
-      padding: 9px 10px;
+      padding: 8px 10px;
       border: 1px solid #dbe3ef;
       border-radius: 12px;
       background: #fcfdff;
@@ -191,28 +191,28 @@
       display: block;
       overflow-wrap: anywhere;
       font-weight: 780;
-      font-size: clamp(0.82rem, 1vw, 0.95rem);
+      font-size: clamp(0.8rem, 0.96vw, 0.92rem);
       line-height: 1.24;
       cursor: pointer;
       user-select: none;
     }
 
     .control-item p {
-      margin: 4px 0 0;
+      margin: 3px 0 0;
       color: var(--muted);
-      font-size: clamp(0.72rem, 0.9vw, 0.8rem);
+      font-size: clamp(0.7rem, 0.84vw, 0.78rem);
       line-height: 1.34;
       overflow-wrap: anywhere;
     }
 
     .formula {
-      margin-top: 14px;
-      padding: 11px 12px;
+      margin-top: 12px;
+      padding: 10px 12px;
       color: #0f172a;
       background: #eef4ff;
       border: 1px solid #dbe7ff;
       border-radius: 12px;
-      font-size: clamp(0.8rem, 1vw, 0.92rem);
+      font-size: clamp(0.78rem, 0.95vw, 0.9rem);
       line-height: 1.55;
       overflow-x: auto;
       white-space: nowrap;
@@ -229,7 +229,7 @@
       line-height: 0;
     }
 
-    @container (max-width: 620px) {
+    @container (max-width: 520px) {
       .app {
         grid-template-columns: 1fr;
       }
@@ -244,7 +244,7 @@
       }
 
       .canvas-wrap {
-        width: min(100%, 560px);
+        width: min(100%, 520px);
       }
     }
   </style>
