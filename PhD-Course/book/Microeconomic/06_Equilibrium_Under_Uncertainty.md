@@ -192,6 +192,23 @@ Let $A\in\mathbb R^{S\times J}$ be the payoff matrix of $J$ assets across $S$ st
 
 A portfolio $\theta\in\mathbb R^J$ has date-0 cost $q^\top\theta$ and state payoff $A\theta$.
 
+:::{admonition} General equilibrium with incomplete markets (GEI)
+A GEI consists of prices $(p,q)$, allocations $(x^h)_{h\in\mathcal H}$, and portfolios $(\theta^h)_{h\in\mathcal H}$ such that
+
+$$
+\left\{
+\begin{aligned}
+&(x^h,\theta^h)\in\arg\max_{(x,\theta)\in\mathbb R_+^{L(S+1)}\times\mathbb R^J}u^h(x)\\
+&\qquad\text{s.t. } p_0\cdot(x(0)-e^h(0))+q\cdot\theta=0,\\
+&\qquad\qquad p(s)\cdot(x(s)-e^h(s))=(A\theta)_s,\qquad s=1,\ldots,S,\\
+&\sum_{h\in\mathcal H}\theta^h=0,\qquad \sum_{h\in\mathcal H}(x^h-e^h)=0.
+\end{aligned}
+\right.
+$$
+
+If $\operatorname{rank}(A)<S$, then the market is incomplete.
+:::
+
 :::{admonition} Definition (Arbitrage-free prices)
 Prices $q$ are arbitrage-free if there is no portfolio $\theta$ such that
 
