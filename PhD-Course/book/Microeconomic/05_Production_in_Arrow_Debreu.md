@@ -62,12 +62,10 @@ such that
 $$
 \left\{
 \begin{aligned}
-&\text{(1) consumer utility maximization: } c^h\in\arg\max u^h(c)
-\quad
-\text{s.t. }
-p\cdot c\le p\cdot e^h+\sum_k\delta_k^h\,p\cdot y^k\\
-&\text{(2) firm profit maximization: } y^k\in\arg\max_{y\in Y^k}p\cdot y\\
-&\text{(3) market clearing: } \sum_h(c^h-e^h)-\sum_k y^k=0
+&\text{budget: } p\cdot c^h\le p\cdot e^h+\sum_k\delta_k^h\,p\cdot y^k\\
+&\text{consumer problem: } c^h\in\arg\max_{c\in\mathbb R_+^L,\ p\cdot c\le p\cdot e^h+\sum_k\delta_k^h\,p\cdot y^k}u^h(c)\\
+&\text{firm problem: } y^k\in\arg\max_{y\in Y^k}p\cdot y\\
+&\text{market clearing: } \sum_h(c^h-e^h)-\sum_k y^k=0
 \end{aligned}
 \right.
 $$
@@ -91,10 +89,9 @@ such that
 $$
 \left\{
 \begin{aligned}
-&\text{(1) consumer utility maximization: } c^h\in\arg\max_{c\in\mathbb R_+^L}u^h(c)\\
-&\qquad\text{s.t. } p\cdot c\le p\cdot e^h+p\cdot y^h\\
-&\text{(2) household profit maximization: } y^h\in\arg\max_{y\in Y^h}p\cdot y\\
-&\text{(3) market clearing: } \sum_h(c^h-e^h-y^h)=0
+&\text{budget: } p\cdot c^h\le p\cdot e^h+p\cdot y^h\\
+&\text{household problem: } (c^h,y^h)\in\arg\max_{\substack{c\in\mathbb R_+^L,\ y\in Y^h\\ p\cdot c\le p\cdot e^h+p\cdot y}}u^h(c)\\
+&\text{market clearing: } \sum_h(c^h-e^h-y^h)=0
 \end{aligned}
 \right.
 $$
