@@ -50,6 +50,63 @@ Y \text{ convex}
 $$
 :::
 
+:::{admonition} Pareto-optimality with production
+An allocation-production plan $\big((c^h)_{h=1}^H,(y^k)_{k=1}^K\big)$ is Pareto efficient if there is no other feasible plan $\big((\tilde c^h)_{h=1}^H,(\tilde y^k)_{k=1}^K\big)$ such that
+
+$$
+\begin{aligned}
+\sum_h(\tilde c^h-e^h)-\sum_k\tilde y^k&\le 0,\\
+u^h(\tilde c^h)&\ge u^h(c^h)\qquad \forall h,
+\end{aligned}
+$$
+
+with strict inequality for at least one household $h'$.
+:::
+
+
+### First Welfare Theorem with production
+
+:::{admonition} Statement
+Assume $E$ satisfies (A2). If $\big(p,(c^h)_{h\in\mathcal H},(y^k)_{k\in\mathcal K}\big)$ is an equilibrium for a production economy $E$, then $\big((c^h)_{h\in\mathcal H},(y^k)_{k\in\mathcal K}\big)$ is Pareto-efficient.
+:::
+
+Proof:
+Suppose that there is a feasible allocation and production plan $\big((x^h)_{h\in\mathcal H},(\tilde y^k)_{k\in\mathcal K}\big)$ such that $u^h(x^h)\ge u^h(c^h)$ for all $h\in\mathcal H$ with the inequality strict for one $h'$.
+
+$$
+\begin{aligned}
+p\cdot\Big(x^h-\sum_{k\in\mathcal K}\delta_k^h\tilde y^k\Big)
+\ &\ge\ p\cdot\Big(c^h-\sum_{k\in\mathcal K}\delta_k^h y^k\Big)
+\qquad \forall h\in\mathcal H.
+\end{aligned}
+$$
+
+Since the inequality is strict for one $h'$ and prices are non-negative, there must be at least one $l$ such that
+
+$$
+\begin{aligned}
+\sum_{h\in\mathcal H}x_l^h-\sum_{k\in\mathcal K}\tilde y_l^k
+\ &>\ \sum_{h\in\mathcal H}c_l^h-\sum_{k\in\mathcal K}y_l^k\\
+\ &=\ \sum_{h\in\mathcal H}e_l^h,
+\end{aligned}
+$$
+
+which contradicts feasibility.
+
+Therefore no Pareto improvement exists.
+
+### Second Welfare Theorem with production
+
+:::{admonition} Statement
+Assume $E$ satisfies (A2)--(A5) and $\big((c^h)_{h\in\mathcal H},(y^k)_{k\in\mathcal K}\big)$ is Pareto-efficient. Suppose $c^h\gg0$ for all $h\in\mathcal H$. Then there exist $p\gg0$ and $\big(\bar e^h\big)_{h\in\mathcal H}$ such that $\big(p,(c^h)_{h\in\mathcal H},(y^k)_{k\in\mathcal K}\big)$ is an equilibrium for an economy with endowments $\big(\bar e^h\big)_{h\in\mathcal H}$.
+:::
+
+Under convex production sets and convex preferences, every interior Pareto efficient allocation-production plan can be supported by prices after redistribution. Nonconvex production, increasing returns, and externalities are classic failure cases.
+
+<div style="width:100%;max-width:1120px;margin:0 auto;">
+  <iframe src="/PhD-Course/production-welfare-theorems-widget.html" title="Production Welfare Theorems" loading="lazy" style="width:100%;height:610px;border:0;display:block;border-radius:16px;"></iframe>
+</div>
+
 ## 2. Firm vs household production equivalence
 
 :::{admonition} Firm production economy
@@ -187,62 +244,6 @@ $$
 
 so the household budget constraint is exactly the firm-economy budget constraint. If some firm $k$ had a profitable deviation $z^k\in Y^k$ with $p\cdot z^k>p\cdot y^k$, then household $h$ would obtain a higher income by replacing its share of that firm's plan, contradicting household optimality. Therefore each firm must maximize profit.
 :::
-
-:::{admonition} Pareto-optimality with production
-An allocation-production plan $\big((c^h)_{h=1}^H,(y^k)_{k=1}^K\big)$ is Pareto efficient if there is no other feasible plan $\big((\tilde c^h)_{h=1}^H,(\tilde y^k)_{k=1}^K\big)$ such that
-
-$$
-\begin{aligned}
-\sum_h(\tilde c^h-e^h)-\sum_k\tilde y^k&\le 0,\\
-u^h(\tilde c^h)&\ge u^h(c^h)\qquad \forall h,
-\end{aligned}
-$$
-
-with strict inequality for at least one household $h'$.
-:::
-
-### First Welfare Theorem with production
-
-:::{admonition} Statement
-Assume $E$ satisfies (A2). If $\big(p,(c^h)_{h\in\mathcal H},(y^k)_{k\in\mathcal K}\big)$ is an equilibrium for a production economy $E$, then $\big((c^h)_{h\in\mathcal H},(y^k)_{k\in\mathcal K}\big)$ is Pareto-efficient.
-:::
-
-Proof:
-Suppose that there is a feasible allocation and production plan $\big((x^h)_{h\in\mathcal H},(\tilde y^k)_{k\in\mathcal K}\big)$ such that $u^h(x^h)\ge u^h(c^h)$ for all $h\in\mathcal H$ with the inequality strict for one $h'$.
-
-$$
-\begin{aligned}
-p\cdot\Big(x^h-\sum_{k\in\mathcal K}\delta_k^h\tilde y^k\Big)
-\ &\ge\ p\cdot\Big(c^h-\sum_{k\in\mathcal K}\delta_k^h y^k\Big)
-\qquad \forall h\in\mathcal H.
-\end{aligned}
-$$
-
-Since the inequality is strict for one $h'$ and prices are non-negative, there must be at least one $l$ such that
-
-$$
-\begin{aligned}
-\sum_{h\in\mathcal H}x_l^h-\sum_{k\in\mathcal K}\tilde y_l^k
-\ &>\ \sum_{h\in\mathcal H}c_l^h-\sum_{k\in\mathcal K}y_l^k\\
-\ &=\ \sum_{h\in\mathcal H}e_l^h,
-\end{aligned}
-$$
-
-which contradicts feasibility.
-
-Therefore no Pareto improvement exists.
-
-### Second Welfare Theorem with production
-
-:::{admonition} Statement
-Assume $E$ satisfies (A2)--(A5) and $\big((c^h)_{h\in\mathcal H},(y^k)_{k\in\mathcal K}\big)$ is Pareto-efficient. Suppose $c^h\gg0$ for all $h\in\mathcal H$. Then there exist $p\gg0$ and $\big(\bar e^h\big)_{h\in\mathcal H}$ such that $\big(p,(c^h)_{h\in\mathcal H},(y^k)_{k\in\mathcal K}\big)$ is an equilibrium for an economy with endowments $\big(\bar e^h\big)_{h\in\mathcal H}$.
-:::
-
-Under convex production sets and convex preferences, every interior Pareto efficient allocation-production plan can be supported by prices after redistribution. Nonconvex production, increasing returns, and externalities are classic failure cases.
-
-<div style="width:100%;max-width:1120px;margin:0 auto;">
-  <iframe src="/PhD-Course/production-welfare-theorems-widget.html" title="Production Welfare Theorems" loading="lazy" style="width:100%;height:610px;border:0;display:block;border-radius:16px;"></iframe>
-</div>
 
 ## 3. Planner characterization of Pareto efficiency
 
