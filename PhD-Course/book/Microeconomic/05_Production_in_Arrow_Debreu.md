@@ -91,7 +91,7 @@ with strict inequality for at least one household $h'$.
 ### First Welfare Theorem with production
 
 :::{admonition} Statement
-If consumers maximize utility and firms maximize profits at prices $p$, then the allocation-production plan is Pareto efficient.
+Assume $E$ satisfies (A2). If $\big(p,(c^h)_{h\in\mathcal H},(y^k)_{k\in\mathcal K}\big)$ is an equilibrium for a production economy $E$, then $\big((c^h)_{h\in\mathcal H},(y^k)_{k\in\mathcal K}\big)$ is Pareto-efficient.
 :::
 
 Proof:
