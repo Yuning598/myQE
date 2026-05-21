@@ -221,3 +221,244 @@ MRS^1=MRS^2=MRT.
 $$
 
 So the common marginal rate of substitution across consumers must equal the marginal rate of transformation in production.
+
+## 4. Linear technology equilibrium
+
+Goal: check a Walrasian equilibrium by the three conditions in sequence.
+
+### Firm profit maximization
+
+Consider two consumers with
+
+$$
+u^h(c)=\log c_1+\log c_2+\log c_3,\qquad h=1,2,
+$$
+
+endowments
+
+$$
+\begin{aligned}
+e^1&=(1,2,3),\\
+e^2&=(2,2,2),\\
+e&=(3,4,5),
+\end{aligned}
+$$
+
+and two activities
+
+$$
+\begin{aligned}
+a^1&=(2,-1,0.5),\\
+a^2&=(0,1,-1),\\
+y&=\alpha_1a^1+\alpha_2a^2,\qquad \alpha_1,\alpha_2\ge0,
+\end{aligned}
+$$
+
+with normalization $p_3=1$.
+
+Linear technology implies
+
+$$
+\begin{aligned}
+\pi(\alpha;p)
+&=p\cdot(\alpha_1a^1+\alpha_2a^2)\\
+&=\alpha_1(p\cdot a^1)+\alpha_2(p\cdot a^2).
+\end{aligned}
+$$
+
+For profit maximization to have a solution,
+
+$$
+p\cdot a^m\le0,\qquad m=1,2.
+$$
+
+If activity $m$ is active, then $\alpha_m>0\Rightarrow p\cdot a^m=0$. Guess both activities are active:
+
+$$
+\left\{
+\begin{aligned}
+&p\cdot a^1=2p_1-p_2+0.5p_3=0,\\
+&p\cdot a^2=p_2-p_3=0,\\
+&p_3=1.
+\end{aligned}
+\right.
+$$
+
+Thus
+
+$$
+\begin{aligned}
+p_2&=p_3=1,\\
+2p_1-1+0.5&=0
+\Rightarrow p_1=0.25.
+\end{aligned}
+$$
+
+So the candidate price is
+
+$$
+\boxed{p=(0.25,1,1)}.
+$$
+
+At this price,
+
+$$
+p\cdot a^1=0,\qquad p\cdot a^2=0,
+$$
+
+so both active activities earn zero profit and no activity yields positive profit.
+
+### Consumer utility maximization
+
+Since both activities earn zero profit, total firm profit is zero. Hence consumer income comes only from endowments:
+
+$$
+I^h=p\cdot e^h.
+$$
+
+With log utility,
+
+$$
+c_l^h=\frac{I^h}{3p_l},\qquad l=1,2,3.
+$$
+
+Compute incomes:
+
+$$
+\begin{aligned}
+I^1
+&=p\cdot e^1
+=0.25\cdot1+1\cdot2+1\cdot3
+=5.25,\\
+I^2
+&=p\cdot e^2
+=0.25\cdot2+1\cdot2+1\cdot2
+=4.5.
+\end{aligned}
+$$
+
+Thus individual demands are
+
+$$
+\begin{aligned}
+c^1
+&=\left(
+\frac{5.25}{3\cdot0.25},
+\frac{5.25}{3},
+\frac{5.25}{3}
+\right)
+=(7,1.75,1.75),\\
+c^2
+&=\left(
+\frac{4.5}{3\cdot0.25},
+\frac{4.5}{3},
+\frac{4.5}{3}
+\right)
+=(6,1.5,1.5).
+\end{aligned}
+$$
+
+Aggregate demand is
+
+$$
+C(p)=c^1+c^2=(13,3.25,3.25).
+$$
+
+### Market clearing
+
+Market clearing requires
+
+$$
+C(p)=e+y
+\quad\Longleftrightarrow\quad
+y=C(p)-e.
+$$
+
+So required net production is
+
+$$
+\begin{aligned}
+y
+&=(13,3.25,3.25)-(3,4,5)\\
+&=(10,-0.75,-1.75).
+\end{aligned}
+$$
+
+Now solve for activity levels:
+
+$$
+\alpha_1a^1+\alpha_2a^2=(10,-0.75,-1.75).
+$$
+
+That is,
+
+$$
+\left\{
+\begin{aligned}
+&2\alpha_1=10,\\
+&-\alpha_1+\alpha_2=-0.75,\\
+&0.5\alpha_1-\alpha_2=-1.75.
+\end{aligned}
+\right.
+$$
+
+Hence
+
+$$
+\begin{aligned}
+2\alpha_1=10
+\ &\Rightarrow\ \alpha_1=5,\\
+-\alpha_1+\alpha_2=-0.75
+\ &\Rightarrow\ -5+\alpha_2=-0.75
+\Rightarrow\ \alpha_2=4.25.
+\end{aligned}
+$$
+
+Check the third market:
+
+$$
+0.5\cdot5-4.25=2.5-4.25=-1.75.
+$$
+
+Thus
+
+$$
+\boxed{\alpha_1=5,\qquad \alpha_2=4.25.}
+$$
+
+The net production plan is
+
+$$
+\begin{aligned}
+y
+&=5(2,-1,0.5)+4.25(0,1,-1)\\
+&=(10,-5,2.5)+(0,4.25,-4.25)\\
+&=(10,-0.75,-1.75).
+\end{aligned}
+$$
+
+Therefore,
+
+$$
+e+y=(3,4,5)+(10,-0.75,-1.75)=(13,3.25,3.25)=C(p).
+$$
+
+### Equilibrium
+
+$$
+\boxed{
+p=(0.25,1,1),\qquad
+c^1=(7,1.75,1.75),\qquad
+c^2=(6,1.5,1.5)
+}
+$$
+
+$$
+\boxed{
+\alpha_1=5,\qquad
+\alpha_2=4.25,\qquad
+y=(10,-0.75,-1.75)
+}
+$$
+
+The price is determined by the active activities' zero-profit conditions; consumer utility maximization gives demand; market clearing pins down the nonnegative activity levels. All three conditions hold, so this is a Walrasian equilibrium.
