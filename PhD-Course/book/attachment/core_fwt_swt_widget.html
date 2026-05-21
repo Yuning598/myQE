@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Core, FWT and Core Convergence Widget</title>
+</head>
+<body style="margin:0; padding:0; background:#fff;">
+<div class="core-card" id="core-container">
+  <style>
+    .core-card {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --border: #d9e2ec;
+      --grid: #edf2f7;
+      --axis: #0f172a;
+      --blue: #2563eb;
+      --red: #dc2626;
+      --orange: #ea580c;
+      --green: #16a34a;
+      --purple: #7c3aed;
+      --amber-soft: rgba(234, 88, 12, 0.12);
+      --blue-soft: rgba(37, 99, 235, 0.10);
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+
+      width: min(100%, 620px);
+      margin: 20px auto;
+      padding: 20px;
+      color: var(--text);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      user-select: none;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      container-type: inline-size;
+    }
+
+    .core-card * { box-sizing: border-box; }
+
+    .core-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: start;
+      margin-bottom: 14px;
+    }
+
+    .core-header h3 {
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(1.08rem, 1.8vw, 1.25rem);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .core-header p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    .core-mode {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      min-width: 240px;
+    }
+
+    .core-mode button {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 9px 11px;
+      color: var(--text);
+      background: #f8fafc;
+      font-weight: 780;
+      font-size: 0.86rem;
+      cursor: pointer;
+    }
+
+    .core-mode button.is-active {
+      color: #fff;
+      background: var(--blue);
+      border-color: var(--blue);
+    }
+
+    .core-stage {
+      position: relative;
+      width: min(100%, 430px);
+      aspect-ratio: 1 / 1;
+      margin: 0 auto;
+      overflow: visible;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 2px solid var(--axis);
+      border-radius: 12px;
+      cursor: crosshair;
+      touch-action: none;
+    }
+
+    .core-stage canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      touch-action: none;
+    }
+
+    .core-origin {
+      position: absolute;
+      color: var(--axis);
+      font-weight: 800;
+      pointer-events: none;
+    }
+
+    .core-origin--one { left: -10px; bottom: -28px; }
+    .core-origin--two { top: -28px; right: -10px; }
+
+    .core-panel {
+      margin-top: 36px;
+      padding: 14px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 0.92rem;
+    }
+
+    .core-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+
+    .core-label {
+      font-weight: 780;
+      white-space: nowrap;
+    }
+
+    .core-label--w { color: var(--blue); }
+    .core-label--e { color: var(--red); }
+    .core-label--c { color: var(--orange); }
+    .core-label--n { color: var(--purple); }
+
+    .core-value {
+      color: var(--text);
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+    }
+
+    .core-value--mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .core-divider {
+      height: 1px;
+      margin: 12px 0;
+      background: var(--border);
+      border: 0;
+    }
+
+    .core-notes {
+      display: grid;
+      gap: 8px;
+      color: #334155;
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    .core-note strong { color: var(--text); }
+
+    .core-note span {
+      display: inline-block;
+      width: 1.3rem;
+      text-align: center;
+    }
+
+    .core-formula {
+      margin-top: 12px;
+      padding: 10px 12px;
+      color: #0f172a;
+      background: #eef4ff;
+      border: 1px solid #dbe7ff;
+      border-radius: 12px;
+      line-height: 1.55;
+      overflow-x: auto;
+      white-space: nowrap;
+      font-family: "Times New Roman", Cambria, Georgia, serif;
+      font-size: 0.96rem;
+    }
+
+    @container (max-width: 560px) {
+      .core-card { padding: 16px; }
+      .core-header { grid-template-columns: 1fr; }
+      .core-mode { min-width: 0; }
+      .core-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+      .core-label { white-space: normal; }
+      .core-value { text-align: left; }
+    }
+  </style>
+
+  <header class="core-header">
+    <div>
+      <h3>Core 与福利定理的关系</h3>
+      <p>Edgeworth box：黑线是 contract curve，橙色段是 two-agent core。</p>
+    </div>
+    <div class="core-mode" role="group" aria-label="Core theorem mode">
+      <button type="button" id="core-fwt" class="is-active">WE ⇒ Core</button>
+      <button type="button" id="core-swt">Core ⇒ WE</button>
+    </div>
+  </header>
+
+  <div class="core-stage">
+    <canvas id="core-canvas"></canvas>
+    <div class="core-origin core-origin--one">O₁</div>
+    <div class="core-origin core-origin--two">O₂</div>
+  </div>
+
+  <section class="core-panel" aria-live="polite">
+    <div class="core-row">
+      <span class="core-label core-label--w">禀赋 W（拖动）</span>
+      <span class="core-value" id="core-val-w"></span>
+    </div>
+
+    <div class="core-row">
+      <span class="core-label core-label--e">Walrasian allocation E*</span>
+      <span class="core-value" id="core-val-e"></span>
+    </div>
+
+    <div class="core-row">
+      <span class="core-label core-label--c">Core segment</span>
+      <span class="core-value" id="core-val-c"></span>
+    </div>
+
+    <div class="core-row" id="core-row-n" style="display:none;">
+      <span class="core-label core-label--n">Replica economy</span>
+      <span class="core-value core-value--mono" id="core-val-n"></span>
+    </div>
+
+    <div class="core-row">
+      <span class="core-label">价格比 p₁/p₂</span>
+      <span class="core-value core-value--mono" id="core-val-p"></span>
+    </div>
+
+    <hr class="core-divider" />
+
+    <div class="core-notes" id="core-notes"></div>
+
+    <div class="core-formula" id="core-formula"></div>
+  </section>
+</div>
+
+<script>
+  (() => {
+    const canvas = document.querySelector("#core-canvas");
+    const ctx = canvas.getContext("2d");
+
+    const fwtButton = document.querySelector("#core-fwt");
+    const swtButton = document.querySelector("#core-swt");
+    const valueW = document.querySelector("#core-val-w");
+    const valueE = document.querySelector("#core-val-e");
+    const valueC = document.querySelector("#core-val-c");
+    const valueN = document.querySelector("#core-val-n");
+    const rowN = document.querySelector("#core-row-n");
+    const valueP = document.querySelector("#core-val-p");
+    const notes = document.querySelector("#core-notes");
+    const formula = document.querySelector("#core-formula");
+
+    const config = {
+      total: 100,
+      hitRadius: 24,
+      alpha1: 0.3,
+      alpha2: 0.7,
+    };
+
+    const colors = {
+      text: "#1f2937",
+      muted: "#64748b",
+      grid: "#edf2f7",
+      contract: "#111827",
+      budget: "#ea580c",
+      ic1: "#16a34a",
+      ic2: "#7c3aed",
+      equilibrium: "#dc2626",
+      endowment: "#2563eb",
+      core: "#ea580c",
+      replica1: "#f97316",
+      replica2: "#a855f7",
+      replica3: "#2563eb",
+      lens: "rgba(234, 88, 12, 0.12)",
+      white: "#ffffff",
+    };
+
+    const state = {
+      mode: "fwt",
+      isDragging: false,
+      w: { x: 20, y: 80 },
+    };
+
+    function getCanvasSize() {
+      return Number(canvas.dataset.cssSize) || canvas.clientWidth || 430;
+    }
+
+    function setupCanvasForHiDpi() {
+      const ratio = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      const size = Math.min(rect.width, rect.height);
+
+      canvas.width = Math.round(size * ratio);
+      canvas.height = Math.round(size * ratio);
+      canvas.dataset.cssSize = size;
+      ctx.setTransform(ratio, 0, 0, ratio, 0, ratio * 0);
+    }
+
+    function toCanvasPoint({ x, y }) {
+      const size = getCanvasSize();
+      return {
+        x: (x / config.total) * size,
+        y: size - (y / config.total) * size,
+      };
+    }
+
+    function toModelPoint({ x, y }) {
+      const size = getCanvasSize();
+      return {
+        x: (x / size) * config.total,
+        y: ((size - y) / size) * config.total,
+      };
+    }
+
+    function clamp(value, min, max) {
+      return Math.max(min, Math.min(max, value));
+    }
+
+    function formatPoint({ x, y }, digits = 1) {
+      return `(${x.toFixed(digits)}, ${y.toFixed(digits)})`;
+    }
+
+    function getPointerPosition(event) {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        x: event.clientX - rect.left,
+        y: event.clientY - rect.top,
+      };
+    }
+
+    function utility1(point) {
+      return Math.pow(point.x, config.alpha1) * Math.pow(point.y, config.alpha2);
+    }
+
+    function utility2(point) {
+      return Math.pow(100 - point.x, config.alpha2) * Math.pow(100 - point.y, config.alpha1);
+    }
+
+    function contractY(x) {
+      return (490 * x) / (90 + 4 * x);
+    }
+
+    function getEquilibrium() {
+      const p = (70 - 0.4 * state.w.y) / (30 + 0.4 * state.w.x);
+      const income1 = p * state.w.x + state.w.y;
+      const x = config.alpha1 * (income1 / p);
+      const y = config.alpha2 * income1;
+      return { p, income1, point: { x, y } };
+    }
+
+    function drawGrid() {
+      const size = getCanvasSize();
+      const step = size / 4;
+
+      ctx.save();
+      ctx.strokeStyle = colors.grid;
+      ctx.lineWidth = 1;
+
+      for (let i = 1; i < 4; i += 1) {
+        const p = i * step;
+        ctx.beginPath();
+        ctx.moveTo(p, 0);
+        ctx.lineTo(p, size);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(0, p);
+        ctx.lineTo(size, p);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    function drawLine(from, to, options = {}) {
+      ctx.save();
+      ctx.strokeStyle = options.color ?? colors.text;
+      ctx.lineWidth = options.width ?? 2;
+      ctx.setLineDash(options.dashed ? [6, 6] : []);
+      ctx.beginPath();
+      ctx.moveTo(from.x, from.y);
+      ctx.lineTo(to.x, to.y);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawLabel(text, point, options = {}) {
+      ctx.save();
+      ctx.font = `${options.weight ?? 700} ${options.size ?? 13}px system-ui, sans-serif`;
+      ctx.textAlign = options.align ?? "left";
+      ctx.textBaseline = options.baseline ?? "middle";
+
+      if (options.halo !== false) {
+        ctx.lineWidth = options.haloWidth ?? 4;
+        ctx.strokeStyle = "rgba(255,255,255,0.92)";
+        ctx.strokeText(text, point.x, point.y);
+      }
+
+      ctx.fillStyle = options.color ?? colors.text;
+      ctx.fillText(text, point.x, point.y);
+      ctx.restore();
+    }
+
+    function drawPoint(point, options) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.fillStyle = options.fill;
+      ctx.arc(point.x, point.y, options.radius, 0, Math.PI * 2);
+      ctx.fill();
+
+      if (options.stroke) {
+        ctx.strokeStyle = options.stroke;
+        ctx.lineWidth = options.strokeWidth ?? 2;
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    function drawCurve(points, options = {}) {
+      ctx.save();
+      ctx.strokeStyle = options.color ?? colors.text;
+      ctx.lineWidth = options.width ?? 2;
+      ctx.setLineDash(options.dashed ? [6, 6] : []);
+      ctx.beginPath();
+
+      let started = false;
+      for (const point of points) {
+        if (!Number.isFinite(point.x) || !Number.isFinite(point.y)) {
+          started = false;
+          continue;
+        }
+        const pt = toCanvasPoint(point);
+        if (!started) {
+          ctx.moveTo(pt.x, pt.y);
+          started = true;
+        } else {
+          ctx.lineTo(pt.x, pt.y);
+        }
+      }
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function drawContractCurve() {
+      const points = [];
+      for (let x = 0.2; x <= 99.8; x += 0.3) {
+        const y = contractY(x);
+        if (y >= 0 && y <= 100) points.push({ x, y });
+      }
+      drawCurve(points, { color: colors.contract, width: 2.8 });
+      const label = toCanvasPoint({ x: 55, y: contractY(55) });
+      drawLabel("contract curve", { x: label.x + 8, y: label.y - 10 }, {
+        color: colors.contract,
+        size: 12,
+      });
+    }
+
+    function getBudgetSegment(p, income) {
+      const candidates = [];
+      const total = config.total;
+      const yAtLeft = income;
+      if (yAtLeft >= 0 && yAtLeft <= total) candidates.push({ x: 0, y: yAtLeft });
+      const yAtRight = income - p * total;
+      if (yAtRight >= 0 && yAtRight <= total) candidates.push({ x: total, y: yAtRight });
+      const xAtBottom = income / p;
+      if (xAtBottom >= 0 && xAtBottom <= total) candidates.push({ x: xAtBottom, y: 0 });
+      const xAtTop = (income - total) / p;
+      if (xAtTop >= 0 && xAtTop <= total) candidates.push({ x: xAtTop, y: total });
+      if (candidates.length < 2) return null;
+      return [toCanvasPoint(candidates[0]), toCanvasPoint(candidates[1])];
+    }
+
+    function drawBudgetLine(p, income) {
+      const segment = getBudgetSegment(p, income);
+      if (!segment) return;
+      drawLine(segment[0], segment[1], {
+        color: colors.budget,
+        width: 2,
+        dashed: true,
+      });
+    }
+
+    function drawIndifferenceCurves(equilibrium) {
+      const { x: ex, y: ey } = equilibrium;
+      const u1 = utility1(equilibrium);
+      const u2 = utility2(equilibrium);
+      const u1w = utility1(state.w);
+      const u2w = utility2(state.w);
+
+      const curves = [
+        { u: u1, who: 1, color: colors.ic1, width: 2 },
+        { u: u2, who: 2, color: colors.ic2, width: 2 },
+        { u: u1w, who: 1, color: colors.ic1, width: 1.4, dashed: true },
+        { u: u2w, who: 2, color: colors.ic2, width: 1.4, dashed: true },
+      ];
+
+      for (const curve of curves) {
+        const points = [];
+        if (curve.who === 1) {
+          for (let x = 0.5; x <= 100; x += 0.4) {
+            const y = Math.pow(curve.u / Math.pow(x, config.alpha1), 1 / config.alpha2);
+            if (y >= 0 && y <= 100) points.push({ x, y });
+          }
+        } else {
+          for (let x = 0; x < 99.5; x += 0.4) {
+            const y = 100 - Math.pow(curve.u / Math.pow(100 - x, config.alpha2), 1 / config.alpha1);
+            if (y >= 0 && y <= 100) points.push({ x, y });
+          }
+        }
+        drawCurve(points, curve);
+      }
+    }
+
+    function getCoreSegment() {
+      const points = [];
+      const u1w = utility1(state.w);
+      const u2w = utility2(state.w);
+
+      for (let x = 0.2; x <= 99.8; x += 0.2) {
+        const y = contractY(x);
+        const point = { x, y };
+        if (y >= 0 && y <= 100 && utility1(point) >= u1w && utility2(point) >= u2w) {
+          points.push(point);
+        }
+      }
+      return points;
+    }
+
+    function drawCoreSegment(points) {
+      if (points.length < 2) return;
+      drawCurve(points, { color: colors.core, width: 6 });
+      drawCurve(points, { color: "#fff", width: 2.2 });
+      drawCurve(points, { color: colors.core, width: 2.4 });
+      const mid = points[Math.floor(points.length / 2)];
+      const p = toCanvasPoint(mid);
+      drawLabel("Core", { x: p.x + 8, y: p.y + 12 }, {
+        color: colors.core,
+        size: 13,
+        weight: 850,
+      });
+    }
+
+    function drawReplicaShrink(corePoints, equilibriumPoint) {
+      if (corePoints.length < 8) return;
+      const eIndex = corePoints.reduce((best, point, index) => {
+        const dist = Math.hypot(point.x - equilibriumPoint.x, point.y - equilibriumPoint.y);
+        return dist < best.dist ? { index, dist } : best;
+      }, { index: 0, dist: Infinity }).index;
+
+      const layers = [
+        { n: 2, radius: Math.floor(corePoints.length * 0.38), color: colors.replica1, width: 5.2 },
+        { n: 5, radius: Math.floor(corePoints.length * 0.22), color: colors.replica2, width: 4.2 },
+        { n: 20, radius: Math.floor(corePoints.length * 0.09), color: colors.replica3, width: 3.2 },
+      ];
+
+      for (const layer of layers) {
+        const start = clamp(eIndex - layer.radius, 0, corePoints.length - 1);
+        const end = clamp(eIndex + layer.radius, 0, corePoints.length - 1);
+        const segment = corePoints.slice(start, end + 1);
+        drawCurve(segment, { color: layer.color, width: layer.width });
+        const labelPoint = segment[Math.floor(segment.length * 0.72)] ?? segment[0];
+        const label = toCanvasPoint(labelPoint);
+        drawLabel(`Core N=${layer.n}`, { x: label.x + 8, y: label.y - 8 }, {
+          color: layer.color,
+          size: 11.5,
+          weight: 850,
+        });
+      }
+    }
+
+    function updatePanel(equilibriumData, corePoints) {
+      valueW.textContent = formatPoint(state.w, 1);
+      valueE.textContent = formatPoint(equilibriumData.point, 1);
+      valueP.textContent = equilibriumData.p.toFixed(3);
+
+      if (corePoints.length > 1) {
+        valueC.textContent = `${formatPoint(corePoints[0], 1)} → ${formatPoint(corePoints[corePoints.length - 1], 1)}`;
+      } else {
+        valueC.textContent = "empty / degenerate";
+      }
+
+      const isSwt = state.mode === "swt";
+      rowN.style.display = isSwt ? "flex" : "none";
+      valueN.textContent = "N↑ : Core_N shrinks to WE";
+
+      if (isSwt) {
+        notes.innerHTML = `
+          <div class="core-note"><span>📉</span><strong>Core convergence:</strong> 经济复制得越大，blocking coalitions 越多，core 越小。</div>
+          <div class="core-note"><span>⚖️</span><strong>Parallel to SWT:</strong> 大经济中，稳定配置必须接近可由价格支持的 Walrasian allocation。</div>
+        `;
+        formula.innerHTML = `Core(E<sup>N</sup>) → WE(E) as N → ∞`;
+      } else {
+        notes.innerHTML = `
+          <div class="core-note"><span>🎯</span><strong>Core-FWT:</strong> Walrasian allocation E* 落在 core segment 上。</div>
+          <div class="core-note"><span>🛡️</span><strong>Core:</strong> 没有任何 coalition S ⊆ H 能用自己的禀赋 block 这个配置。</div>
+        `;
+        formula.innerHTML = `WE ⊆ Core ⊆ PE`;
+      }
+    }
+
+    function draw() {
+      const size = getCanvasSize();
+      const equilibriumData = getEquilibrium();
+      const e = toCanvasPoint(equilibriumData.point);
+      const w = toCanvasPoint(state.w);
+      const corePoints = getCoreSegment();
+
+      ctx.clearRect(0, 0, size, size);
+      drawGrid();
+      drawContractCurve();
+      drawIndifferenceCurves(equilibriumData.point);
+      drawCoreSegment(corePoints);
+
+      if (state.mode === "fwt") {
+        drawBudgetLine(equilibriumData.p, equilibriumData.income1);
+      } else {
+        drawReplicaShrink(corePoints, equilibriumData.point);
+      }
+
+      drawPoint(e, {
+        fill: colors.equilibrium,
+        stroke: colors.white,
+        strokeWidth: 2,
+        radius: 7,
+      });
+      drawLabel("E*", { x: e.x + 9, y: e.y - 9 }, { color: colors.equilibrium });
+
+      drawPoint(w, {
+        fill: colors.endowment,
+        stroke: colors.white,
+        strokeWidth: 2,
+        radius: 8,
+      });
+      drawLabel("W", { x: w.x + 9, y: w.y + 15 }, { color: colors.endowment });
+
+      updatePanel(equilibriumData, corePoints);
+    }
+
+    function setMode(mode) {
+      state.mode = mode;
+      fwtButton.classList.toggle("is-active", mode === "fwt");
+      swtButton.classList.toggle("is-active", mode === "swt");
+      draw();
+    }
+
+    function startDrag(event) {
+      event.preventDefault();
+      const pointer = getPointerPosition(event);
+      const w = toCanvasPoint(state.w);
+      const distance = Math.hypot(pointer.x - w.x, pointer.y - w.y);
+      if (distance > config.hitRadius) return;
+      state.isDragging = true;
+      canvas.setPointerCapture?.(event.pointerId);
+    }
+
+    function doDrag(event) {
+      if (!state.isDragging) return;
+      event.preventDefault();
+      const size = getCanvasSize();
+      const pointer = getPointerPosition(event);
+      const bounded = {
+        x: clamp(pointer.x, 0, size),
+        y: clamp(pointer.y, 0, size),
+      };
+      state.w = toModelPoint(bounded);
+      draw();
+    }
+
+    function endDrag(event) {
+      if (!state.isDragging) return;
+      state.isDragging = false;
+      canvas.releasePointerCapture?.(event.pointerId);
+    }
+
+    function initialize() {
+      setupCanvasForHiDpi();
+      draw();
+      fwtButton.addEventListener("click", () => setMode("fwt"));
+      swtButton.addEventListener("click", () => setMode("swt"));
+      canvas.addEventListener("pointerdown", startDrag);
+      canvas.addEventListener("pointermove", doDrag);
+      canvas.addEventListener("pointerup", endDrag);
+      canvas.addEventListener("pointercancel", endDrag);
+      canvas.addEventListener("pointerleave", endDrag);
+      window.addEventListener("resize", () => {
+        setupCanvasForHiDpi();
+        draw();
+      });
+    }
+
+    initialize();
+  })();
+</script>
+</body>
+</html>
