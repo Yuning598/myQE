@@ -62,12 +62,12 @@ such that
 $$
 \left\{
 \begin{aligned}
-&c^h\in\arg\max u^h(c)
+&\text{(1) consumer utility maximization: } c^h\in\arg\max u^h(c)
 \quad
 \text{s.t. }
 p\cdot c\le p\cdot e^h+\sum_k\delta_k^h p\cdot y^k\\
-&y^k\in\arg\max_{y\in Y^k}p\cdot y\\
-&\sum_h(c^h-e^h)-\sum_k y^k=0
+&\text{(2) firm profit maximization: } y^k\in\arg\max_{y\in Y^k}p\cdot y\\
+&\text{(3) market clearing: } \sum_h(c^h-e^h)-\sum_k y^k=0
 \end{aligned}
 \right.
 $$
