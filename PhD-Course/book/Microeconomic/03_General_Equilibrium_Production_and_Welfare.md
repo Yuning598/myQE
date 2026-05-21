@@ -517,3 +517,7 @@ $$
 \lambda u^h(x)+(1-\lambda)u^h(y)<u^h(\lambda x+(1-\lambda)y).
 $$
 :::
+
+<div style="width:100%;max-width:1120px;margin:0 auto;">
+  <iframe src="/PhD-Course/core_fwt_swt_widget.html" title="Core FWT SWT Widget" loading="lazy" style="width:100%;height:700px;border:0;display:block;border-radius:16px;"></iframe>
+</div>
