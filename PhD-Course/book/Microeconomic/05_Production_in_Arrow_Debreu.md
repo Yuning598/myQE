@@ -50,8 +50,8 @@ Y \text{ convex}
 $$
 :::
 
-:::{admonition} Equilibrium with production
-There are $K$ firms with production sets $Y^k\subseteq\mathbb R^L$. An equilibrium is
+:::{admonition} Firm production economy
+Let $K$ firms have production sets $Y^k\subseteq\mathbb R^L$, and let $\delta_k^h$ be household $h$'s ownership share of firm $k$. An equilibrium is
 
 $$
 (p,(c^h)_{h=1}^H,(y^k)_{k=1}^K)
@@ -65,15 +65,42 @@ $$
 &\text{(1) consumer utility maximization: } c^h\in\arg\max u^h(c)
 \quad
 \text{s.t. }
-p\cdot c\le p\cdot e^h+\sum_k\delta_k^h p\cdot y^k\\
+p\cdot c\le p\cdot e^h+\sum_k\delta_k^h\,p\cdot y^k\\
 &\text{(2) firm profit maximization: } y^k\in\arg\max_{y\in Y^k}p\cdot y\\
 &\text{(3) market clearing: } \sum_h(c^h-e^h)-\sum_k y^k=0
 \end{aligned}
 \right.
 $$
-
-Here $\delta_k^h$ is household $h$'s ownership share of firm $k$.
 :::
+
+:::{admonition} Household production economy
+Let
+
+$$
+Y^h=\sum_{k\in\mathcal K}\delta_k^h Y^k.
+$$
+
+An equilibrium is
+
+$$
+(p,(c^h,y^h)_{h=1}^H)
+$$
+
+such that
+
+$$
+\left\{
+\begin{aligned}
+&\text{(1) consumer utility maximization: } c^h\in\arg\max_{c\in\mathbb R_+^L}u^h(c)\\
+&\qquad\text{s.t. } p\cdot c\le p\cdot e^h+p\cdot y^h\\
+&\text{(2) household profit maximization: } y^h\in\arg\max_{y\in Y^h}p\cdot y\\
+&\text{(3) market clearing: } \sum_h(c^h-e^h-y^h)=0
+\end{aligned}
+\right.
+$$
+:::
+
+In the firm economy, production is chosen by firms and profits are distributed through shares. In the household economy, the share-weighted production set is attached to each household, so the household chooses consumption and production jointly.
 
 :::{admonition} Pareto-optimality with production
 An allocation-production plan $\big((c^h)_{h=1}^H,(y^k)_{k=1}^K\big)$ is Pareto efficient if there is no other feasible plan $\big((\tilde c^h)_{h=1}^H,(\tilde y^k)_{k=1}^K\big)$ such that
