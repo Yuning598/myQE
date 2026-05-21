@@ -325,6 +325,30 @@ If $\operatorname{rank}(A)<S$, markets are incomplete. Then:
 
 Slides example: with two future states and only a risk-free bond paying $(1,1)$, agents cannot trade state-contingent risk. Equilibrium may involve no trade even though a full-insurance allocation Pareto dominates the endowment allocation.
 
+:::{admonition} Complete markets collapse GEI to Walrasian equilibrium
+If $\operatorname{rank}(A)=S$, then every contingent payoff $d\in\mathbb R^S$ is attainable as $d=A\theta$ for some portfolio $\theta$. The GEI budget constraints can then be rewritten as state-contingent budget constraints, so the GEI allocation is equivalent to an Arrow-Debreu / Walrasian equilibrium in contingent commodities.
+
+If $\operatorname{rank}(A)<S$, then some contingent payoffs are not spanned by assets, so the GEI allocation can be constrained inefficient relative to the full Arrow-Debreu allocation.
+:::
+
+:::{admonition} Variations of the basic model
+No first-period consumption:
+
+$$
+x_h(0)=e^h(0)=0,\qquad h\in\mathcal H,
+$$
+
+so agents only consume in the future states and trade assets at date $0$.
+
+One good economy:
+
+$$
+L=1,
+$$
+
+so each state has a single consumption good and all uncertainty is about the state-contingent endowment and asset payoffs.
+:::
+
 ## 5. Full insurance and belief differences
 
 There is one consumption good, two states, and two consumers. Utility is expected utility:
