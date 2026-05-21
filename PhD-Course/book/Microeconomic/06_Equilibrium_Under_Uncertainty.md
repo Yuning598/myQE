@@ -123,6 +123,22 @@ $$
 Prices $(p,\alpha)$ and allocations $\big((x^h,\theta^h)\big)_{h\in\mathcal H}$ constitute an Arrow security markets equilibrium if and only if there exist Debreu prices $\rho\in\Delta_+^{L(S+1)-1}$ such that $\big(\rho,(x^h)_{h\in\mathcal H}\big)$ constitute a Walrasian equilibrium.
 :::
 
+:::{admonition} Equilibrium concepts at a glance
+$$
+\begin{aligned}
+\text{Walrasian equilibrium (Debreu-Walras)}&:\ \rho\in\Delta^{L(S+1)},\ (x^h)_{h\in\mathcal H}\\
+&\sum_h(x^h-e^h)=0,\\
+&u^h(x)>u^h(x^h)\Longrightarrow \rho\cdot x>\rho\cdot e^h;\\[0.5em]
+\text{Arrow security markets equilibrium}&:\ (p,\alpha),\ \big((x^h,\theta^h)\big)_{h\in\mathcal H}\\
+&\sum_h(x^h-e^h)=0,\quad \sum_h\theta^h=0,\\
+&(x^h,\theta^h)\in\arg\max_{(x,\theta)\in\mathcal B^h(p,\alpha)}u^h(x);\\[0.5em]
+\text{Debreu-Walras equilibrium}&:\ \text{same as Walrasian equilibrium in contingent commodities.}
+\end{aligned}
+$$
+
+In complete contingent-commodity markets, Walrasian equilibrium and Debreu-Walras equilibrium are the same object; Arrow security markets implement the same allocation when they admit Debreu prices.
+:::
+
 ## 3. General asset markets and no arbitrage
 
 Let $A\in\mathbb R^{S\times J}$ be the payoff matrix of $J$ assets across $S$ states, where column $j$ is the payoff vector of asset $j$. Let $q\in\mathbb R^J$ be the vector of asset prices.
