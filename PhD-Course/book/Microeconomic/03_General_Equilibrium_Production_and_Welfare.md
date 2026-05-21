@@ -427,20 +427,36 @@ Thus, with $L$ goods, clearing $L-1$ markets implies the last market clears.
 ## 5. Core
 
 :::{admonition} Definition (Core)
-A feasible allocation $(c^h)$ is in the core if there is no coalition $S\subseteq H$ and allocation $(\tilde c^h)_{h\in S}$ such that
+A feasible allocation $(c^h)_{h\in\mathcal H}$ is in the core if there does not exist a coalition $S\subseteq\mathcal H$ and a blocking allocation $(\tilde c^h)_{h\in S}$ such that
 
 $$
-\sum_{h\in S}\tilde c^h=\sum_{h\in S}e^h,
+\sum_{h\in S}\tilde c^h=\sum_{h\in S}e^h
 $$
+
 and
 
 $$
-u^h(\tilde c^h)\ge u^h(c^h)\quad\forall h\in S,
+u^h(\tilde c^h)\ge u^h(c^h)\qquad \forall h\in S,
 $$
-with strict inequality for at least one member of $S$.
+
+with strict inequality for at least one $h\in S$.
 
 :::
 
-**Walrasian allocations are in the core.** If a coalition could block a Walrasian allocation, each blocking member would get a weakly preferred bundle and one member strictly preferred. By the same revealed-preference budget argument as in FWT, the coalition's proposed bundles would cost strictly more than the coalition's endowment, contradicting coalition feasibility.
+:::{admonition} Theorem (Walrasian allocations are in the core)
+Assume $(A2)$. A Walrasian equilibrium allocation is in the core.
 
-Core convergence theorem in the slides: in replica economies, as the number of replicas grows, core allocations converge to Walrasian allocations. Intuition: large markets make individual/coalitional market power vanish.
+**Proof sketch.** The proof strategy is essentially parallel to the first welfare theorem: if a coalition could block a Walrasian allocation, each blocking member would be weakly better off and one would be strictly better off. By the same revealed-preference budget argument as in FWT, the coalition's proposed bundles would cost strictly more than the coalition's endowment, contradicting coalition feasibility.
+
+**Remark.** This guarantees that the core is nonempty for any pure exchange economy for which there exists a Walrasian equilibrium.
+:::
+
+:::{admonition} Conjecture (Core convergence)
+As the number of agents becomes very large, any allocation which is in the core will be a Walrasian equilibrium allocation.
+
+**Assumption $(A4')$.** For all agents $h\in\mathcal H$, $u^h(\cdot)$ is strictly concave on its domain, i.e. for all $x,y\in\mathbb R_+^L$ and $\lambda\in(0,1)$,
+
+$$
+\lambda u^h(x)+(1-\lambda)u^h(y)<u^h(\lambda x+(1-\lambda)y).
+$$
+:::
