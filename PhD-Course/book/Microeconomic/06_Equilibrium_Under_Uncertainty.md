@@ -222,30 +222,40 @@ q^\top\theta<0,\quad A\theta\ge 0.
 $$
 :::
 
-:::{admonition} Theorem (Arbitrage-free prices and state prices)
-$q$ is arbitrage-free iff there exists a strictly positive state price vector $\psi\in\mathbb R_{++}^S$ such that
+:::{admonition} Theorem (Security prices and state prices)
+A security price system $q\in\mathbb R^J$ precludes arbitrage if and only if there exists a state price vector $\alpha\in\mathbb R_{++}^S$ such that
 
 $$
-q=A^\top\psi.
+q=\alpha^\top A.
+$$
+:::
+
+:::{admonition} Separating hyperplanes theorem for cones
+If $M$ and $K$ are closed convex cones in $\mathbb R^n$ that intersect only at $0$, and if $K$ is not a linear subspace, then there exists a nonzero linear functional $F$ such that
+
+$$
+F(x)<F(y)
+\qquad
+\forall x\in M,\ \forall y\in K\setminus\{0\}.
 $$
 :::
 
 Proof:
-First, suppose $q=A^\top\psi$ with $\psi\gg0$. Suppose $\theta$ is an arbitrage with $q^\top\theta\le0$ and $A\theta>0$. Then
+First, suppose $q=\alpha^\top A$ with $\alpha\gg0$. Suppose $\theta$ is an arbitrage with $q^\top\theta\le0$ and $A\theta>0$. Then
 
 $$
 \begin{aligned}
 q^\top\theta
-&=(A^\top\psi)^\top\theta\\
-&=\psi^\top A\theta\\
+&=(\alpha^\top A)\theta\\
+&=\alpha^\top A\theta\\
 &>0,
 \end{aligned}
 $$
 
-because $\psi\gg0$ and $A\theta>0$. Contradiction. The case $q^\top\theta<0$, $A\theta\ge0$ is similar:
+because $\alpha\gg0$ and $A\theta>0$. Contradiction. The case $q^\top\theta<0$, $A\theta\ge0$ is similar:
 
 $$
-q^\top\theta=\psi^\top A\theta\ge0,
+q^\top\theta=\alpha^\top A\theta\ge0,
 $$
 
 contradicting $q^\top\theta<0$.
@@ -277,7 +287,7 @@ $$
 Hence
 
 $$
-q=A^\top\left(\frac{\mu}{\mu_0}\right).
+q=\left(\frac{\mu}{\mu_0}\right)^\top A.
 $$
 
 Set $\psi=\mu/\mu_0\gg0$.
