@@ -95,40 +95,29 @@ Assume $E$ satisfies (A2). If $\big(p,(c^h)_{h\in\mathcal H},(y^k)_{k\in\mathcal
 :::
 
 Proof:
-Suppose an alternative $(x^h,\tilde y^k)$ Pareto dominates. Consumer revealed preference implies
+Suppose that there is a feasible allocation and production plan $\big((x^h)_{h\in\mathcal H},(\tilde y^k)_{k\in\mathcal K}\big)$ such that $u^h(x^h)\ge u^h(c^h)$ for all $h\in\mathcal H$ with the inequality strict for one $h'$.
 
 $$
-\sum_h p\cdot x^h>\sum_h p\cdot c^h.
+\begin{aligned}
+p\cdot\Big(x^h-\sum_{k\in\mathcal K}\delta_k^h\tilde y^k\Big)
+\ &\ge\ p\cdot\Big(c^h-\sum_{k\in\mathcal K}\delta_k^h y^k\Big)
+\qquad \forall h\in\mathcal H.
+\end{aligned}
 $$
 
-Firm profit maximization implies
+Since the inequality is strict for one $h'$ and prices are non-negative, there must be at least one $l$ such that
 
 $$
-p\cdot y^k\ge p\cdot \tilde y^k
-\quad\forall k.
+\begin{aligned}
+\sum_{h\in\mathcal H}x_l^h-\sum_{k\in\mathcal K}\tilde y_l^k
+\ &>\ \sum_{h\in\mathcal H}c_l^h-\sum_{k\in\mathcal K}y_l^k\\
+\ &=\ \sum_{h\in\mathcal H}e_l^h,
+\end{aligned}
 $$
 
-Feasibility of the alternative gives
+which contradicts feasibility.
 
-$$
-\sum_h x^h-\sum_k\tilde y^k\le\sum_h e^h.
-$$
-
-Equilibrium feasibility gives
-
-$$
-\sum_h c^h-\sum_k y^k=\sum_h e^h.
-$$
-
-Multiply by $p$:
-
-$$
-\sum_h p\cdot x^h-\sum_kp\cdot\tilde y^k
-\le
-\sum_h p\cdot c^h-\sum_kp\cdot y^k.
-$$
-
-Using $p\cdot y^k\ge p\cdot \tilde y^k$, the RHS inequality contradicts $\sum_hp\cdot x^h>\sum_hp\cdot c^h$. Therefore no Pareto improvement exists.
+Therefore no Pareto improvement exists.
 
 ### Second Welfare Theorem with production
 
