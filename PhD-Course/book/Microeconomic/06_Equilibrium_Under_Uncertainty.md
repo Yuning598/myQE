@@ -373,7 +373,28 @@ $$
 so each state has a single consumption good.
 :::
 
-## 5. Full insurance and belief differences
+## 5. Core
+
+:::{admonition} Definition (Core)
+A feasible allocation $(c^h)$ is in the core if there is no coalition $S\subseteq H$ and allocation $(\tilde c^h)_{h\in S}$ such that
+
+$$
+\sum_{h\in S}\tilde c^h=\sum_{h\in S}e^h,
+$$
+and
+
+$$
+u^h(\tilde c^h)\ge u^h(c^h)\quad\forall h\in S,
+$$
+with strict inequality for at least one member of $S$.
+
+:::
+
+**Walrasian allocations are in the core.** If a coalition could block a Walrasian allocation, each blocking member would get a weakly preferred bundle and one member strictly preferred. By the same revealed-preference budget argument as in FWT, the coalition's proposed bundles would cost strictly more than the coalition's endowment, contradicting coalition feasibility.
+
+Core convergence theorem in the slides: in replica economies, as the number of replicas grows, core allocations converge to Walrasian allocations. Intuition: large markets make individual/coalitional market power vanish.
+
+## 6. Full insurance and belief differences
 
 There is one consumption good, two states, and two consumers. Utility is expected utility:
 
@@ -468,7 +489,7 @@ $$
 
 Consumer 2 overconsumes in the state she views as relatively more likely. Full insurance fails because prices reflect the risk-neutral consumer's beliefs, not consumer 2's beliefs.
 
-## 6. Pricing by arbitrage template
+## 7. Pricing by arbitrage template
 
 Given asset payoff matrix $A$ and prices $q$, compute $\psi$ from
 
