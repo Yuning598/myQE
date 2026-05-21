@@ -88,7 +88,9 @@ $$
 with strict inequality for at least one household $h'$.
 :::
 
-:::{admonition} First Welfare Theorem with production
+### First Welfare Theorem with production
+
+:::{admonition} Statement
 If consumers maximize utility and firms maximize profits at prices $p$, then the allocation-production plan is Pareto efficient.
 :::
 
