@@ -336,9 +336,9 @@ $$
 \pi(d)=\psi^\top d
 $$
 
-where $\psi$ is the unique state price vector if markets are complete.
+where $\psi$ is the unique state price vector if markets are **complete**.
 
-If $\operatorname{rank}(A)<S$, markets are incomplete. Then:
+If $\operatorname{rank}(A)<S$, **markets are incomplete**. Then:
 
 - not every risk can be traded away;
 - state prices may not be unique;
@@ -356,11 +356,13 @@ If $\operatorname{rank}(A)<S$, then some contingent payoffs are not spanned by a
 :::{admonition} Variations of the basic model
 No first-period consumption:
 
+There are $S$ states in the second period, and in the first period agents can trade assets but not commodities. Equivalently,
+
 $$
 x_h(0)=e^h(0)=0,\qquad h\in\mathcal H,
 $$
 
-so agents only consume in the future states and trade assets at date $0$.
+so agents have no first-period endowment and no first-period utility.
 
 One good economy:
 
@@ -368,7 +370,7 @@ $$
 L=1,
 $$
 
-so each state has a single consumption good and all uncertainty is about the state-contingent endowment and asset payoffs.
+so each state has a single consumption good.
 :::
 
 ## 5. Full insurance and belief differences
