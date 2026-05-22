@@ -392,179 +392,6 @@ $$
 (q_1-q_0)(x_H-x_L)\ge \frac{q_1C}{q_1-q_0}.
 $$
 
-### 2.6 H5 Q1 numerical template: JR 8.16
-
-Data:
-
-$$
-\begin{aligned}
-x_L&=0,\quad x_H=4,\\
-q_1&=\frac23,\quad q_0=\frac13,\\
-u(w,e)&=\sqrt w-e,\quad \bar u=0.
-\end{aligned}
-$$
-
-#### 2.6.1 Part A: effort observable
-
-High effort with observable effort:
-
-$$
-\begin{aligned}
-\max_{w_0,w_4}\quad
-&\frac13(0-w_0)+\frac23(4-w_4)\\
-\text{s.t.}\quad
-&\frac13(\sqrt{w_0}-1)+\frac23(\sqrt{w_4}-1)\ge0.
-\end{aligned}
-$$
-
-FOCs imply equal wages:
-
-$$
-w_0=w_4.
-$$
-
-IR binds:
-
-$$
-\sqrt w-1=0
-\quad\Longrightarrow\quad
-w=1.
-$$
-
-High-effort principal payoff:
-
-$$
-\begin{aligned}
-\Pi_H
-&=\frac23\cdot 4-1\\
-&=\frac83-1\\
-&=\frac53.
-\end{aligned}
-$$
-
-Low effort uses $w_0=w_4=0$, payoff
-
-$$
-\Pi_L=\frac13\cdot4=\frac43.
-$$
-
-Thus high effort is chosen.
-
-#### 2.6.2 Part B: effort unobservable
-
-To induce high effort:
-
-$$
-\begin{aligned}
-(IR):\quad &\frac13(\sqrt{w_0}-1)+\frac23(\sqrt{w_4}-1)\ge0,\\
-(IC):\quad &\frac13(\sqrt{w_0}-1)+\frac23(\sqrt{w_4}-1)
-\ge
-\frac23\sqrt{w_0}+\frac13\sqrt{w_4}.
-\end{aligned}
-$$
-
-Simplify IC:
-
-$$
-\begin{aligned}
-\frac13\sqrt{w_0}+\frac23\sqrt{w_4}-1
-&\ge
-\frac23\sqrt{w_0}+\frac13\sqrt{w_4}\\
-\frac13(\sqrt{w_4}-\sqrt{w_0})
-&\ge1\\
-\sqrt{w_4}-\sqrt{w_0}
-&\ge3.
-\end{aligned}
-$$
-
-Cost minimization subject to IC and limited liability implies
-
-$$
-w_0=0,\qquad \sqrt{w_4}=3,\qquad w_4=9.
-$$
-
-Check IR:
-
-$$
-\frac13(0-1)+\frac23(3-1)=1>0,
-$$
-
-so IR is slack.
-
-Principal payoff if high effort is induced:
-
-$$
-\begin{aligned}
-\Pi_H^{SB}
-&=\frac13(0-0)+\frac23(4-9)\\
-&=-\frac{10}{3}.
-\end{aligned}
-$$
-
-Low effort with $w_0=w_4=0$ gives
-
-$$
-\Pi_L=\frac43.
-$$
-
-Therefore the principal does **not** induce high effort; the worker exerts low effort.
-
-### 2.7 Continuous output and MLRP
-
-Suppose output $x\in[\underline x,\bar x]$ has density $f(x\mid e)>0$. The family satisfies monotone likelihood ratio property $MLRP$ if
-
-$$
-\frac{f(x\mid 1)}{f(x\mid 0)}
-\quad\text{is increasing in }x.
-$$
-
-MLRP implies FOSD: high effort makes high output more likely.
-
-The high-effort second-best problem is
-
-$$
-\begin{aligned}
-\max_{w(\cdot)}\quad
-&\int_{\underline x}^{\bar x}[x-w(x)]f(x\mid1)\,dx\\
-\text{s.t.}\quad
-&\int u(w(x))f(x\mid1)\,dx-C\ge \bar u,\\
-&\int u(w(x))[f(x\mid1)-f(x\mid0)]\,dx\ge C.
-\end{aligned}
-$$
-
-FOC with multipliers $\lambda,\mu$:
-
-$$
-\begin{aligned}
--f(x\mid1)
-+\lambda u'(w(x))f(x\mid1)
-+\mu u'(w(x))[f(x\mid1)-f(x\mid0)]
-=0.
-\end{aligned}
-$$
-
-Divide by $f(x\mid1)$:
-
-$$
-\begin{aligned}
-1
-=
-u'(w(x))
-\left[
-\lambda+\mu\left(1-\frac{f(x\mid0)}{f(x\mid1)}\right)
-\right].
-\end{aligned}
-$$
-
-Thus
-
-$$
-\frac{1}{u'(w(x))}
-=
-\lambda+\mu\left(1-\frac{f(x\mid0)}{f(x\mid1)}\right).
-$$
-
-Under MLRP, $f(x\mid1)/f(x\mid0)$ increases in $x$, so $f(x\mid0)/f(x\mid1)$ decreases. If $\mu>0$, the right-hand side increases in $x$. Since $u''<0$, $1/u'(w)$ increases with $w$, hence $w(x)$ increases with output.
 
 ## 3. Adverse Selection (Hidden Information): Screening
 
@@ -803,7 +630,7 @@ $$
 
 Proof:
 
-Let \(\theta_1>\theta_0\). IC gives
+Let $\theta_1>\theta_0$. IC gives
 
 $$
 \begin{aligned}
@@ -829,13 +656,13 @@ q(\theta_1)-q(\theta_0)
 \end{aligned}
 $$
 
-Since \(\theta_1-\theta_0>0\),
+Since $\theta_1-\theta_0>0$,
 
 $$
 q(\theta_1)\le q(\theta_0).
 $$
 
-Thus \(q\) is nonincreasing.
+Thus $q$ is nonincreasing.
 
 Envelope formula
 -
@@ -846,7 +673,7 @@ $$
 U'(\theta)=-q(\theta).
 $$
 
-Integrate from \(\theta\) to \(1\):
+Integrate from $\theta$ to $1$:
 
 $$
 \begin{aligned}
@@ -927,3 +754,179 @@ $$
 $$
 
 Intuition: truthful information revelation requires giving information rents to both sides. The total rent needed to elicit private information can exceed the expected surplus available from efficient trade.
+
+## Exercises
+
+### H5 Q1 numerical template: JR 8.16
+
+Data:
+
+$$
+\begin{aligned}
+x_L&=0,\quad x_H=4,\\
+q_1&=\frac23,\quad q_0=\frac13,\\
+u(w,e)&=\sqrt w-e,\quad \bar u=0.
+\end{aligned}
+$$
+
+#### Part A: effort observable
+
+High effort with observable effort:
+
+$$
+\begin{aligned}
+\max_{w_0,w_4}\quad
+&\frac13(0-w_0)+\frac23(4-w_4)\\
+\text{s.t.}\quad
+&\frac13(\sqrt{w_0}-1)+\frac23(\sqrt{w_4}-1)\ge0.
+\end{aligned}
+$$
+
+FOCs imply equal wages:
+
+$$
+w_0=w_4.
+$$
+
+IR binds:
+
+$$
+\sqrt w-1=0
+\quad\Longrightarrow\quad
+w=1.
+$$
+
+High-effort principal payoff:
+
+$$
+\begin{aligned}
+\Pi_H
+&=\frac23\cdot 4-1\\
+&=\frac83-1\\
+&=\frac53.
+\end{aligned}
+$$
+
+Low effort uses $w_0=w_4=0$, payoff
+
+$$
+\Pi_L=\frac13\cdot4=\frac43.
+$$
+
+Thus high effort is chosen.
+
+#### Part B: effort unobservable
+
+To induce high effort:
+
+$$
+\begin{aligned}
+(IR):\quad &\frac13(\sqrt{w_0}-1)+\frac23(\sqrt{w_4}-1)\ge0,\\
+(IC):\quad &\frac13(\sqrt{w_0}-1)+\frac23(\sqrt{w_4}-1)
+\ge
+\frac23\sqrt{w_0}+\frac13\sqrt{w_4}.
+\end{aligned}
+$$
+
+Simplify IC:
+
+$$
+\begin{aligned}
+\frac13\sqrt{w_0}+\frac23\sqrt{w_4}-1
+&\ge
+\frac23\sqrt{w_0}+\frac13\sqrt{w_4}\\
+\frac13(\sqrt{w_4}-\sqrt{w_0})
+&\ge1\\
+\sqrt{w_4}-\sqrt{w_0}
+&\ge3.
+\end{aligned}
+$$
+
+Cost minimization subject to IC and limited liability implies
+
+$$
+w_0=0,\qquad \sqrt{w_4}=3,\qquad w_4=9.
+$$
+
+Check IR:
+
+$$
+\frac13(0-1)+\frac23(3-1)=1>0,
+$$
+
+so IR is slack.
+
+Principal payoff if high effort is induced:
+
+$$
+\begin{aligned}
+\Pi_H^{SB}
+&=\frac13(0-0)+\frac23(4-9)\\
+&=-\frac{10}{3}.
+\end{aligned}
+$$
+
+Low effort with $w_0=w_4=0$ gives
+
+$$
+\Pi_L=\frac43.
+$$
+
+Therefore the principal does **not** induce high effort; the worker exerts low effort.
+
+### 2.7 Continuous output and MLRP
+
+Suppose output $x\in[\underline x,\bar x]$ has density $f(x\mid e)>0$. The family satisfies monotone likelihood ratio property $MLRP$ if
+
+$$
+\frac{f(x\mid 1)}{f(x\mid 0)}
+\quad\text{is increasing in }x.
+$$
+
+MLRP implies FOSD: high effort makes high output more likely.
+
+The high-effort second-best problem is
+
+$$
+\begin{aligned}
+\max_{w(\cdot)}\quad
+&\int_{\underline x}^{\bar x}[x-w(x)]f(x\mid1)\,dx\\
+\text{s.t.}\quad
+&\int u(w(x))f(x\mid1)\,dx-C\ge \bar u,\\
+&\int u(w(x))[f(x\mid1)-f(x\mid0)]\,dx\ge C.
+\end{aligned}
+$$
+
+FOC with multipliers $\lambda,\mu$:
+
+$$
+\begin{aligned}
+-f(x\mid1)
++\lambda u'(w(x))f(x\mid1)
++\mu u'(w(x))[f(x\mid1)-f(x\mid0)]
+=0.
+\end{aligned}
+$$
+
+Divide by $f(x\mid1)$:
+
+$$
+\begin{aligned}
+1
+=
+u'(w(x))
+\left[
+\lambda+\mu\left(1-\frac{f(x\mid0)}{f(x\mid1)}\right)
+\right].
+\end{aligned}
+$$
+
+Thus
+
+$$
+\frac{1}{u'(w(x))}
+=
+\lambda+\mu\left(1-\frac{f(x\mid0)}{f(x\mid1)}\right).
+$$
+
+Under MLRP, $f(x\mid1)/f(x\mid0)$ increases in $x$, so $f(x\mid0)/f(x\mid1)$ decreases. If $\mu>0$, the right-hand side increases in $x$. Since $u''<0$, $1/u'(w)$ increases with $w$, hence $w(x)$ increases with output.
