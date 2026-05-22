@@ -42,9 +42,9 @@ This chapter covers the moral-hazard model in detail, and the screening model un
 
 ## 1. Moral Hazard
 
-**信息情形：二元产出**
+### 1.1 二元情形 (Binary output)
 
-:::{admonition} Agent / action structure
+**Agent / action structure**
 
 - Principal owns a project.
 - Agent chooses effort $e\in\{0,1\}$, where $e=1$ is high effort.
@@ -66,9 +66,7 @@ $$
 w:X\to\mathbb R_+,\qquad x\mapsto w(x).
 $$
 
-:::
-
-**情形：First Best，努力可观察，High effort**
+#### 1.1.1 情形：First Best，努力可观察，High effort
 
 :::{admonition} First best: effort observable
 $$
@@ -138,7 +136,7 @@ $$
 V_1=q_1x_H+(1-q_1)x_L-u^{-1}(\bar u+C).
 $$
 
-**情形：First Best，努力可观察，Low effort**
+#### 1.1.2 情形：First Best，努力可观察，Low effort
 
 $$
 w_H=w_L=u^{-1}(\bar u),
@@ -160,7 +158,7 @@ $$
 
 Interpretation: marginal productivity gain must exceed compensation for effort cost.
 
-**情形：Second Best，努力不可观察**
+#### 1.1.3 情形：Second Best，努力不可观察
 
 :::{admonition} Second best: effort unobservable
 $$
@@ -257,7 +255,7 @@ $$
 
 If $w_L^{SB}$ violates limited liability or utility domain restrictions, the limited-liability solution applies.
 
-**情形：Low effort implementation**
+#### 1.1.4 情形：Low effort implementation
 
 :::{admonition} Low effort implementation
 $$
@@ -293,7 +291,7 @@ $$
 V_1^{SB}\ge V_0.
 $$
 
-**情形：Risk-neutral agent with limited liability**
+#### 1.1.5 情形：Risk-neutral agent with limited liability
 
 :::{admonition} Risk-neutral agent with limited liability
 $$
@@ -407,7 +405,17 @@ Equivalently,
 $$
 (q_1-q_0)(x_H-x_L)\ge \frac{q_1C}{q_1-q_0}.
 $$
-**信息情形：连续产出**
+### 1.2 连续情形 (Continuous output)
+
+**Agent / action structure**
+
+- Output $x\in[\underline x,\bar x]$ is observable.
+- Effort $e\in\{0,1\}$ is unobservable.
+- High effort changes the output density from $f(x\mid0)$ to $f(x\mid1)$.
+- The family satisfies MLRP if $\frac{f(x\mid1)}{f(x\mid0)}$ is increasing in $x$.
+- $w(\cdot)$ is the wage schedule and $C$ is the high-effort cost.
+
+#### 1.2.1 情形：Second Best，努力不可观察
 
 :::{admonition} Continuous output and MLRP
 $$
@@ -479,9 +487,9 @@ Under MLRP, $f(x\mid1)/f(x\mid0)$ increases in $x$, so $f(x\mid0)/f(x\mid1)$ dec
 
 ## 2. Adverse Selection
 
-**信息情形：二元类型**
+### 2.1 二元类型 (Binary types)
 
-:::{admonition} Agent / type structure
+**Agent / type structure**
 
 Now output/effort is observable, but agent's cost type is private.
 
@@ -513,9 +521,7 @@ $$
 
 Higher-cost types dislike output more.
 
-:::
-
-**情形：First Best，类型可观察**
+#### 2.1.1 情形：First Best，类型可观察
 
 :::{admonition} First best screening
 $$
@@ -577,7 +583,7 @@ $$
 
 Thus the low-cost firm would lie. The first-best menu is not incentive compatible.
 
-**情形：Second Best，类型不可观察**
+#### 2.1.2 情形：Second Best，类型不可观察
 
 :::{admonition} Two-type second best screening
 $$
@@ -649,17 +655,15 @@ $$
 \begin{aligned}
 \max_{q_L,q_H}\quad
 &\lambda
-S(q_L)-t_L
+[S(q_L)-t_L]
 +(1-\lambda)
-S(q_H)-t_H
+[S(q_H)-t_H]
 \\
 =
 \max_{q_L,q_H}\quad
 &\lambda
-S(q_L)-Lq_L-(H-L)q_H
-\\
-&\quad +(1-\lambda)
-S(q_H)-Hq_H
+[S(q_L)-Lq_L]-(H-L)q_H +(1-\lambda)
+[S(q_H)-Hq_H]
 .
 \end{aligned}
 $$
@@ -699,7 +703,16 @@ $$
 
 The inefficient type is distorted downward to reduce the efficient type's information rent.
 
-**信息情形：连续类型**
+### 2.2 连续类型 (Continuous types)
+
+**Agent / type structure**
+
+- $\theta\in[0,1]$ is the private cost type with cdf $F$ and pdf $f>0$.
+- Higher $\theta$ means higher marginal cost.
+- $q(\theta)$ is the output schedule and $t(\theta)$ is the transfer schedule.
+- $U(\theta)=t(\theta)-\theta q(\theta)$ is the agent's information rent.
+
+#### 2.2.1 情形：Continuum of types and envelope formula
 
 :::{admonition} Continuum of types and envelope formula
 $$
@@ -714,15 +727,6 @@ $$
 \right.
 $$
 :::
-
-**Agent / type structure:**
-
-
-Let $\theta\in[0,1]$, with cdf $F$ and pdf $f>0$. Agent utility:
-
-$$
-U(\theta)=t(\theta)-\theta q(\theta).
-$$
 
 IC requires truthful reporting:
 
@@ -739,7 +743,6 @@ A direct mechanism $(q(\cdot),t(\cdot))$ is IC iff $q(\theta)$ is nonincreasing 
 $$
 U(\theta)=U(1)+\int_\theta^1 q(s)\,ds.
 $$
-
 :::
 
 Proof:
@@ -764,9 +767,7 @@ $$
 \theta_1q(\theta_1)-\theta_1q(\theta_0)
 +\theta_0q(\theta_0)-\theta_0q(\theta_1)\\
 &=
-$\theta_1-\theta_0
-q(\theta_1)-q(\theta_0)
-.
+(\theta_1-\theta_0)\bigl(q(\theta_1)-q(\theta_0)\bigr).
 \end{aligned}
 $$
 
@@ -792,9 +793,7 @@ $$
 \begin{aligned}
 U(1)-U(\theta)
 &=\int_\theta^1 U'(s)\,ds\\
-&=\int_\theta^1
--q(s)
-\,ds,
+&=\int_\theta^1 -q(s)\,ds,
 \end{aligned}
 $$
 
