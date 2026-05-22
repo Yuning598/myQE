@@ -83,7 +83,7 @@
 
     .md-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.92fr);
+      grid-template-columns: minmax(280px, 1.04fr) minmax(280px, 0.96fr);
       gap: 12px;
       align-items: stretch;
     }
@@ -351,7 +351,7 @@
       min-height: 0;
     }
 
-    @container (max-width: 820px) {
+    @container (max-width: 620px) {
       .md-header,
       .md-layout { grid-template-columns: 1fr; }
       .md-mode { min-width: 0; }
@@ -363,6 +363,8 @@
 
     @media (max-width: 520px) {
       .md-card { padding: 10px; }
+      .md-header,
+      .md-layout { grid-template-columns: 1fr; }
       .md-tab { grid-template-columns: 1fr; }
       .md-controls { grid-template-columns: 1fr; }
     }
