@@ -285,31 +285,85 @@ $$
 
 ### 2.5 Risk-neutral agent with limited liability
 
-Suppose $u(w)=w$, $\bar u=0$, and $w_L,w_H\ge0$.
+Suppose $u(w)=w$, $\bar u=0$.
 
-IC:
-
-$$
-(q_1-q_0)(w_H-w_L)\ge C.
-$$
-
-Limited liability makes the punishment state bind:
+If wages are unrestricted, the IC/IR system yields
 
 $$
-w_L=0.
+\left\{
+\begin{aligned}
+&\text{允许负工资: }&&
+w_L^{NLL}=-\frac{q_0}{q_1-q_0}C,\quad
+w_H^{NLL}=\frac{1-q_0}{q_1-q_0}C,\\
+&\text{有限责任: }&&
+w_L^{LL}=0,\quad
+w_H^{LL}=\frac{C}{q_1-q_0}.
+\end{aligned}
+\right.
 $$
 
-With binding IC,
-
-$$
-w_H=\frac{C}{q_1-q_0}.
-$$
-
-Agent utility under high effort:
+Indeed, binding IC and IR give
 
 $$
 \begin{aligned}
-q_1w_H-C
+q_1w_H+(1-q_1)w_L-C&=0,\\
+q_0w_H+(1-q_0)w_L&=0,
+\end{aligned}
+$$
+
+so subtracting yields
+
+$$
+\begin{aligned}
+(q_1-q_0)(w_H-w_L)&=C,\\
+w_H-w_L&=\frac{C}{q_1-q_0}.
+\end{aligned}
+$$
+
+Hence
+
+$$
+\begin{aligned}
+w_L^{NLL}
+&=-\frac{q_0}{q_1-q_0}C,\\
+w_H^{NLL}
+&=\frac{1-q_0}{q_1-q_0}C.
+\end{aligned}
+$$
+
+Under limited liability the punishment state binds:
+
+$$
+w_L^{LL}=0,
+$$
+
+so
+
+$$
+w_H^{LL}=\frac{C}{q_1-q_0}.
+$$
+
+The two wage spreads coincide:
+
+$$
+\begin{aligned}
+w_H^{NLL}-w_L^{NLL}
+&=
+\frac{1-q_0}{q_1-q_0}C
+-\left(-\frac{q_0}{q_1-q_0}C\right)
+=\frac{C}{q_1-q_0},\\
+w_H^{LL}-w_L^{LL}
+&=
+\frac{C}{q_1-q_0}-0
+=\frac{C}{q_1-q_0}.
+\end{aligned}
+$$
+
+Agent utility under high effort is
+
+$$
+\begin{aligned}
+q_1w_H^{LL}-C
 &=
 q_1\frac{C}{q_1-q_0}-C\\
 &=
@@ -624,7 +678,7 @@ $$
 IC implies monotonicity
 -
 
-Add \(IC_L\) and \(IC_H\):
+Add $IC_L$ and $IC_H$:
 
 $$
 \begin{aligned}
@@ -634,7 +688,7 @@ U_L+U_H
 \end{aligned}
 $$
 
-Since \(H-L>0\),
+Since $H-L>0$,
 
 $$
 q_L\ge q_H.
@@ -685,12 +739,12 @@ S(q_H)-Hq_H
 \end{aligned}
 $$
 
-FOC for \(q_L\):
+FOC for $q_L$:
 
 $$
-\lambda$$
+\lambda
 S'(q_L)-L
-$$=0
+=0
 \quad\Longrightarrow\quad
 S'(q_L)=L.
 $$
@@ -701,7 +755,7 @@ $$
 q_L^{SB}=q_L^{FB}.
 $$
 
-FOC for \(q_H\):
+FOC for $q_H$:
 
 $$
 \begin{aligned}
@@ -712,7 +766,7 @@ S'(q_H)&=H+\frac{\lambda}{1-\lambda}(H-L).
 \end{aligned}
 $$
 
-Since \(S''<0\), this means
+Since $S''<0$, this means
 
 $$
 q_H^{SB}<q_H^{FB}.
@@ -723,7 +777,7 @@ The inefficient type is distorted downward to reduce the efficient type's inform
 #### 3.1.3 Continuum of types and envelope formula
 
 
-Let \(\theta\in[0,1]\), with cdf \(F\) and pdf \(f>0\). Agent utility:
+Let $\theta\in[0,1]$, with cdf $F$ and pdf $f>0$. Agent utility:
 
 $$
 U(\theta)=t(\theta)-\theta q(\theta).
@@ -739,7 +793,7 @@ t(\hat\theta)-\theta q(\hat\theta)
 $$
 
 :::{admonition} IC monotonicity and envelope
-A direct mechanism \((q(\cdot),t(\cdot))\) is IC iff \(q(\theta)\) is nonincreasing and
+A direct mechanism $(q(\cdot),t(\cdot))$ is IC iff $q(\theta)$ is nonincreasing and
 
 $$
 U(\theta)=U(1)+\int_\theta^1 q(s)\,ds.
