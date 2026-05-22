@@ -415,7 +415,7 @@ $$
 - The family satisfies MLRP if $\frac{f(x\mid1)}{f(x\mid0)}$ is increasing in $x$.
 - $w(\cdot)$ is the wage schedule and $C$ is the high-effort cost.
 
-#### 1.2.1 情形：Second Best，努力不可观察
+#### 1.2.1 情形：Second Best，努力不可观察，诱导高努力
 
 :::{admonition} Continuous output and MLRP
 $$
@@ -439,7 +439,7 @@ $$
 
 MLRP implies FOSD: high effort makes high output more likely.
 
-The high-effort second-best problem is
+**High-effort second-best problem**
 
 $$
 \begin{aligned}
