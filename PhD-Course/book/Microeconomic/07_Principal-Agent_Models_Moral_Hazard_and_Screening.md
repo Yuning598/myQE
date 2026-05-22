@@ -68,7 +68,7 @@ $$
 
 :::
 
-**情形：First Best，努力可观察**
+**情形：First Best，努力可观察，High effort**
 
 :::{admonition} First best: effort observable
 $$
@@ -138,7 +138,7 @@ $$
 V_1=q_1x_H+(1-q_1)x_L-u^{-1}(\bar u+C).
 $$
 
-Under low effort:
+**情形：First Best，努力可观察，Low effort**
 
 $$
 w_H=w_L=u^{-1}(\bar u),
@@ -684,7 +684,7 @@ FOC for $q_H$:
 
 $$
 \begin{aligned}
-$1-\lambda$
+(1-\lambda)
 S'(q_H)-H
 -\lambda(H-L)&=0\\
 S'(q_H)&=H+\frac{\lambda}{1-\lambda}(H-L).
