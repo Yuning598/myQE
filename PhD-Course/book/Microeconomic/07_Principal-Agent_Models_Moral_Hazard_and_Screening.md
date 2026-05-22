@@ -70,6 +70,19 @@ $$
 
 **情形：First Best，努力可观察**
 
+:::{admonition} First best: effort observable
+$$
+\left\{
+\begin{aligned}
+\max_{w_H,w_L}\quad
+&q_1(x_H-w_H)+(1-q_1)(x_L-w_L)\\
+\text{s.t.}\quad
+&q_1u(w_H)+(1-q_1)u(w_L)-C\ge \bar u
+\end{aligned}
+\right.
+$$
+:::
+
 If effort is observable, the principal can choose $e$ and wages directly.
 
 For fixed high effort $e=1$, the principal solves
@@ -161,6 +174,22 @@ $$
 Interpretation: marginal productivity gain must exceed compensation for effort cost.
 
 **情形：Second Best，努力不可观察**
+
+:::{admonition} Second best: effort unobservable
+$$
+\left\{
+\begin{aligned}
+\max_{w_H,w_L}\quad
+&q_1(x_H-w_H)+(1-q_1)(x_L-w_L)\\
+\text{s.t.}\quad
+&q_1u(w_H)+(1-q_1)u(w_L)-C\ge \bar u \qquad (IR)\\
+&q_1u(w_H)+(1-q_1)u(w_L)-C
+\ge
+q_0u(w_H)+(1-q_0)u(w_L) \qquad (IC)
+\end{aligned}
+\right.
+$$
+:::
 
 To induce high effort, add incentive compatibility.
 
@@ -257,6 +286,12 @@ If $w_L^{SB}$ violates limited liability or utility domain restrictions, the lim
 
 **情形：Low effort implementation**
 
+:::{admonition} Low effort implementation
+$$
+w_H=w_L=u^{-1}(\bar u)
+$$
+:::
+
 To induce low effort, the relaxed problem without IC gives full insurance:
 
 $$
@@ -286,6 +321,12 @@ V_1^{SB}\ge V_0.
 $$
 
 **情形：Risk-neutral agent with limited liability**
+
+:::{admonition} Risk-neutral agent with limited liability
+$$
+u(w)=w,\qquad \bar u=0.
+$$
+:::
 
 Suppose $u(w)=w$, $\bar u=0$.
 
@@ -393,45 +434,20 @@ Equivalently,
 $$
 (q_1-q_0)(x_H-x_L)\ge \frac{q_1C}{q_1-q_0}.
 $$
+**信息情形：连续产出**
 
-
-**Moral hazard optimization templates**
-
-:::{admonition} Moral hazard: max + s.t.
-**Binary output.**
-
+:::{admonition} Continuous output and MLRP
 $$
 \left\{
 \begin{aligned}
-\max_{w_H,w_L}\quad
-& q_1(x_H-w_H)+(1-q_1)(x_L-w_L)\\
-\text{s.t.}\quad
-&IR:\ q_1u(w_H)+(1-q_1)u(w_L)-C\ge \bar u\\
-&IC:\ q_1u(w_H)+(1-q_1)u(w_L)-C\ge q_0u(w_H)+(1-q_0)u(w_L)\\
-&LL:\ w_H,w_L\ge0\quad\text{(if limited liability)}
-\end{aligned}
-\right.
-$$
-
-**Continuous output.**
-
-$$
-\left\{
-\begin{aligned}
-\max_{w(\cdot)}\quad
-&\int_{\underline x}^{\bar x}[x-w(x)]f(x\mid1)\,dx\\
-\text{s.t.}\quad
-&IR:\ \int u(w(x))f(x\mid1)\,dx-C\ge \bar u\\
-&IC:\ \int u(w(x))f(x\mid1)\,dx-C\ge \int u(w(x))f(x\mid0)\,dx\\
-&LL:\ w(x)\ge0,\ \forall x\quad\text{(if limited liability)}
+&x\in[\underline x,\bar x]\\
+&f(x\mid e)>0\\
+&\frac{f(x\mid1)}{f(x\mid0)} \text{ increasing in }x\\
+&w(\cdot)=\text{wage schedule},\quad C=\text{high-effort cost}
 \end{aligned}
 \right.
 $$
 :::
-
-**信息情形：连续产出**
-
-**Agent / action structure:**
 
 Suppose output $x\in[\underline x,\bar x]$ has density $f(x\mid e)>0$. The family satisfies monotone likelihood ratio property $MLRP$ if
 
@@ -528,6 +544,17 @@ Higher-cost types dislike output more.
 
 **情形：First Best，类型可观察**
 
+:::{admonition} First best screening
+$$
+\left\{
+\begin{aligned}
+\max_q\quad & S(q)-\theta q\\
+\text{s.t.}\quad & IR_\theta:\ t-\theta q\ge 0
+\end{aligned}
+\right.
+$$
+:::
+
 If $\theta$ is known, principal solves
 
 $$
@@ -589,6 +616,22 @@ $$
 Thus the low-cost firm would lie. The first-best menu is not incentive compatible.
 
 **情形：Second Best，类型不可观察**
+
+:::{admonition} Two-type second best screening
+$$
+\left\{
+\begin{aligned}
+\max_{q_L,q_H,t_L,t_H}\quad
+&\lambda\bigl[S(q_L)-t_L\bigr]+(1-\lambda)\bigl[S(q_H)-t_H\bigr]\\
+\text{s.t.}\quad
+&IC_L:\ U_L\ge U_H+(H-L)q_H,\\
+&IC_H:\ U_H\ge U_L-(H-L)q_L,\\
+&IR_L:\ U_L\ge0,\\
+&IR_H:\ U_H\ge0.
+\end{aligned}
+\right.
+$$
+:::
 
 
 Define information rents:
@@ -712,6 +755,20 @@ The inefficient type is distorted downward to reduce the efficient type's inform
 
 **信息情形：连续类型**
 
+:::{admonition} Continuum of types and envelope formula
+$$
+\left\{
+\begin{aligned}
+\max_{q(\cdot),t(\cdot)}\quad
+&\int_0^1 [S(q(\theta))-t(\theta)]f(\theta)\,d\theta\\
+\text{s.t.}\quad
+&IC:\ t(\theta)-\theta q(\theta)\ge t(\hat\theta)-\theta q(\hat\theta),\ \forall \theta,\hat\theta\\
+&IR:\ t(\theta)-\theta q(\theta)\ge0,\ \forall \theta
+\end{aligned}
+\right.
+$$
+:::
+
 **Agent / type structure:**
 
 
@@ -833,116 +890,214 @@ $$
 
 The term $F(\theta)/f(\theta)$ is the rent-extraction distortion.
 
-**Adverse selection optimization templates**
-
-:::{admonition} Adverse selection: max + s.t.
-**Binary types, direct transfer form.**
-
-$$
-\left\{
-\begin{aligned}
-\max_{q(L),q(H),t(L),t(H)}\quad
-&\lambda[S(q(L))-t(L)]+(1-\lambda)[S(q(H))-t(H)]\\
-\text{s.t.}\quad
-&IR_L:\ t(L)-Lq(L)\ge0\\
-&IR_H:\ t(H)-Hq(H)\ge0\\
-&IC_L:\ t(L)-Lq(L)\ge t(H)-Lq(H)\\
-&IC_H:\ t(H)-Hq(H)\ge t(L)-Hq(L)
-\end{aligned}
-\right.
-$$
-
-**Binary types, rent form.**
-
-$$
-\left\{
-\begin{aligned}
-\max_{q(L),q(H),U(L),U(H)}\quad
-&\lambda[S(q(L))-Lq(L)-U(L)]+(1-\lambda)[S(q(H))-Hq(H)-U(H)]\\
-\text{s.t.}\quad
-&IR_L:\ U(L)\ge0\\
-&IR_H:\ U(H)\ge0\\
-&IC_L:\ U(L)\ge U(H)+(H-L)q(H)\\
-&IC_H:\ U(H)\ge U(L)-(H-L)q(L)
-\end{aligned}
-\right.
-$$
-
-**Continuous types, direct transfer form.**
-
-$$
-\left\{
-\begin{aligned}
-\max_{q(\cdot),t(\cdot)}\quad
-&\int_0^1 [S(q(\theta))-t(\theta)]f(\theta)\,d\theta\\
-\text{s.t.}\quad
-&IC:\ t(\theta)-\theta q(\theta)\ge t(\hat\theta)-\theta q(\hat\theta),\ \forall \theta,\hat\theta\\
-&IR:\ t(\theta)-\theta q(\theta)\ge0,\ \forall \theta
-\end{aligned}
-\right.
-$$
-
-**Continuous types, rent form.**
-
-$$
-\left\{
-\begin{aligned}
-\max_{q(\cdot),U(\cdot)}\quad
-&\int_0^1 [S(q(\theta))-\theta q(\theta)-U(\theta)]f(\theta)\,d\theta\\
-\text{s.t.}\quad
-&Envelope:\ U'(\theta)=-q(\theta)\\
-&Monotonicity:\ q'(\theta)\le0\\
-&IR:\ U(\theta)\ge0,\ \forall \theta
-\end{aligned}
-\right.
-$$
-
-**Continuous types, virtual cost form.**
-
-$$
-\max_{q(\cdot)}
-\int_0^1
-\left[
-S(q(\theta))-\left(\theta+\frac{F(\theta)}{f(\theta)}\right)q(\theta)
-\right]f(\theta)\,d\theta
-$$
-
-s.t.
-
-$$
-\left\{
-\begin{aligned}
-&Monotonicity:\ q'(\theta)\le0\\
-&Feasibility:\ q(\theta)\ge0
-\end{aligned}
-\right.
-$$
-:::
 
 ## 3. The Bilateral Trading Environment
 
-:::{admonition} Bilateral trade
-There is one buyer with value $v\in[\underline v,\bar v]$ and one seller with cost $c\in[\underline c,\bar c]$. Types are private and independent. Allocation $q(v,c)\in[0,1]$ is the probability of trade, and transfers $t_b,t_s$ determine payoffs
+**信息情形：双边交易**
+
+:::{admonition} Bilateral trading environment
+There is one buyer with value $v\in[\underline v,\bar v]$ and one seller with cost $c\in[\underline c,\bar c]$. Types are private and independent. Let $q\in[0,1]$ denote the probability that the buyer obtains the good, and let $t_b,t_s$ denote expected monetary transfers.
+
+The ex post payoffs are
 
 $$
- u_b=vq+t_b,\qquad u_s=t_s-cq.
+u_b=vq+t_b,\qquad u_s=-cq+t_s.
 $$
 
-The efficient allocation rule is
+The overlap condition is
 
 $$
-q^*(v,c)=
-\begin{cases}
-1,&v>c,\\
-0,&v<c.
-\end{cases}
+(\mathrm{OL})\qquad [\underline c,\bar c]\cap[\underline v,\bar v]
+\ \text{is a nondegenerate interval.}
 $$
 :::
 
-:::{admonition} Theorem (Myerson-Satterthwaite)
-With overlapping type supports, no mechanism can simultaneously satisfy efficiency, Bayesian IC, interim IR, and budget balance.
+:::{admonition} Revelation mechanism
+A revelation mechanism is a triple of functions $\langle q,t_b,t_s\rangle$ with
 
-**Intuition.** Truthful information revelation requires giving information rents to both sides. The total rent needed to elicit private information can exceed the expected surplus available from efficient trade.
+$$
+q:[\underline v,\bar v]\times[\underline c,\bar c]\to[0,1],\qquad
+t_b:[\underline v,\bar v]\times[\underline c,\bar c]\to\mathbb R,\qquad
+t_s:[\underline v,\bar v]\times[\underline c,\bar c]\to\mathbb R.
+$$
+
+If both parties report truthfully, the ex post payoffs are
+
+$$
+u_b(v,c):=vq(v,c)+t_b(v,c),\qquad
+u_s(v,c):=-cq(v,c)+t_s(v,c).
+$$
+:::
+
+:::{admonition} First-best efficiency
+Two conditions are necessary and sufficient for $\langle q,t_b,t_s\rangle$ to be (first-best) efficient.
+
+The first is that the trading rule $q$ maximizes ex post surplus:
+
+$$
+q^*(v,c):=
+\begin{cases}
+1,& v\ge c,\\
+0,& v<c.
+\end{cases}
+$$
+
+The second is budget balance:
+
+$$
+(\mathrm{BB})\qquad t_b(\cdot)+t_s(\cdot)=0.
+$$
+
+BB implies the weaker condition, No Expected Subsidy:
+
+$$
+(\mathrm{NES})\qquad E_{c,v}\{t_b(v,c)+t_s(v,c)\}\le 0.
+$$
+
+To write the interim incentive constraints, define
+
+$$
+Q_b(v):=E_c q(v,c),\qquad Q_s(c):=E_v q(v,c),
+$$
+$$
+T_b(v):=E_c t_b(v,c),\qquad T_s(c):=E_v t_s(v,c).
+$$
+
+The interim payoff functions are
+
+$$
+U_b(v):=vQ_b(v)+T_b(v),\qquad U_s(c):=T_s(c)-cQ_s(c).
+$$
+
+The incentive compatibility constraints are
+
+$$
+(\mathrm{IC})\qquad U_b(v)\ge vQ_b(\hat v)+T_b(\hat v),\qquad
+U_s(c)\ge T_s(\hat c)-cQ_s(\hat c).
+$$
+
+Let each agent's reservation utility be zero. The participation constraints are
+
+$$
+(\mathrm{IR})\qquad U_b(\cdot)\ge0,\qquad U_s(\cdot)\ge0.
+$$
+:::
+
+:::{admonition} Theorem 2 (Generalized Myerson-Satterthwaite Theorem)
+Given $(\mathrm{OL})$, no incentive-compatible (revelation) mechanism of the form $\langle q^*,t_b,t_s\rangle$ satisfies both $(\mathrm{NES})$ and $(\mathrm{IR})$.
+:::
+
+:::{admonition} Corollary 3 (Myerson \& Satterthwaite, 1983)
+Given $(\mathrm{OL})$, no efficient allocation rule satisfying $(\mathrm{IR})$ can be implemented.
+:::
+
+:::{admonition} Proof of Corollary 3
+Suppose $\langle q,t_b,t_s\rangle$ is efficient, and satisfies IC and IR.
+
+Since it is efficient, $\langle q,t_b,t_s\rangle$ satisfies BB and $q=q^*$ a.e. Hence, since
+
+$$
+\mathrm{BB}\Rightarrow \mathrm{NES},
+$$
+
+$\langle q,t_b,t_s\rangle=\langle q^*,t_b,t_s\rangle$ is incentive compatible and satisfies NES and IR. This contradicts Theorem 2.
+:::
+
+:::{admonition} Remark
+- The logic of the Myerson-Satterthwaite inefficiency result is that the cost of eliciting private information is more than the maximal expected surplus that can be generated.
+- A subsidizing third party can thus restore efficiency.
+- This is made clear in the upcoming proof.
+:::
+
+:::{admonition} Our present use of Theorem 1
+We shall apply it to both the buyer and seller in the bilateral trade environment.
+
+To apply it to the seller, the statement becomes $Q_s(c)$ nonincreasing, and
+
+$$
+U_s(c)=U_s(\bar c)+\int_c^{\bar c}Q_s(z)\,dz.
+$$
+
+To apply it to the buyer, the statement becomes $Q_b(v)$ nondecreasing, and
+
+$$
+U_b(v)=U_b(\underline v)+\int_{\underline v}^{v}Q_b(z)\,dz.
+$$
+:::
+
+:::{admonition} A simple proof of the generalized MS theorem
+This proof is based on Williams (1999). We prove it for the case $\bar v\le \bar c$ and $\underline c\le \underline v$.
+
+In this case the efficient trading rule $q^*$ satisfies $q^*(\bar v,\cdot)=0$ and $q^*(\cdot,\bar c)=0$. Define the maximal surplus function
+
+$$
+s^*(v,c):=(v-c)q^*(v,c).
+$$
+
+Then
+
+$$
+E_{c}s^*(\bar v,c)=E_{v}s^*(v,\bar c)=0,
+$$
+
+while $(\mathrm{OL})$ and positive densities imply
+
+$$
+S^*:=E_{v,c}s^*(v,c)>0.
+$$
+
+Let $G=\langle q^*,t_b,t_s\rangle$ be an IC mechanism satisfying $(\mathrm{NES})$. We must show it violates $(\mathrm{IR})$.
+
+Let $U_b$ and $U_s$ be the interim payoff functions generated by $G$, and define
+
+$$
+\alpha:=U_b(\underline v),\qquad \beta:=U_s(\bar c).
+$$
+
+To show that $G$ violates IR, it suffices to show
+
+$$
+\alpha+\beta<0.
+$$
+
+Step 1. By Theorem 1, any other IC mechanism $\hat G=\langle \hat q,\hat t_b,\hat t_s\rangle$ with $\hat q=q^*$ must generate the same interim payoff functions, provided $\hat U_b(\underline v)=\alpha$ and $\hat U_s(\bar c)=\beta$. Construct
+
+$$
+\hat q=q^*,\qquad
+\hat t_b(v,c)=\alpha-cq^*(v,c),\qquad
+\hat t_s(v,c)=\beta+vq^*(v,c).
+$$
+
+Then the ex post payoff functions are
+
+$$
+\hat u_b(v,c)=\alpha+s^*(v,c),\qquad
+\hat u_s(v,c)=\beta+s^*(v,c),
+$$
+
+and the interim payoffs are
+
+$$
+\hat U_b(v)=\alpha+E_c s^*(v,c),\qquad
+\hat U_s(c)=\beta+E_v s^*(v,c).
+$$
+
+Since $E_c s^*(\underline v,c)=E_v s^*(v,\bar c)=0$, we indeed have $\hat U_b(\underline v)=\alpha$ and $\hat U_s(\bar c)=\beta$.
+
+Step 2. Let $\widehat{\mathrm{SUB}}:=E_{v,c}\{\hat t_b(v,c)+\hat t_s(v,c)\}$. Then
+
+$$
+\widehat{\mathrm{SUB}}
+=\alpha+\beta+S^*.
+$$
+
+But $\hat G$ is IC and satisfies $(\mathrm{NES})$, so $\widehat{\mathrm{SUB}}\le0$. Hence
+
+$$
+\alpha+\beta\le -S^*<0,
+$$
+
+contrary to $(\mathrm{IR})$. This proves the theorem.
 :::
 
 ## Exercises
