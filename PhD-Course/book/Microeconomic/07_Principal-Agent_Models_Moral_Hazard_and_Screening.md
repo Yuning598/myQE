@@ -837,11 +837,27 @@ $$
 \end{aligned}
 $$
 
-where the last line uses integration by parts on information rents. Pointwise FOC, ignoring monotonicity/ironing:
+where the last line uses integration by parts on information rents.
+
+:::{admonition} The Optimal Contract
+The principal's problem can be rewritten as
 
 $$
-S'(q(\theta))=\theta+\frac{F(\theta)}{f(\theta)}.
+\max_{q(\cdot)}\int_0^1 \left[S(q(\theta))-\left(\theta+\frac{F(\theta)}{f(\theta)}\right)q(\theta)\right]f(\theta)\,d\theta
 $$
+
+subject to $q(\cdot)$ is nonincreasing.
+
+Ignore the monotonicity constraint.
+
+$$
+S'(q(\theta))-\left(\theta+\frac{F(\theta)}{f(\theta)}\right)=0.
+$$
+
+$\theta+\frac{F(\theta)}{f(\theta)}$ is the virtual cost of type $\theta$.
+
+For $q(\cdot)$ to be nonincreasing, the virtual cost function needs to be nondecreasing.
+:::
 
 The term $F(\theta)/f(\theta)$ is the rent-extraction distortion.
 
