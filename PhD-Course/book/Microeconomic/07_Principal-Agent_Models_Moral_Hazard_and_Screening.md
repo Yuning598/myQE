@@ -790,21 +790,16 @@ $$
 
 The term $F(\theta)/f(\theta)$ is the rent-extraction distortion.
 
-### 3.2 Bilateral trade and Myerson-Satterthwaite
+## 4. The Bilateral Trading Environment
 
-Environment:
+:::{admonition} Bilateral trade
+There is one buyer with value $v\in[\underline v,\bar v]$ and one seller with cost $c\in[\underline c,\bar c]$. Types are private and independent. Allocation $q(v,c)\in[0,1]$ is the probability of trade, and transfers $t_b,t_s$ determine payoffs
 
-- One buyer with value $v\in[\underline v,\bar v]$.
-- One seller with cost $c\in[\underline c,\bar c]$.
-- Types are private and independent.
-- Allocation $q(v,c)\in[0,1]$ is probability of trade.
-- Transfers $t_b,t_s$ determine payoffs:
+$$
+ u_b=vq+t_b,\qquad u_s=t_s-cq.
+$$
 
-  $$
-  u_b=vq+t_b,\qquad u_s=t_s-cq.
-  $$
-
-Efficient allocation rule:
+The efficient allocation rule is
 
 $$
 q^*(v,c)=
@@ -813,16 +808,15 @@ q^*(v,c)=
 0,&v<c.
 \end{cases}
 $$
+:::
 
-**Myerson-Satterthwaite theorem:** With overlapping type supports, no mechanism can simultaneously satisfy:
+:::{admonition} Theorem (Myerson-Satterthwaite)
+With overlapping type supports, no mechanism can simultaneously satisfy efficiency, Bayesian IC, interim IR, and budget balance.
 
-$$
-\text{efficiency}+\text{Bayesian IC}+\text{interim IR}+\text{budget balance}.
-$$
+**Intuition.** Truthful information revelation requires giving information rents to both sides. The total rent needed to elicit private information can exceed the expected surplus available from efficient trade.
+:::
 
-Intuition: truthful information revelation requires giving information rents to both sides. The total rent needed to elicit private information can exceed the expected surplus available from efficient trade.
-
-## 4. Mechanism design templates
+## 5. Mechanism design templates
 
 :::{admonition} Unified notation
 $$
@@ -838,7 +832,7 @@ $$
 $$
 :::
 
-### 4.1 Moral hazard: binary output
+### 5.1 Moral hazard: binary output
 
 :::{admonition} Optimization problem
 $$
@@ -855,7 +849,7 @@ $$
 $$
 :::
 
-### 4.2 Moral hazard: continuous output
+### 5.2 Moral hazard: continuous output
 
 :::{admonition} Optimization problem
 $$
@@ -872,7 +866,7 @@ $$
 $$
 :::
 
-### 4.3 Adverse selection: binary types, direct transfer form
+### 5.3 Adverse selection: binary types, direct transfer form
 
 :::{admonition} Optimization problem
 $$
@@ -890,7 +884,7 @@ $$
 $$
 :::
 
-### 4.4 Adverse selection: binary types, rent form
+### 5.4 Adverse selection: binary types, rent form
 
 :::{admonition} Optimization problem
 $$
@@ -908,7 +902,7 @@ $$
 $$
 :::
 
-### 4.5 Adverse selection: continuous types, direct transfer form
+### 5.5 Adverse selection: continuous types, direct transfer form
 
 :::{admonition} Optimization problem
 $$
@@ -924,7 +918,7 @@ $$
 $$
 :::
 
-### 4.6 Adverse selection: continuous types, rent form
+### 5.6 Adverse selection: continuous types, rent form
 
 :::{admonition} Optimization problem
 $$
@@ -941,7 +935,7 @@ $$
 $$
 :::
 
-### 4.7 Adverse selection: continuous types, virtual cost form
+### 5.7 Adverse selection: continuous types, virtual cost form
 
 :::{admonition} Optimization problem
 $$
