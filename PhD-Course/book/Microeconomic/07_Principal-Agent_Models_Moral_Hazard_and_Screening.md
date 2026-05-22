@@ -493,6 +493,10 @@ Under MLRP, $f(x\mid1)/f(x\mid0)$ increases in $x$, so $f(x\mid0)/f(x\mid1)$ dec
 
 ## 2. Adverse Selection
 
+<div style="width:100%;max-width:1120px;margin:0 auto;">
+  <iframe src="/PhD-Course/book/attachment/mechanism_design_fb_sb_widget.html" title="Mechanism Design FB SB Widget" loading="lazy" style="width:100%;height:720px;border:0;display:block;border-radius:16px;"></iframe>
+</div>
+
 ### 2.1 二元类型 (Binary types)
 
 **Agent / type structure**
