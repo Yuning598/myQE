@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Principal Indifference Curves and First-Best Allocation</title>
+</head>
+<body style="margin:0;background:#fff;padding:0;">
+<div class="fb-card" id="fbCard">
+  <style>
+    .fb-card{
+      --blue:#2563eb;
+      --red:#ef4444;
+      --green:#16a34a;
+      --orange:#ea580c;
+      --purple:#7c3aed;
+      --axis:#0f172a;
+      --grid:#e8eef7;
+      --text:#1f2937;
+      --muted:#64748b;
+      --border:#d9e2ec;
+      --bg:#f8fafc;
+      width:min(100%,1280px);
+      margin:12px auto;
+      padding:14px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      box-shadow:0 12px 30px rgba(15,23,42,.08);
+      color:var(--text);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      container-type:inline-size;
+    }
+    .fb-card *{box-sizing:border-box;}
+    .fb-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;margin-bottom:10px;}
+    .fb-head h2{margin:0;font-size:clamp(1.02rem,1.5vw,1.25rem);letter-spacing:-.02em;}
+    .fb-tabs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;min-width:460px;}
+    .fb-tabs button{border:1px solid var(--border);border-radius:10px;background:#fff;padding:8px 12px;font-size:.82rem;font-weight:850;cursor:pointer;color:var(--text);}
+    .fb-tabs button.active{background:var(--blue);border-color:var(--blue);color:#fff;}
+    .fb-layout{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(330px,.88fr);gap:12px;align-items:stretch;}
+    .fb-visual,.fb-side{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:12px;min-width:0;}
+    .svg-wrap{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;aspect-ratio:1.18/1;}
+    svg{width:100%;height:100%;display:block;}
+    .axis{stroke:var(--axis);stroke-width:2.8;fill:none;}
+    .grid{stroke:var(--grid);stroke-width:1;}
+    .curve-blue{stroke:var(--purple);stroke-width:3.2;fill:none;}
+    .curve-red{stroke:var(--orange);stroke-width:3.2;fill:none;}
+    .line-green{stroke:var(--green);stroke-width:2.8;fill:none;}
+    .line-blue{stroke:var(--blue);stroke-width:2.8;fill:none;}
+    .line-gray{stroke:#334155;stroke-width:2.4;fill:none;}
+    .dash{stroke-dasharray:8 7;}
+    .pt{stroke:#fff;stroke-width:2.6;}
+    .svg-label{font:800 18px system-ui,-apple-system,sans-serif;fill:var(--text);paint-order:stroke;stroke:rgba(255,255,255,.92);stroke-width:4px;stroke-linejoin:round;}
+    .svg-small{font:750 14px system-ui,-apple-system,sans-serif;fill:var(--muted);paint-order:stroke;stroke:rgba(255,255,255,.92);stroke-width:3px;stroke-linejoin:round;}
+    .svg-math{font:italic 22px Georgia,"Times New Roman",serif;fill:var(--axis);paint-order:stroke;stroke:rgba(255,255,255,.92);stroke-width:4px;stroke-linejoin:round;}
+    .fb-legend{display:flex;flex-wrap:wrap;gap:8px 12px;margin-top:8px;color:var(--muted);font-size:.78rem;}
+    .fb-legend span{display:inline-flex;align-items:center;gap:6px;}
+    .dot{width:9px;height:9px;border-radius:99px;display:inline-block;}
+    .fb-side{display:grid;grid-template-rows:auto auto auto 1fr;gap:10px;}
+    .fb-title{display:flex;justify-content:space-between;gap:8px;align-items:baseline;}
+    .fb-title h3{margin:0;font-size:1rem;}
+    .badge{font-size:.72rem;font-weight:850;color:var(--blue);background:#eef4ff;border:1px solid #dbe7ff;border-radius:999px;padding:3px 8px;white-space:nowrap;}
+    .summary{margin:0;color:#334155;font-size:.84rem;line-height:1.42;}
+    .system{display:grid;grid-template-columns:16px minmax(0,1fr);gap:7px;background:#fff;border:1px solid var(--border);border-radius:13px;padding:9px 10px;overflow:auto;}
+    .brace{font-family:"Times New Roman",Georgia,serif;font-size:4.2rem;line-height:.85;transform:scaleX(.55);transform-origin:left center;color:var(--axis);align-self:center;}
+    .lines{display:grid;gap:5px;align-content:center;}
+    .line{font-family:"Cambria Math","STIX Two Math","Times New Roman",Georgia,serif;font-size:clamp(.92rem,1.16vw,1.08rem);line-height:1.34;color:#0f172a;}
+    .line .op{font-family:system-ui,-apple-system,sans-serif;font-weight:850;margin-right:.35rem;}
+    .line .tag{font-family:system-ui,-apple-system,sans-serif;font-weight:800;color:var(--muted);font-size:.80rem;margin-left:6px;white-space:nowrap;}
+    .line .indent{display:inline-block;padding-left:.75rem;}
+    .line .var{font-style:italic;}
+    .line sub,.line sup{font-size:.72em;line-height:0;}
+    .insight{display:grid;gap:7px;align-content:start;}
+    .box{background:#fff;border:1px solid var(--border);border-radius:12px;padding:10px 11px;font-size:.90rem;line-height:1.42;color:#334155;}
+    .box b{color:#0f172a;}
+    .box .math{display:block;margin-top:4px;font-family:"Cambria Math","STIX Two Math","Times New Roman",Georgia,serif;color:#0f172a;white-space:nowrap;overflow:auto;}
+    .controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:8px;}
+    .control{background:#fff;border:1px solid var(--border);border-radius:11px;padding:8px;}
+    .control label{display:flex;justify-content:space-between;gap:8px;font-size:.76rem;font-weight:850;margin-bottom:5px;}
+    .control label span:last-child{color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+    .control input{width:100%;accent-color:var(--blue);}
+    @container(max-width:780px){
+      .fb-head,.fb-layout{grid-template-columns:1fr;}
+      .fb-tabs{min-width:0;grid-template-columns:1fr;}
+      .controls{grid-template-columns:1fr;}
+      .svg-wrap{aspect-ratio:1.15/1;}
+    }
+  </style>
+
+  <header class="fb-head">
+    <h2>Principal Indifference Curves and First-Best Allocation</h2>
+    <div class="fb-tabs" role="group" aria-label="view tabs">
+      <button id="tab-indiff" class="active" type="button">Principal indifference curves</button>
+      <button id="tab-fb" type="button">First-best allocation</button>
+      <button id="tab-lie" type="button">Low-cost IC constraint</button>
+    </div>
+  </header>
+
+  <main class="fb-layout">
+    <section class="fb-visual">
+      <div class="svg-wrap">
+        <svg id="fbSvg" viewBox="0 0 760 550" preserveAspectRatio="xMidYMid meet" aria-label="mechanism design graph"></svg>
+      </div>
+      <div class="fb-legend" id="legend"></div>
+      <div class="controls" id="controls"></div>
+    </section>
+
+    <section class="fb-side">
+      <div class="fb-title">
+        <h3 id="sideTitle"></h3>
+        <span class="badge" id="badge"></span>
+      </div>
+      <p class="summary" id="summary"></p>
+      <div class="system">
+        <div class="brace">{</div>
+        <div class="lines" id="formula"></div>
+      </div>
+      <div class="insight" id="insight"></div>
+    </section>
+  </main>
+</div>
+
+<script>
+(() => {
+  const svg = document.querySelector('#fbSvg');
+  const legend = document.querySelector('#legend');
+  const controls = document.querySelector('#controls');
+  const sideTitle = document.querySelector('#sideTitle');
+  const badge = document.querySelector('#badge');
+  const summary = document.querySelector('#summary');
+  const formula = document.querySelector('#formula');
+  const insight = document.querySelector('#insight');
+  const tabIndiff = document.querySelector('#tab-indiff');
+  const tabFb = document.querySelector('#tab-fb');
+  const tabLie = document.querySelector('#tab-lie');
+
+  const st = { view:'indiff', A:2.0, L:0.45, H:0.85, profit:0.45 };
+  const NS = 'http://www.w3.org/2000/svg';
+  const W = 760, H = 550;
+  const pad = {l:82,r:54,t:42,b:46};
+  const qMax = 3.8, tMin = -0.8, tMax = 2.35;
+
+  function S(q){ return st.A * Math.log(1 + q); }
+  function dS(q){ return st.A / (1 + q); }
+  function qStar(theta){ return Math.max(0.05, Math.min(qMax*0.92, st.A / theta - 1)); }
+  function tStar(theta){ const q = qStar(theta); return theta*q; }
+  function X(q){ return pad.l + q/qMax * (W-pad.l-pad.r); }
+  function Y(t){ return H-pad.b - ((t - tMin) / (tMax - tMin)) * (H-pad.t-pad.b); }
+  function el(name, attrs={}, children=[]){ const e=document.createElementNS(NS,name); Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v)); children.forEach(c=>e.appendChild(c)); return e; }
+  function text(x,y,s,cls='svg-label',anchor='start'){ const e=el('text',{x,y,class:cls,'text-anchor':anchor}); e.textContent=s; return e; }
+  function path(points, cls){ return el('path',{d:points.map((p,i)=>`${i?'L':'M'} ${p[0]} ${p[1]}`).join(' '),class:cls}); }
+
+  function curveData(fn){
+    const pts=[];
+    for(let i=0;i<=160;i++){ const q=qMax*i/160; const t=fn(q); if(t>=tMin-0.12 && t<=tMax+0.12) pts.push([X(q),Y(t)]); }
+    return pts;
+  }
+
+  function drawBase(){
+    svg.replaceChildren();
+    const y0 = Y(0);
+    for(let i=0;i<=5;i++){
+      const x=pad.l+i*(W-pad.l-pad.r)/5;
+      svg.append(el('line',{x1:x,y1:pad.t,x2:x,y2:H-pad.b,class:'grid'}));
+    }
+    for(let i=0;i<=6;i++){
+      const t=tMin+i*(tMax-tMin)/6;
+      const y=Y(t);
+      svg.append(el('line',{x1:pad.l,y1:y,x2:W-pad.r,y2:y,class:'grid'}));
+    }
+    svg.append(el('path',{d:`M ${pad.l} ${y0} L ${W-pad.r} ${y0} l -10 -6 M ${W-pad.r} ${y0} l -10 6 M ${pad.l} ${H-pad.b} L ${pad.l} ${pad.t} l -6 10 M ${pad.l} ${pad.t} l 6 10`,class:'axis'}));
+    svg.append(text(W-pad.r-16,y0+34,'q','svg-math','end'));
+    svg.append(text(pad.l+12,pad.t-16,'t','svg-math'));
+    svg.append(text(pad.l-12,Y(0)+5,'0','svg-small','end'));
+    svg.append(text(pad.l-12,Y(tMin)+4,'−','svg-small','end'));
+    svg.append(text(pad.l-12,Y(tMax)+4,'+','svg-small','end'));
+  }
+
+  function drawIndifference(){
+    drawBase();
+    const piHigh = st.profit + 0.45;
+    const piLow = st.profit;
+    svg.append(path(curveData(q=>S(q)-piHigh),'curve-blue'));
+    svg.append(path(curveData(q=>S(q)-piLow),'curve-red'));
+    const x1=X(1.05), y1=Y(1.82), x2=X(2.75), y2=Y(0.62);
+    svg.append(el('line',{x1,y1,x2,y2,class:'line-gray'}));
+    svg.append(el('path',{d:`M ${x2} ${y2} l -3 -12 M ${x2} ${y2} l -11 -4`,class:'line-gray'}));
+    svg.append(text(X(1.20),Y(1.88),'Higher principal payoff','svg-label'));
+    svg.lastChild.setAttribute('fill','#7c3aed');
+    svg.append(text(X(2.04),Y(.30),'Higher payoff direction','svg-label'));
+  }
+
+  function drawFB(){
+    drawBase();
+    const qL=qStar(st.L), qH=qStar(st.H), tL=tStar(st.L), tH=tStar(st.H);
+    svg.append(path(curveData(q=>S(q)-(S(qH)-tH)),'curve-blue'));
+    svg.append(path(curveData(q=>S(q)-(S(qL)-tL)),'curve-red'));
+    svg.append(path([[X(0),Y(0)],[X(qMax),Y(st.H*qMax)]],'line-blue'));
+    svg.append(path([[X(0),Y(0)],[X(qMax),Y(st.L*qMax)]],'line-green'));
+    svg.append(el('circle',{cx:X(qH),cy:Y(tH),r:6,fill:'#0f172a',class:'pt'}));
+    svg.append(el('circle',{cx:X(qL),cy:Y(tL),r:6,fill:'#0f172a',class:'pt'}));
+    svg.append(text(X(qH)-18,Y(tH)-22,'(S′⁻¹(H), H S′⁻¹(H))','svg-label','end'));
+    svg.append(text(X(qL)+12,Y(tL)-18,'(S′⁻¹(L), L S′⁻¹(L))','svg-label'));
+    svg.append(text(X(qH)+18,Y(tH)-70,'H-type zero-rent locus','svg-label'));
+    svg.lastChild.setAttribute('fill','#2563eb');
+    svg.append(text(X(qL)-16,Y(tL)+35,'L-type zero-rent locus','svg-label','end'));
+    svg.lastChild.setAttribute('fill','#16a34a');
+    svg.append(text(X(qH)+42,Y(tH)+32,'Principal indifference curve','svg-label'));
+    svg.lastChild.setAttribute('fill','#7c3aed');
+    svg.append(text(X(qL)+18,Y(tL)-42,'Principal indifference curve','svg-label'));
+    svg.lastChild.setAttribute('fill','#ea580c');
+    svg.append(el('line',{x1:X(qH),y1:Y(0),x2:X(qH),y2:Y(tH),class:'line-gray dash'}));
+    svg.append(el('line',{x1:X(qL),y1:Y(0),x2:X(qL),y2:Y(tL),class:'line-gray dash'}));
+  }
+
+  function drawLie(){
+    drawBase();
+    const qL=qStar(st.L), qH=qStar(st.H), tL=tStar(st.L), tH=tStar(st.H);
+    const rent=(st.H-st.L)*qH;
+    const tLIC=st.L*qL + rent;
+
+    svg.append(path(curveData(q=>S(q)-(S(qH)-tH)),'curve-blue'));
+    svg.append(path(curveData(q=>S(q)-(S(qL)-tLIC)),'curve-red'));
+    svg.append(path([[X(0),Y(0)],[X(qMax),Y(st.H*qMax)]],'line-blue'));
+    svg.append(path([[X(0),Y(0)],[X(qMax),Y(st.L*qMax)]],'line-green'));
+    svg.append(path([[X(0),Y(rent)],[X(qMax),Y(st.L*qMax+rent)]],'line-green dash'));
+
+    svg.append(el('circle',{cx:X(qH),cy:Y(tH),r:6,fill:'#0f172a',class:'pt'}));
+    svg.append(el('circle',{cx:X(qL),cy:Y(st.L*qL),r:5,fill:'#94a3b8',class:'pt'}));
+    svg.append(el('circle',{cx:X(qL),cy:Y(tLIC),r:7,fill:'#16a34a',class:'pt'}));
+
+    svg.append(text(X(qH)+18,Y(tH)-22,'H-type contract','svg-label'));
+    svg.append(text(X(qH)+18,Y(tH)+24,'L reports H','svg-label'));
+    svg.lastChild.setAttribute('fill','#ef4444');
+    svg.append(text(X(qL)+14,Y(tLIC)-20,'IC requires higher L transfer','svg-label'));
+    svg.lastChild.setAttribute('fill','#16a34a');
+    svg.append(text(X(qMax*.58),Y(st.L*qMax*.58+rent)-16,'L-type IC locus through H contract','svg-label'));
+    svg.lastChild.setAttribute('fill','#16a34a');
+
+    svg.append(el('line',{x1:X(qL),y1:Y(st.L*qL),x2:X(qL),y2:Y(tLIC),class:'line-gray dash'}));
+    svg.append(text(X(qL)-10,(Y(st.L*qL)+Y(tLIC))/2,'Information rent','svg-label','end'));
+    svg.lastChild.setAttribute('fill','#ea580c');
+  }
+
+  function renderLegend(){
+    const items = st.view==='indiff'
+      ? [['#7c3aed','principal higher-payoff indifference curve'],['#ea580c','principal lower-payoff indifference curve'],['#334155','higher-payoff direction']]
+      : st.view==='fb'
+        ? [['#7c3aed','principal indifference curve'],['#ea580c','principal indifference curve'],['#2563eb','H-type zero-rent locus'],['#16a34a','L-type zero-rent locus'],['#0f172a','first-best tangency points']]
+        : [['#2563eb','H-type zero-rent locus'],['#16a34a','L-type zero-rent locus'],['#16a34a','low-cost IC locus'],['#ef4444','mimicry incentive'],['#ea580c','information rent']];
+    legend.replaceChildren(...items.map(([c,s])=>{ const span=document.createElement('span'); span.innerHTML=`<i class="dot" style="background:${c}"></i>${s}`; return span; }));
+  }
+
+  function renderControls(){
+    const specs = st.view==='indiff'
+      ? [['A','S curvature',1.2,3.2,.05],['profit','payoff gap',.15,.9,.05]]
+      : [['A','S curvature',1.2,3.2,.05],['L','low cost L',.25,.75,.02],['H','high cost H',.65,1.20,.02]];
+    controls.replaceChildren(...specs.map(([key,label,min,max,step])=>{
+      const wrap=document.createElement('div'); wrap.className='control';
+      const lab=document.createElement('label');
+      const left=document.createElement('span'); left.textContent=label;
+      const val=document.createElement('span'); val.textContent=Number(st[key]).toFixed(2);
+      const input=document.createElement('input'); input.type='range'; input.min=min; input.max=max; input.step=step; input.value=st[key];
+      input.addEventListener('input',()=>{ st[key]=Number(input.value); if(st.L>=st.H-.05) st.L=st.H-.05; if(st.H<=st.L+.05) st.H=st.L+.05; val.textContent=Number(st[key]).toFixed(2); draw(); });
+      lab.append(left,val); wrap.append(lab,input); return wrap;
+    }));
+  }
+
+  function renderSide(){
+    if(st.view==='indiff'){
+      sideTitle.textContent='Principal indifference curves';
+      badge.textContent='profit = S(q)-t';
+      summary.textContent='横轴表示产量 q，纵轴表示转移支付 t。委托人收益为 Π=S(q)-t，因此较高产量与较低转移支付均提高委托人收益。';
+      formula.innerHTML=`
+        <div class="line"><span class="op">payoff</span> &Pi;(<span class="var">q</span>,<span class="var">t</span>)=S(<span class="var">q</span>)-<span class="var">t</span></div>
+        <div class="line"><span class="op">indiff.</span> <span class="var">t</span>=S(<span class="var">q</span>)-&Pi;</div>
+        <div class="line"><span class="indent">&Pi;&uarr; &Rightarrow; curve shifts downward</span></div>
+        <div class="line"><span class="indent"><span class="var">q</span>&uarr;, <span class="var">t</span>&darr; &Rightarrow; &Pi;&uarr;</span></div>`;
+      insight.innerHTML=`
+        <div class="box"><b>核心关系：</b>每条无差异曲线对应同一委托人收益水平。沿东南方向移动时，产量上升且转移支付下降，因此委托人收益提高。</div>
+        <div class="box"><b>规范表述：</b><span class="math">&Pi;=S(q)-t。固定 &Pi; 时，t=S(q)-&Pi;；较高 &Pi; 对应较低的无差异曲线。</span></div>`;
+    }else if(st.view==='fb'){
+      const qL=qStar(st.L), qH=qStar(st.H), tL=tStar(st.L), tH=tStar(st.H);
+      sideTitle.textContent='First-best allocation';
+      badge.textContent='type observable';
+      summary.textContent='First best 中类型可观察，因此只需满足各类型的参与约束。紫色和橙色曲线为委托人无差异曲线，蓝色和绿色直线为代理人的零租金约束；最优点由切点给出。';
+      formula.innerHTML=`
+        <div class="line"><span class="op">max</span><sub><span class="var">q</span>(&theta;), <span class="var">t</span>(&theta;)</sub> S(<span class="var">q</span>(&theta;))-<span class="var">t</span>(&theta;)</div>
+        <div class="line"><span class="op">s.t.</span> <span class="var">t</span>(&theta;)-&theta;<span class="var">q</span>(&theta;)&ge;0 <span class="tag">(IR)</span></div>
+        <div class="line"><span class="indent">IR binds: <span class="var">t</span>(&theta;)=&theta;<span class="var">q</span>(&theta;)</span></div>
+        <div class="line"><span class="indent">FOC: S&prime;(<span class="var">q</span><sup>FB</sup>(&theta;))=&theta;</span></div>`;
+      insight.innerHTML=`
+        <div class="box"><b>First-best allocation：</b><span class="math">q_H=${qH.toFixed(2)}, t_H=${tH.toFixed(2)}； q_L=${qL.toFixed(2)}, t_L=${tL.toFixed(2)}</span></div>
+        <div class="box"><b>经济含义：</b>低成本类型 L 的边际成本较低，因此 first-best 产量满足 q_L&gt;q_H。参与约束绑定时，转移支付满足 t_&theta;=&theta;q_&theta;。</div>`;
+    }else{
+      const qL=qStar(st.L), qH=qStar(st.H), tH=tStar(st.H);
+      const rent=(st.H-st.L)*qH;
+      const tLIC=st.L*qL+rent;
+      sideTitle.textContent='Low-cost mimicry and incentive compatibility';
+      badge.textContent='type unobservable';
+      summary.textContent='类型不可观察时，低成本类型 L 可能选择高成本类型 H 的合同。若 H 合同位于 L 型零租金线之上，则 L 型选择该合同可获得正信息租金。';
+      formula.innerHTML=`
+        <div class="line"><span class="op">H contract</span> <span class="var">t</span><sub>H</sub>=H<span class="var">q</span><sub>H</sub></div>
+        <div class="line"><span class="op">mimic payoff</span> U<sub>L</sub>(H)=<span class="var">t</span><sub>H</sub>-L<span class="var">q</span><sub>H</sub>=(H-L)<span class="var">q</span><sub>H</sub>&gt;0</div>
+        <div class="line"><span class="op">IC<sub>L</sub></span> <span class="var">t</span><sub>L</sub>-L<span class="var">q</span><sub>L</sub>&ge;<span class="var">t</span><sub>H</sub>-L<span class="var">q</span><sub>H</sub></div>
+        <div class="line"><span class="indent">&Rightarrow; <span class="var">t</span><sub>L</sub>&ge;L<span class="var">q</span><sub>L</sub>+(H-L)<span class="var">q</span><sub>H</sub></span></div>`;
+      insight.innerHTML=`
+        <div class="box"><b>图形判别：</b>黑色 H 合同点位于绿色 L 型零租金线之上，说明 L 型若申报为 H 型，可获得严格正的净效用。</div>
+        <div class="box"><b>激励相容修正：</b><span class="math">为阻止 L 型模仿 H 型，L 合同须位于绿色虚线之上：U_L=(H-L)q_H=${rent.toFixed(2)}，对应 t_L=${tLIC.toFixed(2)}。</span></div>`;
+    }
+  }
+
+  function draw(){
+    tabIndiff.classList.toggle('active',st.view==='indiff');
+    tabFb.classList.toggle('active',st.view==='fb');
+    tabLie.classList.toggle('active',st.view==='lie');
+    if(st.view==='indiff') drawIndifference(); else if(st.view==='fb') drawFB(); else drawLie();
+    renderLegend(); renderSide();
+  }
+
+  tabIndiff.addEventListener('click',()=>{st.view='indiff'; renderControls(); draw();});
+  tabFb.addEventListener('click',()=>{st.view='fb'; renderControls(); draw();});
+  tabLie.addEventListener('click',()=>{st.view='lie'; renderControls(); draw();});
+  renderControls(); draw();
+})();
+</script>
+</body>
+</html>

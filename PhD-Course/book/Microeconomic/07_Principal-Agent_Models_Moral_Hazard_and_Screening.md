@@ -40,9 +40,11 @@ $$
 This chapter covers the moral-hazard model in detail, and the screening model under adverse selection.
 :::
 
+```{raw} html
 <div style="width:100%;max-width:1120px;margin:0 auto;">
   <iframe src="/PhD-Course/mechanism_design_fb_sb_widget.html" title="Mechanism Design FB SB Widget" loading="lazy" style="width:100%;height:720px;border:0;display:block;border-radius:16px;"></iframe>
 </div>
+```
 
 ## 1. Moral Hazard
 
@@ -858,6 +860,12 @@ $\theta+\frac{F(\theta)}{f(\theta)}$ is the virtual cost of type $\theta$.
 
 For $q(\cdot)$ to be nonincreasing, the virtual cost function needs to be nondecreasing.
 :::
+
+```{raw} html
+<div style="width:100%;max-width:1120px;margin:0 auto;">
+  <iframe src="/PhD-Course/principal_indifference_fb_decomposition.html" title="Principal Indifference FB Decomposition" loading="lazy" style="width:100%;height:760px;border:0;display:block;border-radius:16px;"></iframe>
+</div>
+```
 
 The term $F(\theta)/f(\theta)$ is the rent-extraction distortion.
 
