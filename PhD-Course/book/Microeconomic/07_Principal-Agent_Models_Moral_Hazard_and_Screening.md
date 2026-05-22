@@ -749,15 +749,11 @@ t(\hat\theta)-\theta q(\hat\theta)
 \qquad \forall \theta,\hat\theta.
 $$
 
-:::{admonition} IC monotonicity and envelope
-A direct mechanism $(q(\cdot),t(\cdot))$ is IC iff $q(\theta)$ is nonincreasing and
-
-$$
-U(\theta)=U(1)+\int_\theta^1 q(s)\,ds.
-$$
+:::{admonition} Lemma 1
+Fix $q(\cdot)$. If there is a $t(\cdot)$ such that $(q(\cdot),t(\cdot))$ satisfies $(IC)$, then $q(\cdot)$ is nonincreasing.
 :::
 
-Proof:
+#### Proof of Lemma 1
 
 Let $\theta_1>\theta_0$. IC gives
 
@@ -791,7 +787,21 @@ $$
 
 Thus $q$ is nonincreasing.
 
-**Envelope formula**
+:::{admonition} Lemma 2
+Define $U(\theta):=t(\theta)-\theta q(\theta)$. If $(q(\cdot),t(\cdot))$ satisfies $(IC)$, then
+
+$$
+U(\theta)=\int_\theta^1 q(x)\,dx+U(1),
+$$
+
+or equivalently
+
+$$
+t(\theta)=\theta q(\theta)+\int_\theta^1 q(x)\,dx+U(1).
+$$
+:::
+
+#### Proof of Lemma 2
 
 Under IC,
 
@@ -841,6 +851,56 @@ $$
 
 where the last line uses integration by parts on information rents.
 
+:::{admonition} Lemma 3
+If $q(\cdot)$ is nonincreasing and $t(\cdot)$ satisfies
+
+$$
+t(\theta)=\theta q(\theta)+\int_\theta^1 q(x)\,dx+U(1)
+$$
+
+for some $U(1)\in\mathbb R$, then $(q(\cdot),t(\cdot))$ satisfies $(IC)$.
+:::
+
+#### Proof of Lemma 3
+
+If $t(\cdot)$ satisfies the formula above, then $U(\theta)=t(\theta)-\theta q(\theta)$ satisfies
+
+$$
+U(\theta)=\int_\theta^1 q(x)\,dx+U(1).
+$$
+
+If $\theta_1>\theta_0$, then
+
+$$
+\begin{aligned}
+U(\theta_1)-U(\theta_0)
+&=-\int_{\theta_0}^{\theta_1}q(x)\,dx\\
+&\ge-(\theta_1-\theta_0)q(\theta_0),
+\end{aligned}
+$$
+
+since $q(\cdot)$ is nonincreasing. Hence
+
+$$
+U(\theta_1)\ge U(\theta_0)-(\theta_1-\theta_0)q(\theta_0).
+$$
+
+Rearranging gives
+
+$$
+t(\theta_1)-\theta_1q(\theta_1)\ge t(\theta_0)-\theta_1q(\theta_0),
+$$
+
+and symmetry yields the IC inequalities for all $\theta,\hat\theta$.
+
+:::{admonition} Theorem 1
+Putting Lemmas 1-3 together, a direct mechanism $(q(\cdot),t(\cdot))$ is IC if and only if $q(\theta)$ is nonincreasing and
+
+$$
+U(\theta)=U(1)+\int_\theta^1 q(s)\,ds.
+$$
+:::
+
 :::{admonition} The Optimal Contract
 The principal's problem can be rewritten as
 
@@ -858,8 +918,27 @@ $$
 
 $\theta+\frac{F(\theta)}{f(\theta)}$ is the virtual cost of type $\theta$.
 
-For $q(\cdot)$ to be nonincreasing, the virtual cost function needs to be nondecreasing.
 :::
+
+:::{admonition} Lemma 4
+If $(q(\cdot),t(\cdot))$ satisfies $(IC)$ and $(IR_1)$, then it satisfies $(IR_\theta)$ for all $\theta<1$.
+:::
+
+#### Proof of Lemma 4
+
+By Lemma 2,
+
+$$
+U(\theta)=U(1)+\int_\theta^1 q(x)\,dx.
+$$
+
+Since $q(x)\ge0$ and $IR_1$ gives $U(1)\ge0$, it follows that $U(\theta)\ge0$ for all $\theta<1$.
+
+Clearly, $U(1)=0$: the least efficient type gets no information rent.
+
+:::
+
+For $q(\cdot)$ to be nonincreasing, the virtual cost function needs to be nondecreasing.
 
 ```{raw} html
 <div style="width:100%;max-width:1120px;margin:0 auto;">
