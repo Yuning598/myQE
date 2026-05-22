@@ -40,6 +40,10 @@ $$
 This chapter covers the moral-hazard model in detail, and the screening model under adverse selection.
 :::
 
+<div style="width:100%;max-width:1120px;margin:0 auto;">
+  <iframe src="/PhD-Course/mechanism_design_fb_sb_widget.html" title="Mechanism Design FB SB Widget" loading="lazy" style="width:100%;height:720px;border:0;display:block;border-radius:16px;"></iframe>
+</div>
+
 ## 1. Moral Hazard
 
 ### 1.1 二元情形 (Binary output)
@@ -493,10 +497,6 @@ Under MLRP, $f(x\mid1)/f(x\mid0)$ increases in $x$, so $f(x\mid0)/f(x\mid1)$ dec
 
 ## 2. Adverse Selection
 
-<div style="width:100%;max-width:1120px;margin:0 auto;">
-  <iframe src="/PhD-Course/book/attachment/mechanism_design_fb_sb_widget.html" title="Mechanism Design FB SB Widget" loading="lazy" style="width:100%;height:720px;border:0;display:block;border-radius:16px;"></iframe>
-</div>
-
 ### 2.1 二元类型 (Binary types)
 
 **Agent / type structure**
@@ -864,8 +864,6 @@ The term $F(\theta)/f(\theta)$ is the rent-extraction distortion.
 
 ## 3. The Bilateral Trading Environment
 
-**信息情形：双边交易**
-
 There is one buyer with value $v\in[\underline v,\bar v]$ and one seller with cost $c\in[\underline c,\bar c]$. Types are private and independent. Let $q\in[0,1]$ denote the probability that the buyer obtains the good, and let $t_b,t_s$ denote expected monetary transfers.
 
 The ex post payoffs are
@@ -874,12 +872,64 @@ $$
 u_b=vq+t_b,\qquad u_s=-cq+t_s.
 $$
 
-The overlap condition is
+:::{admonition} Bilateral trading conditions at a glance
+- Overlap:
 
-$$
-(\mathrm{OL})\qquad [\underline c,\bar c]\cap[\underline v,\bar v]
-\ \text{is a nondegenerate interval.}
-$$
+  $$
+  (\mathrm{OL})\qquad [\underline c,\bar c]\cap[\underline v,\bar v]
+  \ \text{is a nondegenerate interval.}
+  $$
+
+- First-best allocation:
+
+  $$
+  q^*(v,c)=
+  \begin{cases}
+  1,& v\ge c,\\
+  0,& v<c.
+  \end{cases}
+  $$
+
+- Budget balance:
+
+  $$
+  (\mathrm{BB})\qquad t_b(\cdot)+t_s(\cdot)=0.
+  $$
+
+- No expected subsidy:
+
+  $$
+  (\mathrm{NES})\qquad E_{c,v}\{t_b(v,c)+t_s(v,c)\}\le 0.
+  $$
+
+- Interim objects:
+
+  $$
+  Q_b(v):=E_c q(v,c),\qquad Q_s(c):=E_v q(v,c),
+  $$
+  $$
+  T_b(v):=E_c t_b(v,c),\qquad T_s(c):=E_v t_s(v,c).
+  $$
+
+- Interim payoffs:
+
+  $$
+  U_b(v):=vQ_b(v)+T_b(v),\qquad U_s(c):=T_s(c)-cQ_s(c).
+  $$
+
+- Incentive compatibility:
+
+  $$
+  (\mathrm{IC})\qquad U_b(v)\ge vQ_b(\hat v)+T_b(\hat v),\qquad
+  U_s(c)\ge T_s(\hat c)-cQ_s(\hat c).
+  $$
+
+- Participation:
+
+  $$
+  (\mathrm{IR})\qquad U_b(\cdot)\ge0,\qquad U_s(\cdot)\ge0.
+  $$
+:::
 
 #### 3.1 Revelation mechanism
 
