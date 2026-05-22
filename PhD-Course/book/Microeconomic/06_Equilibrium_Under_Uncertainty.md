@@ -248,7 +248,7 @@ $$
 A security price system $q\in\mathbb R^J$ precludes arbitrage if and only if there exists a state price vector $\alpha\in\mathbb R_{++}^S$ such that
 
 $$
-q=\alpha^\top A.
+q=A^\top\alpha.
 $$
 :::
 
@@ -263,12 +263,12 @@ $$
 :::
 
 Proof:
-First, suppose $q=\alpha^\top A$ with $\alpha\gg0$. Suppose $\theta$ is an arbitrage with $q^\top\theta\le0$ and $A\theta>0$. Then
+First, suppose $q=A^\top\alpha$ with $\alpha\gg0$. Suppose $\theta$ is an arbitrage with $q^\top\theta\le0$ and $A\theta>0$. Then
 
 $$
 \begin{aligned}
 q^\top\theta
-&=(\alpha^\top A)\theta\\
+&=(A^\top\alpha)^\top\theta\\
 &=\alpha^\top A\theta\\
 &>0,
 \end{aligned}
@@ -309,10 +309,77 @@ $$
 Hence
 
 $$
-q=\left(\frac{\mu}{\mu_0}\right)^\top A.
+q=A^\top\left(\frac{\mu}{\mu_0}\right).
 $$
 
 Set $\psi=\mu/\mu_0\gg0$.
+
+### No arbitrage, state prices, and market completeness
+
+上面的定理要分成两层理解：**无套利**保证存在某个正的 state price vector；**市场完备**进一步保证这个 state price vector 唯一。
+
+资产价格满足
+
+$$
+\begin{aligned}
+q&=A^\top\psi\\
+\Longleftrightarrow\quad
+q_j&=\sum_{s=1}^S\psi_s a_{sj},\qquad j=1,\ldots,J.
+\end{aligned}
+$$
+
+因此 $\psi_s$ 可以解释为“state $s$ 下 1 单位 numeraire 今天值多少钱”。任意 portfolio $\theta$ 的无套利价格由状态支付逐状态加总得到：
+
+$$
+\begin{aligned}
+q^\top\theta
+&=\theta^\top q\\
+&=\theta^\top A^\top\psi\\
+&=\psi^\top A\theta.
+\end{aligned}
+$$
+
+更一般地，如果一个 contingent payoff $d\in\mathbb R^S$ 可以由已有资产复制，即存在 $\theta$ 使得 $A\theta=d$，则它的价格必须是
+
+$$
+\begin{aligned}
+\pi(d)
+&=q^\top\theta\\
+&=\psi^\top A\theta\\
+&=\psi^\top d.
+\end{aligned}
+$$
+
+这就是 linear pricing functional：只要无套利，就存在某个线性定价函数 $\pi(d)=\psi^\top d$；只要 payoff 被资产张成（spanned），这个价格就由无套利唯一钉住。
+
+无套利和完备性的关系可以写成：
+
+$$
+\left\{
+\begin{aligned}
+\text{No arbitrage}
+&\Longleftrightarrow \exists\,\psi\gg0\ \text{s.t.}\ A^\top\psi=q,\\
+\text{Complete markets}
+&\Longleftrightarrow \operatorname{rank}(A)=S
+\Longleftrightarrow \operatorname{span}(A)=\mathbb R^S,\\
+\text{No arbitrage + complete markets}
+&\Longleftrightarrow \exists!\,\psi\gg0\ \text{s.t.}\ A^\top\psi=q.
+\end{aligned}
+\right.
+$$
+
+如果市场不完备，$\operatorname{rank}(A)<S$，则仍然可能无套利；但 $A^\top\psi=q$ 的解一般不唯一。直观上，资产只观察到 $\psi$ 在 traded payoff subspace 上的影子，未被交易资产张成的方向没有被价格数据钉住。于是：
+
+$$
+\begin{aligned}
+A^\top\psi=q,\quad z\in\ker(A^\top)
+&\Longrightarrow A^\top(\psi+\varepsilon z)=q,\\
+\psi\gg0,\ |\varepsilon|\ \text{small}
+&\Longrightarrow \psi+\varepsilon z\gg0.
+\end{aligned}
+$$
+
+所以 incomplete markets 下，无套利只给出一族 admissible state prices；对未被 span 的 payoff $d$，不同 $\psi$ 会给出不同 $\psi^\top d$，因此该资产没有唯一的 no-arbitrage price。图片中的直觉正是这一点：市场不完备不等于套利存在；只要无套利，仍然存在某个线性定价泛函，只是它不唯一。
 
 ## 4. Complete and incomplete markets
 
@@ -330,18 +397,19 @@ $$
 \exists \theta\quad A\theta=d.
 $$
 
-Then a derived asset with payoff $d$ has unique no-arbitrage price
+In a complete market, $A^\top\psi=q$ has at most one solution because $\operatorname{rank}(A^\top)=S$. Therefore the no-arbitrage state price vector is unique, and every derived asset with payoff $d$ has unique no-arbitrage price
 
 $$
 \pi(d)=\psi^\top d
 $$
 
-where $\psi$ is the unique state price vector if markets are **complete**.
+where $\psi$ is the unique state price vector.
 
 If $\operatorname{rank}(A)<S$, **markets are incomplete**. Then:
 
 - not every risk can be traded away;
 - state prices may not be unique;
+- only spanned payoffs have prices pinned down by traded assets;
 - equilibria can be constrained inefficient;
 - the First Welfare Theorem can fail relative to the full Arrow-Debreu allocation.
 
@@ -373,30 +441,7 @@ $$
 so each state has a single consumption good.
 :::
 
-## 5. Core
-
-:::{admonition} Definition (Core)
-A feasible allocation $(c^h)_{h\in\mathcal H}$ is in the core if there does not exist a coalition $S\subseteq\mathcal H$ and a blocking allocation $(\tilde c^h)_{h\in S}$ such that
-
-$$
-\sum_{h\in S}\tilde c^h=\sum_{h\in S}e^h
-$$
-
-and
-
-$$
-u^h(\tilde c^h)\ge u^h(c^h)\qquad \forall h\in S,
-$$
-
-with strict inequality for at least one $h\in S$.
-
-:::
-
-**Walrasian allocations are in the core.** If a coalition could block a Walrasian allocation, each blocking member would get a weakly preferred bundle and one member strictly preferred. By the same revealed-preference budget argument as in FWT, the coalition's proposed bundles would cost strictly more than the coalition's endowment, contradicting coalition feasibility.
-
-Core convergence theorem in the slides: in replica economies, as the number of replicas grows, core allocations converge to Walrasian allocations. Intuition: large markets make individual/coalitional market power vanish.
-
-## 6. Full insurance and belief differences
+## 5. Full insurance and belief differences
 
 There is one consumption good, two states, and two consumers. Utility is expected utility:
 
@@ -491,7 +536,7 @@ $$
 
 Consumer 2 overconsumes in the state she views as relatively more likely. Full insurance fails because prices reflect the risk-neutral consumer's beliefs, not consumer 2's beliefs.
 
-## 7. Pricing by arbitrage template
+## 6. Pricing by arbitrage template
 
 Given asset payoff matrix $A$ and prices $q$, compute $\psi$ from
 
