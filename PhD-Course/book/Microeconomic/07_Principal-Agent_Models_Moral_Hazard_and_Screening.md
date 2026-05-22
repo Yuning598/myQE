@@ -255,7 +255,7 @@ $$
 
 If $w_L^{SB}$ violates limited liability or utility domain restrictions, the limited-liability solution applies.
 
-#### 1.1.4 情形：Low effort implementation
+#### 1.1.4 情形：Second Best，努力不可观察，诱导低努力
 
 :::{admonition} Low effort implementation
 $$
