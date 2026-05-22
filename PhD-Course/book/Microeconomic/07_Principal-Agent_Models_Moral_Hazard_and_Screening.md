@@ -44,7 +44,7 @@ This chapter covers the moral-hazard model in detail, and the screening model un
 
 ## 2. Moral Hazard (Hidden Actions): principal-agent model
 
-### Players, timing, information
+### 2.1 Players, timing, information
 
 - Principal owns a project.
 - Agent chooses effort $e\in\{0,1\}$, where $e=1$ is high effort.
@@ -66,7 +66,7 @@ $$
 w:X\to\mathbb R_+,\qquad x\mapsto w(x).
 $$
 
-## 3. First-best benchmark: effort observable
+### 2.2 First-best benchmark: effort observable
 
 If effort is observable, the principal can choose $e$ and wages directly.
 
@@ -158,7 +158,7 @@ $$
 
 Interpretation: marginal productivity gain must exceed compensation for effort cost.
 
-## 4. Second-best: effort unobservable
+### 2.3 Second-best: effort unobservable
 
 To induce high effort, add incentive compatibility.
 
@@ -186,7 +186,7 @@ $$
 
 Thus $w_H>w_L$. Incentives require risk exposure.
 
-### Binding-constraint solution
+#### 2.3.1 Binding-constraint solution
 
 At the optimum, both IR and IC bind. Let
 
@@ -253,7 +253,7 @@ $$
 
 If $w_L^{SB}$ violates limited liability or utility domain restrictions, the limited-liability solution applies.
 
-## 5. Low effort implementation
+### 2.4 Low effort implementation
 
 To induce low effort, the relaxed problem without IC gives full insurance:
 
@@ -283,7 +283,7 @@ $$
 V_1^{SB}\ge V_0.
 $$
 
-## 6. Risk-neutral agent with limited liability
+### 2.5 Risk-neutral agent with limited liability
 
 Suppose $u(w)=w$, $\bar u=0$, and $w_L,w_H\ge0$.
 
@@ -338,7 +338,7 @@ $$
 (q_1-q_0)(x_H-x_L)\ge \frac{q_1C}{q_1-q_0}.
 $$
 
-## 7. H5 Q1 numerical template: JR 8.16
+### 2.6 H5 Q1 numerical template: JR 8.16
 
 Data:
 
@@ -350,7 +350,7 @@ u(w,e)&=\sqrt w-e,\quad \bar u=0.
 \end{aligned}
 $$
 
-### Part A: effort observable
+#### 2.6.1 Part A: effort observable
 
 High effort with observable effort:
 
@@ -396,7 +396,7 @@ $$
 
 Thus high effort is chosen.
 
-### Part B: effort unobservable
+#### 2.6.2 Part B: effort unobservable
 
 To induce high effort:
 
@@ -455,7 +455,7 @@ $$
 
 Therefore the principal does **not** induce high effort; the worker exerts low effort.
 
-## 8. Continuous output and MLRP
+### 2.7 Continuous output and MLRP
 
 Suppose output $x\in[\underline x,\bar x]$ has density $f(x\mid e)>0$. The family satisfies monotone likelihood ratio property $MLRP$ if
 
@@ -512,7 +512,7 @@ $$
 
 Under MLRP, $f(x\mid1)/f(x\mid0)$ increases in $x$, so $f(x\mid0)/f(x\mid1)$ decreases. If $\mu>0$, the right-hand side increases in $x$. Since $u''<0$, $1/u'(w)$ increases with $w$, hence $w(x)$ increases with output.
 
-## 9. Adverse Selection (Hidden Information): Screening
+## 3. Adverse Selection (Hidden Information): Screening
 
 Now output/effort is observable, but agent's cost type is private.
 
@@ -544,7 +544,7 @@ $$
 
 Higher-cost types dislike output more.
 
-## 10. First-best screening
+### 3.1 First-best screening
 
 If $\theta$ is known, principal solves
 
@@ -574,8 +574,8 @@ $$
 
 since \(S''<0\) and \(L<H\).
 
-12. Why first-best is not incentive compatible
--
+#### 3.1.1 Why first-best is not incentive compatible
+
 
 First-best menu:
 
@@ -601,8 +601,8 @@ $$
 
 Thus the low-cost firm would lie. The first-best menu is not incentive compatible.
 
-13. Two-type second-best screening
--
+#### 3.1.2 Two-type second-best screening
+
 
 Define information rents:
 
@@ -720,8 +720,8 @@ $$
 
 The inefficient type is distorted downward to reduce the efficient type's information rent.
 
-14. Continuum of types and envelope formula
--
+#### 3.1.3 Continuum of types and envelope formula
+
 
 Let \(\theta\in[0,1]\), with cdf \(F\) and pdf \(f>0\). Agent utility:
 
@@ -842,7 +842,7 @@ $$
 
 The term $F(\theta)/f(\theta)$ is the rent-extraction distortion.
 
-## 11. Bilateral trade and Myerson-Satterthwaite
+### 3.2 Bilateral trade and Myerson-Satterthwaite
 
 Environment:
 
