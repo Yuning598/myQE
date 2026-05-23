@@ -37,3 +37,6 @@
 - 委托代理 (principal-agent)
 - 道德风险 (moral hazard)
 - 筛选与单交叉 (screening and single crossing)
+
+# reference
+1. https://www.xinchengqiu.com/teaching/701B.pdf
