@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bilateral Trading Environment Interactive</title>
+</head>
+<body style="margin:0;background:#fff;padding:0;">
+<div class="bt-card" id="btCard">
+  <style>
+    .bt-card{
+      --blue:#2563eb;
+      --red:#dc2626;
+      --green:#16a34a;
+      --orange:#ea580c;
+      --purple:#7c3aed;
+      --axis:#0f172a;
+      --grid:#e8eef7;
+      --text:#1f2937;
+      --muted:#64748b;
+      --border:#d9e2ec;
+      --bg:#f8fafc;
+      width:min(100%,1260px);
+      margin:12px auto;
+      padding:14px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      box-shadow:0 12px 30px rgba(15,23,42,.08);
+      color:var(--text);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      container-type:inline-size;
+    }
+    .bt-card *{box-sizing:border-box;}
+    .bt-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;margin-bottom:10px;}
+    .bt-head h2{margin:0;font-size:clamp(1.05rem,1.55vw,1.3rem);letter-spacing:-.02em;}
+    .bt-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;min-width:560px;}
+    .bt-tabs button{border:1px solid var(--border);border-radius:10px;background:#fff;padding:8px 10px;font-size:.82rem;font-weight:850;cursor:pointer;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .bt-tabs button.active{background:var(--blue);border-color:var(--blue);color:#fff;}
+    .bt-layout{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);gap:12px;align-items:stretch;}
+    .bt-visual,.bt-side{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:12px;min-width:0;}
+    .svg-wrap{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;aspect-ratio:1.34/1;}
+    svg{width:100%;height:100%;display:block;}
+    .axis{stroke:var(--axis);stroke-width:2.8;fill:none;}
+    .grid{stroke:var(--grid);stroke-width:1;}
+    .diag{stroke:#334155;stroke-width:2.6;fill:none;}
+    .rule{stroke:var(--red);stroke-width:3;fill:none;stroke-dasharray:9 7;}
+    .rule-buyer{stroke:var(--red);stroke-width:3;fill:none;stroke-dasharray:9 7;}
+    .rule-seller{stroke:var(--orange);stroke-width:3;fill:none;stroke-dasharray:9 7;}
+    .type-box{fill:rgba(37,99,235,.06);stroke:var(--blue);stroke-width:2;}
+    .efficient{fill:rgba(22,163,74,.16);stroke:none;}
+    .wedge{fill:rgba(234,88,12,.22);stroke:none;}
+    .overlap{fill:rgba(124,58,237,.14);stroke:var(--purple);stroke-width:1.8;}
+    .pt{stroke:#fff;stroke-width:2.5;}
+    .svg-label{font:800 17px system-ui,-apple-system,sans-serif;fill:var(--text);paint-order:stroke;stroke:rgba(255,255,255,.92);stroke-width:4px;stroke-linejoin:round;}
+    .svg-small{font:750 13px system-ui,-apple-system,sans-serif;fill:var(--muted);paint-order:stroke;stroke:rgba(255,255,255,.92);stroke-width:3px;stroke-linejoin:round;}
+    .svg-math{font:italic 21px Georgia,"Times New Roman",serif;fill:var(--axis);paint-order:stroke;stroke:rgba(255,255,255,.92);stroke-width:4px;stroke-linejoin:round;}
+    .bt-legend{display:flex;flex-wrap:wrap;gap:8px 12px;margin-top:8px;color:var(--muted);font-size:.78rem;}
+    .bt-legend span{display:inline-flex;align-items:center;gap:6px;}
+    .dot{width:9px;height:9px;border-radius:99px;display:inline-block;}
+    .controls{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-top:8px;}
+    .control{background:#fff;border:1px solid var(--border);border-radius:11px;padding:8px;min-width:0;}
+    .control label{display:flex;justify-content:space-between;gap:8px;font-size:.74rem;font-weight:850;margin-bottom:5px;}
+    .control label span:last-child{color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+    .control input{width:100%;accent-color:var(--blue);}
+    .bt-side{display:grid;grid-template-rows:auto auto auto 1fr;gap:10px;}
+    .bt-title{display:flex;justify-content:space-between;gap:8px;align-items:baseline;}
+    .bt-title h3{margin:0;font-size:1.02rem;}
+    .badge{font-size:.72rem;font-weight:850;color:var(--blue);background:#eef4ff;border:1px solid #dbe7ff;border-radius:999px;padding:3px 8px;white-space:nowrap;}
+    .summary{margin:0;color:#334155;font-size:.86rem;line-height:1.42;}
+    .system{display:grid;grid-template-columns:16px minmax(0,1fr);gap:7px;background:#fff;border:1px solid var(--border);border-radius:13px;padding:9px 10px;overflow:auto;}
+    .brace{font-family:"Times New Roman",Georgia,serif;font-size:4.5rem;line-height:.86;transform:scaleX(.55);transform-origin:left center;color:var(--axis);align-self:center;}
+    .lines{display:grid;gap:5px;align-content:center;}
+    .line{font-family:"Cambria Math","STIX Two Math","Times New Roman",Georgia,serif;font-size:clamp(.92rem,1.12vw,1.07rem);line-height:1.34;color:#0f172a;}
+    .line .op{font-family:system-ui,-apple-system,sans-serif;font-weight:850;margin-right:.35rem;}
+    .line .tag{font-family:system-ui,-apple-system,sans-serif;font-weight:800;color:var(--muted);font-size:.78rem;margin-left:6px;white-space:nowrap;}
+    .line .indent{display:inline-block;padding-left:.75rem;}
+    .line .var{font-style:italic;}
+    .line sub,.line sup{font-size:.72em;line-height:0;}
+    .insight{display:grid;gap:7px;align-content:start;}
+    .box{background:#fff;border:1px solid var(--border);border-radius:12px;padding:10px 11px;font-size:.90rem;line-height:1.43;color:#334155;}
+    .box b{color:#0f172a;}
+    .box .math{display:block;margin-top:4px;font-family:"Cambria Math","STIX Two Math","Times New Roman",Georgia,serif;color:#0f172a;white-space:nowrap;overflow:auto;}
+    @container(max-width:860px){
+      .bt-head,.bt-layout{grid-template-columns:1fr;}
+      .bt-tabs{min-width:0;grid-template-columns:repeat(2,minmax(0,1fr));}
+      .controls{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .svg-wrap{aspect-ratio:1.05/1;}
+    }
+    @container(max-width:520px){
+      .bt-tabs,.controls{grid-template-columns:1fr;}
+    }
+  </style>
+
+  <header class="bt-head">
+    <h2>Bilateral Trading Environment</h2>
+    <div class="bt-tabs" role="group" aria-label="view tabs">
+      <button id="tab-space" class="active" type="button">Type space</button>
+      <button id="tab-efficient" type="button">Efficient rule</button>
+      <button id="tab-ic" type="button">Interim IC / IR</button>
+      <button id="tab-wedge" type="button">No-trade wedge</button>
+    </div>
+  </header>
+
+  <main class="bt-layout">
+    <section class="bt-visual">
+      <div class="svg-wrap">
+        <svg id="btSvg" viewBox="0 0 760 565" preserveAspectRatio="xMidYMid meet" aria-label="bilateral trading type space"></svg>
+      </div>
+      <div class="bt-legend" id="legend"></div>
+      <div class="controls" id="controls"></div>
+    </section>
+
+    <section class="bt-side">
+      <div class="bt-title">
+        <h3 id="sideTitle"></h3>
+        <span class="badge" id="badge"></span>
+      </div>
+      <p class="summary" id="summary"></p>
+      <div class="system">
+        <div class="brace">{</div>
+        <div class="lines" id="formula"></div>
+      </div>
+      <div class="insight" id="insight"></div>
+    </section>
+  </main>
+</div>
+
+<script>
+(() => {
+  const svg = document.querySelector('#btSvg');
+  const legend = document.querySelector('#legend');
+  const controls = document.querySelector('#controls');
+  const sideTitle = document.querySelector('#sideTitle');
+  const badge = document.querySelector('#badge');
+  const summary = document.querySelector('#summary');
+  const formula = document.querySelector('#formula');
+  const insight = document.querySelector('#insight');
+  const tabs = {
+    space: document.querySelector('#tab-space'),
+    efficient: document.querySelector('#tab-efficient'),
+    ic: document.querySelector('#tab-ic'),
+    wedge: document.querySelector('#tab-wedge')
+  };
+
+  const st = { view:'space', vL:.25, vH:.95, cL:.10, cH:.78, k:.16, v0:.78, c0:.42, vHat:.55, cHat:.62 };
+  const NS = 'http://www.w3.org/2000/svg';
+  const W = 760, H = 565;
+  const pad = {l:78,r:55,t:42,b:70};
+  const min = 0, max = 1;
+
+  function X(c){ return pad.l + (c-min)/(max-min)*(W-pad.l-pad.r); }
+  function Y(v){ return H-pad.b - (v-min)/(max-min)*(H-pad.t-pad.b); }
+  function el(name, attrs={}, children=[]){ const e=document.createElementNS(NS,name); Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v)); children.forEach(c=>e.appendChild(c)); return e; }
+  function text(x,y,s,cls='svg-label',anchor='start'){ const e=el('text',{x,y,class:cls,'text-anchor':anchor}); e.textContent=s; return e; }
+  function path(points, cls){ return el('path',{d:points.map((p,i)=>`${i?'L':'M'} ${p[0]} ${p[1]}`).join(' '),class:cls}); }
+  function rectXY(x1,y1,x2,y2,cls){ return el('rect',{x:Math.min(x1,x2),y:Math.min(y1,y2),width:Math.abs(x2-x1),height:Math.abs(y2-y1),class:cls}); }
+  function dot(x,y,color,r=6){ return el('circle',{cx:x,cy:y,r,fill:color,class:'pt'}); }
+
+  function overlap(){ return [Math.max(st.cL,st.vL), Math.min(st.cH,st.vH)]; }
+  function overlapLength(){ const [a,b]=overlap(); return Math.max(0,b-a); }
+  function areaEfficient(){
+    const n=240; let count=0, total=0;
+    for(let i=0;i<n;i++) for(let j=0;j<n;j++){
+      const c=st.cL+(st.cH-st.cL)*(i+.5)/n;
+      const v=st.vL+(st.vH-st.vL)*(j+.5)/n;
+      total++; if(v>=c) count++;
+    }
+    return count/total;
+  }
+  function areaLost(){
+    const n=240; let count=0,total=0;
+    for(let i=0;i<n;i++) for(let j=0;j<n;j++){
+      const c=st.cL+(st.cH-st.cL)*(i+.5)/n;
+      const v=st.vL+(st.vH-st.vL)*(j+.5)/n;
+      total++; if(v>=c && v<c+st.k) count++;
+    }
+    return count/total;
+  }
+
+  function drawBase(){
+    svg.replaceChildren();
+    for(let i=0;i<=5;i++){
+      const x=pad.l+i*(W-pad.l-pad.r)/5;
+      const y=pad.t+i*(H-pad.t-pad.b)/5;
+      svg.append(el('line',{x1:x,y1:pad.t,x2:x,y2:H-pad.b,class:'grid'}));
+      svg.append(el('line',{x1:pad.l,y1:y,x2:W-pad.r,y2:y,class:'grid'}));
+    }
+    svg.append(el('path',{d:`M ${pad.l} ${H-pad.b} L ${W-pad.r} ${H-pad.b} l -10 -6 M ${W-pad.r} ${H-pad.b} l -10 6 M ${pad.l} ${H-pad.b} L ${pad.l} ${pad.t} l -6 10 M ${pad.l} ${pad.t} l 6 10`,class:'axis'}));
+    svg.append(text(W-pad.r-8,H-pad.b+34,'seller cost  c','svg-math','end'));
+    svg.append(text(pad.l+10,pad.t-16,'buyer value  v','svg-math'));
+    svg.append(text(X(.02),Y(.02)+22,'0','svg-small','end'));
+    svg.append(text(X(1),Y(0)+22,'1','svg-small','middle'));
+    svg.append(text(X(0)-18,Y(1),'1','svg-small','end'));
+  }
+
+  function drawTypeBox(){
+    svg.append(rectXY(X(st.cL),Y(st.vH),X(st.cH),Y(st.vL),'type-box'));
+    svg.append(text((X(st.cL)+X(st.cH))/2,Y(st.vH)-14,'type rectangle:  [c,c̄] × [v,v̄]','svg-small','middle'));
+    svg.append(text(X(st.cL),H-pad.b+32,'c','svg-math','middle'));
+    svg.append(text(X(st.cH),H-pad.b+32,'c̄','svg-math','middle'));
+    svg.append(text(pad.l-18,Y(st.vL),'v','svg-math','end'));
+    svg.append(text(pad.l-18,Y(st.vH),'v̄','svg-math','end'));
+  }
+
+  function drawDiagonal(){
+    svg.append(path([[X(0),Y(0)],[X(1),Y(1)]],'diag'));
+    svg.append(text(X(.66),Y(.66)-18,'v = c','svg-label'));
+  }
+
+  function polygonToSvg(poly, cls){
+    if(poly.length < 3) return;
+    svg.append(el('polygon',{points:poly.map(p=>`${X(p.c)},${Y(p.v)}`).join(' '),class:cls}));
+  }
+
+  function clipByLine(poly, k=0, keepAbove=true){
+    const eps = 1e-9;
+    const val = (p) => p.v - p.c - k;
+    const inside = (p) => keepAbove ? val(p) >= -eps : val(p) <= eps;
+    const out = [];
+    for(let i=0;i<poly.length;i++){
+      const a = poly[i];
+      const b = poly[(i+1)%poly.length];
+      const ain = inside(a), bin = inside(b);
+      const fa = val(a), fb = val(b);
+      const inter = () => {
+        const t = fa / (fa - fb);
+        return { c: a.c + t*(b.c-a.c), v: a.v + t*(b.v-a.v) };
+      };
+      if(ain && bin){ out.push(b); }
+      else if(ain && !bin){ out.push(inter()); }
+      else if(!ain && bin){ out.push(inter(), b); }
+    }
+    return out;
+  }
+
+  function typeRectanglePoly(){
+    return [
+      {c:st.cL, v:st.vL},
+      {c:st.cH, v:st.vL},
+      {c:st.cH, v:st.vH},
+      {c:st.cL, v:st.vH}
+    ];
+  }
+
+  function clipPolyEfficient(k=0, cls='efficient'){
+    const poly = clipByLine(typeRectanglePoly(), k, true);
+    polygonToSvg(poly, cls);
+  }
+
+  function clipPolyLostWedge(k=0, cls='wedge'){
+    let poly = clipByLine(typeRectanglePoly(), 0, true);
+    poly = clipByLine(poly, k, false);
+    polygonToSvg(poly, cls);
+  }
+
+  function drawOverlap(){
+    const [a,b]=overlap();
+    if(b>a){
+      svg.append(rectXY(X(a),H-pad.b+40,X(b),H-pad.b+53,'overlap'));
+      svg.append(text((X(a)+X(b))/2,H-pad.b+66,'overlap interval','svg-small','middle'));
+    }
+  }
+
+  function drawSpace(){
+    drawBase(); drawDiagonal(); drawTypeBox(); drawOverlap();
+    svg.append(text(X(.14),Y(.91),'OL requires intervals overlap','svg-label'));
+    const [a,b]=overlap();
+    svg.append(text(X(.14),Y(.83), b>a ? `[${a.toFixed(2)}, ${b.toFixed(2)}] is nondegenerate` : 'no nondegenerate overlap','svg-small'));
+  }
+
+  function drawEfficient(){
+    drawBase(); clipPolyEfficient(0,'efficient'); drawDiagonal(); drawTypeBox();
+    svg.append(text(X(.55),Y(.86),'efficient trade region: v ≥ c','svg-label'));
+    svg.lastChild.setAttribute('fill','#16a34a');
+    svg.append(text(X(.20),Y(.25),'no trade: v < c','svg-label'));
+    svg.lastChild.setAttribute('fill','#64748b');
+  }
+
+  function drawIC(){
+    drawEfficient();
+    const v = Math.min(Math.max(st.v0, st.vL), st.vH);
+    const c = Math.min(Math.max(st.c0, st.cL), st.cH);
+    const vHat = Math.min(Math.max(st.vHat, st.vL), st.vH);
+    const cHat = Math.min(Math.max(st.cHat, st.cL), st.cH);
+
+    const pTrue = {x:X(c), y:Y(v)};
+    const pBuyerMisreport = {x:X(c), y:Y(vHat)};
+    const pSellerMisreport = {x:X(cHat), y:Y(v)};
+
+    svg.append(dot(pTrue.x,pTrue.y,'#7c3aed',7));
+    svg.append(text(pTrue.x+14,pTrue.y-14,'truthful type (v,c)','svg-label'));
+    svg.lastChild.setAttribute('fill','#7c3aed');
+
+    svg.append(path([[pTrue.x,pTrue.y],[pBuyerMisreport.x,pBuyerMisreport.y]],'rule-buyer'));
+    svg.append(dot(pBuyerMisreport.x,pBuyerMisreport.y,'#dc2626',5));
+    svg.append(text(pBuyerMisreport.x+14,pBuyerMisreport.y-12,'buyer reports v̂','svg-small'));
+    svg.lastChild.setAttribute('fill','#dc2626');
+
+    svg.append(path([[pTrue.x,pTrue.y],[pSellerMisreport.x,pSellerMisreport.y]],'rule-seller'));
+    svg.append(dot(pSellerMisreport.x,pSellerMisreport.y,'#ea580c',5));
+    svg.append(text(pSellerMisreport.x+12,pSellerMisreport.y+18,'seller reports ĉ','svg-small'));
+    svg.lastChild.setAttribute('fill','#ea580c');
+
+    svg.append(text(X(.13),Y(.92),'IC compares truthful utility with utility from false reports','svg-label'));
+    svg.lastChild.setAttribute('fill','#0f172a');
+  }
+
+  function drawWedge(){
+    drawBase(); clipPolyEfficient(0,'efficient'); clipPolyLostWedge(st.k,'wedge'); drawDiagonal(); drawTypeBox();
+    svg.append(path([[X(0),Y(st.k)],[X(1-st.k),Y(1)]],'rule'));
+    svg.append(text(X(.52),Y(.52+st.k)+18,'implemented trade cutoff: v ≥ c + k','svg-label'));
+    svg.lastChild.setAttribute('fill','#dc2626');
+    svg.append(text(X(.49),Y(.50),'lost gains from trade','svg-label'));
+    svg.lastChild.setAttribute('fill','#ea580c');
+  }
+
+  function renderLegend(){
+    const items = st.view==='space'
+      ? [['#2563eb','type rectangle'],['#7c3aed','overlap interval'],['#334155','v=c boundary']]
+      : st.view==='efficient'
+        ? [['#16a34a','efficient trade'],['#334155','v=c boundary'],['#2563eb','type rectangle']]
+        : st.view==='ic'
+          ? [['#16a34a','efficient trade'],['#7c3aed','truthful type'],['#dc2626','buyer report deviation'],['#ea580c','seller report deviation']]
+          : [['#16a34a','efficient trade'],['#ea580c','lost efficient trades'],['#dc2626','second-best cutoff']];
+    legend.replaceChildren(...items.map(([c,s])=>{ const span=document.createElement('span'); span.innerHTML=`<i class="dot" style="background:${c}"></i>${s}`; return span; }));
+  }
+
+  function renderControls(){
+    let specs=[['vL','v lower',0,.85,.01],['vH','v upper',.15,1,.01],['cL','c lower',0,.85,.01],['cH','c upper',.15,1,.01]];
+    if(st.view==='ic'){
+      st.v0=Math.min(Math.max(st.v0,st.vL),st.vH);
+      st.vHat=Math.min(Math.max(st.vHat,st.vL),st.vH);
+      st.c0=Math.min(Math.max(st.c0,st.cL),st.cH);
+      st.cHat=Math.min(Math.max(st.cHat,st.cL),st.cH);
+      specs=[['v0','true v',st.vL,st.vH,.01],['c0','true c',st.cL,st.cH,.01],['vHat','buyer report v̂',st.vL,st.vH,.01],['cHat','seller report ĉ',st.cL,st.cH,.01]];
+    }
+    if(st.view==='wedge') specs.push(['k','wedge k',0,.35,.01]);
+    controls.replaceChildren(...specs.map(([key,label,minv,maxv,step])=>{
+      const wrap=document.createElement('div'); wrap.className='control';
+      const lab=document.createElement('label');
+      const left=document.createElement('span'); left.textContent=label;
+      const val=document.createElement('span'); val.textContent=Number(st[key]).toFixed(2);
+      const input=document.createElement('input'); input.type='range'; input.min=minv; input.max=maxv; input.step=step; input.value=st[key];
+      input.addEventListener('input',()=>{
+        st[key]=Number(input.value);
+        if(st.vL>=st.vH-.05) st.vL=st.vH-.05;
+        if(st.vH<=st.vL+.05) st.vH=st.vL+.05;
+        if(st.cL>=st.cH-.05) st.cL=st.cH-.05;
+        if(st.cH<=st.cL+.05) st.cH=st.cL+.05;
+        input.value=st[key]; val.textContent=Number(st[key]).toFixed(2); draw();
+      });
+      lab.append(left,val); wrap.append(lab,input); return wrap;
+    }));
+  }
+
+  function renderSide(){
+    const ol=overlapLength();
+    const eff=areaEfficient();
+    const lost=areaLost();
+    if(st.view==='space'){
+      sideTitle.textContent='Environment and type space';
+      badge.textContent='private independent types';
+      summary.textContent='买方价值 v 与卖方成本 c 私有且独立。横轴为卖方成本，纵轴为买方价值；矩形表示可能的类型组合。';
+      formula.innerHTML=`
+        <div class="line"><span class="op">types</span> <span class="var">v</span>&in;[v, v&#772;], &nbsp; <span class="var">c</span>&in;[c, c&#772;]</div>
+        <div class="line"><span class="op">allocation</span> <span class="var">q</span>(v,c)&in;[0,1]</div>
+        <div class="line"><span class="op">payoffs</span> u<sub>b</sub>=v q+t<sub>b</sub>, &nbsp; u<sub>s</sub>=-cq+t<sub>s</sub></div>
+        <div class="line"><span class="op">OL</span> [c,c&#772;]&cap;[v,v&#772;] nondegenerate</div>`;
+      insight.innerHTML=`
+        <div class="box"><b>Overlap condition：</b><span class="math">length([c,c&#772;]&cap;[v,v&#772;])=${ol.toFixed(2)}</span></div>
+        <div class="box"><b>含义：</b>当买方价值和卖方成本的支持集有重叠时，存在双方都可能是边际类型的区域，这是双边私人信息导致效率困难的核心。</div>`;
+    } else if(st.view==='efficient'){
+      sideTitle.textContent='Ex-post efficient trading rule';
+      badge.textContent='first-best benchmark';
+      summary.textContent='若 v 与 c 可观察，则当且仅当交易创造非负剩余时交易，即 v≥c。绿色区域表示有效率交易。';
+      formula.innerHTML=`
+        <div class="line"><span class="op">surplus</span> s(v,c)=v-c</div>
+        <div class="line"><span class="op">q<sup>*</sup>(v,c)</span> = 1 if v&ge;c; &nbsp; 0 if v&lt;c</div>
+        <div class="line"><span class="op">total surplus</span> E[(v-c)q(v,c)]</div>`;
+      insight.innerHTML=`
+        <div class="box"><b>图形判别：</b>对角线 v=c 以上交易，以下不交易。当前类型矩形中，绿色区域占比约为 ${eff.toFixed(2)}。</div>
+        <div class="box"><b>考试表述：</b><span class="math">q^*(v,c)=1{v≥c}</span> 是 ex-post efficient rule。</div>`;
+    } else if(st.view==='ic'){
+      sideTitle.textContent='Interim objects and incentive constraints';
+      badge.textContent='IC / IR';
+      summary.textContent='Interim IC/IR 把 ex-post 机制 q(v,c), t_b(v,c), t_s(v,c) 转换成每个类型在报告前评估的期望交易概率和期望转移支付；IC 要求真实报告优于任意虚假报告。';
+      formula.innerHTML=`
+        <div class="line"><span class="op">Q<sub>b</sub>(v)</span>=E<sub>c</sub>q(v,c), &nbsp; Q<sub>s</sub>(c)=E<sub>v</sub>q(v,c)</div>
+        <div class="line"><span class="op">T<sub>b</sub>(v)</span>=E<sub>c</sub>t<sub>b</sub>(v,c), &nbsp; T<sub>s</sub>(c)=E<sub>v</sub>t<sub>s</sub>(v,c)</div>
+        <div class="line"><span class="op">U<sub>b</sub>(v)</span>=vQ<sub>b</sub>(v)+T<sub>b</sub>(v)</div>
+        <div class="line"><span class="op">U<sub>s</sub>(c)</span>=T<sub>s</sub>(c)-cQ<sub>s</sub>(c)</div>
+        <div class="line"><span class="op">IC<sub>b</sub></span> U<sub>b</sub>(v)&ge;vQ<sub>b</sub>(v&#770;)+T<sub>b</sub>(v&#770;), &forall;v&#770;</div>
+        <div class="line"><span class="op">IC<sub>s</sub></span> U<sub>s</sub>(c)&ge;T<sub>s</sub>(c&#770;)-cQ<sub>s</sub>(c&#770;), &forall;c&#770;</div>
+        <div class="line"><span class="op">IR</span> U<sub>b</sub>(v)&ge;0, &nbsp; U<sub>s</sub>(c)&ge;0</div>`;
+      insight.innerHTML=`
+        <div class="box"><b>核心关系：</b>买方真实类型 v 若报告 v̂，效用为 vQ_b(v̂)+T_b(v̂)；卖方真实类型 c 若报告 ĉ，效用为 T_s(ĉ)-cQ_s(ĉ)。IC 要求真实报告在这些备选报告中最优。</div>
+        <div class="box"><b>图形含义：</b>紫点是当前真实类型 (v,c)。红色竖向移动表示买方改变报告 v̂；橙色横向移动表示卖方改变报告 ĉ。下方滑块可改变真实类型与虚假报告。</div>`;
+    } else {
+      sideTitle.textContent='Budget balance and no-trade wedge';
+      badge.textContent='Myerson-Satterthwaite logic';
+      summary.textContent='同时要求 IC、IR 与预算平衡时，通常不能完全实现 q^*(v,c)=1{v≥c}。第二最佳机制会在 v 与 c 接近的区域放弃部分有效交易。';
+      formula.innerHTML=`
+        <div class="line"><span class="op">BB</span> t<sub>b</sub>(v,c)+t<sub>s</sub>(v,c)=0</div>
+        <div class="line"><span class="op">NES</span> E[t<sub>b</sub>(v,c)+t<sub>s</sub>(v,c)]&le;0</div>
+        <div class="line"><span class="op">SB rule</span> q(v,c)=1 if v&ge;c+k</div>
+        <div class="line"><span class="indent">lost region: c&le;v&lt;c+k</span></div>`;
+      insight.innerHTML=`
+        <div class="box"><b>No-trade wedge：</b><span class="math">k=${st.k.toFixed(2)}, lost efficient share≈${lost.toFixed(2)}</span></div>
+        <div class="box"><b>经济含义：</b>橙色区域中 v&gt;c，本应交易；但为了兼容私人信息、参与约束和预算平衡，机制可能选择不交易。</div>`;
+    }
+  }
+
+  function draw(){
+    Object.entries(tabs).forEach(([k,b])=>b.classList.toggle('active',st.view===k));
+    if(st.view==='space') drawSpace();
+    if(st.view==='efficient') drawEfficient();
+    if(st.view==='ic') drawIC();
+    if(st.view==='wedge') drawWedge();
+    renderLegend(); renderSide();
+  }
+
+  Object.entries(tabs).forEach(([k,b])=>b.addEventListener('click',()=>{ st.view=k; renderControls(); draw(); }));
+  renderControls(); draw();
+})();
+</script>
+</body>
+</html>

@@ -980,6 +980,12 @@ U_b(v)\ &=\ vQ_b(v)+T_b(v),\qquad U_s(c)=T_s(c)-cQ_s(c).\\
 $$
 :::
 
+```{raw} html
+<div style="width:100%;max-width:1120px;margin:0 auto;">
+  <iframe src="/PhD-Course/bilateral_trading_environment_interactive.html" title="Bilateral Trading Environment Interactive" loading="lazy" style="width:100%;height:760px;border:0;display:block;border-radius:16px;"></iframe>
+</div>
+```
+
 #### 3.1 Revelation mechanism
 
 A revelation mechanism is a triple of functions $\langle q,t_b,t_s\rangle$ with
