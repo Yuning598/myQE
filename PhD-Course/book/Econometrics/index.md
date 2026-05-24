@@ -16,11 +16,11 @@ This section collects the econometrics notes for EF8090, MS8956, and related rev
 
 ### MS8956 Econometrics Review
 
-1. [Chapter 1: Finite-Sample Properties of OLS](MS8956/ART-Chap1 Finite-Sample Properties of OLS.md)
-1. [Chapter 2: Large-Sample Theory](MS8956/ART-Chap2 Large- Sample Theory.md)
-1. [Chapter 3: Single-Equation GMM](MS8956/ART-Chap3 Single-Equation GMM.md)
-1. [Chapter 4: Multiple Equation GMM](MS8956/ART-Chap4 Multiple Equation GMM.md)
-1. [Chapter 5: Panel Data](MS8956/ART-Chap5 Panel Data.md)
+1. [08 Finite-Sample Properties of OLS](MS8956/08_Finite_Sample_Properties_of_OLS.md)
+1. [09 Large-Sample Theory](MS8956/09_Large_Sample_Theory.md)
+1. [10 Single-Equation GMM](MS8956/10_Single_Equation_GMM.md)
+1. [11 Multiple Equation GMM](MS8956/11_Multiple_Equation_GMM.md)
+1. [12 Panel Data](MS8956/12_Panel_Data.md)
 
 Use the table of contents to move through the chapter sequence.
 

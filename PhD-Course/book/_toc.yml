@@ -48,11 +48,11 @@ parts:
       - file: Econometrics/EF8090/07_DiD_RD_Nonparametric_Kernel
         sections:
           - file: Econometrics/EF8090/cards/RD_Wald_Estimand
-      - file: Econometrics/MS8956/ART-Chap1 Finite-Sample Properties of OLS
-      - file: Econometrics/MS8956/ART-Chap2 Large- Sample Theory
-      - file: Econometrics/MS8956/ART-Chap3 Single-Equation GMM
-      - file: Econometrics/MS8956/ART-Chap4 Multiple Equation GMM
-      - file: Econometrics/MS8956/ART-Chap5 Panel Data
+      - file: Econometrics/MS8956/08_Finite_Sample_Properties_of_OLS
+      - file: Econometrics/MS8956/09_Large_Sample_Theory
+      - file: Econometrics/MS8956/10_Single_Equation_GMM
+      - file: Econometrics/MS8956/11_Multiple_Equation_GMM
+      - file: Econometrics/MS8956/12_Panel_Data
   - caption: Microeconomics
     chapters:
       - file: Microeconomic/index

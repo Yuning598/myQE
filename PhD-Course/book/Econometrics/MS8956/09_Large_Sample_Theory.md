@@ -1,4 +1,4 @@
-# Chapter 2: Large-Sample Theory
+# 09 Large-Sample Theory
 
 ## 0. Chapter Roadmap
 
@@ -332,7 +332,7 @@ $$
 :::{admonition} Note
 Link to Chapter 1
 在该条件下，大样本下 t/F 与 Chapter 1 的 `(1.4.5)`、`(1.4.9)` 对齐。  
-对应可回看 [Proposition 1.3 (t-ratio)](Econometrics/MS8956/ART-Chap1 Finite-Sample Properties of OLS#^prop-1-3) 与 [Proposition 1.4 (F-ratio)](Econometrics/MS8956/ART-Chap1 Finite-Sample Properties of OLS#^prop-1-4)。
+对应可回看 [Proposition 1.3 (t-ratio)](Econometrics/MS8956/08_Finite_Sample_Properties_of_OLS#^prop-1-3) 与 [Proposition 1.4 (F-ratio)](Econometrics/MS8956/08_Finite_Sample_Properties_of_OLS#^prop-1-4)。
 
 :::
 
@@ -679,8 +679,8 @@ $$
 
 ## 13. Links
 
-- 上一章：[Econometrics/MS8956/ART-Chap1 Finite-Sample Properties of OLS](Econometrics/MS8956/ART-Chap1 Finite-Sample Properties of OLS)
-- 下一章：[Econometrics/MS8956/ART-Chap3 Single-Equation GMM](Econometrics/MS8956/ART-Chap3 Single-Equation GMM)
+- 上一章：[Econometrics/MS8956/08_Finite_Sample_Properties_of_OLS](Econometrics/MS8956/08_Finite_Sample_Properties_of_OLS)
+- 下一章：[Econometrics/MS8956/10_Single_Equation_GMM](Econometrics/MS8956/10_Single_Equation_GMM)
 
 ---
 

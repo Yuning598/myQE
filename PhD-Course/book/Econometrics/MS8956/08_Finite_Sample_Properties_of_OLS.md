@@ -1,4 +1,4 @@
-# Chapter 1: Finite-Sample Properties of OLS
+# 08 Finite-Sample Properties of OLS
 
 ## 0. Chapter Roadmap
 
@@ -1190,5 +1190,5 @@ Residual Plot (slide 68)
 
 ## 8. Links
 
-- 下一章：[Econometrics/MS8956/ART-Chap2 Large- Sample Theory](Econometrics/MS8956/ART-Chap2 Large- Sample Theory)
-- 内生性与 IV/GMM：[Econometrics/MS8956/ART-Chap3 Single-Equation GMM](Econometrics/MS8956/ART-Chap3 Single-Equation GMM)
+- 下一章：[Econometrics/MS8956/09_Large_Sample_Theory](Econometrics/MS8956/09_Large_Sample_Theory)
+- 内生性与 IV/GMM：[Econometrics/MS8956/10_Single_Equation_GMM](Econometrics/MS8956/10_Single_Equation_GMM)

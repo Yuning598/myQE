@@ -1,4 +1,4 @@
-# Endogeneity Bias: Working's Example
+# 10 Single-Equation GMM
 
 ## 1. Model Specification: Market Equilibrium (Working, 1927)
 

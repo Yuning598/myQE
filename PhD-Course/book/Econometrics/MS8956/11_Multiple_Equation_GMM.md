@@ -1,4 +1,4 @@
-# 4. Multiple Equation GMM
+# 11 Multiple Equation GMM
 
 ## The Multiple-Equation Model
 
@@ -165,7 +165,7 @@ $$\begin{aligned}
 
 ## Large-Sample Theory
 
-单方程 GMM 的大样本理论可直接推广至多方程模型。回顾 [[[#^assumption-4-1|Assumption 4.1](#^assumption-4-1)]]、[Assumption 4.2](#^assumption-4-2)、[Assumption 4.6](#^assumption-4-6) 和 [Proposition 3.2](Econometrics/MS8956/ART-Chap3 Single-Equation GMM#^proposition-3-2)。
+单方程 GMM 的大样本理论可直接推广至多方程模型。回顾 [[[#^assumption-4-1|Assumption 4.1](#^assumption-4-1)]]、[Assumption 4.2](#^assumption-4-2)、[Assumption 4.6](#^assumption-4-6) 和 [Proposition 3.2](Econometrics/MS8956/10_Single_Equation_GMM#^proposition-3-2)。
 
 - **Hypothesis testing (假设检验)**: 
 	- 可检验跨方程限制 (**cross-equation restrictions**)，如系数在不同方程间是否相等。 (见 [Econometrics/MS8956/cards/Example 4.2 (wage equation for two years)](Econometrics/MS8956/cards/Example 4.2 (wage equation for two years)))

@@ -1,4 +1,4 @@
-# Chapter 5: Panel Data
+# 12 Panel Data
 
 ## 0. Review of GMM with Common Coefficients (Random Effects Estimator)
 
