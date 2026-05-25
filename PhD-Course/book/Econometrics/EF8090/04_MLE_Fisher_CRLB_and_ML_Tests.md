@@ -293,6 +293,40 @@ $$
 
 PS3 Q5 的 logit 数据可以被一个阈值完全分开：positive observations have larger $x$ than negative observations。于是 log-likelihood 沿着某个方向趋近 supremum，但没有 finite maximizer，MLE 不存在。见 [cards/Separation_in_Logit](cards/Separation_in_Logit)。
 
+:::{admonition} Binary-response models at a glance
+Binary-response 模型通常写成 single-index 形式
+
+$$
+P(Y_i=1\mid X_i=x_i)=G(x_i'\beta),
+$$
+
+其中 $G$ 是一个 cdf。Logit 用 logistic cdf，probit 用 standard normal cdf。二者都没有闭式 MLE，需要数值最大化；边际效应一般依赖 $x_i$，而不是常数。
+
+如果样本出现 perfect separation 或 quasi-separation，logit/probit 的 likelihood 可能没有 finite maximizer。
+:::
+
+:::{admonition} Logit model
+For binary $Y_i$ and covariates $X_i$, the logit specification is
+
+$$
+P(Y_i=1\mid X_i=x_i)=\Lambda(x_i'\beta),\qquad \Lambda(t)=\frac{e^t}{1+e^t}.
+$$
+
+The observed likelihood is
+
+$$
+\ell_n(\beta)=\prod_i \Lambda(X_i'\beta)^{Y_i}\big[1-\Lambda(X_i'\beta)\big]^{1-Y_i}.
+$$
+
+The MLE is
+
+$$
+\hat\beta\in\arg\max_\beta \sum_i\Big\{Y_i\log\Lambda(X_i'\beta)+(1-Y_i)\log[1-\Lambda(X_i'\beta)]\Big\}.
+$$
+
+Perfect separation can make the MLE fail to exist in finite form.
+:::
+
 ## Probit and Tobit Templates
 
 Let $\phi$ denote the standard normal pdf and $\Phi$ the standard normal cdf.
@@ -317,6 +351,12 @@ $$
 $$
 
 Unlike Bernoulli/Poisson/Normal, there is no closed-form MLE; it is computed numerically.
+
+The marginal effect is
+
+$$
+\frac{\partial}{\partial x_k}P(Y_i=1\mid X_i=x_i)=\phi(x_i'\beta)\beta_k.
+$$
 :::
 
 :::{admonition} Tobit model
@@ -345,6 +385,8 @@ $$
 $$
 
 The MLE is obtained by numerical maximization over $(\beta,\sigma)$; there is no closed-form solution.
+
+This is a censored regression model, not a truncated sample model. The point mass at zero and the continuous density above zero must be handled together in the likelihood.
 :::
 
 ## Consistency of MLE
