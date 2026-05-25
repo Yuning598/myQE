@@ -325,6 +325,18 @@ $$
 $$
 
 Perfect separation can make the MLE fail to exist in finite form.
+
+The marginal effect is
+
+$$
+\frac{\partial}{\partial x_k}P(Y_i=1\mid X_i=x_i)=\Lambda(x_i'\beta)\big[1-\Lambda(x_i'\beta)\big]\beta_k.
+$$
+
+On the log-odds scale,
+
+$$
+\log\frac{P(Y_i=1\mid X_i=x_i)}{P(Y_i=0\mid X_i=x_i)}=x_i'\beta.
+$$
 :::
 
 ## Probit and Tobit Templates
@@ -357,6 +369,8 @@ The marginal effect is
 $$
 \frac{\partial}{\partial x_k}P(Y_i=1\mid X_i=x_i)=\phi(x_i'\beta)\beta_k.
 $$
+
+Probit is the latent-normal model: $Y_i=1$ if $Y_i^*=x_i'\beta+u_i>0$ with $u_i\sim N(0,1)$ after normalization.
 :::
 
 :::{admonition} Tobit model
@@ -387,6 +401,18 @@ $$
 The MLE is obtained by numerical maximization over $(\beta,\sigma)$; there is no closed-form solution.
 
 This is a censored regression model, not a truncated sample model. The point mass at zero and the continuous density above zero must be handled together in the likelihood.
+
+The censoring probability and conditional mean are
+
+$$
+P(Y_i=0\mid X_i=x_i)=\Phi\left(-\frac{x_i'\beta}{\sigma}\right),
+$$
+
+$$
+E[Y_i\mid X_i=x_i]=x_i'\beta\ \Phi\left(\frac{x_i'\beta}{\sigma}\right)+\sigma\phi\left(\frac{x_i'\beta}{\sigma}\right).
+$$
+
+So Tobit combines a discrete mass at the censoring point with a continuous normal density above it.
 :::
 
 ## Consistency of MLE
