@@ -45,8 +45,9 @@ $$
 
 Competitive equilibrium:
 
-1. Individual optimization: FOCs = 0
-2. Market clearing
+Individual optimization: FOCs = 0.
+
+Market clearing:
 $$
 c_1^1+c_1^2=\bar e_1, \quad c_2^1+c_2^2=\bar e_2, \quad \bar e_1>\bar e_2
 $$
@@ -247,7 +248,7 @@ $$
 x_s^h=\frac{\pi_s}{p_s}m^h
 $$
 
-Equilibrium allocation:
+**Equilibrium allocation**
 $$
 x^h=
 400
@@ -258,7 +259,7 @@ x^h=
 (100,100,200).
 $$
 
-Expected utility of each farmer:
+**Expected utility of each farmer**
 $$
 \begin{aligned}
 U^h
@@ -312,7 +313,7 @@ x_1^1+x_1^2=200,\qquad x_1^1,x_1^2\ge0.
 \end{aligned}
 $$
 
-Equilibrium allocation:
+**Equilibrium allocation**
 $$
 x^1=(x_1^1,125,250),
 \qquad
@@ -321,7 +322,7 @@ x^2=(x_1^2,75,150),
 x_1^1+x_1^2=200.
 $$
 
-Expected utility of each farmer:
+**Expected utility of each farmer**
 $$
 \begin{aligned}
 U^1&=0 + \frac14\ln125 + \frac34\ln250\\
@@ -386,7 +387,7 @@ $$
 x^1=x^2=(100,100,200).
 $$
 
-Ex ante utility：
+**Ex ante utility**
 $$
 \begin{aligned}
 U^h
