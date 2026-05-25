@@ -23,18 +23,12 @@ Conditional MLE similarly maximizes $\prod_i p_\theta(Y_i\mid X_i)$。课件例�
 ## Bernoulli and Poisson Likelihoods
 
 :::{admonition} Bernoulli model
-若 $X_i\in\{0,1\}$ 且 $P(X_i=1)=p$，则
-
-$$
-p(x_i;p)=p^{x_i}(1-p)^{1-x_i},\qquad x_i\in\{0,1\}.
-$$
+若 $X_i\in\{0,1\}$ 且 $P(X_i=1)=p$，则 $p(x_i;p)=p^{x_i}(1-p)^{1-x_i},\ x_i\in\{0,1\}$。
 
 对应的 likelihood 和 MLE 是
 
 $$
-\ell_n(p)=\prod_i p^{X_i}(1-p)^{1-X_i},
-\qquad
-\hat p=\bar X.
+\ell_n(p)=\prod_i p^{X_i}(1-p)^{1-X_i},\qquad \hat p=\bar X.
 $$
 
 If all observations are 0 or 1 and the parameter space is the open interval $(0,1)$, the MLE can fail to exist in the interior; the likelihood only attains a supremum at the boundary.
@@ -43,9 +37,7 @@ If all observations are 0 or 1 and the parameter space is the open interval $(0,
 For Bernoulli $X_i\in\{0,1\}$, $P(X_i=1)=p$：
 
 $$
-\ell_n(p)=\prod_ip^{X_i}(1-p)^{1-X_i},
-\qquad
-L_n(p)=\bar X\log p+(1-\bar X)\log(1-p).
+\ell_n(p)=\prod_ip^{X_i}(1-p)^{1-X_i},\qquad L_n(p)=\bar X\log p+(1-\bar X)\log(1-p).
 $$
 
 FOC gives $\hat p=\bar X$。如果所有 observation 都是 0 或 1，而 parameter space 是 open interval $(0,1)$，MLE 不存在，只存在 supremum at boundary。
