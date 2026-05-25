@@ -72,7 +72,6 @@ parts:
           - file: ProblemSet/Corporate Finance
           - file: ProblemSet/Econometrics
           - file: ProblemSet/Microeconomics
-          - file: ProblemSet/ProblemSet
   - caption: Cross-Course Links
     chapters:
       - file: Cross-Course/index
