@@ -465,25 +465,21 @@ $$
 Under the usual interiority and regularity conditions, the MLE is asymptotically normal with covariance $I(\theta_0)^{-1}$.
 :::
 
+:::{admonition} Notation (score and Hessian)
+$$
+S_n(\theta)=\frac1n\sum_i s_i(\theta), \qquad H_n(\theta)=\frac1n\sum_i \frac{\partial s_i(\theta)}{\partial\theta'}.
+$$
+
+$$
+S_n(\hat\theta)=0.
+$$
+:::
+
 #### Proof of Lemma (MLE asymptotic normality)
 
 $$
 \sqrt n(\hat\theta-\theta_0)\xrightarrow{d}N(0,I(\theta_0)^{-1}).
 $$
-
-**联立系统：** Define score and Hessian:
-
-$$
-S_n(\theta)=\frac1n\sum_i s_i(\theta), \qquad H_n(\theta)=\frac1n\sum_i \frac{\partial s_i(\theta)}{\partial\theta'}.
-$$
-
-FOC:
-
-$$
-S_n(\hat\theta)=0.
-$$
-
-**连续求解：** Taylor expansion around $\theta_0$:
 
 $$
 \begin{aligned}
@@ -492,25 +488,17 @@ $$
 \end{aligned}
 $$
 
-Rearranging:
-
 $$
 \sqrt n(\hat\theta-\theta_0) =-[H_n(\bar\theta)]^{-1}\sqrt n S_n(\theta_0).
 $$
-
-Under regularity,
 
 $$
 H_n(\bar\theta)\xrightarrow{p}-I(\theta_0), \qquad \sqrt nS_n(\theta_0)\xrightarrow{d}N(0,I(\theta_0)).
 $$
 
-Slutsky gives
-
 $$
 \sqrt n(\hat\theta-\theta_0)\xrightarrow{d}N(0,I^{-1}I I^{-1})=N(0,I^{-1}).
 $$
-
-**Asymptotic efficiency：** ML reaches the Cramer-Rao bound asymptotically under regularity。
 
 ## ML Wald, LR, and LM Tests
 
