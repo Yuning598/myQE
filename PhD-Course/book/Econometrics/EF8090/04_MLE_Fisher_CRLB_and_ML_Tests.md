@@ -3,17 +3,14 @@
 ## Maximum Likelihood Estimator
 
 :::{admonition} Definition (Maximum likelihood estimator)
-若 $X_1,\ldots,X_n$ iid with density $p_\theta(x)$，likelihood is
+若 $X_1,\ldots,X_n$ iid with density $p_\theta(x)$，则
+
 $$
-\ell_n(\theta)=\prod_{i=1}^np_\theta(X_i).
-$$
-Log-likelihood normalized by $n$ is
-$$
-L_n(\theta)=\frac1n\sum_{i=1}^n\log p_\theta(X_i).
-$$
-MLE is
-$$
-\hat\theta\in\arg\max_{\theta\in\Theta}L_n(\theta).
+\begin{aligned}
+\ell_n(\theta)&=\prod_{i=1}^n p_\theta(X_i),\\
+L_n(\theta)&=\frac1n\sum_{i=1}^n\log p_\theta(X_i),\\
+\hat\theta&\in\arg\max_{\theta\in\Theta}L_n(\theta).
+\end{aligned}
 $$
 
 :::
@@ -21,15 +18,16 @@ $$
 ## Bernoulli and Poisson Likelihoods
 
 :::{admonition} Bernoulli model
-若 $X_i\in\{0,1\}$ 且 $P(X_i=1)=p$，则 $p(x_i;p)=p^{x_i}(1-p)^{1-x_i},\ x_i\in\{0,1\}$。
-
-对应的 likelihood 和 MLE 是
+若 $X_i\in\{0,1\}$ 且 $P(X_i=1)=p$，则
 
 $$
-\ell_n(p)=\prod_i p^{X_i}(1-p)^{1-X_i},\qquad \hat p=\bar X.
+\begin{aligned}
+p(x_i;p)&=p^{x_i}(1-p)^{1-x_i},\qquad x_i\in\{0,1\},\\
+\ell_n(p)&=\prod_i p^{X_i}(1-p)^{1-X_i},\qquad \hat p=\bar X.
+\end{aligned}
 $$
 
-If all observations are 0 or 1 and the parameter space is the open interval $(0,1)$, the MLE can fail to exist in the interior; the likelihood only attains a supremum at the boundary.
+若样本全为 $0$ 或 $1$ 且参数空间是 $(0,1)$，MLE 只可能在边界取上确界。
 :::
 
 PS3 Q2: Poisson $X_i\sim\operatorname{Poisson}(\lambda)$。
@@ -38,16 +36,12 @@ PS3 Q2: Poisson $X_i\sim\operatorname{Poisson}(\lambda)$。
 若 $X_i\sim\operatorname{Poisson}(\lambda)$，则
 
 $$
-p(x_i;\lambda)=e^{-\lambda}\frac{\lambda^{x_i}}{x_i!},\qquad x_i\in\mathbb N_0.
+\begin{aligned}
+p(x_i;\lambda)&=e^{-\lambda}\frac{\lambda^{x_i}}{x_i!},\qquad x_i\in\mathbb N_0,\\
+\ell_n(\lambda)&=\prod_i e^{-\lambda}\frac{\lambda^{X_i}}{X_i!},\qquad \hat\lambda=\bar X.
+\end{aligned}
 $$
 
-Likelihood and MLE are
-
-$$
-\ell_n(\lambda)=\prod_i e^{-\lambda}\frac{\lambda^{X_i}}{X_i!},
-\qquad
-\hat\lambda=\bar X.
-$$
 :::
 
 #### Proof of Lemma (Poisson MLE)
@@ -85,16 +79,13 @@ PS3 Q1 asks for MLE and Fisher information for $Y_i\sim N(\mu,\sigma^2)$。Let $
 若 $Y_i\sim N(\mu,\sigma^2)$，令 $s=\sigma^2$，则
 
 $$
-f(y;\mu,s)=\frac{1}{\sqrt{2\pi s}}\exp\left[-\frac{(y-\mu)^2}{2s}\right].
+\begin{aligned}
+f(y;\mu,s)&=\frac{1}{\sqrt{2\pi s}}\exp\left[-\frac{(y-\mu)^2}{2s}\right],\\
+\hat\mu&=\bar Y,\qquad \hat\sigma^2=\frac1n\sum_i(Y_i-\bar Y)^2.
+\end{aligned}
 $$
 
-对应的 MLE 是
-
-$$
-\hat\mu=\bar Y,\qquad \hat\sigma^2=\frac1n\sum_i(Y_i-\bar Y)^2.
-$$
-
-注意这里的 variance MLE uses $n$, not $n-1$。
+注意这里的 variance MLE uses $n$，not $n-1$。
 :::
 
 #### Proof of Lemma (Normal MLE)
@@ -119,14 +110,17 @@ $$
 
 :::{admonition} Fisher information for $(\mu,\sigma^2)$
 单个 observation 的 Fisher information is
+
 $$
-I_1(\mu,s)= \begin{pmatrix} 1/s&0\\ 0&1/(2s^2) \end{pmatrix}.
+I_1(\mu,s)=\begin{pmatrix}1/s&0\\0&1/(2s^2)\end{pmatrix}.
 $$
+
 :::
 
 #### Proof of Lemma (Fisher information for $(\mu,\sigma^2)$)
 
 Score components:
+
 $$
 S_\mu=\frac{Y-\mu}{s}, \qquad S_s=-\frac1{2s}+\frac{(Y-\mu)^2}{2s^2}.
 $$
@@ -147,19 +141,20 @@ Sample information is $I_n=nI_1$。CRLB for estimating $\mu$ is $s/n$，and $\op
 
 :::{admonition} Definition (Fisher information)
 For scalar $\theta$,
+
 $$
-I_1(\theta)=E\left[\left(\frac{\partial\log f(Y;\theta)}{\partial\theta}\right)^2\right].
+I_1(\theta)=E\!\left[\left(\frac{\partial\log f(Y;\theta)}{\partial\theta}\right)^2\right]
+=-E\!\left[\frac{\partial^2\log f(Y;\theta)}{\partial\theta^2}\right].
 $$
-Under regularity conditions,
-$$
-I_1(\theta)=-E\left[\frac{\partial^2\log f(Y;\theta)}{\partial\theta^2}\right].
-$$
+
 :::
 
 :::{admonition} Lemma (Score has mean zero)
+
 $$
 E[S_\theta(Y)]=0.
 $$
+
 :::
 
 #### Proof of Lemma (Score has mean zero)
@@ -183,11 +178,12 @@ Fisher information is score variance。
 ## Cramer-Rao Lower Bound
 
 :::{admonition} Lemma (Scalar Cramer-Rao bound)
-Scalar Cramer-Rao bound
 若 $\hat\theta$ unbiased for $\theta$，则
+
 $$
 \operatorname{Var}(\hat\theta)\ge \frac1{I(\theta)}.
 $$
+
 :::
 
 #### Proof of Lemma (Scalar Cramer-Rao bound)
@@ -197,6 +193,7 @@ E[\hat\theta]=\theta, \qquad S_\theta(Y)=\partial\log f(Y;\theta)/\partial\theta
 $$
 
 Differentiate unbiasedness:
+
 $$
 \begin{aligned}
 1 &=\frac{\partial}{\partial\theta}\int \hat\theta(y)f(y;\theta)dy\\
@@ -204,11 +201,15 @@ $$
 &=E[\hat\theta S_\theta(Y)].
 \end{aligned}
 $$
+
 Since $E[S_\theta]=0$,
+
 $$
 E[\hat\theta S_\theta]=E[(\hat\theta-\theta)S_\theta].
 $$
+
 Cauchy-Schwarz gives
+
 $$
 \begin{aligned}
 1^2 &=\{E[(\hat\theta-\theta)S_\theta]\}^2\\
@@ -319,6 +320,7 @@ On the log-odds scale,
 $$
 \log\frac{P(Y_i=1\mid X_i=x_i)}{P(Y_i=0\mid X_i=x_i)}=x_i'\beta.
 $$
+
 :::
 
 ## Probit and Tobit Templates
@@ -420,16 +422,21 @@ $$
 $$
 \sup_{\theta\in\Theta}|L_n(\theta)-L(\theta)|\xrightarrow{p}0,
 $$
+
 and for every $\varepsilon>0$,
+
 $$
 \sup_{\theta\notin B_\varepsilon(\theta_0)}L(\theta)<L(\theta_0).
 $$
 
 Since $\hat\theta$ maximizes $L_n$,
+
 $$
 L_n(\hat\theta)\ge L_n(\theta_0).
 $$
+
 Uniform convergence gives
+
 $$
 \begin{aligned}
 L(\hat\theta) &\ge L_n(\hat\theta)-\sup_\theta|L_n(\theta)-L(\theta)|\\
@@ -437,6 +444,7 @@ L(\hat\theta) &\ge L_n(\hat\theta)-\sup_\theta|L_n(\theta)-L(\theta)|\\
 &\ge L(\theta_0)-2\sup_\theta|L_n(\theta)-L(\theta)|.
 \end{aligned}
 $$
+
 Therefore $L(\hat\theta)$ cannot stay below $L(\theta_0)$ by a fixed gap, so $\hat\theta$ must enter every neighborhood of $\theta_0$ with probability tending to one。
 
 **结论：** MLE consistency needs identification plus uniform convergence.
@@ -456,30 +464,40 @@ $$
 $$
 
 **联立系统：** Define score and Hessian:
+
 $$
 S_n(\theta)=\frac1n\sum_i s_i(\theta), \qquad H_n(\theta)=\frac1n\sum_i \frac{\partial s_i(\theta)}{\partial\theta'}.
 $$
+
 FOC:
+
 $$
 S_n(\hat\theta)=0.
 $$
 
 **连续求解：** Taylor expansion around $\theta_0$:
+
 $$
 \begin{aligned}
 0 &=S_n(\hat\theta)\\
 &=S_n(\theta_0)+H_n(\bar\theta)(\hat\theta-\theta_0).
 \end{aligned}
 $$
+
 Rearranging:
+
 $$
 \sqrt n(\hat\theta-\theta_0) =-[H_n(\bar\theta)]^{-1}\sqrt n S_n(\theta_0).
 $$
+
 Under regularity,
+
 $$
 H_n(\bar\theta)\xrightarrow{p}-I(\theta_0), \qquad \sqrt nS_n(\theta_0)\xrightarrow{d}N(0,I(\theta_0)).
 $$
+
 Slutsky gives
+
 $$
 \sqrt n(\hat\theta-\theta_0)\xrightarrow{d}N(0,I^{-1}I I^{-1})=N(0,I^{-1}).
 $$
@@ -490,21 +508,25 @@ $$
 
 :::{admonition} Definition (ML Wald test)
 If $H_0:r(\theta)=0$ has $q$ restrictions,
+
 $$
 W=n r(\hat\theta)'[R\hat I^{-1}R']^{-1}r(\hat\theta)\xrightarrow{d}\chi_q^2.
 $$
 
 **Definition (Likelihood ratio test):**
 Let $\hat\theta$ be unrestricted MLE and $\tilde\theta$ restricted MLE under $H_0$。
+
 $$
 LR=2\{\log\ell_n(\hat\theta)-\log\ell_n(\tilde\theta)\}\xrightarrow{d}\chi_q^2.
 $$
 
 **Definition (Lagrange multiplier test):**
 LM uses the restricted estimator and the score evaluated at it:
+
 $$
 LM=S_n(\tilde\theta)'\hat I(\tilde\theta)^{-1}S_n(\tilde\theta)
 $$
+
 with the appropriate $n$-scaling depending on whether $S_n$ is averaged or summed. Under $H_0$, $LM\to_d\chi_q^2$。
 
 :::
@@ -528,9 +550,11 @@ $$
 :::{admonition} Lemma (Wald z-test for a Bernoulli rate)
 Wald z-test for a Bernoulli rate
 Test $H_0:p=p_0$ using
+
 $$
 Z=\sqrt n\frac{\hat p-p_0}{\sqrt{p_0(1-p_0)}}.
 $$
+
 :::
 
 #### Proof of Lemma (Wald z-test for a Bernoulli rate)
@@ -540,6 +564,7 @@ $$
 $$
 
 Standardize:
+
 $$
 Z=\frac{\sqrt n(\hat p-p_0)}{\sqrt{p_0(1-p_0)}}\to_dN(0,1).
 $$
