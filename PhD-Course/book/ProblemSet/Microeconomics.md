@@ -49,14 +49,21 @@ Individual optimization: FOCs = 0.
 
 Market clearing:
 $$
-c_1^1+c_1^2=\bar e_1, \quad c_2^1+c_2^2=\bar e_2, \quad \bar e_1>\bar e_2
+\begin{aligned}
+c_1^1+c_1^2&=\bar e_1,\\
+c_2^1+c_2^2&=\bar e_2,\\
+\bar e_1&>\bar e_2
+\end{aligned}
 $$
 
 $$
 \frac{u^{h'}(c_1^h)}{\delta u^{h'}(c_2^h)}=\frac{p_1}{p_2}=\frac{1}{p} \iff \frac{u^{1'}(c_1^1)}{u^{1'}(c_2^1)}=\frac{u^{2'}(c_1^2)}{u^{2'}(c_2^2)}=\frac{u^{2'}(\bar{e}_1-c_1^1)}{u^{2'}(\bar{e}_2-c_2^2)}=\frac{\delta}{p}
 $$
 
-WTS: $c_1^h>c_2^h$ for $h=1,2$.
+WTS:
+$$
+c_1^h>c_2^h,\qquad h=1,2
+$$
 
 Suppose $c_1^1\leq c_2^1$, then $c_1^2\geq c_2^2$ since $\bar e_1>\bar e_2$. Then, by the strict concavity of $u^h(\cdot)$, it means $u^{h''}(\cdot)<0$ and $u^{h'}(\cdot)$ is strictly decreasing, we have
 $$
@@ -121,7 +128,7 @@ $$
 >(c) How would the answer to part (b) change if the aggregate endowment of the good in period 1 is strictly less than the aggregate endowment in period 2?
 
 ::::{solution}
-当$\bar e_1<\bar e_2$时，市场清算条件为
+当 $\bar e_1<\bar e_2$ 时，市场清算条件为：
 $$
 \begin{aligned}
 \begin{cases}
@@ -134,10 +141,19 @@ $$
 \end{aligned}
 $$
 
-根据Part(b)，储存条件为$p\le1$。
+根据 Part (b)，储存条件为 $p\le1$。
 
-- 当$p=1$时，$u^{h'}(c_1^h)=\delta u^{h'}(c_2^h)\Longrightarrow u^{h'}(c_1^h)<u^{h'}(c_2^h) \Longrightarrow c_1^h>c_2^h.$与$\sum_h c_1^h<\sum_h c_2^h$矛盾，所以$p=1$不可能是均衡价格。
-- 当$p<1$时，$s^h=0$。
+- 当 $p=1$ 时，
+$$
+u^{h'}(c_1^h)=\delta u^{h'}(c_2^h)
+\Longrightarrow
+u^{h'}(c_1^h)<u^{h'}(c_2^h)
+\Longrightarrow
+c_1^h>c_2^h
+$$
+与 $\sum_h c_1^h<\sum_h c_2^h$ 矛盾，所以 $p=1$ 不可能是均衡价格。
+
+- 当 $p<1$ 时，$s^h=0$。
 
 $$
 c_1^k<c_2^k
@@ -149,7 +165,10 @@ u^{k'}(c_1^k)>u^{k'}(c_2^k)
 \frac{u^{k'}(c_1^k)}{u^{k'}(c_2^k)}
 >1.
 $$
-因此，当$\delta>p$时，$c_1^h<c_2^h$ in a competitive equilibrium for this economy for $h=1,2$.
+因此，当 $\delta>p$ 时，
+$$
+c_1^h<c_2^h,\qquad h=1,2
+$$
 
 总结：
 $$
