@@ -1,36 +1,50 @@
-"""Register a reusable collapsible solution directive for MyST/Sphinx."""
+"""Register reusable collapsible directives for MyST/Sphinx."""
 
 from docutils import nodes
 from docutils.parsers.rst import Directive
 
 
-class solution_block(nodes.General, nodes.Element):
-    """Container node rendered as a collapsible solution block."""
+class collapsible_block(nodes.General, nodes.Element):
+    """Container node rendered as a collapsible block."""
 
 
-class SolutionDirective(Directive):
+class CollapsibleDirective(Directive):
     has_content = True
+    optional_arguments = 1
+    final_argument_whitespace = True
+    default_title = "Solution"
 
     def run(self):
-        node = solution_block()
+        node = collapsible_block()
+        node["title"] = self.arguments[0] if self.arguments else self.default_title
         self.state.nested_parse(self.content, self.content_offset, node)
         return [node]
 
 
-def visit_solution_block_html(translator, node):
-    translator.body.append('<details class="solution-block"><summary>Solution</summary>\n')
+class SolutionDirective(CollapsibleDirective):
+    default_title = "Solution"
+
+class CollapseDirective(CollapsibleDirective):
+    default_title = "Details"
 
 
-def depart_solution_block_html(translator, node):
+def visit_collapsible_block_html(translator, node):
+    translator.body.append(
+        f'<details class="solution-block"><summary>{node["title"]}</summary>\n'
+    )
+
+
+def depart_collapsible_block_html(translator, node):
     translator.body.append('</details>\n')
 
 
 def setup(app):
     app.add_node(
-        solution_block,
-        html=(visit_solution_block_html, depart_solution_block_html),
+        collapsible_block,
+        html=(visit_collapsible_block_html, depart_collapsible_block_html),
     )
     app.add_directive("solution", SolutionDirective)
+    app.add_directive("collapse", CollapseDirective)
     return {
         "version": "0.1",
         "parallel_read_safe": True,

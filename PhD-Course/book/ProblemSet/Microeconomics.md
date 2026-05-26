@@ -12,7 +12,7 @@ where $u^h(\cdot)$ is strictly increasing, strictly concave and differentiable, 
 
 Both agents have strictly positive endowments in each period and the aggregate endowment of the good in period 1 is strictly greater than the aggregate endowment in period 2.
 
-**Basic setup**
+::::{collapse} Basic setup
 
 $$
 \left\{
@@ -24,6 +24,8 @@ $$
 \end{aligned}
 \right.
 $$
+
+::::
 
 $$
 \begin{aligned}
@@ -455,7 +457,7 @@ Think of good $y$ as chopsticks where the value of only one is $0$. Assume also 
 
 The initial endowment of consumer $i=1,2$ is $(e_x^i,e_y^i)$. Assume the total endowment of good $y$ is $e_y^1+e_y^2=2,$ and that $e_x^1=e_x^2=20.$
 
-**Basic setup**
+::::{collapse} Basic setup
 
 $$
 \left\{
@@ -467,6 +469,8 @@ $$
 \end{aligned}
 \right.
 $$
+
+::::
 
 >(a) Describe the Pareto efficient allocations in this economy.
 
