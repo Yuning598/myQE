@@ -87,6 +87,7 @@ $$
 $$
 \mathcal{L} = u^h(c_1^h)+\delta u^h(c_2^h)+\lambda^h(e_1^h+pe_2^h-c_1^h-pc_2^h-(1-p)s^h)
 $$
+
 $$
 \begin{cases}
 \frac{\partial \mathcal{L}}{\partial c_1^h} = u^{h'}(c_1^h)-\lambda^h=0\\
@@ -571,6 +572,7 @@ $$
 \end{aligned}
 \right.
 $$
+
 $$
 \begin{aligned}
 x^1+x^2
@@ -587,6 +589,7 @@ $$
 \end{aligned}
 \right.
 $$
+
 $$
 \begin{aligned}
 &\text{if }(y^1,y^2)=(2,0),\ x^1=20+pe_y^1-2p,\ x^2=20+pe_y^2\\
