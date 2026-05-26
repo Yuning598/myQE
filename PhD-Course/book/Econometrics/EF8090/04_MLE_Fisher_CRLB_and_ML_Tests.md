@@ -403,55 +403,61 @@ So Tobit combines a discrete mass at the censoring point with a continuous norma
 
 ### Consistency of MLE
 
-MLE consistency can be written in extremum-estimator form. Set
-
+:::{admonition} MLE consistency roadmap
+Set
 $$
 L_n(\theta)=\frac1n\sum_i\log p_\theta(X_i),
 \qquad
 L(\theta)=E[\log p_\theta(X_i)].
 $$
-
-:::{admonition} Lemma (Argmax consistency of MLE)
-Under compactness, continuity, identification, and a uniform law of large numbers, the MLE is consistent.
+MLE consistency is obtained by combining the four lemmas below: identification, approximate argmax consistency, compactness/continuity separation, and a uniform law of large numbers.
 :::
 
-#### Proof of Lemma (Argmax consistency of MLE)
-
+:::{admonition} Lemma 1 (Identification)
+Suppose for all $\theta\neq\theta_0$ that
 $$
-\hat\theta\xrightarrow{p}\theta_0.
+P\{p_\theta(Y\mid X)>p_{\theta_0}(Y\mid X)\}>0.
 $$
-
+Then
 $$
-\sup_{\theta\in\Theta}|L_n(\theta)-L(\theta)|\xrightarrow{p}0,
+L(\theta)=E[\log p_\theta(Y\mid X)]
 $$
+is uniquely maximized over $\theta\in\Theta$ at $\theta=\theta_0$.
+:::
 
-and for every $\varepsilon>0$,
-
+:::{admonition} Lemma 2 (Approximate argmax consistency)
+Let $\{\hat\theta_n:n\ge1\}$ be an estimator sequence such that
 $$
-\sup_{\theta\notin B_\varepsilon(\theta_0)}L(\theta)<L(\theta_0).
+L_n(\hat\theta_n)\ge L_n(\theta_0)-o_p(1).
 $$
-
-Since $\hat\theta$ maximizes $L_n$,
-
+Suppose that
 $$
-L_n(\hat\theta)\ge L_n(\theta_0).
+\sup_{\theta\in\Theta}|L_n(\theta)-L(\theta)|\xrightarrow{p}0
 $$
-
-Uniform convergence gives
-
+as $n\to\infty$ and for all $\delta>0$ that
 $$
-\begin{aligned}
-L(\hat\theta) &\ge L_n(\hat\theta)-\sup_\theta|L_n(\theta)-L(\theta)|\\
-&\ge L_n(\theta_0)-\sup_\theta|L_n(\theta)-L(\theta)|\\
-&\ge L(\theta_0)-2\sup_\theta|L_n(\theta)-L(\theta)|.
-\end{aligned}
+\sup_{\theta\in\Theta\setminus B_\delta(\theta_0)}L(\theta)<L(\theta_0).
 $$
+Then $\hat\theta_n\xrightarrow{p}\theta_0$ as $n\to\infty$.
+:::
 
-Therefore $L(\hat\theta)$ cannot stay below $L(\theta_0)$ by a fixed gap, so $\hat\theta$ must enter every neighborhood of $\theta_0$ with probability tending to one。
+:::{admonition} Lemma 3 (Compactness / continuity)
+Suppose $\Theta$ is compact, $L(\theta)$ is continuous, and $L(\theta)$ is uniquely maximized over $\theta\in\Theta$ at $\theta=\theta_0$. Then, for all $\delta>0$,
+$$
+\sup_{\theta\in\Theta\setminus B_\delta(\theta_0)}L(\theta)<L(\theta_0).
+$$
+:::
 
-**结论：** MLE consistency needs identification plus uniform convergence.
-
-Sufficient conditions: compact $\Theta$, continuity, unique maximizer, and dominated uniform law of large numbers.
+:::{admonition} Lemma 4 (Uniform law of large numbers)
+Let $X_i$ be an i.i.d. sequence of random variables with distribution $P$ on $\mathbb R^d$. Denote by $S$ the support of $P$, and let $\Theta\subset\mathbb R^k$ be compact. Let $f:\Theta\times S\to\mathbb R$ be such that $f(\theta,x)$ is continuous in $\theta$ for each $x\in S$. Suppose there exists $F:S\to\mathbb R$ such that
+$$
+|f(\theta,x)|\le F(x)
+$$
+for all $\theta\in\Theta$ and $x\in S$, and $E[F(X_i)]<\infty$. Then
+$$
+\sup_{\theta\in\Theta}\left|\frac1n\sum_{i=1}^n f(\theta,X_i)-E[f(\theta,X_i)]\right|\xrightarrow{p}0.
+$$
+:::
 
 ### Asymptotic Normality and Efficiency
 
