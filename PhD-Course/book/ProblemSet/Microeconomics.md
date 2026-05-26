@@ -14,14 +14,16 @@ Both agents have strictly positive endowments in each period and the aggregate e
 
 **Basic setup**
 
-$$\left\{
+$$
+\left\{
 \begin{aligned}
 &U^h(c_1^h,c_2^h)=u^h(c_1^h)+\delta u^h(c_2^h),\qquad h=1,2\\
 &u^{h'}>0,\qquad u^{h''}<0,\qquad u^{h'}(0)=\infty\\
 &\bar e_1:=e_1^1+e_1^2,\qquad \bar e_2:=e_2^1+e_2^2\\
 &(p_1, p_2)=(1, p), \qquad \bar{e_1}>\bar{e_2}>0
 \end{aligned}
-\right.$$
+\right.
+$$
 
 $$
 \begin{aligned}
@@ -279,10 +281,12 @@ $$
 p_1:p_2:p_3 = \frac{\pi_1}{e^1}:\frac{\pi_2}{e^2}:\frac{\pi_3}{e^3}=0:\frac{1/4}{200}:\frac{3/4}{400}=0:2:3
 $$
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 m^1&=p\cdot e^1=0\cdot0+200\cdot2+200\cdot3=1000\\
 m^2&=p\cdot e^2=200\cdot0+0\cdot2+200\cdot3=600
-\end{aligned}$$
+\end{aligned}
+$$
 
 $$
 x_s^h=\frac{\pi_s}{p_s}m^h
@@ -559,24 +563,37 @@ $$
 
 ::::{solution}
 - $V_1>V_2$，$p_y\in(V_2/2,V_1/2)$
-$$\left\{
+$$
+\left\{
 \begin{aligned}
 &x^1=20+pe_y^1-2p\\
 &x^2=20+pe_y^2
 \end{aligned}
-\right. \implies \begin{aligned}
+\right.
+$$
+$$
+\begin{aligned}
 x^1+x^2
-&=40+p(e_y^1+e_y^2)-2p=40, \text{W.E exists.}
-\end{aligned}$$
+&=40+p(e_y^1+e_y^2)-2p=40
+\end{aligned}
+$$
+W.E exists.
 - $V_1=V_2$，$p_y=V_1/2=V_2/2$
-$$\left\{\begin{aligned}
+$$
+\left\{
+\begin{aligned}
 &x^1=20+pe_y^1-2p\cdot\mathbf{1}_{\{y^1=2\}}\\
 &x^2=20+pe_y^2-2p\cdot\mathbf{1}_{\{y^2=2\}}
-\end{aligned}\right. \implies \begin{aligned}
+\end{aligned}
+\right.
+$$
+$$
+\begin{aligned}
 &\text{if }(y^1,y^2)=(2,0),\ x^1=20+pe_y^1-2p,\ x^2=20+pe_y^2\\
 &\text{if }(y^1,y^2)=(0,2),\ x^1=20+pe_y^1,\ x^2=20+pe_y^2-2p
-\end{aligned}$$
-两种情况都满足市场清算条件，所以W.E exists.
+\end{aligned}
+$$
+两种情况都满足市场清算条件，所以 W.E. exists.
 
 ::::
 
