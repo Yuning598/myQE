@@ -523,7 +523,15 @@ $$
 \sqrt n(\hat\theta-\theta_0)\xrightarrow{d}N(0,I(\theta_0)^{-1}I(\theta_0)I(\theta_0)^{-1})=N(0,I(\theta_0)^{-1}).
 $$
 
-The asymptotic covariance equals the inverse Fisher information, so the MLE is asymptotically efficient.
+#### Proof of asymptotic efficiency
+
+The asymptotic covariance of the MLE is
+
+$$
+\operatorname{AVar}\!\left(\sqrt n(\hat\theta-\theta_0)\right)=I(\theta_0)^{-1}.
+$$
+
+For regular estimators, the asymptotic Cramér-Rao lower bound is also $I(\theta_0)^{-1}$, so the MLE attains the bound.
 
 ## ML Wald, LR, and LM Tests
 
