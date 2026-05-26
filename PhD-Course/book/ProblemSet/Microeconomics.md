@@ -27,16 +27,15 @@ $$
 
 $$
 \begin{aligned}
-\text{CP:}&\begin{cases}
-\max_{c_1^h,c_2^h} & u^h(c_1^h)+\delta u^h(c_2^h)\\
-s.t. & e_1^h+c_2^h-p_1c_1^h-p_2c_2^h\geq 0\\
-\end{cases}\\
+\text{CP:}\quad
+&\max_{c_1^h,c_2^h}\ u^h(c_1^h)+\delta u^h(c_2^h)\\
+\text{s.t.}\quad
+&e_1^h+c_2^h-p_1c_1^h-p_2c_2^h\geq 0\\
 \mathcal{L} &= u^h(c_1^h)+\delta u^h(c_2^h)+\lambda^h(e_1^h+c_2^h-p_1c_1^h-p_2c_2^h)\\
-FOC:& \begin{cases}
-\frac{\partial \mathcal{L}}{\partial c_1^h} = u^{h'}(c_1^h)-\lambda^hp_1=0\\
-\frac{\partial \mathcal{L}}{\partial c_2^h} = \delta u^{h'}(c_2^h)-\lambda^hp_2=0
-\end{cases}
-\Rightarrow \frac{u^{h'}(c_1^h)}{\delta u^{h'}(c_2^h)}=\frac{p_1}{p_2}=\frac{1}{p}
+\text{FOC:}\quad
+\frac{\partial \mathcal{L}}{\partial c_1^h} &= u^{h'}(c_1^h)-\lambda^hp_1=0\\
+\frac{\partial \mathcal{L}}{\partial c_2^h} &= \delta u^{h'}(c_2^h)-\lambda^hp_2=0\\
+\Rightarrow \frac{u^{h'}(c_1^h)}{\delta u^{h'}(c_2^h)}&=\frac{p_1}{p_2}=\frac{1}{p}
 \end{aligned}
 $$
 
@@ -48,6 +47,7 @@ Competitive equilibrium:
 Individual optimization: FOCs = 0.
 
 Market clearing:
+
 $$
 \begin{aligned}
 c_1^1+c_1^2&=\bar e_1,\\
@@ -61,18 +61,23 @@ $$
 $$
 
 WTS:
+
 $$
 c_1^h>c_2^h,\qquad h=1,2
 $$
 
 Suppose $c_1^1\leq c_2^1$, then $c_1^2\geq c_2^2$ since $\bar e_1>\bar e_2$. Then, by the strict concavity of $u^h(\cdot)$, it means $u^{h''}(\cdot)<0$ and $u^{h'}(\cdot)$ is strictly decreasing, we have
+
 $$
 \frac{u^{1'}(c_1^1)}{u^{1'}(c_2^1)} > \frac{u^{1'}(c_2^1)}{u^{1'}(c_2^1)}=1>\frac{\delta}{p}
 $$
+
 and
+
 $$
 \frac{u^{2'}(c_1^2)}{u^{2'}(c_2^2)} < \frac{u^{2'}(c_2^2)}{u^{2'}(c_2^2)}=1<\frac{\delta}{p}
 $$
+
 which contradicts the FOCs. Therefore, $c_1^1>c_2^1$. Similarly, we can show $c_1^2>c_2^2$.
 
 ::::
@@ -81,13 +86,12 @@ which contradicts the FOCs. Therefore, $c_1^1>c_2^1$. Similarly, we can show $c_
 
 ::::{solution}
 Storable means:
+
 $$
 \begin{aligned}
-\begin{cases}
-\max_{c_1^h,c_2^h,s^h\ge0}\ u^h(c_1^h)+\delta u^h(c_2^h)\\
-\text{s.t.}\quad (c_1^h+s^h)+p(c_2^h-s^h)\le e_1^h+pe_2^h
-\end{cases}\\
-\iff c_1^h+pc_2^h+(1-p)s^h\le e_1^h+pe_2^h\\
+\max_{c_1^h,c_2^h,s^h\ge0}\ &u^h(c_1^h)+\delta u^h(c_2^h)\\
+\text{s.t.}\quad &(c_1^h+s^h)+p(c_2^h-s^h)\le e_1^h+pe_2^h\\
+\Longleftrightarrow\quad &c_1^h+pc_2^h+(1-p)s^h\le e_1^h+pe_2^h\\
 \end{aligned}
 $$
 
@@ -96,25 +100,20 @@ $$
 $$
 
 $$
-\begin{cases}
-\frac{\partial \mathcal{L}}{\partial c_1^h} = u^{h'}(c_1^h)-\lambda^h=0\\
-\frac{\partial \mathcal{L}}{\partial c_2^h} = \delta u^{h'}(c_2^h)-\lambda^hp=0\\
-\frac{\partial \mathcal{L}}{\partial s^h} = -(1-p)\lambda^h=0
-\end{cases}
-\Rightarrow \frac{u^{h'}(c_1^h)}{\delta u^{h'}(c_2^h)}=p
+\begin{aligned}
+\frac{\partial \mathcal{L}}{\partial c_1^h} &= u^{h'}(c_1^h)-\lambda^h=0\\
+\frac{\partial \mathcal{L}}{\partial c_2^h} &= \delta u^{h'}(c_2^h)-\lambda^hp=0\\
+\frac{\partial \mathcal{L}}{\partial s^h} &= -(1-p)\lambda^h=0\\
+\Rightarrow \frac{u^{h'}(c_1^h)}{\delta u^{h'}(c_2^h)}&=p
+\end{aligned}
 $$
 
 $$
-\left\{
 \begin{aligned}
-&p>1
-\Longrightarrow \text{storage 正利润，不能是均衡}\\
-&p<1
-\Longrightarrow \text{storage 亏损，所以 }s^h=0\\
-&p=1
-\Longrightarrow \text{storage 零利润，可能被使用}
+p>1 &\Longrightarrow \text{storage 正利润，不能是均衡}\\
+p<1 &\Longrightarrow \text{storage 亏损，所以 }s^h=0\\
+p=1 &\Longrightarrow \text{storage 零利润，可能被使用}
 \end{aligned}
-\right.
 $$
 
 - 当$p<1$时，$s^1=s^2=0$，问题退化为非储存情况（Part (a)），$c_1^h>c_2^h$仍然成立。
@@ -128,22 +127,23 @@ $$
 >(c) How would the answer to part (b) change if the aggregate endowment of the good in period 1 is strictly less than the aggregate endowment in period 2?
 
 ::::{solution}
-当 $\bar e_1<\bar e_2$ 时，市场清算条件为：
+当 $\bar e_1<\bar e_2$ 时，市场清算条件为
+
 $$
 \begin{aligned}
-\begin{cases}
-\sum_h(c_1^h+s^h)=\bar e_1\\
-\sum_h(c_2^h-s^h)=\bar e_2\\
-\bar e_1<\bar e_2
-\end{cases}
-\iff 
-\sum_h c_1^h=\bar e_1-\sum_hs^h<\bar e_2+\sum_hs^h=\sum_h c_2^h.
+\sum_h(c_1^h+s^h)&=\bar e_1\\
+\sum_h(c_2^h-s^h)&=\bar e_2\\
+\bar e_1&<\bar e_2\\
+\Longleftrightarrow\quad
+\sum_h c_1^h
+&=\bar e_1-\sum_hs^h<\bar e_2+\sum_hs^h=\sum_h c_2^h.
 \end{aligned}
 $$
 
 根据 Part (b)，储存条件为 $p\le1$。
 
 - 当 $p=1$ 时，
+
 $$
 u^{h'}(c_1^h)=\delta u^{h'}(c_2^h)
 \Longrightarrow
@@ -151,6 +151,7 @@ u^{h'}(c_1^h)<u^{h'}(c_2^h)
 \Longrightarrow
 c_1^h>c_2^h
 $$
+
 与 $\sum_h c_1^h<\sum_h c_2^h$ 矛盾，所以 $p=1$ 不可能是均衡价格。
 
 - 当 $p<1$ 时，$s^h=0$。
@@ -165,12 +166,15 @@ u^{k'}(c_1^k)>u^{k'}(c_2^k)
 \frac{u^{k'}(c_1^k)}{u^{k'}(c_2^k)}
 >1.
 $$
+
 因此，当 $\delta>p$ 时，
+
 $$
 c_1^h<c_2^h,\qquad h=1,2
 $$
 
 总结：
+
 $$
 \left\{
 \begin{aligned}
@@ -193,6 +197,7 @@ $$
 Two farmers face the possibility that the river on which their farms lie might flood. For simplicity suppose that either of their farms might flood, but not both. The chance that either farm might flood is $1/4$. Each farmer's crop will be $200$ if his farm does not flood and $0$ if it does flood. Each has a von Neumann-Morgenstern utility function with utility for the good being $u(x)=\ln x.$
 
 **Basic setup**: not both farmers can be flooded, so there are three states of the world:
+
 $$
 \left\{
 \begin{aligned}
@@ -204,30 +209,35 @@ $$
 $$
 
 Arrow-Debreu equilibrium 中，agent 在 date 0 选择完整的 contingent consumption plan：
+
 $$
 x^h=(x_1^h,x_2^h,x_3^h)
 $$
 
 价格向量为：
+
 $$
 p=(p_1,p_2,p_3)
 $$
 
 $$
 \begin{aligned}
-&CP:\begin{cases}
-\max_{x_1^h,x_2^h,x_3^h>0}\ \sum_{s=1}^3 \pi_s\ln x_s^h\\
-\text{s.t.}\quad \sum_{s=1}^3p_sx_s^h\le \sum_{s=1}^3p_se_s^h
-\end{cases}\\
-&\mathcal L^h=
+\text{CP:}\quad
+&\max_{x_1^h,x_2^h,x_3^h>0}\ \sum_{s=1}^3 \pi_s\ln x_s^h\\
+\text{s.t.}\quad
+&\sum_{s=1}^3p_sx_s^h\le \sum_{s=1}^3p_se_s^h\\
+\mathcal L^h
+&=
 \sum_{s=1}^3\pi_s\ln x_s^h
 +\lambda^h
 \left(
 \sum_{s=1}^3p_se_s^h-\sum_{s=1}^3p_sx_s^h
 \right)\\
-&\text{FOC: }\frac{\partial \mathcal L^h}{\partial x_s^h}
-=
-\frac{\pi_s}{x_s^h}-\lambda^hp_s=0 \iff \frac{\pi_s/x_s^h}{\pi_t/x_t^h}
+\text{FOC:}\quad
+\frac{\partial \mathcal L^h}{\partial x_s^h}
+&=
+\frac{\pi_s}{x_s^h}-\lambda^hp_s=0
+\iff \frac{\pi_s/x_s^h}{\pi_t/x_t^h}
 =
 \frac{p_s}{p_t}
 \end{aligned}
@@ -236,6 +246,7 @@ $$
 >(a) Compute the Arrow-Debreu equilibrium for this economy, where the farmers can trade contingent commodities before it is known whose farm might flood. What is the expected utility of each farmer?
 
 ::::{solution}
+
 $$
 \left\{
 \begin{aligned}
@@ -263,6 +274,7 @@ x_s^h=\frac{\pi_s}{p_s}m^h
 $$
 
 - Equilibrium allocation
+
 $$
 x^h=
 400
@@ -274,6 +286,7 @@ x^h=
 $$
 
 - Expected utility of each farmer
+
 $$
 \begin{aligned}
 U^h
@@ -293,6 +306,7 @@ $$
 >(b) Suppose now that there is probability $0$ that farmer 1's field will be flooded but the probability that farmer 2's field will be flooded is still $1/4$. How would your answer to part (a) change?
 
 ::::{solution}
+
 $$
 \pi_1=0,\qquad \pi_2=\frac14,\qquad \pi_3=\frac34
 $$
@@ -314,20 +328,18 @@ $$
 
 $$
 \begin{aligned}
-\begin{cases}
-x_2^1=\frac14\cdot\frac{1000}{2}=125\\
-x_3^1=\frac34\cdot\frac{1000}{3}=250
-\end{cases}
-\quad
-\begin{cases}
-x_2^2=\frac14\cdot\frac{600}{2}=75\\
-x_3^2=\frac34\cdot\frac{600}{3}=150
-\end{cases}\\
-x_1^1+x_1^2=200,\qquad x_1^1,x_1^2\ge0.
+x_2^1&=\frac14\cdot\frac{1000}{2}=125
+\qquad
+x_2^2&=\frac14\cdot\frac{600}{2}=75\\
+x_3^1&=\frac34\cdot\frac{1000}{3}=250
+\qquad
+x_3^2&=\frac34\cdot\frac{600}{3}=150\\
+x_1^1+x_1^2&=200,\qquad x_1^1,x_1^2\ge0.
 \end{aligned}
 $$
 
 - Equilibrium allocation
+
 $$
 x^1=(x_1^1,125,250),
 \qquad
@@ -337,6 +349,7 @@ x_1^1+x_1^2=200.
 $$
 
 - Expected utility of each farmer
+
 $$
 \begin{aligned}
 U^1&=0 + \frac14\ln125 + \frac34\ln250\\
@@ -380,9 +393,11 @@ N & \frac12
 \big((\cdot,\cdot,200),(\cdot,\cdot,200)\big)
 \end{array}
 $$
+
 这里 ⋅ 表示该 signal 下不可能发生的状态，消费取多少不影响效用和均衡。
 
 Conditional AD allocations：
+
 $$
 \left\{
 \begin{aligned}
@@ -395,11 +410,13 @@ $$
 $$
 
 Thus, across original states：
+
 $$
 x^1=x^2=(100,100,200).
 $$
 
 - Ex ante utility
+
 $$
 \begin{aligned}
 U^h
@@ -439,6 +456,7 @@ Think of good $y$ as chopsticks where the value of only one is $0$. Assume also 
 The initial endowment of consumer $i=1,2$ is $(e_x^i,e_y^i)$. Assume the total endowment of good $y$ is $e_y^1+e_y^2=2,$ and that $e_x^1=e_x^2=20.$
 
 **Basic setup**
+
 $$
 \left\{
 \begin{aligned}
@@ -453,6 +471,7 @@ $$
 >(a) Describe the Pareto efficient allocations in this economy.
 
 ::::{solution}
+
 $$
 \left\{
 \begin{aligned}
@@ -463,30 +482,36 @@ $$
 $$
 
 - $V_1=V_2$
+
 $$
 u^1+u^2=40+V_1=40+V_2 \quad(\text{Pareto efficient})
 $$
+
 - $V_1>V_2$
   - $(y^1,y^2)=(2,0)$:
-    $$
+
+$$
     \begin{aligned}
     &u^1=x^1+V_1=40-x^2+V_1\\
     &u^2=x^2\\
     &u=u^1+u^2=40+V_1
     \end{aligned}
-    $$
+$$
+
     Pareto efficient.
 
   - $(y^1,y^2)=(0,2)$:
-    $$
+
+$$
     \begin{aligned}
     &u^1=x^1\\
     &u^2=x^2+V_2=40-x^1+V_2\\
     &u=u^1+u^2=40+V_2
     \end{aligned}
-    $$
+$$
 
 Pareto improvement candidate $(x^{1'},x^{2'})$:
+
 $$
 \begin{aligned}
 &u^{1'}=x^{1'}+V_1 \ge x^1\\
@@ -496,12 +521,14 @@ $$
 $$
 
 Compensation case $x^1 \ge V_2$:
+
 $$
 \begin{aligned}
 &x^{1'}=x^1-V_2\\
 &x^{2'}=x^2+V_2
 \end{aligned}
 $$
+
 - $V_2$可视为consumer 1用good x补偿给consumer 2的numerated value.
 - $u^{1'}=x^1-V_2+V_1>u^1$，$u^{2'}=x^2+V_2=u^2$，存在Pareto improvement，矛盾。
 
@@ -509,15 +536,12 @@ $$
 
 $$
 \begin{aligned}
-&PO:
-\begin{cases}
-V_1=V_2:
-x^1+x^2=40,\ (y^1,y^2)=(2,0)\text{ or }(0,2),\\
-V_1>V_2:
+\text{PO:}\quad
+&V_1=V_2 \Longrightarrow x^1+x^2=40,\ (y^1,y^2)=(2,0)\text{ or }(0,2),\\
+&V_1>V_2 \Longrightarrow
 \big[x^1+x^2=40,\ (y^1,y^2)=(2,0)\big]\\
-\qquad\qquad\text{or }
+&\qquad\qquad\text{or }
 \big[x^1+x^2=40,\ (y^1,y^2)=(0,2),\ x^1<V_2\big].
-\end{cases}
 \end{aligned}
 $$
 
@@ -526,6 +550,7 @@ $$
 >(b) Write conditions for a Walrasian equilibrium for this economy.
 
 ::::{solution}
+
 $$
 CP:
 \left\{
@@ -535,7 +560,9 @@ CP:
 \end{aligned}
 \right.
 $$
+
 Assume price vestor is $p=(1,p_y)$,
+
 $$
 \left\{
 \begin{aligned}
@@ -550,6 +577,7 @@ $$
 - $2p_y=V_i \implies y^i=0\text{ or }2, x^i=m^i\text{ or }m^i-2p_y+V_i$
 
 Because $V_2 \le V_1$,
+
 $$
 \left\{
 \begin{aligned}
@@ -566,6 +594,7 @@ $$
 $$
 
 Allocation conditions:
+
 $$
 \left\{
 \begin{aligned}
@@ -583,6 +612,7 @@ $$
 
 ::::{solution}
 - $V_1>V_2$，$p_y\in(V_2/2,V_1/2)$
+
 $$
 \left\{
 \begin{aligned}
@@ -598,8 +628,10 @@ x^1+x^2
 &=40+p(e_y^1+e_y^2)-2p=40
 \end{aligned}
 $$
+
 W.E exists.
 - $V_1=V_2$，$p_y=V_1/2=V_2/2$
+
 $$
 \left\{
 \begin{aligned}
@@ -615,6 +647,7 @@ $$
 &\text{if }(y^1,y^2)=(0,2),\ x^1=20+pe_y^1,\ x^2=20+pe_y^2-2p
 \end{aligned}
 $$
+
 两种情况都满足市场清算条件，所以 W.E. exists.
 
 ::::
@@ -622,6 +655,7 @@ $$
 >(d) If a Walrasian equilibrium exists for such an economy, is it Pareto efficient? Either explain why it is or provide a counterexample.
 
 ::::{solution}
+
 $$
 \left\{
 \begin{aligned}
@@ -650,6 +684,7 @@ $$
 
 ::::{solution}
 Construct:
+
 $$
 \left\{
 \begin{aligned}
@@ -661,6 +696,7 @@ $$
 $$
 
 This satisfies:
+
 $$
 \left\{
 \begin{aligned}
@@ -671,6 +707,7 @@ $$
 $$
 
 For utility maximization:
+
 $$
 \left\{
     \begin{aligned}
@@ -714,6 +751,7 @@ D_2^y(p)=
 $$
 
 Total $y$-demand correspondence:
+
 $$
 D_1^y(p)+D_2^y(p)=
 \left\{
@@ -728,6 +766,7 @@ D_1^y(p)+D_2^y(p)=
 \end{aligned}
 \right.
 $$
+
 which does not contain $2$ for any price, so there is no price that clears the market for good $y$. Therefore, a Walrasian equilibrium does not exist in this case.
 
 ::::
