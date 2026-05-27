@@ -316,24 +316,27 @@ ATE=E[Y(1)-Y(0)].
 $$
 They differ only in how they fill in the missing counterfactual.
 
-**Difference in means**
+* Difference in means
 $$
 \widehat{ATE}_{DM}=\bar Y_1-\bar Y_0.
 $$
+Uses only treated and control sample means.
 
-**IPW**
+* IPW
 $$
 \widehat{ATE}_{IPW}
 =\frac1n\sum_i\left[\frac{D_iY_i}{\hat e(X_i)}-\frac{(1-D_i)Y_i}{1-\hat e(X_i)}\right].
 $$
+Reweights observed outcomes by the propensity score.
 
-**Regression adjustment / $\widehat{ATE}_3$**
+* Regression adjustment
 $$
 \widehat{ATE}_3
 =\frac1n\sum_i\big[\hat g_1(X_i)-\hat g_0(X_i)\big].
 $$
+Uses fitted conditional means.
 
-**AIPW / orthogonal / $\widehat{ATE}_4$**
+* AIPW / orthogonal
 $$
 \widehat{ATE}_4
 =\frac1n\sum_i\Big[
@@ -342,21 +345,24 @@ $$
 +\hat g_1(X_i)-\hat g_0(X_i)
 \Big].
 $$
+Combines regression adjustment with weighted residual correction.
 
-**Matching**
+* Matching
 $$
 \widehat{ATE}_M=\frac1n\sum_i(\hat Y_{i1}-\hat Y_{i0}).
 $$
+Uses nearest-neighbor outcomes.
 
-**Bias-corrected matching**
+* Bias-corrected matching
 $$
 \widehat{ATE}_M^{bc}=\frac1n\sum_i(\tilde Y_{i1}-\tilde Y_{i0}).
 $$
+Matching plus regression correction.
 
-Shared identities:
-$$
-ATE=E[CATE(X)],\qquad g_d(x)=E[Y(d)\mid X=x],\qquad e(x)=P(D=1\mid X=x).
-$$
+* Shared identities
+  * $ATE=E[CATE(X)]$
+  * $g_d(x)=E[Y(d)\mid X=x]$
+  * $e(x)=P(D=1\mid X=x)$
 
 For any balancing score $b(X)$, $(Y(1),Y(0))\perp D\mid b(X)$ whenever it holds given $X$ and $b(X)$ is sufficient to balance treatment assignment. The propensity score is the canonical minimal such score.
 :::
