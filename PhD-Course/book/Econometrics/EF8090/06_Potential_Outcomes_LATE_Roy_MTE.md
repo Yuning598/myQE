@@ -413,6 +413,37 @@ $$
 
 where $DF$ are defiers. This is hard to interpret as a clean average treatment effect.
 
+:::{admonition} LATE in one frame
+All LATE objects use the same potential-outcome system:
+$$
+Y=DY(1)+(1-D)Y(0), \qquad D=D(Z).
+$$
+The identifying variation is the instrument-induced shift in treatment take-up:
+$$
+E[D\mid Z=1]-E[D\mid Z=0].
+$$
+The reduced form shift is
+$$
+E[Y\mid Z=1]-E[Y\mid Z=0].
+$$
+The Wald ratio combines them:
+$$
+LATE=\frac{E[Y\mid Z=1]-E[Y\mid Z=0]}{E[D\mid Z=1]-E[D\mid Z=0]}
+=E[Y(1)-Y(0)\mid D(1)>D(0)].
+$$
+The estimand is the complier effect, not ATE in general.
+
+Complier logic:
+$$
+\begin{aligned}
+\text{never taker} &:\ D(0)=D(1)=0,\\
+\text{complier} &:\ D(0)=0,\ D(1)=1,\\
+\text{always taker} &:\ D(0)=D(1)=1.
+\end{aligned}
+$$
+Monotonicity rules out defiers.
+:::
+
 ## Roy and MTE
 
 ### Normalization
@@ -532,19 +563,33 @@ Thus LATE and MTE frameworks are not separate worlds; LATE is a special weighted
 
 Policy relevant treatment effect changes the distribution of $p(Z)$ under a policy and compares average outcomes before and after policy. MTE is useful because once $MTE(u)$ is identified or modeled, many policy counterfactuals become alternative weighting schemes over $u$.
 
+:::{admonition} Roy/MTE in one frame
+The selection model is
 $$
-X\sim F \quad\Longrightarrow\quad F(X)\sim U[0,1].
+D=1[U_D\le p(Z)],\qquad U_D\sim U[0,1].
 $$
-
+The normalization is
 $$
-ATE=\int_0^1 MTE(u)\,du.
+X\sim F \Longrightarrow F(X)\sim U[0,1].
 $$
-
-For untreated units,
-
+The marginal treatment effect is
 $$
-E[Y_1-Y_0\mid D=0]
-=\int_0^1 MTE(u)\frac{P[p(Z)<u]}{P[D=0]}du.
+MTE(u)=E[Y_1-Y_0\mid U_D=u].
 $$
-
-Weighted average over margins not selected into treatment.
+All familiar objects are weighted averages of MTE:
+$$
+ATE=\int_0^1MTE(u)\,du,
+$$
+$$
+LATE(z,z')=\frac{\int_{p(z')}^{p(z)}MTE(u)\,du}{p(z)-p(z')},
+$$
+$$
+E[Y_1-Y_0\mid D=0]=\int_0^1MTE(u)\frac{P[p(Z)<u]}{P[D=0]}du.
+$$
+Interpretation:
+$$
+\text{ATE weights all }u\text{ equally},\qquad
+\text{LATE weights the margin shifted by }Z,\qquad
+\text{ATT/ATU weight selected margins.}
+$$
+:::
