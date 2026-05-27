@@ -91,7 +91,11 @@ $$
 \widehat{ATE}_{DM}=\bar Y_{D=1}-\bar Y_{D=0}.
 $$
 
-PS4 Q2's heterogeneous treatment model $Y_i=\alpha_i+\beta_iD_i$ with $(\alpha_i,\beta_i)\perp D_i$ gives BLP slope $E[\beta_i]$.
+* PS4 Q2's heterogeneous treatment model
+  $$
+  Y_i=\alpha_i+\beta_iD_i
+  $$
+  with $(\alpha_i,\beta_i)\perp D_i$ gives BLP slope $E[\beta_i]$.
 
 ### Unconfoundedness
 
@@ -232,15 +236,15 @@ $$
 P(D=1\mid X=x,p(X)=p)=P(D=1\mid p(X)=p).
 $$
 
-Conditional on $p(X)$, treatment status no longer depends on the full $X$.
+* Conditional on $p(X)$, treatment status no longer depends on the full $X$.
 
-If $(Y(1),Y(0))\perp D\mid X$, then combining balancing with Rosenbaum-Rubin logic gives
+* If $(Y(1),Y(0))\perp D\mid X$, then combining balancing with Rosenbaum-Rubin logic gives
 
 $$
 (Y(1),Y(0))\perp D\mid p(X).
 $$
 
-PS5 Q3 also asks: if $b(X)$ is any balancing score, then $p(X)$ is a function of $b(X)$:
+* PS5 Q3 also asks: if $b(X)$ is any balancing score, then $p(X)$ is a function of $b(X)$:
 
 $$
 p(x)=P(D=1\mid X=x)=P(D=1\mid b(X)=b(x))\equiv f(b(x)).
@@ -286,28 +290,32 @@ This connects to modern double/debiased machine learning, though EF8090 slides k
 Slides define matching by imputing missing potential outcomes using nearest observations in the other treatment group.
 
 :::{admonition} Definition (Matching estimator with $M$ matches)
-Let $\mathcal M_i^C$ be the $M$ closest controls to treated unit $i$, and $\mathcal M_i^T$ the $M$ closest treated units to control unit $i$. Then
+* Nearest-neighbor sets
+  * $\mathcal M_i^C$: the $M$ closest controls to treated unit $i$
+  * $\mathcal M_i^T$: the $M$ closest treated units to control unit $i$
+* Imputed potential outcomes
 $$
-\hat Y_{i1}=D_iY_i+(1-D_i)\frac1M\sum_{j\in\mathcal M_i^T}Y_j,
+\hat Y_{i1}=D_iY_i+(1-D_i)\frac1M\sum_{j\in\mathcal M_i^T}Y_j
 $$
 $$
-\hat Y_{i0}=D_i\frac1M\sum_{j\in\mathcal M_i^C}Y_j+(1-D_i)Y_i,
+\hat Y_{i0}=D_i\frac1M\sum_{j\in\mathcal M_i^C}Y_j+(1-D_i)Y_i
 $$
+* Matching ATE estimator
 $$
 \widehat{ATE}_M=\frac1n\sum_i(\hat Y_{i1}-\hat Y_{i0}).
 $$
 
 :::
 
-Matching targets ATE; compare $\widehat{ATE}_M$ with $ATE$.
+* Matching targets $ATE$; compare $\widehat{ATE}_M$ with $ATE$.
 
-Bias-corrected matching adjusts matched outcomes by estimated regression functions:
+* Bias-corrected matching adjusts matched outcomes by estimated regression functions:
 
 $$
 Y_j+\hat g_d(X_i)-\hat g_d(X_j).
 $$
 
-If the match is exact, $X_i=X_j$, the correction disappears.
+* If the match is exact, $X_i=X_j$, the correction disappears.
 
 :::{admonition} ATE estimators in one frame
 All estimators target the same object:
@@ -489,13 +497,13 @@ Monotonicity rules out defiers.
 
 ### Normalization
 
-PS5 Q1 supports the Roy/MTE normalization. If $X$ has continuous strictly increasing cdf $F$, define $Y=F(X)$. Then
+* PS5 Q1 supports the Roy/MTE normalization. If $X$ has continuous strictly increasing cdf $F$, define $Y=F(X)$. Then
 
 $$
 P(Y\le y)=P(F(X)\le y)=P(X\le F^{-1}(y))=F(F^{-1}(y))=y.
 $$
 
-So $Y\sim U[0,1]$. This lets the latent selection variable $U_D$ be normalized to uniform.
+* So $Y\sim U[0,1]$. This lets the latent selection variable $U_D$ be normalized to uniform.
 
 ### Roy Model
 
@@ -507,7 +515,7 @@ where $U_D\sim U[0,1]$ and $(Y_0,Y_1,U_D)\perp Z$.
 
 :::
 
-The key economic object is selection on gains: individuals with low $U_D$ are more likely to take treatment.
+* The key economic object is selection on gains: individuals with low $U_D$ are more likely to take treatment.
 
 :::{admonition} Definition (Marginal Treatment Effect)
 $$
@@ -542,7 +550,7 @@ E[Y_1-Y_0] &=E[E[Y_1-Y_0\mid U_D]]\\
 \end{aligned}
 $$
 
-ATE weights all margins equally.
+* ATE weights all margins equally.
 
 :::{admonition} Lemma (LATE weights MTE over changed margins)
 If $p(z)>p(z')$,
@@ -570,16 +578,16 @@ E[Y\mid Z=z]-E[Y\mid Z=z'] &=\int_0^{p(z)}MTE(u)du-\int_0^{p(z')}MTE(u)du\\
 $$
 Ratio gives the result.
 
-IV identifies treatment effects for individuals whose treatment status is shifted by the instrument.
+* IV identifies treatment effects for individuals whose treatment status is shifted by the instrument.
 
-PS5 Q2 asks for the untreated-group effect:
+* PS5 Q2 asks for the untreated-group effect:
 
 $$
 E[Y_1-Y_0\mid D=0]
 =\int_0^1MTE(u)\frac{P[p(Z)<u]}{P[D=0]}du.
 $$
 
-Derivation:
+* Derivation:
 
 $$
 \begin{aligned}
@@ -590,19 +598,19 @@ E[\tau\mathbf 1\{D=0\}]
 \end{aligned}
 $$
 
-Divide by $P[D=0]$.
+* Divide by $P[D=0]$.
 
 ### Vytlacil and Policy
 
-Slides state Vytlacil's equivalence: monotonicity in the LATE model corresponds to a latent index selection model
+* Slides state Vytlacil's equivalence: monotonicity in the LATE model corresponds to a latent index selection model
 
 $$
 D=1[p(Z)\ge U_D].
 $$
 
-Thus LATE and MTE frameworks are not separate worlds; LATE is a special weighted average of MTE.
+* Thus LATE and MTE frameworks are not separate worlds; LATE is a special weighted average of MTE.
 
-Policy relevant treatment effect changes the distribution of $p(Z)$ under a policy and compares average outcomes before and after policy. MTE is useful because once $MTE(u)$ is identified or modeled, many policy counterfactuals become alternative weighting schemes over $u$.
+* Policy relevant treatment effect changes the distribution of $p(Z)$ under a policy and compares average outcomes before and after policy. MTE is useful because once $MTE(u)$ is identified or modeled, many policy counterfactuals become alternative weighting schemes over $u$.
 
 :::{admonition} Roy/MTE in one frame
 The selection model is
