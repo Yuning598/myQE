@@ -137,6 +137,23 @@ $$
 ATE=E[CATE(X)].
 $$
 
+Course notation: regression adjustment is the ATE_3 estimator.
+
+$$
+\widehat{ATE}_3
+=\frac1n\sum_i \widehat{CATE}(X_i)
+=\frac1n\sum_i\big[\hat g_1(X_i)-\hat g_0(X_i)\big].
+$$
+
+Equivalently,
+
+$$
+\widehat{ATE}_3
+=\frac1n\sum_i\Big[D_i\big(Y_i-\hat g_1(X_i)\big)
+-(1-D_i)\big(Y_i-\hat g_0(X_i)\big)
++\hat g_1(X_i)-\hat g_0(X_i)\Big].
+$$
+
 ### IPW
 
 :::{admonition} Definition (Propensity score)
@@ -243,6 +260,19 @@ Then
 $$
 E[\psi(W;\eta_0)]=ATE.
 $$
+
+Course notation: the orthogonal / doubly robust estimator is ATE_4.
+
+$$
+\widehat{ATE}_4
+=\frac1n\sum_i\Big[
+\frac{D_i\big(Y_i-\hat g_1(X_i)\big)}{\hat p(X_i)}
+-\frac{(1-D_i)\big(Y_i-\hat g_0(X_i)\big)}{1-\hat p(X_i)}
++\hat g_1(X_i)-\hat g_0(X_i)
+\Big].
+$$
+
+If either the propensity score or the outcome regressions are correctly specified, this score remains valid to first order.
 
 This connects to modern double/debiased machine learning, though EF8090 slides keep the emphasis on intuition.
 
