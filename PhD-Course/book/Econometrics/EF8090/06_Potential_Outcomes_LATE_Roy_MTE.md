@@ -79,7 +79,6 @@ E[Y\mid D=0] &=E[Y(0)\mid D=0]\\
 &=E[Y(0)].
 \end{aligned}
 $$
-Therefore
 $$
 E[Y\mid D=1]-E[Y\mid D=0]=E[Y(1)-Y(0)].
 $$
@@ -120,7 +119,9 @@ E[Y\mid D=0,X=x] &=E[Y(0)\mid D=0,X=x]\\
 &=E[Y(0)\mid X=x].
 \end{aligned}
 $$
-Difference gives $E[Y(1)-Y(0)\mid X=x]$。
+$$
+E[Y\mid D=1,X=x]-E[Y\mid D=0,X=x]=E[Y(1)-Y(0)\mid X=x].
+$$
 
 selection on observables makes within-X treated and control groups comparable。
 
@@ -249,6 +250,8 @@ $$
 $$
 
 :::
+
+Matching targets ATE; compare $\widehat{ATE}_M$ with $ATE$.
 
 Bias-corrected matching adjusts matched outcomes by estimated regression functions:
 
