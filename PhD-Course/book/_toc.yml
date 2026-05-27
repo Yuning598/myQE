@@ -42,9 +42,6 @@ parts:
       - file: Econometrics/EF8090/04_MLE_Fisher_CRLB_and_ML_Tests
       - file: Econometrics/EF8090/05_IV_2SLS_Weak_Instruments
       - file: Econometrics/EF8090/06_Potential_Outcomes_LATE_Roy_MTE
-        sections:
-          - file: Econometrics/EF8090/cards/Potential_Outcomes_ATE_ATT_CATE
-          - file: Econometrics/EF8090/cards/Propensity_Score_Balancing
       - file: Econometrics/EF8090/07_DiD_RD_Nonparametric_Kernel
         sections:
           - file: Econometrics/EF8090/cards/RD_Wald_Estimand
