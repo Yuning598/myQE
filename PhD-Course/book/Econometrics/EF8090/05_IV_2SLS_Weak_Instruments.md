@@ -159,13 +159,9 @@ Under validity and correct specification, $J\to_d\chi^2_{\#Z-\#X}$.
 
 #### Hausman derivation
 
-Under $H_0$, OLS and 2SLS are both consistent for the same $\beta_0$。Their difference therefore isolates efficiency loss under exogeneity:
-
 $$
 \sqrt n(\hat\beta_{OLS}-\hat\beta_{2SLS})\xrightarrow{d}N\!\left(0,\,V_{2SLS}-V_{OLS}\right).
 $$
-
-Replacing population variances by consistent estimators gives the quadratic form
 
 $$
 H=(\hat\beta_{OLS}-\hat\beta_{2SLS})' [\widehat{\operatorname{Var}}(\hat\beta_{2SLS})-\widehat{\operatorname{Var}}(\hat\beta_{OLS})]^{-1} (\hat\beta_{OLS}-\hat\beta_{2SLS}),
@@ -177,47 +173,23 @@ $$
 H\xrightarrow{d}\chi^2_{\dim(\beta)}.
 $$
 
-In finite samples the variance difference need not be positive semidefinite, so the regression-based Hausman form is often easier to compute in practice.
-
-The practical reading is: if OLS and 2SLS differ more than can be explained by their sampling variation, the exogeneity null is rejected.
+Hausman compares OLS and 2SLS; large differences beyond sampling variation reject exogeneity.
 
 #### Overidentification derivation
 
-Let $\hat u_i=Y_i-X_i'\hat\beta$. The overidentifying restrictions are exactly the sample analogues of
-
 $$
-E[Z_i u_i]=0.
+\hat g(\hat\beta)=\frac1n\sum_i Z_i\hat u_i,\qquad \hat u_i=Y_i-X_i'\hat\beta.
 $$
 
-Define the sample moment vector
-
 $$
-\hat g(\hat\beta)=\frac1n\sum_i Z_i\hat u_i.
+J=n\hat g(\hat\beta)'\hat W\hat g(\hat\beta).
 $$
-
-With an optimal weight matrix $\hat W\to_p \Omega^{-1}$ and $\Omega=E[Z_iZ_i'u_i^2]$, the GMM criterion becomes
-
-$$
-J=n\hat g(\hat\beta)'\hat W\hat g(\hat\beta),
-$$
-
-and under the null
 
 $$
 J\xrightarrow{d}\chi^2_{\#Z-\#X}.
 $$
 
-#### Overidentification mechanics
-
-In the linear model, the same idea can be read as a residual orthogonality check. Estimate the structural equation by 2SLS, obtain residuals $\hat u_i$, and then ask whether the residuals are still orthogonal to the full instrument set:
-
-$$
-\frac1n\sum_i Z_i\hat u_i \approx 0.
-$$
-
-If the model is homoskedastic and linear, the overidentification statistic is equivalent to the familiar auxiliary-regression form $nR^2$, where $R^2$ comes from regressing $\hat u$ on the full instrument list. Large values mean some overidentifying restriction fails.
-
-This is why the test cannot prove that every individual instrument is valid: it only checks whether the whole set of moment restrictions is jointly consistent.
+Overidentification checks whether the fitted residuals remain orthogonal to the full instrument set; in the linear homoskedastic case this is the familiar $nR^2$ form.
 
 ## Weak-Instrument Diagnostics
 
