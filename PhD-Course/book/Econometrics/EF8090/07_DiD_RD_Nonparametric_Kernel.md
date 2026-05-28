@@ -1,7 +1,7 @@
 # 07 DiD, RD, and Kernel Smoothing
 
 Source: consolidated from 12_DiD_Fixed_Effects_Event_Study.md and 13_RD_Nonparametric_Kernel.md.
-Links: [06_Potential_Outcomes_LATE_Roy_MTE](06_Potential_Outcomes_LATE_Roy_MTE) | [cards/DID_Common_Trends](cards/DID_Common_Trends) | [cards/TWFE_Event_Study](cards/TWFE_Event_Study) | [cards/RD_Wald_Estimand](cards/RD_Wald_Estimand) | [cards/Kernel_Bandwidth_Bias_Variance](cards/Kernel_Bandwidth_Bias_Variance)
+Links: [06_Potential_Outcomes_LATE_Roy_MTE](06_Potential_Outcomes_LATE_Roy_MTE) | [cards/DID_Common_Trends](cards/DID_Common_Trends) | [cards/TWFE_Event_Study](cards/TWFE_Event_Study) | [cards/Kernel_Bandwidth_Bias_Variance](cards/Kernel_Bandwidth_Bias_Variance)
 
 **Panel Treatment Effects and Fixed Effects**
 
@@ -185,7 +185,7 @@ Slides highlight clustered standard errors and the problem of one treated group�
 
 **Discontinuity Designs and Local Smoothing**
 
-## Sharp RD Identification
+### RD Identification and Local IV
 
 :::{admonition} Definition (Sharp regression discontinuity)
 Let $R$ be running variable and $c$ cutoff。Treatment is deterministically assigned:
@@ -206,8 +206,6 @@ $$
 $$
 
 and similarly for $Y(1)$ if needed。Then discontinuity in observed outcome at cutoff is attributed to treatment。
-
-## Fuzzy RD as Local IV
 
 If treatment probability jumps but not from 0 to 1, RD is fuzzy:
 
@@ -238,7 +236,7 @@ $$
 
 **结论：** Fuzzy RD = local IV at cutoff。
 
-## Local Polynomial Regression
+### Local Polynomial Estimation and 2SLS
 
 Slides use local linear estimation。On each side of the cutoff, estimate
 
@@ -248,8 +246,6 @@ $$
 $$
 
 where $s\in\{0,1\}$ denotes left/right side。Then $\hat\alpha_1-\hat\alpha_0$ estimates $\Delta_Y(c)$。Analogously for $D$。
-
-## Local Linear Fuzzy RD as 2SLS
 
 Problem set defines right/left local linear intercepts $\hat\alpha_Y^1,\hat\alpha_Y^0$ and $\hat\alpha_D^1,\hat\alpha_D^0$，using uniform kernel and bandwidth $h$。It then asks to show that 2SLS with outcome $Y$, endogenous $D$, controls constant, $R-c$, $Z(R-c)$, and instrument $Z=1[R\ge c]$，within $[c-h,c+h]$，satisfies
 
@@ -287,7 +283,7 @@ $$
 
 **结论：** The 2SLS specification is exactly the fuzzy RD local Wald estimator with local linear fits。
 
-## Kernels and Bandwidth Choice
+### Kernels and Bandwidth Choice
 
 :::{admonition} Definition (Kernel estimator)
 For nonparametric regression $g(x)=E[Y\mid X=x]$, Nadaraya-Watson estimator:
