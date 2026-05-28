@@ -153,13 +153,60 @@ TWFE in the 2x2 design equals canonical DiD。
 
 ## Pre-Trends and Event Studies
 
-Slides warn that eyeballing can mislead。Formal event study estimates leads and lags around treatment:
+Event study estimates relative-time effects around treatment:
 
 $$
 Y_{it}=\alpha_i+\lambda_t+\sum_{k\ne -1}\tau_k1[t-G_i=k]+u_{it}.
 $$
 
-Pre-treatment coefficients $\tau_k$ for $k<0$ are pre-trend checks。They do not prove common trends, but large pre-trend deviations are evidence against the design。
+Pre-trend null:
+
+$$
+\tau_k=0,\qquad k<0.
+$$
+
+Relative-time coefficient:
+
+$$
+\tau_k=\sum_{g\in\mathcal G_k}\omega_{g,k}ATT(g,g+k).
+$$
+
+### Staggered Timing and Aggregation
+
+Cohort-time ATT:
+
+$$
+ATT(g,t)=E[Y_t(1)-Y_t(0)\mid G_i=g],\qquad t\ge g.
+$$
+
+Relative time $r=t-g$ aggregation:
+
+$$
+ATT^{ES}(r)=\sum_{g\in\mathcal G_r}\omega_{g,r}ATT(g,g+r),
+\qquad
+\omega_{g,r}
+\equiv
+\frac{P(G_i=g,\ g+r\le T)}{\sum_{g'\in\mathcal G_r}P(G_i=g',\ g'+r\le T)}.
+$$
+
+Overall aggregation:
+
+$$
+ATT^{overall}
+=\sum_{r\ge 0}\pi_r ATT^{ES}(r)
+=\sum_{g}\sum_{t\ge g}\omega_{g,t}ATT(g,t).
+$$
+
+TWFE with staggered adoption mixes cohort-time effects:
+
+$$
+\hat\beta_{TWFE}
+=\sum_{g}\sum_{t\ge g}\omega^{TWFE}_{g,t}ATT(g,t),
+\qquad
+\sum_{g,t}\omega^{TWFE}_{g,t}=1,
+\qquad
+\omega^{TWFE}_{g,t}\not\ge 0\ \text{in general}.
+$$
 
 ## Triple-Differences Estimand
 
@@ -174,13 +221,17 @@ It removes shocks common to treated/control over time within both $S$ groups and
 
 In regression form, DDD is the coefficient on the triple interaction $D_i\times Post_t\times S_i$。
 
-## Staggered Timing and TWFE Caution
-
-Slides discuss variable treatment timing。When treatment effects are heterogeneous over cohorts or event time, static TWFE can compare already-treated units to newly-treated units and create non-convex weights。Event-study and modern DiD estimators avoid using inappropriate comparisons by defining cohort-time specific treatment effects first, then aggregating transparently。
-
 ## DiD Inference Issues
 
-Slides highlight clustered standard errors and the problem of one treated group。If there is only one treated aggregate unit, increasing individual sample size $N$ may not make the treatment effect estimator consistent because the treated group time-series shock does not average out。Possible fixes require stronger assumptions, more treated clusters, randomization inference, or designs with credible untreated units informing treated counterfactuals。
+With one treated cluster, consistency may fail even if $N\to\infty$:
+
+$$
+\hat\tau-\tau
+\not\to 0
+\qquad\text{if the treated-cluster shock does not average out.}
+$$
+
+Cluster-robust inference needs many independent clusters, or randomization / design-based alternatives.
 
 
 **Discontinuity Designs and Local Smoothing**
