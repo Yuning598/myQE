@@ -1,7 +1,7 @@
 # 03 Applied Corporate Finance Theory
 
 :::{admonition} Note
-> 这部分用来整理 dynamic corporate finance theory。重点看 assumptions, timing, equilibrium, comparative statics, 以及模型如何映射到资本结构与证券定价。
+这部分用来整理 dynamic corporate finance theory。重点看 assumptions, timing, equilibrium, comparative statics, 以及模型如何映射到资本结构与证券定价。
 
 :::
 
@@ -249,7 +249,7 @@ $$
 
 #### 1.5.2.2 One-period optimal contract
 :::{admonition} Note
-> 如果 principal 有全部 bargaining power, 最优合同是“失败不付, 成功付 rent”:
+如果 principal 有全部 bargaining power, 最优合同是”失败不付, 成功付 rent”:
 
 $$
 \begin{aligned}

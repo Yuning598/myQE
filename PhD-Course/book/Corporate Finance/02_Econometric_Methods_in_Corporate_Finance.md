@@ -433,9 +433,6 @@ $$
 若 $\mathbb{E}[u\mid x_1,x_2,x_3]=0$ 且 $\mathbb{E}[v\mid x_1,x_2,x_3]=0$，则对该可估计式做 OLS 时，$\beta_1,\beta_2$ 一致。
 :::
 
->
-> <hr>
->
 :::{admonition} Proof
 由 $\varepsilon=u+\beta_3 v$，
 
@@ -497,9 +494,6 @@ $$
 2. 若存在 $j$ 使 $\mathrm{Cov}(w,x_j)\neq 0$，则 OLS 不一致。
 :::
 
->
-> <hr>
->
 :::{admonition} Proof
 记 $X=(1,x_1,\ldots,x_k)$，可估计模型为 $y=X\beta+u$，其中 $u=\epsilon+w$。  
 OLS 的极限偏误项是
@@ -562,9 +556,6 @@ $$
 即斜率被衰减到 0 的方向（attenuation）。
 :::
 
->
-> <hr>
->
 :::{admonition} Proof
 设真实模型
 
@@ -700,9 +691,6 @@ $$
 在上述系统下，$\mathrm{Cov}(x,\epsilon)=\frac{\alpha}{1-\alpha\beta}\mathrm{Var}(\epsilon)\neq 0$（只要 $\alpha\neq 0$），故用 OLS 回归 $y$ on $x$ 不一致。
 :::
 
->
-> <hr>
->
 :::{admonition} Proof
 
 由联立系统代入得
@@ -790,9 +778,6 @@ $$
 下，若 $\mathrm{Cov}(x_{it},\alpha_i)\neq 0$，则 pooled OLS 存在 OVB；FE 的 within 变换可消去 $\alpha_i$ 并缓解该偏误。
 :::
 
->
-> <hr>
->
 :::{admonition} Proof
 若忽略 $\alpha_i$，pooled OLS 估计的是
 
@@ -1557,7 +1542,7 @@ $$
 Z_i=1\{R_i>c\}
 $$
 
-> 作为 treatment 的工具变量。直观上，outcome CEF 的跳跃除以 treatment probability 的跳跃，识别的是阈值处 switcher/complier 的平均处理效应。
+作为 treatment 的工具变量。直观上，outcome CEF 的跳跃除以 treatment probability 的跳跃，识别的是阈值处 switcher/complier 的平均处理效应。
 
 :::{admonition} Note.
 $\tau_{FRD}$ 是 cutoff 附近 compliers 的 LATE（double local: local in score, local in compliance type）。

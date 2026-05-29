@@ -122,7 +122,7 @@ $$
 #### 1.2.2 Dividend Irrelevance
 
 :::{admonition} Proposition
-> 在投资政策固定时，派息政策不改变股东总财富。
+在投资政策固定时，派息政策不改变股东总财富。
 
 :::
 
