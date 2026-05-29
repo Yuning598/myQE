@@ -9,9 +9,9 @@
 
 ---
 
-## 1. MM Irrelevance Propositions (1958, 1963)
+## 1. MM 无关命题（1958, 1963）
 
-### 1.1 MM Proposition I (无税，1958)
+### 1.1 MM 命题 I（无税，1958）
 
 **核心命题**：在完美市场下，企业价值由资产端现金流决定，融资结构只是切分方式，不创造价值。
 
@@ -25,7 +25,7 @@ $$
 - $V_L$：有杠杆企业价值
 - $V_U$：无杠杆企业价值
 
-**完美市场假设**：
+**完美市场成立条件**：
 
 $$
 \begin{aligned}
@@ -42,7 +42,7 @@ $$
 \end{aligned}
 $$
 
-**Homemade leverage 论证**：
+**自制杠杆（homemade leverage）论证**：
 
 投资者可以自制杠杆（homemade leverage）复制企业融资决策：
 
@@ -74,9 +74,9 @@ $$
 
 ---
 
-### 1.2 MM Proposition II (无税，1958)
+### 1.2 MM 命题 II（无税，1958）
 
-**核心命题**：股权成本随杠杆线性上升，WACC 保持不变。
+**核心命题**：杠杆越高，股权成本越高，但 WACC 不变。
 
 $$
 \begin{aligned}
@@ -111,13 +111,13 @@ r_E &= r_U + \frac{D}{E}(r_U - r_D)
 \end{aligned}
 $$
 
-**经济直觉**：杠杆增加使股东承担更多财务风险，要求更高回报率，但 WACC 不变。
+**经济直觉**：杠杆越高，股东承担的财务风险越大，所以要求更高回报率；但资本结构只是重新分配风险，WACC 不变。
 
 ---
 
-### 1.3 MM Proposition I with Corporate Tax (1963)
+### 1.3 MM 命题 I（公司税，1963）
 
-**核心命题**：公司税使利息可抵扣，债务创造税盾价值。
+**核心命题**：公司税使利息可抵扣，所以债务会带来 tax shield。
 
 $$
 \begin{aligned}
@@ -164,13 +164,13 @@ V_L = V_U + T_C D
 \end{aligned}
 $$
 
-**推论**：最优资本结构是 100% 债务融资（极端预测）。
+**推论**：只看公司税时，极端结论是 100% debt financing。
 
 ---
 
-### 1.4 MM Proposition II with Corporate Tax (1963)
+### 1.4 MM 命题 II（公司税，1963）
 
-**核心命题**：税盾降低 WACC，股权成本随杠杆上升但斜率变缓。
+**核心命题**：税盾会降低 WACC；股权成本仍随杠杆上升，但上升得更慢。
 
 $$
 \begin{aligned}
@@ -198,15 +198,15 @@ r_E &= r_U + \frac{D}{E}(r_U - r_D)(1-T_C)
 \end{aligned}
 $$
 
-**经济直觉**：税盾降低债务实际成本，WACC 随杠杆下降。
+**经济直觉**：利息税盾降低债务的有效成本，所以杠杆提高时，WACC 会下降。
 
 ---
 
-## 2. Miller (1977) Personal Tax Model
+## 2. Miller（1977）个人税模型
 
 ### 2.1 核心机制
 
-**问题**：MM (1963) 只考虑公司税，忽略个人税。Miller (1977) 引入个人税，发现个人税削弱债务税盾优势。
+**问题**：MM (1963) 只看公司税，没把个人税算进去。Miller (1977) 加入个人税后发现，债务的税收优势被削弱。
 
 **税收结构**：
 
@@ -240,12 +240,12 @@ $$
 \end{aligned}
 $$
 
-- 若 $\frac{(1-T_C)(1-t_{pe})}{(1-t_{pd})} < 1$，债务有税收优势
-- 若 $\frac{(1-T_C)(1-t_{pe})}{(1-t_{pd})} = 1$，债务无税收优势（Miller equilibrium）
+- 若 $\frac{(1-T_C)(1-t_{pe})}{(1-t_{pd})} < 1$，债务仍有税收优势
+- 若 $\frac{(1-T_C)(1-t_{pe})}{(1-t_{pd})} = 1$，债务没有税收优势（Miller equilibrium）
 
 ---
 
-### 2.2 Miller Equilibrium
+### 2.2 Miller 均衡（Miller equilibrium）
 
 **均衡条件**：
 
@@ -256,9 +256,9 @@ $$
 $$
 
 **经济直觉**：
-- 高税率投资者（高 $t_{pd}$）要求更高债务利率补偿
-- 企业发债直到边际投资者无差异
-- 均衡时，债务税盾被个人税完全抵消
+- 高税率投资者（高 $t_{pd}$）会要求更高的债务利率补偿
+- 企业一直发债，直到边际投资者无差异
+- 均衡时，债务税盾会被个人税抵消掉
 
 **总债务税盾价值**：
 
@@ -285,13 +285,13 @@ $$
 
 ## 3. DeAngelo and Masulis (1980)
 
-### Question
+### 问题（Question）
 
-Do non-debt tax shields substitute for debt tax shields, and therefore reduce optimal leverage?
+非债务税盾（non-debt tax shields）会不会替代债务税盾，从而压低最优杠杆？
 
-### Identification
+### 识别（Identification）
 
-Cross-sectional comparison across firms with different depreciation, investment tax credits, and profitability volatility. The key proxy is the marginal tax rate:
+按企业横截面比较 depreciation、investment tax credit 和 profitability volatility 的差异。核心 proxy 是 marginal tax rate：
 
 $$
 \begin{aligned}
@@ -299,7 +299,7 @@ $$
 \end{aligned}
 $$
 
-### Main finding
+### 主要结论（Main finding）
 
 $$
 \begin{aligned}
@@ -310,25 +310,25 @@ $$
 \end{aligned}
 $$
 
-### Interpretation
+### 解释（Interpretation）
 
-Depreciation and investment tax credits reduce taxable income and make firms more likely to sit in the zero-tax region, so the incremental benefit of debt falls. Profitability volatility matters because it raises the probability that tax shields cannot be used.
+折旧和 investment tax credit 会降低 taxable income，让企业更容易落入零税率区间，所以债务的边际收益下降。profitability volatility 越高，税盾越可能用不上。
 
-### Exam takeaway
+### 考点（Exam takeaway）
 
-High depreciation, high ITC, or volatile profitability imply lower leverage because non-debt tax shields crowd out debt tax shields.
+折旧高、ITC 高、盈利波动大，都对应更低杠杆，因为 non-debt tax shields 会挤出 debt tax shields。
 
 ---
 
 ## 4. Graham (2000)
 
-### Question
+### 问题（Question）
 
-How large is the debt tax shield, and do firms fully exploit it?
+债务税盾到底有多大？企业有没有把它用足？
 
-### Identification
+### 识别（Identification）
 
-Estimate expected marginal tax rates by simulating future earnings paths, allowing for NOL carryforward/carryback, and then discount the implied interest tax shields.
+用未来盈利路径模拟来估计 expected marginal tax rate，并考虑 NOL carryforward/carryback，再把 implied interest tax shield 折现。
 
 $$
 \begin{aligned}
@@ -342,11 +342,11 @@ PV(\text{tax shield}) = \sum_{t=1}^{\infty} \frac{E[MTR_t] \times r_D D}{(1+r)^t
 \end{aligned}
 $$
 
-### Main finding
+### 主要结论（Main finding）
 
-- Debt tax shield value is about **5-10%** of firm value.
-- This is far below the MM (1963) benchmark.
-- Actual leverage is below the tax-optimal leverage.
+- 债务税盾价值大约是 firm value 的 **5-10%**。
+- 这比 MM (1963) 的基准值低很多。
+- 实际杠杆低于 tax-optimal leverage。
 
 $$
 \begin{aligned}
@@ -360,25 +360,25 @@ $$
 \end{aligned}
 $$
 
-### Interpretation
+### 解释（Interpretation）
 
-The tax shield is valuable but much smaller than the simple MM benchmark because many firms have low or zero marginal tax rates in bad states. Non-tax frictions such as distress and agency costs keep leverage below the tax-optimal level.
+税盾确实有价值，但比简单的 MM 基准小得多，因为很多企业在坏状态下的 marginal tax rate 很低甚至为零。distress 和 agency 等非税摩擦会把杠杆压在税收最优水平之下。
 
-### Exam takeaway
+### 考点（Exam takeaway）
 
-Remember the 5-10% estimate, the simulation-based MTR design, and the gap between actual leverage and tax-optimal leverage.
+记住三点：5-10% 的估计值、模拟式 MTR 设计、actual leverage 低于 tax-optimal leverage。
 
 ---
 
 ## 5. Graham and Tucker (2006)
 
-### Question
+### 问题（Question）
 
-Do tax shelters substitute for debt as a tax-minimization tool?
+tax shelters 会不会替代 debt，成为另一种避税工具？
 
-### Identification
+### 识别（Identification）
 
-Classify shelter users using IRS audit data, media reports, and litigation records, then compare their leverage with non-users while controlling for observables.
+用 IRS 审计数据、媒体报道和诉讼记录识别 shelter users，再和 non-users 比较 leverage，并控制 observables。
 
 $$
 \begin{aligned}
@@ -386,9 +386,9 @@ $$
 \end{aligned}
 $$
 
-### Main finding
+### 主要结论（Main finding）
 
-- Tax shelter users have lower leverage, about **5%** below non-users.
+- tax shelter users 的杠杆更低，大约比 non-users 低 **5%**。
 
 $$
 \begin{aligned}
@@ -396,13 +396,13 @@ $$
 \end{aligned}
 $$
 
-### Interpretation
+### 解释（Interpretation）
 
-If a firm can lower taxes through shelters, the marginal benefit of debt falls. Shelters and debt both reduce tax burden, but shelters do not create financial distress costs, so they substitute for debt.
+如果企业可以通过 shelters 降税，债务的边际收益就会下降。shelters 和 debt 都能降税，但 shelters 不带来 financial distress cost，所以两者是替代关系。
 
-### Exam takeaway
+### 考点（Exam takeaway）
 
-Tax shelters down, leverage down. A crackdown on shelters should push firms back toward debt tax shields and higher leverage.
+tax shelters 越多，杠杆越低。打击 shelters 后，企业会更依赖 debt tax shield，杠杆应上升。
 
 ---
 
@@ -426,11 +426,11 @@ $$
 
 | 企业特征                     | 对杠杆的影响 | 理论机制                                     |
 | ---------------------------- | ------------ | -------------------------------------------- |
-| Profitability ↑              | Leverage ↑   | 更高边际税率 → 税盾价值 ↑                    |
-| Profitability volatility ↑   | Leverage ↓   | 更可能进入零税率区间 → 税盾价值 ↓            |
-| Non-debt tax shields ↑       | Leverage ↓   | 折旧等替代债务税盾                           |
-| Tax shelters ↑               | Leverage ↓   | 避税工具替代债务税盾                         |
-| Statutory tax rate $T_C$ ↑   | Leverage ↑   | 税盾价值 ↑                                   |
+| 盈利能力（profitability）↑   | 杠杆↑        | 边际税率更高 → 税盾价值↑                    |
+| 盈利波动（profitability volatility）↑ | 杠杆↓ | 更可能进入零税率区间 → 税盾价值↓            |
+| 非债务税盾（non-debt tax shields）↑ | 杠杆↓ | 折旧等替代债务税盾                           |
+| 税收庇护（tax shelters）↑    | 杠杆↓        | 避税工具替代债务税盾                         |
+| 法定税率（statutory tax rate）$T_C$↑ | 杠杆↑ | 税盾价值↑                                   |
 
 ---
 
@@ -452,11 +452,11 @@ $$
 
 其中 $\text{High Tax Benefit}_i$ 是税改前边际税率高的企业。
 
-**预期**：$\beta < 0$（税率下降 → 税盾价值 ↓ → 杠杆 ↓）
+**预期**：$\beta < 0$（税率下降 → 税盾价值下降 → 杠杆下降）
 
 **数据需求**：
 - 企业杠杆率（book leverage, market leverage）
-- 税改前边际税率（用 Graham 2000 方法模拟）
+- 税改前边际税率（用 Graham 2000 的方法模拟）
 - 控制变量：size, profitability, tangibility, M/B
 
 ---
@@ -477,7 +477,7 @@ $$
 
 其中 $\text{High Capex}_i$ 是资本支出密集型企业，$\text{ITC}_t$ 是 ITC 政策生效期。
 
-**预期**：$\beta < 0$（ITC ↑ → 非债务税盾 ↑ → 杠杆 ↓）
+**预期**：$\beta < 0$（ITC↑ → 非债务税盾↑ → 杠杆↓）
 
 ---
 
@@ -495,7 +495,7 @@ $$
 \end{aligned}
 $$
 
-**预期**：$\beta > 0$（打击 tax shelters → 企业转向债务税盾 → 杠杆 ↑）
+**预期**：$\beta > 0$（打击 tax shelters → 企业转向 debt tax shield → 杠杆↑）
 
 ---
 
@@ -503,7 +503,7 @@ $$
 
 ### 样题 1：MM 定理推导
 
-**问题**：推导 MM Proposition II with corporate tax，并解释为什么税盾降低 WACC。
+**问题**：推导 MM 命题 II（corporate tax），并解释为什么税盾会降低 WACC。
 
 **答案框架**：
 
@@ -524,13 +524,13 @@ r_E = r_U + \frac{D}{E}(r_U - r_D)(1-T_C)
 \end{aligned}
 $$
 
-**经济直觉**：利息税盾降低债务实际成本，WACC 随杠杆下降。
+**经济直觉**：利息税盾降低债务有效成本，所以 WACC 会随杠杆下降。
 
 ---
 
 ### 样题 2：Miller equilibrium
 
-**问题**：在 Miller (1977) 模型中，什么条件下债务无税收优势？用数值例子说明。
+**问题**：在 Miller (1977) 模型中，什么条件下债务没有税收优势？用数值例子说明。
 
 **答案框架**：
 
@@ -547,13 +547,13 @@ $$
 - 求解：$(1-0.35)(1-0.15) = 0.5525 = (1-t_{pd})$
 - $t_{pd} = 0.4475$
 
-若 $t_{pd} = 0.4475$，债务无税收优势。
+若 $t_{pd} = 0.4475$，债务就没有税收优势。
 
 ---
 
 ### 样题 3：非债务税盾
 
-**问题**：DeAngelo and Masulis (1980) 如何解释为什么高折旧企业杠杆率更低？
+**问题**：DeAngelo and Masulis (1980) 为什么会推出“高折旧企业杠杆更低”？
 
 **答案框架**：
 
@@ -567,13 +567,13 @@ $$
 \end{aligned}
 $$
 
-折旧是非债务税盾，替代债务税盾的作用。
+折旧是 non-debt tax shield，会替代 debt tax shield。
 
 ---
 
 ### 样题 4：Graham (2000) 发现
 
-**问题**：Graham (2000) 估算债务税盾价值占企业价值多少？为什么低于 MM (1963) 预测？
+**问题**：Graham (2000) 估算的债务税盾价值占 firm value 多大？为什么低于 MM (1963) 的预测？
 
 **答案框架**：
 
@@ -588,7 +588,7 @@ $$
 
 ### 样题 5：政策实验设计
 
-**问题**：设计一个 DiD 实验检验税率变化对杠杆的因果影响。
+**问题**：设计一个 DiD 实验，检验税率变化对杠杆的因果影响。
 
 **答案框架**：
 
@@ -602,7 +602,7 @@ $$
 \end{aligned}
 $$
 
-**预期**：$\beta < 0$（税率 ↓ → 税盾价值 ↓ → 杠杆 ↓）
+**预期**：$\beta < 0$（税率↓ → 税盾价值↓ → 杠杆↓）
 
 **平行趋势检验**：
 
@@ -612,7 +612,7 @@ $$
 \end{aligned}
 $$
 
-检验 $\beta_k = 0$ for $k < 0$。
+检验 $k < 0$ 时的 $\beta_k = 0$。
 
 ---
 
