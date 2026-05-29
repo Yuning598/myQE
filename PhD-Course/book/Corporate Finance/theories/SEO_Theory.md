@@ -1,5 +1,37 @@
 # Seasoned Equity Offerings (SEO) 理论
 
+## 📌 相关理论链接
+
+- **基准理论**：[MM_and_Tax_Theory](MM_and_Tax_Theory.md) - 完美市场下融资无关性
+- **互补理论**：[Pecking_Order_Theory](Pecking_Order_Theory.md) - internal funds / debt / equity 的融资顺序
+- **互补理论**：[Payout_Policy_Theory](Payout_Policy_Theory.md) - repurchase 与 SEO 的对照
+- **互补理论**：[Agency_Theory](Agency_Theory.md) - 监控、控制权与代理成本
+- **整合框架**：[00_Theory_Integration](00_Theory_Integration.md) - SEO 在公司金融三大问题中的位置
+
+## 📌 目录
+
+- [1. 定义与背景](#1-定义与背景)
+- [2. 核心理论机制](#2-核心理论机制)
+  - [2.1 Adverse Selection Theory (Myers and Majluf 1984)](#21-adverse-selection-theory-myers-and-majluf-1984)
+  - [2.2 Market Timing Theory (Baker and Wurgler 2002)](#22-market-timing-theory-baker-and-wurgler-2002)
+  - [2.3 Signaling Theory (Ross 1977)](#23-signaling-theory-ross-1977)
+  - [2.4 Cash Flow Signaling (Miller and Rock 1985)](#24-cash-flow-signaling-miller-and-rock-1985)
+  - [2.5 Price Pressure Theory](#25-price-pressure-theory)
+  - [2.6 Ownership and Monitoring Theory](#26-ownership-and-monitoring-theory)
+  - [2.7 Target Leverage Adjustment and Trade-off Theory](#27-target-leverage-adjustment-and-trade-off-theory)
+- [3. SEO Flotation Methods 与理论预测](#3-seo-flotation-methods-与理论预测)
+  - [3.1 Firm Commitment Offer](#31-firm-commitment-offer)
+  - [3.2 Rights Offer](#32-rights-offer)
+  - [3.3 Private Placement](#33-private-placement)
+  - [3.4 Shelf Registration](#34-shelf-registration)
+  - [3.5 Cost Trade-off and Summary](#35-cost-trade-off-and-summary)
+- [4. 理论机制的实证区分](#4-理论机制的实证区分)
+- [5. 理论整合框架](#5-理论整合框架)
+- [6. 关键实证证据总结](#6-关键实证证据总结)
+- [7. 政策实验设计思路](#7-政策实验设计思路)
+- [8. 理论与实证的对应关系](#8-理论与实证的对应关系)
+- [参考文献](#参考文献)
+
 ## 1. 定义与背景
 
 **Seasoned Equity Offering (SEO)**：已上市公司在 IPO 之后再次向市场发行股票以筹集外部股权资金的行为。
@@ -173,9 +205,12 @@ $$
 
 ---
 
-### 2.7 Target Leverage Adjustment Theory
+### 2.7 Target Leverage Adjustment and Trade-off Theory
 
-**核心机制**：公司用 SEO 降低 leverage，使资本结构回到 target leverage。
+**核心机制**：公司用 SEO 调整 leverage，使资本结构更接近 target leverage。这里的 trade-off 主要是：
+- 高杠杆带来的 **tax shield**
+- 过高杠杆带来的 **financial distress cost**
+- 以及由 debt 约束带来的 **agency discipline**
 
 $$
 \begin{aligned}
@@ -187,7 +222,7 @@ $$
 
 **关键预测**：
 - H1：$|\text{leverage} - \text{target leverage}| \uparrow \Rightarrow \Pr(\text{SEO}) \uparrow$
-- H2：$\text{SEO for target leverage adjustment} \Rightarrow \text{announcement effect} \uparrow$（市场理解为价值提升型再平衡）
+- H2：$\text{SEO for target leverage adjustment} \Rightarrow \text{announcement effect} \uparrow$（市场理解为 value-enhancing rebalancing）
 - H3：$\text{SEO completed} \Rightarrow |\text{post-SEO leverage} - \text{target leverage}| \downarrow$
 
 **实证策略**：利用税改作为外生冲击，检验 target leverage 变化是否影响 SEO probability 和 announcement returns。
@@ -235,6 +270,52 @@ $$
 **理论预测**：
 - Market timing flexibility 增强
 - 但也可能降低 adverse selection（因为可以在信息透明时发行）
+
+### 3.5 Cost Trade-off and Summary
+
+课件里的 SEO 逻辑最后会收束到一个很简洁的链条：
+
+$$
+\begin{aligned}
+\text{flotation method}
+\rightarrow
+\text{cost trade-off}
+\rightarrow
+\text{announcement effect}
+\rightarrow
+\text{long-run performance}
+\end{aligned}
+$$
+
+**核心 trade-off**：
+- rights offer 的 direct flotation cost 通常最低，但 indirect flotation cost 可能更高
+- firm commitment 的 underwriter certification 更强，但承销和折价成本更高
+- private placement 可能通过 monitoring / certification 降低信息成本，但会改变 control rights
+
+**Reverse puzzle in UK and HK**：
+- 关键变量是 **private benefits of control**，记作 $c$
+- 当 $c$ 高时，insider 更重视控制权，rights issue 的控制稀释更小，所以更受偏好
+- 当 $c$ 低时，placement 的相对成本下降，rights 的控制优势变弱
+
+$$
+\begin{aligned}
+\underbrace{U_R-U_P}_{\text{rights vs. placement}}
+&=
+\underbrace{\lambda c}_{\text{rights preserve control rents}}
+-\underbrace{D}_{\text{placement dilutes control}}\\
+&\gtrless 0
+\quad\Longleftrightarrow\quad
+c \gtrless c^\ast \equiv \frac{D}{\lambda}.
+\end{aligned}
+$$
+
+**Announcement effect**：
+- 美国样本里，SEO announcement effect 通常显著为负
+- 但如果 asymmetric information more from investment opportunities than from assets-in-place，则 announcement effect 可以较不负甚至为正
+
+**Long-run performance**：
+- 后续研究发现 SEO 之后长期表现偏弱
+- 这说明 market timing / overvaluation correction 可能是长期弱势的重要来源
 
 ---
 
