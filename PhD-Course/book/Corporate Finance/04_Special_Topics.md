@@ -976,9 +976,9 @@ $$
 w^{AI}_{s}
 =
 \frac{
-\#\{\text{jobs requiring skill }s\ \text{and}\ (\text{AI/ML/NLP/CV in required skills or job title})\}
+\text{\#}\{\text{jobs requiring skill }s\ \text{and}\ (\text{AI/ML/NLP/CV in required skills or job title})\}
 }{
-\#\{\text{jobs requiring skill }s\}
+\text{\#}\{\text{jobs requiring skill }s\}
 }.
 \end{aligned}
 $$
