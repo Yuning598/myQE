@@ -1,2 +1,3 @@
 teachbooks
 sphinxcontrib-mermaid
+sphinxcontrib-tikz

@@ -10,6 +10,7 @@ html:
 sphinx:
   extra_extensions:
     - sphinxcontrib.mermaid
+    - sphinxcontrib.tikz
   local_extensions:
     tikz_lexer: _ext
     solution_block: _ext
@@ -28,6 +29,7 @@ sphinx:
       - toc.not_included
     mermaid_version: "10.6.1"
     mermaid_init_js: "mermaid.initialize({startOnLoad:true});"
+    tikz_proc_suite: GhostScript
     html_theme_options:
       repository_url: https://github.com/Yuning598/PhD-Course
       repository_branch: main
@@ -44,4 +46,5 @@ parse:
     - tasklist
   myst_fence_as_directive:
     - mermaid
+    - tikz
   myst_links_external_new_tab: true
