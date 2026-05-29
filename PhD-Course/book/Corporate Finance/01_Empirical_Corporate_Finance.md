@@ -1056,7 +1056,7 @@ $$
 	- interpretation：把 information asymmetry 和 market mispricing 接到 capital budgeting 上；当外部融资受约束、市场价格又不完全理性时，manager 可能把 market price 当成决策输入，但长期价值最大化仍需要回到 fundamentals。
 
 :::{admonition} Note
-+ Pre-reading Paper #3: Stein (1996)
++ Pre-reading Paper 3: Stein (1996)
 Stein, Jeremy C., 1996, Rational capital budgeting in an irrational world, Journal of Business 69, 429- 455.
 - 问题：如果市场对股票定价不完全理性，manager 做 capital budgeting 时应该用什么 hurdle rate（投资或项目必须达到的最低收益率或回报率，用于衡量投资的可行性，即投资者希望看到的最低回报。）
 - NEER = new estimator of expected returns
