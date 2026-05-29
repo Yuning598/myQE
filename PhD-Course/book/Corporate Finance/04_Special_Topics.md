@@ -8,9 +8,9 @@ Important IV examples：
 | Bartik instrument         | local labor demand / human capital distance | combines pre-determined shares with aggregate shocks                         |
 | opioid prescription shock | local labor supply                          | emergency-room diagnosis-based prescriptions mitigate drug-seeking selection |
 
-## 0. Course Introduction
+## Course Introduction
 
-### 0.2 Labor and Finance（Introduction, slide 3-4/61）
+### Labor and Finance（Introduction, slide 3-4/61）
 
 > [!summary] Labor and Finance 是什么
 > - 研究 human capital 如何影响企业财务决策，以及财务政策如何反过来影响劳动结果。
@@ -23,20 +23,20 @@ Important IV examples：
 - `Finance -> Labor Demand`：影响就业规模（employment）与技能需求（skills）。
 - `Finance -> Labor Supply`：影响劳动力流动（mobility）、议价（bargaining）、人才配置（talent allocation）。
 
-### 0.3 Topics Not Covered（slide 5/61）
+### Topics Not Covered（slide 5/61）
 - Pure labor theory（不含 firm-level / finance 链接）。
 - Asset pricing with labor risk（macro/consumption-based）。
 - Entrepreneurial and startup finance。
 - Household finance decisions unrelated to firms。
 - Traditional labor topics（如 education、search、minimum wage）。
 
-### 0.4 Our Focus: Labor and Corporate Finance（slide 6/61）
+### Our Focus: Labor and Corporate Finance（slide 6/61）
 - 关注 firms 与 labor markets 的互动（interactions）。
 - 覆盖 labor 与 corporate finance 交叉处的基础框架与近期进展。
 - 强调机制（mechanisms）、数据（data）、识别（identification）与实证策略（empirical strategies）。
 - 关注前沿问题（emerging frontiers）与开放研究问题（open questions）。
 
-### 0.5 Lecture Plan（slide 7/61）
+### Lecture Plan（slide 7/61）
 - Lecture 1: Labor and Corporate Finance: Introduction
 - Lecture 2: Labor and Corporate Finance: ESG and AI
 - Lecture 3: Creditor Rights, Debt Contracts, and Real Effects
