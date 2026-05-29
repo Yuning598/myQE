@@ -1,13 +1,9 @@
 # 02 OLS Algebra, Partialling-Out, and GLS
 
-Source: consolidated from 02_OLS_Algebra_FWL_OVB.md and 03_OLS_Finite_Sample_Gauss_Markov_GLS.md.
-Links: [01_CEF_and_Linear_Projection](01_CEF_and_Linear_Projection) | [03_Asymptotics_OLS_Inference_Hypothesis_Testing](03_Asymptotics_OLS_Inference_Hypothesis_Testing) | [cards/FWL_Theorem](cards/FWL_Theorem) | [cards/Gauss_Markov](cards/Gauss_Markov) | [cards/GLS_Whitening](cards/GLS_Whitening)
-
-**OLS Algebra and Partialling-Out**
 
 ## OLS as Moments and Least Squares
 
-课件先从 projection coefficient 出发：
+从 projection coefficient 出发：
 
 $$
 \beta=E[XX']^{-1}E[XY].
@@ -304,9 +300,6 @@ $$
 
 可识别。最佳线性预测应写成 $Y$ on $(X_1,X_2)$ 的投影，而不是试图估计唯一的 $(\beta_1,\beta_2,\beta_3)$。
 
-
-**Finite-Sample Properties and GLS**
-
 ## Finite-Sample Regression Model
 
 课件在 finite-sample 部分考虑条件于 $X$ 的性质。基本模型写作
@@ -471,7 +464,7 @@ GLS 用 $D^{-1}$ 给 observations 加权，使 transformed errors spherical。
 
 ## Error-Variance and Covariance Estimation
 
-课件先讨论
+先讨论
 
 $$
 \hat\sigma^2=\frac{1}{n}\sum_i\hat e_i^2=\frac{1}{n}\hat e'\hat e.
@@ -494,7 +487,7 @@ $$
 $$
 \widehat{\operatorname{Var}}(\hat\beta\mid X) =(X'X)^{-1}\left(\sum_{i=1}^n \hat e_i^2 X_iX_i'\right)(X'X)^{-1}.
 $$
-这是课件中的 sandwich estimator 的 finite-sample 版本；通常 biased，但 large sample consistent。
+sandwich estimator 的 finite-sample 版本；通常 biased，但 large sample consistent。
 
 :::
 

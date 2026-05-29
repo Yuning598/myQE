@@ -39,4 +39,6 @@
 - 筛选与单交叉 (screening and single crossing)
 
 # reference
-1. https://www.xinchengqiu.com/teaching/701B.pdf
+1. [Econ 701B Fall 2018 (UPenn)](https://www.xinchengqiu.com/teaching/701B.pdf)
+	- General Equilibrium
+	- 例子对FWT、SWT的理解很有帮助。

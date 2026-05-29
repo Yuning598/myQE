@@ -1,11 +1,8 @@
 # 01 CEF and Linear Projection
 
-Source: EF8090 slides, PDF pp. 7-19; PS1 Q1, Q3-Q5, Q7.  
-Links: [02_OLS_Algebra_Finite_Sample_GLS](02_OLS_Algebra_Finite_Sample_GLS) | [cards/Law_of_Iterated_Expectations](cards/Law_of_Iterated_Expectations) | [cards/Projection_vs_CEF](cards/Projection_vs_CEF) | [cards/Variance_Decomposition](cards/Variance_Decomposition)
-
 ## Conditional expectation function
 
-EF8090 第一部分的核心对象是 **conditional expectation function**。OLS、IV、propensity score 和 matching 都是在不同信息集上做 projection。
+核心对象是 **conditional expectation function**。OLS、IV、propensity score 和 matching 都是在不同信息集上做 projection。
 
 :::{admonition} Definition (Conditional Expectation Function)
 令 $(Y,X)$ 有联合分布，且 $E|Y|<\infty$。CEF 定义为

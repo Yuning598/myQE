@@ -20,6 +20,8 @@ tags:
 A choice structure is $(\mathcal B,C(\cdot))$, where $\mathcal B$ is a family of feasible sets $B\subseteq X$, and $C(B)\subseteq B$, $C(B)\neq \varnothing$, is the set of alternatives chosen from $B$.
 :::
 
+^def-choice-structure
+
 :::{admonition} Definition (Preference relation)
 A preference relation $\succeq$ on $X$ is a binary relation.
 
@@ -44,6 +46,8 @@ x\succeq y,\ y\succeq z \quad &\Longrightarrow\quad x\succeq z.
 $$
 
 :::
+
+^def-rational-preference
 
 :::{admonition} Strict preference and indifference inherit transitivity
 If $\succeq$ is rational, then $\succ$ and $\sim$ are transitive, and $x_1\sim x_2\succeq x_3\Rightarrow x_1\succeq x_3$.
@@ -100,6 +104,8 @@ Choice data $(\mathcal B,C)$ satisfy the Weak Axiom of Revealed Preference if wh
 
 :::
 
+^def-warp
+
 Intuition: once $x$ is chosen while $y$ is available, later $y$ cannot be chosen over $x$ when both are available.
 
 :::{admonition} Fundamental theorem of revealed preference
@@ -124,6 +130,8 @@ $$
 C(B)=C^*(B,\succeq^R).
 $$
 :::
+
+^prop-fundamental-revealed-pref
 
 Proof:
 
@@ -187,6 +195,8 @@ $$
 
 :::
 
+^def-utility-function
+
 Utility representation is **ordinal** in consumer theory.
 
 :::{admonition} Definition (Monotonicity and strong monotonicity)
@@ -220,6 +230,26 @@ x\succeq y
 $$
 
 If $\phi$ is only weakly increasing, strict rankings may collapse. Example: $\phi(t)=0$ for all $t$. Then all alternatives become indifferent, so $\phi\circ u$ cannot represent a nontrivial preference.
+
+:::{admonition} Definition (Continuous preference)
+A preference relation $\succeq$ is continuous if
+
+$$
+\begin{aligned}
+x_m\to x,\quad y_m\to y,\quad x_m\succeq y_m\ \forall m
+\quad\Longrightarrow\quad
+x\succeq y.
+\end{aligned}
+$$
+:::
+
+^def-continuous-pref
+
+:::{admonition} Existence of utility representation
+Any continuous rational preference relation on the standard commodity space admits a utility representation. With monotonicity on $\mathbb R_+^n$, the ray construction below gives an explicit representation.
+:::
+
+^prop-utility-existence
 
 :::{admonition} Continuous monotone preferences imply utility representation on $\mathbb R_+^n$
 The slides prove the simple monotone case using the ray $Z=\{\alpha e:\alpha\ge 0\}$, where $e=(1,\ldots,1)$.

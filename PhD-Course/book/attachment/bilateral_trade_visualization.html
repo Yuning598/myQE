@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bilateral Trade Visualization</title>
+</head>
+<body style="margin:0;background:#fff;padding:0;">
+<div class="btv-card" id="btv">
+  <style>
+    .btv-card{
+      --blue:#2563eb;
+      --blue-soft:#dbeafe;
+      --green:#059669;
+      --green-soft:#d1fae5;
+      --red:#dc2626;
+      --red-soft:#fee2e2;
+      --amber:#d97706;
+      --amber-soft:#fef3c7;
+      --axis:#0f172a;
+      --text:#1f2937;
+      --muted:#64748b;
+      --border:#d9e2ec;
+      --panel:#ffffff;
+      --bg:#f8fafc;
+      width:min(100%,1120px);
+      margin:12px auto;
+      padding:14px;
+      color:var(--text);
+      background:linear-gradient(135deg,#f8fafc 0%,#eef4ff 100%);
+      border:1px solid var(--border);
+      border-radius:18px;
+      box-shadow:0 12px 30px rgba(15,23,42,.08);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      container-type:inline-size;
+    }
+    .btv-card *{box-sizing:border-box;}
+    .btv-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px;}
+    .btv-kicker{margin:0 0 3px;color:var(--blue);font-size:.72rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase;}
+    .btv-head h2{margin:0;font-size:clamp(1.08rem,1.7vw,1.35rem);line-height:1.2;letter-spacing:-.02em;}
+    .reset{border:0;border-radius:12px;background:var(--axis);color:#fff;padding:8px 14px;font-size:.78rem;font-weight:850;cursor:pointer;}
+    .btv-grid{display:grid;grid-template-columns:250px minmax(0,1fr);gap:12px;align-items:stretch;}
+    .panel{min-width:0;background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:12px;box-shadow:0 6px 18px rgba(15,23,42,.05);}
+    .panel h3{margin:0 0 8px;font-size:.98rem;}
+    .controls{display:grid;gap:8px;}
+    .control{background:var(--bg);border:1px solid var(--border);border-radius:13px;padding:8px;}
+    .control-top{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:6px;}
+    .label{margin:0;color:var(--muted);font-size:.65rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;}
+    .symbol{margin:1px 0 0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:850;}
+    .value{border:1px solid var(--border);border-radius:9px;background:#fff;padding:4px 8px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.78rem;font-weight:850;}
+    .slider-row{display:grid;grid-template-columns:28px minmax(0,1fr) 28px;gap:8px;align-items:center;}
+    .step{height:26px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;color:var(--axis);font-weight:900;cursor:pointer;}
+    input[type="range"]{width:100%;accent-color:var(--blue);}
+    .graph-head{display:flex;justify-content:space-between;gap:10px;align-items:start;margin-bottom:8px;}
+    .graph-head h3{margin:0;font-size:.98rem;}
+    .graph-head p{margin:3px 0 0;color:var(--muted);font-size:.74rem;line-height:1.35;}
+    .badge{white-space:nowrap;border-radius:999px;padding:5px 10px;font-size:.75rem;font-weight:900;}
+    .badge.trade{background:var(--green-soft);color:#047857;}
+    .badge.notrade{background:var(--red-soft);color:#b91c1c;}
+    .svg-wrap{height:330px;border:1px solid var(--border);border-radius:16px;background:#fff;overflow:hidden;}
+    svg{width:100%;height:100%;display:block;}
+    .cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:12px;}
+    .card{min-width:0;background:#fff;border:1px solid var(--border);border-radius:16px;padding:11px;box-shadow:0 6px 18px rgba(15,23,42,.05);}
+    .card-title{display:flex;justify-content:space-between;gap:8px;align-items:start;margin-bottom:8px;}
+    .card h4{margin:0;font-size:.9rem;}
+    .formula{margin:2px 0 0;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.68rem;}
+    .pill{border-radius:10px;padding:4px 8px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.75rem;font-weight:900;}
+    .pill.pos{background:var(--green-soft);color:#047857;}
+    .pill.neg{background:var(--red-soft);color:#b91c1c;}
+    .mini{display:flex;justify-content:space-between;gap:8px;border-radius:9px;background:var(--bg);padding:6px 8px;font-size:.76rem;margin-top:6px;}
+    .mini span:last-child{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:850;}
+    .status{margin-top:8px;border-radius:10px;padding:7px 8px;font-size:.75rem;font-weight:850;}
+    .status.ok{background:#f1f5f9;color:#334155;}
+    .status.warn{background:var(--amber-soft);color:#92400e;}
+    .note-box{border-radius:12px;padding:8px;background:#eff6ff;border:1px solid #bfdbfe;color:#334155;font-size:.72rem;line-height:1.35;}
+    .note-box.green{background:#ecfdf5;border-color:#a7f3d0;}
+    .note-box b{color:var(--axis);}
+    .mono{margin-top:3px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.68rem;}
+    @container(max-width:860px){
+      .btv-grid{grid-template-columns:1fr;}
+      .cards{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .svg-wrap{height:300px;}
+    }
+    @container(max-width:540px){
+      .btv-head{align-items:flex-start;flex-direction:column;}
+      .cards{grid-template-columns:1fr;}
+    }
+  </style>
+
+  <header class="btv-head">
+    <div>
+      <p class="btv-kicker">Bilateral trade</p>
+      <h2>双边交易机制可视化</h2>
+    </div>
+    <button class="reset" id="reset" type="button">Reset</button>
+  </header>
+
+  <main class="btv-grid">
+    <aside class="panel">
+      <h3>Controls</h3>
+      <div class="controls" id="controls"></div>
+    </aside>
+
+    <section class="panel">
+      <div class="graph-head">
+        <div>
+          <h3>Efficient allocation graph</h3>
+          <p>Blue: v >= c, q*=1. Red: v < c, q*=0.</p>
+        </div>
+        <div class="badge" id="tradeBadge"></div>
+      </div>
+      <div class="svg-wrap">
+        <svg id="graph" viewBox="0 0 520 280" aria-label="efficient bilateral trade allocation"></svg>
+      </div>
+    </section>
+  </main>
+
+  <section class="cards">
+    <div class="card" id="buyerCard"></div>
+    <div class="card" id="sellerCard"></div>
+    <div class="card" id="surplusCard"></div>
+    <div class="card" id="transferCard"></div>
+    <div class="card" id="interimCard"></div>
+  </section>
+</div>
+
+<script>
+(() => {
+  const state = { v:8, c:4, pb:6, ps:5 };
+  const defaults = {...state};
+  const max = 10, width = 520, height = 280, pad = 42;
+  const controls = document.querySelector('#controls');
+  const graph = document.querySelector('#graph');
+  const badge = document.querySelector('#tradeBadge');
+
+  const x = val => pad + (val / max) * (width - 2 * pad);
+  const y = val => height - pad - (val / max) * (height - 2 * pad);
+  const data = () => {
+    const qStar = state.v >= state.c ? 1 : 0;
+    const tb = -state.pb;
+    const ts = state.ps;
+    const value = state.v * qStar;
+    const cost = state.c * qStar;
+    const ub = value + tb;
+    const us = ts - cost;
+    const surplus = (state.v - state.c) * qStar;
+    const subsidy = tb + ts;
+    return { qStar, tb, ts, value, cost, ub, us, surplus, subsidy, revenue: -subsidy };
+  };
+
+  function controlRow(key, label, symbol) {
+    const wrap = document.createElement('div');
+    wrap.className = 'control';
+    wrap.innerHTML = `
+      <div class="control-top">
+        <div><p class="label">${label}</p><p class="symbol">${symbol}</p></div>
+        <span class="value" id="val-${key}"></span>
+      </div>
+      <div class="slider-row">
+        <button class="step" type="button" data-step="-1" aria-label="decrease ${label}">-</button>
+        <input type="range" min="0" max="10" step="1" id="range-${key}">
+        <button class="step" type="button" data-step="1" aria-label="increase ${label}">+</button>
+      </div>`;
+    wrap.querySelector('input').addEventListener('input', e => {
+      state[key] = Number(e.target.value);
+      render();
+    });
+    wrap.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => {
+      state[key] = Math.max(0, Math.min(10, state[key] + Number(btn.dataset.step)));
+      render();
+    }));
+    controls.appendChild(wrap);
+  }
+
+  function cardHtml(title, formula, value, rows) {
+    const cls = value >= 0 ? 'pos' : 'neg';
+    return `
+      <div class="card-title">
+        <div><h4>${title}</h4><p class="formula">${formula}</p></div>
+        <span class="pill ${cls}">${value}</span>
+      </div>
+      ${rows.map(([k,v]) => `<div class="mini"><span>${k}</span><span>${v}</span></div>`).join('')}`;
+  }
+
+  function drawGraph(d) {
+    const pointX = x(state.v), pointY = y(state.c);
+    const ticks = [0,2,4,6,8,10];
+    graph.innerHTML = `
+      <defs>
+        <linearGradient id="trade" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0%" stop-color="#93c5fd" stop-opacity=".82"/>
+          <stop offset="100%" stop-color="#dbeafe" stop-opacity=".32"/>
+        </linearGradient>
+        <linearGradient id="notrade" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0%" stop-color="#fecaca" stop-opacity=".56"/>
+          <stop offset="100%" stop-color="#fee2e2" stop-opacity=".24"/>
+        </linearGradient>
+        <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+          <path d="M0,0 L0,6 L6,3 z" fill="#0f172a"/>
+        </marker>
+      </defs>
+      <rect x="${pad}" y="${pad}" width="${width - 2 * pad}" height="${height - 2 * pad}" fill="url(#notrade)" rx="14"/>
+      <path d="M ${pad} ${height - pad} L ${width - pad} ${height - pad} L ${width - pad} ${pad} Z" fill="url(#trade)"/>
+      <line x1="${pad}" y1="${height - pad}" x2="${width - pad}" y2="${pad}" stroke="#334155" stroke-width="2" stroke-dasharray="7 7"/>
+      <line x1="${pad}" y1="${height - pad}" x2="${width - pad + 12}" y2="${height - pad}" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+      <line x1="${pad}" y1="${height - pad}" x2="${pad}" y2="${pad - 12}" stroke="#0f172a" stroke-width="2" marker-end="url(#arrow)"/>
+      <text x="${width - pad + 15}" y="${height - pad + 5}" font-size="17" fill="#0f172a" font-style="italic">v</text>
+      <text x="${pad - 18}" y="${pad - 15}" font-size="17" fill="#0f172a" font-style="italic">c</text>
+      <text x="${width - pad - 70}" y="${pad + 22}" font-size="13" fill="#0f172a" font-weight="700">v = c</text>
+      <text x="${width - pad - 90}" y="${height - pad - 18}" font-size="13" fill="#1d4ed8" font-weight="700">q* = 1</text>
+      <text x="${pad + 18}" y="${pad + 28}" font-size="13" fill="#b91c1c" font-weight="700">q* = 0</text>
+      ${ticks.map(t => `
+        <g><line x1="${x(t)}" y1="${height - pad - 5}" x2="${x(t)}" y2="${height - pad + 5}" stroke="#64748b"/>
+        <text x="${x(t)-5}" y="${height - pad + 20}" font-size="10" fill="#64748b">${t}</text></g>
+        <g><line x1="${pad - 5}" y1="${y(t)}" x2="${pad + 5}" y2="${y(t)}" stroke="#64748b"/>
+        <text x="${pad - 27}" y="${y(t)+4}" font-size="10" fill="#64748b">${t}</text></g>`).join('')}
+      <line x1="${pointX}" y1="${height - pad}" x2="${pointX}" y2="${pointY}" stroke="#0f172a" stroke-width="1.2" stroke-opacity=".28" stroke-dasharray="4 4"/>
+      <line x1="${pad}" y1="${pointY}" x2="${pointX}" y2="${pointY}" stroke="#0f172a" stroke-width="1.2" stroke-opacity=".28" stroke-dasharray="4 4"/>
+      <circle cx="${pointX}" cy="${pointY}" r="8" fill="${d.qStar ? '#059669' : '#dc2626'}" stroke="#fff" stroke-width="2.5"/>
+      <text x="${Math.min(pointX + 12, width - pad - 105)}" y="${Math.max(pointY - 10, pad + 16)}" font-size="13" fill="#0f172a" font-weight="700">(v=${state.v}, c=${state.c})</text>`;
+  }
+
+  function render() {
+    Object.keys(state).forEach(key => {
+      document.querySelector(`#val-${key}`).textContent = state[key];
+      document.querySelector(`#range-${key}`).value = state[key];
+    });
+    const d = data();
+    badge.className = `badge ${d.qStar ? 'trade' : 'notrade'}`;
+    badge.textContent = d.qStar ? 'trade' : 'no trade';
+    drawGraph(d);
+    document.querySelector('#buyerCard').innerHTML = cardHtml('Buyer', 'u_b=vq+t_b', d.ub, [['vq*', d.value], ['t_b', d.tb]]);
+    document.querySelector('#sellerCard').innerHTML = cardHtml('Seller', 'u_s=t_s-cq', d.us, [['cq*', d.cost], ['t_s', d.ts]]);
+    document.querySelector('#surplusCard').innerHTML = cardHtml('Surplus', 's*=(v-c)q*', d.surplus, [['u_b+u_s', d.ub + d.us], ['revenue', d.revenue]]);
+    document.querySelector('#transferCard').innerHTML = `
+      <h4>Transfers</h4>
+      ${[['q*', d.qStar], ['t_b', d.tb], ['t_s', d.ts], ['t_b+t_s', d.subsidy]].map(([k,v]) => `<div class="mini"><span>${k}</span><span>${v}</span></div>`).join('')}
+      <div class="status ${d.subsidy <= 0 ? 'ok' : 'warn'}">${d.subsidy <= 0 ? 'NES: no subsidy' : 'Needs subsidy'}</div>`;
+    document.querySelector('#interimCard').innerHTML = `
+      <h4>Interim</h4>
+      <div class="note-box"><b>Buyer:</b> knows v, averages over c<div class="mono">U_b(v)=vQ_b+T_b</div></div>
+      <div class="note-box green" style="margin-top:8px;"><b>Seller:</b> knows c, averages over v<div class="mono">U_s(c)=T_s-cQ_s</div></div>`;
+  }
+
+  controlRow('v', 'buyer value', 'v');
+  controlRow('c', 'seller cost', 'c');
+  controlRow('pb', 'buyer pays', 'p_b');
+  controlRow('ps', 'seller gets', 'p_s');
+  document.querySelector('#reset').addEventListener('click', () => {
+    Object.assign(state, defaults);
+    render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>

@@ -14,6 +14,173 @@ tags:
 
 # 05 Production in Arrow-Debreu
 
+## 三类 equilibrium 概览
+
+先把三种均衡的交易对象、优化问题、市场清算条件和相互关系放在一起看，后面再展开生产经济的细节。
+
+:::{admonition} Walrasian equilibrium
+**对象**
+
+- 现货商品 $x^h\in\mathbb R_+^L$
+- 初始禀赋 $e^h\in\mathbb R_+^L$
+- 价格向量 $p\in\mathbb R_+^L$
+- 如果有生产，还要加企业集合 $\{Y^f\}$ 和利润分配份额 $\theta_f^h$
+
+**优化问题**
+
+$$
+\left\{
+\begin{aligned}
+&\max_{x^h\ge 0}\ u^h(x^h)\\
+&\text{s.t.}\quad p\cdot x^h\le p\cdot e^h
+\end{aligned}
+\right.
+$$
+
+如果有 production，再加
+
+$$
+\left\{
+\begin{aligned}
+&y^f\in\arg\max_{y\in Y^f}p\cdot y\\
+&m^h=p\cdot e^h+\sum_f\theta_f^h\pi_f
+\end{aligned}
+\right.
+$$
+
+**均衡条件**
+
+$$
+\left\{
+\begin{aligned}
+&x^h\in\arg\max_{x\ge 0}\{u^h(x):p\cdot x\le p\cdot e^h\},\qquad \forall h\\
+&\sum_h x^h=\sum_h e^h
+\end{aligned}
+\right.
+$$
+
+有生产时把市场清算改成
+
+$$
+\sum_h x^h=\sum_h e^h+\sum_f y^f.
+$$
+
+**典型 FOC**
+
+$$
+\frac{MU_i^h}{MU_j^h}=\frac{p_i}{p_j}.
+$$
+
+经济含义是：价格把所有商品的边际替代率协调到同一组现货价格上。
+:::
+
+:::{admonition} Arrow-Debreu equilibrium
+**对象**
+
+- 状态 $s=1,\ldots,S$
+- 状态商品 $(s,l)$，也就是 state $s$ 下的 physical good $l$
+- 状态概率 $\pi_s=\Pr(s)$
+- 状态价格向量 $p_s\in\mathbb R_+^L$
+- 完整消费计划 $x^h=(x_1^h,\ldots,x_S^h)$
+
+**优化问题**
+
+$$
+\left\{
+\begin{aligned}
+&\max_{(x_s^h)_{s=1}^S}\ \sum_{s=1}^S\pi_s u_s^h(x_s^h)\\
+&\text{s.t.}\quad \sum_{s=1}^S p_s\cdot x_s^h\le \sum_{s=1}^S p_s\cdot e_s^h
+\end{aligned}
+\right.
+$$
+
+**均衡条件**
+
+$$
+\left\{
+\begin{aligned}
+&x^h\in\arg\max \left\{\sum_s\pi_su_s^h(x_s):\sum_sp_s\cdot x_s\le\sum_sp_s\cdot e_s^h\right\},\qquad \forall h\\
+&\sum_h x_s^h=\sum_h e_s^h,\qquad \forall s
+\end{aligned}
+\right.
+$$
+
+**典型 FOC**
+
+若只有一个 physical good，则
+
+$$
+\frac{\pi_s u^{h'}(x_s^h)}{\pi_t u^{h'}(x_t^h)}=\frac{p_s}{p_t}.
+$$
+
+经济含义是：date 0 直接交易所有 state-contingent commodities，所以风险可以被完全保险。
+:::
+
+:::{admonition} Arrow-security equilibrium
+**对象**
+
+- 证券 $j=1,\ldots,J$
+- 证券价格 $q_j$
+- 证券 payoff $d_s^j$
+- 组合持有 $\theta_j^h$
+- state consumption $c_s^h$
+
+**优化问题**
+
+$$
+\left\{
+\begin{aligned}
+&\max_{\theta^h,(c_s^h)_{s=1}^S}\ \sum_{s=1}^S\pi_su^h(c_s^h)\\
+&\text{s.t.}\quad c_s^h\le e_s^h+\sum_{j=1}^J d_s^j\theta_j^h,\qquad \forall s\\
+&\qquad\quad q\cdot\theta^h\le 0
+\end{aligned}
+\right.
+$$
+
+如果还有 date-0 consumption $c_0^h$，就把预算写成
+
+$$
+\left\{
+\begin{aligned}
+&c_0^h+q\cdot\theta^h\le e_0^h\\
+&c_s^h\le e_s^h+\sum_j d_s^j\theta_j^h,\qquad \forall s
+\end{aligned}
+\right.
+$$
+
+**均衡条件**
+
+$$
+\left\{
+\begin{aligned}
+&(\theta^h,c^h)\text{ solves household }h\text{ problem},\qquad \forall h\\
+&\sum_h\theta_j^h=0,\qquad \forall j\\
+&\sum_h c_s^h=\sum_h e_s^h,\qquad \forall s
+\end{aligned}
+\right.
+$$
+
+**关键关系**
+
+若存在 state price vector $\psi=(\psi_1,\ldots,\psi_S)$，则任意证券价格满足
+
+$$
+q_j=\sum_s\psi_s d_s^j,
+$$
+
+也就是矩阵形式 $D'\psi=q$。
+
+如果 Arrow securities 完备，那么 complete Arrow securities equilibrium 和 Arrow-Debreu equilibrium 等价；若市场不完备，则一般不能保证 Pareto efficiency。
+:::
+
+:::{admonition} 三者关系
+- Walrasian equilibrium 是静态现货市场均衡。
+- Arrow-Debreu equilibrium 是把每个 state 的商品都当成 date-0 商品来交易。
+- Arrow-security equilibrium 是 date 0 先交易资产，date 1 再由资产 payoff 支持 state-contingent consumption。
+- Complete Arrow securities $\Longleftrightarrow$ Arrow-Debreu equilibrium。
+- Incomplete markets generally need not be Pareto efficient.
+:::
+
 ## 1. Production in Arrow-Debreu
 
 :::{admonition} Assumptions for existence of Walrasian equilibrium in a production economy
