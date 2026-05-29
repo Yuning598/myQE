@@ -31,7 +31,7 @@ $$
 
 **理论演进**：
 
-```mermaid
+```{mermaid}
 graph TD
     A["MM (1958) Irrelevance<br/>完美市场假设"] 
     B["MM (1963) Tax Shield<br/>V_L = V_U + T_C D"]
@@ -60,7 +60,7 @@ graph TD
 
 ### 2.1 理论互补与冲突
 
-```mermaid
+```{mermaid}
 graph TD
     A[MM Irrelevance] --> B[Tax Theory]
     A --> C[Agency Theory]
@@ -174,7 +174,7 @@ $$
 
 ### 4.1 融资选择决策树
 
-```mermaid
+```{mermaid}
 graph TD
     Start["企业需要外部融资"]
     Check1{"信息不对称程度"}
@@ -210,7 +210,7 @@ graph TD
 
 ### 4.2 派息决策决策树
 
-```mermaid
+```{mermaid}
 graph TD
     Start["企业有多余现金"]
     Check1{"现金流性质"}
@@ -607,7 +607,7 @@ $$
 
 ## 10. 理论发展时间线
 
-```mermaid
+```{mermaid}
 timeline
     title 公司金融理论发展时间线
     1958 : MM Irrelevance (Modigliani & Miller)

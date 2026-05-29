@@ -26,6 +26,8 @@ sphinx:
     external_toc_exclude_missing: false
     suppress_warnings:
       - toc.not_included
+    mermaid_version: "10.6.1"
+    mermaid_init_js: "mermaid.initialize({startOnLoad:true});"
     html_theme_options:
       repository_url: https://github.com/Yuning598/PhD-Course
       repository_branch: main
