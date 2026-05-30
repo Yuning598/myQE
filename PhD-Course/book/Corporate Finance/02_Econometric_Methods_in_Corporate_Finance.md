@@ -104,7 +104,7 @@ $$
 
 ### Ideal setting for financing constraints and investment
 
-选择 fuzzy RDD / local IV 最自然：政府或金融机构推出一项 credit guarantee / subsidized loan policy，资格由政策前已固定的信用分、资产规模或评级阈值 $R_i>c$ 决定，但实际贷款 take-up 不完全。
+选择 fuzzy RDD / local IV 最自然：政府或金融机构推出一项 credit guarantee / subsidized loan policy，资格由政策前已固定的信用分、资产规模或评级阈值 $R_i\gt c$ 决定，但实际贷款 take-up 不完全。
 
 $$
 \begin{aligned}
@@ -211,7 +211,7 @@ D_i &\in \{0,1\}, &&\text{实际接受处理（received/take-up）}
 \right.
 $$
 
-- `non-compliance`：$D_i\neq T_i$（$\Pr(D_i\neq T_i)>0$），识别对象从 $ATE$ 转为 $ITT=\mathbb{E}[Y_i\mid T_i=1]-\mathbb{E}[Y_i\mid T_i=0]$。
+- `non-compliance`：$D_i\neq T_i$（$\Pr(D_i\neq T_i)\gt 0$），识别对象从 $ATE$ 转为 $ITT=\mathbb{E}[Y_i\mid T_i=1]-\mathbb{E}[Y_i\mid T_i=0]$。
 	- `ITT`（intention-to-treat）：分配到处理组 vs 对照组的平均结果差，衡量 assignment 的因果效应（不要求人人遵从）。
 - `attrition`：令 $R_i\in\{0,1\}$ 为是否留样，若 $(Y_i(1),Y_i(0))\not\perp R_i\mid T_i$，则 $\mathbb{E}[Y_i\mid T_i=t,R_i=1]\neq \mathbb{E}[Y_i(t)]$。
 - `interference`：个体 $i$ 的结果受他人处理状态影响，故应写作 $Y_i(t_i,\mathbf t_{-i})$；若 $\exists\,\mathbf t_{-i}\neq \mathbf t'_{-i}$ 使 $Y_i(t_i,\mathbf t_{-i})\neq Y_i(t_i,\mathbf t'_{-i})$，则存在干预外溢（SUTVA 失效）。
@@ -459,7 +459,7 @@ $$
 
 Proxy variables work if:
 - 若目标仅是 $\beta_1,\beta_2$，并且上述条件均值假设成立，proxy 可移除这两个系数的 OVB。
-- 由 $\alpha_1=\beta_3\delta_1$，若可接受 $\delta_1>0$ 的先验，可用 $\operatorname{sign}(\alpha_1)$ 识别 $\operatorname{sign}(\beta_3)$。
+- 由 $\alpha_1=\beta_3\delta_1$，若可接受 $\delta_1\gt 0$ 的先验，可用 $\operatorname{sign}(\alpha_1)$ 识别 $\operatorname{sign}(\beta_3)$。
 - 例：market-to-book ratio 作为 Tobin's $Q$ 的 proxy。
 
 ### 1.6 Measurement Error (pp.214-218)
@@ -886,12 +886,12 @@ $$
 :::{admonition} Note
 Equivalence Note
 在 balanced panel 下三种做法常得到相同或非常接近的 $\beta$ 估计。  
-严格结论：Within 与 LSDV 在同一设定下数值等价；FD 与 Within 在 $T=2$ 时等价，$T>2$ 时一般不必然数值相同（但在标准外生性条件下都可一致识别 $\beta$）。
+严格结论：Within 与 LSDV 在同一设定下数值等价；FD 与 Within 在 $T=2$ 时等价，$T\gt 2$ 时一般不必然数值相同（但在标准外生性条件下都可一致识别 $\beta$）。
 
 [!wts] WTS
 证明两点：  
 1. Within 与 LSDV 对 $\beta$ 的估计数值等价；  
-2. FD 与 Within 在 $T=2$ 时数值等价（$T>2$ 一般不等价）。
+2. FD 与 Within 在 $T=2$ 时数值等价（$T\gt 2$ 一般不等价）。
 
 <hr>
 
@@ -966,7 +966,7 @@ $$
 =\left(\sum_i \Delta X_i\Delta X_i'\right)^{-1}\sum_i \Delta X_i\Delta y_i
 =\hat\beta_{FD}.
 $$
-当 $T>2$ 时，上述 $\frac12$ 比例关系不再成立，故 FD 与 Within 一般不再数值等价（但在标准条件下都可一致）。
+当 $T\gt 2$ 时，上述 $\frac12$ 比例关系不再成立，故 FD 与 Within 一般不再数值等价（但在标准条件下都可一致）。
 
 :::
 
@@ -1218,18 +1218,18 @@ Case B: Parallel trends + true positive effect（可被 DiD 正确识别）
 ![Snipaste_2026-04-11_21-02-12.png](Snipaste_2026-04-11_21-02-12.png)
 
 - treated 组观测到的变化可分解为“共同趋势 + treatment jump”。
-- DiD 净掉共同趋势后得到正效应：$\text{DiD}>0$，且等于图中的竖直 gap。
+- DiD 净掉共同趋势后得到正效应：$\text{DiD}\gt 0$，且等于图中的竖直 gap。
 
 Case C: Nonparallel trends + placebo（假阳性）  
 ![Snipaste_2026-04-11_21-02-19.png](Snipaste_2026-04-11_21-02-19.png)
 
 - 即使真实 treatment effect 为 0，treated 组的反事实趋势本来就更陡。
-- 于是 $\Delta y_T(0)>\Delta y_C(0)$，会机械地产生 $\text{DiD}>0$（把趋势差误判为 treatment effect）。
+- 于是 $\Delta y_T(0)\gt \Delta y_C(0)$，会机械地产生 $\text{DiD}\gt 0$（把趋势差误判为 treatment effect）。
 
 Case D: Nonparallel trends + placebo（假阴性/反向偏误）  
 ![Snipaste_2026-04-11_21-02-27.png](Snipaste_2026-04-11_21-02-27.png)
 
-- 图示中 $\Delta y_T=0$ 而 $\Delta y_C>0$，因此 $\text{DiD}<0$。
+- 图示中 $\Delta y_T=0$ 而 $\Delta y_C\gt 0$，因此 $\text{DiD}\lt 0$。
 - 这说明 nonparallel trends 不仅会制造“假阳性”，也可能制造“负向伪效应”。
 
 #### 2.5.2 Event Study Specification
@@ -1302,7 +1302,7 @@ Exam positioning
 RDD 直觉（放在动机层面）：
 - treatment/control 的分配并非全局随机，而是基于 running variable $R$ 与 cutoff $c$ 的规则。
 - 但在阈值附近（$R_i\approx c$）可把“刚好在两侧”的个体近似看作随机分配。
-- 在 sharp 设定下，观测上对应为：$R_i>c$ 时观察 $Y_i(1)$，$R_i\le c$ 时观察 $Y_i(0)$。
+- 在 sharp 设定下，观测上对应为：$R_i\gt c$ 时观察 $Y_i(1)$，$R_i\le c$ 时观察 $Y_i(0)$。
 - 因此 RDD 的核心比较是阈值“刚上方 vs 刚下方”样本的结果差异，用于识别局部 treatment effect。
 
 两类 RDD（按 treatment assignment 规则）：
@@ -1327,7 +1327,7 @@ D_i = 1\{R_i > c\}
 \end{aligned}
 $$
 
-$R_i$ 是 running/forcing variable，sharp RDD 中 treatment 完全由阈值规则决定：$R_i>c$ 必处理，$R_i\le c$ 必不处理。
+$R_i$ 是 running/forcing variable，sharp RDD 中 treatment 完全由阈值规则决定：$R_i\gt c$ 必处理，$R_i\le c$ 必不处理。
 
 可观测结果满足
 
@@ -1458,7 +1458,7 @@ Bandwidth带宽 $u$ 的权衡：$u$ 大则 power 高但 bias 可能更大；$u$ 
 ### 3.2 Fuzzy RDD and LATE
 
 #### 3.2.1 Setup (Fuzzy Assignment)
-:::{admonition} Definition (> fuzzy RDD 中，$R_i>c$ 只会提高 treatment probability，而不会把概率从 0 跳到 1。)
+:::{admonition} Definition (> fuzzy RDD 中，$R_i\gt c$ 只会提高 treatment probability，而不会把概率从 0 跳到 1。)
 
 :::
 
@@ -1552,7 +1552,7 @@ $\tau_{FRD}$ 是 cutoff 附近 compliers 的 LATE（double local: local in score
 #### 3.2.5 Local Nature (Double Local)
 :::{summary}
 - 对 running variable 局部：识别来自 $R_i=c$ 附近的两侧极限比较（这一点 sharp RDD 也成立）。
-- 对个体类型局部：识别对象是 cutoff 处的 compliers（$D_i(1)>D_i(0)$），而非所有 $R_i\approx c$ 的个体。
+- 对个体类型局部：识别对象是 cutoff 处的 compliers（$D_i(1)\gt D_i(0)$），而非所有 $R_i\approx c$ 的个体。
 - 因此这里的 “local” 同时指 score-local 与 type-local（即 LATE 的 local）。
 :::
 
@@ -1600,15 +1600,15 @@ $$
 #### 3.2.7 Econometric Interpretation of Each Term
 
 :::{summary}
-核心思想：用同一组 running-variable 多项式把“平滑部分”净掉，只让阈值指示变量 $Z_i=1\{R_i>c\}$ 提供离散外生变动，从而识别局部因果效应。
+核心思想：用同一组 running-variable 多项式把“平滑部分”净掉，只让阈值指示变量 $Z_i=1\{R_i\gt c\}$ 提供离散外生变动，从而识别局部因果效应。
 :::
 
 
 First stage 各部分含义：
 - $\lambda$：阈值左侧基准处理概率。
-- $\pi\,1\{R_i>c\}$：cutoff 处处理概率离散跳跃（first-stage jump）；$\pi\neq 0$ 对应 relevance。
+- $\pi\,1\{R_i\gt c\}$：cutoff 处处理概率离散跳跃（first-stage jump）；$\pi\neq 0$ 对应 relevance。
 - $\sum_{k=1}^K\theta_{0k}(R_i-c)^k$：左侧随 running variable 的平滑趋势。
-- $\sum_{k=1}^K\theta_{1k}1\{R_i>c\}(R_i-c)^k$：允许右侧趋势（斜率/曲率）不同。
+- $\sum_{k=1}^K\theta_{1k}1\{R_i\gt c\}(R_i-c)^k$：允许右侧趋势（斜率/曲率）不同。
 - $\eta_i$：剩余扰动。
 
 Second stage 各部分含义：
@@ -2284,7 +2284,7 @@ $$
 
 其经济含义是：这些工具变量对该内生变量没有解释力。
 
-当 $M>H$（过识别）：
+当 $M\gt H$（过识别）：
 - 多出来的 $M-H$ 个工具变量形成 **overidentifying restrictions**；
 - 可做 Sargan/Hansen 型检验：
 
@@ -2307,7 +2307,7 @@ Overidentification 的逻辑
 $$
 \mathbb{E}[z_m\varepsilon]=0,\qquad m=1,\dots,M
 $$
-若 $M=H$，没有多余限制；若 $M>H$，就有 $M-H$ 个 overidentifying restrictions 可供检验。
+若 $M=H$，没有多余限制；若 $M\gt H$，就有 $M-H$ 个 overidentifying restrictions 可供检验。
 
 于是 Sargan/Hansen $J$ test 其实是在问：这些额外的正交条件是否同时成立，
 
@@ -2597,7 +2597,7 @@ $$
 \beta^{IV} = \mathbb{E}[Y(1)-Y(0)\mid C],\qquad
 \mathrm{ATE} = \mathbb{E}[Y(1)-Y(0)]
 $$
-若 compliers 的回报更高，则 $\mathrm{LATE}>\mathrm{ATE}$；在 finance 里，supply-side instruments 往往识别的是 constrained agents。
+若 compliers 的回报更高，则 $\mathrm{LATE}\gt \mathrm{ATE}$；在 finance 里，supply-side instruments 往往识别的是 constrained agents。
 
 2. Weak instruments
 

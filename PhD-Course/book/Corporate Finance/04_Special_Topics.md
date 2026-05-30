@@ -335,7 +335,7 @@ $$
 \begin{aligned}
 RShare_{j,t}
 =\sum_k
-\mathbf{1}\!\left[RTI_k>RTI^{P80}\right]
+\mathbf{1}\!\left[RTI_k\gt RTI^{P80}\right]
 \times
 \frac{emp_{j,k,t}\times wage_{j,k,t}}
 {\sum_k emp_{j,k,t}\times wage_{j,k,t}}.

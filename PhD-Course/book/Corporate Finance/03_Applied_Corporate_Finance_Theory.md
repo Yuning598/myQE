@@ -410,7 +410,7 @@ $$
 
 $$
 \begin{aligned}
-F(V)&=AV^{\beta_1},\qquad V<V^* \\
+F(V)&=AV^{\beta_1},\qquad V\lt V^* \\
 F(V)&=V-I,\qquad V\ge V^* \\
 V^*&=\frac{\beta_1}{\beta_1-1}I
 \end{aligned}
