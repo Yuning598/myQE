@@ -338,42 +338,53 @@ $$
 
 ^sec-graham-2000-tax-benefits-of-debt
 
-1. [Graham (2000)](cards/Graham-2000-tax-benefits-of-debt), *How Big Are the Tax Benefits of Debt?*
-	- test object：Graham estimates firm-specific **marginal tax benefit curves of debt**, then asks whether firms appear to use debt **conservatively** relative to their tax incentives.
+##### Graham (2000)
+
+[Graham (2000)](cards/Graham-2000-tax-benefits-of-debt), *How Big Are the Tax Benefits of Debt?*
+
+**Test object**：Graham estimates firm-specific **marginal tax benefit curves of debt**, then asks whether firms appear to use debt **conservatively** relative to their tax incentives.
 
 $$
 kink_i = \alpha+\delta_1 Profitability_i+\delta_2 TaxCapacity_i+\delta_3 Distress_i+\gamma'X_i+\varepsilon_i
 $$
 
-		- variables：
-			- $GTB_i=T_c D$ 是 gross tax benefit of debt：只考虑 corporate tax shield
-			- $NTB_i \approx D_i\left[1-\frac{(1-t_{pe,i})(1-T_{c,i})}{1-t_{pd,i}}\right]$ 是 net tax benefit of debt：考虑corporate tax benefit + personal tax disadvantage
-			- $kink_i$ 是 tax benefit curve 的关键指标：marginal tax benefit of interest deduction 开始下降时的 interest level 除以 actual interest expense，也即边际税盾，债务越高，边际税盾越低。
-			- $GMLOT_i$ 是 gross money left on the table：如果公司从 actual debt / interest level 增加到 kink level，在只考虑 corporate tax benefit、忽略 personal taxes 和 non-tax costs 的情况下，本可以多获得但没有获得的额外税盾价值。
-			- $Profitability_i$, $TaxCapacity_i$, $Distress_i$ 是 kink regression 的主要解释变量。
-	- finding：
-		- summary statistics：
-			- gross tax benefits of debt ≈ 10% of firm value
-			- net tax benefits of debt ≈ 5% of firm value after considering personal taxes
-			- gross money left on the table is positive
-		- empirical results：
-			- kink regressions show that leverage-tax capacity is not random across firms; profitability, tax-paying capacity, and distress proxies matter for where a firm sits relative to the kink。
-			- 大型、流动性强、盈利能力强的公司 often use surprisingly little debt #pecking-order
-			- 成长型公司和 low collateral 公司有更少 debt #trade-off
-			- 高 Z-score firm，即 low expected distress cost firm，反而可能有更少 debt #pecking-order
-			- 高 dividend payers 有更少 debt #pecking-order
-	- interpretation：如果只考虑税收优惠，公司本可以发行更多债务并获得额外的税收抵扣，实际上却采取了相对保守的发债策略。有以下原因：
-		- offsetting costs of debt：理性经理人会因为expected financial distress costs, agency costs, loss of financial flexibility, future underinvestment risk, covenant costs, 或 refinancing risk来减少债务规模。
-		- managers are leaving money on the table：经理人没有完全最大化股东价值
+**Variables**
 
-2. Graham and Tucker (2006), *Tax Shelters and Corporate Debt Policy*
-   - test object：firm 使用 tax shelters 后，observed debt 是否会低估真实 tax motive。
-   - finding：使用 tax shelters 的公司更少用 debt，因为 shelter 已经替代部分 interest tax shield。
-   - interpretation：低 leverage 不一定说明 tax motive 弱，也可能是公司已经通过非债务方式取得税收利益。
+- $GTB_i=T_c D$ 是 gross tax benefit of debt：只考虑 corporate tax shield。
+- $NTB_i \approx D_i\left[1-\frac{(1-t_{pe,i})(1-T_{c,i})}{1-t_{pd,i}}\right]$ 是 net tax benefit of debt：考虑 corporate tax benefit + personal tax disadvantage。
+- $kink_i$ 是 tax benefit curve 的关键指标：marginal tax benefit of interest deduction 开始下降时的 interest level 除以 actual interest expense，也即边际税盾，债务越高，边际税盾越低。
+- $GMLOT_i$ 是 gross money left on the table：如果公司从 actual debt / interest level 增加到 kink level，在只考虑 corporate tax benefit、忽略 personal taxes 和 non-tax costs 的情况下，本可以多获得但没有获得的额外税盾价值。
+- $Profitability_i$, $TaxCapacity_i$, $Distress_i$ 是 kink regression 的主要解释变量。
 
-3. Panier, Pérez-González and Villanueva (2013), *Capital Structure and Taxes: What Happens When You (Also) Subsidize Equity?*
-   - research question：当 equity 也像 debt 一样得到 tax subsidy 时，capital structure 是否仍然偏向 debt？核心不是问 taxes 是否重要，而是问 tax system 改变 debt 与 equity 的相对税后 payoff 后，firm 是否会调整 financing mix。
-   - economics of the situation：
+**Finding**
+
+- summary statistics：gross tax benefits of debt ≈ 10% of firm value；net tax benefits of debt ≈ 5% of firm value after considering personal taxes；gross money left on the table is positive。
+- empirical results：kink regressions show that leverage-tax capacity is not random across firms; profitability, tax-paying capacity, and distress proxies matter for where a firm sits relative to the kink。
+- 大型、流动性强、盈利能力强的公司 often use surprisingly little debt #pecking-order。
+- 成长型公司和 low collateral 公司有更少 debt #trade-off。
+- 高 Z-score firm，即 low expected distress cost firm，反而可能有更少 debt #pecking-order。
+- 高 dividend payers 有更少 debt #pecking-order。
+
+**Interpretation**：如果只考虑税收优惠，公司本可以发行更多债务并获得额外的税收抵扣，实际上却采取了相对保守的发债策略。
+
+- offsetting costs of debt：理性经理人会因为 expected financial distress costs, agency costs, loss of financial flexibility, future underinvestment risk, covenant costs, 或 refinancing risk 来减少债务规模。
+- managers are leaving money on the table：经理人没有完全最大化股东价值。
+
+##### Graham and Tucker (2006)
+
+*Tax Shelters and Corporate Debt Policy*
+
+- test object：firm 使用 tax shelters 后，observed debt 是否会低估真实 tax motive。
+- finding：使用 tax shelters 的公司更少用 debt，因为 shelter 已经替代部分 interest tax shield。
+- interpretation：低 leverage 不一定说明 tax motive 弱，也可能是公司已经通过非债务方式取得税收利益。
+
+##### Panier, Pérez-González and Villanueva (2013)
+
+*Capital Structure and Taxes: What Happens When You (Also) Subsidize Equity?*
+
+**Research question**：当 equity 也像 debt 一样得到 tax subsidy 时，capital structure 是否仍然偏向 debt？核心不是问 taxes 是否重要，而是问 tax system 改变 debt 与 equity 的相对税后 payoff 后，firm 是否会调整 financing mix。
+
+**Economics of the situation**
 
 $$
 \begin{aligned}
@@ -392,7 +403,7 @@ $$
 \end{aligned}
 $$
 
-   - institutional setting：
+**Institutional setting**
 
 $$
 \begin{aligned}
@@ -409,9 +420,9 @@ $$
 \end{aligned}
 $$
 
-     1982 reform 提供直观事件证据：当税制偏向 equity financing 时，firms 会迅速发行更多 equity；市场也会提前把更有利的税制预期资本化进股价。2006 Notional Interest Deduction (NID) 则提供更系统的 quasi-experiment，因为它直接降低 equity financing 的税后成本。
+1982 reform 提供直观事件证据：当税制偏向 equity financing 时，firms 会迅速发行更多 equity；市场也会提前把更有利的税制预期资本化进股价。2006 Notional Interest Deduction (NID) 则提供更系统的 quasi-experiment，因为它直接降低 equity financing 的税后成本。
 
-   - empirical design：
+**Empirical design**
 
 $$
 \begin{aligned}
@@ -424,9 +435,9 @@ Y_{ict}
 \end{aligned}
 $$
 
-     $Y_{ict}$ 是 equity-to-asset ratio、leverage 或 equity issuance；$\text{Belgium}_c\times Post_t$ 是 Belgian firms 在 NID 生效后的 treatment exposure；control group 是 neighboring countries 的 firms，用来构造没有 NID 时的 counterfactual trend；identification 来自 2005/2006 前后的政策变化。
+$Y_{ict}$ 是 equity-to-asset ratio、leverage 或 equity issuance；$\text{Belgium}_c\times Post_t$ 是 Belgian firms 在 NID 生效后的 treatment exposure；control group 是 neighboring countries 的 firms，用来构造没有 NID 时的 counterfactual trend；identification 来自 2005/2006 前后的政策变化。
 
-   - main findings：
+**Main findings**
 
 $$
 \begin{aligned}
@@ -442,9 +453,9 @@ $$
 \end{aligned}
 $$
 
-     结论是：capital structure 对 tax incentives 有显著反应。税制不只通过 debt tax shield 影响 leverage；当 equity 也被补贴，firm 会把 financing mix 向 equity 调整。
+结论是：capital structure 对 tax incentives 有显著反应。税制不只通过 debt tax shield 影响 leverage；当 equity 也被补贴，firm 会把 financing mix 向 equity 调整。
 
-   - empirical concerns：Differential trends 来自 Belgian firms 与 neighboring countries firms 可能在改革前已有不同 leverage trend；anticipation 来自 1981 stock market reaction 和 2005 前后的政策预期；confounding shocks 来自 NID 可能同时影响 investment、profitability 或 multinational tax planning。
+**Empirical concerns**：Differential trends 来自 Belgian firms 与 neighboring countries firms 可能在改革前已有不同 leverage trend；anticipation 来自 1981 stock market reaction 和 2005 前后的政策预期；confounding shocks 来自 NID 可能同时影响 investment、profitability 或 multinational tax planning。
 
 **Ideal policy change**
 
@@ -1785,13 +1796,13 @@ CAR^{\text{exchange offer}}
 \end{aligned}
 $$
 
-	- finding：
-		- exchange offers generate noticeable **announcement price reactions**
-		- **capital structure is not irrelevant** once taxes, bankruptcy costs, redistribution effects, and information effects are considered
-	- interpretation：market reaction reflects the net effect of
-		- **leverage effect** #trade-off ：tax shield gains vs. higher expected financial distress costs
-		- **redistribution effect** #agency ：wealth transfers across common stock, preferred stock, and risky debt
-		- **signaling effect** #signaling ：leverage-increasing offers may signal confidence in future cash flows
+- finding：
+  - exchange offers generate noticeable **announcement price reactions**
+  - **capital structure is not irrelevant** once taxes, bankruptcy costs, redistribution effects, and information effects are considered
+- interpretation：market reaction reflects the net effect of
+  - **leverage effect** #trade-off ：tax shield gains vs. higher expected financial distress costs
+  - **redistribution effect** #agency ：wealth transfers across common stock, preferred stock, and risky debt
+  - **signaling effect** #signaling ：leverage-increasing offers may signal confidence in future cash flows
 
 | Type                 | Leverage effect                                        | Redistribution effect                   | Main result                                                   |
 | -------------------- | ------------------------------------------------------ | --------------------------------------- | ------------------------------------------------------------- |
@@ -1925,14 +1936,14 @@ $$
 \end{aligned}
 $$
 
-		- $SOA=\gamma$：$\gamma$ 越大，dividend 向 target payout 调整得越快
-		- $\beta_1=-\gamma$：上一期 dividend 越高，本期调整幅度越小
-		- $\beta_2=\gamma TPR_i$：earnings 越高，目标 dividend 水平越高
-		- $TPR$ 可以定义为 firm-median payout ratio，即样本期内 common dividends / net earnings
-		- 这组式子可以同时估计 SOA 和 target
-	- dividend initiations 和 omissions 往往有很强的 announcement effect
-	- dividend policy can also reflect investor demand and financing frictions
-	- 跨国证据表明，payout policy 和 shareholder protection、governance 有关
+- $SOA=\gamma$：$\gamma$ 越大，dividend 向 target payout 调整得越快。
+- $\beta_1=-\gamma$：上一期 dividend 越高，本期调整幅度越小。
+- $\beta_2=\gamma TPR_i$：earnings 越高，目标 dividend 水平越高。
+- $TPR$ 可以定义为 firm-median payout ratio，即样本期内 common dividends / net earnings。
+- 这组式子可以同时估计 SOA 和 target。
+- dividend initiations 和 omissions 往往有很强的 announcement effect。
+- dividend policy can also reflect investor demand and financing frictions。
+- 跨国证据表明，payout policy 和 shareholder protection、governance 有关。
 
 $$
 \begin{aligned}
@@ -2058,9 +2069,9 @@ $$
 \end{aligned}
 $$
 
-	- **旧股东**：拿到 `dividend` 或 `repurchase` 现金
-	- **债权人**：通常不直接收现金，但会因杠杆、违约概率、covenant 变化而改变价值
-	- **新融资投资者**：把现金注入公司，换取新的 `debt` / `equity` claim
+- **旧股东**：拿到 `dividend` 或 `repurchase` 现金。
+- **债权人**：通常不直接收现金，但会因杠杆、违约概率、covenant 变化而改变价值。
+- **新融资投资者**：把现金注入公司，换取新的 `debt` / `equity` claim。
 - 只要 `investment` 和 `profits` 不变，firm value 就不受 `dividend` 影响
 	- 因为 `dividend` 只是 `free cash flow` 的分配，不是新增价值：
 
@@ -2074,7 +2085,7 @@ V_0
 \end{aligned}
 $$
 
-	- 若 `profits`、`depreciation` 和 `investment` 不变，则右边的总额不变；改变的只是这笔 cash flow 在 `dividend`、留存现金和融资 claim 之间的切分。
+  - 若 `profits`、`depreciation` 和 `investment` 不变，则右边的总额不变；改变的只是这笔 cash flow 在 `dividend`、留存现金和融资 claim 之间的切分。
 - 在 perfect and efficient capital markets 中，`dividend Policy does not matter`
 	- `perfect capital markets`：no taxes, no transaction costs, no agency costs, no information asymmetry
 	- `efficient capital markets`：价格能即时反映可得信息，所以 `dividend` 只改 price path，不改 firm value
@@ -2222,14 +2233,15 @@ R^{hold}-R^{trade} &= (t_g-t_d)D.
 \end{aligned}
 $$
 
-      若考虑交易成本 $c$，则只有当
+若考虑交易成本 $c$，则只有当
 
 $$
 (t_d-t_g)D\gt c
 $$
 
-      时，投资者才会明显偏好“规避 dividend tax”的交易策略。
-      - conclusion：clientele 的确可能受税负影响，但 ex-dividend day trading 和交易成本会削弱这种分层，所以现实中的 dividend holders 不一定严格按照税率高低分组。
+时，投资者才会明显偏好“规避 dividend tax”的交易策略。
+
+- conclusion：clientele 的确可能受税负影响，但 ex-dividend day trading 和交易成本会削弱这种分层，所以现实中的 dividend holders 不一定严格按照税率高低分组。
    - interpretation：tax clientele story 只能解释一部分现象；after-tax preference 未必对应稳定的 shareholder composition，因为投资者可以通过在 ex-dividend day 前卖出、之后再买回的方式部分规避 dividend tax。 #tax-clientele #transaction-costs
 
 ^sec-allen-michaely-2003
@@ -2421,7 +2433,7 @@ $$
 \end{aligned}
 $$
 
-     如果 $t_d\gt t_g$，则 $\rho\lt 1$，即 price drop 小于 dividend。dividend 税负更重，投资者不愿意为 $1$ 块 dividend 付满 $1$ 块价格。
+如果 $t_d\gt t_g$，则 $\rho\lt 1$，即 price drop 小于 dividend。dividend 税负更重，投资者不愿意为 $1$ 块 dividend 付满 $1$ 块价格。
    - finding：price drop 通常小于 dividend，符合 dividend tax penalty。
    - interpretation：ex-date price ratio 可用于推断市场边际税负，但也可能受交易成本和微观结构影响。
 
@@ -2442,7 +2454,7 @@ $$
 \end{aligned}
 $$
 
-     含义：即使税收想让 $\rho$ 偏离 $1$，short-term traders 的 dividend-capture arbitrage 会把 $\rho$ 推回交易成本决定的无套利区间。
+含义：即使税收想让 $\rho$ 偏离 $1$，short-term traders 的 dividend-capture arbitrage 会把 $\rho$ 推回交易成本决定的无套利区间。
 
    - finding：套利交易会把 price drop 推向由交易成本界定的无套利区间。
    - interpretation：ex-date pricing 不是纯 tax-clientele 结果，还受 arbitrage bounds 约束。
@@ -2464,7 +2476,7 @@ AVOL \equiv \dfrac{V_{\text{ex}}-\bar V}{\bar V} \\
 \end{aligned}
 $$
 
-     其中 $\rho_j=(1-t_{d,j})/(1-t_{g,j})$ 表示投资者 $j$ 对 dividend 的税后估值。若不同 tax clientele 对 dividend 的估值差异足够大，就会在 ex-date 附近交易，所以预测 $AVOL\gt 0$。
+其中 $\rho_j=(1-t_{d,j})/(1-t_{g,j})$ 表示投资者 $j$ 对 dividend 的税后估值。若不同 tax clientele 对 dividend 的估值差异足够大，就会在 ex-date 附近交易，所以预测 $AVOL\gt 0$。
    - finding：ex-date 附近出现显著异常交易量。
    - interpretation：clientele 与 arbitrage trading 同时影响 price drop 和 volume。
 
@@ -3055,9 +3067,9 @@ $$
 \end{aligned}
 $$
 
-		- **outcome model**：dividends are the **outcome** of strong investor protection；minority shareholders can force managers / controlling shareholders to distribute cash。
-		- **substitute model**：dividends are a **substitute** for weak investor protection；firms pay dividends voluntarily to build a reputation for treating minority shareholders well。
-	- finding：evidence 更支持 **outcome model**；stronger minority shareholder rights are associated with higher dividend payout。
+- **outcome model**：dividends are the **outcome** of strong investor protection；minority shareholders can force managers / controlling shareholders to distribute cash。
+- **substitute model**：dividends are a **substitute** for weak investor protection；firms pay dividends voluntarily to build a reputation for treating minority shareholders well。
+- finding：evidence 更支持 **outcome model**；stronger minority shareholder rights are associated with higher dividend payout。
 
 ^sec-laporta-2000-pre-reading
 
@@ -5237,7 +5249,7 @@ Y_{it}
 \end{aligned}
 $$
 
-	其中 $Y_{it}$ 是 corporate policy outcome，例如 leverage、dividend payout、repurchase、SEO CAR；$Treated_i$ 是受政策影响更强的公司；$Post_t$ 是政策后；核心系数是 $\beta$。
+其中 $Y_{it}$ 是 corporate policy outcome，例如 leverage、dividend payout、repurchase、SEO CAR；$Treated_i$ 是受政策影响更强的公司；$Post_t$ 是政策后；核心系数是 $\beta$。
 
 -  公告反应写成 event-level regression：
 
