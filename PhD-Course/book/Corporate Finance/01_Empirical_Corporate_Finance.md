@@ -524,29 +524,17 @@ $$
 $$
 
 - private equity 的作用，是通过重新设计控制权和资本结构，把这些来源重新分配
-```tikz
-\begin{tikzpicture}
-\tikzset{
-box/.style={draw, rounded corners=2pt, align=center, font=\small, inner sep=4pt, fill=white, text width=3.2cm},
-stage/.style={box, fill=blue!8, text width=3.4cm},
-offer/.style={box, fill=orange!10, text width=3.1cm},
-edge/.style={-latex, thick}
-}
 
-\node[stage] (fund) at (-8,0) {1. Financing stage\\raise new capital};
-\node[offer] (rights) at (-4,0) {Rights offer\\pro rata new shares};
-\node[stage] (buy) at (0,0) {2. Acquisition stage\\buy control of the firm};
-\node[offer] (cash) at (4,1.4) {Cash tender offer\\pay cash for shares};
-\node[offer] (exch) at (4,-1.4) {Exchange offer\\pay with securities};
-\node[stage] (restruct) at (8,0) {3. Post-buyout restructuring\\rearrange claims};
+:::
 
-\draw[edge] (fund) -- (rights);
-\draw[edge] (rights) -- (buy);
-\draw[edge] (buy) -- (cash);
-\draw[edge] (buy) -- (exch);
-\draw[edge] (cash) -- (restruct);
-\draw[edge] (exch) -- (restruct);
-\end{tikzpicture}
+```mermaid
+flowchart LR
+  fund["1. Financing stage<br/>raise new capital"] --> rights["Rights offer<br/>pro rata new shares"]
+  rights --> buy["2. Acquisition stage<br/>buy control of the firm"]
+  buy --> cash["Cash tender offer<br/>pay cash for shares"]
+  buy --> exch["Exchange offer<br/>pay with securities"]
+  cash --> restruct["3. Post-buyout restructuring<br/>rearrange claims"]
+  exch --> restruct
 ```
 
 - rights offer 更像融资阶段的发新股安排，老股东按比例认购
@@ -555,7 +543,7 @@ edge/.style={-latex, thick}
 - 所以 buyout 是交易阶段的总称，tender/exchange offer 是具体执行工具
 
 
-**Note:** + Buyback
+:::{admonition} Note (+ Buyback)
 buyback：公司回购自己已发行股票，核心结果是减少 outstanding claims，并可能改变 leverage。
 
 $$
@@ -581,7 +569,6 @@ $$
 - buyback 和 exchange offer 的差别是：前者是回购自己的股权，后者是交换不同 securities / claims
 
 :::
-
 
 **Economic mechanism**
 
@@ -827,7 +814,6 @@ Myers (1977) 的核心是：当 debt risky 时，equity 和 debt 的 payoff 会�
 
 :::{admonition} Note
 + Example
-![Pasted image 20260418145309.png](Pasted image 20260418145309.png)
 - Setup
 - $t=0$: assets in place generate $30m$ cash.
 - $t=1$: base firm value is $150m$ in $H$ and $100m$ in $L$, each with prob. $0.5$.
@@ -880,7 +866,6 @@ $$
 
 :::{admonition} Note
 + Example
-![Pasted image 20260418152524.png](Pasted image 20260418152524.png)
 - Setup
 - ongoing project yields $35m$ cash at $t=0$.
 - safe project: cost $25m$, payoff $40m$ in $H$, $20m$ in $L$.
@@ -913,38 +898,16 @@ $$
 :::
 
 **Testable predictions**
-```tikz
-\begin{tikzpicture}
-  \tikzset{
-    root/.style={draw, rounded corners=2pt, align=center, font=\small, inner sep=4pt, fill=white, text width=2.6cm},
-    branch/.style={draw, rounded corners=2pt, align=center, font=\small, inner sep=4pt, fill=blue!8, text width=2.6cm},
-    leaf/.style={draw, rounded corners=2pt, align=center, font=\small, inner sep=3pt, fill=blue!2, text width=3.1cm},
-    edge/.style={-latex, thick}
-  }
-
-  \node[root] (root) at (0,0) {Debt capacity\\Leverage choice};
-
-  \node[branch] (low) at (5,2.0) {Lower leverage};
-  \node[branch] (high) at (5,-2.0) {Higher leverage};
-
-  \draw[edge] (root) -- (low);
-  \draw[edge] (root) -- (high);
-
-  \node[leaf] (risk) at (10,3.4) {High risk\\volatility $\uparrow$};
-  \node[leaf] (unique) at (10,2.1) {Unique industries\\durable goods\\(Titman, 1984)};
-  \node[leaf] (growth) at (10,0.8) {Growth opportunities $\uparrow$\\R\&D $\uparrow$};
-  \node[leaf] (tangible) at (10,-0.8) {Tangible assets $\uparrow$\\collateral $\uparrow$};
-  \node[leaf] (stable) at (10,-2.1) {Cash flow stability $\uparrow$};
-  \node[leaf] (recovery) at (10,-3.4) {Recovery value $\uparrow$\\for lenders};
-
-  \draw[edge] (low) -- (risk);
-  \draw[edge] (low) -- (unique);
-  \draw[edge] (low) -- (growth);
-
-  \draw[edge] (high) -- (tangible);
-  \draw[edge] (high) -- (stable);
-  \draw[edge] (high) -- (recovery);
-\end{tikzpicture}
+```mermaid
+flowchart LR
+  root["Debt capacity<br/>Leverage choice"] --> low["Lower leverage"]
+  root --> high["Higher leverage"]
+  low --> risk["High risk<br/>volatility up"]
+  low --> unique["Unique industries<br/>durable goods<br/>(Titman, 1984)"]
+  low --> growth["Growth opportunities up<br/>R&D up"]
+  high --> tangible["Tangible assets up<br/>collateral up"]
+  high --> stable["Cash flow stability up"]
+  high --> recovery["Recovery value up<br/>for lenders"]
 ```
 > Titman (1984): assets tied to future customer relationships or durable service quality should use less debt.
 
@@ -1032,33 +995,14 @@ $$
 :::
 
 ##### **Testable predictions**
-```tikz
-\begin{tikzpicture}
-  \tikzset{
-    box/.style={draw, rounded corners=2pt, align=center, font=\small, inner sep=4pt, fill=white, text width=3.1cm},
-    head/.style={box, fill=blue!8, text width=3.2cm},
-    pred/.style={box, fill=orange!10, text width=3.4cm},
-    factor/.style={box, fill=blue!2, text width=3.0cm},
-    edge/.style={-latex, thick}
-  }
-
-  \node[head] (issue) at (0,0) {Equity issue};
-  \node[pred] (ret) at (4.3,0) {Return $\downarrow$};
-  \node[head] (agency) at (8.7,0) {Agency cost $\uparrow$ more negative};
-
-  \draw[edge] (issue) -- (ret);
-  \draw[edge] (ret) -- (agency);
-
-  \node[factor] (own) at (13.0,1.8) {Ownership $\downarrow$};
-  \node[factor] (cash) at (13.0,0.6) {Excess cash $\uparrow$};
-  \node[factor] (lev) at (13.0,-0.6) {Leverage $\downarrow$};
-  \node[factor] (gov) at (13.0,-1.8) {Governance $\downarrow$};
-
-  \draw[edge] (agency) -- (own);
-  \draw[edge] (agency) -- (cash);
-  \draw[edge] (agency) -- (lev);
-  \draw[edge] (agency) -- (gov);
-\end{tikzpicture}
+```mermaid
+flowchart LR
+  issue["Equity issue"] --> ret["Return down"]
+  ret --> agency["Agency cost up<br/>more negative"]
+  agency --> own["Ownership down"]
+  agency --> cash["Excess cash up"]
+  agency --> lev["Leverage down"]
+  agency --> gov["Governance down"]
 ```
 
 - H1：free cash flow $\uparrow \implies \text{agency cost}\uparrow$
@@ -1146,12 +1090,9 @@ $$
 	- finding：
 		- summary statistics：样本里 large、unconstrained firms 的融资替代更明显，equity repurchases 和 debt issuance 的联动更强。
 		- empirical results：
-
-		  |市场信号|投资者视角|公司融资视角|
-|---|---|---|
-|debt expected excess return low|债券未来回报低，债券现在偏贵|公司发债成本低，debt cheap to issue|
-|equity expected excess return high|股票未来回报高，股票现在偏便宜|公司回购股票划算，equity cheap to repurchase|
-|equity expected excess return low|股票现在偏贵|公司发股成本低，equity cheap to issue|
+			- debt expected excess return low：债券未来回报低，债券现在偏贵，所以公司发债成本低，debt cheap to issue。
+			- equity expected excess return high：股票未来回报高，股票现在偏便宜，所以公司回购股票划算，equity cheap to repurchase。
+			- equity expected excess return low：股票现在偏贵，所以公司发股成本低，equity cheap to issue。
 
 	- interpretation：资本结构不只是 target leverage adjustment，也可能是对 relative misvaluation 的主动套利；公司在 issuing overvalued equity 或替换到更便宜的 debt 时，实际上是在利用自己 securities 的相对定价差。
 
@@ -1245,57 +1186,25 @@ $$
 \end{aligned}
 $$
 
-```tikz
-\begin{tikzpicture}
-  \tikzset{
-    box/.style={draw, rounded corners=2pt, align=center, font=\small, inner sep=4pt, fill=white, text width=3.0cm},
-    head/.style={box, fill=blue!8, text width=3.2cm},
-    good/.style={box, fill=green!8, text width=3.0cm},
-    warn/.style={box, fill=orange!10, text width=3.1cm},
-    bad/.style={box, fill=red!8, text width=3.1cm},
-    edge/.style={-latex, thick}
-  }
-
-  \node[head] (info) at (0,0) {Information asymmetry\\manager knows more};
-  \node[good] (internal) at (-4,-2) {Internal funds\\best};
-  \node[good] (debt) at (0,-2) {Debt\\second best};
-  \node[bad] (equity) at (4,-2) {Equity\\last resort};
-  \node[warn] (cash) at (6,-4) {Cash offering\\price fall};
-  \node[good] (rights) at (2,-4) {Rights offering\\weaker effect};
-
-  \draw[edge] (info) -- (internal);
-  \draw[edge] (info) -- (debt);
-  \draw[edge] (info) -- (equity);
-  \draw[edge] (equity) -- (cash);
-  \draw[edge] (equity) -- (rights);
-\end{tikzpicture}
+```mermaid
+flowchart TB
+  info["Information asymmetry<br/>manager knows more"] --> internal["Internal funds<br/>best"]
+  info --> debt["Debt<br/>second best"]
+  info --> equity["Equity<br/>last resort"]
+  equity --> cash["Cash offering<br/>price fall"]
+  equity --> rights["Rights offering<br/>weaker effect"]
 ```
 
 
 If managers know more than outside investors, **equity issues** can be read as **bad news**. The dilution mechanism is summarized in [this card](cards/Myers-Majluf dilution problem#card-myers-majluf-dilution). 如果经理人比外部投资者更了解公司真实价值，那么公司宣布发行股票时，市场会怀疑：经理人是不是觉得公司股票被高估了，所以现在愿意卖给外部投资者？
 
-```tikz
-\begin{tikzpicture}
-  \tikzset{
-    box/.style={draw, rounded corners=2pt, align=center, font=\small, inner sep=4pt, fill=white, text width=3.0cm},
-    mid/.style={box, fill=blue!8, text width=3.2cm},
-    pred/.style={box, fill=orange!10, text width=3.0cm},
-    edge/.style={-latex, thick}
-  }
-
-  \node[mid] (info) at (0,0) {Information asymmetry\\manager knows more};
-  \node[box] (under) at (-3,-2.1) {Shares undervalued\\equity issue less likely};
-  \node[box] (over) at (3,-2.1) {Shares overvalued\\equity issue more likely};
-  \node[mid] (issue) at (3,-3.8) {Equity issue};
-  \node[pred] (bad) at (3,-5.6) {Market reads\\bad news};
-  \node[pred] (ret) at (3,-7.4) {Announcement return$\downarrow$};
-
-  \draw[edge] (info) -- (under);
-  \draw[edge] (info) -- (over);
-  \draw[edge] (over) -- (issue);
-  \draw[edge] (issue) -- (bad);
-  \draw[edge] (bad) -- (ret);
-\end{tikzpicture}
+```mermaid
+flowchart TB
+  info["Information asymmetry<br/>manager knows more"] --> under["Shares undervalued<br/>equity issue less likely"]
+  info --> over["Shares overvalued<br/>equity issue more likely"]
+  over --> issue["Equity issue"]
+  issue --> bad["Market reads<br/>bad news"]
+  bad --> ret["Announcement return down"]
 ```
 
 :::{admonition} Note
@@ -1354,66 +1263,29 @@ $$
 
 market timing是信息纠偏问题：如果市场对公告后价格修正得不够快，公司就能利用错价来发股或回购。
 
-```tikz
-\begin{tikzpicture}
-  \tikzset{
-    box/.style={draw, rounded corners=2pt, align=center, font=\small, inner sep=4pt, fill=white, text width=3.0cm},
-    head/.style={box, fill=blue!8, text width=3.4cm},
-    warn/.style={box, fill=orange!10, text width=3.1cm},
-    good/.style={box, fill=green!8, text width=3.1cm},
-    bad/.style={box, fill=red!8, text width=3.1cm},
-    edge/.style={-latex, thick}
-  }
-
-  \node[head] (mkt) at (0,0) {Post-announcement market reaction};
-  \node[good] (full) at (-4,-2.2) {Fully reacts\\no timing opportunity};
-  \node[warn] (under) at (4,-2.2) {Underreacts\\timing opportunity};
-  \node[warn] (eq) at (2,-4.4) {Equity issue\\when stock looks overvalued};
-  \node[good] (bk) at (6,-4.4) {Buyback\\when stock looks undervalued};
-  \node[bad] (eqret) at (2,-6.6) {Long-run abnormal return\\after equity issue is negative};
-  \node[good] (bkret) at (6,-6.6) {Long-run abnormal return\\after buyback is positive};
-
-  \draw[edge] (mkt) -- (full);
-  \draw[edge] (mkt) -- (under);
-  \draw[edge] (under) -- (eq);
-  \draw[edge] (under) -- (bk);
-  \draw[edge] (eq) -- (eqret);
-  \draw[edge] (bk) -- (bkret);
-\end{tikzpicture}
+```mermaid
+flowchart TB
+  mkt["Post-announcement market reaction"] --> full["Fully reacts<br/>no timing opportunity"]
+  mkt --> under["Underreacts<br/>timing opportunity"]
+  under --> eq["Equity issue<br/>when stock looks overvalued"]
+  under --> bk["Buyback<br/>when stock looks undervalued"]
+  eq --> eqret["Long-run abnormal return<br/>after equity issue is negative"]
+  bk --> bkret["Long-run abnormal return<br/>after buyback is positive"]
 ```
 
 ##### Signaling Models
 
 signaling 的核心是：如果公司想让市场相信自己被低估，信号就必须难以伪造；因此 false signaling cost 越高，信号越可信。
 
-```tikz
-\begin{tikzpicture}
-  \tikzset{
-    box/.style={draw, rounded corners=2pt, align=center, font=\small, inner sep=4pt, fill=white, text width=2.8cm},
-    head/.style={box, fill=blue!8, text width=3.0cm},
-    cost/.style={box, fill=orange!10, text width=2.9cm},
-    dd/.style={box, fill=green!8, text width=3.0cm},
-    nd/.style={box, fill=green!8, text width=3.0cm},
-    pred/.style={box, fill=red!8, text width=3.0cm},
-    edge/.style={-latex, thick}
-  }
-
-  \node[head] (sig) at (0,0) {Credible signal\\must be hard to fake};
-  \node[cost] (cost) at (3.6,0) {False signaling cost\\$\uparrow$};
-  \node[dd] (diss) at (6.6,1.2) {Dissipative signaling\\cost is burned};
-  \node[nd] (nondiss) at (6.6,-1.2) {Non-dissipative signaling\\cost is transferred};
-  \node[box] (lev) at (10.0,1.2) {Ross (1977)\\Leverage as a good signal};
-  \node[box] (buy) at (10.0,-1.2) {Vermaelen (1981, 1984)\\Buyback above fair value};
-  \node[pred] (abn) at (13.6,0) {Abnormal return\\positively related to signaling cost};
-
-  \draw[edge] (sig) -- (cost);
-  \draw[edge] (cost) -- (diss);
-  \draw[edge] (cost) -- (nondiss);
-  \draw[edge] (diss) -- (lev);
-  \draw[edge] (nondiss) -- (buy);
-  \draw[edge] (lev) -- (abn);
-  \draw[edge] (buy) -- (abn);
-\end{tikzpicture}
+```mermaid
+flowchart LR
+  sig["Credible signal<br/>must be hard to fake"] --> cost["False signaling cost up"]
+  cost --> diss["Dissipative signaling<br/>cost is burned"]
+  cost --> nondiss["Non-dissipative signaling<br/>cost is transferred"]
+  diss --> lev["Ross (1977)<br/>leverage as a good signal"]
+  nondiss --> buy["Vermaelen (1981, 1984)<br/>buyback above fair value"]
+  lev --> abn["Abnormal return<br/>positively related to signaling cost"]
+  buy --> abn
 ```
 
 - **dissipative signaling**：为了让信号可信，必须付出会被“烧掉”的真实成本；成本本身不回收，也不直接转给别的主体。典型例子是 [Ross (1977)](papers/Ross1977) 里的 leverage 信号，只有好公司更能承受 bankruptcy cost。
@@ -1666,35 +1538,16 @@ trade-off 解释资本结构为什么有最优点，pecking order 解释融资�
 
 :::
 
-```tikz
-\begin{tikzpicture}
-  \tikzset{
-    box/.style={draw, rounded corners=2pt, align=center, font=\small, inner sep=4pt, fill=white, text width=3.1cm},
-    head/.style={box, fill=blue!8, text width=3.4cm},
-    tr/.style={box, fill=green!8, text width=3.0cm},
-    po/.style={box, fill=orange!10, text width=3.0cm},
-    mt/.style={box, fill=orange!10, text width=3.1cm},
-    sg/.style={box, fill=orange!10, text width=3.1cm},
-    note/.style={box, fill=red!8, text width=3.2cm},
-    edge/.style={-latex, thick}
-  }
-
-  \node[head] (root) at (0,0) {Capital structure\\main mechanisms};
-  \node[tr] (trade) at (-7,-2.2) {Trade-off\\tax vs distress vs agency};
-  \node[po] (peck) at (-2.4,-2.2) {Pecking order\\internal funds - debt - equity};
-  \node[mt] (timing) at (2.4,-2.2) {Market timing\\underreaction creates timing opportunity};
-  \node[sg] (sign) at (7,-2.2) {Signaling\\credible signals need cost};
-  \node[note] (test) at (0,-4.8) {Empirical tests\\event studies + cross-sectional predictors};
-
-  \draw[edge] (root) -- (trade);
-  \draw[edge] (root) -- (peck);
-  \draw[edge] (root) -- (timing);
-  \draw[edge] (root) -- (sign);
-  \draw[edge] (trade) -- (test);
-  \draw[edge] (peck) -- (test);
-  \draw[edge] (timing) -- (test);
-  \draw[edge] (sign) -- (test);
-\end{tikzpicture}
+```mermaid
+flowchart TB
+  root["Capital structure<br/>main mechanisms"] --> trade["Trade-off<br/>tax vs distress vs agency"]
+  root --> peck["Pecking order<br/>internal funds - debt - equity"]
+  root --> timing["Market timing<br/>underreaction creates timing opportunity"]
+  root --> sign["Signaling<br/>credible signals need cost"]
+  trade --> test["Empirical tests<br/>event studies + cross-sectional predictors"]
+  peck --> test
+  timing --> test
+  sign --> test
 ```
 
 ### 1.4 Event studies of capital structure changes
@@ -1947,38 +1800,16 @@ $$
 
 
 ### 2.3 Dividend irrelevance M&M
-```tikz
-\begin{tikzpicture}
-\tikzset{
-  box/.style={draw, rounded corners=2pt, align=center, font=\small, inner sep=4pt},
-  shock/.style={box, fill=white},
-  mechanism/.style={box, fill=blue!8},
-  outcome/.style={box, fill=orange!12},
-  edge/.style={-latex, thick}
-}
-  \node[shock] (payout) at (0,0) {Dividend\\policy};
-
-  \node[mechanism] (mm) at (3.5,1.8) {Perfect capital\\markets};
-  \node[outcome] (mmout) at (7.5,1.8) {Firm value\\unchanged};
-
-  \node[mechanism] (tax) at (3.5,0.6) {Dividend vs. capital\\gains tax wedge};
-  \node[outcome] (taxout) at (7.5,0.6) {Tax clientele\\and price drop};
-
-  \node[mechanism] (arb) at (3.5,-0.6) {Ex-date price\\deviation};
-  \node[outcome] (arbout) at (7.5,-0.6) {Short-term\\arbitrage volume};
-
-  \node[mechanism] (timing) at (3.5,-1.8) {Expected tax\\change};
-  \node[outcome] (timingout) at (7.5,-1.8) {Payout timing\\adjustment};
-
-  \draw[edge] (payout) -- (mm);
-  \draw[edge] (payout) -- (tax);
-  \draw[edge] (payout) -- (arb);
-  \draw[edge] (payout) -- (timing);
-  \draw[edge] (mm) -- (mmout);
-  \draw[edge] (tax) -- (taxout);
-  \draw[edge] (arb) -- (arbout);
-  \draw[edge] (timing) -- (timingout);
-\end{tikzpicture}
+```mermaid
+flowchart LR
+  payout["Dividend policy"] --> mm["Perfect capital markets"]
+  payout --> tax["Dividend vs. capital gains tax wedge"]
+  payout --> arb["Ex-date price deviation"]
+  payout --> timing["Expected tax change"]
+  mm --> mmout["Firm value unchanged"]
+  tax --> taxout["Tax clientele and price drop"]
+  arb --> arbout["Short-term arbitrage volume"]
+  timing --> timingout["Payout timing adjustment"]
 ```
 
 #### 2.3.1 MM Dividend Irrelevance Hypothesis
@@ -2707,38 +2538,16 @@ $$
 
 ### 2.4 Dividend relevance: why the irrelevance result breaks in the real world
 
-```tikz
-\begin{tikzpicture}
-\tikzset{
-  box/.style={draw, rounded corners=2pt, align=center, font=\small, inner sep=4pt},
-  shock/.style={box, fill=white},
-  mechanism/.style={box, fill=blue!8},
-  outcome/.style={box, fill=orange!12},
-  edge/.style={-latex, thick}
-}
-  \node[shock] (div) at (0,0) {Dividend policy};
-
-  \node[mechanism] (investor) at (4.7,2.25) {Investor transaction costs};
-  \node[outcome] (investorout) at (9.7,2.25) {Consumption clientele};
-
-  \node[mechanism] (company) at (4.7,0.75) {External financing costs};
-  \node[outcome] (companyout) at (9.7,0.75) {Life-cycle payout};
-
-  \node[mechanism] (signal) at (4.7,-0.75) {Information asymmetry};
-  \node[outcome] (signalout) at (9.7,-0.75) {Dividend signaling};
-
-  \node[mechanism] (agency) at (4.7,-2.25) {Free cash flow agency cost};
-  \node[outcome] (agencyout) at (9.7,-2.25) {Monitoring / governance};
-
-  \draw[edge] (div) -- (investor);
-  \draw[edge] (div) -- (company);
-  \draw[edge] (div) -- (signal);
-  \draw[edge] (div) -- (agency);
-  \draw[edge] (investor) -- (investorout);
-  \draw[edge] (company) -- (companyout);
-  \draw[edge] (signal) -- (signalout);
-  \draw[edge] (agency) -- (agencyout);
-\end{tikzpicture}
+```mermaid
+flowchart LR
+  div["Dividend policy"] --> investor["Investor transaction costs"]
+  div --> company["External financing costs"]
+  div --> signal["Information asymmetry"]
+  div --> agency["Free cash flow agency cost"]
+  investor --> investorout["Consumption clientele"]
+  company --> companyout["Life-cycle payout"]
+  signal --> signalout["Dividend signaling"]
+  agency --> agencyout["Monitoring / governance"]
 ```
 
 MM 的 dividend irrelevance 依赖 frictionless markets；现实里只要出现 **investor transactions costs**、**company transactions costs**、**information asymmetry** 或 **agency costs**，dividend 就会重新变得 relevant。
@@ -3773,43 +3582,19 @@ Seasoned equity offers (SEOs) 是“后续股权发行/增发”，已经上市�
 
 SEO 的主要 flotation methods 可以分成下面几类：
 
-```tikz
-\begin{tikzpicture}
-\tikzset{
-  root/.style={draw, rounded corners=2pt, fill=white, align=center, font=\small, inner sep=3pt},
-  group/.style={draw, rounded corners=2pt, fill=white, align=center, font=\small, inner sep=3pt},
-  method/.style={draw, rounded corners=2pt, fill=blue!70!black, text=white, align=center, font=\small, inner sep=3pt},
-  sub/.style={draw, rounded corners=2pt, fill=blue!12, align=center, font=\small, inner sep=3pt},
-  edge/.style={draw, -latex}
-}
-  \node[root] (root) at (0,0) {SEO flotation methods};
-
-  \node[group] (cur) at (2.5,2.0) {Current\\shareholders};
-  \node[group] (out) at (2.5,-2.0) {Outside\\investors};
-  \draw[edge] (root) -- (cur);
-  \draw[edge] (root) -- (out);
-
-  \node[method] (rights) at (6,2.0) {Rights offer};
-  \node[group] (public) at (6,-0.5) {Public offer};
-  \node[method] (private) at (6,-3.5) {Private placement};
-  \draw[edge] (cur) -- (rights);
-  \draw[edge] (out) -- (public);
-  \draw[edge] (out) -- (private);
-
-  \node[sub] (u) at (9,2.7) {Uninsured};
-  \node[sub] (s) at (9,2.0) {Standby};
-  \node[sub] (o) at (9,1.3) {Open offer};
-  \draw[edge] (rights) -- (u);
-  \draw[edge] (rights) -- (s);
-  \draw[edge] (rights) -- (o);
-
-  \node[method] (f) at (9,0.2) {Firm commitment};
-  \node[method] (b) at (9,-0.5) {Best efforts};
-  \node[method] (sh) at (9,-1.2) {Shelf registration};
-  \draw[edge] (public) -- (f);
-  \draw[edge] (public) -- (b);
-  \draw[edge] (public) -- (sh);
-\end{tikzpicture}
+```mermaid
+flowchart LR
+  root["SEO flotation methods"] --> cur["Current shareholders"]
+  root --> out["Outside investors"]
+  cur --> rights["Rights offer"]
+  out --> public["Public offer"]
+  out --> private["Private placement"]
+  rights --> uninsured["Uninsured"]
+  rights --> standby["Standby"]
+  rights --> open["Open offer"]
+  public --> firm["Firm commitment"]
+  public --> best["Best efforts"]
+  public --> shelf["Shelf registration"]
 ```
 
 1. **Rights offer**
@@ -3845,44 +3630,12 @@ SEO 的主要 flotation methods 可以分成下面几类：
 
 这张表的核心趋势很清楚：**FC dominates; rights shrink to near zero; standby stays small**.
 
-```tikz
-\begin{tikzpicture}
-  \draw[-latex] (0,0) -- (12.2,0) node[right] {sample period};
-  \draw[-latex] (0,0) -- (0,5.7) node[above] {share (\%)};
-
-  \foreach \y/\lab in {1/20,2/40,3/60,4/80,5/100} {
-    \draw[gray!25] (0,\y) -- (11.7,\y);
-    \node[left] at (0,\y) {\lab};
-  }
-
-  \foreach \x/\lab in {1/1980,4/1981,7/1963--1981,10/1982--2003} {
-    \draw[gray!25] (\x,0) -- (\x,5.1);
-    \node[below] at (\x,0) {\lab};
-  }
-
-  % FC
-  \fill[blue!70!black] (0.6,0) rectangle (1.4,4.85);
-  \fill[blue!70!black] (3.6,0) rectangle (4.4,4.90);
-  \fill[blue!70!black] (6.6,0) rectangle (7.4,4.20);
-  \fill[blue!70!black] (9.6,0) rectangle (10.4,4.80);
-
-  % Stand
-  \fill[gray!70!black] (1.6,0) rectangle (2.4,0.06);
-  \fill[gray!70!black] (4.6,0) rectangle (5.4,0.04);
-  \fill[gray!70!black] (7.6,0) rectangle (8.4,0.55);
-  \fill[gray!70!black] (10.6,0) rectangle (11.4,0.18);
-
-  % Rights
-  \fill[orange!80!black] (2.6,0) rectangle (3.4,0.10);
-  \fill[orange!80!black] (5.6,0) rectangle (6.4,0.08);
-  \fill[orange!80!black] (8.6,0) rectangle (9.4,0.23);
-  \fill[orange!80!black] (11.6,0) rectangle (12.0,0.00);
-
-  \node[anchor=west, blue!70!black] at (8.2,5.25) {FC};
-  \node[anchor=west, gray!70!black] at (9.2,5.25) {Stand};
-  \node[anchor=west, orange!80!black] at (10.4,5.25) {Rights};
-\end{tikzpicture}
-```
+| Sample period | Firm commitment | Standby rights | Rights offer |
+| :--- | :---: | :---: | :---: |
+| 1980 | high | near zero | near zero |
+| 1981 | high | near zero | near zero |
+| 1963--1981 | high | small but visible | small |
+| 1982--2003 | high | near zero | nearly absent |
 
 结论：美国公开市场 SEO 的发行方式在样本期内明显向 firm commitment 集中，rights issue 逐步退出主流。
 
@@ -4000,49 +3753,20 @@ $$
 
 ### 3.4 Hypotheses and Theories
 
-```tikz
-\begin{tikzpicture}
-\tikzset{
-  box/.style={draw, rounded corners=2pt, align=center, font=\small, inner sep=4pt},
-  shock/.style={box, fill=white},
-  mechanism/.style={box, fill=blue!8},
-  outcome/.style={box, fill=orange!12},
-  edge/.style={-latex, thick}
-}
-  \node[shock] (seo) at (0,0) {SEO\\announcement};
-
-  \node[mechanism] (target) at (3.4,2.5) {Leverage gap\\vs. target};
-  \node[outcome] (target_e) at (7.2,2.5) {Capital structure\\adjustment};
-
-  \node[mechanism] (monitor) at (3.4,1.25) {Ownership change\\monitoring};
-  \node[outcome] (monitor_e) at (7.2,1.25) {Agency cost\\changes};
-
-  \node[mechanism] (pressure) at (3.4,0) {New share supply\\liquidity demand};
-  \node[outcome] (pressure_e) at (7.2,0) {Temporary\\price pressure};
-
-  \node[mechanism] (cash) at (3.4,-1.25) {External financing\\reveals cash flow};
-  \node[outcome] (cash_e) at (7.2,-1.25) {Implied cash flow\\news};
-
-  \node[mechanism] (asym) at (3.4,-2.5) {Managers issue when\\equity overvalued};
-  \node[outcome] (asym_e) at (7.2,-2.5) {Adverse selection\\dilution};
-
-  \node[mechanism] (timing) at (3.4,-3.75) {High valuation\\hot market};
-  \node[outcome] (timing_e) at (7.2,-3.75) {Long-run\\underperformance};
-
-  \draw[edge] (seo) -- (target);
-  \draw[edge] (seo) -- (monitor);
-  \draw[edge] (seo) -- (pressure);
-  \draw[edge] (seo) -- (cash);
-  \draw[edge] (seo) -- (asym);
-  \draw[edge] (seo) -- (timing);
-
-  \draw[edge] (target) -- (target_e);
-  \draw[edge] (monitor) -- (monitor_e);
-  \draw[edge] (pressure) -- (pressure_e);
-  \draw[edge] (cash) -- (cash_e);
-  \draw[edge] (asym) -- (asym_e);
-  \draw[edge] (timing) -- (timing_e);
-\end{tikzpicture}
+```mermaid
+flowchart LR
+  seo["SEO announcement"] --> target["Leverage gap<br/>vs. target"]
+  seo --> monitor["Ownership change<br/>monitoring"]
+  seo --> pressure["New share supply<br/>liquidity demand"]
+  seo --> cash["External financing<br/>reveals cash flow"]
+  seo --> asym["Managers issue when<br/>equity overvalued"]
+  seo --> timing["High valuation<br/>hot market"]
+  target --> target_e["Capital structure<br/>adjustment"]
+  monitor --> monitor_e["Agency cost<br/>changes"]
+  pressure --> pressure_e["Temporary<br/>price pressure"]
+  cash --> cash_e["Implied cash flow<br/>news"]
+  asym --> asym_e["Adverse selection<br/>dilution"]
+  timing --> timing_e["Long-run<br/>underperformance"]
 ```
 
 #### 3.4.1 Optimal Capital Structure Hypothesis
@@ -4791,29 +4515,14 @@ $$
 - $c \downarrow$ 时，控制权私益变弱，rights 相对优势缩小，发行方式之间的差异也会变小。
 - 如果 $c$ 很低，rights puzzle 的“反向版本”就不明显了，因为 control consideration 不再是主导因素。
 
-```tikz
-\begin{tikzpicture}
-  \tikzset{
-    box/.style={draw, rounded corners=2pt, align=center, font=\small, inner sep=4pt, fill=white},
-    hi/.style={box, fill=blue!10},
-    lo/.style={box, fill=orange!10},
-    edge/.style={-latex, thick}
-  }
-
-  \node[box] (c) at (0,0) {$c$ : private benefits of control};
-  \node[hi] (high) at (4,1.4) {$c$ high\\insider values control more};
-  \node[lo] (low) at (4,-1.4) {$c$ low\\control rent is smaller};
-  \node[hi] (rights) at (8,1.4) {Rights issue\\less dilution of control};
-  \node[lo] (place) at (8,-1.4) {Placement\\more dilution of control};
-
-  \draw[edge] (c) -- (high);
-  \draw[edge] (c) -- (low);
-  \draw[edge] (high) -- (rights);
-  \draw[edge] (low) -- (place);
-
-  \node[anchor=south] at (6,2.3) {higher $c$ $\rightarrow$ stronger preference for rights};
-  \node[anchor=north] at (6,-2.3) {lower $c$ $\rightarrow$ placement is less costly};
-\end{tikzpicture}
+```mermaid
+flowchart LR
+  c["c: private benefits of control"] --> high["c high<br/>insider values control more"]
+  c --> low["c low<br/>control rent is smaller"]
+  high --> rights["Rights issue<br/>less dilution of control"]
+  low --> place["Placement<br/>more dilution of control"]
+  rights --> highpref["higher c -> stronger preference for rights"]
+  place --> lowpref["lower c -> placement is less costly"]
 ```
 
 #### 3.5.4 Announcement Effect
@@ -4832,21 +4541,13 @@ $$
 \end{aligned}
 $$
 
-```tikz
-\begin{tikzpicture}
-  \node (seo) at (0,0) [draw, rounded corners, align=center] {SEO announcement};
-  \node (split) at (0,-1.4) [draw, rounded corners, align=center] {Which info source dominates?};
-  \node (aip) at (-4,-3) [draw, rounded corners, align=center] {Assets-in-place\\dominant};
-  \node (io) at (4,-3) [draw, rounded corners, align=center] {Investment opportunities\\dominant};
-  \node (negret) at (-4,-5) [draw, rounded corners, align=center] {Bad news\\negative return};
-  \node (posret) at (4,-5) [draw, rounded corners, align=center] {Growth / certification signal\\less negative or positive return};
-
-  \draw[-latex] (seo) -- (split);
-  \draw[-latex] (split) -- (aip);
-  \draw[-latex] (split) -- (io);
-  \draw[-latex] (aip) -- (negret);
-  \draw[-latex] (io) -- (posret);
-\end{tikzpicture}
+```mermaid
+flowchart TB
+  seo["SEO announcement"] --> split["Which info source dominates?"]
+  split --> aip["Assets-in-place dominant"]
+  split --> io["Investment opportunities dominant"]
+  aip --> negret["Bad news<br/>negative return"]
+  io --> posret["Growth / certification signal<br/>less negative or positive return"]
 ```
 
 #### 3.5.5 Long-Run Performance
