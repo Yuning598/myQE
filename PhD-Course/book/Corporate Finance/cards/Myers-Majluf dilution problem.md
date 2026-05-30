@@ -54,6 +54,7 @@ $$
 
 (card-myers-majluf-dilution)=
 (^card-myers-majluf-dilution)=
+
 ^card-myers-majluf-dilution
 
 当市场怀疑 firm 被 overvalued 时，$\hat p$ 会更低，dilution 更严重，因此 equity 往往被放在融资顺序的最后，形成 pecking order。equity issuance 也容易被市场解读成 bad news，因为它不仅融资，还会透露 manager 对估值和 firm quality 的看法。

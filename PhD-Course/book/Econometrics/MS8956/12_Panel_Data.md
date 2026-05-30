@@ -401,7 +401,7 @@ $$
 
 :::
 
-^prop-5-1
+^prop-5-2-fixed-effects-variance
 
 **Digression: When $\eta_i$ is Spherical**
 

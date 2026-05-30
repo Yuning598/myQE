@@ -4,7 +4,8 @@ orphan: true
 
 # Corporate Finance Paper Index
 
-![[PhD-Course/book/attachment/Pasted image 20260503211049.png]]
+![Corporate Finance paper map](../attachment/Pasted image 20260503211049.png)
+
 ## Firm Valuation, Investment, and Financing Decisions
 
 - [ ] Berk and DeMarzo (2011), *Corporate Finance*, Part V, Chapters 14-16. 

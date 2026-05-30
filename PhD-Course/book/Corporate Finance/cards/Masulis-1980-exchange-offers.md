@@ -8,6 +8,7 @@ orphan: true
 
 (card-masulis-1980-exchange-offers)=
 (^card-masulis-1980-exchange-offers)=
+
 ^card-masulis-1980-exchange-offers
 
 ## Exchange offers
@@ -27,6 +28,4 @@ $$
 \end{aligned}
 $$
 
-![Pasted image 20260419124013.png](Pasted image 20260419124013.png)
-
-![attachment/Pasted image 20260501165711.png](attachment/Pasted image 20260501165711.png)
+![Masulis exchange offer result table](../../attachment/Pasted image 20260501165711.png)

@@ -61,6 +61,7 @@ C''(D)>0.
 $$
 
 ^definition-tradeoff-valuation
+
 ```
 
 完整版本包含所有收益和成本项：
@@ -101,6 +102,7 @@ $$
 $$
 
 ^prop-interior-optimal-leverage
+
 ```
 
 在简化模型 $V_L(D)=V_U+\tau_C D-C(D)$ 下：

@@ -60,6 +60,7 @@ $$
 
 (card-laporta-2000-dividend-agency)=
 (^card-laporta-2000-dividend-agency)=
+
 ^card-laporta-2000-dividend-agency
 
 Related section: <a href="../01_Empirical_Corporate_Finance.html#sec-laporta-2000-pre-reading">Pre-reading Paper #4: La Porta et al. (2000)</a>

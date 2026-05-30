@@ -48,6 +48,7 @@ $$
 
 (card-apv-adjusted-present-value)=
 (^card-apv-adjusted-present-value)=
+
 ^card-apv-adjusted-present-value
 
 Related section: <a href="../01_Empirical_Corporate_Finance.html#sec-tax-shield-capital-structure">Taxes and Levered Value</a>

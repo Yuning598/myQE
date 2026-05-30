@@ -126,8 +126,6 @@ $$
 
 :::
 
-![Pasted image 20260421232321.png](Pasted image 20260421232321.png)
-
 $$
 \begin{aligned}
 \tilde w
@@ -2205,7 +2203,7 @@ $$
 
 $$
 直观上，若某个 frontier portfolio 的 expected return 还低于 GMV，则沿 frontier 向 GMV 移动会同时提高 expected return 并降低 variance；因此它不是 efficient。反过来，GMV 右侧的 frontier points 才是真正的 mean-variance trade-off 区域。
-![attachment/Pasted image 20260423100816.png](attachment/Pasted image 20260423100816.png)
+![Mean-variance frontier illustration 1](../../attachment/Pasted image 20260423100816.png)
 
 
 :::
@@ -2218,7 +2216,7 @@ $$
 
 关联卡片：[Asset Pricing/Theoretical AP/cards/part1/CML 与 Tangency Portfolio](Asset Pricing/Theoretical AP/cards/part1/CML 与 Tangency Portfolio)
 
-![attachment/Pasted image 20260423100917.png](attachment/Pasted image 20260423100917.png)
+![Mean-variance frontier illustration 2](../../attachment/Pasted image 20260423100917.png)
 
 #### 3.1.1 One Risky Asset and One Risk-Free Asset
 
@@ -2901,6 +2899,7 @@ $$
 :::
 
 ^def-3-2-3-cost-capital
+
 #### 3.2.4 Mean-Variance Efficiency
 
 关联前文：[mean-variance frontier with a risk-free asset](Asset Pricing/Theoretical AP/01_Single_Period_Models#3.1.2 Framework)、[tangency portfolio](Asset Pricing/Theoretical AP/01_Single_Period_Models#3.1.3 Tangency Portfolio)、[two-fund spanning](Asset Pricing/Theoretical AP/01_Single_Period_Models#3.1.4 Two-Fund Spanning)
@@ -3131,6 +3130,7 @@ E[\tilde m\tilde R]
 \end{aligned}
 
 $$
+
 ^prop-3-2-5-sdf
 
 **说明：Sign of the CAPM SDF**
@@ -3677,6 +3677,7 @@ $$
 - Fama-French five-factor model: add RMW and CMA
 
 这些模型都可以看作是在 CAPM 之后，对 factor set 的进一步扩展，用来提高对 cross-section of returns 的解释力。
+
 ^note-3-2-13-popular-models
 
 ### 3.3 Competitive Equilibrium and Representative Investor

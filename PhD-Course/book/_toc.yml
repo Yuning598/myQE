@@ -39,7 +39,6 @@ parts:
           - file: Corporate Finance/theories/Financial_Distress_Theory
           - file: Corporate Finance/theories/Payout_Policy_Theory
           - file: Corporate Finance/theories/SEO_Theory
-      - file: Corporate Finance/Theory_Reading_Guide
   - caption: Econometrics
     chapters:
       - file: Econometrics/index

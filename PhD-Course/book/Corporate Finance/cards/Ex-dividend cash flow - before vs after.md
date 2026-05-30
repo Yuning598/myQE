@@ -20,6 +20,7 @@ Short summary: before ex-date the investor realizes mainly capital gains and no 
 
 (card-ex-dividend-cashflow-summary)=
 (^card-ex-dividend-cashflow-summary)=
+
 ^card-ex-dividend-cashflow-summary
 
 $$
@@ -58,6 +59,7 @@ $$
 
 (card-ex-dividend-cashflow)=
 (^card-ex-dividend-cashflow)=
+
 ^card-ex-dividend-cashflow
 
 Related section: <a href="../01_Empirical_Corporate_Finance.html#sec-dividend-ex-date-tax-pricing">Do Stock Prices Reflect Personal Taxes?</a>

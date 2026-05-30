@@ -39,6 +39,7 @@ $$
 
 (card-geometric-series-a1q)=
 (^card-geometric-series-a1q)=
+
 ^card-geometric-series-a1q
 
 相关章节：[Part 1 Empirical Corporate Finance](../01_Empirical_Corporate_Finance.md)

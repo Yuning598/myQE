@@ -8,6 +8,7 @@ orphan: true
 
 (recap-definition)=
 (^recap-definition)=
+
 ^recap-definition
 
 如果特别说 **leveraged recapitalization**，通常是指：
@@ -33,6 +34,7 @@ $$
 
 (card-leveraged-recapitalization-recap)=
 (^card-leveraged-recapitalization-recap)=
+
 ^card-leveraged-recapitalization-recap
 
 Related section: <a href="../01_Empirical_Corporate_Finance.html#sec-mm-benchmark">MM as a Benchmark</a>

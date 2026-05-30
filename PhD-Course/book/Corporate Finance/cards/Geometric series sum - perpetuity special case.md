@@ -25,6 +25,7 @@ $$
 
 (card-geometric-series-perpetuity)=
 (^card-geometric-series-perpetuity)=
+
 ^card-geometric-series-perpetuity
 
 相关章节：[Part 1 Empirical Corporate Finance](../01_Empirical_Corporate_Finance.md)

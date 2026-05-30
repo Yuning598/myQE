@@ -11,6 +11,7 @@ $$
 :::
 
 ^equation-4-1-1
+
 >这里，$i = 1, 2, \dots, n$ 表示样本中的第 $i$ 个观测值。
 >其中 $n$ 是样本量，$z_{im}$ 是 $L_m$ 维回归量向量，$\delta_m$ 是可形变系数向量，$\epsilon_{im}$ 是第 $m$ 个方程中不可观测的误差项。
 >$$
@@ -24,6 +25,7 @@ $$
 > 注释
 > - 对误差项 ($\epsilon_{i1}, \dots, \epsilon_{iM}$) 之间的方程间（或同期）相关性没有假设。
 > - 对不同方程的系数没有先验限制。
+
 ^assumption-4-1
 
 :::{admonition} Definition (Assumption 4.2 (Ergodic Stationarity))
@@ -43,7 +45,9 @@ $$
 $$
 \begin{pmatrix} \sum_{m=1}^M K_m \times 1 \end{pmatrix} g_i \equiv  \begin{bmatrix} x_{i1} \cdot \epsilon_{i1} \\ \vdots \\ x_{iM} \cdot \epsilon_{iM} \end{bmatrix}, \tag{4.1.4}
 $$
+
 ^equation-4-1-4
+
 那么所有 these orthogonality conditions 可以紧凑地写为 $E(g_i) = 0$。
 :::
 
@@ -55,6 +59,7 @@ $$
 
 - $z_{im}$ 代表回归量，其维度为 $L_m \times 1$。
 - $x_{im}$ 代表工具变量 (IV)，其维度为 $K_m \times 1$。
+
 ^assumption-4-4
 
 :::{admonition} Definition (Assumption 4.5 ($g_i$ is a martingale difference sequence with finite second moments))
@@ -74,7 +79,9 @@ $$
 \frac{1}{n} \sum_{i=1}^n \hat{\epsilon}_{iM}\hat{\epsilon}_{i1}x_{iM}x'_{i1} & \dots & \frac{1}{n} \sum_{i=1}^n \hat{\epsilon}_{iM}\hat{\epsilon}_{iM}x_{iM}x'_{iM}
 \end{bmatrix} \tag{4.3.2}
 $$
+
 ^equation-4-3-2
+
 其中，$\hat{\epsilon}_{im}$ 是 $\epsilon_{im}$ 的一致估计。块收敛关系：$\frac{1}{n} \sum_{i=1}^n \hat{\epsilon}_{i1} \hat{\epsilon}_{i2} x_{i1} x'_{i2} \xrightarrow{p} E(\epsilon_{i1} \epsilon_{i2} x_{i1} x'_{i2})$。
 :::
 
@@ -133,6 +140,7 @@ $$
 $$
 S = \underbrace{E(g_i g'_i)}_{(\sum_{m=1}^M K_m \times \sum_{m=1}^M K_m)} = \begin{bmatrix} E(\epsilon_{i1}\epsilon_{i1}x_{i1}x'_{i1}) & \dots & E(\epsilon_{i1}\epsilon_{iM}x_{i1}x'_{iM}) \\ \vdots & \ddots & \vdots \\ E(\epsilon_{iM}\epsilon_{i1}x_{iM}x'_{i1}) & \dots & E(\epsilon_{iM}\epsilon_{iM}x_{iM}x'_{iM}) \end{bmatrix} \tag{4.1.11}
 $$
+
 ^equation-4-1-11
 
 考虑 $g_i$ 是由工具变量和残差构成的向量 $g_i = (x_{i1}\epsilon_{i1}, x_{i2}\epsilon_{i2}, \dots, x_{iM}\epsilon_{iM})'$。对于简化情况 $g_i = \begin{pmatrix} x_{i1}\epsilon_{i1} \\ x_{i2}\epsilon_{i2} \end{pmatrix}$，其块矩阵形式为：
@@ -151,6 +159,7 @@ $$
 $$
 \equiv \underset{(K_{sys} \times 1)}{s_{xy}} - \underset{(K_{sys} \times L_{sys})}{S_{xz}} \underset{(L_{sys} \times 1)}{\tilde{\delta}}, \tag{4.2.1}
 $$
+
 ^equation-4-2-1
 
 其中，$s_{xy}$ 和 $S_{xz}$ 是样本矩的对应量：
@@ -237,11 +246,13 @@ Proposition 4.2 (consistent estimation of $S$, the asymptotic variance of $\bar{
 $$
 \text{Avar}(\hat{\delta}(\hat{S}^{-1})) = (\Sigma_{xz}' S^{-1} \Sigma_{xz})^{-1} \tag{4.3.3}
 $$
+
 ^equation-4-3-3
 
 $$
 \widehat{\text{Avar}}(\hat{\delta}(\hat{S}^{-1})) = (S_{xz}' \hat{S}^{-1} S_{xz})^{-1} \tag{4.3.4}
 $$
+
 ^equation-4-3-4
 
 - **Test of overidentifying restrictions (过度识别检验)**:
@@ -298,6 +309,7 @@ $$
 $$
 E(\epsilon_{im}\epsilon_{ih}x_{im}x'_{ih}) = \mathbf{0} \quad \text{for all } m \neq h (= 1, 2, \dots, M) \tag{4.4.3}
 $$
+
 ^equation-4-4-3
 
 这意味着渐近方差矩阵 $S$ 具有块对角结构：
@@ -416,6 +428,7 @@ Example: Bias Propagation in Joint Estimation
 $$
 \text{plim}_{n \to \infty} \hat{\boldsymbol{\delta}}(\widehat{\mathbf{W}}) - \boldsymbol{\delta} = (\boldsymbol{\Sigma}_{xz}' \mathbf{W} \boldsymbol{\Sigma}_{xz})^{-1} \boldsymbol{\Sigma}_{xz}' \mathbf{W} \begin{bmatrix} \mathbf{0} \\ \vdots \\ \mathbf{0} \\ \mathbb{E}(\mathbf{x}_{iM} \cdot \varepsilon_{iM}) \end{bmatrix} \tag{4.4.4}
 $$
+
 ^equation-4-4-4
 
 除非 $\widehat{\mathbf{W}}$ 是块对角阵，否则所有方程 $i = 1, \dots, M$ 的估计量 $\boldsymbol{\delta}_i$ 都是渐近有偏的。
@@ -526,6 +539,7 @@ $$
 $$
 \widehat{\boldsymbol{\Sigma}} \equiv \begin{bmatrix} \hat{\sigma}_{11} & \dots & \hat{\sigma}_{1M} \\ \vdots & \ddots & \vdots \\ \hat{\sigma}_{M1} & \dots & \hat{\sigma}_{MM} \end{bmatrix} = \frac{1}{n} \sum_{i=1}^n \hat{\boldsymbol{\epsilon}}_i \hat{\boldsymbol{\epsilon}}'_i \tag{4.5.7}
 $$
+
 ^equation-4-5-7
 
 #### Kronecker Product Representation
@@ -553,6 +567,7 @@ $$
 $$
 \widehat{S} = \widehat{\boldsymbol{\Sigma}} \otimes \left( \frac{1}{n} \sum_{i=1}^n \mathbf{x}_i \mathbf{x}'_i \right) \tag{4.5.10}
 $$
+
 ^equation-4-5-10
 
 根据性质 $(A \otimes B)^{-1} = A^{-1} \otimes B^{-1}$，有效权重矩阵 $\widehat{W} = \widehat{S}^{-1}$ 为：
@@ -563,6 +578,7 @@ $$
 $$
 \widehat{W}_{mh} \left( \equiv (m,h) \text{ block of } \widehat{W} \right) = \hat{\sigma}^{mh} \cdot \left( \frac{1}{n} \sum_{i=1}^n \mathbf{x}_i \mathbf{x}'_i \right)^{-1} \tag{4.5.11}
 $$
+
 ^equation-4-5-11
 
 其中 $\hat{\sigma}^{mh}$ 是 $\widehat{\boldsymbol{\Sigma}}^{-1}$ 的第 $(m, h)$ 个元素。
@@ -619,6 +635,7 @@ $$
 J(\hat{\delta}_{\text{3SLS}}, \widehat{S}^{-1}) \equiv n \cdot g_n(\hat{\delta}_{\text{3SLS}})' \widehat{S}^{-1} g_n(\hat{\delta}_{\text{3SLS}}) \xrightarrow{d} \chi^2 \left( MK - \sum_m L_m \right)
 $$
 其中 $g_n(\cdot)$ 由 [(4.2.1)](#^equation-4-2-1) 给出。
+
 ^prop-4-4-3sls
 
 :::
@@ -633,6 +650,7 @@ $$\hat{\delta}_{\text{3SLS}} = \begin{bmatrix}
 \vdots \\
 \hat{\sigma}^{M1}\hat{\mathbf{c}}_{M1} + \dots + \hat{\sigma}^{MM}\hat{\mathbf{c}}_{MM}
 \end{bmatrix} \tag{4.5.12}$$
+
 ^equation-4-5-12
 
 其中：
@@ -669,12 +687,14 @@ $$\text{Avar}(\hat{\delta}_{\text{3SLS}}) = \begin{bmatrix}
 \vdots & \ddots & \vdots \\
 \sigma^{M1}\mathbf{A}_{M1} & \dots & \sigma^{MM}\mathbf{A}_{MM}
 \end{bmatrix}^{-1} \tag{4.5.15}$$
+
 ^equation-4-5-15
 
 其中
 $$
 \mathbf{A}_{mh} \equiv E(\mathbf{z}_{im}\mathbf{x}'_i) [E(\mathbf{x}_i\mathbf{x}'_i)]^{-1} E(\mathbf{x}_i\mathbf{z}'_{ih}) \tag{4.5.16}
 $$
+
 ^equation-4-5-16
 
 且 $\sigma^{mh}$ 是 $\boldsymbol{\Sigma}^{-1}$ 的第 $(m, h)$ 个元素。
@@ -685,6 +705,7 @@ $$\widehat{\text{Avar}}(\hat{\delta}_{\text{3SLS}}) = \begin{bmatrix}
 \vdots & \ddots & \vdots \\
 \hat{\sigma}^{M1}\widehat{\mathbf{A}}_{M1} & \dots & \hat{\sigma}^{MM}\widehat{\mathbf{A}}_{MM}
 \end{bmatrix}^{-1} \tag{4.5.17}$$
+
 ^equation-4-5-17
 
 :::{admonition} Proposition
@@ -709,28 +730,33 @@ $$
 $$
 \mathbf{x}_i = \text{union of } (\mathbf{z}_{i1}, \dots, \mathbf{z}_{iM}) \tag{4.5.18}
 $$
+
 ^equation-4-5-18
 
 这等价于所有回归量满足“跨方程”正交性条件：
 $$
 E(\mathbf{z}_{im} \cdot \epsilon_{ih}) = \mathbf{0} \quad (m, h = 1, 2, \dots, M) \tag{4.5.18'}
 $$
+
 ^equation-4-5-18-prime
 
 在这种简化情况下的估计量称为 **SUR 估计量**，记作 $\hat{\delta}_{\text{SUR}}$。由于回归量本身就在工具变量集中，不再需要投影处理（no projection），相关分量重新计算为：
 $$
 \widehat{\mathbf{A}}_{mh} = \frac{1}{n} \sum_{i=1}^n \mathbf{z}_{im} \mathbf{z}'_{ih} = \frac{\mathbf{Z}'_m \mathbf{Z}_h}{n} \tag{4.5.13'}
 $$
+
 ^equation-4-5-13-prime
 
 $$
 \hat{\mathbf{c}}_{mh} = \frac{1}{n} \sum_{i=1}^n \mathbf{z}_{im} \cdot y_{ih} = \frac{\mathbf{Z}'_m \mathbf{y}_h}{n} \tag{4.5.14'}
 $$
+
 ^equation-4-5-14-prime
 
 $$
 \mathbf{A}_{mh} = E(\mathbf{z}_{im} \mathbf{z}'_{ih}) \tag{4.5.16'}
 $$
+
 ^equation-4-5-16-prime
 
 :::{admonition} Note
@@ -753,6 +779,7 @@ $$
 J(\hat{\delta}_{\text{SUR}}, \widehat{\mathbf{S}}^{-1}) \equiv n \cdot \mathbf{g}_n(\hat{\delta}_{\text{SUR}})' \widehat{\mathbf{S}}^{-1} \mathbf{g}_n(\hat{\delta}_{\text{SUR}}) \xrightarrow{d} \chi^2 \left( MK - \sum_m L_m \right)
 $$
 其中 $\widehat{\mathbf{S}} = \widehat{\boldsymbol{\Sigma}} \otimes \left( \frac{1}{n} \sum_i \mathbf{x}_i \mathbf{x}'_i \right)$，$K$ 是共同工具变量的数量，$g_n(\cdot)$ 由 [(4.2.1)](#^equation-4-2-1) 给出。
+
 ^prop-4-6
 
 :::
@@ -788,11 +815,13 @@ $$
 $$
 \text{Avar}(\hat{\delta}) = \boldsymbol{\Sigma} \otimes [E(\mathbf{x}_i \mathbf{x}'_i)]^{-1} \tag{4.5.22}
 $$
+
 ^equation-4-5-22
 
 $$
 \widehat{\text{Avar}}(\hat{\delta}) = \widehat{\boldsymbol{\Sigma}} \otimes \left( \frac{1}{n} \sum_{i=1}^n \mathbf{x}_i \mathbf{x}'_i \right)^{-1} \tag{4.5.23}
 $$
+
 ^equation-4-5-23
 
 #### 情况 (b)：效率增益 (Efficiency Gain)
@@ -837,9 +866,11 @@ $$
 $$
 y_{im} = \mathbf{z}'_{im}\delta + \epsilon_{im} \quad (m = 1, 2, \dots, M; i = 1, 2, \dots, n) \tag{4.1.6}
 $$
+
 ^equation-4-1-6
 
 其中 $\mathbf{z}_{im}$ 是 $L$ 维回归量向量，$\epsilon_{im}$ 是第 $m$ 个方程的误差项。
+
 ^assumption-4-1-prime
 
 :::
@@ -848,6 +879,7 @@ $$
 $$
 g(\mathbf{w}_i; \tilde{\delta}) \equiv \begin{bmatrix} \mathbf{x}_{i1} \cdot (y_{i1} - \mathbf{z}'_{i1}\tilde{\delta}) \\ \vdots \\ \mathbf{x}_{iM} \cdot (y_{iM} - \mathbf{z}'_{iM}\tilde{\delta}) \end{bmatrix} \tag{4.6.2}
 $$
+
 ^equation-4-6-2
 
 其总体期望 $E[g(\mathbf{w}_i; \tilde{\delta})]$ 推导如下：
@@ -865,10 +897,12 @@ $$
 $$
 \boldsymbol{\sigma}_{xy} \equiv \begin{bmatrix} E(\mathbf{x}_{i1} \cdot y_{i1}) \\ \vdots \\ E(\mathbf{x}_{iM} \cdot y_{iM}) \end{bmatrix}, \quad \boldsymbol{\Sigma}_{xz} \equiv \begin{bmatrix} E(\mathbf{x}_{i1}\mathbf{z}'_{i1}) \\ \vdots \\ E(\mathbf{x}_{iM}\mathbf{z}'_{iM}) \end{bmatrix} \tag{4.6.4}
 $$
+
 ^equation-4-6-4
 
 :::{admonition} Definition (Assumption 4.4' (Identification with Common Coefficients))
 在 (4.6.4) 中定义的 $\sum_{m=1}^M K_m \times L$ 矩阵 $\boldsymbol{\Sigma}_{xz}$ 具有**满列秩 (full column rank)**。
+
 ^assumption-4-4-prime
 
 :::
@@ -937,17 +971,21 @@ If, in addition, the SUR condition [(4.5.18)](#^equation-4-5-18) is assumed ($\m
 $$
 \hat{\delta}_{RE} = \left[ \sum_{m=1}^M \sum_{h=1}^M \hat{\sigma}^{mh} \left( \frac{1}{n} \sum_{i=1}^n \mathbf{z}_{im} \mathbf{z}_{ih}' \right) \right]^{-1} \sum_{m=1}^M \sum_{h=1}^M \hat{\sigma}^{mh} \left( \frac{1}{n} \sum_{i=1}^n \mathbf{z}_{im} \cdot y_{ih} \right) \tag{4.6.8}
 $$
+
 ^equation-4-6-8
 
 Its asymptotic variance is:
 $$
 \text{Avar}(\hat{\delta}_{RE}) = \left[ \sum_{m=1}^M \sum_{h=1}^M \sigma^{mh} E(\mathbf{z}_{im} \mathbf{z}_{ih}' ) \right]^{-1} \tag{4.6.9}
 $$
+
 ^equation-4-6-9
+
 It is consistently estimated by:
 $$
 \widehat{\text{Avar}}(\hat{\delta}_{RE}) = \left[ \sum_{m=1}^M \sum_{h=1}^M \hat{\sigma}^{mh} \left( \frac{1}{n} \sum_{i=1}^n \mathbf{z}_{im} \mathbf{z}_{ih}' \right) \right]^{-1} \tag{4.6.10}
 $$
+
 ^equation-4-6-10
 
 :::{admonition} Proposition
@@ -994,12 +1032,14 @@ $$
 $$
 E(\mathbf{z}_{i1} \cdot \epsilon_{i1} + \dots + \mathbf{z}_{iM} \cdot \epsilon_{iM}) = \mathbf{0} \tag{4.6.12}
 $$
+
 ^equation-4-6-12
 
 其渐近方差 $\text{Avar}(\hat{\delta}_{\text{pooled OLS}})$ 具有三明治结构：
 $$
 \text{Avar}(\hat{\delta}_{\text{pooled OLS}}) = \left[ \sum_{m=1}^M E(\mathbf{z}_{im} \mathbf{z}_{im}' ) \right]^{-1} \sum_{m=1}^M \sum_{h=1}^M \sigma_{mh} E(\mathbf{z}_{im} \mathbf{z}_{ih}' ) \left[ \sum_{m=1}^M E(\mathbf{z}_{im} \mathbf{z}_{im}' ) \right]^{-1} \tag{4.6.13}
 $$
+
 ^equation-4-6-13
 
 其一致估计量为：
@@ -1027,17 +1067,20 @@ $$
 $$
 \mathbf{y}_i = \mathbf{Z}_i \boldsymbol{\delta} + \boldsymbol{\epsilon}_i \quad (i = 1, 2, \dots, n) \tag{4.6.1'}
 $$
+
 ^equation-4-6-1-prime
 
 利用以下代数恒等式（对于任何 $M \times M$ 矩阵 $\mathbf{C} = (c_{mh})$）：
 $$
 \sum_{m=1}^M \mathbf{z}_{im} \mathbf{z}_{im}' = \mathbf{Z}_i' \mathbf{Z}_i, \quad \sum_{m=1}^M \mathbf{z}_{im} y_{im} = \mathbf{Z}_i' \mathbf{y}_i \tag{4.6.16a}
 $$
+
 ^equation-4-6-16a
 
 $$
 \sum_{m=1}^M \sum_{h=1}^M c_{mh} \mathbf{z}_{im} y_{ih} = \mathbf{Z}_i' \mathbf{C} \mathbf{y}_i, \quad \sum_{m=1}^M \sum_{h=1}^M c_{mh} \mathbf{z}_{im} \mathbf{z}_{ih}' = \mathbf{Z}_i' \mathbf{C} \mathbf{Z}_i \tag{4.6.16b}
 $$
+
 ^equation-4-6-16b
 
 #### Compact Random-Effects Formulas
@@ -1045,27 +1088,32 @@ $$
 $$
 \sum_{m=1}^M \sum_{h=1}^M \hat{\sigma}^{mh} \left( \frac{1}{n} \sum_{i=1}^n \mathbf{z}_{im} y_{ih} \right) = \frac{1}{n} \sum_{i=1}^n \mathbf{Z}_i' \widehat{\boldsymbol{\Sigma}}^{-1} \mathbf{y}_i \tag{4.6.17}
 $$
+
 ^equation-4-6-17
 
 $$
 \sum_{m=1}^M \sum_{h=1}^M \hat{\sigma}^{mh} \frac{1}{n} \sum_{i=1}^n \mathbf{z}_{im} \mathbf{z}_{ih}' = \frac{1}{n} \sum_{i=1}^n \mathbf{Z}_i' \widehat{\boldsymbol{\Sigma}}^{-1} \mathbf{Z}_i \tag{4.6.18}
 $$
+
 ^equation-4-6-18
 
 最终美化后的 **Random-Effects** 公式及其渐近性质为：
 $$
 \hat{\delta}_{RE} = \left( \frac{1}{n} \sum_{i=1}^n \mathbf{Z}_i' \widehat{\boldsymbol{\Sigma}}^{-1} \mathbf{Z}_i \right)^{-1} \frac{1}{n} \sum_{i=1}^n \mathbf{Z}_i' \widehat{\boldsymbol{\Sigma}}^{-1} \mathbf{y}_i \tag{4.6.8'}
 $$
+
 ^equation-4-6-8-prime
 
 $$
 \text{Avar}(\hat{\delta}_{RE}) = \left( E(\mathbf{Z}_i' \boldsymbol{\Sigma}^{-1} \mathbf{Z}_i) \right)^{-1} \tag{4.6.9'}
 $$
+
 ^equation-4-6-9-prime
 
 $$
 \widehat{\text{Avar}}(\hat{\delta}_{RE}) = \left( \frac{1}{n} \sum_{i=1}^n \mathbf{Z}_i' \widehat{\boldsymbol{\Sigma}}^{-1} \mathbf{Z}_i \right)^{-1} \tag{4.6.10'}
 $$
+
 ^equation-4-6-10-prime
 
 #### Compact Pooled OLS Formulas
@@ -1073,16 +1121,19 @@ $$
 $$
 \hat{\delta}_{\text{pooled OLS}} = \left( \frac{1}{n} \sum_{i=1}^n \mathbf{Z}_i' \mathbf{Z}_i \right)^{-1} \frac{1}{n} \sum_{i=1}^n \mathbf{Z}_i' \mathbf{y}_i \tag{4.6.11'}
 $$
+
 ^equation-4-6-11-prime
 
 $$
 \text{Avar}(\hat{\delta}_{\text{pooled OLS}}) = [E(\mathbf{Z}_i' \mathbf{Z}_i)]^{-1} E(\mathbf{Z}_i' \boldsymbol{\Sigma} \mathbf{Z}_i) [E(\mathbf{Z}_i' \mathbf{Z}_i)]^{-1} \tag{4.6.13'}
 $$
+
 ^equation-4-6-13-prime
 
 $$
 \widehat{\text{Avar}}(\hat{\delta}_{\text{pooled OLS}}) = \left( \frac{1}{n} \sum_{i=1}^n \mathbf{Z}_i' \mathbf{Z}_i \right)^{-1} \left( \frac{1}{n} \sum_{i=1}^n \mathbf{Z}_i' \widehat{\boldsymbol{\Sigma}} \mathbf{Z}_i \right) \left( \frac{1}{n} \sum_{i=1}^n \mathbf{Z}_i' \mathbf{Z}_i \right)^{-1} \tag{4.6.14'}
 $$
+
 ^equation-4-6-14-prime
 
 **Interrelated Factor Demand System**

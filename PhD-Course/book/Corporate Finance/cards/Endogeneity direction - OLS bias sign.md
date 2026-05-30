@@ -35,6 +35,7 @@ $$
 
 (card-endogeneity-direction)=
 (^card-endogeneity-direction)=
+
 ^card-endogeneity-direction
 
 相关章节：[Corporate Finance IV chapter](../02_Econometric_Methods_in_Corporate_Finance.md)

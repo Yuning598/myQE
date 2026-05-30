@@ -39,8 +39,6 @@ Frank and Goyal 关心的是：哪些 firm characteristics 能稳定预测 lever
 
 ### 3.1 Variable-by-variable mapping
 
-![536](Pasted image 20260419142554.png)
-
 | Variable | STO prediction | PO prediction | Main channel |
 | :--- | :--- | :--- | :--- |
 | profitability | 更高 | 更低 | 税盾价值 vs. internal cash flow |
