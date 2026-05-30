@@ -9,30 +9,6 @@
 - **互补理论**：[Agency_Theory](Agency_Theory.md) - 监控、控制权与代理成本
 - **整合框架**：[00_Theory_Integration](00_Theory_Integration.md) - SEO 在公司金融三大问题中的位置
 
-## 📌 目录
-
-- [1. Definition and Background](#1-definition-and-background)
-- [2. Core SEO Mechanisms](#2-core-seo-mechanisms)
-  - [2.1 Adverse Selection Theory (Myers and Majluf 1984)](#21-adverse-selection-theory-myers-and-majluf-1984)
-  - [2.2 Market Timing Theory (Baker and Wurgler 2002)](#22-market-timing-theory-baker-and-wurgler-2002)
-  - [2.3 Signaling Theory (Ross 1977)](#23-signaling-theory-ross-1977)
-  - [2.4 Cash Flow Signaling (Miller and Rock 1985)](#24-cash-flow-signaling-miller-and-rock-1985)
-  - [2.5 Price Pressure Theory](#25-price-pressure-theory)
-  - [2.6 Ownership and Monitoring Theory](#26-ownership-and-monitoring-theory)
-  - [2.7 Target Leverage Rebalancing (Trade-off Application)](#27-target-leverage-rebalancing-trade-off-application)
-- [3. SEO Flotation Methods and Cost Trade-off](#3-seo-flotation-methods-and-cost-trade-off)
-  - [3.1 Firm Commitment Offer](#31-firm-commitment-offer)
-  - [3.2 Rights Offer](#32-rights-offer)
-  - [3.3 Private Placement](#33-private-placement)
-  - [3.4 Shelf Registration](#34-shelf-registration)
-  - [3.5 Cost Trade-off and Summary](#35-cost-trade-off-and-summary)
-- [4. Empirical Separation of Mechanisms](#4-empirical-separation-of-mechanisms)
-- [5. Integrated SEO Framework](#5-integrated-seo-framework)
-- [6. Key Empirical Evidence](#6-key-empirical-evidence)
-- [7. Policy Experiment Designs](#7-policy-experiment-designs)
-- [8. Theory-to-Evidence Mapping](#8-theory-to-evidence-mapping)
-- [References](#references)
-
 ## 1. Definition and Background
 
 **Seasoned Equity Offering (SEO)**：已上市公司在 IPO 之后再次向市场发行股票以筹集外部股权资金的行为。
