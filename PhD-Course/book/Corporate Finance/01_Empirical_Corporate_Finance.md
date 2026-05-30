@@ -4624,6 +4624,83 @@ $$
 
 ### 4.2 Theory Map
 
+这一节不要把 paper 当成单一 theory 的例子。很多 empirical papers 实际上是共享节点：同一篇文章同时识别多个机制，同一套 theory 也会被多篇文章从不同 outcome 或 design 检验。
+
+```mermaid
+flowchart LR
+  subgraph Theory["Theories / mechanisms"]
+    tax["Tax shield / trade-off"]
+    distress["Financial distress cost"]
+    agency["Agency / monitoring"]
+    info["Information asymmetry / adverse selection"]
+    timing["Market timing / mispricing"]
+    signal["Signaling"]
+    taxclient["Dividend tax clientele"]
+    flex["Flexible payout"]
+    pressure["Price pressure / liquidity"]
+  end
+
+  subgraph Paper["Empirical papers"]
+    graham["Graham (2000)"]
+    ak["Andrade and Kaplan (1998)"]
+    rz["Rajan and Zingales (1995)"]
+    fg["Frank and Goyal (2009)"]
+    mm["Myers and Majluf (1984)"]
+    bw["Baker and Wurgler (2002)"]
+    ma["Ma (2019)"]
+    masulis["Masulis (1980)"]
+    wruck["Wruck (1989)"]
+    lr["Loughran and Ritter (1995)"]
+    eg["Eckbo and Masulis (1992)"]
+    kalay["Kalay (1982)"]
+    am["Allen and Michaely (2003)"]
+    aharony["Aharony and Swary (1980)"]
+    lp["La Porta et al. (2000)"]
+    vermaelen["Vermaelen (1981)"]
+    jst["Jagannathan et al. (2000)"]
+    pv["Peyer and Vermaelen (2009)"]
+  end
+
+  tax --> graham
+  tax --> rz
+  tax --> fg
+  distress --> ak
+  distress --> rz
+  distress --> fg
+  agency --> masulis
+  agency --> wruck
+  agency --> lp
+  agency --> vermaelen
+  info --> mm
+  info --> fg
+  info --> eg
+  timing --> bw
+  timing --> ma
+  timing --> lr
+  timing --> pv
+  signal --> aharony
+  signal --> vermaelen
+  signal --> pv
+  taxclient --> kalay
+  taxclient --> am
+  flex --> am
+  flex --> jst
+  pressure --> masulis
+  pressure --> eg
+```
+
+**共享节点的读法**
+
+| Paper | 同时体现的机制 | 为什么是共享节点 |
+| :--- | :--- | :--- |
+| Frank and Goyal (2009) | trade-off, pecking order | 同一组 leverage determinants 同时检验 size、tangibility、profitability、market-to-book，对不同 theory 的预测方向有交叉含义 |
+| Rajan and Zingales (1995) | trade-off, distress, cross-country institutions | G-7 leverage determinants 既支持部分 trade-off variables，也暴露单一 theory 解释力不足 |
+| Masulis (1980) | leverage effect, redistribution, signaling, price pressure | exchange offers 同时改变 capital structure 和 claim priority，因此 announcement effect 混合多种机制 |
+| Ma (2019) | market timing, relative valuation, debt-equity substitution | firm 同时看 debt 和 equity 的相对估值，融资、回购和 capital structure adjustment 变成同一个 arbitrage problem |
+| Wruck (1989) | SEO, ownership concentration, monitoring | equity financing 不只代表 dilution 或 adverse selection，也可能引入 blockholder monitoring |
+| Vermaelen (1981) / Peyer and Vermaelen (2009) | buyback signaling, undervaluation, market timing | repurchase announcement 和 post-buyback returns 同时检验 signal credibility 与 market underreaction |
+| Allen and Michaely (2003) | dividend tax clientele, payout form choice, review evidence | review paper 把 tax、clientele、repurchase flexibility 和 payout irrelevance benchmark 连在一起 |
+
 #### 4.2.1 Capital structure
 
 | Theory / mechanism      | X → Y prediction                                                        | Empirical paper                                   | Main finding                                                                                                             |
@@ -4941,6 +5018,6 @@ DividendPayout_{it}
 \end{aligned}
 $$
 
-Expected outcome：(\beta>0)。如果 outcome model 正确，原本 investor protection weak 的 treated firms 在法律加强后 payout 上升，cash hoarding（现金囤积） 和 tunneling proxies（利益输送，大股东通过隐蔽手段转移公司资产，侵害中小股东权益） 下降。
+Expected outcome：($\beta>0$)。如果 outcome model 正确，原本 investor protection weak 的 treated firms 在法律加强后 payout 上升，cash hoarding（现金囤积） 和 tunneling proxies（利益输送，大股东通过隐蔽手段转移公司资产，侵害中小股东权益） 下降。
 
 Minimal data：legal reform timing、firm payout、cash holdings、ownership structure、governance variables、country/industry controls。

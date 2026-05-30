@@ -19,7 +19,7 @@
 
 ## 2. Core SEO Mechanisms
 
-SEO 是单独的 equity issuance 主题，不是 trade-off theory 的附录。课件里的核心问题是：
+SEO 是单独的 equity issuance 主题，不是 trade-off theory 的附录。核心问题：
 
 $$
 \begin{aligned}
@@ -267,8 +267,6 @@ $$
 
 ### 3.5 Cost Trade-off and Summary
 
-课件里的 SEO 逻辑最后会收束到一个很简洁的链条：
-
 $$
 \begin{aligned}
 \text{flotation method}
@@ -282,12 +280,12 @@ $$
 $$
 
 **核心 trade-off**：
-- rights offer 的 direct flotation cost 通常最低，但 indirect flotation cost 可能更高
-- firm commitment 的 underwriter certification 更强，但承销和折价成本更高
-- private placement 可能通过 monitoring / certification 降低信息成本，但会改变 control rights
+- rights offer 的 direct flotation cost 通常最低，但 shareholder participation friction 和 standby underwriting 会提高 indirect cost（Eckbo and Masulis, 1992；Kothare, 1997）
+- firm commitment 的 underwriter certification 更强，但承销费、折价和公开发行的信息成本更高（Asquith and Mullins, 1986；Masulis and Korwar, 1986）
+- private placement 可能通过 monitoring / certification 降低信息成本，但会改变 control rights（Wruck, 1989）
 
 **Reverse puzzle in UK and HK**：
-- 关键变量是 **private benefits of control**，记作 $c$
+- 关键变量是 **private benefits of control**，记作 $c$（Eckbo and Masulis, 1992；Holderness and Pontiff, 2016）
 - 当 $c$ 高时，insider 更重视控制权，rights issue 的控制稀释更小，所以更受偏好
 - 当 $c$ 低时，placement 的相对成本下降，rights 的控制优势变弱
 
@@ -304,12 +302,12 @@ c \gtrless c^\ast \equiv \frac{D}{\lambda}.
 $$
 
 **Announcement effect**：
-- 美国样本里，SEO announcement effect 通常显著为负
-- 但如果 asymmetric information more from investment opportunities than from assets-in-place，则 announcement effect 可以较不负甚至为正
+- 美国样本里，SEO announcement effect 通常显著为负（Asquith and Mullins, 1986；Masulis and Korwar, 1986）
+- 若 asymmetric information more from investment opportunities than from assets-in-place，announcement effect 可以较不负甚至为正（Cooney and Kalay, 1993）
 
 **Long-run performance**：
-- 后续研究发现 SEO 之后长期表现偏弱
-- 这说明 market timing / overvaluation correction 可能是长期弱势的重要来源
+- SEO 之后长期表现偏弱（Loughran and Ritter, 1995；Spiess and Affleck-Graves, 1995）
+- 2003--2012 样本的 underperformance 收敛；长期弱势会随市场环境、制度和投资者学习变化（Fu, 2014）
 
 ---
 
@@ -372,11 +370,11 @@ $$
 
 ### 6.1 Announcement Effects
 
-| 发行方式              | 平均 CAR | 理论解释                                     |
-| --------------------- | -------- | -------------------------------------------- |
-| Firm commitment       | -3%      | Adverse selection 最强                       |
-| Rights offer          | -1%      | 现有股东可避免稀释，adverse selection 较弱   |
-| Private placement     | +4%      | Monitoring and certification effect          |
+| 发行方式              | 平均 CAR / pattern | 理论解释                                     | 主要证据 |
+| --------------------- | ------------------ | -------------------------------------------- | :--- |
+| Firm commitment       | 约 $-3\%$          | Adverse selection 最强，公开发行也带来更强 price pressure | Asquith and Mullins (1986)；Masulis and Korwar (1986) |
+| Rights offer          | 接近 $0$ 或较不负  | 现有股东可避免稀释，adverse selection 较弱   | Eckbo and Masulis (1992) |
+| Private placement     | 正向或较不负       | Monitoring and certification effect          | Wruck (1989) |
 
 ### 6.2 Long-Run Performance
 
@@ -388,13 +386,14 @@ $$
 
 ### 6.3 Cross-Sectional Variation
 
-| 变量                     | 与 SEO CAR 关系 | 理论机制                 |
-| ------------------------ | --------------- | ------------------------ |
-| Information asymmetry ↑  | CAR ↓           | Adverse selection        |
-| Prior return ↑           | CAR ↓           | Market timing            |
-| Relative offer size ↑    | CAR ↓           | Price pressure           |
-| Management sales ↑       | CAR ↓           | Ownership and incentives |
-| Growth opportunities ↑   | CAR ↑           | Adverse selection 减弱   |
+| 变量                     | 与 SEO CAR 关系 | 理论机制                 | 主要证据 |
+| ------------------------ | --------------- | ------------------------ | :--- |
+| Information asymmetry ↑  | $CAR \downarrow$ | Adverse selection        | Asquith and Mullins (1986)；Masulis and Korwar (1986) |
+| Prior return / hot market ↑ | $CAR$ 较不负；SEO probability ↑ | Market timing / issuance window | Choe, Masulis and Nanda (1993)；Bayless and Chaplinsky (1996) |
+| Relative offer size ↑    | $CAR \downarrow$ | Price pressure / dilution concern | Asquith and Mullins (1986)；Masulis and Korwar (1986) |
+| Management sales ↑       | $CAR \downarrow$ | Ownership and incentives | Masulis and Korwar (1986) |
+| Monitoring investor participation ↑ | $CAR \uparrow$ | Certification / monitoring | Wruck (1989) |
+| Growth opportunities ↑   | $CAR \uparrow$ 或较不负 | Adverse selection more from investment opportunities | Cooney and Kalay (1993) |
 
 ---
 
@@ -500,9 +499,10 @@ $$
 | 理论机制              | 核心预测                                                     | 关键实证证据                                                 |
 | --------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Adverse selection     | information asymmetry ↑ → SEO CAR ↓                          | Asquith and Mullins (1986), Masulis and Korwar (1986)       |
-| Market timing         | prior return / M/B ↑ → SEO probability ↑ → long-run return ↓ | Loughran and Ritter (1995), Spiess and Affleck-Graves (1995) |
+| Investment-opportunity information | growth options 信息占主导 → SEO CAR 较不负或为正 | Cooney and Kalay (1993) |
+| Market timing         | prior return / M/B ↑ → SEO probability ↑ → long-run return ↓ | Loughran and Ritter (1995), Spiess and Affleck-Graves (1995), Fu (2014) |
 | Cash flow signaling   | external financing ↑ → implied cash flow ↓ → CAR ↓          | Miller and Rock (1985) 理论，实证较少直接检验                |
-| Price pressure        | relative offer size ↑, liquidity ↓ → CAR ↓                   | Asquith and Mullins (1986) issue size effect                 |
+| Price pressure        | relative offer size ↑, liquidity ↓ → CAR ↓                   | Asquith and Mullins (1986), Masulis and Korwar (1986)        |
 | Ownership-monitoring  | monitoring investor ↑ → CAR ↑; management sales ↑ → CAR ↓   | Wruck (1989), Masulis and Korwar (1986)                      |
 | Target leverage       | leverage deviation ↑ → SEO probability ↑                     | 税改自然实验（理论推导，实证较少）                           |
 | Flotation method      | rights / firm commitment / private placement imply different direct and indirect costs | Eckbo and Masulis (1992), Kothare (1997), Holderness and Pontiff (2016) |
@@ -520,6 +520,7 @@ $$
 **实证证据**：
 - Asquith and Mullins (1986), *Equity Issues and Offering Dilution*, JFE
 - Masulis and Korwar (1986), *Seasoned Equity Offerings: An Empirical Investigation*, JFE
+- Cooney and Kalay (1993), *Positive Information from Equity Issue Announcements*, JFE
 - Loughran and Ritter (1995), *The New Issues Puzzle*, JF
 - Spiess and Affleck-Graves (1995), *Underperformance in Long-Run Stock Returns Following Seasoned Equity Offerings*, JFE
 - Wruck (1989), *Equity Ownership Concentration and Firm Value*, JFE
