@@ -1,5 +1,6 @@
 """Register reusable collapsible directives for MyST/Sphinx."""
 
+from html import escape
 from docutils import nodes
 from docutils.parsers.rst import Directive
 
@@ -29,8 +30,9 @@ class CollapseDirective(CollapsibleDirective):
 
 
 def visit_collapsible_block_html(translator, node):
+    title = escape(node["title"])
     translator.body.append(
-        f'<details class="solution-block"><summary>{node["title"]}</summary>\n'
+        f'<details class="solution-block"><summary>▶ {title}</summary>\n'
     )
 
 
