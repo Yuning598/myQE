@@ -249,8 +249,6 @@ $$
 
 ### 10.2.3 CARA-Normal 下的最优需求
 
-#### 推导核对：CARA-Normal 需求的一阶条件
-
 ::::{admonition} Lemma (CARA-Normal Position Demand)
 若 $v\mid\mathcal I_i$ 条件正态，财富为
 
@@ -629,6 +627,8 @@ $$
 \end{array}
 \quad \begin{pmatrix} V_H \\ V_L \end{pmatrix}
 $$
+::::
+
 做市商观察到的是订单方向，而不是真实价值，因此买价和卖价都取“条件期望价值”。
 
 - **specialist / market maker**：始终站在市场另一边报价格。
@@ -664,11 +664,8 @@ $$
 | ------- | ------ | ------ | -------------------------------- |
 | **ask** | sell   | buy    | dealer 观察 trader 的买单，提高 ask（卖出价） |
 | **bid** | buy    | sell   | dealer 观察 trader 的卖单，降低 bid（买入价） |
-::::
 
 ### 10.3.2 Pricing Rules and Bid-Ask Spread
-
-#### 推导核对：Glosten-Milgrom 买卖价差的正性
 
 ::::{admonition} Lemma (Positive Bid-Ask Spread from Adverse Selection)
 在二元价值与知情交易概率 $\mu>0$ 下，竞争做市商的报价满足
@@ -814,8 +811,6 @@ $$
 ::::
 
 ## 10.4.2 线性均衡猜测
-
-## 推导核对：单期 Kyle 模型的 beta 与 lambda
 
 ::::{admonition} Lemma (One-Period Kyle Linear Equilibrium)
 在线性策略
@@ -2659,8 +2654,6 @@ $$
 
 ### 12.1.3 情形一：常数漂移的贝叶斯学习
 
-#### 推导核对：常数漂移学习中的 Kalman-Bayes 更新
-
 ::::{admonition} Lemma (Learning an Unknown Constant Drift)
 若观察过程
 $$
@@ -3654,8 +3647,6 @@ $$
 综上，虽然这个模型结构优美，但它在定量上难以匹配资产定价中的几个关键“谜题”。
 
 ### 12.4.3 两个对数效用代理人
-
-#### 推导核对：异质信念下对数效用的消费分享
 
 ::::{admonition} Lemma (Log Utility Sharing Rule with Heterogeneous Beliefs)
 两个对数效用代理人、主观密度过程为 $\eta_i$ 时，规划者一阶条件给出
