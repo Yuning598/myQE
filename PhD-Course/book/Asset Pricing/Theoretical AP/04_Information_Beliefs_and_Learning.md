@@ -37,6 +37,7 @@ v\perp \varepsilon.
 \end{aligned}
 \right.
 $$
+::::
 
 两类投资者具有 CARA utility：
 
@@ -63,7 +64,6 @@ $$
 p&=\alpha\bar v+\beta s-\gamma X.
 \end{aligned}
 $$
-::::
 
 ::::{admonition} Definition (Grossman-Stiglitz Linear Equilibrium)
 线性均衡由价格函数、两类代理人的最优需求和市场清算共同给出：
@@ -78,6 +78,7 @@ X_I+X_U&=X.
 \end{aligned}
 \right.
 $$
+::::
 
 在线性价格猜测下，无知情者可从价格中提取带噪信号
 
@@ -88,7 +89,6 @@ $$
 =s-\frac{\gamma}{\beta}X.
 \end{aligned}
 $$
-::::
 
 其中 $v$ 是风险资产终值，$p$ 是均衡价格，$X$ 是随机供给，$X_i$ 是投资者 $i$ 的风险资产持仓，$\rho_v,\rho_s,\rho_x$ 分别是先验、私人信号噪声和供给噪声的 precision。
 
@@ -613,6 +613,8 @@ V_H & \text{w.p. } \theta \\
 V_L & \text{w.p. } 1-\theta
 \end{cases}
 $$
+::::
+
 **Trader arrivals** (order-flow structure):
 $$
 \begin{array}{c|cc}
@@ -627,7 +629,6 @@ $$
 \end{array}
 \quad \begin{pmatrix} V_H \\ V_L \end{pmatrix}
 $$
-::::
 
 做市商观察到的是订单方向，而不是真实价值，因此买价和卖价都取“条件期望价值”。
 
@@ -787,28 +788,21 @@ $$
 ### 10.4.1 Setup
 
 ::::{admonition} Definition (One-period Kyle Setup)
-**资产基本面**（不确定性的来源）：
-风险资产终值 $v$ 满足
-$$
-v\sim N(v_0,\Sigma_0).
-$$
-这代表所有市场参与者关于终值的共同先验。
+单期 Kyle 模型由 informed order、noise order flow 与竞争做市商定价组成：
 
-**信息不对称**：知情者在 $t=0$ 就知道 $v$ 的真实值，而其他人不知道。
-
-**流动性交易**（噪声）：噪声交易者（代表非知情的流动性需求）的总订单为，其交易行为与基本面无关（$v \perp Z_u$）。noise order flow 只是“遮掩 informed order” 的噪声来源，不携带关于 $v$ 的额外信息。若 $Z_u$ 和 $v$ 相关，那它就不再是纯噪声，而会变成另一种信息性订单流。
 $$
-Z_u\sim N(0,\sigma^2).
-$$
-**价格发现机制**：做市商（market maker）只观察总订单流
-$$
-X=x+Z_u,
-$$
-（观察不到知情订单 $x$ 和噪声订单 $Z_u$ 的分解），在完全竞争下按零利润定价：
-$$
-p=E[v|X]=E[v|x+Z_u].
+\left\{
+\begin{aligned}
+v&\sim N(v_0,\Sigma_0),\\
+Z_u&\sim N(0,\sigma^2),\qquad v\perp Z_u,\\
+X&=x+Z_u,\\
+p&=E[v\mid X].
+\end{aligned}
+\right.
 $$
 ::::
+
+知情者在 $t=0$ 知道 $v$，做市商只观察总订单流 $X$，观察不到 $x$ 与 $Z_u$ 的分解。$Z_u$ 是不携带基本面信息的流动性交易；若 $Z_u$ 与 $v$ 相关，就不再是纯噪声。
 
 ## 10.4.2 线性均衡猜测
 
