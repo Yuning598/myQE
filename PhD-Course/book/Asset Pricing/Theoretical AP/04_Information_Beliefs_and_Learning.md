@@ -396,9 +396,9 @@ $$
 $$
 也就是：你觉得资产越被低估，就持有越多；你越厌恶风险、或后验方差越大，就持有越少。
 
-### 10.2.4 Equilibrium Price
+### 10.2.4 Exercise 1：Equilibrium Price
 
-#### 推导核对：价格系数的配平解法
+Find the coefficients of the equilibrium price $\alpha,\beta,\gamma$. Show that when $\rho_x=\infty$, the equilibrium price is fully revealing the informed agent’s signal $s$.
 
 ::::{admonition} Lemma (Solving the GS Price Coefficients)
 令
@@ -484,15 +484,13 @@ $$
 1. 噪声供给 $X$ 的方差越大，价格越不透明；
 2. 知情者风险厌恶越强（$\lambda_I$ 越大），价格中掺入的“策略性遮掩”越多。
 
-### 10.2.5 完全揭示的极限
+### 10.2.5 完全揭示与信息价值
 
 若 $\rho_x=\infty$，则供给 $X$ 没有噪声，价格满足
 $$
 \theta=s-\frac{\gamma}{\beta}X=s.
 $$
-于是uninformed agent可从价格中完全恢复 $s$，价格完全揭示私人信息。
-
-用信息集来写就是
+于是 uninformed agent 可从价格中完全恢复 $s$，价格完全揭示私人信息：
 
 $$
 \mathcal I_U=\sigma(p),
@@ -506,49 +504,18 @@ $$
 \mathcal I_I=\sigma(p,s)=\sigma(p,g(p))=\sigma(p)=\mathcal I_U.
 $$
 
-对任意信息集 $\mathcal I$，CARA-normal 下的最优 certainty equivalent 为
-
-$$
-\begin{aligned}
-CE(\mathcal I)
-&=\max_X\left\{
-m+X\big(E[v\mid\mathcal I]-p\big)
--\frac{\lambda}{2}X^2\operatorname{Var}(v\mid\mathcal I)
-\right\}\\
-&=
-m+
-\frac{\big(E[v\mid\mathcal I]-p\big)^2}
-{2\lambda\operatorname{Var}(v\mid\mathcal I)}.
-\end{aligned}
-$$
-
-完全揭示下 $\mathcal I_I=\mathcal I_U$，所以
-
-$$
-\begin{aligned}
-E[v\mid\mathcal I_I]&=E[v\mid\mathcal I_U],\\
-\operatorname{Var}(v\mid\mathcal I_I)&=\operatorname{Var}(v\mid\mathcal I_U),\\
-\Delta CE
-&:=CE(\mathcal I_I)-CE(\mathcal I_U)=0.
-\end{aligned}
-$$
-
-Grossman-Stiglitz 的核心思想：若价格总是完全有效，私人信息的增量价值为 $0$；只要信息成本 $c>0$，就没有人愿意获取信息，因此均衡中价格只能部分揭示信息。
-
-#### 补充：她最多愿意为信息支付多少？
+完全揭示下，买信息和不买信息对应同一个信息集，所以任何只依赖条件均值与条件方差的最优交易问题都相同。CARA-normal 下可直接写成下面的 certainty equivalent 差。
 
 [Asset Pricing/Theoretical AP/cards/Grossman-Stiglitz - 信息价值与支付意愿](Asset Pricing/Theoretical AP/cards/Grossman-Stiglitz - 信息价值与支付意愿)（信息价值与支付意愿）
 
+若代理人在交易前可以支付信息成本 $c$ 来观察 $s$，则其最高支付意愿由两个 certainty equivalent 的事前差值给出。记
 
-若要严格回答 “how much she wants to spend for information?”，需要把“是否购买私人信号 $s$”内生化。代理人在交易前可以支付信息成本 $c$ 来观察 $s$；若不支付，则只能像无知情者一样从价格中学习。解释了为什么**完全揭示价格**不可能与**正的信息获取成本**同时成立。
-
-CARA-Normal 最优组合写成 certainty equivalent 形式。对任意信息集 $\mathcal I$，记
 $$
 \mu_{\mathcal I}:=E[v\mid \mathcal I],
 \qquad
 \Sigma_{\mathcal I}:=\operatorname{Var}(v\mid \mathcal I).
 $$
-则代理人的目标函数为
+则
 $$
 \begin{aligned}
 CE(\mathcal I)
@@ -558,24 +525,16 @@ CE(\mathcal I)
  m+\frac{(\mu_{\mathcal I}-p)^2}{2\lambda\Sigma_{\mathcal I}},
 \end{aligned}
 $$
-其中第二步用了一阶条件
+其中
 $$
 X^*(\mathcal I)=\frac{\mu_{\mathcal I}-p}{\lambda\Sigma_{\mathcal I}}.
 $$
-因此，若她支付成本 $c$ 获得信号 $s$，则条件 certainty equivalent 为
-$$
-CE_I(s)=m-c+\frac{(E[v\mid s]-p)^2}{2\lambda\operatorname{Var}(v\mid s)}.
-$$
-若她不买信息、只从价格中学习，则
-$$
-CE_U(p)=m+\frac{(E[v\mid p]-p)^2}{2\lambda\operatorname{Var}(v\mid p)}.
-$$
-所以，交易前她对信息的**最高支付意愿**就是这两个 certainty equivalent 的事前差值：
+
 $$
 \begin{aligned}
 c^*
 &:=
-E\big[CE_I(s)-CE_U(p)\big] \\
+E\big[CE(\mathcal I_I)-CE(\mathcal I_U)\big] \\
 &=
 \frac{1}{2\lambda}E\left[
 \frac{(E[v\mid s]-p)^2}{\operatorname{Var}(v\mid s)} -
@@ -583,7 +542,8 @@ E\big[CE_I(s)-CE_U(p)\big] \\
 \right].
 \end{aligned}
 $$
-后验矩代入：
+
+代入后验矩
 $$
 \operatorname{Var}(v\mid s)=\frac{1}{\rho_s+\rho_v},
 \qquad
@@ -606,9 +566,8 @@ c^*
 \Bigg].
 \end{aligned}
 $$
-在 Grossman-Stiglitz 框架下，“她最多愿意为信息支付多少”的一般表达式。它的经济含义是：信息的价值等于**拥有私人信号时最优投资的 certainty equivalent** 与 **仅依靠价格学习时的 certainty equivalent** 之间的差。
 
-特别地，在完全揭示极限 $\rho_x=\infty$ 下，价格已经完全暴露了 $s$，即
+完全揭示极限下
 $$
 \theta=s,
 \qquad
@@ -624,7 +583,7 @@ $$
 $$
 c^*=0.
 $$
-如果价格完全揭示信息，则私人信息不再带来任何额外 certainty equivalent，因而没有人愿意支付正成本去获取它。若把信息成本 $c$ 外生给定，则
+若把信息成本 $c$ 外生给定，则
 $$
 c\le c^* 
 \quad\Longrightarrow\quad
@@ -641,13 +600,6 @@ $$
 来刻画“恰好有人愿意获取信息”的无差异条件。
 
 >Grossman-Stiglitz 式悖论：如果价格完全揭示信息，那么没人愿意付费获取信息；但如果没人获取信息，价格又无法完全揭示信息。因此，带有正信息获取成本的均衡不能是完全揭示的，只能是部分揭示的。
-
-### 10.2.7 Exercise 1
-
-Find the coefficients of the equilibrium price $\alpha,\beta,\gamma$. Show that when $\rho_x=\infty$, the equilibrium price is fully revealing the informed agent’s signal $s$.
-
-[GS Exercise](Asset Pricing/Theoretical AP/cards/Grossman-Stiglitz Exercise 1 - 价格系数求解)（价格系数求解）
-
 
 ### 10.3 Glosten-Milgrom Sequential Trading Model
 
