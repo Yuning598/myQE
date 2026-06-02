@@ -492,7 +492,48 @@ $$
 $$
 于是uninformed agent可从价格中完全恢复 $s$，价格完全揭示私人信息。
 
-Grossman-Stiglitz 的核心思想：如果价格总是完全有效，私人信息就没有价值，也就不会有人付出成本获取信息，所以均衡中价格往往只能“部分揭示”信息。
+用信息集来写就是
+
+$$
+\mathcal I_U=\sigma(p),
+\qquad
+\mathcal I_I=\sigma(p,s).
+$$
+
+若价格完全揭示 $s$，则存在可测函数 $g$ 使得 $s=g(p)$，因此
+
+$$
+\mathcal I_I=\sigma(p,s)=\sigma(p,g(p))=\sigma(p)=\mathcal I_U.
+$$
+
+对任意信息集 $\mathcal I$，CARA-normal 下的最优 certainty equivalent 为
+
+$$
+\begin{aligned}
+CE(\mathcal I)
+&=\max_X\left\{
+m+X\big(E[v\mid\mathcal I]-p\big)
+-\frac{\lambda}{2}X^2\operatorname{Var}(v\mid\mathcal I)
+\right\}\\
+&=
+m+
+\frac{\big(E[v\mid\mathcal I]-p\big)^2}
+{2\lambda\operatorname{Var}(v\mid\mathcal I)}.
+\end{aligned}
+$$
+
+完全揭示下 $\mathcal I_I=\mathcal I_U$，所以
+
+$$
+\begin{aligned}
+E[v\mid\mathcal I_I]&=E[v\mid\mathcal I_U],\\
+\operatorname{Var}(v\mid\mathcal I_I)&=\operatorname{Var}(v\mid\mathcal I_U),\\
+\Delta CE
+&:=CE(\mathcal I_I)-CE(\mathcal I_U)=0.
+\end{aligned}
+$$
+
+Grossman-Stiglitz 的核心思想：若价格总是完全有效，私人信息的增量价值为 $0$；只要信息成本 $c>0$，就没有人愿意获取信息，因此均衡中价格只能部分揭示信息。
 
 #### 补充：她最多愿意为信息支付多少？
 
