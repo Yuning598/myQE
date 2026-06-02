@@ -2,26 +2,41 @@
 
 
 ## Question 1. Market Completeness, State Prices, and Arrow Security
-> Consider a two-period economy ($t=0, 1$) with three possible future states $\Omega = \{\omega_1, \omega_2, \omega_3\}$. The market contains two primary assets:
-> 
-> 1. **A Risk-free Bond**: Provides a payoff of $1$ in all states. Its current price is $P_f = 0.95$.
->     
-> 2. **A Risky Stock**: Provides a payoff vector $X_s = [1.2, 1.0, 0.8]^\top$. Its current price is $P_s = 0.90$.
->     
-> Assume there are no arbitrage opportunities in the market.
-> 
-> **Required:**
-> 1. Determine if the market is complete.
-> 2. Derive the set of all strictly positive state prices $(q_1, q_2, q_3)$.
-> 3. Calculate the no-arbitrage price range for an **Arrow Security** that pays $1$ if state $\omega_3$ occurs and $0$ otherwise.
-> 4. Explain the arbitrage strategy if the price of this Arrow Security were to be $0.20$.
+Consider a two-period economy ($t=0, 1$) with three possible future states $\Omega = \{\omega_1, \omega_2, \omega_3\}$. The market contains two primary assets:
+
+1. **A Risk-free Bond**: Provides a payoff of $1$ in all states. Its current price is $P_f = 0.95$.
+
+2. **A Risky Stock**: Provides a payoff vector $X_s = [1.2, 1.0, 0.8]^\top$. Its current price is $P_s = 0.90$.
+
+Assume there are no arbitrage opportunities in the market.
+
+**Required:**
+1. Determine if the market is complete.
+2. Derive the set of all strictly positive state prices $(q_1, q_2, q_3)$.
+3. Calculate the no-arbitrage price range for an **Arrow Security** that pays $1$ if state $\omega_3$ occurs and $0$ otherwise.
+4. Explain the arbitrage strategy if the price of this Arrow Security were to be $0.20$.
 
 #考点/资产定价 #考点/无套利 #考点/一价定律 #考点/市场完备性 #考点/状态价格 #考点/Arrow证券 #考点/风险中性测度 #考点/SDF #考点/套利策略
 
 ### 1.1 市场完备性 (Market Completeness)
 
 The payoff matrix $D$ is:
-$$D = \begin{pmatrix} 1 & 1 & 1 \\ 1.2 & 1.0 & 0.8 \end{pmatrix}^\top = \begin{pmatrix} 1 & 1.2 \\ 1 & 1.0 \\ 1 & 0.8 \end{pmatrix}$$
+$$
+\begin{aligned}
+D
+&=
+\begin{pmatrix}
+1 & 1 & 1 \\
+1.2 & 1.0 & 0.8
+\end{pmatrix}^{\top}
+=
+\begin{pmatrix}
+1 & 1.2 \\
+1 & 1.0 \\
+1 & 0.8
+\end{pmatrix}.
+\end{aligned}
+$$
 - The number of states $S = 3$.
 - The number of linearly independent assets $N$ is the rank of $D$:
   见 [[PhD-Course/QE-PS/cards/矩阵秩 rank|矩阵秩 rank]]。（行/列变换后非零行/列的数量就是秩），所以$\operatorname{rank}(D)=2.$
@@ -33,22 +48,39 @@ $$D = \begin{pmatrix} 1 & 1 & 1 \\ 1.2 & 1.0 & 0.8 \end{pmatrix}^\top = \begin{p
 ### 1.2 求解状态价格 (Solving for State Prices)
 
 Based on the Law of One Price, $P = D^\top q$:
-$$\begin{cases} (1) \quad q_1 + q_2 + q_3 = 0.95 \\ (2) \quad 1.2q_1 + 1.0q_2 + 0.8q_3 = 0.90 \end{cases}$$
+$$
+\left\{
+\begin{aligned}
+q_1+q_2+q_3&=0.95,\\
+1.2q_1+1.0q_2+0.8q_3&=0.90.
+\end{aligned}
+\right.
+$$
 To find the relationship, we express $q_1$ and $q_2$ in terms of $q_3$:
 - From (1): $q_2 = 0.95 - q_1 - q_3$.
 - Substitute into (2): $1.2q_1 + (0.95 - q_1 - q_3) + 0.8q_3 = 0.90$
-$$\implies 0.2q_1 - 0.2q_3 = -0.05 \implies \mathbf{q_1 = q_3 - 0.25}$$
+$$
+\begin{aligned}
+0.2q_1-0.2q_3&=-0.05\\
+\Longleftrightarrow\quad
+q_1&=q_3-0.25.
+\end{aligned}
+$$
 - Substitute $q_1$ back to find $q_2$: $q_2 = 0.95 - (q_3 - 0.25) - q_3 \implies \mathbf{q_2 = 1.20 - 2q_3}$
-    
+
 ### 1.3 无套利价格区间 (No-Arbitrage Price Range)
 
 According to the **First Fundamental Theorem of Asset Pricing**, no arbitrage implies the existence of a **strictly positive** state price vector ($q_s > 0$ for all $s$):
 1. $q_1 > 0 \implies q_3 - 0.25 > 0 \implies q_3 > 0.25$
 2. $q_2 > 0 \implies 1.20 - 2q_3 > 0 \implies q_3 < 0.60$
 3. $q_3 > 0$
-    
+
 Therefore, the no-arbitrage price for the State-3 Arrow Security ($P_{A3} = q_3$) must fall within the interval:
-$$\mathbf{0.25 < P_{A3} < 0.60}$$
+$$
+\begin{aligned}
+0.25<P_{A3}<0.60.
+\end{aligned}
+$$
 ### 1.4 套利策略 (Arbitrage Strategy)
 
 **Scenario: $P_{A3} = 0.20$** (Price is below the lower bound).
@@ -85,16 +117,23 @@ $$
 ---
 
 ## Question 2. Representative Investor, Arrow Security Pricing, and Risk-Free Rate
-> Consider a two-period economy ($t=0, 1$) with three possible future states at $t=1$, denoted by $s \in \{1, 2, 3\}$, each occurring with probability $\pi_s = 1/3$.
-> The economy is populated by a **Representative Investor** with a time-additive power utility function (CRRA):
-> $$U(c_0, \tilde{c}_1) = u(c_0) + \delta E[u(\tilde{c}_1)], \quad u(c) = \frac{c^{1-\rho}}{1-\rho}$$
-> where $\rho > 0$ is the coefficient of relative risk aversion and $\delta \in (0, 1)$ is the time discount factor.
-> Aggregate endowment (consumption) at $t=0$ is $c_0$. Aggregate consumption at $t=1$ in each state is given by the vector $\mathbf{c}_1 = (c_{1,1}, c_{1,2}, c_{1,3})$.
-> 
-> **Required:**
-> 1. **State Price Derivation**: Use the representative investor's First-Order Condition (FOC) to derive the formula for the $j$-th **Arrow Security price** ($q_j$).
-> 2. **Risk-Free Rate**: Derive the expression for the gross risk-free rate $R_f$ in this economy.
-> 3. **Numerical Calculation**: Assume $c_0 = 1$, $\mathbf{c}_1 = (1.1, 1.0, 0.9)$, $\delta = 0.95$, and $\rho = 2$. Calculate the price of the Arrow Security for State 1 ($q_1$) and the risk-free rate $R_f$.
+Consider a two-period economy ($t=0, 1$) with three possible future states at $t=1$, denoted by $s \in \{1, 2, 3\}$, each occurring with probability $\pi_s = 1/3$.
+The economy is populated by a **Representative Investor** with a time-additive power utility function (CRRA):
+$$
+\begin{aligned}
+U(c_0,\tilde c_1)
+&=u(c_0)+\delta E[u(\tilde c_1)],
+\qquad
+u(c)=\frac{c^{1-\rho}}{1-\rho}.
+\end{aligned}
+$$
+where $\rho > 0$ is the coefficient of relative risk aversion and $\delta \in (0, 1)$ is the time discount factor.
+Aggregate endowment (consumption) at $t=0$ is $c_0$. Aggregate consumption at $t=1$ in each state is given by the vector $\mathbf{c}_1 = (c_{1,1}, c_{1,2}, c_{1,3})$.
+
+**Required:**
+1. **State Price Derivation**: Use the representative investor's First-Order Condition (FOC) to derive the formula for the $j$-th **Arrow Security price** ($q_j$).
+2. **Risk-Free Rate**: Derive the expression for the gross risk-free rate $R_f$ in this economy.
+3. **Numerical Calculation**: Assume $c_0 = 1$, $\mathbf{c}_1 = (1.1, 1.0, 0.9)$, $\delta = 0.95$, and $\rho = 2$. Calculate the price of the Arrow Security for State 1 ($q_1$) and the risk-free rate $R_f$.
 
 #考点/代表性投资者 #考点/时间可加效用 #考点/CRRA #考点/Arrow证券 #考点/状态价格 #考点/风险自由利率 #考点/无套利 #考点/一价定律 #考点/SDF #考点/风险中性测度
 
@@ -103,29 +142,88 @@ $$
 在代表性投资者模型中，均衡状态下的资产价格由该投资者的边际替代率（MRS）决定 。 Arrow Security $j$ 的定义是在状态 $j$ 支付 1 单位，其余状态支付 0 。
 
 - **投资者优化问题**：
-$$\max_{c_0, \{c_{1,s}\}} u(c_0) + \delta \sum_{s=1}^3 \pi_s u(c_{1,s}) \quad \text{s.t.} \quad c_0 + \sum_{s=1}^3 q_s c_{1,s} = W_0$$
+$$
+\left\{
+\begin{aligned}
+\max_{c_0,\{c_{1,s}\}}\quad
+&u(c_0)+\delta\sum_{s=1}^3\pi_su(c_{1,s}),\\
+\text{s.t.}\quad
+&c_0+\sum_{s=1}^3q_sc_{1,s}=W_0.
+\end{aligned}
+\right.
+$$
 代表性投资者在初始财富 $W_0$ 给定时，选择 $t=0$ 消费 $c_0$ 和各状态下的 $t=1$ 消费 $c_{1,s}$；约束式表示这些消费必须能被现值预算买下，而 $q_s$ 就是“在状态 $s$ 下多消费 1 单位的现值成本”。（endowment = consumption quantity，$q_s c_{1,s}$表示price×quantity=总金额or财富量）
 - **一阶条件 (FOC)**：
     对于任意状态 $j$ 的消费 $c_{1,j}$，其 Lagrange 乘子对应的条件为：
-$$\delta \pi_j u'(c_{1,j}) = \lambda q_j$$
+$$
+\begin{aligned}
+\delta\pi_ju'(c_{1,j})&=\lambda q_j.
+\end{aligned}
+$$
     对于 $t=0$ 的消费 $c_0$：
-$$u'(c_0) = \lambda$$
+$$
+\begin{aligned}
+u'(c_0)&=\lambda.
+\end{aligned}
+$$
 - **消除 $\lambda$ 得到状态价格公式**：
-$$q_j = \delta \pi_j \frac{u'(c_{1,j})}{u'(c_0)}$$
+$$
+\begin{aligned}
+q_j&=\delta\pi_j\frac{u'(c_{1,j})}{u'(c_0)}.
+\end{aligned}
+$$
 - **代入 CRRA 效用函数 $u'(c) = c^{-\rho}$**：
-$$\mathbf{q_j = \delta \pi_j \left( \frac{c_{1,j}}{c_0} \right)^{-\rho}}$$
+$$
+\begin{aligned}
+q_j
+&=
+\delta\pi_j
+\left(\frac{c_{1,j}}{c_0}\right)^{-\rho}.
+\end{aligned}
+$$
 
 ### 2.2 Risk-Free Rate ($R_f$) 的推导
 
 无风险债券在所有状态下都支付 1。其价格 $P_f$ 是所有状态价格之和 ：
-$$P_f = \sum_{s=1}^3 q_s = \sum_{s=1}^3 \delta \pi_s \left( \frac{c_{1,s}}{c_0} \right)^{-\rho} = E \left[ \delta \left( \frac{\tilde{c}_1}{c_0} \right)^{-\rho} \right]$$
+$$
+\begin{aligned}
+P_f
+&=\sum_{s=1}^3q_s\\
+&=\sum_{s=1}^3\delta\pi_s
+\left(\frac{c_{1,s}}{c_0}\right)^{-\rho}\\
+&=
+E\left[
+\delta
+\left(\frac{\tilde c_1}{c_0}\right)^{-\rho}
+\right].
+\end{aligned}
+$$
 根据 $R_f = 1/P_f$，我们得到：
-$$\mathbf{R_f = \frac{1}{\delta E \left[ (\tilde{c}_1 / c_0)^{-\rho} \right]}}$$
+$$
+\begin{aligned}
+R_f
+&=
+\frac{1}{
+\delta E\left[
+(\tilde c_1/c_0)^{-\rho}
+\right]
+}.
+\end{aligned}
+$$
 ### 2.3 数值计算 (Numerical Calculation)
 
 已知条件：$\pi_s = 1/3, c_0 = 1, \mathbf{c}_1 = (1.1, 1.0, 0.9), \delta = 0.95, \rho = 2$。
 - **计算 $q_1$**：
-$$q_1 = 0.95 \times \frac{1}{3} \times (1.1 / 1)^{-2} = 0.3167 \times 0.8264 \approx \mathbf{0.2617}$$
+$$
+\begin{aligned}
+q_1
+&=
+0.95\times\frac{1}{3}\times(1.1/1)^{-2}\\
+&=
+0.3167\times0.8264
+\approx0.2617.
+\end{aligned}
+$$
 - **计算其余状态价格**：
     $q_2 = 0.95 \times \frac{1}{3} \times (1.0 / 1)^{-2} = 0.3167$
     $q_3 = 0.95 \times \frac{1}{3} \times (0.9 / 1)^{-2} = 0.3167 \times 1.2346 \approx 0.3909$
@@ -135,7 +233,7 @@ $$q_1 = 0.95 \times \frac{1}{3} \times (1.1 / 1)^{-2} = 0.3167 \times 0.8264 \ap
 
 ---
 ## Question 3. Linear SDF Implies CAPM and MVF
-> 证明：如果 SDF $m$ 是市场组合收益率 $R_m$ 的线性函数，那么 CAPM 成立，且 $R_m$ 必须位于均值-方差有效边界（MVF）上。
+证明：如果 SDF $m$ 是市场组合收益率 $R_m$ 的线性函数，那么 CAPM 成立，且 $R_m$ 必须位于均值-方差有效边界（MVF）上。
 
 #考点/资产定价 #考点/SDF #考点/CAPM #考点/市场组合 #考点/均值-方差有效边界 #考点/MVF #考点/线性定价核
 
@@ -172,7 +270,7 @@ $$
 
 ## Question 4. State Prices, SDF, and Risk-Neutral Pricing
 
-> State Prices, SDF, and Risk-Neutral Pricing
+State Prices, SDF, and Risk-Neutral Pricing
 
 #考点/状态价格 #考点/风险中性概率 #考点/风险中性定价 #考点/SDF #考点/一价定律
 
@@ -215,7 +313,7 @@ $$
 
 ## Question 5. No-Dividend Stock: American Call Equals European Call
 
-> 证明对于一个不支付红利（No Dividends）的股票，美式看涨期权（American Call Option）的价值等于欧式看涨期权（European Call Option），且提前行权（Early Exercise）永远不是最优的。
+证明对于一个不支付红利（No Dividends）的股票，美式看涨期权（American Call Option）的价值等于欧式看涨期权（European Call Option），且提前行权（Early Exercise）永远不是最优的。
 
 #考点/期权定价 #考点/美式期权 #考点/欧式期权 #考点/提前行权 #考点/无红利股票 #考点/无套利 #考点/风险中性测度
 
@@ -360,67 +458,67 @@ $$
 ---
 ## Question 6. American vs European Options as an Optimal Stopping Problem
 
-> 考虑无套利市场下的标的资产价格过程
-> $$
+考虑无套利市场下的标的资产价格过程
+$$
 \begin{aligned}
 dS_t&=(r-q)S_t\,dt+\sigma S_t\,dW_t^{\mathbb Q},
 \qquad 0\le t\le T.
 \end{aligned}
 $$
-> 其中 $r>0$ 为无风险利率，$q\ge 0$ 为连续分红率，$\sigma>0$ 为常数波动率。执行价为 $K>0$。
->
-> 记欧式看涨、欧式看跌、美式看涨、美式看跌的价值函数分别为
-> $$
+其中 $r>0$ 为无风险利率，$q\ge 0$ 为连续分红率，$\sigma>0$ 为常数波动率。执行价为 $K>0$。
+
+记欧式看涨、欧式看跌、美式看涨、美式看跌的价值函数分别为
+$$
 \begin{aligned}
 C^E(t,S),\quad P^E(t,S),\quad C^A(t,S),\quad P^A(t,S).
 \end{aligned}
 $$
-> **Required:**
-> 1. 写出欧式看涨与欧式看跌在风险中性测度下的定价表达式，并说明为什么它们是“纯定到期支付”问题，而不是 optimal stopping 问题。
->
-> 2. 证明：当 $q=0$ 时，美式看涨期权从不应提前行权，因此
-> $$
+**Required:**
+1. 写出欧式看涨与欧式看跌在风险中性测度下的定价表达式，并说明为什么它们是“纯定到期支付”问题，而不是 optimal stopping 问题。
+
+2. 证明：当 $q=0$ 时，美式看涨期权从不应提前行权，因此
+$$
 \begin{aligned}
 C^A(t,S)=C^E(t,S).
 \end{aligned}
 $$
-> 要求同时给出：
-> （1）一个 no-arbitrage / convexity 证明
-> （2）一个 dynamic programming / optimal stopping 视角的解释
-> 
-> 3. 讨论为什么美式看跌期权即使在 $q=0$ 时也可能提前行权。要求解释：
-> $$
+要求同时给出：
+（1）一个 no-arbitrage / convexity 证明
+（2）一个 dynamic programming / optimal stopping 视角的解释
+
+3. 讨论为什么美式看跌期权即使在 $q=0$ 时也可能提前行权。要求解释：
+$$
 \begin{aligned}
 \text{“提前收到 }K\text{ 的时间价值”}
 \quad\text{与}\quad
 \text{“继续持有的下行期权价值”}
 \end{aligned}
 $$
-> 之间的权衡。
->
-> 4. 对美式期权写出变分不等式（variational inequality）。以美式看跌为例，若记价值函数为 $P^A(t,S)$，生成元为
-> $$
+之间的权衡。
+
+4. 对美式期权写出变分不等式（variational inequality）。以美式看跌为例，若记价值函数为 $P^A(t,S)$，生成元为
+$$
 \begin{aligned}
 \mathcal Lf
 &=f_t+(r-q)Sf_S+\frac12\sigma^2S^2f_{SS}.
 \end{aligned}
 $$
-> 则写出其 continuation region 与 exercise region 中分别满足的方程，并合并成一个变分不等式。
->
-> 5. 设美式看跌的最优行权边界为 $S^*(t)$。写出并解释以下条件的经济含义：
-> $$
+则写出其 continuation region 与 exercise region 中分别满足的方程，并合并成一个变分不等式。
+
+5. 设美式看跌的最优行权边界为 $S^*(t)$。写出并解释以下条件的经济含义：
+$$
 \begin{aligned}
 P^A(t,S^*(t))&=K-S^*(t),\\
 P_S^A(t,S^*(t))&=-1.
 \end{aligned}
 $$
-> 并说明第二个条件为什么被称为 smooth pasting。
->
-> 6. 现在令 $q>0$。讨论美式看涨期权何时可能提前行权，并解释为什么“有分红”会改变第 2 问中的结论。你不需要给 closed-form solution，但需要清楚说明：**分红收益** v.s. **推迟支付执行价所带来的好处**的比较逻辑。
->
-> 7. 比较欧式期权与美式期权在数学结构上的不同。要求至少从以下三个角度组织回答：（1）payoff timing；（2）PDE vs. variational inequality；（4）free boundary / optimal stopping。
->
-> 8. （加分问）若把美式期权价格问题离散化到有限差分网格，说明：为什么欧式问题对应线性系统，而美式问题对应带 obstacle 的互补问题。
+并说明第二个条件为什么被称为 smooth pasting。
+
+6. 现在令 $q>0$。讨论美式看涨期权何时可能提前行权，并解释为什么“有分红”会改变第 2 问中的结论。你不需要给 closed-form solution，但需要清楚说明：**分红收益** v.s. **推迟支付执行价所带来的好处**的比较逻辑。
+
+7. 比较欧式期权与美式期权在数学结构上的不同。要求至少从以下三个角度组织回答：（1）payoff timing；（2）PDE vs. variational inequality；（4）free boundary / optimal stopping。
+
+8. （加分问）若把美式期权价格问题离散化到有限差分网格，说明：为什么欧式问题对应线性系统，而美式问题对应带 obstacle 的互补问题。
 
 #考点/最优停止 #考点/美式期权 #考点/欧式期权 #考点/自由边界 #考点/smooth_pasting #考点/风险中性定价 #考点/变分不等式
 
@@ -521,24 +619,24 @@ $$
 ---
 ## Question 7. Grossman-Stiglitz：信息价值与最高支付意愿
 
-> 设代理人具有 CARA utility，风险厌恶系数为 $\lambda>0$，初始确定财富为 $m$。风险资产终值为 $v$，当前价格为 $p$，代理人选择持仓 $X$，则终值财富为
-> $$
+设代理人具有 CARA utility，风险厌恶系数为 $\lambda>0$，初始确定财富为 $m$。风险资产终值为 $v$，当前价格为 $p$，代理人选择持仓 $X$，则终值财富为
+$$
 \begin{aligned}
 W&=m+X(v-p).
 \end{aligned}
 $$
-> 交易前代理人可以支付信息成本 $c$ 观察私人信号 $s$；若不支付，则只能像 uninformed trader 一样从价格 $p$ 中学习。记任意信息集 $\mathcal I$ 下的后验矩为
-> $$
+交易前代理人可以支付信息成本 $c$ 观察私人信号 $s$；若不支付，则只能像 uninformed trader 一样从价格 $p$ 中学习。记任意信息集 $\mathcal I$ 下的后验矩为
+$$
 \begin{aligned}
 \mu_{\mathcal I}&:=E[v\mid \mathcal I],\\
 \Sigma_{\mathcal I}&:=\operatorname{Var}(v\mid \mathcal I).
 \end{aligned}
 $$
-> 1. 对任意信息集 $\mathcal I$，写出 [[PhD-Course/Asset Pricing/Part4-卡片/CARA-Normal framework - 均值方差等价与最优需求|CARA-Normal]] 下的 certainty equivalent，并求最优持仓 $X^*(\mathcal I)$。
-> 2. 若代理人支付成本 $c$ 观察到私人信号 $s$，写出她的 certainty equivalent $CE_I(s)$。
-> 3. 若代理人不买信息、只从价格中学习，写出她的 certainty equivalent $CE_U(p)$。
-> 4. 推导她在交易前对信息的最高支付意愿 $c^*$。
-> 5. 解释为什么：若价格完全揭示私人信息，则不可能与正的信息获取成本同时成立。
+1. 对任意信息集 $\mathcal I$，写出 [[PhD-Course/Asset Pricing/Part4-卡片/CARA-Normal framework - 均值方差等价与最优需求|CARA-Normal]] 下的 certainty equivalent，并求最优持仓 $X^*(\mathcal I)$。
+2. 若代理人支付成本 $c$ 观察到私人信号 $s$，写出她的 certainty equivalent $CE_I(s)$。
+3. 若代理人不买信息、只从价格中学习，写出她的 certainty equivalent $CE_U(p)$。
+4. 推导她在交易前对信息的最高支付意愿 $c^*$。
+5. 解释为什么：若价格完全揭示私人信息，则不可能与正的信息获取成本同时成立。
 
 #考点/Grossman-Stiglitz #考点/信息价值 #考点/支付意愿 #考点/CARA #考点/确定性等价 #考点/贝叶斯学习 #考点/部分揭示均衡
 
@@ -689,28 +787,28 @@ $$
 
 ## Question 8. Heterogeneous Beliefs with Log Utility（part4-Exercise5）
 
-> 设两个 agent 都具有 log utility，discount rates 分别为 $\rho_1,\rho_2$，总消费品供给为 $\delta_t$，均衡满足 $c_t^1+c_t^2=\delta_t$。在 agent $j$ 的主观测度下，endowment dynamics 为
-> $$
-> \begin{aligned}
-> \frac{d\delta_t}{\delta_t}
-> &= \hat\mu_t^jdt+\sigma dB_t^j.
-> \end{aligned}
-> $$
-> 两个 agent 对 drift 的信念不同，并满足
-> $$
-> \begin{aligned}
-> dB_t^2&=dB_t^1+\beta_t^{12}dt,\\
-> \beta_t^{12}&=\frac{\hat\mu_t^1-\hat\mu_t^2}{\sigma}.
-> \end{aligned}
-> $$
-> **Required:**
-> 1. 用 FOC 与市场清算推导消费分配，并定义相对消费份额 $\eta_t$。
-> 2. 推导 $\eta_t$ 的动态。
-> 3. 推导短利率 $r_t$ 与两位 agent 的 market price of risk $\theta_t^1,\theta_t^2$。
-> 4. 推导股票价格、price-dividend ratio 与股票波动率。
-> 5. 推导各 agent 的财富与股票持仓比例，并验证股票市场与债券市场清算。
-> 6. 推导零息债价格；若 $\hat\mu_t^j$ 服从 OU/Vasicek 过程，进一步写出 $G_j(t,T)$。
-> 7. 解释这道题的经济含义：为什么 heterogeneous beliefs 会带来 stochastic valuation ratio 与 excess volatility。
+设两个 agent 都具有 log utility，discount rates 分别为 $\rho_1,\rho_2$，总消费品供给为 $\delta_t$，均衡满足 $c_t^1+c_t^2=\delta_t$。在 agent $j$ 的主观测度下，endowment dynamics 为
+$$
+\begin{aligned}
+\frac{d\delta_t}{\delta_t}
+&= \hat\mu_t^jdt+\sigma dB_t^j.
+\end{aligned}
+$$
+两个 agent 对 drift 的信念不同，并满足
+$$
+\begin{aligned}
+dB_t^2&=dB_t^1+\beta_t^{12}dt,\\
+\beta_t^{12}&=\frac{\hat\mu_t^1-\hat\mu_t^2}{\sigma}.
+\end{aligned}
+$$
+**Required:**
+1. 用 FOC 与市场清算推导消费分配，并定义相对消费份额 $\eta_t$。
+2. 推导 $\eta_t$ 的动态。
+3. 推导短利率 $r_t$ 与两位 agent 的 market price of risk $\theta_t^1,\theta_t^2$。
+4. 推导股票价格、price-dividend ratio 与股票波动率。
+5. 推导各 agent 的财富与股票持仓比例，并验证股票市场与债券市场清算。
+6. 推导零息债价格；若 $\hat\mu_t^j$ 服从 OU/Vasicek 过程，进一步写出 $G_j(t,T)$。
+7. 解释这道题的经济含义：为什么 heterogeneous beliefs 会带来 stochastic valuation ratio 与 excess volatility。
 
 #考点/异质信念 #考点/log_utility #考点/消费分配 #考点/状态价格密度 #考点/短利率 #考点/市场风险价格 #考点/Lucas_tree #考点/股票波动率 #考点/零息债定价 #考点/市场清算
 
@@ -1009,7 +1107,7 @@ d\log\delta_t \\[3pt]
 +
 h_t\left[-(\rho_2-\rho_1)dt-\beta_t^{12}dB_t^1\right]
 -
-\frac{1}{2}h_t^2(\beta_t^{12})^2dt 
+\frac{1}{2}h_t^2(\beta_t^{12})^2dt
 -
 \left[
 \left(\hat\mu_t^1-\frac{1}{2}\sigma^2\right)dt
@@ -1054,66 +1152,66 @@ $$
 
 一般形式（SPD）是：
 
-> [!note]+ 复习卡片：martingale = zero drift
-> 关联：[[状态价格密度、EMM 与鞅定价]]；[[Part2#4.3 Arbitrage, SPD, and EMM|Part2: Arbitrage, SPD, and EMM]]
->
-> $$
-> \begin{aligned}
-> dX_t
-> &=
-> \mu_t^Xdt+\sigma_t^XdB_t, \\
-> X_t\text{ is martingale}
-> &\Longleftrightarrow
-> \mu_t^X=0.
-> \end{aligned}
-> $$
->
-> SPD 的定义就是：$\xi_t$ 调整后的资产价格过程是 martingale。因此先设
-> $$
-> \begin{aligned}
-> \frac{d\xi_t}{\xi_t}
-> &=
-> a_tdt+b_tdB_t, \\
-> \frac{dB_t^0}{B_t^0}
-> &=
-> r_tdt
-> \quad\Rightarrow\quad
-> d(\xi_tB_t^0)\text{ has zero drift} \\
-> &\Rightarrow
-> a_t+r_t=0
-> \Rightarrow
-> a_t=-r_t, \\
-> \frac{dS_t}{S_t}
-> &=
-> \mu_tdt+\sigma_tdB_t
-> \quad\Rightarrow\quad
-> d(\xi_tS_t)\text{ has zero drift} \\
-> &\Rightarrow
-> a_t+\mu_t+b_t\sigma_t=0 \\
-> &\Rightarrow
-> \mu_t-r_t=-b_t\sigma_t.
-> \end{aligned}
-> $$
-> 令 $\theta_t=-b_t$，则 $\mu_t-r_t=\sigma_t\theta_t$，并且
-> $$
-> \begin{aligned}
-> \frac{d\xi_t}{\xi_t}
-> &=
-> -r_tdt-\theta_tdB_t, \\
-> d\log \xi_t
-> &=
-> -\left(r_t+\frac12\theta_t^2\right)dt-\theta_t dB_t, \\
-> \xi_t
-> &=
-> \xi_0
-> \exp\!\left(
-> -\int_0^t r_s\,ds
-> -\int_0^t \theta_s\,dB_s
-> -\frac12\int_0^t \theta_s^2\,ds
-> \right).
-> \end{aligned}
-> $$
-> 其中 $r_t$ 是 short rate，$\theta_t$ 是 market price of risk；本题在 agent $1$ 的测度下写成 $dB_t^1$ 与 $\theta_t^1$。
+**复习卡片：martingale = zero drift**
+关联：[[状态价格密度、EMM 与鞅定价]]；[[Part2#4.3 Arbitrage, SPD, and EMM|Part2: Arbitrage, SPD, and EMM]]
+
+$$
+\begin{aligned}
+dX_t
+&=
+\mu_t^Xdt+\sigma_t^XdB_t, \\
+X_t\text{ is martingale}
+&\Longleftrightarrow
+\mu_t^X=0.
+\end{aligned}
+$$
+
+SPD 的定义就是：$\xi_t$ 调整后的资产价格过程是 martingale。因此先设
+$$
+\begin{aligned}
+\frac{d\xi_t}{\xi_t}
+&=
+a_tdt+b_tdB_t, \\
+\frac{dB_t^0}{B_t^0}
+&=
+r_tdt
+\quad\Rightarrow\quad
+d(\xi_tB_t^0)\text{ has zero drift} \\
+&\Rightarrow
+a_t+r_t=0
+\Rightarrow
+a_t=-r_t, \\
+\frac{dS_t}{S_t}
+&=
+\mu_tdt+\sigma_tdB_t
+\quad\Rightarrow\quad
+d(\xi_tS_t)\text{ has zero drift} \\
+&\Rightarrow
+a_t+\mu_t+b_t\sigma_t=0 \\
+&\Rightarrow
+\mu_t-r_t=-b_t\sigma_t.
+\end{aligned}
+$$
+令 $\theta_t=-b_t$，则 $\mu_t-r_t=\sigma_t\theta_t$，并且
+$$
+\begin{aligned}
+\frac{d\xi_t}{\xi_t}
+&=
+-r_tdt-\theta_tdB_t, \\
+d\log \xi_t
+&=
+-\left(r_t+\frac12\theta_t^2\right)dt-\theta_t dB_t, \\
+\xi_t
+&=
+\xi_0
+\exp\!\left(
+-\int_0^t r_s\,ds
+-\int_0^t \theta_s\,dB_s
+-\frac12\int_0^t \theta_s^2\,ds
+\right).
+\end{aligned}
+$$
+其中 $r_t$ 是 short rate，$\theta_t$ 是 market price of risk；本题在 agent $1$ 的测度下写成 $dB_t^1$ 与 $\theta_t^1$。
 
 $$
 \frac{d\xi_t^1}{\xi_t^1}
@@ -1186,38 +1284,38 @@ $$
 
 股票是 aggregate Lucas tree，dividend 是 $\delta_t$（见 [[普通股票设定与 Lucas tree 股票设定]]）。股票价格为：
 
-> [!note]+ 复习卡片：Lucas tree stock pricing
-> 关联：[[普通股票设定与 Lucas tree 股票设定]]；[[Lucas tree model 与代表性消费者均衡]]；[[Part2#6.2 Lucas Tree Equilibrium|Part2: Lucas Tree Equilibrium]]
->
-> Lucas tree 中，股票是对 aggregate endowment 的索取权：
-> $$
-> \begin{aligned}
-> \text{stock payoff flow}
-> &=
-> \text{dividend flow}
-> =
-> \delta_tdt.
-> \end{aligned}
-> $$
->
-> 用 SPD 定价任意 dividend claim。关键是：SPD 加权后变成 martingale 的是 $\xi_tS_t$，不是 $S_t$ 本身：
-> $$
-> \begin{aligned}
-> \xi_tS_t
-> &=
-> E_t\!\left[\int_t^\infty \xi_s\delta_s\,ds\right], \\
-> S_t
-> &=
-> \frac{1}{\xi_t}
-> E_t\!\left[\int_t^\infty \xi_s\delta_s\,ds\right], \\
-> \frac{S_t}{\delta_t}
-> &=
-> E_t\!\left[\int_t^\infty
-> \frac{\xi_s}{\xi_t}\frac{\delta_s}{\delta_t}\,ds
-> \right].
-> \end{aligned}
-> $$
-> 因此 price-dividend ratio 是“未来 dividend growth”乘上“未来 SPD discount”的条件期望。
+**复习卡片：Lucas tree stock pricing**
+关联：[[普通股票设定与 Lucas tree 股票设定]]；[[Lucas tree model 与代表性消费者均衡]]；[[Part2#6.2 Lucas Tree Equilibrium|Part2: Lucas Tree Equilibrium]]
+
+Lucas tree 中，股票是对 aggregate endowment 的索取权：
+$$
+\begin{aligned}
+\text{stock payoff flow}
+&=
+\text{dividend flow}
+=
+\delta_tdt.
+\end{aligned}
+$$
+
+用 SPD 定价任意 dividend claim。关键是：SPD 加权后变成 martingale 的是 $\xi_tS_t$，不是 $S_t$ 本身：
+$$
+\begin{aligned}
+\xi_tS_t
+&=
+E_t\!\left[\int_t^\infty \xi_s\delta_s\,ds\right], \\
+S_t
+&=
+\frac{1}{\xi_t}
+E_t\!\left[\int_t^\infty \xi_s\delta_s\,ds\right], \\
+\frac{S_t}{\delta_t}
+&=
+E_t\!\left[\int_t^\infty
+\frac{\xi_s}{\xi_t}\frac{\delta_s}{\delta_t}\,ds
+\right].
+\end{aligned}
+$$
+因此 price-dividend ratio 是“未来 dividend growth”乘上“未来 SPD discount”的条件期望。
 
 $$
 S_t
@@ -1493,38 +1591,38 @@ $$
 
 动态预算约束为：
 
-> [!note]+ 复习卡片：动态预算约束
-> 关联：[[连续时间组合选择问题]]；[[Part2#5.1 Portfolio Choice in Continuous Time|Part2: Portfolio Choice]]
->
-> 若 $\pi_t^j$ 是 agent $j$ 投在股票上的 wealth share，则
-> $$
-> \begin{aligned}
-> \text{stock wealth}
-> &=
-> \pi_t^jW_t^j,
-> \qquad
-> \text{bond wealth}
-> =
-> (1-\pi_t^j)W_t^j, \\
-> \text{stock shares}
-> &=
-> \frac{\pi_t^jW_t^j}{S_t}.
-> \end{aligned}
-> $$
->
-> 因此财富变化等于 bond return + stock cum-dividend return - consumption：
-> $$
-> \begin{aligned}
-> dW_t^j
-> &=
-> \underbrace{(1-\pi_t^j)W_t^jr_tdt}_{\text{bond return}}
-> +
-> \underbrace{\frac{\pi_t^jW_t^j}{S_t}(dS_t+\delta_tdt)}_{\text{stock price gain + dividend}}
-> -
-> \underbrace{c_t^jdt}_{\text{consumption}}.
-> \end{aligned}
-> $$
-> 只有 $dS_t$ 含 Brownian shock，所以 wealth 的 diffusion coefficient 来自股票仓位。
+**复习卡片：动态预算约束**
+关联：[[连续时间组合选择问题]]；[[Part2#5.1 Portfolio Choice in Continuous Time|Part2: Portfolio Choice]]
+
+若 $\pi_t^j$ 是 agent $j$ 投在股票上的 wealth share，则
+$$
+\begin{aligned}
+\text{stock wealth}
+&=
+\pi_t^jW_t^j,
+\qquad
+\text{bond wealth}
+=
+(1-\pi_t^j)W_t^j, \\
+\text{stock shares}
+&=
+\frac{\pi_t^jW_t^j}{S_t}.
+\end{aligned}
+$$
+
+因此财富变化等于 bond return + stock cum-dividend return - consumption：
+$$
+\begin{aligned}
+dW_t^j
+&=
+\underbrace{(1-\pi_t^j)W_t^jr_tdt}_{\text{bond return}}
++
+\underbrace{\frac{\pi_t^jW_t^j}{S_t}(dS_t+\delta_tdt)}_{\text{stock price gain + dividend}}
+-
+\underbrace{c_t^jdt}_{\text{consumption}}.
+\end{aligned}
+$$
+只有 $dS_t$ 含 Brownian shock，所以 wealth 的 diffusion coefficient 来自股票仓位。
 
 $$
 dW_t^j
@@ -1785,19 +1883,19 @@ $$
 
 再验证 bond market clearing。市场清算条件是：
 
-> [!note]+ 复习卡片：market clearing
-> 关联：[[普通股票设定与 Lucas tree 股票设定]]；[[连续时间组合选择问题]]
->
-> 市场清算就是总需求等于总供给：
-> $$
-> \begin{aligned}
-> \text{stock market}
-> &: \quad \sum_j N_t^{S,j}=1, \\
-> \text{bond market}
-> &: \quad \sum_j B_t^{d,j}=0.
-> \end{aligned}
-> $$
-> Lucas tree 只有一棵树，所以股票总供给是 1；bond 只是内部借贷，没有净外生供给，所以总和必须为 0。
+**复习卡片：market clearing**
+关联：[[普通股票设定与 Lucas tree 股票设定]]；[[连续时间组合选择问题]]
+
+市场清算就是总需求等于总供给：
+$$
+\begin{aligned}
+\text{stock market}
+&: \quad \sum_j N_t^{S,j}=1, \\
+\text{bond market}
+&: \quad \sum_j B_t^{d,j}=0.
+\end{aligned}
+$$
+Lucas tree 只有一棵树，所以股票总供给是 1；bond 只是内部借贷，没有净外生供给，所以总和必须为 0。
 
 $$
 \left\{
@@ -1844,13 +1942,13 @@ $$
 
 **（10）Zero-coupon bond price**
 
-> [!note]+ 复习卡片：zero-coupon bond pricing
-> 关联：[[Radon-Nikodym density 与 Girsanov 复习]]；[[OU-Vasicek 过程复习]]
->
-> 考点：
-> - 先把 $P(t,T)$ 写成 agent 1 的 SPD 定价式
-> - 再用 $\xi_t^1=\xi_t^{21}\xi_t^2$ 把 agent 2 的项改写回 agent 1 的测度
-> - 最后把 $G_j(t,T)$ 化成 OU 积分的 normal MGF
+**复习卡片：zero-coupon bond pricing**
+关联：[[Radon-Nikodym density 与 Girsanov 复习]]；[[OU-Vasicek 过程复习]]
+
+考点：
+- 先把 $P(t,T)$ 写成 agent 1 的 SPD 定价式
+- 再用 $\xi_t^1=\xi_t^{21}\xi_t^2$ 把 agent 2 的项改写回 agent 1 的测度
+- 最后把 $G_j(t,T)$ 化成 OU 积分的 normal MGF
 
 现在求 $T>t$ 时支付 $1$ 的 bond price，记为 $P(t,T)$，期限 $\tau=T-t$。
 
@@ -1991,14 +2089,13 @@ E_t^{\widetilde Q^j}\!\left[
 \end{aligned}
 $$
 
-> [!note]+
-> **复习卡片：Radon-Nikodym density**
-> 这里的关键是把
-> $$
-> \exp\!\left(-\int_t^T\sigma dB_s^j-\frac12\int_t^T\sigma^2ds\right)
-> $$
-> 识别成从 $Q^j$ 到 $\widetilde Q^j$ 的 density increment；它的作用是把 Brownian drift shift 吸收到测度里。  
-> 细节见 [[Radon-Nikodym density 与 Girsanov 复习]].
+****复习卡片：Radon-Nikodym density****
+这里的关键是把
+$$
+\exp\!\left(-\int_t^T\sigma dB_s^j-\frac12\int_t^T\sigma^2ds\right)
+$$
+识别成从 $Q^j$ 到 $\widetilde Q^j$ 的 density increment；它的作用是把 Brownian drift shift 吸收到测度里。
+细节见 [[Radon-Nikodym density 与 Girsanov 复习]].
 
 所以
 $$
@@ -2009,9 +2106,8 @@ E_t^{\widetilde Q^j}\!\left[
 \right].
 $$
 
-> [!note]+
-> **复习卡片：OU/Vasicek 过程**
-> 这里用到 OU 过程的显式解、条件均值和方差；细节见 [[OU-Vasicek 过程复习]].
+****复习卡片：OU/Vasicek 过程****
+这里用到 OU 过程的显式解、条件均值和方差；细节见 [[OU-Vasicek 过程复习]].
 
 $$
 \begin{aligned}
@@ -2270,51 +2366,63 @@ $$
 
 ## Question 9. 信息扩散与动量交易
 
-> Consider an economy with two traded assets, a safe asset with net return zero, and a risky asset that makes a single dividend payment of
-> 
-> $$
-> D_T=D_0+\sum_{j=0}^T \varepsilon_j
-> $$
-> 
-> on a finite future date $T$. Here $\varepsilon_j\sim N(0,\sigma^2)$ are i.i.d., and each $\varepsilon_j$ can be decomposed as $\varepsilon_j=\varepsilon_j^1+\varepsilon_j^2+\cdots+\varepsilon_j^z$ for some fixed $z>0$ integer.
-> 
-> This economy has $z$ equal-sized groups of news-watchers, who gradually learn the information contained in the $\varepsilon_j^k$ news. Learning about $\varepsilon_{t+z-1}$ starts in period $t$, when group 1 observes $\varepsilon_{t+z-1}^1$, group 2 observes $\varepsilon_{t+z-1}^2$, and so on, with group $z$ observing $\varepsilon_{t+z-1}^z$. In period $t+1$, groups “rotate” in learning about $\varepsilon_{t+z-1}$: now group 1 observes $\varepsilon_{t+z-1}^2$, group 2 observes $\varepsilon_{t+z-1}^3$, and so on, with group $z$ observing $\varepsilon_{t+z-1}^1$. Thus all subinnovations of $\varepsilon_{t+z-1}$ are observed by exactly two groups at the end of period $t+1$. Learning about $\varepsilon_{t+z-1}$ continues in this fashion over the subsequent periods, and by the end of period $t+z-1$, $\varepsilon_{t+z-1}$ becomes publicly known. This procedure implies that at the end of some date $t$, any given agent knows $\varepsilon_t$ completely, knows $z-1$ of the $z$ sub-innovations in $\varepsilon_{t+1}$, i.e. a share $(z-1)/z$ of $\varepsilon_{t+1}$, knows a share $(z-2)/z$ of $\varepsilon_{t+2}$, and so on, with a share $1/z$ of $\varepsilon_{t+z-1}$. Thus, while agents in different groups have different information, on any given date they have the same “amount” of information. Throughout this problem, you can assume that $t$ is much smaller than $T$, so $t+z-1$ does not “bump” into $T$.
-> 
-> **（a）** Suppose that news-watchers have utility function
-> 
-> $$
-> U=E[-\exp\{-a\cdot c_T\}],
-> $$
-> 
-> where $c_T$ is consumption in period $T$ and $a$ measures risk aversion. News-watchers choose their portfolios on every date $t$. Each time, however, they assume incorrectly that they will have to hold their chosen portfolio until $T$, i.e. that they will not be able to rebalance before $T$. Show that, under these assumptions, the number of shares of the risky asset demanded by a news-watcher in group $i$ on date $t$ is
-> 
-> $$
-> x_{it}=\frac{E_{it}[D_T]-P_t}{a\cdot \operatorname{var}_{it}[D_T]},
-> $$
-> 
-> where $P_t$ is the asset price, and $E_{it}$ and $\operatorname{var}_{it}$ are the conditional mean and variance. Explain the comparative statics of $x_{it}$ with respect to $E_{it}[D_T]$, $\operatorname{var}_{it}[D_T]$, and $a$.
-> 
-> **（b）** Assuming that news-watchers only use information contained in the news they observe when computing $E_t[D_T]$ and $\operatorname{var}_{it}[D_T]$, i.e. that they ignore the information content of the asset price, prove
-> 
-> $$
-> \frac{1}{z}\sum_{i=1}^z E_{it}[D_T]
-> =
-> D_t+\frac{1}{z}\left[(z-1)\varepsilon_{t+1}+(z-2)\varepsilon_{t+2}+\cdots+2\varepsilon_{t+z-2}+\varepsilon_{t+z-1}\right],
-> $$
-> 
-> where $D_t=D_0+\sum_{j=0}^t\varepsilon_j$.
-> 
-> **（c）** Denote the supply of the risky asset by $Q$ and assume that there is a unit mass of news-watchers, so each group has a mass of $1/z$ people. Write down the market clearing condition for the risky asset. Using the notation $\theta=a\cdot \operatorname{var}_{it}[D_T]$, and treating $\theta$ as a constant, rewrite this condition to express $P_t$.
-> 
-> **（d）** Now suppose that the price of the asset at time $t-1$ is $P_{t-1}=0$, and then a single shock of $\varepsilon_{t+z-1}^1=1$ occurs, after which all other sub-innovations equal zero. Plot the asset price $P_s$ against time $s$ for $t-1\leq s\leq T$. Is the asset underpriced or overpriced in the short term? In the long term? Explain the intuition. What facts in finance are consistent with this model?
-> 
-> Now we add another class of agents, called momentum-traders. Suppose that at the beginning of each date $t$, momentum traders submit a quantity order $\phi\cdot \Delta P_{t-1}$, where $\phi>0$ is an exogenous parameter, and $\Delta P_{t-1}=P_{t-1}-P_{t-2}$ is the price change in the previous period. Momentum traders then hold their positions for $j$ periods. There are $j$ generations of momentum traders, thus at each date $t$, exactly one generation submits a new quantity order.
-> 
-> **（e）** The quantity orders of momentum traders can be thought of as affecting the supply of the risky asset $Q$. Using this insight, express the asset price $P_t$ as an ARMA process.
-> 
-> **（f）** Assuming that $P_s=0$ for all $s\leq t-1$, and that $\varepsilon_s^i=0$ except for $\varepsilon_{t+z-1}^1=1$, plot $P_s$ against time $s$ for $t-1\leq s\leq T$. Is the asset underpriced or overpriced in the short term? In the medium term? In the long term? Can this model explain additional facts relative to the pure news-watcher model?
-> 
-> **（g）** Now suppose you add a positive mass of fully rational agents. Will they eliminate all mispricing? Why?
+Consider an economy with two traded assets, a safe asset with net return zero, and a risky asset that makes a single dividend payment of
+
+$$
+D_T=D_0+\sum_{j=0}^T \varepsilon_j
+$$
+
+on a finite future date $T$. Here $\varepsilon_j\sim N(0,\sigma^2)$ are i.i.d., and each $\varepsilon_j$ can be decomposed as $\varepsilon_j=\varepsilon_j^1+\varepsilon_j^2+\cdots+\varepsilon_j^z$ for some fixed $z>0$ integer.
+
+This economy has $z$ equal-sized groups of news-watchers, who gradually learn the information contained in the $\varepsilon_j^k$ news. Learning about $\varepsilon_{t+z-1}$ starts in period $t$, when group 1 observes $\varepsilon_{t+z-1}^1$, group 2 observes $\varepsilon_{t+z-1}^2$, and so on, with group $z$ observing $\varepsilon_{t+z-1}^z$. In period $t+1$, groups “rotate” in learning about $\varepsilon_{t+z-1}$: now group 1 observes $\varepsilon_{t+z-1}^2$, group 2 observes $\varepsilon_{t+z-1}^3$, and so on, with group $z$ observing $\varepsilon_{t+z-1}^1$. Thus all subinnovations of $\varepsilon_{t+z-1}$ are observed by exactly two groups at the end of period $t+1$. Learning about $\varepsilon_{t+z-1}$ continues in this fashion over the subsequent periods, and by the end of period $t+z-1$, $\varepsilon_{t+z-1}$ becomes publicly known. This procedure implies that at the end of some date $t$, any given agent knows $\varepsilon_t$ completely, knows $z-1$ of the $z$ sub-innovations in $\varepsilon_{t+1}$, i.e. a share $(z-1)/z$ of $\varepsilon_{t+1}$, knows a share $(z-2)/z$ of $\varepsilon_{t+2}$, and so on, with a share $1/z$ of $\varepsilon_{t+z-1}$. Thus, while agents in different groups have different information, on any given date they have the same “amount” of information. Throughout this problem, you can assume that $t$ is much smaller than $T$, so $t+z-1$ does not “bump” into $T$.
+
+**（a）** Suppose that news-watchers have utility function
+
+$$
+U=E[-\exp\{-a\cdot c_T\}],
+$$
+
+where $c_T$ is consumption in period $T$ and $a$ measures risk aversion. News-watchers choose their portfolios on every date $t$. Each time, however, they assume incorrectly that they will have to hold their chosen portfolio until $T$, i.e. that they will not be able to rebalance before $T$. Show that, under these assumptions, the number of shares of the risky asset demanded by a news-watcher in group $i$ on date $t$ is
+
+$$
+x_{it}=\frac{E_{it}[D_T]-P_t}{a\cdot \operatorname{var}_{it}[D_T]},
+$$
+
+where $P_t$ is the asset price, and $E_{it}$ and $\operatorname{var}_{it}$ are the conditional mean and variance. Explain the comparative statics of $x_{it}$ with respect to $E_{it}[D_T]$, $\operatorname{var}_{it}[D_T]$, and $a$.
+
+**（b）** Assuming that news-watchers only use information contained in the news they observe when computing $E_t[D_T]$ and $\operatorname{var}_{it}[D_T]$, i.e. that they ignore the information content of the asset price, prove
+
+$$
+\begin{aligned}
+\frac{1}{z}\sum_{i=1}^z E_{it}[D_T]
+&=
+D_t
++
+\frac{1}{z}
+\left[
+(z-1)\varepsilon_{t+1}
++
+(z-2)\varepsilon_{t+2}
++\cdots
++2\varepsilon_{t+z-2}
++\varepsilon_{t+z-1}
+\right],
+\end{aligned}
+$$
+
+where $D_t=D_0+\sum_{j=0}^t\varepsilon_j$.
+
+**（c）** Denote the supply of the risky asset by $Q$ and assume that there is a unit mass of news-watchers, so each group has a mass of $1/z$ people. Write down the market clearing condition for the risky asset. Using the notation $\theta=a\cdot \operatorname{var}_{it}[D_T]$, and treating $\theta$ as a constant, rewrite this condition to express $P_t$.
+
+**（d）** Now suppose that the price of the asset at time $t-1$ is $P_{t-1}=0$, and then a single shock of $\varepsilon_{t+z-1}^1=1$ occurs, after which all other sub-innovations equal zero. Plot the asset price $P_s$ against time $s$ for $t-1\leq s\leq T$. Is the asset underpriced or overpriced in the short term? In the long term? Explain the intuition. What facts in finance are consistent with this model?
+
+Now we add another class of agents, called momentum-traders. Suppose that at the beginning of each date $t$, momentum traders submit a quantity order $\phi\cdot \Delta P_{t-1}$, where $\phi>0$ is an exogenous parameter, and $\Delta P_{t-1}=P_{t-1}-P_{t-2}$ is the price change in the previous period. Momentum traders then hold their positions for $j$ periods. There are $j$ generations of momentum traders, thus at each date $t$, exactly one generation submits a new quantity order.
+
+**（e）** The quantity orders of momentum traders can be thought of as affecting the supply of the risky asset $Q$. Using this insight, express the asset price $P_t$ as an ARMA process.
+
+**（f）** Assuming that $P_s=0$ for all $s\leq t-1$, and that $\varepsilon_s^i=0$ except for $\varepsilon_{t+z-1}^1=1$, plot $P_s$ against time $s$ for $t-1\leq s\leq T$. Is the asset underpriced or overpriced in the short term? In the medium term? In the long term? Can this model explain additional facts relative to the pure news-watcher model?
+
+**（g）** Now suppose you add a positive mass of fully rational agents. Will they eliminate all mispricing? Why?
 
 
 #考点/资产定价 #考点/信息扩散 #考点/动量交易 #考点/CARA-Normal #考点/市场清算 #考点/ARMA #考点/有限套利
@@ -2344,84 +2452,84 @@ $$
 
 **（a）CARA-Normal 组合需求**
 
-> [!note]+ 复习卡片：CARA-Normal demand
-> 见 [[PhD-Course/Asset Pricing/Part4-卡片/CARA-Normal framework - 均值方差等价与最优需求|CARA-Normal framework]]。核心是：
-> $$
-> \begin{aligned}
-> W\mid \mathcal I
-> &\sim N(m_{\mathcal I},s_{\mathcal I}^2), \\
-> m_{\mathcal I}
-> &:=
-> E[W\mid\mathcal I],
-> \qquad
-> s_{\mathcal I}^2
-> :=
-> \operatorname{Var}(W\mid\mathcal I), \\
-> E[e^{tW}\mid\mathcal I]
-> &=
-> \exp\!\left(
-> t m_{\mathcal I}
-> +
-> \frac12t^2s_{\mathcal I}^2
-> \right), \\
-> E[-e^{-aW}\mid\mathcal I]
-> &=
-> -\exp\!\left(
-> -a m_{\mathcal I}
-> +
-> \frac12a^2s_{\mathcal I}^2
-> \right) \\
-> &=
-> -\exp\!\left[
-> -a
-> \left(
-> m_{\mathcal I}
-> -
-> \frac{a}{2}s_{\mathcal I}^2
-> \right)
-> \right], \\
-> \max E[-e^{-aW}\mid\mathcal I]
-> &\Longleftrightarrow
-> \max \left\{
-> m_{\mathcal I}
-> -
-> \frac{a}{2}s_{\mathcal I}^2
-> \right\}.
-> \end{aligned}
-> $$
-> 在本题中，$\mathcal I=\mathcal I_{it}$，payoff 是 $D_T-P_t$，持仓是 $x_{it}$：
-> $$
-> \begin{aligned}
-> c_T
-> &=
-> W_t+x_{it}(D_T-P_t), \\
-> E_{it}[c_T]
-> &=
-> W_t+x_{it}(E_{it}[D_T]-P_t), \\
-> \operatorname{Var}_{it}(c_T)
-> &=
-> x_{it}^2\operatorname{Var}_{it}(D_T).
-> \end{aligned}
-> $$
-> 所以目标函数变成（见 [[PhD-Course/Asset Pricing/Part4-卡片/CARA-Normal framework - 均值方差等价与最优需求|certainty equivalent 推导]]）：
-> $$
-> \begin{aligned}
-> CE_{it}(x_{it})
-> &=
-> W_t+x_{it}(E_{it}[D_T]-P_t)
-> -
-> \frac{a}{2}x_{it}^2\operatorname{Var}_{it}(D_T), \\
-> 0
-> &=
-> E_{it}[D_T]-P_t
-> -
-> a x_{it}\operatorname{Var}_{it}(D_T), \\
-> x_{it}
-> &=
-> \frac{E_{it}[D_T]-P_t}
-> {a\operatorname{Var}_{it}(D_T)}.
-> \end{aligned}
-> $$
+**复习卡片：CARA-Normal demand**
+见 [[PhD-Course/Asset Pricing/Part4-卡片/CARA-Normal framework - 均值方差等价与最优需求|CARA-Normal framework]]。核心是：
+$$
+\begin{aligned}
+W\mid \mathcal I
+&\sim N(m_{\mathcal I},s_{\mathcal I}^2), \\
+m_{\mathcal I}
+&:=
+E[W\mid\mathcal I],
+\qquad
+s_{\mathcal I}^2
+:=
+\operatorname{Var}(W\mid\mathcal I), \\
+E[e^{tW}\mid\mathcal I]
+&=
+\exp\!\left(
+t m_{\mathcal I}
++
+\frac12t^2s_{\mathcal I}^2
+\right), \\
+E[-e^{-aW}\mid\mathcal I]
+&=
+-\exp\!\left(
+-a m_{\mathcal I}
++
+\frac12a^2s_{\mathcal I}^2
+\right) \\
+&=
+-\exp\!\left[
+-a
+\left(
+m_{\mathcal I}
+-
+\frac{a}{2}s_{\mathcal I}^2
+\right)
+\right], \\
+\max E[-e^{-aW}\mid\mathcal I]
+&\Longleftrightarrow
+\max \left\{
+m_{\mathcal I}
+-
+\frac{a}{2}s_{\mathcal I}^2
+\right\}.
+\end{aligned}
+$$
+在本题中，$\mathcal I=\mathcal I_{it}$，payoff 是 $D_T-P_t$，持仓是 $x_{it}$：
+$$
+\begin{aligned}
+c_T
+&=
+W_t+x_{it}(D_T-P_t), \\
+E_{it}[c_T]
+&=
+W_t+x_{it}(E_{it}[D_T]-P_t), \\
+\operatorname{Var}_{it}(c_T)
+&=
+x_{it}^2\operatorname{Var}_{it}(D_T).
+\end{aligned}
+$$
+所以目标函数变成（见 [[PhD-Course/Asset Pricing/Part4-卡片/CARA-Normal framework - 均值方差等价与最优需求|certainty equivalent 推导]]）：
+$$
+\begin{aligned}
+CE_{it}(x_{it})
+&=
+W_t+x_{it}(E_{it}[D_T]-P_t)
+-
+\frac{a}{2}x_{it}^2\operatorname{Var}_{it}(D_T), \\
+0
+&=
+E_{it}[D_T]-P_t
+-
+a x_{it}\operatorname{Var}_{it}(D_T), \\
+x_{it}
+&=
+\frac{E_{it}[D_T]-P_t}
+{a\operatorname{Var}_{it}(D_T)}.
+\end{aligned}
+$$
 
 在日期 $t$，group $i$ 的 news-watcher 选择持有 $x_{it}$ 股 risky asset，并错误地认为会一直持有到 $T$。题干里的 $P_t$ 是日期 $t$ 的 risky asset price，$D_T$ 是 $T$ 期一次性支付的 dividend/payoff，所以每股净收益是 $D_T-P_t$。safe asset 的 net return 为 0，因此没有额外利息项，terminal consumption 可以写成：
 
@@ -2931,51 +3039,51 @@ fully rational agents 会识别到价格偏离 fundamental value，因此在 und
 
 ## Question 10. 内幕交易与噪声交易
 
-> Consider a financial market with three types of agents: (i) an insider; (ii) market makers; and (iii) noise traders. The market is open for one period, and one risky financial asset is traded. Denote the terminal value of the asset by $v$, a normally distributed random variable with expected value zero and variance $\sigma_v^2$.
->
-> The market operates the following way. The insider, who has zero endowment of the risky asset, observes $v$ and then places a market order for purchasing $x$ shares. The insider has constant absolute risk aversion $a$, so he maximizes
->
-> $$
-> E[-\exp\{-aW\}]
-> $$
->
-> where $W$ is his terminal wealth.
->
-> Risk neutral market makers observe the total order flow $x+u$, where $u$ is the demand of noise traders, which is independent of $v$ and normally distributed with mean zero and variance $\sigma_u^2$. Competition among market makers results in the market price
->
-> $$
-> p=E[v\mid x+u].
-> $$
->
-> The insider behaves strategically: in deciding his optimal strategy, he takes into account the effect of his demand on the price $p$.
->
-> **（a）** Assuming that $W$ is normally distributed, show that the insider’s optimization problem is equivalent to maximizing
->
-> $$
-> E[W]-\frac{a}{2}\operatorname{var}[W]
-> $$
->
-> where the expectation and variance are conditional on the insider’s information, i.e. $v$.
->
-> **（b）** Assume that the market price is a linear function of the total order flow
->
-> $$
-> p=\lambda(x+u).
-> $$
->
-> Express $W$ as a function of $x,v,u$ and $\lambda$. Compute the mean and variance of $W$ conditional on $v$ and solve for the optimal choice of $x$ by maximizing the insider’s objective. Express $x$ as a function of $\lambda$ and exogenous parameters. Why is his demand $x$ finite? What is $x$ in the special case where the insider is risk neutral?
->
-> **（c）** Denote the total order flow by $y=x+u$. Note that the price is determined as
->
-> $$
-> p=E[v\mid y]=\mu+\lambda y
-> $$
->
-> where linearity of the conditional expectation follows from joint normality. Viewing the conditional expectation as a regression, compute the parameter $\mu$ and derive an equilibrium condition for $\lambda$ as a function of exogenous parameters.
->
-> **（d）** Interpret $\lambda$ as a measure of illiquidity. What is $\lambda$ when the insider is risk neutral? What is $\lambda$ when the risk aversion of the insider approaches infinity? Based on these results, what kind of relationship do you expect between the insider’s risk aversion and $\lambda$? What is the economic intuition for this? Note: explicitly characterizing $\lambda$ as a function of $a$ is difficult. How would this result be affected if the insider could observe the value of noise demand $u$ before submitting his order?
->
-> **（e）** Now suppose that the insider is the CEO of the firm that is being valued, and he is overconfident about the prospects of his company. Specifically, he believes — incorrectly — that the terminal value of the firm will be $v^*=v+v_0$, where the constant $v_0>0$ is the insider’s overconfidence. If market makers know that the insider is overconfident and know $v_0$, what happens to the market price $p$ compared to the fully rational case? Is this result similar to the conclusions of the De Long et al paper? Why? What would happen to the price if the market makers were not aware of the insider’s overconfidence?
+Consider a financial market with three types of agents: (i) an insider; (ii) market makers; and (iii) noise traders. The market is open for one period, and one risky financial asset is traded. Denote the terminal value of the asset by $v$, a normally distributed random variable with expected value zero and variance $\sigma_v^2$.
+
+The market operates the following way. The insider, who has zero endowment of the risky asset, observes $v$ and then places a market order for purchasing $x$ shares. The insider has constant absolute risk aversion $a$, so he maximizes
+
+$$
+E[-\exp\{-aW\}]
+$$
+
+where $W$ is his terminal wealth.
+
+Risk neutral market makers observe the total order flow $x+u$, where $u$ is the demand of noise traders, which is independent of $v$ and normally distributed with mean zero and variance $\sigma_u^2$. Competition among market makers results in the market price
+
+$$
+p=E[v\mid x+u].
+$$
+
+The insider behaves strategically: in deciding his optimal strategy, he takes into account the effect of his demand on the price $p$.
+
+**（a）** Assuming that $W$ is normally distributed, show that the insider’s optimization problem is equivalent to maximizing
+
+$$
+E[W]-\frac{a}{2}\operatorname{var}[W]
+$$
+
+where the expectation and variance are conditional on the insider’s information, i.e. $v$.
+
+**（b）** Assume that the market price is a linear function of the total order flow
+
+$$
+p=\lambda(x+u).
+$$
+
+Express $W$ as a function of $x,v,u$ and $\lambda$. Compute the mean and variance of $W$ conditional on $v$ and solve for the optimal choice of $x$ by maximizing the insider’s objective. Express $x$ as a function of $\lambda$ and exogenous parameters. Why is his demand $x$ finite? What is $x$ in the special case where the insider is risk neutral?
+
+**（c）** Denote the total order flow by $y=x+u$. Note that the price is determined as
+
+$$
+p=E[v\mid y]=\mu+\lambda y
+$$
+
+where linearity of the conditional expectation follows from joint normality. Viewing the conditional expectation as a regression, compute the parameter $\mu$ and derive an equilibrium condition for $\lambda$ as a function of exogenous parameters.
+
+**（d）** Interpret $\lambda$ as a measure of illiquidity. What is $\lambda$ when the insider is risk neutral? What is $\lambda$ when the risk aversion of the insider approaches infinity? Based on these results, what kind of relationship do you expect between the insider’s risk aversion and $\lambda$? What is the economic intuition for this? Note: explicitly characterizing $\lambda$ as a function of $a$ is difficult. How would this result be affected if the insider could observe the value of noise demand $u$ before submitting his order?
+
+**（e）** Now suppose that the insider is the CEO of the firm that is being valued, and he is overconfident about the prospects of his company. Specifically, he believes — incorrectly — that the terminal value of the firm will be $v^*=v+v_0$, where the constant $v_0>0$ is the insider’s overconfidence. If market makers know that the insider is overconfident and know $v_0$, what happens to the market price $p$ compared to the fully rational case? Is this result similar to the conclusions of the De Long et al paper? Why? What would happen to the price if the market makers were not aware of the insider’s overconfidence?
 
 #考点/资产定价 #考点/信息不对称 #考点/内幕交易 #考点/噪声交易 #考点/CARA-Normal #考点/Kyle模型 #考点/市场深度 #考点/过度自信
 
@@ -3662,7 +3770,7 @@ $$
 
 ---
 
-> Show that, if there is a strictly positive SDF, then there are no arbitrage opportunities.
+Show that, if there is a strictly positive SDF, then there are no arbitrage opportunities.
 
 设市场中有 $n$ 个资产，价格向量为 $q$，期末 payoff 向量为 $\widetilde x$。若存在严格正 SDF $m>0$ a.s.，则
 
@@ -3713,61 +3821,61 @@ $$
 
 ![[PhD-Course/attachment/Pasted image 20260428110613.png]]
 
-> [!note]+ $\pi_{GMV}$ 和 $\pi_{mv}$
-> GMV portfolio 是 fully invested 下方差最小的组合：
-> $$
-> \left\{
-> \begin{aligned}
-> \min_{\pi}\quad &\frac12\pi'\Sigma\pi\\
-> \iota'\pi&=1
-> \end{aligned}
-> \right.
-> $$
-> FOC 直接给出
-> $$
-> \begin{aligned}
-> \Sigma\pi=\eta\iota
-> \Longleftrightarrow
-> \pi=\eta\Sigma^{-1}\iota
-> \Longleftrightarrow
-> \eta=\frac{1}{\iota'\Sigma^{-1}\iota}
-> \Longleftrightarrow
-> \pi_{GMV}=\frac{\Sigma^{-1}\iota}{\iota'\Sigma^{-1}\iota}.
-> \end{aligned}
-> $$
-> risky-only frontier 是在给定目标均值 $\bar\mu$ 和 fully invested 条件下最小化方差：
-> $$
-> \left\{
-> \begin{aligned}
-> \min_{\pi}\quad &\frac12\pi'\Sigma\pi\\
-> \mu'\pi&=\bar\mu\\
-> \iota'\pi&=1
-> \end{aligned}
-> \right.
-> $$
-> Lagrangian 的 FOC 给出
-> $$
-> \begin{aligned}
-> \Sigma\pi-\alpha\mu-\beta\iota=0
-> &\Longleftrightarrow
-> \Sigma\pi=a\mu+b\iota
-> \Longleftrightarrow
-> \pi=a\Sigma^{-1}\mu+b\Sigma^{-1}\iota.
-> \end{aligned}
-> $$
-> 因此整条 risky-only frontier 都落在 $\Sigma^{-1}\mu$ 与 $\Sigma^{-1}\iota$ 张成的二维空间里。为了选一个和 $\pi_{GMV}$ 不同、但仍然 fully invested 的 frontier fund，把 $\Sigma^{-1}\mu$ 归一化，使权重和为 1：
-> $$
-> \pi_{mv}
-> =
-> \frac{\Sigma^{-1}\mu}{\iota'\Sigma^{-1}\mu}
-> =
-> \frac{\Sigma^{-1}\mu}{\mu'\Sigma^{-1}\iota}.
-> $$
-> 因为 $\iota'\pi_{GMV}=1$ 且 $\iota'\pi_{mv}=1$，所以
-> $$
-> \pi=\lambda\pi_{mv}+(1-\lambda)\pi_{GMV}
-> $$
-> 仍然 fully invested，并可张成 risky-only mean-variance frontier。
+**$\pi_{GMV}$ 和 $\pi_{mv}$**
+GMV portfolio 是 fully invested 下方差最小的组合：
+$$
+\left\{
+\begin{aligned}
+\min_{\pi}\quad &\frac12\pi'\Sigma\pi\\
+\iota'\pi&=1
+\end{aligned}
+\right.
+$$
+FOC 直接给出
+$$
+\begin{aligned}
+\Sigma\pi=\eta\iota
+\Longleftrightarrow
+\pi=\eta\Sigma^{-1}\iota
+\Longleftrightarrow
+\eta=\frac{1}{\iota'\Sigma^{-1}\iota}
+\Longleftrightarrow
+\pi_{GMV}=\frac{\Sigma^{-1}\iota}{\iota'\Sigma^{-1}\iota}.
+\end{aligned}
+$$
+risky-only frontier 是在给定目标均值 $\bar\mu$ 和 fully invested 条件下最小化方差：
+$$
+\left\{
+\begin{aligned}
+\min_{\pi}\quad &\frac12\pi'\Sigma\pi\\
+\mu'\pi&=\bar\mu\\
+\iota'\pi&=1
+\end{aligned}
+\right.
+$$
+Lagrangian 的 FOC 给出
+$$
+\begin{aligned}
+\Sigma\pi-\alpha\mu-\beta\iota=0
+&\Longleftrightarrow
+\Sigma\pi=a\mu+b\iota
+\Longleftrightarrow
+\pi=a\Sigma^{-1}\mu+b\Sigma^{-1}\iota.
+\end{aligned}
+$$
+因此整条 risky-only frontier 都落在 $\Sigma^{-1}\mu$ 与 $\Sigma^{-1}\iota$ 张成的二维空间里。为了选一个和 $\pi_{GMV}$ 不同、但仍然 fully invested 的 frontier fund，把 $\Sigma^{-1}\mu$ 归一化，使权重和为 1：
+$$
+\pi_{mv}
+=
+\frac{\Sigma^{-1}\mu}{\iota'\Sigma^{-1}\mu}
+=
+\frac{\Sigma^{-1}\mu}{\mu'\Sigma^{-1}\iota}.
+$$
+因为 $\iota'\pi_{GMV}=1$ 且 $\iota'\pi_{mv}=1$，所以
+$$
+\pi=\lambda\pi_{mv}+(1-\lambda)\pi_{GMV}
+$$
+仍然 fully invested，并可张成 risky-only mean-variance frontier。
 
 只考虑 risky assets 的 mean-variance frontier 与包含 risk-free asset 的 frontier 分别为
 
@@ -3948,7 +4056,7 @@ $$
 
 $$
 \begin{aligned}
-\max_{c_0}\ 
+\max_{c_0}\
 &u(c_0)+\delta E\!\left[u\!\left((w_0-c_0)R_f+\widetilde y\right)\right],\\
 \frac{\partial}{\partial c_0}
 \left\{
@@ -4021,47 +4129,47 @@ $$
 ## Textbook Exercise Q 6.1
 ![[PhD-Course/attachment/Pasted image 20260428133349.png]]
 
-> [!note]+ Factor model
-> 核心是用少数 common factors 解释 assets 的 expected returns。详细定义见 [[PhD-Course/Asset Pricing/Part1#^prop-3-2-6-factor-models|Part1: General Factor Models]]、[[PhD-Course/Asset Pricing/Part1#^def-3-2-7-single-factor|Single-Factor Model]]、[[PhD-Course/Asset Pricing/Part1#^def-3-2-8-multifactor|Multifactor Model]]。
->
-> $$
-> \left\{
-> \begin{aligned}
-> \text{single-factor regression:}\quad
-> \tilde R
-> &=a+\beta \tilde f+\tilde\varepsilon,
-> \qquad \operatorname{cov}(\tilde f,\tilde\varepsilon)=0,\\
-> \text{single factor:}\quad
-> E[\tilde R]-R_z
-> &=\lambda\beta(\tilde R;\tilde f),\\
-> \beta(\tilde R;\tilde f)
-> &=\frac{\operatorname{cov}(\tilde f,\tilde R)}{\operatorname{var}(\tilde f)},\\
-> \text{multifactor regression:}\quad
-> \tilde R
-> &=a+\beta'\tilde F+\tilde\varepsilon,
-> \qquad \operatorname{Cov}(\tilde F,\tilde\varepsilon)=0,\\
-> \text{multifactor:}\quad
-> E[\tilde R]-R_z
-> &=\lambda'\beta,\\
-> \beta
-> &=\Sigma_F^{-1}\operatorname{Cov}(\tilde F,\tilde R).
-> \end{aligned}
-> \right.
-> $$
->
-> **含义**：$\beta$ 是资产对 factor risk 的 exposure，$\lambda$ 是 factor price of risk；因此 expected excess return 来自 “factor exposure $\times$ factor compensation”。
->
-> $$
-> \begin{aligned}
-> \text{risk premium}
-> &=
-> \text{factor exposure}
-> \times
-> \text{price of risk}.
-> \end{aligned}
-> $$
->
-> **和 Part1 的关系**：CAPM 是 single-factor model，factor 是 market return；更一般的 factor model 等价于 SDF 的 affine representation，也和 mean-variance efficiency 相连。
+**Factor model**
+核心是用少数 common factors 解释 assets 的 expected returns。详细定义见 [[PhD-Course/Asset Pricing/Part1#^prop-3-2-6-factor-models|Part1: General Factor Models]]、[[PhD-Course/Asset Pricing/Part1#^def-3-2-7-single-factor|Single-Factor Model]]、[[PhD-Course/Asset Pricing/Part1#^def-3-2-8-multifactor|Multifactor Model]]。
+
+$$
+\left\{
+\begin{aligned}
+\text{single-factor regression:}\quad
+\tilde R
+&=a+\beta \tilde f+\tilde\varepsilon,
+\qquad \operatorname{cov}(\tilde f,\tilde\varepsilon)=0,\\
+\text{single factor:}\quad
+E[\tilde R]-R_z
+&=\lambda\beta(\tilde R;\tilde f),\\
+\beta(\tilde R;\tilde f)
+&=\frac{\operatorname{cov}(\tilde f,\tilde R)}{\operatorname{var}(\tilde f)},\\
+\text{multifactor regression:}\quad
+\tilde R
+&=a+\beta'\tilde F+\tilde\varepsilon,
+\qquad \operatorname{Cov}(\tilde F,\tilde\varepsilon)=0,\\
+\text{multifactor:}\quad
+E[\tilde R]-R_z
+&=\lambda'\beta,\\
+\beta
+&=\Sigma_F^{-1}\operatorname{Cov}(\tilde F,\tilde R).
+\end{aligned}
+\right.
+$$
+
+**含义**：$\beta$ 是资产对 factor risk 的 exposure，$\lambda$ 是 factor price of risk；因此 expected excess return 来自 “factor exposure $\times$ factor compensation”。
+
+$$
+\begin{aligned}
+\text{risk premium}
+&=
+\text{factor exposure}
+\times
+\text{price of risk}.
+\end{aligned}
+$$
+
+**和 Part1 的关系**：CAPM 是 single-factor model，factor 是 market return；更一般的 factor model 等价于 SDF 的 affine representation，也和 mean-variance efficiency 相连。
 
 ^qe-ps-factor-model-review
 
@@ -4790,17 +4898,17 @@ $$
 $$
 \begin{aligned}
 &P_1(0\mid0)V_2(0)+P_1(1\mid0)\bigl(1+V_2(1)\bigr)
->
+
 P_2(0\mid0)V_2(0)+P_2(1\mid0)\bigl(1+V_2(1)\bigr)\\
 &\Longleftrightarrow
 \frac{1}{2}\cdot\frac{16}{11}
 +\frac{1}{2}\left(1+\frac{21}{11}\right)
->
+
 \frac{2}{3}\cdot\frac{16}{11}
 +\frac{1}{3}\left(1+\frac{21}{11}\right)\\
 &\Longleftrightarrow
 \frac{24}{11}
->
+
 \frac{64}{33}.
 \end{aligned}
 $$
@@ -5054,7 +5162,7 @@ $$
 \right.
 $$
 
->工具公式见 [[PhD-Course/Asset Pricing/Part4-卡片/正态条件方差|正态条件方差]] 与 [[PhD-Course/Asset Pricing/Part4-卡片/贝叶斯更新 - 先验、信号、似然、后验|贝叶斯更新：先验、似然、后验]]。本题只使用其中的 Gaussian / linear projection 后验方差更新。
+工具公式见 [[PhD-Course/Asset Pricing/Part4-卡片/正态条件方差|正态条件方差]] 与 [[PhD-Course/Asset Pricing/Part4-卡片/贝叶斯更新 - 先验、信号、似然、后验|贝叶斯更新：先验、似然、后验]]。本题只使用其中的 Gaussian / linear projection 后验方差更新。
 
 两步更新写成联立链：
 
@@ -5189,7 +5297,7 @@ $$\tau_h\phi_h\kappa_h
 \frac{\phi_h\kappa_h}{\alpha_h}
 =\frac{1}{\alpha_h\operatorname{var}(\widetilde\varepsilon_h)}$$
 
-**（c）** 
+**（c）**
 $$
 \left\{
 \begin{aligned}
@@ -5759,7 +5867,7 @@ $$
 A\succ B
 &\Longleftrightarrow
 0.002u(x_2)+0.998u(x_1)
->
+
 0.001u(x_3)+0.999u(x_1)\\
 &\Longleftrightarrow
 0.002u(x_2)>0.001u(x_3)+0.001u(x_1)\\
@@ -5768,7 +5876,7 @@ u(x_2)>\frac{1}{2}u(x_3)+\frac{1}{2}u(x_1),\\[0.4em]
 C\succ D
 &\Longleftrightarrow
 0.9u(x_2)+0.1u(x_1)
->
+
 0.45u(x_3)+0.55u(x_1)\\
 &\Longleftrightarrow
 0.9u(x_2)>0.45u(x_3)+0.45u(x_1)\\
@@ -6281,21 +6389,21 @@ $$
 
 ## Question 11. Risk-Free Asset and Beginning/End-of-Period Consumption
 
-> Consider the portfolio choice problem with only a risk-free asset and with consumption at both the beginning and end of the period.
->
-> Assume the investor has time-additive power utility:
->
-> $$
-> \max_{c_0,c_1}
-> \frac{1}{1-\rho}c_0^{1-\rho}
-> +\delta\frac{1}{1-\rho}c_1^{1-\rho}
-> \quad
-> \text{subject to}
-> \quad
-> c_0+\frac{1}{R_f}c_1=w_0.
-> $$
->
-> Show that the optimal consumption-to-wealth ratio $c_0/w_0$ is decreasing in $R_f$ if $\rho<1$ and increasing in $R_f$ if $\rho>1$.
+Consider the portfolio choice problem with only a risk-free asset and with consumption at both the beginning and end of the period.
+
+Assume the investor has time-additive power utility:
+
+$$
+\max_{c_0,c_1}
+\frac{1}{1-\rho}c_0^{1-\rho}
++\delta\frac{1}{1-\rho}c_1^{1-\rho}
+\quad
+\text{subject to}
+\quad
+c_0+\frac{1}{R_f}c_1=w_0.
+$$
+
+Show that the optimal consumption-to-wealth ratio $c_0/w_0$ is decreasing in $R_f$ if $\rho<1$ and increasing in $R_f$ if $\rho>1$.
 
 #考点/消费储蓄 #考点/CRRA #考点/风险自由资产 #考点/跨期选择 #考点/替代效应 #考点/EIS
 
@@ -6509,15 +6617,15 @@ $$
 
 ## Question 5.3 No Tangency Portfolio When $R_f$ Equals GMV Return
 
-> Suppose that the risk-free return is equal to the expected return of the global minimum variance portfolio:
-> $$
-> R_f=\frac{B}{C}.
-> $$
-> Show that there is no tangency portfolio. Hint: show there is no $\delta$ and $\lambda$ satisfying
-> $$
-> \delta\Sigma^{-1}(\mu-R_f1)=\lambda\pi_\mu+(1-\lambda)\pi_1.
-> $$
-> Assume $\mu$ is not proportional to $1$.
+Suppose that the risk-free return is equal to the expected return of the global minimum variance portfolio:
+$$
+R_f=\frac{B}{C}.
+$$
+Show that there is no tangency portfolio. Hint: show there is no $\delta$ and $\lambda$ satisfying
+$$
+\delta\Sigma^{-1}(\mu-R_f1)=\lambda\pi_\mu+(1-\lambda)\pi_1.
+$$
+Assume $\mu$ is not proportional to $1$.
 
 **解析** 记
 
@@ -6579,8 +6687,8 @@ $$
 
 ## Question 6.1 Beta Pricing Implies $\widetilde R_*$ Is on the Mean-Variance Frontier
 
-> [!note]+ 合并位置
-> 这题已经在 [[#Q 6.1|Q 6.1]] 推导：beta-pricing by $\widetilde R_*$ $\Rightarrow$ $\widetilde R_*\in$ mean-variance frontier。核心公式见 [[#^qe-ps-q6-1-frontier-weight|Q 6.1 的 frontier 权重推导]]。
+**合并位置**
+这题已经在 [[#Q 6.1|Q 6.1]] 推导：beta-pricing by $\widetilde R_*$ $\Rightarrow$ $\widetilde R_*\in$ mean-variance frontier。核心公式见 [[#^qe-ps-q6-1-frontier-weight|Q 6.1 的 frontier 权重推导]]。
 
 **与 6.2 的 FOC 对比**：
 
@@ -6611,7 +6719,7 @@ $$
 
 ## Question 6.2 No-Risk-Free Beta Pricing and Mean-Variance Frontier
 
-> Suppose there is no risk-free asset. Use the formula for frontier portfolios to show that a beta-pricing model is equivalent to the return $\widetilde R_*$ being on the mean-variance frontier and not equal to the global minimum variance return.
+Suppose there is no risk-free asset. Use the formula for frontier portfolios to show that a beta-pricing model is equivalent to the return $\widetilde R_*$ being on the mean-variance frontier and not equal to the global minimum variance return.
 
 **解析** 令
 
@@ -6864,14 +6972,14 @@ $$
 
 ## Question 6.3 Borrowing and Lending at Different Rates
 
-> Suppose investors can borrow and lend at different rates. Let $R_b$ denote the return on borrowing and $R_\ell$ the return on lending. Suppose
-> $$
-> \frac{B}{C}>R_b>R_\ell.
-> $$
-> Suppose each investor chooses a mean-variance efficient portfolio. Show that the CAPM holds with
-> $$
-> R_\ell\le R_z\le R_b.
-> $$
+Suppose investors can borrow and lend at different rates. Let $R_b$ denote the return on borrowing and $R_\ell$ the return on lending. Suppose
+$$
+\frac{B}{C}>R_b>R_\ell.
+$$
+Suppose each investor chooses a mean-variance efficient portfolio. Show that the CAPM holds with
+$$
+R_\ell\le R_z\le R_b.
+$$
 
 **解析** 记
 
@@ -6978,18 +7086,18 @@ $$
 
 ## Question 6.8 Limited Awareness and Positive Alpha
 
-> Assume there are $H$ investors with CARA utility and the same absolute risk aversion $\alpha$. There is a risk-free asset and two risky assets with jointly normal payoffs $\widetilde x=(\widetilde x_1,\widetilde x_2)'$, mean $\mu$, and nonsingular covariance matrix $\Sigma$. Let $H_U$ investors be unaware of asset 2 and invest only in asset 1 and the risk-free asset; let $H_I=H-H_U$. If all investors were aware, the equilibrium price would be
-> $$
-> p^*=\frac{1}{R_f}\mu-\frac{\alpha}{HR_f}\Sigma\bar\theta.
-> $$
-> Show that $p_1=p_1^*$ and
-> $$
-> p_2=p_2^*-\frac{\alpha}{HR_f}\frac{H_U}{H_I}
-> \left(\operatorname{var}(\widetilde x_2)
-> -\frac{\operatorname{cov}(\widetilde x_1,\widetilde x_2)^2}
-> {\operatorname{var}(\widetilde x_1)}\right)<p_2^*.
-> $$
-> Then show that the beta-pricing relation has a positive alpha for asset 2.
+Assume there are $H$ investors with CARA utility and the same absolute risk aversion $\alpha$. There is a risk-free asset and two risky assets with jointly normal payoffs $\widetilde x=(\widetilde x_1,\widetilde x_2)'$, mean $\mu$, and nonsingular covariance matrix $\Sigma$. Let $H_U$ investors be unaware of asset 2 and invest only in asset 1 and the risk-free asset; let $H_I=H-H_U$. If all investors were aware, the equilibrium price would be
+$$
+p^*=\frac{1}{R_f}\mu-\frac{\alpha}{HR_f}\Sigma\bar\theta.
+$$
+Show that $p_1=p_1^*$ and
+$$
+p_2=p_2^*-\frac{\alpha}{HR_f}\frac{H_U}{H_I}
+\left(\operatorname{var}(\widetilde x_2)
+-\frac{\operatorname{cov}(\widetilde x_1,\widetilde x_2)^2}
+{\operatorname{var}(\widetilde x_1)}\right)<p_2^*.
+$$
+Then show that the beta-pricing relation has a positive alpha for asset 2.
 
 **题目直觉** 市场里有两类投资者：
 
@@ -7361,10 +7469,10 @@ D_t=D_0\lambda_h^{\nu_t}\lambda_\ell^{t-\nu_t},
 \end{aligned}
 $$
 
-(a) 给出每个有限期限 $T$ 无套利的条件。  
-(b) 求 one-period SDF $Z_{t+1}$，使其只依赖于 $D_{t+1}/D_t$，并用 $R_f,k,\lambda_h,\lambda_\ell$ 表示 $z_h,z_\ell$。  
-(c) 证明 SDF process $M_t$ 唯一，并说明它只依赖于 $\nu_t$ 与参数 $R_f,k,\lambda_h,\lambda_\ell$。  
-(d) 证明任意路径的 risk-neutral probability 只依赖于 $\nu_t$ 与这些参数。  
+(a) 给出每个有限期限 $T$ 无套利的条件。
+(b) 求 one-period SDF $Z_{t+1}$，使其只依赖于 $D_{t+1}/D_t$，并用 $R_f,k,\lambda_h,\lambda_\ell$ 表示 $z_h,z_\ell$。
+(c) 证明 SDF process $M_t$ 唯一，并说明它只依赖于 $\nu_t$ 与参数 $R_f,k,\lambda_h,\lambda_\ell$。
+(d) 证明任意路径的 risk-neutral probability 只依赖于 $\nu_t$ 与这些参数。
 (e) 对指示变量
 
 $$
@@ -7377,8 +7485,8 @@ x=
 \end{aligned}
 $$
 
-求满足 $W_T=x$ 的 self-financing wealth process。  
-(f) 若代表性投资者有 time-additive utility、CRRA $\rho$、discount factor $\delta$，且 risk-free asset zero net supply，求 $R_f$ 和 $k$。  
+求满足 $W_T=x$ 的 self-financing wealth process。
+(f) 若代表性投资者有 time-additive utility、CRRA $\rho$、discount factor $\delta$，且 risk-free asset zero net supply，求 $R_f$ 和 $k$。
 (g) 由 (f) 的 $k$，找出 $k>0$ 的参数条件，并证明这等价于
 
 $$
@@ -7572,8 +7680,8 @@ $$
 
 **题目回忆** $n$ 个 risky assets，没有 risk-free asset。证明 mean-variance/CARA-normal 下最优 risky position $\phi$ 的公式；$\phi$ 由两个部分组成。
 
-> [!note]+ 与 10.5 的关系
-> 这题是 [[#Question 10.5 考场题重构：No-Risk-Free Mean-Variance Frontier|10.5 no-risk-free mean-variance frontier]] 的 CARA-normal 应用：10.5 解 fully invested frontier，10.1 在约束 $1'\phi=w_0$ 下直接解 investor 的 optimal risky dollar position。
+**与 10.5 的关系**
+这题是 [[#Question 10.5 考场题重构：No-Risk-Free Mean-Variance Frontier|10.5 no-risk-free mean-variance frontier]] 的 CARA-normal 应用：10.5 解 fully invested frontier，10.1 在约束 $1'\phi=w_0$ 下直接解 investor 的 optimal risky dollar position。
 
 **设定** 令 risky payoff/return vector 为 $\widetilde R\in\mathbb R^n$：
 
@@ -8092,8 +8200,8 @@ $$
 
 考点标签：#heterogeneous-beliefs #log_utility #exchange-rate #state-price-density #interest-rate #stock-price #pure-exchange-economy #two-country-two-good
 
-> [!note]+ 合并位置
-> 这题已合并到 [[#Question 10.7 考场题重构：Two-Country Two-Good Pure-Exchange Economy|10.7 考场题重构：Two-Country Two-Good Pure-Exchange Economy]]。10.7 保留完整的 optimization problems、goods clearing、FOC、allocation、exchange rate、interest rate、stock prices 和 symmetric case。
+**合并位置**
+这题已合并到 [[#Question 10.7 考场题重构：Two-Country Two-Good Pure-Exchange Economy|10.7 考场题重构：Two-Country Two-Good Pure-Exchange Economy]]。10.7 保留完整的 optimization problems、goods clearing、FOC、allocation、exchange rate、interest rate、stock prices 和 symmetric case。
 
 **本题最小记忆式**：若 good 1 是 numeraire，$\epsilon_t$ 表示 good 2 以 good 1 计价，则
 
