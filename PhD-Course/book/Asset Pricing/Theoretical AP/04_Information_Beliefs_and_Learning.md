@@ -1454,6 +1454,231 @@ $$
 
 ## 11. 连续时间 Kyle 模型（Back, 1992）
 
+### 11.0 核心均衡闭环
+
+::::{admonition} Definition (Back 1992 Continuous-time Kyle Equilibrium)
+连续时间 Kyle 均衡由线性价格、线性交易速度、Kalman-Bucy 滤波和 insider HJB 最优性共同闭合。
+::::
+
+基本系统：
+
+$$
+\left\{
+\begin{aligned}
+t&\in[0,1],\\
+\tilde v&\sim N(\bar v,\sigma_v^2),\\
+Z_t&=\sigma_zB_t,\qquad B_t\ \text{standard Brownian motion},\\
+X_t&=\int_0^t\theta_s\,ds,\\
+Y_t&=X_t+Z_t,\\
+P_t&=E[\tilde v\mid\mathcal F_t^Y],\qquad
+\mathcal F_t^Y=\sigma(Y_s:0\le s\le t),\\
+\max_{\theta}\quad
+&E\left[\int_0^1(\tilde v-P_t)\theta_t\,dt\right],\\
+E\int_0^1P_t^2\,dt&<\infty.
+\end{aligned}
+\right.
+$$
+
+线性均衡猜想：
+
+$$
+\left\{
+\begin{aligned}
+P_t&=\bar v+\lambda Y_t,\\
+\theta_t&=\frac{\tilde v-P_t}{(1-t)\lambda}
+=\frac{\tilde v-\bar v-\lambda Y_t}{(1-t)\lambda}.
+\end{aligned}
+\right.
+$$
+
+#### 做市商滤波
+
+给定 $\theta_t$，订单流满足
+
+$$
+\begin{aligned}
+dY_t
+&=\theta_tdt+\sigma_zdB_t\\
+&=\frac{\tilde v-\bar v-\lambda Y_t}{(1-t)\lambda}dt+\sigma_zdB_t,
+\qquad
+d\tilde v=0.
+\end{aligned}
+$$
+
+令
+
+$$
+\hat v_t:=E[\tilde v\mid\mathcal F_t^Y],
+\qquad
+\Sigma_t:=E[(\tilde v-\hat v_t)^2\mid\mathcal F_t^Y].
+$$
+
+Kalman-Bucy 滤波给出
+
+$$
+\begin{aligned}
+d\hat v_t
+&=
+\frac{\Sigma_t}{\lambda\sigma_z^2(1-t)}
+\left[
+dY_t-\frac{\hat v_t-\bar v-\lambda Y_t}{\lambda(1-t)}dt
+\right],\\
+\frac{d\Sigma_t}{dt}
+&=
+-\frac{\Sigma_t^2}{\lambda^2\sigma_z^2(1-t)^2}.
+\end{aligned}
+$$
+
+均衡要求 $P_t=\hat v_t=\bar v+\lambda Y_t$，所以 $dP_t=d\hat v_t=\lambda dY_t$。此时滤波漂移校正项为 $0$，比较 $dY_t$ 系数：
+
+$$
+\begin{aligned}
+\frac{\Sigma_t}{\lambda\sigma_z^2(1-t)}
+&=\lambda,\\
+\Sigma_t
+&=\lambda^2\sigma_z^2(1-t),\\
+\Sigma_0=\sigma_v^2
+&=\lambda^2\sigma_z^2,\\
+\lambda
+&=\frac{\sigma_v}{\sigma_z},\\
+\Sigma_t
+&=\sigma_v^2(1-t).
+\end{aligned}
+$$
+
+#### 知情者 HJB
+
+给定 $P_t=\bar v+\lambda Y_t$ 且 $\lambda\sigma_z=\sigma_v$，
+
+$$
+\begin{aligned}
+dP_t
+&=\lambda dY_t\\
+&=\lambda\theta_tdt+\lambda\sigma_zdB_t\\
+&=\lambda\theta_tdt+\sigma_vdB_t.
+\end{aligned}
+$$
+
+定义 insider 价值函数
+
+$$
+J(t,p,v)
+:=
+\max_{\theta}
+E\left[
+\int_t^1(v-P_u)\theta_u\,du
+\mid P_t=p
+\right].
+$$
+
+HJB：
+
+$$
+\begin{aligned}
+0
+&=\sup_{\theta}
+\left\{
+\begin{aligned}
+&(v-p)\theta\\
+&\quad+J_t+\lambda\theta J_p+\frac{1}{2}\sigma_v^2J_{pp}
+\end{aligned}
+\right\}\\
+&=
+J_t+\frac{1}{2}\sigma_v^2J_{pp}
++\sup_{\theta}\theta(v-p+\lambda J_p).
+\end{aligned}
+$$
+
+由于 $\theta$ 线性进入，有限 supremum 要求
+
+$$
+\begin{aligned}
+v-p+\lambda J_p&=0,\\
+J_p&=\frac{p-v}{\lambda},\\
+J(t,p,v)
+&=\frac{(v-p)^2}{2\lambda}+A(t),\\
+J_{pp}&=\frac{1}{\lambda}.
+\end{aligned}
+$$
+
+剩余 PDE 与终端条件：
+
+$$
+\begin{aligned}
+0&=J_t+\frac{1}{2}\sigma_v^2J_{pp}
+=A'(t)+\frac{\sigma_v^2}{2\lambda},\\
+A(t)&=\frac{\sigma_v^2(1-t)}{2\lambda},\\
+J(t,p,v)
+&=\frac{(v-p)^2+\sigma_v^2(1-t)}{2\lambda}.
+\end{aligned}
+$$
+
+于是
+
+$$
+\begin{aligned}
+\theta_t^*
+&=\frac{\tilde v-P_t}{(1-t)\lambda},\\
+P_t&=\bar v+\frac{\sigma_v}{\sigma_z}Y_t,\\
+\Sigma_t&=\sigma_v^2(1-t),\\
+P_1&=\tilde v.
+\end{aligned}
+$$
+
+#### 验证与利润
+
+对任意 admissible $\theta$，由 Itô 公式：
+
+$$
+\begin{aligned}
+dJ(t,P_t,v)
+&=
+\left(J_t+\lambda\theta_tJ_p+\frac{1}{2}\sigma_v^2J_{pp}\right)dt
++\sigma_vJ_p\,dB_t\\
+&=-(v-P_t)\theta_tdt
+-\frac{\sigma_v}{\lambda}(v-P_t)dB_t.
+\end{aligned}
+$$
+
+积分并取期望：
+
+$$
+\begin{aligned}
+E\left[\int_0^1(v-P_t)\theta_tdt\right]
+&=
+E[J(0,P_0,v)-J(1,P_1,v)]\\
+&\le E[J(0,P_0,v)].
+\end{aligned}
+$$
+
+候选均衡满足 $P_1=\tilde v$，故 $J(1,P_1,\tilde v)=0$，达到上界。事前期望利润为
+
+$$
+\begin{aligned}
+E[J(0,\bar v,\tilde v)]
+&=E\left[
+\frac{(\tilde v-\bar v)^2+\sigma_v^2}{2\lambda}
+\right]\\
+&=\frac{2\sigma_v^2}{2\lambda}
+=\frac{\sigma_v^2}{\lambda}
+=\sigma_v\sigma_z.
+\end{aligned}
+$$
+
+连续时间 Kyle 的核心性质是
+
+$$
+\left\{
+\begin{aligned}
+\lambda&=\frac{\sigma_v}{\sigma_z},\\
+\theta_t^*&=\frac{\tilde v-P_t}{(1-t)\lambda},\\
+\Sigma_t&=\sigma_v^2(1-t),\\
+E[\Pi]&=\sigma_v\sigma_z
+=2\cdot\frac{1}{2}\sigma_v\sigma_z.
+\end{aligned}
+\right.
+$$
+
 ### 11.1 设定
 
 两类资产：
@@ -2529,9 +2754,6 @@ $$
 这条不等式把“流动性”和“治理效率”直接连在一起：$\lambda$ 越高，买到控制权越贵，越不容易满足 activism 的启动条件；若该条件被破坏，最优决策就会从继续吸筹转向停止买入甚至卖出。
 
 #### Exercise 3：对数正态终值的扩展
-
-[Asset Pricing/Theoretical AP/cards/Back 1992 - 对数正态终值练习](Asset Pricing/Theoretical AP/cards/Back 1992 - 对数正态终值练习)
-
 
 Assume the log $\tilde v$ is normal $N(\mu,\sigma_v^2)$. Set
 $$
