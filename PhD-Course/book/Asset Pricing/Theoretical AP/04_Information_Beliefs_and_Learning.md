@@ -23,232 +23,189 @@
 
 ### 10.2.1 Setup
 
-#### 推导核对：Grossman-Stiglitz 的线性均衡对象
+::::{admonition} Definition (Grossman-Stiglitz Setup)
+存在一个风险资产（到期支付 $v$）和一个无风险资产。风险资产基本面、噪声供给和私人信号满足
 
-**Definition (Grossman-Stiglitz Linear Equilibrium)**
-线性均衡由价格函数、两类代理人的需求函数与市场清算组成：
 $$
-p=\alpha\bar v+\beta s-\gamma X,
-\qquad
-X_I+X_U=X.
+\left\{
+\begin{aligned}
+v&\sim N\!\left(\bar v,\frac{1}{\rho_v}\right),\\
+X&\sim N\!\left(0,\frac{1}{\rho_x}\right),\\
+s&=v+\varepsilon,\qquad
+\varepsilon\sim N\!\left(0,\frac{1}{\rho_s}\right),\qquad
+v\perp \varepsilon.
+\end{aligned}
+\right.
 $$
-知情者观察 $s$，无知情者只观察 $p$，但在均衡猜测下可从价格中提取带噪信号
-$$
-\theta=\frac{p-\alpha\bar v}{\beta}=s-\frac{\gamma}{\beta}X.
-$$
-**WTS：** 明确 GS 模型的三个闭合条件：Bayesian learning、CARA-normal demand、market clearing。
 
-**联立系统：**
+两类投资者具有 CARA utility：
+
 $$
 \begin{aligned}
-\text{learning: }& E_I[v]=E[v|s],\quad E_U[v]=E[v|p],\\
-\text{demand: }& X_i=\frac{E_i[v]-p}{\lambda_i\operatorname{Var}_i(v)},\\
-\text{clearing: }& X_I+X_U=X,\\
-\text{price guess: }& p=\alpha\bar v+\beta s-\gamma X.
+U_i(W_i)&=-e^{-\lambda_iW_i},\qquad \lambda_i>0.
 \end{aligned}
 $$
-**连续求解：** 先由正态更新得到后验均值与方差，再代入 CARA-normal 需求，最后把需求代入清算条件并按 $s,\bar v,X$ 的系数配平。
 
-**结论：** GS 的数学结构是“正态学习 + 线性需求 + 线性清算”，因此价格系数可以通过线性恒等式逐项求出。
+投资者 $i$ 持有 $X_i$ 单位风险资产、初始财富 $m_i$、现金头寸 $M_i$。预算约束和期末财富为
 
-**Definition (Grossman-Stiglitz Setup)**
-存在一个风险资产（到期支付为 $v$）和一个无风险资产：
-$$
-v \sim N\!\left(\bar v,\frac{1}{\rho_v}\right),
-\qquad
-X \sim N\!\left(0,\frac{1}{\rho_x}\right),
-$$
-其中 $X$ 是风险资产的随机供给。知情者观察到私人信号
-$$
-\begin{equation}
-s|v \sim N\!\left(v,\frac{1}{\rho_s}\right).
-\tag{1}
-\end{equation}
-$$
-- informed agent $I$: 观察私人信号 $s$
-- uninformed agent $U$: 观察价格 $p$
-
-
-**符号**
-- $v$：风险资产终值/支付
-- $p$：均衡价格
-- $X$：风险资产的随机供给
-- $X_i$：投资者 $i$ 的风险资产持仓
-- $M_i$：投资者 $i$ 的无风险资产/现金头寸
-- $m_i$：投资者 $i$ 的初始财富
-- $\rho_v,\rho_s,\rho_x$：分别表示先验、信号噪声、供给噪声的精度
-
-**信息结构**
-- 共同先验：$v \sim N(\bar v,1/\rho_v)$
-- informed agent：观察 $s$，更新为后验 $v\mid s$
-- uninformed agent：观察 $p$，更新为后验 $v\mid p$
-- 在线性均衡猜测下，价格写成
-$$
-p=\alpha \bar v+\beta s-\gamma X,
-$$
-所以价格里同时包含关于 $v$ 的信息（来自 $s$）和噪声（来自 $X$）。
-
-**Definition (CARA Utility and Wealth Mapping)**
-两类投资者都具有 CARA 效用（[CARA 效用](Asset Pricing/Theoretical AP/cards/CARA 效用 - 常绝对风险厌恶)；对比：[CRRA 效用](Asset Pricing/Theoretical AP/cards/CRRA 效用 - 常相对风险厌恶)、[二次效用](Asset Pricing/Theoretical AP/cards/二次效用 - Mean-Variance 基础)）：
-$$
-U_i=-e^{-\lambda_i W_i}
-$$
-其中
 $$
 \begin{aligned}
-\lambda_i>0
+M_i+X_ip&=m_i,\\
+W_i&=M_i+X_iv\\
+&=m_i+X_i(v-p).
 \end{aligned}
 $$
-是投资者 $i$ 的 **absolute risk aversion coefficient**。  
-它越大，说明投资者越厌恶风险；在 CARA 效用下，
-$$
-\begin{aligned}
-A(W)
-:=-\frac{U_i''(W)}{U_i'(W)}
-=\lambda_i,
-\end{aligned}
-$$
-所以绝对风险厌恶程度与财富水平无关，这正是 “constant absolute risk aversion” 的含义。
 
-投资者到期财富先写成
+知情者 $I$ 观察 $s$，无知情者 $U$ 只观察均衡价格 $p$。线性均衡猜测为
+
 $$
 \begin{aligned}
-W_i &= \underbrace{M_i}_{\text{risk-free position}} + \underbrace{X_i v}_{\text{payoff from risky asset holdings}}
+p&=\alpha\bar v+\beta s-\gamma X.
 \end{aligned}
 $$
-在交易时买入 $X_i$ 单位风险资产需要支付 $X_i p$，而初始财富为 $m_i$，所以预算约束是
+::::
+
+::::{admonition} Definition (Grossman-Stiglitz Linear Equilibrium)
+线性均衡由价格函数、两类代理人的最优需求和市场清算共同给出：
+
+$$
+\left\{
+\begin{aligned}
+p&=\alpha\bar v+\beta s-\gamma X,\\
+X_I&=\frac{E_I[v]-p}{\lambda_I\operatorname{Var}_I(v)},\\
+X_U&=\frac{E_U[v]-p}{\lambda_U\operatorname{Var}_U(v)},\\
+X_I+X_U&=X.
+\end{aligned}
+\right.
+$$
+
+在线性价格猜测下，无知情者可从价格中提取带噪信号
+
 $$
 \begin{aligned}
-\underbrace{M_i}_{\text{cash left in risk-free asset}} + \underbrace{X_i p}_{\text{expenditure on risky asset}} &= \underbrace{m_i}_{\text{initial wealth}}
+\theta
+&=\frac{p-\alpha\bar v}{\beta}
+=s-\frac{\gamma}{\beta}X.
 \end{aligned}
 $$
-把预算约束改写成
-$$
-M_i = m_i - X_i p.
-$$
-再代回财富定义：
-$$
-\begin{aligned}
-W_i &= \underbrace{m_i}_{\text{initial wealth}} + \underbrace{(v-p)}_{\text{net payoff per unit of risky asset}} \underbrace{X_i}_{\text{risky asset holdings}}.
-\end{aligned}
-$$
-隐含competitive和 price-taking 假设：
-- 单个投资者把价格 $p$ 视为外生给定，不认为自己的交易会影响价格。
-- 购买 $X_i$ 单位风险资产时，每单位都按同一个给定价格 $p$ 成交，预算约束可以直接写成 $M_i+X_i p=m_i$；
-- 若投资者具有市场势力，则价格会依赖于其下单量，问题将变成战略交易而非竞争均衡。
+::::
+
+其中 $v$ 是风险资产终值，$p$ 是均衡价格，$X$ 是随机供给，$X_i$ 是投资者 $i$ 的风险资产持仓，$\rho_v,\rho_s,\rho_x$ 分别是先验、私人信号噪声和供给噪声的 precision。
 
 
 ### 10.2.2 贝叶斯更新
 
 #### Informed Agents
-**Definition (Bayesian Learning Primitives)**
-这里用到一个基础的贝叶斯学习框架（[贝叶斯更新](Asset Pricing/Theoretical AP/cards/贝叶斯更新 - 先验、信号、似然、后验)）：
+
+::::{admonition} Definition (Bayesian Learning Primitives)
+基础贝叶斯学习框架（[贝叶斯更新](Asset Pricing/Theoretical AP/cards/贝叶斯更新 - 先验、信号、似然、后验)）：
+
 - **先验（prior）**：在观察信号之前，对未知变量 $v$ 的原始信念，这里是 $v\sim N(\bar v,1/\rho_v)$。
 - **信号（signal）**：投资者观察到的带噪信息，这里是 $s=v+\varepsilon$，其中 $\varepsilon\sim N(0,1/\rho_s)$。
 - **似然（likelihood）**：若真实值是 $v$，观察到信号 $s$ 的概率密度，即 $n(s\mid v)$。
 - **后验（posterior）**：观察到信号 $s$ 之后，对 $v$ 的更新信念，即 $v\mid s$。
+::::
 
-
-三者关系就是 Bayes 法则：
-$$
-\text{posterior}
-\propto
-\text{likelihood}\times\text{prior},
-\qquad
-n(v\mid s)\propto n(s\mid v)n(v).
-$$
-在正态-正态情形下，先验是正态、信号噪声也是正态，所以更新后的后验仍然是正态；
-- 均值=“先验均值”和“信号”按精度加权平均
-- 后验精度=先验精度+信号精度。记“精度” $\rho \equiv 1/\mathrm{Var}$。
-
-先验和信号都是正态，因此后验仍然是正态。把两个正态密度写出来相乘：
-$$
-v\sim N\!\left(\bar v,\frac{1}{\rho_v}\right)
-\quad\Rightarrow\quad
-n(v) =
-\sqrt{\frac{\rho_v}{2\pi}}
-\exp\left\{-\frac{\rho_v}{2}(v-\bar v)^2\right\},
-$$
-$$
-s\mid v\sim N\!\left(v,\frac{1}{\rho_s}\right)
-\quad\Rightarrow\quad
-n(s\mid v) =
-\sqrt{\frac{\rho_s}{2\pi}}
-\exp\left\{-\frac{\rho_s}{2}(s-v)^2\right\}.
-$$
+Bayes 法则给出
 $$
 \begin{aligned}
-n(s\mid v)n(v)
-&=
-\sqrt{\frac{\rho_s}{2\pi}}
-\sqrt{\frac{\rho_v}{2\pi}}
-\exp\left\{-\frac{\rho_s}{2}(s-v)^2\right\}
-\exp\left\{-\frac{\rho_v}{2}(v-\bar v)^2\right\} \\
-&=
-\frac{\sqrt{\rho_s\rho_v}}{2\pi}
-\exp\left\{-\frac{\rho_s}{2}(s-v)^2-\frac{\rho_v}{2}(v-\bar v)^2\right\}.
-\end{aligned}
-$$
-系数 $\dfrac{\sqrt{\rho_s\rho_v}}{2\pi}$ 与 $v$ 无关，只关心后验密度对 $v$ 的函数形状（kernel），所以把所有与 $v$ 无关的常数并入比例符号，写成
-$$
-v|s \sim n(s|v)n(v)
-\propto
-\exp\left\{
--\frac{\rho_s}{2}(s-v)^2-\frac{\rho_v}{2}(v-\bar v)^2
-\right\},
-$$
-$$
-\begin{aligned}
-&-\frac{1}{2}
-\left[
-\rho_s(v^2-2sv+s^2)+\rho_v(v^2-2\bar v v+\bar v^2)
-\right] \\
-=\;&
--\frac{1}{2}
-\left[
-(\rho_s+\rho_v)v^2-2(\rho_s s+\rho_v\bar v)v
-\right]
-\;+\; \text{与 }v\text{ 无关的常数}.
-\end{aligned}
-$$
-配方完成平方（只保留与 $v$ 有关的项）：
-$$
-\begin{aligned}
-&-\frac{1}{2}\left[(\rho_s+\rho_v)v^2-2(\rho_s s+\rho_v\bar v)v\right] \\
-=\;&-\frac{\rho_s+\rho_v}{2}\left[
-v^2-2\frac{\rho_s s+\rho_v\bar v}{\rho_s+\rho_v}v
-\right] \\
-=\;&-\frac{\rho_s+\rho_v}{2}\left[
-\left(v-\frac{\rho_s s+\rho_v\bar v}{\rho_s+\rho_v}\right)^2
--\left(\frac{\rho_s s+\rho_v\bar v}{\rho_s+\rho_v}\right)^2
-\right].
-\end{aligned}
-$$
-因此 $v|s$ 的核是一个以$\mu_{v|s}=\dfrac{\rho_s s+\rho_v\bar v}{\rho_s+\rho_v}$为中心、精度 $\rho_s+\rho_v$ 的正态。
-$$
-\begin{equation}
-v|s \sim N\!\left(
+n(v\mid s)
+&\propto n(s\mid v)n(v),\\
+v\mid s
+&\sim N\!\left(
 \frac{\rho_s s+\rho_v\bar v}{\rho_s+\rho_v},
 \frac{1}{\rho_s+\rho_v}
 \right).
-\tag{2}
-\end{equation}
+\end{aligned}
 $$
-因此（精度加权平均）：
+
+也可以直接用 bivariate normal conditional moment。若
+
 $$
-E[v|s] =
-\frac{\rho_s}{\rho_s+\rho_v}\,s
-+
-\frac{\rho_v}{\rho_s+\rho_v}\,\bar v.
+\begin{pmatrix}
+X\\
+Y
+\end{pmatrix}
+\sim
+N\!\left(
+\begin{pmatrix}
+\mu_X\\
+\mu_Y
+\end{pmatrix},
+\begin{pmatrix}
+\sigma_X^2&\sigma_{XY}\\
+\sigma_{XY}&\sigma_Y^2
+\end{pmatrix}
+\right),
 $$
+
+令 $Z=X-aY$ 且取
+
+$$
+\begin{aligned}
+\operatorname{Cov}(Z,Y)
+&=\operatorname{Cov}(X-aY,Y)\\
+&=\sigma_{XY}-a\sigma_Y^2=0\\
+\Longleftrightarrow\quad
+a&=\frac{\sigma_{XY}}{\sigma_Y^2}.
+\end{aligned}
+$$
+
+联合正态下零协方差推出独立，因此
+
+$$
+\begin{aligned}
+E[X\mid Y=y]
+&=E[aY+Z\mid Y=y]\\
+&=ay+E[Z]\\
+&=\mu_X+\frac{\sigma_{XY}}{\sigma_Y^2}(y-\mu_Y),\\
+\operatorname{Var}(X\mid Y=y)
+&=\operatorname{Var}(Z)\\
+&=\operatorname{Var}(X-aY)\\
+&=\sigma_X^2-2a\sigma_{XY}+a^2\sigma_Y^2\\
+&=\sigma_X^2-\frac{\sigma_{XY}^2}{\sigma_Y^2}.
+\end{aligned}
+$$
+
+代入 $X=v$、$Y=s=v+\varepsilon$：
+
+$$
+\begin{aligned}
+E[v]&=\bar v,\qquad E[s]=\bar v,\\
+\operatorname{Cov}(v,s)
+&=\operatorname{Cov}(v,v+\varepsilon)
+=\operatorname{Var}(v)
+=\frac{1}{\rho_v},\\
+\operatorname{Var}(s)
+&=\operatorname{Var}(v)+\operatorname{Var}(\varepsilon)
+=\frac{1}{\rho_v}+\frac{1}{\rho_s}
+=\frac{\rho_s+\rho_v}{\rho_v\rho_s}.
+\end{aligned}
+$$
+
+所以知情者的后验矩为
+
+$$
+\begin{aligned}
+E_I[v\mid s]
+&=\bar v+
+\frac{1/\rho_v}{(\rho_s+\rho_v)/(\rho_v\rho_s)}
+(s-\bar v)\\
+&=\frac{\rho_s s+\rho_v\bar v}{\rho_s+\rho_v},\\
+\operatorname{Var}_I(v\mid s)
+&=
+\frac{1}{\rho_v}
+-
+\frac{(1/\rho_v)^2}{(\rho_s+\rho_v)/(\rho_v\rho_s)}\\
+&=\frac{1}{\rho_s+\rho_v}.
+\end{aligned}
+$$
+
 #### Uninformed Agents
 
 假设无知情者相信价格是线性的：
 $$
-\begin{equation}
 p=\alpha \bar v+\beta s-\gamma X.
-\tag{3}
-\end{equation}
 $$
 则他可以从价格中抽取一个统计量（无知情者虽然看不到 $s$，但能通过价格提取一个“带噪声的信号” $\theta$）
 $$
@@ -281,33 +238,34 @@ $$
 \end{aligned}
 $$
 $$
-\begin{equation}
-v|\theta=v|p
+v\mid \theta
+=v\mid p
 \sim
 N\!\left(
 \frac{\rho_\theta \theta+\rho_v \bar v}{\rho_\theta+\rho_v},
 \frac{1}{\rho_\theta+\rho_v}
 \right).
-\tag{4}
-\end{equation}
 $$
+
 ### 10.2.3 CARA-Normal 下的最优需求
 
 #### 推导核对：CARA-Normal 需求的一阶条件
 
-**Lemma**
-CARA-Normal Position Demand
+::::{admonition} Lemma (CARA-Normal Position Demand)
 若 $v|\mathcal I_i\sim N(m_i^v,\sigma_i^2)$，财富为
+
 $$
 W_i=m_i+X_i(v-p),
 $$
+
 且 $U_i(W)=-e^{-\lambda_iW}$，则最优持仓为
+
 $$
 X_i^*=\frac{m_i^v-p}{\lambda_i\sigma_i^2}.
 $$
-**WTS：** 从期望效用最大化得到线性需求。
+::::
 
-**联立系统：** 条件于信息 $\mathcal I_i$，
+条件于信息 $\mathcal I_i$，
 $$
 \begin{aligned}
 E_i[W_i]&=m_i+X_i(m_i^v-p),\\
@@ -320,7 +278,7 @@ $$
 \max_{X_i}\ E_i[W_i]-\frac{\lambda_i}{2}\operatorname{Var}_i(W_i).
 \end{aligned}
 $$
-**连续求解：**
+
 $$
 \begin{aligned}
 \max_{X_i}\quad
@@ -332,8 +290,6 @@ X_i^*
 &=\frac{m_i^v-p}{\lambda_i\sigma_i^2}.
 \end{aligned}
 $$
-**结论：** 需求的分子是 perceived mispricing，分母是风险厌恶乘以后验方差；这正是后面清算方程的线性来源。
-
 
 [CARA-Normal framework](Asset Pricing/Theoretical AP/cards/CARA-Normal framework - 均值方差等价与最优需求)（均值方差等价与最优需求）
 
@@ -356,7 +312,9 @@ E_i[-e^{-\lambda_i W_i}]
 &=-\exp\!\left(-\lambda_i\mu_i+\frac{\lambda_i^2}{2}\sigma_i^2\right).
 \end{aligned}
 $$
-其中用到标准正态的矩母函数（MGF）：$E[e^{tZ}]=e^{t^2/2}$，见 [MGF](Asset Pricing/Theoretical AP/cards/矩母函数（MGF）- 定义与正态分布公式)。因此最大化 $E_i[-e^{-\lambda_i W_i}]$ 等价于最大化均值-方差目标函数。
+
+其中用到标准正态的矩母函数（MGF）$E[e^{tZ}]=e^{t^2/2}$，见 [MGF](Asset Pricing/Theoretical AP/cards/矩母函数（MGF）- 定义与正态分布公式)。因此
+
 $$
 \begin{aligned}
 \max_{X_i} E_i[-e^{-\lambda_i W_i}]
@@ -376,11 +334,48 @@ $$
 $$
 故最优需求为
 $$
-\begin{equation}
 X_i=\frac{E_i[v]-p}{\lambda_i \operatorname{Var}_i(v)}.
-\tag{5}
-\end{equation}
 $$
+
+若只看知情者，令 $\lambda_I=\gamma$，由 $W_I=W_0+X_I(v-p)$ 与上面的知情者后验矩：
+
+$$
+\begin{aligned}
+E_I[W_I]
+&=W_0+X_I(E_I[v\mid s]-p),\\
+\operatorname{Var}_I(W_I)
+&=X_I^2\operatorname{Var}_I(v\mid s),\\
+\max_{X_I} E_I[U(W_I)]
+&\Longleftrightarrow
+\max_{X_I}
+\left\{
+W_0+X_I(E_I[v\mid s]-p)
+-\frac{\gamma}{2}X_I^2\operatorname{Var}_I(v\mid s)
+\right\},\\
+0
+&=
+\frac{\partial}{\partial X_I}
+\left[
+W_0+X_I(E_I[v\mid s]-p)
+-\frac{\gamma}{2}X_I^2\operatorname{Var}_I(v\mid s)
+\right]\\
+&=
+E_I[v\mid s]-p-\gamma X_I\operatorname{Var}_I(v\mid s),\\
+X_I
+&=
+\frac{E_I[v\mid s]-p}{\gamma\operatorname{Var}_I(v\mid s)}\\
+&=
+\frac{
+\frac{\rho_s s+\rho_v\bar v}{\rho_s+\rho_v}
+-p
+}{
+\gamma\frac{1}{\rho_s+\rho_v}
+}\\
+&=
+\frac{\rho_s s+\rho_v\bar v-p(\rho_s+\rho_v)}{\gamma}.
+\end{aligned}
+$$
+
 代入知情者与无知情者的后验矩：
 $$
 \begin{aligned}
@@ -417,8 +412,7 @@ $$
 
 #### 推导核对：价格系数的配平解法
 
-**Lemma**
-Solving the GS Price Coefficients
+::::{admonition} Lemma (Solving the GS Price Coefficients)
 令
 $$
 D=\lambda_I(\rho_\theta+\rho_v)+\lambda_U(\rho_s+\rho_v),
@@ -431,58 +425,7 @@ $$
 \quad
 \gamma=\frac{\lambda_I}{\rho_s}\beta.
 $$
-**WTS：** 从清算方程逐项配平 $s,\bar v,X$ 的系数。
-
-**联立系统：**
-$$
-\begin{aligned}
-X_I&=\frac{\rho_s s+\rho_v\bar v-(\rho_s+\rho_v)p}{\lambda_I},\\
-X_U&=\frac{\rho_\theta\theta+\rho_v\bar v-(\rho_\theta+\rho_v)p}{\lambda_U},\\
-\theta&=\frac{p-\alpha\bar v}{\beta},\\
-p&=\alpha\bar v+\beta s-\gamma X,\\
-X_I+X_U&=X.
-\end{aligned}
-$$
-**连续求解：** 代入 $p$ 与 $\theta=s-(\gamma/\beta)X$，清算条件变成
-$$
-\begin{aligned}
-0
-&=\left[\frac{\rho_s-(\rho_s+\rho_v)\beta}{\lambda_I}+\frac{\rho_\theta-(\rho_\theta+\rho_v)\beta}{\lambda_U}\right]s\\
-&\quad+\left[\frac{\rho_v-(\rho_s+\rho_v)\alpha}{\lambda_I}+\frac{\rho_v-(\rho_\theta+\rho_v)\alpha}{\lambda_U}\right]\bar v\\
-&\quad+\left[\frac{(\rho_s+\rho_v)\gamma}{\lambda_I}+\frac{\gamma((\rho_\theta+\rho_v)-\rho_\theta/\beta)}{\lambda_U}-1\right]X.
-\end{aligned}
-$$
-逐项令系数为零。前两项给出
-$$
-\begin{aligned}
-\beta[\lambda_I(\rho_\theta+\rho_v)+\lambda_U(\rho_s+\rho_v)]
-&=\lambda_I\rho_\theta+\lambda_U\rho_s,\\
-\alpha[\lambda_I(\rho_\theta+\rho_v)+\lambda_U(\rho_s+\rho_v)]
-&=\rho_v(\lambda_I+\lambda_U).
-\end{aligned}
-$$
-即
-$$
-\begin{aligned}
-\beta&=\frac{\lambda_I\rho_\theta+\lambda_U\rho_s}{D},\\
-\alpha&=\frac{\rho_v(\lambda_I+\lambda_U)}{D}.
-\end{aligned}
-$$
-第三项可写成
-$$
-\begin{aligned}
-\gamma(\beta D-\lambda_I\rho_\theta)=\beta\lambda_I\lambda_U.
-\end{aligned}
-$$
-利用 $\beta D=\lambda_I\rho_\theta+\lambda_U\rho_s$，
-$$
-\begin{aligned}
-\gamma\lambda_U\rho_s&=\beta\lambda_I\lambda_U,\\
-\gamma&=\frac{\lambda_I}{\rho_s}\beta.
-\end{aligned}
-$$
-**结论：** 价格里 $s$ 的载荷 $\beta$ 由两类投资者的信息精度与风险厌恶共同决定；$X$ 的载荷 $\gamma$ 则衡量噪声供给对价格信号的污染。
-
+::::
 
 市场清算要求
 $$
@@ -681,7 +624,7 @@ Find the coefficients of the equilibrium price $\alpha,\beta,\gamma$. Show that 
 
 ### 10.3.1 Setup
 
-**Definition (Glosten-Milgrom Sequential Trading Setup)**
+::::{admonition} Definition (Glosten-Milgrom Sequential Trading Setup)
 **sequential trading**：一次只来一个 trader、一次只交易一股，所以做市商每看到一笔订单，就立刻用这笔订单更新对 $V$ 的信念，再重新报 bid / ask。
 
 **Asset value**: Binary with prior
@@ -740,20 +683,19 @@ $$
 | ------- | ------ | ------ | -------------------------------- |
 | **ask** | sell   | buy    | dealer 观察 trader 的买单，提高 ask（卖出价） |
 | **bid** | buy    | sell   | dealer 观察 trader 的卖单，降低 bid（买入价） |
+::::
 
 ### 10.3.2 Pricing Rules and Bid-Ask Spread
 
 #### 推导核对：Glosten-Milgrom 买卖价差的正性
 
-**Lemma**
-Positive Bid-Ask Spread from Adverse Selection
+::::{admonition} Lemma (Positive Bid-Ask Spread from Adverse Selection)
 在二元价值与知情交易概率 $\mu>0$ 下，竞争做市商的报价满足
 $$
 a=E[V|B],\qquad b=E[V|S],\qquad a>b.
 $$
-**WTS：** 用 Bayes 法则证明买单提高后验均值、卖单降低后验均值。
+::::
 
-**联立系统：**
 $$
 \begin{aligned}
 P(B)&=\theta\mu+(1-\mu)\gamma,\\
@@ -761,7 +703,6 @@ P(S)&=(1-\theta)\mu+(1-\mu)(1-\gamma),\\
 \bar V&=\theta V_H+(1-\theta)V_L.
 \end{aligned}
 $$
-**连续求解：** ask 为
 $$
 \begin{aligned}
 a
@@ -769,7 +710,6 @@ a
 &=\frac{\theta\mu V_H+(1-\mu)\gamma\bar V}{\theta\mu+(1-\mu)\gamma}.
 \end{aligned}
 $$
-bid 为
 $$
 \begin{aligned}
 b
@@ -790,8 +730,6 @@ $$
 a-b>0.
 \end{aligned}
 $$
-**结论：** spread 不是库存成本在本模型中的结果，而是订单方向携带私人信息导致的 adverse-selection premium。
-
 
 #### 卖一价的推导
 
@@ -828,6 +766,7 @@ a = E[V|B] &= \frac{\theta\mu V_H+(1-\mu)\gamma \bar V}{\theta\mu+(1-\mu)\gamma}
 \end{aligned}
 $$
 做市商在 risk-neutral 且零利润竞争下，ask 就报这个后验均值；因为若他报得更低，遇到 informed buyer 时会亏损。
+
 #### 买一价的推导
 
 若出现卖单 $S$，则它可能来自：
@@ -841,6 +780,7 @@ b = E[V|S] &= \frac{(1-\theta)\mu V_L+(1-\mu)(1-\gamma)\bar V}{(1-\theta)\mu+(1-
 &= \underbrace{V_L}_{\text{pessimistic bound}} + \underbrace{\frac{\theta(1-\mu)(1-\gamma)}{(1-\theta)\mu+(1-\mu)(1-\gamma)}}_{\text{noise-trade prob: sell good}} \underbrace{(V_H-V_L)}_{\text{spread}}.
 \end{aligned}
 $$
+
 #### 买卖价差为正
 $$
 \begin{aligned}
@@ -863,11 +803,12 @@ $$
 a-b>0.
 $$
 经济含义很直接：做市商担心自己面对的是知情交易者，所以买入时压低价格、卖出时抬高价格，价差正是逆向选择成本。
+
 ### 10.4 One-period Kyle Model
 
 ### 10.4.1 Setup
 
-**Definition (One-period Kyle Setup)**
+::::{admonition} Definition (One-period Kyle Setup)
 **资产基本面**（不确定性的来源）：
 风险资产终值 $v$ 满足
 $$
@@ -889,12 +830,13 @@ $$
 $$
 p=E[v|X]=E[v|x+Z_u].
 $$
+::::
+
 ## 10.4.2 线性均衡猜测
 
 ## 推导核对：单期 Kyle 模型的 beta 与 lambda
 
-**Lemma**
-One-Period Kyle Linear Equilibrium
+::::{admonition} Lemma (One-Period Kyle Linear Equilibrium)
 在线性策略
 $$
 x=\beta(v-p_0),\qquad p=p_0+\lambda(x+Z_u)
@@ -907,9 +849,8 @@ p_0=v_0,
 \qquad
 \lambda=\frac{\sqrt{\Sigma_0}}{2\sigma}.
 $$
-**WTS：** 联立 insider 最优反应与 market maker 的 Bayes 定价。
+::::
 
-**联立系统：**
 $$
 \begin{aligned}
 v&\sim N(v_0,\Sigma_0),\\
@@ -919,7 +860,7 @@ x&=\beta(v-p_0),\\
 p&=E[v|X]=p_0+\lambda X.
 \end{aligned}
 $$
-**连续求解：** 给定 $\lambda$，insider 解
+给定 $\lambda$，insider 解
 $$
 \begin{aligned}
 \max_x E[(v-p_0-\lambda(x+Z_u))x|v]
@@ -967,8 +908,6 @@ $$
 \lambda&=\frac{\sqrt{\Sigma_0}}{2\sigma}.
 \end{aligned}
 $$
-**结论：** 噪声交易越大，insider 可以隐藏更多交易，$\beta$ 越大而 price impact $\lambda$ 越小。
-
 
 [线性定价与线性交易](Asset Pricing/Theoretical AP/cards/Kyle 线性均衡猜测 - 线性定价与线性交易)（线性均衡的完整推导）
 $$
@@ -1031,6 +970,7 @@ $$
   \Longrightarrow
   \beta=\frac{1}{2\lambda}.
 $$
+
 ## 10.4.4 做市商的贝叶斯更新
 
 由线性策略
@@ -1129,11 +1069,9 @@ $$
 $$
 取正根，解出
 $$
-\begin{equation}
 \beta=\sqrt{\frac{\sigma^2}{\Sigma_0}}=\frac{\sigma}{\sqrt{\Sigma_0}},
 \qquad
 \lambda=\frac{\sqrt{\Sigma_0}}{2\sigma}.
-\end{equation}
 $$
 因此均衡唯一。
 
@@ -1399,6 +1337,7 @@ P_t &= \bar v + \lambda Y_t,\\
 \theta_t &= \frac{\tilde v - P_t}{(1-t)\lambda}.
 \end{aligned}
 $$
+
 ### 11.3 做市商定价规则的验证：Kalman 滤波
 
 [Asset Pricing/Theoretical AP/cards/Back 1992 - 净订单流 SDE](Asset Pricing/Theoretical AP/cards/Back 1992 - 净订单流 SDE) · [Asset Pricing/Theoretical AP/cards/Kalman-Bucy - 一般公式](Asset Pricing/Theoretical AP/cards/Kalman-Bucy - 一般公式)（净订单流 SDE / Kalman-Bucy 一般公式）
@@ -1628,11 +1567,9 @@ $$
 $$
 又因为 $\Sigma_0=\sigma_v^2$，故
 $$
-\begin{equation}
 \lambda=\frac{\sigma_v}{\sigma_z},
 \qquad
 \Sigma_t=\sigma_v^2(1-t).
-\end{equation}
 $$
 这说明剩余私人信息以常数速度线性衰减。
 
@@ -1848,10 +1785,8 @@ C(v)=\frac{\sigma_v^2}{2\lambda}.
 $$
 于是
 $$
-\begin{equation}
 J(t,p,v)=\frac{(v-p)^2+\sigma_v^2(1-t)}{2\lambda}.
 \tag{9}
-\end{equation}
 $$
 与上面 ODE 解法等价、但更直观的**鞅表示法**。先由
 $$
@@ -2711,6 +2646,7 @@ J(0,P_0,v)
 \frac{e^{\mu+\sigma_v^2/2}-v+v(\log v-\mu)}{\lambda}.
 \end{aligned}
 $$
+
 ## 12. 异质信念模型
 
 异质信念自然产生于代理人（agents）对基本面动态没有完全信息的环境中。与信息不对称的情况一样，异质信念会刺激代理人之间的交易和投机，产生一些有趣的资产价格规律。本部分材料主要基于 Li (JDEC, 2007), Li (MS, 2013), 以及 Li and Muzere (JFQA, 2010)。
@@ -2744,8 +2680,7 @@ $$
 
 #### 推导核对：常数漂移学习中的 Kalman-Bayes 更新
 
-**Lemma**
-Learning an Unknown Constant Drift
+::::{admonition} Lemma (Learning an Unknown Constant Drift)
 若观察过程
 $$
 dY_t=\mu dt+\sigma dW_t,
@@ -2760,9 +2695,9 @@ $$
 $$
 m_t=v_t\left(v_0^{-1}m_0+\frac{Y_t}{\sigma^2}\right).
 $$
-**WTS：** 把连续时间观察 $Y_t$ 视为关于 $\mu$ 的正态信号。
+::::
 
-**联立系统：** 条件于 $\mu$，
+条件于 $\mu$，
 $$
 \begin{aligned}
 Y_t|\mu\sim N(\mu t,\sigma^2t).
@@ -2774,7 +2709,7 @@ $$
 \frac{Y_t}{t}\Big|\mu\sim N\left(\mu,\frac{\sigma^2}{t}\right).
 \end{aligned}
 $$
-**连续求解：** 先验密度与似然相乘：
+先验密度与似然相乘：
 $$
 \begin{aligned}
 p(\mu|Y_t)
@@ -2793,8 +2728,6 @@ v_t^{-1}&=v_0^{-1}+\frac{t}{\sigma^2},\\
 m_t&=v_t\left(v_0^{-1}m_0+\frac{Y_t}{\sigma^2}\right).
 \end{aligned}
 $$
-**结论：** 学习的本质是精度累积；观察时间越长，$t/\sigma^2$ 越大，后验方差越小。
-
 
 [Asset Pricing/Theoretical AP/cards/正态-正态更新 - 常数漂移学习](Asset Pricing/Theoretical AP/cards/正态-正态更新 - 常数漂移学习)（常数漂移学习）
 
@@ -3527,6 +3460,7 @@ $$
 $$
 c_t^i=(u_i')^{-1}(\phi_i e^{\rho_i t}\xi_t^i).
 $$
+
 ## 12.3 均衡条件
 
 ### 12.3.1 消费市场出清
@@ -3742,18 +3676,15 @@ $$
 
 #### 推导核对：异质信念下对数效用的消费分享
 
-**Lemma**
-Log Utility Sharing Rule with Heterogeneous Beliefs
+::::{admonition} Lemma (Log Utility Sharing Rule with Heterogeneous Beliefs)
 两个对数效用代理人、主观密度过程为 $\eta_i$ 时，规划者一阶条件给出
 $$
 c_{it}=\frac{\alpha_i\eta_{it}}{\alpha_1\eta_{1t}+\alpha_2\eta_{2t}}D_t,
 $$
 其中 $D_t$ 是总产出 / dividend，$\alpha_i$ 是 Pareto weight。
+::::
 
 
-**WTS：** 从社会规划者问题推出消费市场出清下的分享规则。
-
-**联立系统：**
 $$
 \begin{aligned}
 \max_{c_1,c_2}\quad
@@ -3762,7 +3693,7 @@ $$
 &c_{1t}+c_{2t}=D_t.
 \end{aligned}
 $$
-**连续求解：** Lagrangian 为
+Lagrangian 为
 $$
 \begin{aligned}
 \mathcal L
@@ -3800,7 +3731,6 @@ c_{it}
 &=\frac{\alpha_i\eta_{it}}{\alpha_1\eta_{1t}+\alpha_2\eta_{2t}}D_t.
 \end{aligned}
 $$
-**结论：** 异质信念通过 likelihood ratio 改变有效 Pareto weights；更乐观且后来被数据支持的代理人消费份额会上升。
 $$
 \begin{aligned}
 u_i'(c) &= \frac{1}{c} & \text{log utility} \\
@@ -3824,6 +3754,7 @@ c_t^i &= \frac{e^{-\rho_i t}}{\phi_i \xi_t^i} & \text{FOC} \\
    & \text{solve for } \xi_t^1.
 \end{aligned}
 $$
+
 ### 12.4.4 股票价格
 $$
 \begin{aligned}
@@ -3851,6 +3782,7 @@ S_t
    =\frac{\phi_1}{\phi_2}e^{-(\rho_2-\rho_1)t}\zeta_t^{21}.
 \end{aligned}
 $$
+
 ### 12.4.5 利率与风险价格
 $$
 \begin{aligned}
