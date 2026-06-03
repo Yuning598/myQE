@@ -10937,21 +10937,133 @@ F^{(k)}(t,D_t^k,\omega_{k,t};T),
 \end{aligned}
 $$
 
-则它满足 Feynman-Kac PDE：
+先把 $Q^k$ 下的 drift 和 diffusion 写成
+
+$$
+\left\{
+\begin{aligned}
+b_D^{Q,k}
+&:=
+D
+\left[
+\mu_{k,t}-\sigma_{k,t}'\theta_t^{(k)}
+\right],\\
+b_\omega^{Q,k}
+&:=
+\omega
+\left[
+\rho_1-\rho_2+\beta'\theta_t^{(k)}
+\right],\\
+s_D^{Q,k}
+&:=
+D\sigma_{k,t},\\
+s_\omega^{Q,k}
+&:=
+-\omega\beta.
+\end{aligned}
+\right.
+$$
+
+于是
+
+$$
+\left\{
+\begin{aligned}
+dD_t^k
+&=
+b_D^{Q,k}dt+(s_D^{Q,k})'dB_t^{Q,k},\\
+d\omega_{k,t}
+&=
+b_\omega^{Q,k}dt+(s_\omega^{Q,k})'dB_t^{Q,k}.
+\end{aligned}
+\right.
+$$
+
+对 $F^{(k)}(t,D,\omega;T)$ 使用 Itô lemma：
+
+$$
+\begin{aligned}
+dF^{(k)}
+&=
+F_t^{(k)}dt+F_D^{(k)}dD+F_\omega^{(k)}d\omega\\
+&\quad
++\frac12F_{DD}^{(k)}(dD)^2
++F_{D\omega}^{(k)}dD\,d\omega
++\frac12F_{\omega\omega}^{(k)}(d\omega)^2.
+\end{aligned}
+$$
+
+二次变差为
+
+$$
+\left\{
+\begin{aligned}
+(dD)^2
+&=
+D^2\sigma_{k,t}'\sigma_{k,t}\,dt,\\
+dD\,d\omega
+&=
+-D\omega\sigma_{k,t}'\beta\,dt,\\
+(d\omega)^2
+&=
+\omega^2\beta'\beta\,dt.
+\end{aligned}
+\right.
+$$
+
+所以 drift part 为
+
+$$
+\begin{aligned}
+\operatorname{drift}(dF^{(k)})
+&=
+\Big[
+F_t^{(k)}
++b_D^{Q,k}F_D^{(k)}
++b_\omega^{Q,k}F_\omega^{(k)}\\
+&\qquad
++\frac12D^2\sigma_{k,t}'\sigma_{k,t}F_{DD}^{(k)}
+-D\omega\sigma_{k,t}'\beta F_{D\omega}^{(k)}
++\frac12\omega^2\beta'\beta F_{\omega\omega}^{(k)}
+\Big]dt.
+\end{aligned}
+$$
+
+因此 infinitesimal generator 是
+
+$$
+\begin{aligned}
+\mathcal L^{Q,k}F^{(k)}
+&=
+b_D^{Q,k}F_D^{(k)}
++b_\omega^{Q,k}F_\omega^{(k)}\\
+&\quad
++\frac12D^2\sigma_{k,t}'\sigma_{k,t}F_{DD}^{(k)}
+-D\omega\sigma_{k,t}'\beta F_{D\omega}^{(k)}
++\frac12\omega^2\beta'\beta F_{\omega\omega}^{(k)}.
+\end{aligned}
+$$
+
+Feynman-Kac PDE 为
 
 $$
 \begin{aligned}
 0
 &=
-\partial_tF^{(k)}
-+\mathcal L^{Q,k}F^{(k)}
+F_t^{(k)}
++b_D^{Q,k}F_D^{(k)}
++b_\omega^{Q,k}F_\omega^{(k)}\\
+&\quad
++\frac12D^2\sigma_{k,t}'\sigma_{k,t}F_{DD}^{(k)}
+-D\omega\sigma_{k,t}'\beta F_{D\omega}^{(k)}
++\frac12\omega^2\beta'\beta F_{\omega\omega}^{(k)}
 -r_t^{(k)}F^{(k)},\\
 F^{(k)}(T,D,\omega;T)
 &=1.
 \end{aligned}
 $$
 
-其中 $\mathcal L^{Q,k}$ 是上面 $Q^k$ dynamics 对应的 infinitesimal generator。除非进一步假设 $\mu_{k,t},\sigma_{k,t}$ 与 $\omega_{k,t}$ 的具体 affine / lognormal 结构，一般不会有简单 closed form；本题的核心定价式就是 SPD expectation 或等价的 risk-neutral discounting 形式。
+除非进一步假设 $\mu_{k,t},\sigma_{k,t}$ 与 $\omega_{k,t}$ 的具体 affine / lognormal 结构，一般不会有简单 closed form；本题的核心定价式就是 SPD expectation 或等价的 risk-neutral discounting 形式。
 
 ::::
 
