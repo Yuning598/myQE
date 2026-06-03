@@ -2507,6 +2507,781 @@ $$
 
 ::::
 
+### Question 8 补充：Log Utility、Filtering、Market Clearing 与 Vasicek Bond Pricing 综合推导
+
+**完整设定**
+
+$$
+\left\{
+\begin{aligned}
+&j\in\{1,2\},\qquad k\ne j,\\
+&U_0^j=E_0^j\int_0^\infty e^{-\rho t}\log c_t^j\,dt,\\
+&c_t^1+c_t^2=\delta_t,\\
+&\frac{d\delta_t}{\delta_t}=\hat\mu_t^jdt+\sigma d\bar B_t^j,\\
+&d\hat\mu_t^j=\kappa_j(\bar\mu_j-\hat\mu_t^j)dt+\sigma_jd\bar B_t^j,\\
+&S_t=\text{ex-dividend stock price},\qquad \delta_tdt=\text{dividend flow},\\
+&dW_t^j=(1-\pi_t^j)W_t^jr_tdt
++\frac{\pi_t^jW_t^j}{S_t}(dS_t+\delta_tdt)-c_t^jdt.
+\end{aligned}
+\right.
+$$
+
+主线：
+
+$$
+\begin{aligned}
+\text{filtering}
+&\Longrightarrow \hat\mu_t^j
+\Longrightarrow c_t^j
+\Longrightarrow \xi_t^j\\
+&\Longrightarrow r_t,\theta_t^j,S_t,P(t,T)
+\Longrightarrow W_t^j,\pi_t^j
+\Longrightarrow \text{market clearing}.
+\end{aligned}
+$$
+
+核心对象是 agent $j$ 的主观 state price density：
+
+$$
+\begin{aligned}
+\xi_t^j
+&=e^{-\rho t}u'(c_t^j)
+=\frac{e^{-\rho t}}{c_t^j},\\
+\frac{d\xi_t^j}{\xi_t^j}
+&=-r_tdt-\theta_t^jd\bar B_t^j.
+\end{aligned}
+$$
+
+#### Filtering 与 posterior mean
+
+令 $X_t$ 表示 aggregate consumption growth observation：
+
+$$
+\begin{aligned}
+dX_t:=\frac{d\delta_t}{\delta_t}
+=\mu_tdt+\sigma dB_t^j.
+\end{aligned}
+$$
+
+agent $j$ 的主观线性高斯系统为
+
+$$
+\left\{
+\begin{aligned}
+dX_t&=\mu_tdt+\sigma dB_t^j,\\
+d\mu_t&=\kappa_j(\bar\mu_j-\mu_t)dt+\nu_jdZ_t^j,\\
+\hat\mu_t^j&=E_t^j[\mu_t],\\
+\Sigma_t^j&=E_t^j[(\mu_t-\hat\mu_t^j)^2].
+\end{aligned}
+\right.
+$$
+
+Kalman-Bucy filter：
+
+$$
+\boxed{
+\begin{aligned}
+d\hat\mu_t^j
+&=\kappa_j(\bar\mu_j-\hat\mu_t^j)dt
++\frac{\Sigma_t^j}{\sigma}d\bar B_t^j,\\
+d\bar B_t^j
+&=\frac{dX_t-\hat\mu_t^jdt}{\sigma}
+=\frac{d\delta_t/\delta_t-\hat\mu_t^jdt}{\sigma}.
+\end{aligned}
+}
+$$
+
+因此在 agent $j$ 的信息集下，
+
+$$
+\boxed{
+\begin{aligned}
+\frac{d\delta_t}{\delta_t}
+&=\hat\mu_t^jdt+\sigma d\bar B_t^j.
+\end{aligned}
+}
+$$
+
+后验方差满足 Riccati equation：
+
+$$
+\boxed{
+\begin{aligned}
+\frac{d\Sigma_t^j}{dt}
+&=\nu_j^2-2\kappa_j\Sigma_t^j-\frac{(\Sigma_t^j)^2}{\sigma^2}.
+\end{aligned}
+}
+$$
+
+steady state 下，
+
+$$
+\begin{aligned}
+0
+&=\nu_j^2-2\kappa_j\Sigma^j-\frac{(\Sigma^j)^2}{\sigma^2},\\
+\Sigma^j
+&=\sigma^2\left(
+-\kappa_j+\sqrt{\kappa_j^2+\frac{\nu_j^2}{\sigma^2}}
+\right),\\
+\sigma_j
+&=\frac{\Sigma^j}{\sigma}.
+\end{aligned}
+$$
+
+所以 posterior mean 的 reduced-form dynamics 是
+
+$$
+\boxed{
+\begin{aligned}
+d\hat\mu_t^j
+&=\kappa_j(\bar\mu_j-\hat\mu_t^j)dt+\sigma_jd\bar B_t^j.
+\end{aligned}
+}
+$$
+
+#### 同质信念基准
+
+若只有代表性 log agent，则 $c_t=\delta_t$ 且
+
+$$
+\begin{aligned}
+\xi_t
+&=\frac{e^{-\rho t}}{\delta_t}.
+\end{aligned}
+$$
+
+由 Ito lemma，
+
+$$
+\begin{aligned}
+\frac{d(1/\delta_t)}{1/\delta_t}
+&=-\frac{d\delta_t}{\delta_t}
++\left(\frac{d\delta_t}{\delta_t}\right)^2\\
+&=(\sigma^2-\hat\mu_t)dt-\sigma d\bar B_t.
+\end{aligned}
+$$
+
+所以
+
+$$
+\begin{aligned}
+\frac{d\xi_t}{\xi_t}
+&=-\rho dt+\frac{d(1/\delta_t)}{1/\delta_t}\\
+&=(\sigma^2-\rho-\hat\mu_t)dt-\sigma d\bar B_t.
+\end{aligned}
+$$
+
+与 $d\xi_t/\xi_t=-r_tdt-\theta_td\bar B_t$ 比较：
+
+$$
+\boxed{
+\begin{aligned}
+r_t&=\rho+\hat\mu_t-\sigma^2,\\
+\theta_t&=\sigma.
+\end{aligned}
+}
+$$
+
+股票价格为 dividend stream 的现值：
+
+$$
+\begin{aligned}
+S_t
+&=\frac{1}{\xi_t}
+E_t\left[\int_t^\infty \xi_s\delta_s\,ds\right]\\
+&=e^{\rho t}\delta_t
+\int_t^\infty e^{-\rho s}\,ds\\
+&=\frac{\delta_t}{\rho}.
+\end{aligned}
+$$
+
+因此
+
+$$
+\boxed{
+\begin{aligned}
+\frac{S_t}{\delta_t}&=\frac{1}{\rho},\\
+dR_t^S
+&=\frac{dS_t+\delta_tdt}{S_t}
+=(\hat\mu_t+\rho)dt+\sigma d\bar B_t,\\
+\mu_{R,t}^S-r_t&=\sigma^2,\qquad \sigma_S=\sigma.
+\end{aligned}
+}
+$$
+
+#### 异质信念下的消费分配
+
+令 $\eta_t^j=dP^j/dP^0|_{\mathcal F_t}$。planner problem 可写为
+
+$$
+\begin{aligned}
+\max_{\{c_t^1,c_t^2\}}
+E_0^0\int_0^\infty e^{-\rho t}
+\left[
+\lambda_1\eta_t^1\log c_t^1
++\lambda_2\eta_t^2\log c_t^2
+\right]dt
+\end{aligned}
+$$
+
+subject to $c_t^1+c_t^2=\delta_t$。逐点 FOC：
+
+$$
+\begin{aligned}
+\frac{\lambda_j\eta_t^j}{c_t^j}
+&=\zeta_t,\qquad j=1,2.
+\end{aligned}
+$$
+
+加总清算给出
+
+$$
+\begin{aligned}
+\zeta_t
+&=\frac{\lambda_1\eta_t^1+\lambda_2\eta_t^2}{\delta_t},
+\end{aligned}
+$$
+
+因此
+
+$$
+\boxed{
+\begin{aligned}
+c_t^j
+&=\omega_t^j\delta_t,\\
+\omega_t^j
+&=\frac{\lambda_j\eta_t^j}
+{\lambda_1\eta_t^1+\lambda_2\eta_t^2},\\
+\omega_t^1+\omega_t^2&=1.
+\end{aligned}
+}
+$$
+
+在 $P^j$ 下，同一个 $\delta_t$ 同时满足
+
+$$
+\begin{aligned}
+\hat\mu_t^jdt+\sigma d\bar B_t^j
+&=\hat\mu_t^kdt+\sigma d\bar B_t^k,
+\end{aligned}
+$$
+
+所以
+
+$$
+\boxed{
+\begin{aligned}
+d\bar B_t^k
+&=d\bar B_t^j+\frac{\hat\mu_t^j-\hat\mu_t^k}{\sigma}dt.
+\end{aligned}
+}
+$$
+
+令
+
+$$
+\begin{aligned}
+R_t^{kj}
+&=\frac{\lambda_k\eta_t^k}{\lambda_j\eta_t^j},
+\qquad
+\Delta_t^{kj}:=\hat\mu_t^k-\hat\mu_t^j.
+\end{aligned}
+$$
+
+Girsanov theorem 给出
+
+$$
+\boxed{
+\begin{aligned}
+\frac{dR_t^{kj}}{R_t^{kj}}
+&=\frac{\Delta_t^{kj}}{\sigma}d\bar B_t^j.
+\end{aligned}
+}
+$$
+
+由于 $\omega_t^j=(1+R_t^{kj})^{-1}$，Ito lemma 得
+
+$$
+\boxed{
+\begin{aligned}
+\frac{d\omega_t^j}{\omega_t^j}
+&=(\omega_t^k)^2
+\left(\frac{\Delta_t^{kj}}{\sigma}\right)^2dt
+-\omega_t^k
+\left(\frac{\Delta_t^{kj}}{\sigma}\right)d\bar B_t^j.
+\end{aligned}
+}
+$$
+
+由 $c_t^j=\omega_t^j\delta_t$，
+
+$$
+\begin{aligned}
+\frac{dc_t^j}{c_t^j}
+&=\frac{d\omega_t^j}{\omega_t^j}
++\frac{d\delta_t}{\delta_t}
++\frac{d\omega_t^j}{\omega_t^j}\frac{d\delta_t}{\delta_t}\\
+&=\mu_{c,t}^jdt+\sigma_{c,t}^jd\bar B_t^j,
+\end{aligned}
+$$
+
+其中
+
+$$
+\boxed{
+\begin{aligned}
+\mu_{c,t}^j
+&=\hat\mu_t^j-\omega_t^k\Delta_t^{kj}
++(\omega_t^k)^2\frac{(\Delta_t^{kj})^2}{\sigma^2},\\
+\sigma_{c,t}^j
+&=\sigma-\omega_t^k\frac{\Delta_t^{kj}}{\sigma}.
+\end{aligned}
+}
+$$
+
+定义平均信念
+
+$$
+\boxed{
+\begin{aligned}
+m_t
+&=\omega_t^1\hat\mu_t^1+\omega_t^2\hat\mu_t^2.
+\end{aligned}
+}
+$$
+
+则
+
+$$
+\boxed{
+\begin{aligned}
+\sigma_{c,t}^j
+&=\sigma+\frac{\hat\mu_t^j-m_t}{\sigma}.
+\end{aligned}
+}
+$$
+
+#### SDF、无风险利率与风险价格
+
+因为 $\xi_t^j=e^{-\rho t}/c_t^j$，再次用 Ito lemma：
+
+$$
+\begin{aligned}
+\frac{d\xi_t^j}{\xi_t^j}
+&=-\rho dt-\mu_{c,t}^jdt+(\sigma_{c,t}^j)^2dt
+-\sigma_{c,t}^jd\bar B_t^j.
+\end{aligned}
+$$
+
+比较 $d\xi_t^j/\xi_t^j=-r_tdt-\theta_t^jd\bar B_t^j$：
+
+$$
+\begin{aligned}
+r_t&=\rho+\mu_{c,t}^j-(\sigma_{c,t}^j)^2,\\
+\theta_t^j&=\sigma_{c,t}^j.
+\end{aligned}
+$$
+
+化简 $r_t$：
+
+$$
+\begin{aligned}
+\mu_{c,t}^j-(\sigma_{c,t}^j)^2
+&=\hat\mu_t^j-\omega_t^k\Delta_t^{kj}
++(\omega_t^k)^2\frac{(\Delta_t^{kj})^2}{\sigma^2}\\
+&\quad
+-\left[
+\sigma^2-2\omega_t^k\Delta_t^{kj}
++(\omega_t^k)^2\frac{(\Delta_t^{kj})^2}{\sigma^2}
+\right]\\
+&=\hat\mu_t^j+\omega_t^k\Delta_t^{kj}-\sigma^2\\
+&=m_t-\sigma^2.
+\end{aligned}
+$$
+
+所以
+
+$$
+\boxed{
+\begin{aligned}
+r_t
+&=\rho+m_t-\sigma^2\\
+&=\rho+\omega_t^1\hat\mu_t^1+\omega_t^2\hat\mu_t^2-\sigma^2,
+\end{aligned}
+}
+$$
+
+且
+
+$$
+\boxed{
+\begin{aligned}
+\theta_t^j
+&=\sigma+\frac{\hat\mu_t^j-m_t}{\sigma}.
+\end{aligned}
+}
+$$
+
+显式地，
+
+$$
+\boxed{
+\begin{aligned}
+\theta_t^1
+&=\sigma+\frac{\omega_t^2(\hat\mu_t^1-\hat\mu_t^2)}{\sigma},\\
+\theta_t^2
+&=\sigma+\frac{\omega_t^1(\hat\mu_t^2-\hat\mu_t^1)}{\sigma}.
+\end{aligned}
+}
+$$
+
+#### 股票价格、财富与投资组合
+
+股票价格满足
+
+$$
+\begin{aligned}
+S_t
+&=\frac{1}{\xi_t^j}
+E_t^j\left[\int_t^\infty \xi_s^j\delta_s\,ds\right].
+\end{aligned}
+$$
+
+因为
+
+$$
+\begin{aligned}
+\xi_s^j\delta_s
+&=\frac{e^{-\rho s}}{\omega_s^j},\\
+\frac{1}{\xi_t^j}
+&=e^{\rho t}\omega_t^j\delta_t,
+\end{aligned}
+$$
+
+所以
+
+$$
+\begin{aligned}
+S_t
+&=\omega_t^j\delta_t
+\int_t^\infty e^{-\rho(s-t)}
+E_t^j\left[\frac{1}{\omega_s^j}\right]ds.
+\end{aligned}
+$$
+
+又 $\omega_s^j=(1+R_s^{kj})^{-1}$，且 $R_s^{kj}$ 是 $P^j$-martingale，因此
+
+$$
+\begin{aligned}
+E_t^j\left[\frac{1}{\omega_s^j}\right]
+&=E_t^j[1+R_s^{kj}]
+=1+R_t^{kj}
+=\frac{1}{\omega_t^j}.
+\end{aligned}
+$$
+
+代回：
+
+$$
+\boxed{
+\begin{aligned}
+S_t
+&=\delta_t\int_t^\infty e^{-\rho(s-t)}ds
+=\frac{\delta_t}{\rho}.
+\end{aligned}
+}
+$$
+
+在 agent $j$ 的主观测度下，
+
+$$
+\boxed{
+\begin{aligned}
+dR_t^S
+&=\frac{dS_t+\delta_tdt}{S_t}
+=(\hat\mu_t^j+\rho)dt+\sigma d\bar B_t^j,\\
+\sigma_S&=\sigma,\\
+\mu_{R,t}^{S,j}-r_t
+&=\sigma^2+\hat\mu_t^j-m_t
+=\sigma\theta_t^j.
+\end{aligned}
+}
+$$
+
+agent $j$ 的财富是未来消费流现值：
+
+$$
+\begin{aligned}
+W_t^j
+&=\frac{1}{\xi_t^j}
+E_t^j\left[\int_t^\infty \xi_s^jc_s^j\,ds\right]\\
+&=e^{\rho t}c_t^j\int_t^\infty e^{-\rho s}ds
+=\frac{c_t^j}{\rho}.
+\end{aligned}
+$$
+
+因此
+
+$$
+\boxed{
+\begin{aligned}
+W_t^j
+&=\frac{c_t^j}{\rho}
+=\omega_t^jS_t,\\
+W_t^1+W_t^2&=S_t.
+\end{aligned}
+}
+$$
+
+由动态预算约束的扩散项，
+
+$$
+\begin{aligned}
+\frac{dW_t^j}{W_t^j}
+&=\cdots+\pi_t^j\sigma d\bar B_t^j,\\
+\frac{dW_t^j}{W_t^j}
+&=\frac{dc_t^j}{c_t^j}
+=\cdots+\sigma_{c,t}^jd\bar B_t^j,
+\end{aligned}
+$$
+
+得到
+
+$$
+\boxed{
+\begin{aligned}
+\pi_t^j
+&=\frac{\sigma_{c,t}^j}{\sigma}
+=1+\frac{\hat\mu_t^j-m_t}{\sigma^2}.
+\end{aligned}
+}
+$$
+
+显式地，
+
+$$
+\boxed{
+\begin{aligned}
+\pi_t^1
+&=1+\frac{\omega_t^2(\hat\mu_t^1-\hat\mu_t^2)}{\sigma^2},\\
+\pi_t^2
+&=1+\frac{\omega_t^1(\hat\mu_t^2-\hat\mu_t^1)}{\sigma^2}.
+\end{aligned}
+}
+$$
+
+股票市场清算：
+
+$$
+\begin{aligned}
+\pi_t^1W_t^1+\pi_t^2W_t^2
+&=S_t\left[
+\omega_t^1\pi_t^1+\omega_t^2\pi_t^2
+\right]\\
+&=S_t\left[
+\omega_t^1+\omega_t^2
++\frac{\omega_t^1\omega_t^2(\hat\mu_t^1-\hat\mu_t^2)}{\sigma^2}
++\frac{\omega_t^1\omega_t^2(\hat\mu_t^2-\hat\mu_t^1)}{\sigma^2}
+\right]\\
+&=S_t.
+\end{aligned}
+$$
+
+债券零净供给：
+
+$$
+\boxed{
+\begin{aligned}
+(1-\pi_t^1)W_t^1+(1-\pi_t^2)W_t^2
+&=(W_t^1+W_t^2)-(\pi_t^1W_t^1+\pi_t^2W_t^2)\\
+&=0.
+\end{aligned}
+}
+$$
+
+#### 零息债券价格
+
+zero-coupon bond 在 $T$ 支付 $1$，价格为
+
+$$
+\begin{aligned}
+P(t,T)
+&=E_t^j\left[\frac{\xi_T^j}{\xi_t^j}\right].
+\end{aligned}
+$$
+
+由于 $\xi_t^j=e^{-\rho t}/(\omega_t^j\delta_t)$，
+
+$$
+\begin{aligned}
+\frac{\xi_T^j}{\xi_t^j}
+&=e^{-\rho(T-t)}
+\frac{\omega_t^j\delta_t}{\omega_T^j\delta_T}.
+\end{aligned}
+$$
+
+用 $1/\omega_T^j=1+R_T^{kj}$：
+
+$$
+\begin{aligned}
+P(t,T)
+&=\omega_t^jE_t^j\left[
+e^{-\rho\tau}\frac{\delta_t}{\delta_T}
+\right]
++\omega_t^jE_t^j\left[
+R_T^{kj}e^{-\rho\tau}\frac{\delta_t}{\delta_T}
+\right]\\
+&=\omega_t^jP_j^0(t,T)
++\omega_t^jR_t^{kj}P_k^0(t,T)\\
+&=\omega_t^jP_j^0(t,T)+\omega_t^kP_k^0(t,T).
+\end{aligned}
+$$
+
+因此
+
+$$
+\boxed{
+\begin{aligned}
+P(t,T)
+&=\omega_t^1P_1^0(t,T)+\omega_t^2P_2^0(t,T).
+\end{aligned}
+}
+$$
+
+对 agent $i$，同质信念短利率为
+
+$$
+\begin{aligned}
+r_t^i
+&=\rho+\hat\mu_t^i-\sigma^2,
+\end{aligned}
+$$
+
+且
+
+$$
+\begin{aligned}
+d\hat\mu_t^i
+&=\kappa_i(\bar\mu_i-\hat\mu_t^i)dt+\sigma_id\bar B_t^i.
+\end{aligned}
+$$
+
+同质 log utility 下 $\theta_t^i=\sigma$，所以
+
+$$
+\begin{aligned}
+d\bar B_t^{i,Q}
+&=d\bar B_t^i+\sigma dt.
+\end{aligned}
+$$
+
+代入 OU：
+
+$$
+\begin{aligned}
+d\hat\mu_t^i
+&=\kappa_i(\bar\mu_i-\hat\mu_t^i)dt
++\sigma_i(d\bar B_t^{i,Q}-\sigma dt)\\
+&=\kappa_i(\bar\mu_i^Q-\hat\mu_t^i)dt+\sigma_id\bar B_t^{i,Q},
+\end{aligned}
+$$
+
+其中
+
+$$
+\boxed{
+\begin{aligned}
+\bar\mu_i^Q
+&=\bar\mu_i-\frac{\sigma\sigma_i}{\kappa_i}.
+\end{aligned}
+}
+$$
+
+定义
+
+$$
+\boxed{
+\begin{aligned}
+\mathcal B_i(\tau)
+&=\frac{1-e^{-\kappa_i\tau}}{\kappa_i},\\
+\mathcal V_i(\tau)
+&=\frac{\sigma_i^2}{\kappa_i^2}
+\left[
+\tau-2\mathcal B_i(\tau)
++\frac{1-e^{-2\kappa_i\tau}}{2\kappa_i}
+\right].
+\end{aligned}
+}
+$$
+
+则
+
+$$
+\begin{aligned}
+\int_t^T\hat\mu_s^i\,ds\mid\mathcal F_t
+&\sim
+N\left(
+\mathcal B_i(\tau)\hat\mu_t^i
++\bar\mu_i^Q[\tau-\mathcal B_i(\tau)],
+\mathcal V_i(\tau)
+\right).
+\end{aligned}
+$$
+
+所以
+
+$$
+\boxed{
+\begin{aligned}
+P_i^0(t,T)
+&=\exp\left\{
+-(\rho-\sigma^2)\tau
+-\mathcal B_i(\tau)\hat\mu_t^i
+-\bar\mu_i^Q[\tau-\mathcal B_i(\tau)]
++\frac12\mathcal V_i(\tau)
+\right\}.
+\end{aligned}
+}
+$$
+
+最终
+
+$$
+\boxed{
+\begin{aligned}
+P(t,T)
+&=\sum_{i=1}^2\omega_t^i
+\exp\left\{
+-(\rho-\sigma^2)\tau
+-\mathcal B_i(\tau)\hat\mu_t^i
+-\bar\mu_i^Q[\tau-\mathcal B_i(\tau)]
++\frac12\mathcal V_i(\tau)
+\right\}.
+\end{aligned}
+}
+$$
+
+#### 总结
+
+$$
+\boxed{
+\left\{
+\begin{aligned}
+c_t^j&=\omega_t^j\delta_t,\\
+m_t&=\omega_t^1\hat\mu_t^1+\omega_t^2\hat\mu_t^2,\\
+r_t&=\rho+m_t-\sigma^2,\\
+\theta_t^j&=\sigma+\frac{\hat\mu_t^j-m_t}{\sigma},\\
+S_t&=\frac{\delta_t}{\rho},\\
+W_t^j&=\frac{c_t^j}{\rho}=\omega_t^jS_t,\\
+\pi_t^j&=1+\frac{\hat\mu_t^j-m_t}{\sigma^2},\\
+P(t,T)&=\omega_t^1P_1^0(t,T)+\omega_t^2P_2^0(t,T).
+\end{aligned}
+\right.
+}
+$$
+
+经济含义：同质 log utility 下 $S_t=\delta_t/\rho$，因此 $\sigma_S=\sigma$ 且 equity premium 为 $\sigma^2$，很难匹配 observed volatility 与 equity premium。异质信念会改变 wealth share、portfolio、risk price、short rate 与 bond price；但在相同 $\rho$ 的 one-good log version 中，股票 price-dividend ratio 仍为常数，额外波动主要进入财富分布、投资组合和利率期限结构。
+
 ---
 
 
