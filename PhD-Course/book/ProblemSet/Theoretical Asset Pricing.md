@@ -2416,26 +2416,32 @@ Now we add another class of agents, called momentum-traders. Suppose that at the
 
 **信息扩散图示**
 
-在任意日期 $t$ 结束时，所有 group 都完全知道 $\varepsilon_t$ 以及更早的 shock；对未来 shock $\varepsilon_{t+1},\ldots,\varepsilon_{t+z-1}$，不同 group 知道不同的 sub-innovations，但知道的数量相同。可以用下面的表来理解：
+在任意日期 $t$ 结束时，所有 group 都完全知道 $\varepsilon_t$ 以及更早的 shock；对未来 shock $\varepsilon_{t+1},\ldots,\varepsilon_{t+z-1}$，不同 group 知道不同的 sub-innovations，但知道的数量相同。可以用下面的结构来理解：
 
-| 时刻       | group $1$ 知道的 $\varepsilon_{t+z-1}$ 部分                                                    | group $2$ 知道的 $\varepsilon_{t+z-1}$ 部分                                                                       | $\cdots$ | group $z$ 知道的 $\varepsilon_{t+z-1}$ 部分                                                  |
-| -------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | -------- | --------------------------------------------------------------------------------------- |
-| $t$      | $\{\varepsilon_{t+z-1}^{1}\}$                                                             | $\{\varepsilon_{t+z-1}^{2}\}$                                                                                | $\cdots$ | $\{\varepsilon_{t+z-1}^{z}\}$                                                           |
-| $t+1$    | $\{\varepsilon_{t+z-1}^{1},\varepsilon_{t+z-1}^{2}\}$                                     | $\{\varepsilon_{t+z-1}^{2},\varepsilon_{t+z-1}^{3}\}$                                                        | $\cdots$ | $\{\varepsilon_{t+z-1}^{z},\varepsilon_{t+z-1}^{1}\}$                                   |
-| $t+2$    | $\{\varepsilon_{t+z-1}^{1},\varepsilon_{t+z-1}^{2},\varepsilon_{t+z-1}^{3}\}$             | $\{\varepsilon_{t+z-1}^{2},\varepsilon_{t+z-1}^{3},\varepsilon_{t+z-1}^{4}\}$                                | $\cdots$ | $\{\varepsilon_{t+z-1}^{z},\varepsilon_{t+z-1}^{1},\varepsilon_{t+z-1}^{2}\}$           |
-| $\vdots$ | $\vdots$                                                                                  | $\vdots$                                                                                                     | $\ddots$ | $\vdots$                                                                                |
-| $t+z-1$  | $\{\varepsilon_{t+z-1}^{1},\varepsilon_{t+z-1}^{2},\ldots,\varepsilon_{t+z-1}^{z}\}$      | $\{\varepsilon_{t+z-1}^{2},\varepsilon_{t+z-1}^{3},\ldots,\varepsilon_{t+z-1}^{z},\varepsilon_{t+z-1}^{1}\}$ | $\cdots$ | $\{\varepsilon_{t+z-1}^{z},\varepsilon_{t+z-1}^{1},\ldots,\varepsilon_{t+z-1}^{z-1}\}$  |
+单个 shock $\varepsilon_{t+z-1}$ 的扩散顺序：
+
+- 日期 $t$：group $k$ 只知道 $\varepsilon_{t+z-1}^{k}$。
+- 日期 $t+1$：group $k$ 知道 $\varepsilon_{t+z-1}^{k}$ 和 $\varepsilon_{t+z-1}^{k+1}$（indices mod $z$）。
+- 日期 $t+2$：group $k$ 知道从 $\varepsilon_{t+z-1}^{k}$ 到 $\varepsilon_{t+z-1}^{k+2}$ 的三份 sub-innovations。
+- 一般地，日期 $t+m$ 时 group $k$ 知道 $m+1$ 份 sub-innovations。
+- 日期 $t+z-1$：所有 group 都知道完整的 $\varepsilon_{t+z-1}$。
 
 若固定观察日期 $t$，则不同 future shocks 正处在不同扩散阶段：
 
-| shock                   | group 1                                                  | group 2                                                  | $\cdots$ | group $z$                                                                    | weight          |
-| ----------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------- | ---------------------------------------------------------------------------- | --------------- |
-| $\varepsilon_t$         | $\varepsilon_t^1,\varepsilon_t^2,\ldots,\varepsilon_t^z$ | $\varepsilon_t^1,\varepsilon_t^2,\ldots,\varepsilon_t^z$ | $\cdots$ | $\varepsilon_t^1,\varepsilon_t^2,\ldots,\varepsilon_t^z$                     | fully known     |
-| $\varepsilon_{t+1}$     | $\varepsilon_{t+1}^1,\ldots,\varepsilon_{t+1}^{z-1}$     | $\varepsilon_{t+1}^2,\ldots,\varepsilon_{t+1}^{z}$       | $\cdots$ | $\varepsilon_{t+1}^{z},\varepsilon_{t+1}^{1},\ldots,\varepsilon_{t+1}^{z-2}$ | $\frac{z-1}{z}$ |
-| $\varepsilon_{t+2}$     | $\varepsilon_{t+2}^1,\ldots,\varepsilon_{t+2}^{z-2}$     | $\varepsilon_{t+2}^2,\ldots,\varepsilon_{t+2}^{z-1}$     | $\cdots$ | $\varepsilon_{t+2}^{z},\varepsilon_{t+2}^{1},\ldots,\varepsilon_{t+2}^{z-3}$ | $\frac{z-2}{z}$ |
-| $\vdots$                | $\vdots$                                                 | $\vdots$                                                 | $\ddots$ | $\vdots$                                                                     |                 |
-| $\varepsilon_{t+z-1}$   | $\varepsilon_{t+z-1}^1$                                  | $\varepsilon_{t+z-1}^2$                                  | $\cdots$ | $\varepsilon_{t+z-1}^{z}$                                                    | $\frac{1}{z}$   |
-| $\varepsilon_{t+z}$ 及以后 | unknown                                                  | unknown                                                  | $\cdots$ | unknown                                                                      | unknown         |
+固定观察日期 $t$ 时，不同 future shocks 的平均信息权重为：
+
+$$
+\left\{
+\begin{aligned}
+\varepsilon_t &: \text{fully known},\qquad \text{weight }1,\\
+\varepsilon_{t+1} &: \text{each group knows }z-1\text{ parts},\qquad \text{weight }\frac{z-1}{z},\\
+\varepsilon_{t+2} &: \text{each group knows }z-2\text{ parts},\qquad \text{weight }\frac{z-2}{z},\\
+&\vdots\\
+\varepsilon_{t+z-1} &: \text{each group knows }1\text{ part},\qquad \text{weight }\frac{1}{z},\\
+\varepsilon_{t+z}\text{ and later} &: \text{unknown},\qquad \text{weight }0.
+\end{aligned}
+\right.
+$$
 
 **（a）CARA-Normal 组合需求**
 
@@ -2811,28 +2817,20 @@ D_{t-1}-\theta Q=0
 \end{aligned}
 $$
 
-价格路径：
+价格路径可以直接写成：
 
-| 时刻           | $\varepsilon_{t+z-1}$被多少组观察到 |         平均信念反映比例 |                    归一化价格 |
-| ------------ | ---------------------------: | ---------------: | -----------------------: |
-| $t-1$        |                          $0$ |              $0$ |              $P_{t-1}=0$ |
-| $t$          |                          $1$ |   $\dfrac{1}{z}$ |       $P_t=\dfrac{1}{z}$ |
-| $t+1$        |                          $2$ |   $\dfrac{2}{z}$ |   $P_{t+1}=\dfrac{2}{z}$ |
-| $t+2$        |                          $3$ |   $\dfrac{3}{z}$ |   $P_{t+2}=\dfrac{3}{z}$ |
-| $\vdots$     |                     $\vdots$ |         $\vdots$ |                 $\vdots$ |
-| $t+m$        |                        $m+1$ | $\dfrac{m+1}{z}$ | $P_{t+m}=\dfrac{m+1}{z}$ |
-| $\vdots$     |                     $\vdots$ |         $\vdots$ |                 $\vdots$ |
-| $t+z-1$      |                          $z$ |              $1$ |            $P_{t+z-1}=1$ |
-| $s\ge t+z-1$ |                          $z$ |              $1$ |                  $P_s=1$ |
+$$
+\left\{
+\begin{aligned}
+P_{t-1}&=0,\\
+P_{t+m}&=\frac{m+1}{z},\qquad m=0,1,\ldots,z-2,\\
+P_{t+z-1}&=1,\\
+P_s&=1,\qquad s\ge t+z-1.
+\end{aligned}
+\right.
+$$
 
-价格路径：
-$$
-\begin{cases}
-P_{t-1}=0, \\
-P_{t+m}=\dfrac{m+1}{z}, & m=0,1,\ldots,z-2, \\
-P_s=1, & s\ge t+z-1.
-\end{cases}
-$$
+即 $\varepsilon_{t+z-1}$ 被 $m+1$ 个 group 观察到时，平均信念只反映 $\frac{m+1}{z}$ 的 shock。
 
 图形是一个逐步上升到 1 后保持平稳的阶梯形路径。
 
@@ -2974,13 +2972,30 @@ P_{t+m} =
 \end{cases}
 $$
 
-| 时刻 | $F_s$ | momentum term | $P_s$ |
-|---:|---:|---:|---:|
-| $t$ | $\dfrac{1}{z}$ | $0$ | $\dfrac{1}{z}$ |
-| $t+1$ | $\dfrac{2}{z}$ | $\lambda\Delta P_t=\dfrac{\lambda}{z}$ | $\dfrac{2+\lambda}{z}$ |
-| $t+2$ | $\dfrac{3}{z}$ | $\dfrac{\lambda(1+\lambda)}{z}$ if $j=1$；$\dfrac{\lambda(2+\lambda)}{z}$ if $j\geq2$ | $\dfrac{3+\lambda+\lambda^2}{z}$ if $j=1$；$\dfrac{3+2\lambda+\lambda^2}{z}$ if $j\geq2$ |
-| $t+m$ | $\dfrac{m+1}{z}$ | $\lambda\sum_{k=1}^{\min\{j,m\}}\Delta P_{t+m-k}$ | $\dfrac{m+1}{z}+\lambda\left(P_{t+m-1}-P_{t+m-\min\{j,m\}-1}\right)$ |
-| $t+z-1$ | $1$ | $\lambda\sum_{k=1}^{\min\{j,z-1\}}\Delta P_{t+z-1-k}$ | $1+\lambda\left(P_{t+z-2}-P_{t+z-\min\{j,z-1\}-2}\right)$ |
+令 fundamental-information component 为
+
+$$
+F_{t+m}=\frac{m+1}{z},\qquad m=0,1,\ldots,z-1.
+$$
+
+加入 momentum orders 后，价格递推为
+
+$$
+P_{t+m}=F_{t+m}+\lambda\sum_{k=1}^{\min\{j,m\}}\Delta P_{t+m-k}.
+$$
+
+前几期为
+
+$$
+\left\{
+\begin{aligned}
+P_t&=\frac{1}{z},\\
+P_{t+1}&=\frac{2}{z}+\frac{\lambda}{z}=\frac{2+\lambda}{z},\\
+P_{t+2}&=\frac{3}{z}+\lambda(\Delta P_{t+1}+\mathbf 1\{j\ge2\}\Delta P_t),\\
+P_{t+z-1}&=1+\lambda\sum_{k=1}^{\min\{j,z-1\}}\Delta P_{t+z-1-k}.
+\end{aligned}
+\right.
+$$
 
 过去正收益 $\Delta P>0$ 会诱发 momentum demand，从而推高价格。
 
@@ -4042,9 +4057,12 @@ $$
 \end{aligned}
 $$
 
-| $\phi$                             | $\theta$             | $\widetilde{\mathbf R}$  | $P$                   |
-| ---------------------------------- | -------------------- | ------------------------ | --------------------- |
-| risky assets **dollar** investment | number of **shares** | risky assets **returns** | price diagonal matrix |
+Notation：
+
+- $\phi$：risky assets **dollar** investment。
+- $\theta$：number of **shares**。
+- $\widetilde{\mathbf R}$：risky assets **returns**。
+- $P$：price diagonal matrix。
 
 $$
 \left\{
@@ -4970,7 +4988,6 @@ $$
 
 
 
-class=note-image
 
 <img class="note-image" src="../attachment/Pasted%20image%2020260428155824.png" alt="Pasted image 20260428155824.png">
 
@@ -5532,13 +5549,13 @@ p(\widetilde y)&=E[\widetilde x\mid\widetilde y]
 \right.
 $$
 
-| 因变量                     | 式子                                            | 含义                                        |
-| ----------------------- | --------------------------------------------- | ----------------------------------------- |
-| $\theta(\widetilde v)$  | $a+\beta\widetilde v$                         | informed trader 的 order / informed volume |
-| $\widetilde z$          | noise order                                   | liquidity / noise trader 的随机订单            |
-| $\widetilde y$          | $\theta(\widetilde v)+\widetilde z$           | market maker 观察到的 total order flow        |
-| $p(\widetilde y)$       | $\delta+\lambda\widetilde y$                  | market maker 的线性定价规则：order flow决定         |
-| $\widetilde\pi(\theta)$ | $\theta[\widetilde x-p(\theta+\widetilde z)]$ | informed trader 持有 $\theta$ shares 的交易利润  |
+变量对应关系：
+
+- $\theta(\widetilde v)=a+\beta\widetilde v$：informed trader 的 order / informed volume。
+- $\widetilde z$：noise order，即 liquidity / noise trader 的随机订单。
+- $\widetilde y=\theta(\widetilde v)+\widetilde z$：market maker 观察到的 total order flow。
+- $p(\widetilde y)=\delta+\lambda\widetilde y$：market maker 的线性定价规则。
+- $\widetilde\pi(\theta)=\theta[\widetilde x-p(\theta+\widetilde z)]$：informed trader 持有 $\theta$ shares 的交易利润。
 
 $$
 \begin{aligned}
