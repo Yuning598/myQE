@@ -18,7 +18,7 @@ Assume there are no arbitrage opportunities in the market.
 
 ::::{solution}
 
-### 1.1 市场完备性 (Market Completeness)
+**1.1 市场完备性 (Market Completeness)**
 
 The payoff matrix $D$ is:
 
@@ -46,7 +46,7 @@ $$
   - If $N = S$, the market is **complete**. In the no-arbitrage case, the state price vector $q$ is unique.
   - If $N > S$, this cannot happen in a finite-state model for payoff rank, because $\operatorname{rank}(D)\le S$; equivalently, the payoff space cannot have more than $S$ linearly independent directions.
 
-### 1.2 求解状态价格 (Solving for State Prices)
+**1.2 求解状态价格 (Solving for State Prices)**
 
 Based on the Law of One Price, $P = D^\top q$:
 
@@ -73,7 +73,7 @@ $$
 
 - Substitute $q_1$ back to find $q_2$: $q_2 = 0.95 - (q_3 - 0.25) - q_3 \implies \mathbf{q_2 = 1.20 - 2q_3}$
 
-### 1.3 无套利价格区间 (No-Arbitrage Price Range)
+**1.3 无套利价格区间 (No-Arbitrage Price Range)**
 
 According to the **First Fundamental Theorem of Asset Pricing**, no arbitrage implies the existence of a **strictly positive** state price vector ($q_s > 0$ for all $s$):
 1. $q_1 > 0 \implies q_3 - 0.25 > 0 \implies q_3 > 0.25$
@@ -88,7 +88,7 @@ $$
 \end{aligned}
 $$
 
-### 1.4 套利策略 (Arbitrage Strategy)
+**1.4 套利策略 (Arbitrage Strategy)**
 
 **Scenario: $P_{A3} = 0.20$** (Price is below the lower bound).
 
@@ -157,7 +157,7 @@ Aggregate endowment (consumption) at $t=0$ is $c_0$. Aggregate consumption at $t
 
 ::::{solution}
 
-### 2.1 Arrow Security Price ($q_j$) 的数学推导
+**2.1 Arrow Security Price ($q_j$) 的数学推导**
 
 在代表性投资者模型中，均衡状态下的资产价格由该投资者的边际替代率（MRS）决定 。 Arrow Security $j$ 的定义是在状态 $j$ 支付 1 单位，其余状态支付 0 。
 
@@ -211,7 +211,7 @@ q_j
 \end{aligned}
 $$
 
-### 2.2 Risk-Free Rate ($R_f$) 的推导
+**2.2 Risk-Free Rate ($R_f$) 的推导**
 
 无风险债券在所有状态下都支付 1。其价格 $P_f$ 是所有状态价格之和 ：
 
@@ -243,7 +243,7 @@ R_f
 \end{aligned}
 $$
 
-### 2.3 数值计算 (Numerical Calculation)
+**2.3 数值计算 (Numerical Calculation)**
 
 已知条件：$\pi_s = 1/3, c_0 = 1, \mathbf{c}_1 = (1.1, 1.0, 0.9), \delta = 0.95, \rho = 2$。
 - **计算 $q_1$**：
@@ -277,7 +277,7 @@ $$
 
 ::::{solution}
 
-### 3.1 线性 SDF 推出 CAPM
+**3.1 线性 SDF 推出 CAPM**
 
 不失一般性，写成 $m=a-bR_m$，其中 $b\neq 0$。
 
@@ -377,7 +377,7 @@ $$
 
 ::::{solution}
 
-### 5.1 美式看涨期权的提前行权条件
+**5.1 美式看涨期权的提前行权条件**
 
 设到期时刻为 $T$，当前时刻为 $t<T$，$\tau=T-t$。美式看涨期权在 $t$ 立即行权的价值为
 
@@ -397,7 +397,7 @@ C_t^{E}
 \end{aligned}
 $$
 
-### 5.2 为什么不该提前行权
+**5.2 为什么不该提前行权**
 
 因为 $(x)^+\ge x$，所以
 
@@ -437,7 +437,7 @@ $$
 
 提前行权的即时价值严格低于继续持有的期望价值。只有当股票会发放红利时，提前行权才可能为了截取红利而变得有意义。
 
-### 5.3 无红利 vs 有红利：提前行权的两种情况
+**5.3 无红利 vs 有红利：提前行权的两种情况**
 
 设股票在某个除息日前会发放确定红利 $D>0$，除息前价格为 $S_t$，除息后价格约为 $S_t-D$。
 
@@ -484,7 +484,7 @@ V_{\text{exercise}}&=S_t-K.
 \end{aligned}
 $$
 
-### 5.4 American Call = European Call
+**5.4 American Call = European Call**
 
 American call 的价格是所有可行行权时点价值的上确界。由于任何提前行权都不优于持有到到期，而到期时美式与欧式的 payoff 相同，所以
 
@@ -627,7 +627,7 @@ $$
 
 ::::{solution}
 
-### 6.1 解析框架
+**6.1 解析框架**
 
 这道题的核心是把
 
@@ -779,7 +779,7 @@ $$
 
 ::::{solution}
 
-### 7.1 任意信息集下的最优持仓与 certainty equivalent
+**7.1 任意信息集下的最优持仓与 certainty equivalent**
 
 在信息集 $\mathcal I$ 下，CARA-Normal 等价于最大化
 
@@ -828,7 +828,7 @@ CE(\mathcal I)&=m+\frac{(\mu_{\mathcal I}-p)^2}{2\lambda\Sigma_{\mathcal I}}.
 \end{aligned}
 $$
 
-### 7.2 买入私人信息时的 certainty equivalent
+**7.2 买入私人信息时的 certainty equivalent**
 
 若先支付信息成本 $c$ 再观察到私人信号 $s$，则信息集变成 $\mathcal I=\sigma(s)$，于是
 
@@ -841,7 +841,7 @@ $$
 
 其中 $-c$ 表示购买信息的确定成本。
 
-### 7.3 不买信息、只从价格学习时的 certainty equivalent
+**7.3 不买信息、只从价格学习时的 certainty equivalent**
 
 若不支付成本，则代理人只能利用价格所包含的信息，因此
 
@@ -854,7 +854,7 @@ $$
 
 这里的关键区别是：有私人信号时后验来自 $s$，不买信息时后验只来自 $p$。
 
-### 7.4 最高支付意愿
+**7.4 最高支付意愿**
 
 交易前尚未看到信号 realizations，所以若信息成本为 $c$，买信息相对不买信息的事前净增益为
 
@@ -893,7 +893,7 @@ $$
 \end{aligned}
 $$
 
-### 7.5 为什么完全揭示价格不能和正信息成本并存
+**7.5 为什么完全揭示价格不能和正信息成本并存**
 
 若价格完全揭示私人信息，则价格本身已经把 $s$ 的内容全部编码出来，于是
 
