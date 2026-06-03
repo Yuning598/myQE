@@ -10554,18 +10554,47 @@ $$
 \right.
 $$
 
-得到 own-good stock price 的 diffusion：
+先写 log dynamics：
 
 $$
 \begin{aligned}
-\frac{dS_t^{k,k}}{S_t^{k,k}}
+d\log D_t^k
 &=
-\cdots dt+
-\left(\sigma_{k,t}-\chi_{k,t}\beta\right)'dB_t^1.
+\left(
+\mu_{k,t}-\frac12\sigma_{k,t}'\sigma_{k,t}
+\right)dt
++\sigma_{k,t}'dB_t^1,\\
+d\log\omega_{k,t}
+&=
+\left(
+\rho_1-\rho_2-\frac12\beta'\beta
+\right)dt
+-\beta'dB_t^1.
 \end{aligned}
 $$
 
-因此 own-good stock volatility vector 为
+因为 $S_t^{k,k}=D_t^kG_k(\omega_{k,t})$，所以 own-good stock price 的 log diffusion 连续推出为
+
+$$
+\begin{aligned}
+d\log S_t^{k,k}
+&=
+d\log D_t^k+d\log G_k(\omega_{k,t})\\
+&=
+\mu_{S^{k,k},t}^{\log}dt
++\sigma_{k,t}'dB_t^1
++\chi_{k,t}d\log\omega_{k,t}\big|_{\text{diffusion}}\\
+&=
+\mu_{S^{k,k},t}^{\log}dt
++\sigma_{k,t}'dB_t^1
+-\chi_{k,t}\beta'dB_t^1\\
+&=
+\mu_{S^{k,k},t}^{\log}dt
++\left(\sigma_{k,t}-\chi_{k,t}\beta\right)'dB_t^1.
+\end{aligned}
+$$
+
+因此
 
 $$
 \begin{aligned}
@@ -10575,7 +10604,20 @@ $$
 \end{aligned}
 $$
 
-对 good 1 计价的 stock $1$，直接有
+对 good 1 计价的 stock $1$，因为 $S_t^1=S_t^{1,1}$，所以
+
+$$
+\begin{aligned}
+d\log S_t^1
+&=
+d\log S_t^{1,1}\\
+&=
+\mu_{S^1,t}^{\log}dt
++\left(\sigma_{1,t}-\chi_{1,t}\beta\right)'dB_t^1,
+\end{aligned}
+$$
+
+即
 
 $$
 \begin{aligned}
@@ -10585,27 +10627,64 @@ $$
 \end{aligned}
 $$
 
-对 good 1 计价的 stock $2$，因为 $S_t^2=\epsilon_tS_t^{2,2}$，且
+对 good 1 计价的 stock $2$，先由 exchange rate 推出
 
 $$
 \begin{aligned}
-\frac{d\epsilon_t}{\epsilon_t}
+d\log\epsilon_t
 &=
-\cdots dt+
-\left[
+d\log D_t^1-d\log D_t^2
++d\log(1+\omega_{2,t})
+-d\log(1+\omega_{1,t})\\
+&=
+\mu_{\epsilon,t}^{\log}dt
++\sigma_{1,t}'dB_t^1-\sigma_{2,t}'dB_t^1
+-a_{2,t}\beta'dB_t^1
++a_{1,t}\beta'dB_t^1\\
+&=
+\mu_{\epsilon,t}^{\log}dt
++\left[
 \sigma_{1,t}-\sigma_{2,t}
 +(a_{1,t}-a_{2,t})\beta
-\right]'dB_t^1,
+\right]'dB_t^1.
 \end{aligned}
 $$
 
-所以
+又因为 $S_t^2=\epsilon_tS_t^{2,2}$，所以
+
+$$
+\begin{aligned}
+d\log S_t^2
+&=
+d\log\epsilon_t+d\log S_t^{2,2}\\
+&=
+\mu_{S^2,t}^{\log}dt
+{}+\left[
+\sigma_{1,t}-\sigma_{2,t}
++(a_{1,t}-a_{2,t})\beta
+\right]'dB_t^1
++\left(\sigma_{2,t}-\chi_{2,t}\beta\right)'dB_t^1\\
+&=
+\mu_{S^2,t}^{\log}dt
+{}+\left[
+\sigma_{1,t}-\sigma_{2,t}
++(a_{1,t}-a_{2,t})\beta
++\sigma_{2,t}-\chi_{2,t}\beta
+\right]'dB_t^1\\
+&=
+\mu_{S^2,t}^{\log}dt
+{}+\left[
+\sigma_{1,t}
++(a_{1,t}-a_{2,t}-\chi_{2,t})\beta
+\right]'dB_t^1.
+\end{aligned}
+$$
+
+因此
 
 $$
 \begin{aligned}
 \sigma_{S^2,t}
-&=
-\sigma_{\epsilon,t}+\sigma_{S^{2,2},t}\\
 &=
 \sigma_{1,t}
 +(a_{1,t}-a_{2,t}-\chi_{2,t})\beta.
