@@ -2779,7 +2779,7 @@ $$
 $$
 \begin{aligned}
 |x_{it}|
-=\frac{|\Delta_{it}|}{a\sigma_{it}^2},
+&=\frac{|\Delta_{it}|}{a\sigma_{it}^2},
 \qquad
 \frac{\partial |x_{it}|}{\partial a}
 =-\frac{|\Delta_{it}|}{a^2\sigma_{it}^2}<0,
@@ -2809,38 +2809,12 @@ $$
 \end{aligned}
 $$
 
-```tikz
-\begin{tikzpicture}[>=stealth,scale=1.05,every node/.style={font=\scriptsize}]
-  \draw[->,thick] (0,0) -- (5.2,0) node[right] {$a$};
-  \draw[->,thick] (0,-2.1) -- (0,2.1) node[above] {$x_{it}(a)$};
-
-  \draw[dashed] (0.35,0) -- (0.35,-2.05);
-  \node[below] at (0.35,-2.05) {$a\downarrow 0$};
-
-  \draw[thick,blue,domain=0.55:5,samples=100]
-    plot (\x,{1.35/\x});
-  \node[blue,anchor=west] at (3.15,0.78) {$\Delta_{it}>0:\;x_{it}>0$};
-  \node[blue,anchor=west] at (3.15,0.48) {long, but smaller as $a$ rises};
-
-  \draw[thick,red,domain=0.55:5,samples=100]
-    plot (\x,{-1.35/\x});
-  \node[red,anchor=west] at (3.15,-0.78) {$\Delta_{it}<0:\;x_{it}<0$};
-  \node[red,anchor=west] at (3.15,-1.08) {short, but less negative as $a$ rises};
-
-  \draw[thick,gray] (0.45,0) -- (5,0);
-  \node[gray,anchor=west] at (3.15,0.18) {$\Delta_{it}=0:\;x_{it}=0$};
-
-  \draw[dotted] (5,0.27) -- (5,0);
-  \draw[dotted] (5,-0.27) -- (5,0);
-  \node[below] at (5,0) {$a\uparrow$};
-\end{tikzpicture}
-```
 **position size 的绝对值**：
 
 $$
 \begin{aligned}
 |x_{it}(a)|
-=\frac{|\Delta_{it}|}{a\sigma_{it}^2},
+&=\frac{|\Delta_{it}|}{a\sigma_{it}^2},
 \qquad
 \frac{\partial |x_{it}|}{\partial a}
 =-\frac{|\Delta_{it}|}{a^2\sigma_{it}^2}<0.
@@ -3673,7 +3647,7 @@ $$
 
 ## Textbook Exercise Q 1.2(a)
 
-<img class="note-image" src="../attachment/Pasted%20image%2020260428115441.png" alt="Pasted image 20260428115441.png">
+![Pasted image 20260428115441.png](../attachment/Pasted%20image%2020260428115441.png)
 
 ::::{solution}
 
@@ -3784,7 +3758,7 @@ $$
 
 ## Textbook Exercise Q 1.2(b,d)
 
-<img class="note-image" src="../attachment/Pasted%20image%2020260428101237.png" alt="Pasted image 20260428101237.png">
+![Pasted image 20260428101237.png](../attachment/Pasted%20image%2020260428101237.png)
 
 ::::{solution}
 
@@ -3880,9 +3854,7 @@ $$
 
 
 
-.
-
-<img class="note-image" src="../attachment/Pasted%20image%2020260428104131.png" alt="Pasted image 20260428104131.png">
+![Pasted image 20260428104131.png](../attachment/Pasted%20image%2020260428104131.png)
 
 ::::{solution}
 
@@ -4021,9 +3993,7 @@ $$
 
 
 
-(=Pasted
-
-<img class="note-image" src="../attachment/Pasted%20image%2020260428110613.png" alt="Pasted image 20260428110613.png">
+![Pasted image 20260428110613.png](../attachment/Pasted%20image%2020260428110613.png)
 
 ::::{solution}
 
@@ -4168,9 +4138,7 @@ $$
 
 
 
-image
-
-<img class="note-image" src="../attachment/Pasted%20image%2020260428122408.png" alt="Pasted image 20260428122408.png">
+![Pasted image 20260428122408.png](../attachment/Pasted%20image%2020260428122408.png)
 
 ::::{solution}
 
@@ -4279,9 +4247,7 @@ $$
 
 
 
-20260428115441.png)=~s/
-
-<img class="note-image" src="../attachment/Pasted%20image%2020260428125930.png" alt="Pasted image 20260428125930.png">
+![Pasted image 20260428125930.png](../attachment/Pasted%20image%2020260428125930.png)
 
 ::::{solution}
 
@@ -4365,9 +4331,7 @@ $$
 
 
 ## Textbook Exercise Q 6.1
-/%20/gr
-
-<img class="note-image" src="../attachment/Pasted%20image%2020260428133349.png" alt="Pasted image 20260428133349.png">
+![Pasted image 20260428133349.png](../attachment/Pasted%20image%2020260428133349.png)
 
 ::::{solution}
 
@@ -4589,9 +4553,7 @@ $$
 
 
 
-.
-
-<img class="note-image" src="../attachment/Pasted%20image%2020260428141951.png" alt="Pasted image 20260428141951.png">
+![Pasted image 20260428141951.png](../attachment/Pasted%20image%2020260428141951.png)
 
 ::::{solution}
 
@@ -4876,7 +4838,7 @@ $$
 
 
 
-<img class="note-image" src="../attachment/Pasted%20image%2020260428151130.png" alt="Pasted image 20260428151130.png">
+![Pasted image 20260428151130.png](../attachment/Pasted%20image%2020260428151130.png)
 
 ::::{solution}
 
@@ -5035,7 +4997,7 @@ $$
 
 
 
-<img class="note-image" src="../attachment/Pasted%20image%2020260428151432.png" alt="Pasted image 20260428151432.png">
+![Pasted image 20260428151432.png](../attachment/Pasted%20image%2020260428151432.png)
 
 ::::{solution}
 
@@ -5173,7 +5135,7 @@ $$
 
 
 
-<img class="note-image" src="../attachment/Pasted%20image%2020260428155824.png" alt="Pasted image 20260428155824.png">
+![Pasted image 20260428155824.png](../attachment/Pasted%20image%2020260428155824.png)
 
 ::::{solution}
 
@@ -5328,7 +5290,7 @@ $$
 
 
 
-<img class="note-image" src="../attachment/Pasted%20image%2020260428162212.png" alt="Pasted image 20260428162212.png">
+![Pasted image 20260428162212.png](../attachment/Pasted%20image%2020260428162212.png)
 
 ::::{solution}
 
@@ -5695,9 +5657,9 @@ $$
 
 
 
-<img class="note-image" src="../attachment/Pasted%20image%2020260428183959.png" alt="Pasted image 20260428183959.png">
+![Pasted image 20260428183959.png](../attachment/Pasted%20image%2020260428183959.png)
 
- #Kyle-model #CARA-normal #linear-equilibrium
+#Kyle-model #CARA-normal #linear-equilibrium
 
 ::::{solution}
 
@@ -5840,7 +5802,7 @@ $$
 
 
 
-<img class="note-image" src="../attachment/Pasted%20image%2020260428194818.png" alt="Pasted image 20260428194818.png">
+![Pasted image 20260428194818.png](../attachment/Pasted%20image%2020260428194818.png)
 
 ::::{solution}
 
@@ -6042,9 +6004,7 @@ $$
 
 
 
-.
-
-<img class="note-image" src="../attachment/Pasted%20image%2020260428195122.png" alt="Pasted image 20260428195122.png">
+![Pasted image 20260428195122.png](../attachment/Pasted%20image%2020260428195122.png)
 
 ::::{solution}
 
@@ -6137,9 +6097,7 @@ $$
 
 
 
-(=Pasted
-
-<img class="note-image" src="../attachment/Pasted%20image%2020260428203158.png" alt="Pasted image 20260428203158.png">
+![Pasted image 20260428203158.png](../attachment/Pasted%20image%2020260428203158.png)
 
 ::::{solution}
 
@@ -6185,9 +6143,7 @@ $$
 
 
 
-image
-
-<img class="note-image" src="../attachment/Pasted%20image%2020260428204347.png" alt="Pasted image 20260428204347.png">
+![Pasted image 20260428204347.png](../attachment/Pasted%20image%2020260428204347.png)
 
 ::::{solution}
 
@@ -6306,9 +6262,7 @@ $$
 
 
 
-20260428183959.png)=~s/
-
-<img class="note-image" src="../attachment/Pasted%20image%2020260428205902.png" alt="Pasted image 20260428205902.png">
+![Pasted image 20260428205902.png](../attachment/Pasted%20image%2020260428205902.png)
 
 ::::{solution}
 
@@ -6433,9 +6387,7 @@ $$
 
 
 
-/%20/gr
-
-<img class="note-image" src="../attachment/Pasted%20image%2020260428214804.png" alt="Pasted image 20260428214804.png">
+![Pasted image 20260428214804.png](../attachment/Pasted%20image%2020260428214804.png)
 
 ::::{solution}
 
@@ -6539,9 +6491,7 @@ $$
 
 
 
-.
-
-<img class="note-image" src="../attachment/Pasted%20image%2020260428221909.png" alt="Pasted image 20260428221909.png">
+![Pasted image 20260428221909.png](../attachment/Pasted%20image%2020260428221909.png)
 
 ::::{solution}
 
@@ -8179,7 +8129,7 @@ $$
 
 ## Question 10.2 考场原题回忆：CARA Endowment Economy and Budget Constraint
 
- #CARA #continuous-time #budget-constraint #state-price-density #EMM #risk-neutral-measure #interest-rate #market-price-of-risk
+ CARA #continuous-time #budget-constraint #state-price-density #EMM #risk-neutral-measure #interest-rate #market-price-of-risk
 
 **题目回忆** CARA；市场里有 $N+1$ 个资产：0 号资产是 risk-free asset，1 到 $N$ 号资产是 risky assets。写出 dynamic problem 和 static problem；写出 budget constraint。资产或 state variable dynamics 类似：
 
