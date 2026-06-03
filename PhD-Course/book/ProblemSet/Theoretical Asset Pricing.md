@@ -2507,7 +2507,7 @@ $$
 
 ::::
 
-### Question 8 补充：Log Utility、Filtering、Market Clearing 与 Vasicek Bond Pricing 综合推导
+## Question 8A. Log Utility、Filtering、Market Clearing 与 Vasicek Bond Pricing 综合推导
 
 **完整设定**
 
@@ -2552,7 +2552,7 @@ $$
 \end{aligned}
 $$
 
-#### Filtering 与 posterior mean
+**Filtering 与 posterior mean**
 
 令 $X_t$ 表示 aggregate consumption growth observation：
 
@@ -2633,7 +2633,7 @@ d\hat\mu_t^j
 \end{aligned}
 $$
 
-#### 同质信念基准
+**同质信念基准**
 
 若只有代表性 log agent，则 $c_t=\delta_t$ 且
 
@@ -2703,7 +2703,7 @@ dR_t^S
 \right.
 $$
 
-#### 异质信念下的消费分配
+**异质信念下的消费分配**
 
 令 $\eta_t^j=dP^j/dP^0|_{\mathcal F_t}$。planner problem 可写为
 
@@ -2845,7 +2845,7 @@ $$
 \end{aligned}
 $$
 
-#### SDF、无风险利率与风险价格
+**SDF、无风险利率与风险价格**
 
 因为 $\xi_t^j=e^{-\rho t}/c_t^j$，再次用 Ito lemma：
 
@@ -2917,7 +2917,7 @@ $$
 \right.
 $$
 
-#### 股票价格、财富与投资组合
+**股票价格、财富与投资组合**
 
 股票价格满足
 
@@ -3075,7 +3075,7 @@ $$
 \end{aligned}
 $$
 
-#### 零息债券价格
+**零息债券价格**
 
 zero-coupon bond 在 $T$ 支付 $1$，价格为
 
@@ -3229,7 +3229,7 @@ P(t,T)
 \end{aligned}
 $$
 
-#### 总结
+**总结**
 
 $$
 \left\{
