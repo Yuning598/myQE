@@ -11903,11 +11903,11 @@ $$
 
 ::::
 
-**（d）** Characterize the price of an American security that can be exercised at any stopping time $\tau\in[t,T]$ and pays $G(S_\tau)$ at exercise.
+**（d）** Characterize the price of an American security that can be exercised or sold at any stopping time $\tau\in[t,T]$ and pays $G(S_\tau)$ at stopping. Determine the optimal selling time.
 
 ::::{solution}
 
-American security 的关键是 holder 可以选择 exercise time，所以定价问题不是单纯 terminal payoff pricing，而是 optimal stopping problem。令
+American security 的关键是 holder 可以选择 exercise / selling time，所以定价问题不是单纯 terminal payoff pricing，而是 optimal stopping problem。令
 
 $$
 \begin{aligned}
@@ -12069,7 +12069,7 @@ v_\mu(t,b(t,\mu),\mu)
 \end{aligned}
 $$
 
-最优 stopping time 可以写成第一次进入 exercise region 的时间：
+若题目问 optimal selling time，本质上就是找使 Snell envelope 达到 payoff 的最优 stopping time。它可以写成第一次进入 exercise / selling region 的时间：
 
 $$
 \begin{aligned}
@@ -12079,7 +12079,37 @@ $$
 \end{aligned}
 $$
 
-对 American put，通常 $G(S)=(K-S)^+$，exercise region 常写成 $S\le b(t,\mu)$；对 American call，若无 dividend 且利率为常数，是否提前行权要结合 payoff 和 carry cost 判断，但数学刻画仍然是同一个 optimal stopping / variational inequality / free-boundary system。
+等价地，
+
+$$
+\begin{aligned}
+\tau^*
+&=
+\inf\{u\in[t,T]:v(u,S_u,\mu_u)=G(S_u)\}.
+\end{aligned}
+$$
+
+若 exercise / selling boundary 写成 $S=b(t,\mu)$，则
+
+$$
+\begin{aligned}
+\tau^*
+&=
+\inf\{u\in[t,T]:S_u=b(u,\mu_u)\},
+\end{aligned}
+$$
+
+并且具体方向由 payoff 决定。对 American put，
+
+$$
+\begin{aligned}
+G(S)&=(K-S)^+,\\
+\mathcal E&=\{(t,S,\mu):S\le b(t,\mu)\},\\
+\tau^*&=\inf\{u\in[t,T]:S_u\le b(u,\mu_u)\}.
+\end{aligned}
+$$
+
+对 American call，若无 dividend 且利率为常数，是否提前行权要结合 payoff 和 carry cost 判断；但数学刻画仍然是同一个 optimal stopping / variational inequality / free-boundary system。考场上若出现 “choose the optimal selling time”，先写 Snell envelope，再写 $\tau^*=\inf\{v=G\}$，最后给 value matching 和 smooth pasting。
 
 ::::
 
