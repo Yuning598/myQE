@@ -6428,8 +6428,6 @@ $$
 
 ::::{solution}
 
-#Kyle-model #CARA-normal #linear-equilibrium
-
 **设定与线性猜测**
 
 $$
@@ -8797,8 +8795,6 @@ $$
 
 ## Question 25. 考场原题回忆：n Risky Assets + 0 Risk-Free Asset
 
-#mean-variance #CARA-normal #no-risk-free #two-fund-separation
-
 **题目回忆** $n$ 个 risky assets，没有 risk-free asset。证明 mean-variance/CARA-normal 下最优 risky position $\phi$ 的公式；$\phi$ 由两个部分组成。
 
 **与 10.5 的关系**
@@ -8910,9 +8906,7 @@ $$
 
 ## Question 26. 考场原题回忆：CARA Endowment Economy and Budget Constraint
 
- CARA #continuous-time #budget-constraint #state-price-density #EMM #risk-neutral-measure #interest-rate #market-price-of-risk
-
-**题目回忆** CARA；市场里有 $N+1$ 个资产：0 号资产是 risk-free asset，1 到 $N$ 号资产是 risky assets。写出 dynamic problem 和 static problem；写出 budget constraint。资产或 state variable dynamics 类似：
+CARA；市场里有 $N+1$ 个资产：写出 dynamic problem 和 static problem；写出 budget constraint。
 
 $$
 \left\{
@@ -9357,8 +9351,6 @@ Likelihood ratio / belief weight 的动态、allocation shares 与 closed-form l
 
 
 ## Question 28. 考场原题回忆：Bid-Ask Spread and Risk Aversion
-
-#bid-ask-spread #certainty-equivalent #risk-aversion #CARA-normal
 
 **题目回忆** 给定随机初始财富 $\widetilde x$ 和随机 payoff / position $\widetilde w$。Bid price 和 ask price 由无差异条件定义：
 
