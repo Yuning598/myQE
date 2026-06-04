@@ -1,7 +1,7 @@
 # Theoretical Asset Pricing
 
-## Question 1. Market Completeness, State Prices, and Arrow Security
-Consider a two-period economy ($t=0, 1$) with three possible future states $\Omega = \{\omega_1, \omega_2, \omega_3\}$. The market contains two primary assets:
+## 1. Market Completeness, State Prices, and Arrow Security
+**Question** Consider a two-period economy ($t=0, 1$) with three possible future states $\Omega = \{\omega_1, \omega_2, \omega_3\}$. The market contains two primary assets:
 
 1. **A Risk-free Bond**: Provides a payoff of $1$ in all states. Its current price is $P_f = 0.95$.
 
@@ -138,8 +138,8 @@ $$
 
 
 
-## Question 2. Representative Investor, Arrow Security Pricing, and Risk-Free Rate
-Consider a two-period economy ($t=0, 1$) with three possible future states at $t=1$, denoted by $s \in \{1, 2, 3\}$, each occurring with probability $\pi_s = 1/3$.
+## 2. Representative Investor, Arrow Security Pricing, and Risk-Free Rate
+**Question** Consider a two-period economy ($t=0, 1$) with three possible future states at $t=1$, denoted by $s \in \{1, 2, 3\}$, each occurring with probability $\pi_s = 1/3$.
 The economy is populated by a **Representative Investor** with a time-additive power utility function (CRRA):
 
 $$
@@ -278,8 +278,8 @@ $$
 ---
 
 
-## Question 3. Linear SDF Implies CAPM and MVF
-证明：如果 SDF $m$ 是市场组合收益率 $R_m$ 的线性函数，那么 CAPM 成立，且 $R_m$ 必须位于均值-方差有效边界（MVF）上。
+## 3. Linear SDF Implies CAPM and MVF
+**Question** 证明：如果 SDF $m$ 是市场组合收益率 $R_m$ 的线性函数，那么 CAPM 成立，且 $R_m$ 必须位于均值-方差有效边界（MVF）上。
 
 
 ::::{solution}
@@ -324,9 +324,9 @@ $$
 
 
 
-## Question 4. State Prices, SDF, and Risk-Neutral Pricing
+## 4. State Prices, SDF, and Risk-Neutral Pricing
 
-State Prices, SDF, and Risk-Neutral Pricing
+**Question** State Prices, SDF, and Risk-Neutral Pricing
 
 
 ::::{solution}
@@ -377,9 +377,9 @@ $$
 
 
 
-## Question 5. No-Dividend Stock: American Call Equals European Call
+## 5. No-Dividend Stock: American Call Equals European Call
 
-证明对于一个不支付红利（No Dividends）的股票，美式看涨期权（American Call Option）的价值等于欧式看涨期权（European Call Option），且提前行权（Early Exercise）永远不是最优的。
+**Question** 证明对于一个不支付红利（No Dividends）的股票，美式看涨期权（American Call Option）的价值等于欧式看涨期权（European Call Option），且提前行权（Early Exercise）永远不是最优的。
 
 **5.1 美式看涨期权的提前行权条件**
 
@@ -566,9 +566,9 @@ $$
 ---
 
 
-## Question 6. American vs European Options as an Optimal Stopping Problem
+## 6. American vs European Options as an Optimal Stopping Problem
 
-考虑无套利市场下的标的资产价格过程
+**Question** 考虑无套利市场下的标的资产价格过程
 
 $$
 \begin{aligned}
@@ -737,9 +737,9 @@ pin down。
 ---
 
 
-## Question 7. Grossman-Stiglitz：信息价值与最高支付意愿
+## 7. Grossman-Stiglitz：信息价值与最高支付意愿
 
-设代理人具有 CARA utility，风险厌恶系数为 $\lambda>0$，初始确定财富为 $m$。风险资产终值为 $v$，当前价格为 $p$，代理人选择持仓 $X$，则终值财富为
+**Question** 设代理人具有 CARA utility，风险厌恶系数为 $\lambda>0$，初始确定财富为 $m$。风险资产终值为 $v$，当前价格为 $p$，代理人选择持仓 $X$，则终值财富为
 
 $$
 \begin{aligned}
@@ -947,9 +947,9 @@ $$
 
 
 
-## Question 8. Heterogeneous Beliefs with Log Utility（part4-Exercise5）
+## 8. Heterogeneous Beliefs with Log Utility（part4-Exercise5）
 
-设两个 agent 都具有 log utility，discount rates 分别为 $\rho_1,\rho_2$，总消费品供给为 $\delta_t$，均衡满足 $c_t^1+c_t^2=\delta_t$。在 agent $j$ 的主观测度下，endowment dynamics 为
+**Question** 设两个 agent 都具有 log utility，discount rates 分别为 $\rho_1,\rho_2$，总消费品供给为 $\delta_t$，均衡满足 $c_t^1+c_t^2=\delta_t$。在 agent $j$ 的主观测度下，endowment dynamics 为
 
 $$
 \begin{aligned}
@@ -2522,7 +2522,9 @@ $$
 
 ::::
 
-## Question 9. Log Utility、Filtering、Market Clearing 与 Vasicek Bond Pricing 综合推导
+## 9. Log Utility、Filtering、Market Clearing 与 Vasicek Bond Pricing 综合推导
+
+**Question** 在 log utility、两代理人、异质信念与 filtering 的环境中，完整推出均衡消费分配、财富、股票价格、股票波动率、无风险利率、风险价格、投资组合、市场出清以及零息债券价格。
 
 ::::{collapse} Basic setup
 
@@ -3275,9 +3277,9 @@ $$
 
 
 
-## Question 10. 信息扩散与动量交易
+## 10. 信息扩散与动量交易
 
-Consider an economy with two traded assets, a safe asset with net return zero, and a risky asset that makes a single dividend payment of
+**Question** Consider an economy with two traded assets, a safe asset with net return zero, and a risky asset that makes a single dividend payment of
 
 $$
 D_T=D_0+\sum_{j=0}^T \varepsilon_j
@@ -3922,9 +3924,9 @@ fully rational agents 会识别到价格偏离 fundamental value，因此在 und
 
 
 
-## Question 11. 内幕交易与噪声交易
+## 11. 内幕交易与噪声交易
 
-Consider a financial market with three types of agents: (i) an insider; (ii) market makers; and (iii) noise traders. The market is open for one period, and one risky financial asset is traded. Denote the terminal value of the asset by $v$, a normally distributed random variable with expected value zero and variance $\sigma_v^2$.
+**Question** Consider a financial market with three types of agents: (i) an insider; (ii) market makers; and (iii) noise traders. The market is open for one period, and one risky financial asset is traded. Denote the terminal value of the asset by $v$, a normally distributed random variable with expected value zero and variance $\sigma_v^2$.
 
 The market operates the following way. The insider, who has zero endowment of the risky asset, observes $v$ and then places a market order for purchasing $x$ shares. The insider has constant absolute risk aversion $a$, so he maximizes
 
@@ -4371,9 +4373,9 @@ $$
 
 
 
-## Question 12. Textbook Exercise Q 1.2(a)
+## 12. Textbook Exercise Q 1.2(a)
 
-**题目**
+**Question**
 
 ![Pasted image 20260428115441.png](../attachment/pasted-image-20260428115441.png)
 
@@ -4484,9 +4486,9 @@ $$
 
 
 
-## Question 13. Textbook Exercise Q 1.2(b,d)
+## 13. Textbook Exercise Q 1.2(b,d)
 
-**题目**
+**Question**
 
 ![Pasted image 20260428101237.png](../attachment/pasted-image-20260428101237.png)
 
@@ -4584,7 +4586,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 ![Pasted image 20260428104131.png](../attachment/pasted-image-20260428104131.png)
 
@@ -4674,7 +4676,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 Show that, if there is a strictly positive SDF, then there are no arbitrage opportunities.
 
@@ -4731,7 +4733,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 ![Pasted image 20260428110613.png](../attachment/pasted-image-20260428110613.png)
 
@@ -4878,7 +4880,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 ![Pasted image 20260428122408.png](../attachment/pasted-image-20260428122408.png)
 
@@ -4989,7 +4991,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 ![Pasted image 20260428125930.png](../attachment/pasted-image-20260428125930.png)
 
@@ -5074,9 +5076,9 @@ $$
 
 
 
-## Question 14. Textbook Exercise Q 6.1
+## 14. Textbook Exercise Q 6.1
 
-**题目**
+**Question**
 
 ![Pasted image 20260428133349.png](../attachment/pasted-image-20260428133349.png)
 
@@ -5300,7 +5302,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 ![Pasted image 20260428141951.png](../attachment/pasted-image-20260428141951.png)
 
@@ -5587,7 +5589,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 ![Pasted image 20260428151130.png](../attachment/pasted-image-20260428151130.png)
 
@@ -5748,7 +5750,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 ![Pasted image 20260428151432.png](../attachment/pasted-image-20260428151432.png)
 
@@ -5888,7 +5890,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 ![Pasted image 20260428155824.png](../attachment/pasted-image-20260428155824.png)
 
@@ -6045,7 +6047,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 ![Pasted image 20260428162212.png](../attachment/pasted-image-20260428162212.png)
 
@@ -6422,7 +6424,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 ![Pasted image 20260428183959.png](../attachment/pasted-image-20260428183959.png)
 
@@ -6567,7 +6569,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 ![Pasted image 20260428194818.png](../attachment/pasted-image-20260428194818.png)
 
@@ -6771,7 +6773,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 ![Pasted image 20260428195122.png](../attachment/pasted-image-20260428195122.png)
 
@@ -6866,7 +6868,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 ![Pasted image 20260428203158.png](../attachment/pasted-image-20260428203158.png)
 
@@ -6914,7 +6916,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 ![Pasted image 20260428204347.png](../attachment/pasted-image-20260428204347.png)
 
@@ -7035,7 +7037,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 ![Pasted image 20260428205902.png](../attachment/pasted-image-20260428205902.png)
 
@@ -7162,7 +7164,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 ![Pasted image 20260428214804.png](../attachment/pasted-image-20260428214804.png)
 
@@ -7268,7 +7270,7 @@ $$
 
 
 
-**题目**
+**Question**
 
 ![Pasted image 20260428221909.png](../attachment/pasted-image-20260428221909.png)
 
@@ -7439,9 +7441,9 @@ $$
 
 
 
-## Question 15. Risk-Free Asset and Beginning/End-of-Period Consumption
+## 15. Risk-Free Asset and Beginning/End-of-Period Consumption
 
-Consider the portfolio choice problem with only a risk-free asset and with consumption at both the beginning and end of the period.
+**Question** Consider the portfolio choice problem with only a risk-free asset and with consumption at both the beginning and end of the period.
 
 Assume the investor has time-additive power utility:
 
@@ -7673,9 +7675,9 @@ $$
 
 
 
-## Question 16. No Tangency Portfolio When $R_f$ Equals GMV Return
+## 16. No Tangency Portfolio When $R_f$ Equals GMV Return
 
-Suppose that the risk-free return is equal to the expected return of the global minimum variance portfolio:
+**Question** Suppose that the risk-free return is equal to the expected return of the global minimum variance portfolio:
 
 $$
 R_f=\frac{B}{C}.
@@ -7753,7 +7755,9 @@ $$
 
 
 
-## Question 17. Beta Pricing Implies $\widetilde R_*$ Is on the Mean-Variance Frontier
+## 17. Beta Pricing Implies $\widetilde R_*$ Is on the Mean-Variance Frontier
+
+**Question** 证明：若 $\widetilde R_*$ 给出 beta-pricing，则 $\widetilde R_*$ 位于 mean-variance frontier 上。
 
 ::::{solution}
 
@@ -7791,9 +7795,9 @@ $$
 
 
 
-## Question 18. No-Risk-Free Beta Pricing and Mean-Variance Frontier
+## 18. No-Risk-Free Beta Pricing and Mean-Variance Frontier
 
-Suppose there is no risk-free asset. Use the formula for frontier portfolios to show that a beta-pricing model is equivalent to the return $\widetilde R_*$ being on the mean-variance frontier and not equal to the global minimum variance return.
+**Question** Suppose there is no risk-free asset. Use the formula for frontier portfolios to show that a beta-pricing model is equivalent to the return $\widetilde R_*$ being on the mean-variance frontier and not equal to the global minimum variance return.
 
 ::::{solution}
 
@@ -7911,10 +7915,10 @@ $$
 
 
 
-## Question 19. Single-Factor Return and Mean-Variance Frontier
+## 19. Single-Factor Return and Mean-Variance Frontier
 
 
-**题目** 证明：若一个 traded single-factor return $\widetilde R$ 给出 beta-pricing，且它不是 zero-beta return $R_z$（精确地说 $E[\widetilde R]\ne R_z$），则 $\widetilde R$ 在 no-risk-free 的 mean-variance frontier 上。
+**Question** 证明：若一个 traded single-factor return $\widetilde R$ 给出 beta-pricing，且它不是 zero-beta return $R_z$（精确地说 $E[\widetilde R]\ne R_z$），则 $\widetilde R$ 在 no-risk-free 的 mean-variance frontier 上。
 
 ::::{solution}
 
@@ -8052,9 +8056,9 @@ $$
 
 
 
-## Question 20. Borrowing and Lending at Different Rates
+## 20. Borrowing and Lending at Different Rates
 
-Suppose investors can borrow and lend at different rates. Let $R_b$ denote the return on borrowing and $R_\ell$ the return on lending. Suppose
+**Question** Suppose investors can borrow and lend at different rates. Let $R_b$ denote the return on borrowing and $R_\ell$ the return on lending. Suppose
 
 $$
 \frac{B}{C}>R_b>R_\ell.
@@ -8175,9 +8179,9 @@ $$
 
 
 
-## Question 21. Limited Awareness and Positive Alpha
+## 21. Limited Awareness and Positive Alpha
 
-Assume there are $H$ investors with CARA utility and the same absolute risk aversion $\alpha$. There is a risk-free asset and two risky assets with jointly normal payoffs $\widetilde x=(\widetilde x_1,\widetilde x_2)'$, mean $\mu$, and nonsingular covariance matrix $\Sigma$. Let $H_U$ investors be unaware of asset 2 and invest only in asset 1 and the risk-free asset; let $H_I=H-H_U$. If all investors were aware, the equilibrium price would be
+**Question** Assume there are $H$ investors with CARA utility and the same absolute risk aversion $\alpha$. There is a risk-free asset and two risky assets with jointly normal payoffs $\widetilde x=(\widetilde x_1,\widetilde x_2)'$, mean $\mu$, and nonsingular covariance matrix $\Sigma$. Let $H_U$ investors be unaware of asset 2 and invest only in asset 1 and the risk-free asset; let $H_I=H-H_U$. If all investors were aware, the equilibrium price would be
 
 $$
 p^*=\frac{1}{R_f}\mu-\frac{\alpha}{HR_f}\Sigma\bar\theta.
@@ -8196,7 +8200,7 @@ Then show that the beta-pricing relation has a positive alpha for asset 2.
 
 ::::{solution}
 
-**题目直觉** 市场里有两类投资者：
+**Question** 市场里有两类投资者：
 
 $$
 \left\{
@@ -8502,9 +8506,9 @@ $$
 
 
 
-## Question 22. Marketed Consumption Processes
+## 22. Marketed Consumption Processes
 
-**题目** 设每期消费 $C_t$ 都是 marketed payoff。证明存在财富过程 $W$ 和组合过程 $\pi$ 使
+**Question** 设每期消费 $C_t$ 都是 marketed payoff。证明存在财富过程 $W$ 和组合过程 $\pi$ 使
 
 $$
 \begin{aligned}
@@ -8548,9 +8552,9 @@ $$
 
 
 
-## Question 23. Marked Dividend Trees and SDFs
+## 23. Marked Dividend Trees and SDFs
 
-**题目** 设有常数无风险收益率 $R_f$ 和单一 risky asset，其 dividend 满足
+**Question** 设有常数无风险收益率 $R_f$ 和单一 risky asset，其 dividend 满足
 
 $$
 \begin{aligned}
@@ -8731,9 +8735,9 @@ $$
 
 
 
-## Question 24. Log Utility with i.i.d. Returns
+## 24. Log Utility with i.i.d. Returns
 
-**题目** 考虑 terminal wealth 的动态投资问题，returns i.i.d.，投资者为 log utility。令
+**Question** 考虑 terminal wealth 的动态投资问题，returns i.i.d.，投资者为 log utility。令
 
 $$
 \begin{aligned}
@@ -8793,9 +8797,9 @@ $$
 
 
 
-## Question 25. 考场原题回忆：n Risky Assets + 0 Risk-Free Asset
+## 25. 考场原题回忆：n Risky Assets + 0 Risk-Free Asset
 
-**题目回忆** $n$ 个 risky assets，没有 risk-free asset。证明 mean-variance/CARA-normal 下最优 risky position $\phi$ 的公式；$\phi$ 由两个部分组成。
+**Question** $n$ 个 risky assets，没有 risk-free asset。证明 mean-variance/CARA-normal 下最优 risky position $\phi$ 的公式；$\phi$ 由两个部分组成。
 
 **与 10.5 的关系**
 这题是 10.5 no-risk-free mean-variance frontier 的 CARA-normal 应用：10.5 解 fully invested frontier，10.1 在约束 $1'\phi=w_0$ 下直接解 investor 的 optimal risky dollar position。
@@ -8904,9 +8908,9 @@ $$
 
 
 
-## Question 26. 考场原题回忆：CARA Endowment Economy and Budget Constraint
+## 26. 考场原题回忆：CARA Endowment Economy and Budget Constraint
 
-CARA；市场里有 $N+1$ 个资产：先写出 EMM 和 SPD，再写出 dynamic problem、static problem 与 budget constraint。
+**Question** CARA；市场里有 $N+1$ 个资产：先写出 EMM 和 SPD，再写出 dynamic problem、static problem 与 budget constraint。
 
 $$
 \left\{
@@ -9385,8 +9389,9 @@ $$
 
 
 
-## Question 27. 考场原题回忆：Two Countries, Two Goods, Exchange Rate, Log Utility
+## 27. 考场原题回忆：Two Countries, Two Goods, Exchange Rate, Log Utility
 
+**Question** 在 two-country two-good log-utility pure-exchange economy 中，推导 real exchange rate、allocation、asset prices 与 belief-weight channel。
 
 ::::{solution}
 
@@ -9418,9 +9423,9 @@ Likelihood ratio / belief weight 的动态、allocation shares 与 closed-form l
 
 
 
-## Question 28. 考场原题回忆：Bid-Ask Spread and Risk Aversion
+## 28. 考场原题回忆：Bid-Ask Spread and Risk Aversion
 
-**题目回忆** 给定随机初始财富 $\widetilde x$ 和随机 payoff / position $\widetilde w$。Bid price 和 ask price 由无差异条件定义：
+**Question** 给定随机初始财富 $\widetilde x$ 和随机 payoff / position $\widetilde w$。Bid price 和 ask price 由无差异条件定义：
 
 $$
 \left\{
@@ -9596,10 +9601,10 @@ $$
 
 
 
-## Question 29. 考场题重构：No-Risk-Free Mean-Variance Frontier
+## 29. 考场题重构：No-Risk-Free Mean-Variance Frontier
 
 
-**题面重构** 考虑 one-period economy，有 $n$ 个 risky assets，没有 risk-free asset。令 risky returns 向量为
+**Question** 考虑 one-period economy，有 $n$ 个 risky assets，没有 risk-free asset。令 risky returns 向量为
 
 $$
 \begin{aligned}
@@ -9841,10 +9846,10 @@ $$
 
 
 
-## Question 30. 考场题重构：CARA Terminal Wealth, SPD, and Market Price of Risk
+## 30. 考场题重构：CARA Terminal Wealth, SPD, and Market Price of Risk
 
 
-**题面重构** 考虑 $[0,T]$ 上的 continuous-time economy。有 $N+1$ 个 traded assets。Asset $0$ 是 risk-free asset，assets $1,\dots,N$ 是 risky assets：
+**Question** 考虑 $[0,T]$ 上的 continuous-time economy。有 $N+1$ 个 traded assets。Asset $0$ 是 risk-free asset，assets $1,\dots,N$ 是 risky assets：
 
 $$
 \left\{
@@ -10128,10 +10133,10 @@ $$
 
 
 
-## Question 31. 考场题重构：Two-Country Two-Good Pure-Exchange Economy
+## 31. 考场题重构：Two-Country Two-Good Pure-Exchange Economy
 
 
-**题面重构** 考虑 continuous-time pure-exchange economy。两个国家 $i=1,2$，两种 perishable consumption goods $k=1,2$。没有 production、storage 或 investment technology。两种 goods 的 aggregate endowment 为 $D_t^1,D_t^2$。Good 1 是 numeraire，real exchange rate $\epsilon_t$ 是 good 2 以 good 1 计价的价格。
+**Question** 考虑 continuous-time pure-exchange economy。两个国家 $i=1,2$，两种 perishable consumption goods $k=1,2$。没有 production、storage 或 investment technology。两种 goods 的 aggregate endowment 为 $D_t^1,D_t^2$。Good 1 是 numeraire，real exchange rate $\epsilon_t$ 是 good 2 以 good 1 计价的价格。
 
 Investor $i$ 的 utility 为
 
@@ -11189,9 +11194,9 @@ $$
 ---
 
 
-## Question 32. Two-Country Two-Good Economy with Kalman Filtering
+## 32. Two-Country Two-Good Economy with Kalman Filtering
 
-**题目** 在 Question 31 的 two-country two-good pure-exchange economy 中，进一步假设两种 endowment 的 drift 不可直接观察。两位 agent 都观察到 $D_t^1,D_t^2$，但有不同 prior / state equation，因此形成不同 posterior beliefs。
+**Question** 在 Question 31 的 two-country two-good pure-exchange economy 中，进一步假设两种 endowment 的 drift 不可直接观察。两位 agent 都观察到 $D_t^1,D_t^2$，但有不同 prior / state equation，因此形成不同 posterior beliefs。
 
 ::::{collapse} Basic setup
 
@@ -11538,9 +11543,9 @@ $$
 ---
 
 
-## Question 33. Continuous-Time Complete Market, EMM, and Derivative Pricing
+## 33. Continuous-Time Complete Market, EMM, and Derivative Pricing
 
-**题目** We consider a securities market model consisting of a probability space $(\Omega,\mathcal F,\mathbb P)$, a time interval $\mathcal T=[0,T]$, an one-dimensional Brownian motion $Z$ on $(\Omega,\mathcal F,\mathbb P)$, the standard filtration $\{\mathcal F_t\}$ of $Z$, and two securities.
+**Question** We consider a securities market model consisting of a probability space $(\Omega,\mathcal F,\mathbb P)$, a time interval $\mathcal T=[0,T]$, an one-dimensional Brownian motion $Z$ on $(\Omega,\mathcal F,\mathbb P)$, the standard filtration $\{\mathcal F_t\}$ of $Z$, and two securities.
 
 The first security is a bond, with price process
 
@@ -12113,9 +12118,9 @@ $$
 
 ::::
 
-## Question 34. Martingale Method with Stochastic Expected Return and CRRA
+## 34. Martingale Method with Stochastic Expected Return and CRRA
 
-We consider a securities market model consisting of a probability space $(\Omega,\mathcal F,\mathbb P)$, a time interval $\mathcal T=[0,T]$, a one-dimensional Brownian motion $Z$ on $(\Omega,\mathcal F,\mathbb P)$, the standard filtration $\{\mathcal F_t\}$ of $Z$, and two securities.
+**Question** We consider a securities market model consisting of a probability space $(\Omega,\mathcal F,\mathbb P)$, a time interval $\mathcal T=[0,T]$, a one-dimensional Brownian motion $Z$ on $(\Omega,\mathcal F,\mathbb P)$, the standard filtration $\{\mathcal F_t\}$ of $Z$, and two securities.
 
 ::::{collapse} Basic setup
 
@@ -12615,11 +12620,11 @@ $A(\tau)$ 只影响 wealth level，不进入 $dW_t/W_t$ 的 diffusion coefficien
 
 ::::
 
-## Question 35. Continuous-Time Bansal-Yaron Long-Run Risk and Recursive Utility
+## 35. Continuous-Time Bansal-Yaron Long-Run Risk and Recursive Utility
 
 ::::{collapse} Basic setup
 
-Consider the following continuous-time version of Bansal and Yaron (2004). Suppose that consumption and dividends have the following dynamics:
+**Question** Consider the following continuous-time version of Bansal and Yaron (2004). Suppose that consumption and dividends have the following dynamics:
 
 $$
 \frac{dC_t}{C_t}
