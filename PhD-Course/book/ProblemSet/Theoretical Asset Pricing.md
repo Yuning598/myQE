@@ -11818,25 +11818,34 @@ $$
 
 ## Question 34. Martingale Method with Stochastic Expected Return and CRRA
 
+We consider a securities market model consisting of a probability space $(\Omega,\mathcal F,\mathbb P)$, a time interval $\mathcal T=[0,T]$, a one-dimensional Brownian motion $Z$ on $(\Omega,\mathcal F,\mathbb P)$, the standard filtration $\{\mathcal F_t\}$ of $Z$, and two securities.
+
 ::::{collapse} Basic setup
+
+The bond, stock, and stochastic expected return satisfy
 
 $$
 \left\{
 \begin{aligned}
-&(\Omega,\mathcal F,\mathbb P),\qquad \mathcal T=[0,T],\\
-&Z_t=\text{one-dimensional Brownian motion under }\mathbb P,\qquad
-\{\mathcal F_t\}=\text{standard filtration of }Z_t,\\
 &\frac{dB_t}{B_t}=r\,dt,\\
 &\frac{dS_t}{S_t}=\mu_tdt+\sigma dZ_t,\\
-&d\mu_t=\kappa(\theta-\mu_t)dt-s\,dZ_t,\\
-&W_0=W,\qquad
-U(C_T)=\frac{C_T^{1-\gamma}}{1-\gamma},\\
-&r,\sigma,\kappa,\theta,s,\gamma=\text{constants},\qquad \sigma\ne0,\quad \gamma>0,\quad \gamma\ne1.
+&d\mu_t=\kappa(\theta-\mu_t)dt-s\,dZ_t.
 \end{aligned}
 \right.
 $$
 
-Investor maximizes utility over terminal consumption using the martingale method.
+Here $\sigma,\kappa,\theta,s$ are constants, with $\sigma\ne0$. An investor with initial wealth $W$ maximizes utility over terminal consumption:
+
+$$
+\begin{aligned}
+U(C_T)
+&=
+\frac{C_T^{1-\gamma}}{1-\gamma},
+\qquad \gamma>0,\quad \gamma\ne1.
+\end{aligned}
+$$
+
+We solve the investor's portfolio choice problem using the martingale method.
 
 ::::
 
