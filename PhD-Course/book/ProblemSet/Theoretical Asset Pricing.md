@@ -11820,33 +11820,23 @@ $$
 
 ::::{collapse} Basic setup
 
-We consider a securities market model consisting of a probability space $(\Omega,\mathcal F,\mathbb P)$, a time interval $\mathcal T=[0,T]$, a one-dimensional Brownian motion $Z$ on $(\Omega,\mathcal F,\mathbb P)$, the standard filtration $\{\mathcal F_t\}$ of $Z$, and two securities.
-
-The first security is a bond, with price process
-
 $$
-\frac{dB_t}{B_t}=r\,dt.
-$$
-
-The second security is a stock, with price process
-
-$$
-\frac{dS_t}{S_t}=\mu_t\,dt+\sigma\,dZ_t,
-$$
-
-where $\sigma$ is a constant, and $\mu_t$ is given by
-
-$$
-d\mu_t=\kappa(\theta-\mu_t)\,dt-s\,dZ_t,
+\left\{
+\begin{aligned}
+&(\Omega,\mathcal F,\mathbb P),\qquad \mathcal T=[0,T],\\
+&Z_t=\text{one-dimensional Brownian motion under }\mathbb P,\qquad
+\{\mathcal F_t\}=\text{standard filtration of }Z_t,\\
+&\frac{dB_t}{B_t}=r\,dt,\\
+&\frac{dS_t}{S_t}=\mu_tdt+\sigma dZ_t,\\
+&d\mu_t=\kappa(\theta-\mu_t)dt-s\,dZ_t,\\
+&W_0=W,\qquad
+U(C_T)=\frac{C_T^{1-\gamma}}{1-\gamma},\\
+&r,\sigma,\kappa,\theta,s,\gamma=\text{constants},\qquad \sigma\ne0,\quad \gamma>0,\quad \gamma\ne1.
+\end{aligned}
+\right.
 $$
 
-for constants $\kappa,\theta,s$. An investor with initial wealth $W$ maximizes utility over terminal consumption, where utility is CRRA:
-
-$$
-U(C_T)=\frac{C_T^{1-\gamma}}{1-\gamma}.
-$$
-
-We solve the investor's portfolio choice problem using the martingale method.
+Investor maximizes utility over terminal consumption using the martingale method.
 
 ::::
 
