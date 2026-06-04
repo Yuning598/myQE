@@ -11903,6 +11903,186 @@ $$
 
 ::::
 
+**（d）** Characterize the price of an American security that can be exercised at any stopping time $\tau\in[t,T]$ and pays $G(S_\tau)$ at exercise.
+
+::::{solution}
+
+American security 的关键是 holder 可以选择 exercise time，所以定价问题不是单纯 terminal payoff pricing，而是 optimal stopping problem。令
+
+$$
+\begin{aligned}
+V_t
+&=
+v(t,S_t,\mu_t).
+\end{aligned}
+$$
+
+在 EMM $\mathbb Q$ 下，价格为 Snell envelope：
+
+$$
+\begin{aligned}
+v(t,S,\mu)
+&=
+\sup_{\tau\in\mathcal T_{t,T}}
+E_{t,S,\mu}^{\mathbb Q}
+\left[
+e^{-r(\tau-t)}G(S_\tau)
+\right],
+\end{aligned}
+$$
+
+其中 $\mathcal T_{t,T}$ 是所有取值在 $[t,T]$ 的 stopping times。
+
+在 $\mathbb Q$ 下 state system 仍为
+
+$$
+\left\{
+\begin{aligned}
+dS_t
+&=
+rS_tdt+\sigma S_tdZ_t^{\mathbb Q},\\
+d\mu_t
+&=
+\left[
+\kappa\theta-\frac{sr}{\sigma}
+-\left(\kappa-\frac{s}{\sigma}\right)\mu_t
+\right]dt
+-s\,dZ_t^{\mathbb Q}.
+\end{aligned}
+\right.
+$$
+
+因此 risk-neutral generator 是
+
+$$
+\begin{aligned}
+\mathcal L^{\mathbb Q}v
+&=
+rSv_S
++\left[
+\kappa\theta-\frac{sr}{\sigma}
+-\left(\kappa-\frac{s}{\sigma}\right)\mu
+\right]v_\mu\\
+&\quad
++\frac12\sigma^2S^2v_{SS}
+-s\sigma Sv_{S\mu}
++\frac12s^2v_{\mu\mu}.
+\end{aligned}
+$$
+
+American option 的 variational inequality 为
+
+$$
+\left\{
+\begin{aligned}
+\max\left\{
+G(S)-v(t,S,\mu),\;
+v_t+\mathcal L^{\mathbb Q}v-rv
+\right\}
+&=0,\\
+v(T,S,\mu)&=G(S),\\
+v(t,S,\mu)&\ge G(S).
+\end{aligned}
+\right.
+$$
+
+定义 continuation region 和 exercise region：
+
+$$
+\left\{
+\begin{aligned}
+\mathcal C
+&=
+\{(t,S,\mu):v(t,S,\mu)>G(S)\},\\
+\mathcal E
+&=
+\{(t,S,\mu):v(t,S,\mu)=G(S)\}.
+\end{aligned}
+\right.
+$$
+
+在 continuation region 内，不 exercise，所以 discounted value 是 martingale：
+
+$$
+\begin{aligned}
+v_t+\mathcal L^{\mathbb Q}v-rv
+&=0,
+\qquad (t,S,\mu)\in\mathcal C.
+\end{aligned}
+$$
+
+在 exercise region 内，立即行权：
+
+$$
+\begin{aligned}
+v(t,S,\mu)
+&=
+G(S),
+\qquad (t,S,\mu)\in\mathcal E.
+\end{aligned}
+$$
+
+若 exercise boundary 可以写成
+
+$$
+\begin{aligned}
+S=b(t,\mu),
+\end{aligned}
+$$
+
+则 free-boundary conditions 是 value matching 和 smooth pasting：
+
+$$
+\left\{
+\begin{aligned}
+v(t,b(t,\mu),\mu)
+&=
+G(b(t,\mu)),\\
+v_S(t,b(t,\mu),\mu)
+&=
+G'(b(t,\mu)).
+\end{aligned}
+\right.
+$$
+
+因为 payoff $G(S)$ 本身不直接依赖 $\mu$，若边界足够光滑，还可以沿边界对 $\mu$ 求导：
+
+$$
+\begin{aligned}
+v(t,b(t,\mu),\mu)
+&=
+G(b(t,\mu))\\
+\Longrightarrow\quad
+v_S(t,b(t,\mu),\mu)b_\mu(t,\mu)
++v_\mu(t,b(t,\mu),\mu)
+&=
+G'(b(t,\mu))b_\mu(t,\mu).
+\end{aligned}
+$$
+
+结合 smooth pasting 得到边界上的状态变量方向条件：
+
+$$
+\begin{aligned}
+v_\mu(t,b(t,\mu),\mu)
+&=0.
+\end{aligned}
+$$
+
+最优 stopping time 可以写成第一次进入 exercise region 的时间：
+
+$$
+\begin{aligned}
+\tau^*
+&=
+\inf\{u\in[t,T]:(u,S_u,\mu_u)\in\mathcal E\}.
+\end{aligned}
+$$
+
+对 American put，通常 $G(S)=(K-S)^+$，exercise region 常写成 $S\le b(t,\mu)$；对 American call，若无 dividend 且利率为常数，是否提前行权要结合 payoff 和 carry cost 判断，但数学刻画仍然是同一个 optimal stopping / variational inequality / free-boundary system。
+
+::::
+
 ## Question 34. Martingale Method with Stochastic Expected Return and CRRA
 
 We consider a securities market model consisting of a probability space $(\Omega,\mathcal F,\mathbb P)$, a time interval $\mathcal T=[0,T]$, a one-dimensional Brownian motion $Z$ on $(\Omega,\mathcal F,\mathbb P)$, the standard filtration $\{\mathcal F_t\}$ of $Z$, and two securities.
