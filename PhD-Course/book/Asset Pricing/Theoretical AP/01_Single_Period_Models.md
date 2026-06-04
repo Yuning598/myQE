@@ -1,14 +1,5 @@
 # 01 Single-Period Models
 
-## Overview
-
-- 先按主题主线重新梳理标题层级，避免多个一级标题或跳号造成阅读断点。
-- 保留原有材料的核心信息，但把散落的推导合并到对应主题，不采用“只在文首叠加补丁”的方式。
-- 对关键结论补充 **WTS → 联立系统 → 连续求解 → 结论** 的证明块。
-- 原来的 proposition / theorem / property 已经统一转为普通说明文字，减少网页端对 callout 的依赖。
-- 对易混概念补充“符号约定 / 经济含义 / 边界条件”三类解释，减少公式跳步。
-
-
 ## Lecture 1. Utility, Risk Aversion, and Portfolio Choice
 
 ### 1.1 Risk Aversion and Jensen
@@ -21,7 +12,7 @@ Risk Aversion $\Longleftrightarrow$ Concavity
 
 :::
 
-**WTS：** 对任意随机财富 $\tilde w$ 且 $E[\tilde w]=w$，证明
+对任意随机财富 $\tilde w$ 且 $E[\tilde w]=w$，证明
 
 $$
 \begin{aligned}
@@ -31,7 +22,6 @@ $$
 
 并说明二阶可导时等价于 $u''(w)\le 0$。
 
-**联立系统：**
 
 $$
 \begin{aligned}
@@ -42,7 +32,7 @@ u(x)&=E[u(\tilde w)],\\
 \end{aligned}
 $$
 
-**连续求解：** 若 $u$ 凹，则由 Jensen 不等式，
+若 $u$ 凹，则由 Jensen 不等式，
 
 $$
 \begin{aligned}
@@ -86,7 +76,7 @@ $$
 
 这正是凹性的定义。若 $u$ 二阶可导，凹性又等价于 $u''(w)\le 0$。
 
-**结论：** 课件中“风险厌恶—Jensen—凹性”的逻辑链应读作：
+课件中“风险厌恶—Jensen—凹性”的逻辑链应读作：
 
 $$
 \begin{aligned}
@@ -191,7 +181,7 @@ $$
 
 :::
 
-**WTS：** 从
+从
 
 $$
 \begin{aligned}
@@ -201,7 +191,6 @@ $$
 
 推出 $\pi(0)=0,\ \pi'(0)=0,\ \pi''(0)=\alpha(w)\sigma^2$。
 
-**联立系统：**
 
 $$
 \begin{aligned}
@@ -211,7 +200,7 @@ E[\tilde\varepsilon^2]&=\sigma^2.
 \end{aligned}
 $$
 
-**连续求解：** 对 $F(k)=0$ 一阶求导，
+对 $F(k)=0$ 一阶求导，
 
 $$
 \begin{aligned}
@@ -262,7 +251,7 @@ $$
 \end{aligned}
 $$
 
-**结论：** Arrow-Pratt 绝对风险厌恶系数是“小风险溢价对风险方差的一阶价格”。
+Arrow-Pratt 绝对风险厌恶系数是“小风险溢价对风险方差的一阶价格”。
 
 
 
@@ -397,7 +386,7 @@ $$
 
 :::
 
-**WTS：** 从份额选择问题推出
+从份额选择问题推出
 
 $$
 \begin{aligned}
@@ -406,7 +395,6 @@ E[u'(\tilde w^*)\tilde x_i]=\gamma p_i,
 \end{aligned}
 $$
 
-**联立系统：**
 
 $$
 \begin{aligned}
@@ -427,7 +415,7 @@ $$
 \end{aligned}
 $$
 
-**连续求解：** 对 $\theta_i$ 求导，
+对 $\theta_i$ 求导，
 
 $$
 \begin{aligned}
@@ -456,7 +444,7 @@ $$
 \end{aligned}
 $$
 
-**结论：** 单期组合选择的一阶条件已经包含 SDF 定价式；后面 SDF 不是新假设，而是最优边际效用的规范化表达。
+单期组合选择的一阶条件已经包含 SDF 定价式；后面 SDF 不是新假设，而是最优边际效用的规范化表达。
 
 
 
@@ -496,7 +484,6 @@ $$
 
 :::
 
-**说明：Derivation**
 
 $$
 \text{(Lagrangian)}\quad
@@ -594,7 +581,6 @@ $$
 \end{aligned}
 $$
 
-**说明：Portfolio vector, full investment, mean, and variance**
 设
 
 $$
@@ -777,9 +763,9 @@ $$
 
 :::
 
-**WTS：** 把 CARA-Normal 的期望效用最大化化为均值—方差目标并解出 $\phi^*$。
+把 CARA-Normal 的期望效用最大化化为均值—方差目标并解出 $\phi^*$。
 
-**联立系统：** 单资产财富为
+单资产财富为
 
 $$
 \begin{aligned}
@@ -790,7 +776,7 @@ $$
 \end{aligned}
 $$
 
-**连续求解：** 因为 $\tilde w$ 正态，
+因为 $\tilde w$ 正态，
 
 $$
 \begin{aligned}
@@ -835,7 +821,7 @@ CE(\phi)
 \end{aligned}
 $$
 
-**结论：** CARA-Normal 下，风险需求等于“风险溢价 / 风险惩罚”；风险厌恶 $\alpha$ 只缩放总风险暴露，不改变切点组合方向。
+CARA-Normal 下，风险需求等于“风险溢价 / 风险惩罚”；风险厌恶 $\alpha$ 只缩放总风险暴露，不改变切点组合方向。
 
 
 :::{admonition} Definition (CARA-Normal setup)
@@ -1290,9 +1276,8 @@ $$
 
 :::
 
-**WTS：** 将线性定价函数写成状态价格 / SDF 表达。
+将线性定价函数写成状态价格 / SDF 表达。
 
-**联立系统：**
 
 $$
 \begin{aligned}
@@ -1302,7 +1287,7 @@ $$
 \end{aligned}
 $$
 
-**连续求解：** LOP 等价于 $p$ 对 $\ker(X)$ 为零：
+LOP 等价于 $p$ 对 $\ker(X)$ 为零：
 
 $$
 \begin{aligned}
@@ -1350,7 +1335,7 @@ $$
 
 若 $q_s>0$ 对所有 $s$ 成立，则 $m_s>0$，这排除了正 payoff 零成本的套利。
 
-**结论：** LOP 给出“线性 SDF”，无套利把它强化为“正 SDF”。
+LOP 给出“线性 SDF”，无套利把它强化为“正 SDF”。
 
 
 一期、有限状态的模型。
@@ -1787,7 +1772,7 @@ $$
 
 :::
 
-**WTS：** 解
+解
 
 $$
 \min_\pi \frac12\pi'\Sigma\pi
@@ -1797,7 +1782,7 @@ $$
 \iota'\pi=1.
 $$
 
-**联立系统：** Lagrangian 写为
+Lagrangian 写为
 
 $$
 \begin{aligned}
@@ -1818,7 +1803,7 @@ $$
 \right.
 $$
 
-**连续求解：** 先由 FOC 得
+先由 FOC 得
 
 $$
 \begin{aligned}
@@ -1880,7 +1865,7 @@ $$
 \end{aligned}
 $$
 
-**结论：** 前沿的所有公式都来自同一个 $2\times2$ 线性系统；GMV 是其中 $\mu_p=B/C$ 的最低方差点。
+前沿的所有公式都来自同一个 $2\times2$ 线性系统；GMV 是其中 $\mu_p=B/C$ 的最低方差点。
 
 
 :::{admonition} Definition (Mean-Variance Frontier without Risk-Free Asset)
@@ -1922,7 +1907,6 @@ $$
 
 :::
 
-**说明：Lagrangian Derivation**
 对每个给定的 $\mu_{target}$，构造
 
 $$
@@ -2138,7 +2122,6 @@ $$
 
 :::
 
-**说明：+ Proof**
 ##### Proof when the Risk-Free Component is Zero
 若 $B=0$，则任意 frontier 组合满足
 
@@ -2178,7 +2161,6 @@ $$
 $$
 
 
-**说明：Proof**
 ##### Proof when the Risk-Free Component is Nonzero
 若 $B\neq 0$，则每个 frontier 组合都可写成
 
@@ -2410,7 +2392,7 @@ No Tangency Portfolio when $R_f=B/C$
 
 :::
 
-**WTS：** 证明不存在 $\delta,\lambda$ 使
+证明不存在 $\delta,\lambda$ 使
 
 $$
 \begin{aligned}
@@ -2422,7 +2404,6 @@ $$
 
 同时构成资本市场线的切点方向。
 
-**联立系统：**
 
 $$
 \begin{aligned}
@@ -2434,7 +2415,7 @@ R_f&=\frac{B}{C},\\
 $$
 
 
-**连续求解：** 任何风险资产切点组合的方向都应与 $\Sigma^{-1}\mu_e$ 成比例。先看这个方向的 full-investment 权重和期望超额收益：
+任何风险资产切点组合的方向都应与 $\Sigma^{-1}\mu_e$ 成比例。先看这个方向的 full-investment 权重和期望超额收益：
 
 $$
 \begin{aligned}
@@ -2481,7 +2462,7 @@ $$
 
 两者矛盾。
 
-**结论：** $R_f=B/C$ 时，资本市场线经过 GMV 点且斜率退化；风险资产“切点方向”是零成本超额收益方向，不是可作为 risky fund 的切点组合。
+$R_f=B/C$ 时，资本市场线经过 GMV 点且斜率退化；风险资产“切点方向”是零成本超额收益方向，不是可作为 risky fund 的切点组合。
 
 
 :::{admonition} Lemma
@@ -2590,9 +2571,7 @@ $$
 
 :::
 
-**说明：- 切点组合的两个等价视角**
-**视角 1：和无风险资产一起看**
-若投资者把财富中的比例 $y$ 放进切点基金，其余放进无风险资产，则总收益可写成
+从“无风险资产 + 风险基金”的角度看，若投资者把财富中的比例 $y$ 放进切点基金，其余放进无风险资产，则总收益可写成
 
 $$
 \begin{aligned}
@@ -2604,8 +2583,7 @@ $$
 
 这里 $\tilde R_{tan}=\pi_{tan}'\tilde R$。因为切点基金是风险资产部分 Sharpe ratio 最高的那只，所以任意“无风险资产 + 风险基金”的可行组合，只是在这只基金上做缩放。
 
-**视角 2：只看风险资产本身**
-切点基金必须是一个 fully invested 的风险资产组合，因此
+从风险资产本身看，切点基金必须是一个 fully invested 的风险资产组合，因此
 
 $$
 \begin{aligned}
@@ -2643,7 +2621,6 @@ $$
 
 :::
 
-**说明：Proof**
 设任意 frontier 组合在风险资产上的权重为 $\pi$，则其均值—方差问题可写成
 
 $$
@@ -2716,12 +2693,10 @@ $$
 
 于是整条 frontier 由 $R_f$ 和 $\pi_{tan}$ 两个基金张成；这就是 two-fund spanning.
 
-**说明：Remark**
 从这个表达式还可以看出：若切点组合的 expected return 高于 $R_f$，则它位于 efficient part；若低于 $R_f$，则对应的是下支，需要把方向翻转后才得到上支的切点基金.
 
 关联后文：[CAPM and Mean-Variance Efficiency](Asset Pricing/Theoretical AP/01_Single_Period_Models#^prop-3-2-4-mve)
 
-**说明：- 另一种证明与 FOC 的经济含义**
 设任意三个 frontier 组合满足
 
 $$
@@ -3038,11 +3013,9 @@ $$
 :::
 
 
-**说明：Proof**
 分两种情况。
 
-**Case 1: there is a risk-free asset.**
-已知 market portfolio $m$ 在 mean-variance frontier 上时，最大 Sharpe ratio 组合满足切点条件，因此对任意 risky asset $i$，
+存在无风险资产时，已知 market portfolio $m$ 在 mean-variance frontier 上时，最大 Sharpe ratio 组合满足切点条件，因此对任意 risky asset $i$，
 
 $$
 \begin{aligned}
@@ -3084,8 +3057,7 @@ $$
 
 所以 market portfolio 的 beta 为 $1$，它与 frontier 上同均值资产相比具有最小方差，因此 market portfolio 在 mean-variance frontier 上.
 
-**Case 2: there is no risk-free asset.**
-设均值—方差问题的 FOC 写成
+不存在无风险资产时，设均值—方差问题的 FOC 写成
 
 $$
 \begin{aligned}
@@ -3167,7 +3139,6 @@ $$
 
 :::
 
-**说明：Proof**
 
 $$
 \begin{aligned}
@@ -3210,7 +3181,6 @@ $$
 
 
 
-**说明：Sign of the CAPM SDF**
 $\tilde m$ 可能对某些实现值为负。若 CAPM 成立，则有三种可能：
 1. market return 被限制在某个范围内，使得 $\tilde m>0$ 几乎必然成立；
 2. 市场是不完全的，$\tilde m$ 可能为负或为零，但仍存在另一个严格为正的 SDF；
@@ -3380,7 +3350,6 @@ $$
 :::
 
 
-**说明：Interpretation**
 $\beta$ 依赖于具体的 return $\tilde R$；而 $\lambda$ 对所有资产相同，是各因子的价格 of risk / risk premium。
 因而每个资产的 risk premium 等于其各个 beta 乘以对应 factor price of risk 之后再求和。
 
@@ -3458,9 +3427,8 @@ $$
 
 :::
 
-**WTS：** 从 $E[mR_i^e]=0$ 推出 beta representation。
+从 $E[mR_i^e]=0$ 推出 beta representation。
 
-**联立系统：**
 
 $$
 \begin{aligned}
@@ -3472,7 +3440,7 @@ m&=a-b'f.
 $$
 
 
-**连续求解：** SDF 定价给出
+SDF 定价给出
 
 $$
 \begin{aligned}
@@ -3514,7 +3482,7 @@ E[R_i^e]=\beta_i'\lambda_f.
 $$
 
 
-**结论：** 因子模型不是“回归形式”本身，而是存在一个落在因子张成空间里的 SDF；CAPM 是因子取市场组合时的特例。
+因子模型不是“回归形式”本身，而是存在一个落在因子张成空间里的 SDF；CAPM 是因子取市场组合时的特例。
 
 
 :::{admonition} Lemma
@@ -3537,7 +3505,6 @@ $$
 :::
 
 
-**Proof**
 
 
 $$
@@ -3637,7 +3604,6 @@ $$
 
 Empirical AP 连接：[Linear SDF implies beta pricing](../../Empirical AP/05_Cross_Section_Factor_Models.md) 是本命题在 excess-return / cross-sectional setting 下的写法；[Beta-SDF Equivalence](../../Empirical AP/cards/Beta_SDF_Equivalence.md) 汇总 EF8077 与 EF8083 的符号转换。
 
-**Proof**
 
 
 $$
@@ -3757,7 +3723,6 @@ $$
 
 #### 3.2.13 Empirical Performance of Popular Models
 
-**说明：Popular Factors**
 经验研究中常见的因子模型包括：
 - Fama-French three-factor model: market, SMB, HML
 - Carhart four-factor model: add UMD (momentum)
