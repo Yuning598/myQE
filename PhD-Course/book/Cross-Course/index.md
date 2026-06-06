@@ -11,13 +11,18 @@ tags:
 
 ## 使用顺序
 
-1. 先看 [QE Knowledge Map](QE_Knowledge_Map.md)，定位一个高频考点。
+1. 先看 [QE Knowledge Map](QE_Knowledge_Map.md) 的 Interactive Knowledge Graph，定位一个高频考点。
 2. 再看对应 bridge note，理解跨课程等价关系。
-3. 最后回到 [QE ProblemSet](../ProblemSet/ProblemSet.md) 做同类题。
+3. 最后回到 [QE ProblemSet](../ProblemSet/index.md) 做同类题。
 
 ## 第一批 bridge notes
 
 - [State prices, SDF, and complete markets](bridges/State_Prices_SDF_Complete_Markets.md)
+- [Risk aversion, mean-variance, and CAPM](bridges/Risk_Aversion_Mean_Variance_CAPM.md)
+- [Projection and beta pricing](bridges/Projection_Beta_Pricing.md)
+- [GMM and Euler equation](bridges/GMM_Euler_Equation.md)
+- [Identification and corporate finance](bridges/Identification_Corporate_Finance.md)
+- [Dynamic programming and HJB](bridges/Dynamic_Programming_HJB.md)
 
 ## 建设原则
 

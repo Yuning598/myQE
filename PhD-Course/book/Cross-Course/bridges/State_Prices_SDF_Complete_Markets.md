@@ -53,7 +53,7 @@ $$
 
 核心页面：
 
-- [Choice under Uncertainty and State-Contingent Equilibrium](../../Microeconomic/02%20Choice%20under%20Uncertainty%20and%20State-Contingent%20Equilibrium.md)
+- [Choice under Uncertainty and State-Contingent Equilibrium](../../Microeconomic/02_Choice_under_Uncertainty_and_State_Contingent_Equilibrium.md)
 - [Arrow securities and state prices](../../Microeconomic/cards/Arrow%20securities%20and%20state%20prices.md)
 - [Complete vs incomplete markets](../../Microeconomic/cards/Complete%20vs%20incomplete%20markets.md)
 - [No arbitrage and state price vector](../../Microeconomic/cards/No%20arbitrage%20and%20state%20price%20vector.md)
@@ -65,9 +65,9 @@ Micro 的语言是 state-contingent commodities。若每个状态都有 Arrow se
 核心页面：
 
 - [Theoretical AP Part 2](../../Asset%20Pricing/Theoretical%20AP/02_Dynamic_Asset_Pricing.md)
-- [Stochastic Discount Factor](../../Asset%20Pricing/Theoretical%20AP/Part2-%E5%8D%A1%E7%89%87/Stochastic%20Discount%20Factor%20-%20%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%9F%BA%E6%9C%AC%E5%85%B3%E7%B3%BB.md)
-- [Arrow securities and state prices](../../Asset%20Pricing/Theoretical%20AP/Part2-%E5%8D%A1%E7%89%87/Arrow%20securities%20%E4%B8%8E%20state%20prices.md)
-- [Risk-neutral probability](../../Asset%20Pricing/Theoretical%20AP/Part2-%E5%8D%A1%E7%89%87/%E9%A3%8E%E9%99%A9%E4%B8%AD%E6%80%A7%E6%A6%82%E7%8E%87%20-%20%E4%BB%8E%20SDF%20%E5%88%B0%20Q.md)
+- [Stochastic Discount Factor](../../Asset%20Pricing/Theoretical%20AP/cards/part2/Stochastic%20Discount%20Factor%20-%20%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%9F%BA%E6%9C%AC%E5%85%B3%E7%B3%BB.md)
+- [Arrow securities and state prices](../../Asset%20Pricing/Theoretical%20AP/cards/part2/Arrow%20securities%20%E4%B8%8E%20state%20prices.md)
+- [Risk-neutral probability](../../Asset%20Pricing/Theoretical%20AP/cards/part2/%E9%A3%8E%E9%99%A9%E4%B8%AD%E6%80%A7%E6%A6%82%E7%8E%87%20-%20%E4%BB%8E%20SDF%20%E5%88%B0%20Q.md)
 
 Asset Pricing 的语言是 pricing kernel / SDF。状态价格不是新对象，而是 SDF 在有限状态模型中的逐状态表示。
 
@@ -75,9 +75,9 @@ Asset Pricing 的语言是 pricing kernel / SDF。状态价格不是新对象，
 
 核心题目：
 
-- [QE-PS 1: Market completeness and Arrow security](../../ProblemSet/ProblemSet.md)
-- [QE-PS 2: Representative investor pricing](../../ProblemSet/ProblemSet.md)
-- [QE-PS 4: SDF and risk-neutral pricing](../../ProblemSet/ProblemSet.md)
+- [QE-PS 1: Market completeness and Arrow security](../../ProblemSet/index.md)
+- [QE-PS 2: Representative investor pricing](../../ProblemSet/index.md)
+- [QE-PS 4: SDF and risk-neutral pricing](../../ProblemSet/index.md)
 
 QE 的语言通常更计算化：给 payoff matrix 和价格，要求判断完备性、求 state price set、给出无套利价格区间，或者在价格出界时构造套利策略。
 
@@ -204,8 +204,8 @@ $$
 
 ## 8. 最短复习路线
 
-1. [Micro: no arbitrage and positive state prices](../../Microeconomic/02%20Choice%20under%20Uncertainty%20and%20State-Contingent%20Equilibrium.md)
-2. [AP: SDF definition](../../Asset%20Pricing/Theoretical%20AP/Part2-%E5%8D%A1%E7%89%87/Stochastic%20Discount%20Factor%20-%20%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%9F%BA%E6%9C%AC%E5%85%B3%E7%B3%BB.md)
-3. [QE-PS 1](../../ProblemSet/ProblemSet.md)
-4. [QE-PS 2](../../ProblemSet/ProblemSet.md)
-5. [QE-PS 4](../../ProblemSet/ProblemSet.md)
+1. [Micro: no arbitrage and positive state prices](../../Microeconomic/02_Choice_under_Uncertainty_and_State_Contingent_Equilibrium.md)
+2. [AP: SDF definition](../../Asset%20Pricing/Theoretical%20AP/cards/part2/Stochastic%20Discount%20Factor%20-%20%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%9F%BA%E6%9C%AC%E5%85%B3%E7%B3%BB.md)
+3. [QE-PS 1](../../ProblemSet/index.md)
+4. [QE-PS 2](../../ProblemSet/index.md)
+5. [QE-PS 4](../../ProblemSet/index.md)
