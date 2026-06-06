@@ -1,4 +1,5 @@
 ---
+orphan: true
 title: "Market Timing and Capital Structure"
 year: 2002
 journal: "Journal of Finance"

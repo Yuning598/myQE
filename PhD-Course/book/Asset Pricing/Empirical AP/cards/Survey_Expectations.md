@@ -5,17 +5,17 @@ orphan: true
 # Survey Expectations
 
 Source: EF8083 slides, pp. 271-300  
-Backlinks: [06_Subjective_Expectations_Learning](../06_Subjective_Expectations_Learning)
+导航：[Asset Pricing index](../../index.md) · [Empirical AP MOC](../00-MOC_EF8083_Empirical_Asset_Pricing.md) · 来源：[06_Subjective_Expectations_Learning](../06_Subjective_Expectations_Learning)
 
 Survey data directly measure subjective expectations:
-\[
+$$
 \tilde E_t[R_{t+1}].
-\]
+$$
 
 A common empirical pattern:
-\[
+$$
 \tilde E_t[R_{t+1}]=a+bR_{t-k,t},\qquad b>0.
-\]
+$$
 
 This is extrapolative: investors expect high past returns to continue.
 

@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # Reading Note: Leary and Michaely (2011)
 
 <a href="../01_Empirical_Corporate_Finance.html#sec-leary-michaely-2011">Back to the main note</a>
@@ -19,9 +23,9 @@ This paper studies what drives dividend smoothing: which firm characteristics ar
 
 ## 4. Figure Slots
 
-![Leary and Michaely result table 1](Pasted image 20260502100602.png)
+![Leary and Michaely result table 1](../../attachment/Pasted-image-20260502100602.png)
 
-![Leary and Michaely result table 2](Pasted image 20260502100609.png)
+![Leary and Michaely result table 2](../../attachment/Pasted-image-20260502100609.png)
 
 ## 5. Notes
 - Add any regression tables, figures, or slide screenshots here.

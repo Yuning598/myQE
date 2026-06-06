@@ -50,7 +50,7 @@ Under conditional homoskedasticity, $\mathbb{E}(g_i g_i') = \Sigma \otimes \math
 
 :::
 
-^assumption-re
+(assumption-re)=
 
 ---
 
@@ -108,7 +108,7 @@ Hence, if $\mathbb{E}(z_{im}\varepsilon_i)\neq 0$, Random Effects is inconsisten
 
 :::
 
-^orth-5-1-8
+(orth-5-1-8)=
 
 ## Production Function with Firm Heterogeneity
 
@@ -132,7 +132,7 @@ $$
 
 这里 $u_i$ 表示 firm-specific efficiency，通常会和投入选择相关，所以一般不能假设 $u_i \perp x_i$。这正是 fixed effect 需要被保留的原因。
 
-^ex-5-1-prod
+(ex-5-1-prod)=
 
 ## Wage Equation with Individual Heterogeneity
 
@@ -181,11 +181,11 @@ $$
 
 这里能力项 $\alpha_i$ 很可能与 schooling 和 IQ 相关，因此同样是典型的 RE 不成立、FE 更稳妥的场景。
 
-^ex-5-2-wage
+(ex-5-2-wage)=
 
 ## Between Transformation with Group Means
 
-存在一个常用估计量 `fixed-effects estimator`，它对 `(5.1.8a)` 失效是 robust 的（见 [Orthogonality (5.1.8)](#^orth-5-1-8))。
+存在一个常用估计量 `fixed-effects estimator`，它对 `(5.1.8a)` 失效是 robust 的（见 [Orthogonality (5.1.8)](#orth-5-1-8))。
 
 核心思路：把原始系统 `(5.1.1')` 变换为一个新的 $M$-equation system，使个体不随时间变化的成分被消除。
 
@@ -206,11 +206,11 @@ $$
 
 因为 $Q1_M=0$，任何在组内“各期都相同”的向量分量都会被 annihilate；保留下来的就是每一期相对该个体组均值的偏离（deviations from group means）。
 
-^group-means-5-1-10
+(group-means-5-1-10)=
 
 ## Error-Components Reparameterization
 
-为说明变换后可识别性（与 [Group Means (5.1.10)](#^group-means-5-1-10) 和 [Example 5.2](#^ex-5-2-wage) 对应），将回归元分解为
+为说明变换后可识别性（与 [Group Means (5.1.10)](#group-means-5-1-10) 和 [Example 5.2](#ex-5-2-wage) 对应），将回归元分解为
 
 $$
 Z_i=\bigl(F_i:1_M b_i'\bigr)
@@ -283,11 +283,11 @@ $$
 因此，error-components model 的一组工作假设可写为：
 `(5.1.1'')`（$M$ 线性方程）、`(5.1.2)`（random sample）、`(5.1.5)`（conditional homoskedasticity）、`(5.1.6)`（nonsingularity）、`(5.1.8b)`（SUR orthogonality）、以及 `(5.1.15)`（fixed-effects identification）。
 
-^reparam-5-1-15
+(reparam-5-1-15)=
 
 **Fixed-Effects Estimator**
 
-承接 [FE identification (5.1.15)](#^reparam-5-1-15)，Fixed-Effects Estimator 通过组内去均值变换消除 $\varepsilon_i$，并据此构造可估计的样本矩条件。
+承接 [FE identification (5.1.15)](#reparam-5-1-15)，Fixed-Effects Estimator 通过组内去均值变换消除 $\varepsilon_i$，并据此构造可估计的样本矩条件。
 
 Let $Q \equiv I_M - 1_M(1_M'1_M)^{-1}1_M'$ be the within-transformation matrix. Multiplying the original system from the left by $Q$, we obtain
 
@@ -397,7 +397,7 @@ $$
 
 :::
 
-^prop-5-2-fixed-effects-variance
+(prop-5-2-fixed-effects-variance)=
 
 **Digression: When $\eta_i$ is Spherical**
 
@@ -494,7 +494,7 @@ and is asymptotically $\chi^2$ with $\#\beta$ degrees of freedom.
 
 :::
 
-^prop-5-2
+(prop-5-2)=
 
 ## Relaxing Conditional Homoskedasticity
 

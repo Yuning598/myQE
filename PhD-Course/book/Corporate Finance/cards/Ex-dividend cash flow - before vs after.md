@@ -4,6 +4,8 @@ orphan: true
 
 # Ex-dividend cash flow - before vs after
 
+导航：[Corporate Finance index](../index.md)
+
 Short summary: before ex-date the investor realizes mainly capital gains and no dividend; after ex-date the investor receives dividend cash flow but the stock price drops on the ex-date, so the total cash flow must include both price change and dividend tax.
 
 :::{admonition} Note
@@ -19,10 +21,6 @@ Short summary: before ex-date the investor realizes mainly capital gains and no 
 :::
 
 (card-ex-dividend-cashflow-summary)=
-(^card-ex-dividend-cashflow-summary)=
-
-^card-ex-dividend-cashflow-summary
-
 $$
 \begin{aligned}
 CF^{before} &= p-(p-p_0)t_g, \\
@@ -58,8 +56,6 @@ $$
 :::
 
 (card-ex-dividend-cashflow)=
-(^card-ex-dividend-cashflow)=
 
-^card-ex-dividend-cashflow
 
 Related section: <a href="../01_Empirical_Corporate_Finance.html#sec-dividend-ex-date-tax-pricing">Do Stock Prices Reflect Personal Taxes?</a>

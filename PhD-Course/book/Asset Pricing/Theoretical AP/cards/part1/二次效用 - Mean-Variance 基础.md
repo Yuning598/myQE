@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # 二次效用 - Mean-Variance 基础
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#1.5 Classic Utility Functions Comparison](Asset Pricing/Theoretical AP/01_Single_Period_Models#1.5 Classic Utility Functions Comparison)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Definition (Definition)
 二次效用常写作

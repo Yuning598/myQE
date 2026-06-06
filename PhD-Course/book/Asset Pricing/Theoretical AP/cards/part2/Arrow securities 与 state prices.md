@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # Arrow securities 与 state prices
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#2.2 Arrow Securities, Risk-Neutral Probability, and SDF Existence](Asset Pricing/Theoretical AP/01_Single_Period_Models#2.2 Arrow Securities, Risk-Neutral Probability, and SDF Existence)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Definition (Definition)
 Arrow security 是只在某个状态 $\omega_j$ 支付 1、其余状态支付 0 的证券；其价格记为 $q_j$，称为 state price。

@@ -7,7 +7,9 @@ orphan: true
 
 # Lagrangian and envelope theorem
 
-Main notes: [Microeconomic/01_Static_Choice_Consumer_Demand_and_Integrability](../Microeconomic/01_Static_Choice_Consumer_Demand_and_Integrability), [Microeconomic/cards/Roy identity and Shephard lemma](../Microeconomic/cards/Roy identity and Shephard lemma)
+导航：[Microeconomic index](../index.md)
+
+Main notes: [Microeconomic/01_Static_Choice_Consumer_Demand_and_Integrability](../01_Static_Choice_Consumer_Demand_and_Integrability.md), [Microeconomic/cards/Roy identity and Shephard lemma](Roy%20identity%20and%20Shephard%20lemma.md)
 
 For
 

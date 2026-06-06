@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # Long-run risk 定价
 
-来源：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#6.4 Long-Run Risk](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#6.4 Long-Run Risk)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
 
-返回：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing)
 
 :::{admonition} Definition (Definition)
 Long-run risk 模型令消费增长包含一个高持久性的预期增长成分：

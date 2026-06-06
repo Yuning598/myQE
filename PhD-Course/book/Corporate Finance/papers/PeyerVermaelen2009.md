@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # Reading Note: Peyer and Vermaelen (2009)
 
 <a href="../01_Empirical_Corporate_Finance.html#sec-buyback-theories-framework">Back to the buyback framework</a>

@@ -1,10 +1,13 @@
+---
+orphan: true
+---
+
 # HJB 方程与动态规划
 
-来源：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#5.1 Value Function and HJB Equation](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#5.1 Value Function and HJB Equation)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
 
-返回：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing)
 
-关联卡片：[Asset Pricing/Theoretical AP/cards/part2/Bellman equation](Asset Pricing/Theoretical AP/cards/part2/Bellman equation) · [Asset Pricing/Theoretical AP/cards/part2/价值函数](Asset Pricing/Theoretical AP/cards/part2/价值函数)
+关联卡片：[Bellman equation](Bellman%20equation.md) · [价值函数](%E4%BB%B7%E5%80%BC%E5%87%BD%E6%95%B0.md)
 
 :::{admonition} Definition (Definition)
 value function $V(t,W_t,X_t)$ 表示在给定当前状态下，从时点 $t$ 起能达到的最大期望效用。

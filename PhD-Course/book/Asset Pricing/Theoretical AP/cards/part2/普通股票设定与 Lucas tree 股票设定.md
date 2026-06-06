@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # 普通股票设定与 Lucas tree 股票设定
 
-来源：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#6.2 Lucas Tree Equilibrium](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#6.2 Lucas Tree Equilibrium)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
 
-返回：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing)
 
 :::{admonition} Definition (两种 stock 设定)
 Asset pricing 里 “stock” 有两种常见用法：
@@ -75,7 +78,7 @@ $$
 
 ## 相关卡片
 
-- [Asset Pricing/Theoretical AP/cards/part2/Lucas tree model 与代表性消费者均衡](Asset Pricing/Theoretical AP/cards/part2/Lucas tree model 与代表性消费者均衡)
-- [Asset Pricing/Theoretical AP/cards/part2/Endowment economy](Asset Pricing/Theoretical AP/cards/part2/Endowment economy)
-- [Asset Pricing/Theoretical AP/cards/part2/Endowment process](Asset Pricing/Theoretical AP/cards/part2/Endowment process)
-- [Asset Pricing/Theoretical AP/cards/part2/状态价格密度、EMM 与鞅定价](Asset Pricing/Theoretical AP/cards/part2/状态价格密度、EMM 与鞅定价)
+- [Lucas tree model 与代表性消费者均衡](Lucas%20tree%20model%20%E4%B8%8E%E4%BB%A3%E8%A1%A8%E6%80%A7%E6%B6%88%E8%B4%B9%E8%80%85%E5%9D%87%E8%A1%A1.md)
+- [Endowment economy](Endowment%20economy.md)
+- [Endowment process](Endowment%20process.md)
+- [状态价格密度、EMM 与鞅定价](%E7%8A%B6%E6%80%81%E4%BB%B7%E6%A0%BC%E5%AF%86%E5%BA%A6%E3%80%81EMM%20%E4%B8%8E%E9%9E%85%E5%AE%9A%E4%BB%B7.md)

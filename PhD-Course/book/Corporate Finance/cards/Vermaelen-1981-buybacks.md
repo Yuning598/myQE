@@ -4,12 +4,12 @@ orphan: true
 
 # Vermaelen (1981) - Buybacks
 
+导航：[Corporate Finance index](../index.md)
+
 这张卡对应 <a href="../01_Empirical_Corporate_Finance.html#sec-vermaelen-1981-buybacks">Supporting evidence: Vermaelen (1981) and buybacks</a>. 这里先留双链和结构，后面再补图。
 
 (card-vermaelen-1981-buybacks)=
-(^card-vermaelen-1981-buybacks)=
 
-^card-vermaelen-1981-buybacks
 
 ## Buybacks
 
@@ -79,9 +79,9 @@ Ikenberry et al. 把 open market repurchase 当成更适合检验 market underre
 - interpretation：open-market repurchase 不只是在做 payout；它还可能传递 undervaluation signal，而长期 `BHAR` 比短期 `CAR` 更能检验市场是否 underreact。
 
 
-![Vermaelen buyback result table 1](../../attachment/Pasted image 20260501191806.png)
+![Vermaelen buyback result table 1](../../attachment/Pasted-image-20260501191806.png)
 
-![Vermaelen buyback result table 2](../../attachment/Pasted image 20260501191816.png)
+![Vermaelen buyback result table 2](../../attachment/Pasted-image-20260501191816.png)
 
 ## Table 3 interpretation
 

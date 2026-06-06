@@ -7,7 +7,9 @@ orphan: true
 
 # FWT vs SWT assumptions
 
-Main note: [Microeconomic/03_General_Equilibrium_Production_and_Welfare](../Microeconomic/03_General_Equilibrium_Production_and_Welfare)
+导航：[Microeconomic index](../index.md)
+
+Main note: [Microeconomic/03_General_Equilibrium_Production_and_Welfare](../03_General_Equilibrium_Production_and_Welfare.md)
 
 FWT: competitive equilibrium allocation is Pareto efficient.
 

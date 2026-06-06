@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # Arrow-Pratt 风险厌恶系数
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#1.2 Coefficients of Risk Aversion](Asset Pricing/Theoretical AP/01_Single_Period_Models#1.2 Coefficients of Risk Aversion)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Definition (Definition)
 Arrow-Pratt 风险厌恶测度定义为

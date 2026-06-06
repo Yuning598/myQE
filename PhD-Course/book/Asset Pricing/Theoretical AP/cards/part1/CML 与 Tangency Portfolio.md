@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # CML 与 Tangency Portfolio
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#3.1 Frontier with a Risk-Free Asset](Asset Pricing/Theoretical AP/01_Single_Period_Models#3.1 Frontier with a Risk-Free Asset)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Proposition: Proposition
 若存在无风险资产 $R_f$，则均值—方差前沿上的风险资产持仓满足

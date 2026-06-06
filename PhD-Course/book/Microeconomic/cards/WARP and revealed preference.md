@@ -7,10 +7,12 @@ orphan: true
 
 # WARP and revealed preference
 
-Main note: [Microeconomic/01_Static_Choice_Consumer_Demand_and_Integrability](../Microeconomic/01_Static_Choice_Consumer_Demand_and_Integrability)
+导航：[Microeconomic index](../index.md)
+
+Main note: [Microeconomic/01_Static_Choice_Consumer_Demand_and_Integrability](../01_Static_Choice_Consumer_Demand_and_Integrability.md)
 
 :::{admonition} Definition (WARP)
-If \(x,y\in B\) and \(x\in C(B)\), then in any other feasible set \(B'\) containing both \(x,y\), it cannot be that \(y\in C(B')\) while \(x\notin C(B')\).
+If $x,y\in B$ and $x\in C(B)$, then in any other feasible set $B'$ containing both $x,y$, it cannot be that $y\in C(B')$ while $x\notin C(B')$.
 
 :::
 

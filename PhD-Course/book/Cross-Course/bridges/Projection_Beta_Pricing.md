@@ -21,6 +21,8 @@ tags:
 
 # Projection and Beta Pricing
 
+导航：[Cross-Course Hub](../index.md) · [Econometrics](../../Econometrics/index.md) · [Asset Pricing](../../Asset%20Pricing/index.md)
+
 ## 1. 一句话主线
 
 linear projection 是共同对象：Econometrics 把它写成最小均方误差和正交条件；Asset Pricing 把同一个 projection slope 解释为 beta，并用 beta exposure 定价横截面收益。
@@ -117,4 +119,3 @@ $$
 2. [Econometrics card: Projection Matrix](../../Econometrics/EF8090/cards/Projection_Matrix.md)
 3. [Empirical AP: Cross-Section Factor Models](../../Asset%20Pricing/Empirical%20AP/05_Cross_Section_Factor_Models.md)
 4. [AP card: Fama-MacBeth and Shanken](../../Asset%20Pricing/Empirical%20AP/cards/Fama_MacBeth_Shanken.md)
-

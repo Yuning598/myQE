@@ -563,7 +563,7 @@ $$
 q^*(L)=S'^{-1}(L)>S'^{-1}(H)=q^*(H),
 $$
 
-since \(S''<0\) and \(L<H\).
+since $S''<0$ and $L<H$.
 
 **Why first-best is not incentive compatible**
 
@@ -821,7 +821,7 @@ $$
 U(\theta)=U(1)+\int_\theta^1q(s)\,ds.
 $$
 
-With \(IR\), the highest-cost type's rent binds:
+With $IR$, the highest-cost type's rent binds:
 
 $$
 U(1)=0.

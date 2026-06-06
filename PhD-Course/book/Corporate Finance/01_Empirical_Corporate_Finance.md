@@ -64,11 +64,15 @@ $$
 \end{aligned}
 $$
 
+(mm-proof-roadmap)=
+
 **Ways to Prove MM**
 
 - [MM 1958](#prop-mm1)：two identical firms
 - [Miller 1988](#mm-proof-miller-1988)：one firm plus homemade leverage
 - [Stiglitz 1969](#mm-proof-stiglitz-1969)：general equilibrium
+
+(prop-mm1)=
 
 #### 1.2.1 MM Proposition I: Capital Structure Irrelevance
 
@@ -120,7 +124,8 @@ $$
 
 #### 1.2.2 Dividend Irrelevance
 
-:::{admonition} Proposition: 在投资政策固定时，派息政策不改变股东总财富。
+:::{admonition} Proposition
+在投资政策固定时，派息政策不改变股东总财富。
 
 :::
 
@@ -167,6 +172,8 @@ V&=\underbrace{PV(\text{Operating CF})}_{\text{LHS: size of the pie}}\\
 \Delta(\text{Financing Mix})&\implies \Delta V=0
 \end{aligned}
 $$
+
+(mm-proof-miller-1988)=
 
 ##### 1.2.3.3 WACC Fallacy
 "Debt is cheaper than equity, therefore more debt lowers WACC and raises value." 这个推论在 MM assumptions 下是错误的，因为 $V$ 不随资本结构变化，所以 WACC 也不变。
@@ -247,6 +254,8 @@ $$
 \end{aligned}
 $$
 
+(mm-proof-stiglitz-1969)=
+
 ##### 1.2.3.5 General Equilibrium Proof
 
 Backlink：[Ways to Prove MM](#mm-proof-roadmap) 中的 Stiglitz 1969 proof，对应 general equilibrium：在 complete markets 和 no frictions 下，企业金融政策只改变 claims 的分割，不改变 real allocation 或总状态现金流。
@@ -284,7 +293,7 @@ $$
 
 Corporate taxes make interest payments deductible, so debt creates an interest tax shield and increases levered firm value. Personal taxes weaken this benefit because interest income and equity income are taxed differently. The net debt advantage depends on the corporate-personal tax wedge.
 
-详细设定、MM tax shield proofs 和 APV decomposition 见 [MM tax shield proofs and APV decomposition](cards/MM tax shield proofs and APV decomposition#card-mm-tax-shield-proofs-apv)。
+详细设定、MM tax shield proofs 和 APV decomposition 见 [MM tax shield proofs and APV decomposition](cards/MM%20tax%20shield%20proofs%20and%20APV%20decomposition.md#card-mm-tax-shield-proofs-apv)。
 
 $$
 \begin{aligned}
@@ -1139,7 +1148,7 @@ Information asymmetry makes external financing more expensive because managers k
 **Supporting theories**
 ##### Pecking Order
 
-[Myers and Majluf (1984)](papers/MyersMajluf1984)
+[Myers and Majluf (1984)](papers/MyersMajluf1984.md)
 
 :::{admonition} Note
 Pecking order
@@ -1194,7 +1203,7 @@ flowchart TB
 ```
 
 
-If managers know more than outside investors, **equity issues** can be read as **bad news**. The dilution mechanism is summarized in [this card](cards/Myers-Majluf dilution problem#card-myers-majluf-dilution). 如果经理人比外部投资者更了解公司真实价值，那么公司宣布发行股票时，市场会怀疑：经理人是不是觉得公司股票被高估了，所以现在愿意卖给外部投资者？
+If managers know more than outside investors, **equity issues** can be read as **bad news**. The dilution mechanism is summarized in [this card](cards/Myers-Majluf%20dilution%20problem.md#card-myers-majluf-dilution). 如果经理人比外部投资者更了解公司真实价值，那么公司宣布发行股票时，市场会怀疑：经理人是不是觉得公司股票被高估了，所以现在愿意卖给外部投资者？
 
 ```mermaid
 flowchart TB
@@ -1286,8 +1295,8 @@ flowchart LR
   buy --> abn
 ```
 
-- **dissipative signaling**：为了让信号可信，必须付出会被“烧掉”的真实成本；成本本身不回收，也不直接转给别的主体。典型例子是 [Ross (1977)](papers/Ross1977) 里的 leverage 信号，只有好公司更能承受 bankruptcy cost。
-- **non-dissipative signaling**：为了让信号可信，成本主要体现为财富转移而不是纯损失；总价值不一定下降，但信息被传递出去。典型例子是 [Vermaelen (1981)](cards/Vermaelen-1981-buybacks) 和 [Vermaelen (1984)](papers/Vermaelen1984) 的 buyback，若回购价高于 fair value，成本主要转给卖出股份的一方。
+- **dissipative signaling**：为了让信号可信，必须付出会被“烧掉”的真实成本；成本本身不回收，也不直接转给别的主体。典型例子是 [Ross (1977)](papers/Ross1977.md) 里的 leverage 信号，只有好公司更能承受 bankruptcy cost。
+- **non-dissipative signaling**：为了让信号可信，成本主要体现为财富转移而不是纯损失；总价值不一定下降，但信息被传递出去。典型例子是 [Vermaelen (1981)](cards/Vermaelen-1981-buybacks) 和 [Vermaelen (1984)](papers/Vermaelen1984.md) 的 buyback，若回购价高于 fair value，成本主要转给卖出股份的一方。
 
 **Testable predictions**
 
@@ -1452,7 +1461,7 @@ The cross-sectional determinants of capital structure can be understood as the r
      - empirical results：value firms 的 post-buyback performance 更强，说明公告期价格没有完全吸收 undervaluation information。
    - interpretation：市场对 open-market repurchase 的 undervaluation signal #signaling #market-timing underreact；因此 $BHAR$ 是比 announcement $CAR$ 更直接的长期检验。
 
-2. [Frank and Goyal (2009)](papers/FrankGoyal2009), *Predicting Capital Structure*
+2. [Frank and Goyal (2009)](papers/FrankGoyal2009.md), *Predicting Capital Structure*
 	- test object：哪些 firm characteristics 能稳定预测 leverage，以及这些变量的方向更支持 #trade-off 、 #pecking-order 还是 #market-timing 。
 	- finding：
 		- summary statistics：样本覆盖 1950-2003，系统比较了 profitability、size、growth、taxes、tangibility、industry、risk、prior abnormal return 和 macro conditions。
@@ -1473,7 +1482,7 @@ The cross-sectional determinants of capital structure can be understood as the r
 - **MTH** 解释 “为什么历史发行时点会留下长期痕迹”
 
 
-3. [Rajan and Zingales (1995)](papers/RajanZingales1995), *What Do We Know about Capital Structure? Some Evidence from International Data*
+3. [Rajan and Zingales (1995)](papers/RajanZingales1995.md), *What Do We Know about Capital Structure? Some Evidence from International Data*
 	- test object：test whether the cross-sectional determinants of leverage are stable across G-7 countries, and whether the familiar US-style regularities can be mapped cleanly to a single theory.
 	- finding：
 		- summary statistics：样本是 G-7 上市公司，先把各国 accounting 差异做了调整，再比较 leverage。
@@ -1483,7 +1492,7 @@ The cross-sectional determinants of capital structure can be understood as the r
 			- 跨国数据能复现一些稳定相关性，但这些相关性并不能干净地映射到单一理论。#trade-off #pecking-order #market-timing
 	- interpretation：Rajan and Zingales provide a cross-country benchmark for capital structure; the evidence is informative about stable empirical regularities, but it does not identify one theory as the winner. In this course's reading, the negative relation between market-to-book and leverage is an important early antecedent to the later #market-timing literature.
 
-4. [Baker and Wurgler (2002)](papers/BakerWurgler2002), *Market Timing and Capital Structure*
+4. [Baker and Wurgler (2002)](papers/BakerWurgler2002.md), *Market Timing and Capital Structure*
 	- test object：equity market timing 是否会长期留在 capital structure 中，以及 leverage 和 market-to-book 的负相关是否更像 market timing，而不是单纯的 distress story。
 	- finding：
 		- summary statistics：market-to-book 高、股价表现强时，公司更容易发行 equity；估值弱时，公司更倾向于 repurchase。
@@ -1619,9 +1628,9 @@ $$
 
 | Type                 | Leverage effect                                        | Redistribution effect                   | Main result                                                   |
 | -------------------- | ------------------------------------------------------ | --------------------------------------- | ------------------------------------------------------------- |
-| Debt for common      | high：tax shield \(+\), bankruptcy risk \(-\)           | common gains; debt/preferred may lose   | strongest positive common-stock reaction                      |
+| Debt for common      | high：tax shield $+$, bankruptcy risk $-$           | common gains; debt/preferred may lose   | strongest positive common-stock reaction                      |
 | Preferred for common | low：no debt tax shield                                 | mainly seniority / claim transfer       | weaker reaction；helps separate redistribution from tax shield |
-| Debt for preferred   | medium/high：debt tax shield \(+\), distress risk \(-\) | preferred may gain; risky debt may lose | positive but weaker than debt-for-common                      |
+| Debt for preferred   | medium/high：debt tax shield $+$, distress risk $-$ | preferred may gain; risky debt may lose | positive but weaker than debt-for-common                      |
 
 2. [Vermaelen (1981)](cards/Vermaelen-1981-buybacks), *Common Stock Repurchases and Market Signaling*
 	- test object：buybacks是否影响 stock prices，以及 fixed-price tender offers 和 open market repurchases 的机制是否不同。
@@ -1664,7 +1673,7 @@ $$
 
 :::
 
-1. [Farre-Mensa, Michaely and Schmalz (2014)](../attachment/FarreMensaMichaelySchmalz2014.md), *Dividend Policy Review*
+1. [Farre-Mensa, Michaely and Schmalz (2014)](papers/FarreMensaMichaelySchmalz2014.md), *Dividend Policy Review*
    - test object：dividend policy 的主要 empirical determinants。
    - finding：investor demand、taxes、agency、signaling 和 lifecycle 都能解释部分 payout behavior。
    - interpretation：transaction-cost channel 常作为辅助机制，而不是唯一解释。
@@ -1786,7 +1795,7 @@ $$
 
 **Empirical papers**
 
-1. [Leary and Michaely (2011)](../attachment/LearyMichaely2011.md), *Determinants of Dividend Smoothing: Empirical Evidence*
+1. [Leary and Michaely (2011)](papers/LearyMichaely2011.md), *Determinants of Dividend Smoothing: Empirical Evidence*
    - test object：dividend smoothing 的 cross-sectional determinants，以及哪些 firm characteristics 会让 smoothing 更强或更弱。
    - finding：
       - summary statistics：样本覆盖长期 dividend policy 数据，重点比较年龄、规模、dividend yield、earnings / return volatility、analyst coverage、growth、governance 和 institutional holdings。
@@ -1883,7 +1892,7 @@ $$
 
 **Empirical paper**
 
-1. [Modigliani and Miller (1961)](../attachment/ModiglianiMiller1961.md), *Dividend Policy, Growth, and the Valuation of Shares*
+1. [Modigliani and Miller (1961)](papers/ModiglianiMiller1961.md), *Dividend Policy, Growth, and the Valuation of Shares*
    - test object：在 perfect capital markets 下，dividend policy 是否影响 firm valuation。
    - finding：dividend policy 不影响 firm value；value 由 investment policy 和 future cash flows 决定。
    - interpretation：MM propositions 是 payout relevance 的 benchmark；一旦发现 dividend matters，必须指出是哪类 friction 破坏了 MM assumptions。
@@ -1998,7 +2007,7 @@ $t_d$ 和 $t_g$ 的相对大小不是公司决定的，而是由 **tax code + in
 
 **Empirical paper**
 
-1. [Allen and Michaely (2003)](../attachment/AllenMichaely2003.md), *Payout Policy*
+1. [Allen and Michaely (2003)](papers/AllenMichaely2003.md), *Payout Policy*
    - test object：tax clientele 是否能解释 dividend recipients 的 composition，以及 dividend-paying stocks 的 holder base 是否会按税率分层。
    - finding：
       - phenomenon：individuals 仍然收到超过 $50\%$ 的 corporate dividends（资本利得税更低，本应该有更多的capital gains）
@@ -2094,7 +2103,7 @@ $$
 **第二层：ex-dividend pricing**
 
 :::{admonition} Note
-现金流的区别见 [Ex-dividend cash flow - before vs after](cards/Ex-dividend cash flow - before vs after#card-ex-dividend-cashflow-summary)；最短版本是：
+现金流的区别见 [Ex-dividend cash flow - before vs after](cards/Ex-dividend%20cash%20flow%20-%20before%20vs%20after.md#card-ex-dividend-cashflow-summary)；最短版本是：
 
 $$
 \begin{aligned}
@@ -2213,7 +2222,7 @@ $$
    - finding：price drop 通常小于 dividend，符合 dividend tax penalty。
    - interpretation：ex-date price ratio 可用于推断市场边际税负，但也可能受交易成本和微观结构影响。
 
-2. [Kalay (1982)](../attachment/Kalay1982.md), ex-dividend day prices
+2. [Kalay (1982)](papers/Kalay1982.md), ex-dividend day prices
    - test object：short-term traders 是否约束 ex-date price drop。
    - 如果除息前买入、除息后卖出，忽略税时利润，无套利要求利润不能为正，反向套利利润也不为正
 
@@ -2364,9 +2373,9 @@ $$
 
 **Empirical paper**
 
-1. [Kalay (1982)](#sec-kalay-1982)
+1. Kalay (1982)
 
-2. [Michaely and Vila (1986)](../attachment/MichaelyVila1986.md), dividend tax clientele / arbitrage trading
+2. [Michaely and Vila (1986)](papers/MichaelyVila1986.md), dividend tax clientele / arbitrage trading
    - test object：heterogeneous tax clienteles 是否带来 ex-date trading。
    - finding：投资者异质性和交易成本共同决定 price drop 和 volume。
    - interpretation：ex-date 是 tax clientele 和 arbitrage 的共同检验场景。
@@ -2731,7 +2740,7 @@ $$
 \end{aligned}
 $$
 
-所以 dividend increase 不是“随便说说”的信号，而是要付出未来维持成本；这更接近 [dissipative signaling](#sec-signaling-cost-types) 的逻辑：为了让信号可信，后续维持成本本身就是信号成本；后文的 [Bhattacharya (1979)](#sec-bhattacharya-1979) 和 [Miller and Rock (1985)](#sec-miller-rock-1985) 就是在检验这种信号机制；[payout smoothing](#sec-dividend-smoothing) 反映 target payout ratio 和 adjustment cost。
+所以 dividend increase 不是“随便说说”的信号，而是要付出未来维持成本；这更接近 dissipative signaling 的逻辑：为了让信号可信，后续维持成本本身就是信号成本；后文的 Bhattacharya (1979) 和 Miller and Rock (1985) 就是在检验这种信号机制；payout smoothing 反映 target payout ratio 和 adjustment cost。
 
 信息不对称越强，dividend change 越像信号；信号越重要，公司就越不愿意频繁改 dividend，所以 smoothing 越强。因此，dividend 不是只传递“现在发多少钱”，还传递“未来能不能维持住”。
 - dividend increase = future cash flow is sustainable
@@ -2770,7 +2779,7 @@ $$
 
 **Empirical paper**（Event Study）
 
-1. [Aharony and Swary (1980)](../attachment/AharonySwary1980.md), dividend announcements
+1. [Aharony and Swary (1980)](papers/AharonySwary1980.md), dividend announcements
 	- test object：dividend changes 是否带来 announcement-window $CAR$。
 	- finding：dividend decrease 对应负 $CAR$，dividend increase 对应正 $CAR$。
 	- interpretation：dividend change 是 management 对 future cash flow 的公开信号。
@@ -2946,12 +2955,12 @@ $$
    - finding：payout 与 governance 的关系不是单向替代，可能存在 complementarity。
    - interpretation：agency channel 的经验预测依赖制度环境和治理变量定义。
 
-4. [Allen, Bernardo and Welch (2000)](../attachment/AllenBernardoWelch2000.md), *A Theory of Dividends Based on Tax Clienteles*
+4. [Allen, Bernardo and Welch (2000)](papers/AllenBernardoWelch2000.md), *A Theory of Dividends Based on Tax Clienteles*
    - test object：firms 是否会通过 dividends attract institutional investors，从而降低 agency costs。
    - finding：dividends attract institutional investors，institutions 的 monitoring 可以压低 agency costs，但也意味着 firms 必须持续 smooth dividends 以 retain institutions.
    - interpretation：dividend 既是 tax-clientele / information-clientele 的结果，也是治理与 monitoring 的产物；一旦机构投资者偏好形成，payout policy 会带有更强的 smoothing pressure。 #agency #tax-clientele
 
-5. [John and Knyazeva (2006)](../attachment/JohnKnyazeva2006.md), *Payout Policy, Agency Conflicts, and Corporate Governance*
+5. [John and Knyazeva (2006)](papers/JohnKnyazeva2006.md), *Payout Policy, Agency Conflicts, and Corporate Governance*
    - test object：美国内部治理质量与 payout 的关系，尤其是 governance quality 是否支持 substitution hypothesis.
    - finding：部分证据支持 good governance firms 更少依赖 dividend。
    - interpretation：在强市场制度内，dividend 可能替代较弱的治理机制；好的 governance 本身就降低了对 dividend 的需求。 #agency
@@ -3012,7 +3021,7 @@ $$
 
 ### 2.5 Share repurchases: flexible payout and agency control
 
-This section connects back to [the buyback callout above](#sec-buyback-callout) and then classifies the main repurchase methods below.
+This section connects back to the buyback callout above and then classifies the main repurchase methods below.
 
 **Share Repurchase Methods**
 
@@ -3201,14 +3210,14 @@ Share repurchase 不是单一机制，而是一组可检验 hypotheses：tax adv
      - empirical results：announcement return 随 repurchase premium、repurchased fraction 和 insider incentives 上升而更大。
    - interpretation：正反应可以混合 signaling、tax savings、agency reduction 和 leverage adjustment；其中大额高溢价 tender offer 最接近 costly undervaluation signal。
 
-2. [Jagannathan, Stephens and Weisbach (2000)](../attachment/JagannathanStephensWeisbach2000.md), *Financial Flexibility and the Choice between Dividends and Stock Repurchases*
+2. [Jagannathan, Stephens and Weisbach (2000)](papers/JagannathanStephensWeisbach2000.md), *Financial Flexibility and the Choice between Dividends and Stock Repurchases*
    - test object：firms 在什么 cash-flow state 下选择 repurchase 而不是 dividend。
    - finding：
      - summary statistics：repurchase activity 与 more temporary cash-flow increases 相关；dividend increases 与 more persistent earnings 相关。
      - empirical results：控制 firm characteristics 后，temporary cash flows 更预测 repurchases，persistent cash flows 更预测 dividends。
    - interpretation：repurchase 是 flexible payout，不要求公司承诺未来维持同等现金流出；因此它和 dividend 不是同一 payout shock。
 
-3. [Peyer and Vermaelen (2009)](../attachment/PeyerVermaelen2009.md), *The Nature and Persistence of Buyback Anomalies*
+3. [Peyer and Vermaelen (2009)](papers/PeyerVermaelen2009.md), *The Nature and Persistence of Buyback Anomalies*
    - test object：哪些 buyback characteristics 能预测更持久的 post-buyback abnormal return。
    - finding：
      - summary statistics：low market-to-book、small size、prior price decline 和 explicit undervaluation statement 常出现在更强 buyback anomaly 中。
@@ -3283,7 +3292,7 @@ $$
 
 **Empirical paper**
 
-1. [Jagannathan, Stephens and Weisbach (2000)](../attachment/JagannathanStephensWeisbach2000.md), *Financial Flexibility and the Choice between Dividends and Stock Repurchases*
+1. [Jagannathan, Stephens and Weisbach (2000)](papers/JagannathanStephensWeisbach2000.md), *Financial Flexibility and the Choice between Dividends and Stock Repurchases*
 
 **Ideal policy change**
 
@@ -3395,7 +3404,7 @@ Managers 比市场更了解 firm value。若股票被低估，公司用现金回
      - empirical results：更高 premium、更大 repurchase fraction 和 insider retention 提高 signal credibility。
    - interpretation：buyback 可以是 costly signal；管理层若夸大低估，需要用高价回购并承担持股价值再分配成本。
 
-2. [Peyer and Vermaelen (2009)](../attachment/PeyerVermaelen2009.md)
+2. [Peyer and Vermaelen (2009)](papers/PeyerVermaelen2009.md)
    - test object：buyback anomaly 是否集中在更像 cheap stock 的 firms。
    - finding：
      - summary statistics：low market-to-book、small size、prior price decline、explicit undervaluation statement 对应更强 anomaly。
@@ -3454,7 +3463,7 @@ Dividend increase 是较强的 continuing commitment；repurchase 则是 flexibl
 
 **Empirical paper**
 
-1. [Jagannathan, Stephens and Weisbach (2000)](../attachment/JagannathanStephensWeisbach2000.md)
+1. [Jagannathan, Stephens and Weisbach (2000)](papers/JagannathanStephensWeisbach2000.md)
    - test object：dividends 与 repurchases 是否对应不同 cash-flow persistence。
    - finding：
      - summary statistics：repurchases 更关联 temporary cash flows；dividends 更关联 persistent cash flows。
@@ -3835,7 +3844,7 @@ $$
 
 **Threats to identification**
 
-一般可以从 [differential trends 和 confounding shocks](cards/Threats to identification - empirical categories#card-threats-to-identification) 两类先写。
+一般可以从 [differential trends 和 confounding shocks](cards/Threats%20to%20identification%20-%20empirical%20categories.md#card-threats-to-identification) 两类先写。
 
 1. Differential trends / invalid counterfactual
    - 高杠杆公司本来就可能有更强的融资需求、更高 distress risk 或更差 growth opportunities，因此 treated 和 control 的趋势可能不同。
@@ -3925,7 +3934,7 @@ $$
 
 **Threats to identification**
 
-一般可以从 [differential trends 和 confounding shocks](cards/Threats to identification - empirical categories#card-threats-to-identification) 两类先写。
+一般可以从 [differential trends 和 confounding shocks](cards/Threats%20to%20identification%20-%20empirical%20categories.md#card-threats-to-identification) 两类先写。
 
 1. Differential trends / invalid counterfactual
    - 原本能吸引 blockholders 的公司可能质量更高、治理更好，treated 和 control 的公告效应趋势本来不同。
@@ -4020,7 +4029,7 @@ $$
 
 **Threats to identification**
 
-一般可以从 [differential trends 和 confounding shocks](cards/Threats to identification - empirical categories#card-threats-to-identification) 两类先写。
+一般可以从 [differential trends 和 confounding shocks](cards/Threats%20to%20identification%20-%20empirical%20categories.md#card-threats-to-identification) 两类先写。
 
 1. Differential trends / invalid counterfactual
    - 被选入流动性支持的股票可能本来就交易更活跃或投资者基础更稳定，价格冲击趋势不同。
@@ -4117,7 +4126,7 @@ $$
 
 **Threats to identification**
 
-一般可以从 [differential trends 和 confounding shocks](cards/Threats to identification - empirical categories#card-threats-to-identification) 两类先写。
+一般可以从 [differential trends 和 confounding shocks](cards/Threats%20to%20identification%20-%20empirical%20categories.md#card-threats-to-identification) 两类先写。
 
 1. Differential trends / invalid counterfactual
    - 现金流不透明公司本来就可能有更差的信息环境和更负的 SEO 反应。
@@ -4245,7 +4254,7 @@ $$
 
 **Threats to identification**
 
-一般可以从 [differential trends 和 confounding shocks](cards/Threats to identification - empirical categories#card-threats-to-identification) 两类先写。
+一般可以从 [differential trends 和 confounding shocks](cards/Threats%20to%20identification%20-%20empirical%20categories.md#card-threats-to-identification) 两类先写。
 
 1. Differential trends / invalid counterfactual
    - opaque firms 可能本来就有不同的融资需求、成长机会和公告反应趋势。
@@ -4445,7 +4454,7 @@ $$
 
 **Threats to identification**
 
-一般可以从 [differential trends 和 confounding shocks](cards/Threats to identification - empirical categories#card-threats-to-identification) 两类先写。
+一般可以从 [differential trends 和 confounding shocks](cards/Threats%20to%20identification%20-%20empirical%20categories.md#card-threats-to-identification) 两类先写。
 
 1. Differential trends / invalid counterfactual
    - treated firms 可能本来就处于不同融资周期或成长阶段，SEO timing 和长期收益趋势不同。
@@ -4873,7 +4882,7 @@ $$
 
 Y一般是Investment、payout、firm value、default risk、cash holding、agency cost、announcement CAR、smoothing、post-event return
 
-| 机制                      | 内生变量 \(X\)                                   | 工具变量 \(Z\)                                                               | 第一阶段：$Z \to X$                                                   | 第二阶段：$\widehat X \to Y$                                              |
+| 机制                      | 内生变量 $X$                                   | 工具变量 $Z$                                                               | 第一阶段：$Z \to X$                                                   | 第二阶段：$\widehat X \to Y$                                              |
 | ----------------------- | -------------------------------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------- | -------------------------------------------------------------------- |
 | Debt tax shield         | leverage / debt ratio                        | **税改**导致的 debt tax benefit 变化；simulated marginal tax rate                | 税收债务激励 ↑ → leverage ↑                                            | 用税收驱动的 leverage 变化解释 investment、payout、firm value                    |
 | Financial distress cost | leverage                                     | **破产法**改革；地区 / 行业层面的 distress-cost shock                                 | distress cost ↓ → debt capacity ↑ → leverage ↑                   | leverage ↑ 是否影响 investment、firm value、default risk                   |

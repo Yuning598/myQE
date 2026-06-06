@@ -25,6 +25,8 @@ parts:
   - caption: Corporate Finance
     chapters:
       - file: Corporate Finance/index
+        sections:
+          - file: Corporate Finance/Corporate_Finance_Review_Map
       - file: Corporate Finance/01_Empirical_Corporate_Finance
       - file: Corporate Finance/02_Econometric_Methods_in_Corporate_Finance
       - file: Corporate Finance/03_Applied_Corporate_Finance_Theory
@@ -78,3 +80,11 @@ parts:
   - caption: Cross-Course Links
     chapters:
       - file: Cross-Course/index
+        sections:
+          - file: Cross-Course/QE_Knowledge_Map
+          - file: Cross-Course/bridges/State_Prices_SDF_Complete_Markets
+          - file: Cross-Course/bridges/Risk_Aversion_Mean_Variance_CAPM
+          - file: Cross-Course/bridges/Projection_Beta_Pricing
+          - file: Cross-Course/bridges/GMM_Euler_Equation
+          - file: Cross-Course/bridges/Identification_Corporate_Finance
+          - file: Cross-Course/bridges/Dynamic_Programming_HJB

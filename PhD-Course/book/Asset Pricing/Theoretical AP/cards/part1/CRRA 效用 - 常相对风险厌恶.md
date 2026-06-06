@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # CRRA 效用 - 常相对风险厌恶
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#1.5 Classic Utility Functions Comparison](Asset Pricing/Theoretical AP/01_Single_Period_Models#1.5 Classic Utility Functions Comparison)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Definition (Definition)
 CRRA 效用写作

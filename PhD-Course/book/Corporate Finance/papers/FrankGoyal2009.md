@@ -1,4 +1,5 @@
 ---
+orphan: true
 title: "Capital Structure Decisions: Which Factors Are Reliably Important?"
 year: 2009
 journal: "Journal of Finance"

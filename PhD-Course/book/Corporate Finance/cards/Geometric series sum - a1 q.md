@@ -4,6 +4,8 @@ orphan: true
 
 # Geometric series sum - a1 q
 
+导航：[Corporate Finance index](../index.md)
+
 :::{admonition} Note
 Formula
 设
@@ -23,7 +25,7 @@ S&=\frac{a_1}{1-q},
 $$
 其中 $|q|<1$.
 
-如果要看 perpetual debt tax shield 的特例，见 [perpetuity special case](Geometric series sum - perpetuity special case)。
+如果要看 perpetual debt tax shield 的特例，见 [perpetuity special case](Geometric%20series%20sum%20-%20perpetuity%20special%20case.md)。
 
 **Note:** Common use
 
@@ -38,8 +40,6 @@ $$
 :::
 
 (card-geometric-series-a1q)=
-(^card-geometric-series-a1q)=
 
-^card-geometric-series-a1q
 
 相关章节：[Part 1 Empirical Corporate Finance](../01_Empirical_Corporate_Finance.md)

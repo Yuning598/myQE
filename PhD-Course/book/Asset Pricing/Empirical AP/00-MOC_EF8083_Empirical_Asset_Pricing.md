@@ -1,5 +1,7 @@
 # EF8083 Empirical Asset Pricing MOC
 
+导航：[Empirical Asset Pricing](../Empirical_Asset_Pricing.md) · [Asset Pricing index](../index.md) · [ProblemSet](../../ProblemSet/Empirical%20Asset%20Pricing.md)
+
 ## 0. 课程主线
 
 Empirical Asset Pricing 的核心问题可以写成三条线：

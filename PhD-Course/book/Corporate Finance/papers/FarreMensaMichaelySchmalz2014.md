@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # Reading Note: Farre-Mensa, Michaely and Schmalz (2014)
 
 <a href="../01_Empirical_Corporate_Finance.html#sec-farre-mensa-2014">Back to the main note</a>
@@ -19,11 +23,11 @@ This review asks what the main empirical determinants of dividend policy are, an
 
 ## 4. Figure Slots
 
-![Farre-Mensa Michaely Schmalz table 1](Pasted image 20260502095730.png)
+![Farre-Mensa Michaely Schmalz table 1](../../attachment/Pasted-image-20260502095730.png)
 
-![Farre-Mensa Michaely Schmalz table 2](Pasted image 20260502095742.png)
+![Farre-Mensa Michaely Schmalz table 2](../../attachment/Pasted-image-20260502095742.png)
 
-![Farre-Mensa Michaely Schmalz table 3](Pasted image 20260502095957.png)
+![Farre-Mensa Michaely Schmalz table 3](../../attachment/Pasted-image-20260502095957.png)
 
 ## 5. Notes
 - Add any figures from the review or the lecture slides here.

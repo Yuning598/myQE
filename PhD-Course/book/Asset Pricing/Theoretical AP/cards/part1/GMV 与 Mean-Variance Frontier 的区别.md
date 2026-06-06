@@ -1,3 +1,9 @@
+
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md)
+---
+orphan: true
+---
+
 :::{admonition} Definition (GMV 与 Mean-Variance Frontier 的区别)
 
 **GMV（Global Minimum Variance）**：

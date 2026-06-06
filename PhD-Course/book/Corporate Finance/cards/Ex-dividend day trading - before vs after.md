@@ -4,6 +4,8 @@ orphan: true
 
 # Ex-dividend day trading - before vs after
 
+导航：[Corporate Finance index](../index.md)
+
 Short summary: around the ex-date, investors can switch from holding through dividend receipt to selling before the date and buying back after, so the tax exposure shifts from dividend tax to capital-gain-like realization.
 
 :::{admonition} Note
@@ -31,8 +33,6 @@ $$
 :::
 
 (card-ex-dividend-before-after)=
-(^card-ex-dividend-before-after)=
 
-^card-ex-dividend-before-after
 
 Related section: <a href="../01_Empirical_Corporate_Finance.html#sec-dividend-ex-date-arbitrage">Ex-dividend Arbitrage Trading Hypothesis</a>

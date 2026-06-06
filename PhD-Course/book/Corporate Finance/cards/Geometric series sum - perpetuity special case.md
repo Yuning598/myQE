@@ -4,6 +4,8 @@ orphan: true
 
 # Geometric series sum - perpetuity special case
 
+导航：[Corporate Finance index](../index.md)
+
 :::{admonition} Note
 Perpetuity as geometric series
 设 perpetual payment 每期固定为 $A$，折现率为 $r$，则
@@ -19,13 +21,11 @@ PV
 $$
 所以 perpetual annuity 的现值就是 $A/r$。
 
-通用等比数列推导见 [general geometric series card](Geometric series sum - a1 q)。
+通用等比数列推导见 [general geometric series card](Geometric%20series%20sum%20-%20a1%20q.md)。
 
 :::
 
 (card-geometric-series-perpetuity)=
-(^card-geometric-series-perpetuity)=
 
-^card-geometric-series-perpetuity
 
 相关章节：[Part 1 Empirical Corporate Finance](../01_Empirical_Corporate_Finance.md)

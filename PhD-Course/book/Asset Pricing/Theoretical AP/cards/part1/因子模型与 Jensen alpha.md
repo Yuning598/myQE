@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # 因子模型与 Jensen alpha
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#3.3 Factor Models and Jensen's Alpha](Asset Pricing/Theoretical AP/01_Single_Period_Models#3.3 Factor Models and Jensen's Alpha)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Definition (Definition)
 因子模型用一个或多个因子暴露（betas）来解释资产的期望收益。

@@ -4,7 +4,7 @@ orphan: true
 
 # Kalman-Bucy - 一般公式
 
-来源：[Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#11.3 做市商定价规则的验证：Kalman 滤波](Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#11.3 做市商定价规则的验证：Kalman 滤波)
+导航：[Asset Pricing index](../../index.md) · [Theoretical AP](../../Theoretical_Asset_Pricing.md) · 来源：[04_Information_Beliefs_and_Learning](../04_Information_Beliefs_and_Learning.md)
 
 ## 核心公式
 

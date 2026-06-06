@@ -5,24 +5,24 @@ orphan: true
 # Martin Option-Implied Lower Bound
 
 Source: EF8083 slides, pp. 300-322  
-Backlinks: [06_Subjective_Expectations_Learning](../06_Subjective_Expectations_Learning) | [02_Implied_Volatility_VIX_VRP](../02_Implied_Volatility_VIX_VRP)
+导航：[Asset Pricing index](../../index.md) · [Empirical AP MOC](../00-MOC_EF8083_Empirical_Asset_Pricing.md) · 来源：[06_Subjective_Expectations_Learning](../06_Subjective_Expectations_Learning)
 
 Risk-neutral expectation:
-\[
+$$
 E^Q[X]=R_fE[MX].
-\]
+$$
 
-Since \(E[MR]=1\):
-\[
+Since $E[MR]=1$:
+$$
 E^Q[R]=R_f.
-\]
+$$
 
 Risk-neutral variance:
-\[
+$$
 \operatorname{Var}^Q(R) =
 E^Q[R^2]-R_f^2 =
 R_fE[MR^2]-R_f^2.
-\]
+$$
 
 Option prices identify risk-neutral variance. Under appropriate assumptions, this variance gives a lower bound on expected market excess return.
 

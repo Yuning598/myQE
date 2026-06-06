@@ -1,7 +1,7 @@
 # 02 Implied Volatility, VIX, Variance Risk Premium
 
 Source: EF8083 slides, pp. 37-72  
-Links: [01_Volatility_ARCH_GARCH](01_Volatility_ARCH_GARCH) | [03_Consumption_Based_AP_Puzzles](03_Consumption_Based_AP_Puzzles) | [cards/VIX_Static_Replication](cards/VIX_Static_Replication) | [cards/Variance_Risk_Premium](cards/Variance_Risk_Premium) | [cards/Correlation_Risk_Premium](cards/Correlation_Risk_Premium)
+导航：[01_Volatility_ARCH_GARCH](01_Volatility_ARCH_GARCH) | [03_Consumption_Based_AP_Puzzles](03_Consumption_Based_AP_Puzzles) | [cards/VIX_Static_Replication](cards/VIX_Static_Replication) | [cards/Variance_Risk_Premium](cards/Variance_Risk_Premium) | [cards/Correlation_Risk_Premium](cards/Correlation_Risk_Premium)
 
 ## 1. 从 realized volatility 到 implied volatility
 
@@ -50,7 +50,7 @@ d\log S_t =
 $$
 
 :::{admonition} Lemma: Integrated variance 的 log-contract 表示
-**WTS：**
+**要证：**
 $$ \int_t^T\sigma_s^2ds = 2\int_t^T\frac{dS_s}{S_s} -2\log\frac{S_T}{S_t} +2(r-q)(T-t) $$
 在 forward measure 或经过贴现与 dividend 调整后，可由动态交易 $dS/S$ 与静态 log payoff 复制。
 
@@ -79,7 +79,7 @@ $$
 **Lemma:** Take risk-neutral expectation 的细推导
 这一页最容易卡住的点是：为什么对上式取 $E_t^Q[\cdot]$ 后，$dS_s/S_s$ 那一项会变成 forward price 的 drift 项。
 
-**WTS：**
+**要证：**
 $$ E_t^Q\!\left[\frac{1}{\tau}\int_t^T\sigma_s^2ds\right]
 =\frac{2}{\tau}\ln\frac{F_{t,T}}{S_t}
 -\frac{2}{\tau}E_t^Q\!\left[\ln\frac{S_T}{S_t}\right]. $$
@@ -132,34 +132,36 @@ $$
 
 课件使用 Carr-Madan formula 说明任意 sufficiently smooth payoff 可以由 bond、forward、continuum of options 静态复制。
 
-> [!summary] VIX 证明里“两种方式”的关系
-> VIX / variance swap 推导本身只有一条主线：
-> $$ \text{realized variance}
-> \Longleftrightarrow
-> \text{dynamic stock return integral} - \text{log payoff}
-> \Longleftrightarrow
-> \text{continuum of options}. $$
-> 其中第一步靠 Itô lemma，第二步靠 static replication。你看到的两种方式，都是在证明第二步：
->
-> 1. **Combine two scenarios**：直接分 $S_T<x$ 和 $S_T>x$ 两种情况，手算 put integral / call integral，证明 log payoff 可以写成 puts + calls。
-> 2. **Carr-Madan formula**：先证明一般公式
+**Summary: VIX 证明里“两种方式”的关系**
+VIX / variance swap 推导本身只有一条主线：
+$$
+\text{realized variance}
+\Longleftrightarrow
+\text{dynamic stock return integral} - \text{log payoff}
+\Longleftrightarrow
+\text{continuum of options}.
+$$
+其中第一步靠 Itô lemma，第二步靠 static replication。你看到的两种方式，都是在证明第二步：
 
-> $$
-> \begin{aligned}
-> g(S_T)
-> &=g(x)+g'(x)(S_T-x)\\
-> &\quad+\int_0^xg''(K)(K-S_T)^+dK
-> +\int_x^\infty g''(K)(S_T-K)^+dK,
-> \end{aligned}
-> $$
+1. **Combine two scenarios**：直接分 $S_T<x$ 和 $S_T>x$ 两种情况，手算 put integral / call integral，证明 log payoff 可以写成 puts + calls。
+2. **Carr-Madan formula**：先证明一般公式
 
-> 再把 $g(S_T)=-2\log S_T$ 或 $g(S_T)=\log(S_T/x)$ 代进去。
->
+$$
+\begin{aligned}
+g(S_T)
+&=g(x)+g'(x)(S_T-x)\\
+&\quad+\int_0^xg''(K)(K-S_T)^+dK
+&\quad+\int_x^\infty g''(K)(S_T-K)^+dK,
+\end{aligned}
+$$
+
+再把 $g(S_T)=-2\log S_T$ 或 $g(S_T)=\log(S_T/x)$ 代进去。
+
 :::{admonition} 结论：
 combine two scenarios 是 log payoff 的直接证明；Carr-Madan 是更一般的 theorem。两者得到同一个 VIX option-weight 结构：OTM puts 和 OTM calls 的权重都和 $1/K^2$ 成比例。
 
 **Lemma:** Carr-Madan formula
-**WTS：** 对任意二阶可微 payoff $g(S_T)$，在展开点 $x$：
+**要证：** 对任意二阶可微 payoff $g(S_T)$，在展开点 $x$：
 
 $$
 \begin{aligned} g(S_T) = &g(x)+g'(x)(S_T-x)\\ &+\int_0^x g''(K)(K-S_T)^+dK +\int_x^\infty g''(K)(S_T-K)^+dK. \end{aligned}
@@ -219,7 +221,7 @@ $$ VRP_t = IV_t-E_t^P[RV_{t,t+\tau}], $$
 其中 $IV_t$ 是 option-implied variance，$E_t^P[RV]$ 是物理测度下的 realized variance forecast。
 
 **Lemma:** VRP 的分解
-**WTS：**
+**要证：**
 $$ IV_t=E_t^P[RV_{t,t+\tau}]+VRP_t. $$
 
 **联立系统：**
@@ -357,7 +359,7 @@ $$
 因此 index options 与 single-name options 的差异可以提取 correlation risk premium。
 
 :::{admonition} Lemma: 从 index variance 到 average correlation
-**WTS：** 若所有股票方差相同为 $\sigma^2$、权重相等 $w_i=1/N$、pairwise correlation 相同为 $\rho$，则
+**要证：** 若所有股票方差相同为 $\sigma^2$、权重相等 $w_i=1/N$、pairwise correlation 相同为 $\rho$，则
 $$ \operatorname{Var}(R_m) = \sigma^2\left[\frac1N+\frac{N-1}{N}\rho\right]. $$
 
 **连续求解：**

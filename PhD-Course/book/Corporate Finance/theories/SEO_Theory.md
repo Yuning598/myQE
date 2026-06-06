@@ -117,7 +117,7 @@ $$
 $$
 \begin{aligned}
 \underbrace{C_{\text{distress}}^{\text{low}}}_{\text{低质量公司破产成本}}
-> \underbrace{C_{\text{distress}}^{\text{high}}}_{\text{高质量公司破产成本}}
+\gt \underbrace{C_{\text{distress}}^{\text{high}}}_{\text{高质量公司破产成本}}
 \end{aligned}
 $$
 

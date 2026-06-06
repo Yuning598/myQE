@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # Reading Note: Allen, Bernardo and Welch (2000)
 
 <a href="../01_Empirical_Corporate_Finance.html">Back to the main note</a>

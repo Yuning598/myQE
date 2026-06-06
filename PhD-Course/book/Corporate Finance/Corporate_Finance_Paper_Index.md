@@ -4,7 +4,7 @@ orphan: true
 
 # Corporate Finance Paper Index
 
-![Corporate Finance paper map](../attachment/Pasted image 20260503211049.png)
+![Corporate Finance paper map](../attachment/Pasted-image-20260503211049.png)
 
 ## Firm Valuation, Investment, and Financing Decisions
 

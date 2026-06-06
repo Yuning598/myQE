@@ -1,10 +1,13 @@
+---
+orphan: true
+---
+
 # Bellman equation
 
-来源：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#5.1.3 Heuristic Derivation of the HJB Equation](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#5.1.3 Heuristic Derivation of the HJB Equation)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
 
-返回：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing)
 
-关联卡片：[Asset Pricing/Theoretical AP/cards/part2/HJB 方程与动态规划](Asset Pricing/Theoretical AP/cards/part2/HJB 方程与动态规划) · [Asset Pricing/Theoretical AP/cards/part2/价值函数](Asset Pricing/Theoretical AP/cards/part2/价值函数)
+关联卡片：[HJB 方程与动态规划](HJB%20%E6%96%B9%E7%A8%8B%E4%B8%8E%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.md) · [价值函数](%E4%BB%B7%E5%80%BC%E5%87%BD%E6%95%B0.md)
 
 :::{admonition} Definition (Bellman Equation)
 Bellman equation 是动态规划 (dynamic programming) 的离散时间递归形式：当前的最优值 = 当期回报 + 折现后的下一期最优值。

@@ -1,7 +1,7 @@
 # 04 Return Predictability and Econometric Issues
 
 Source: EF8083 slides, pp. 123-194  
-Links: [03_Consumption_Based_AP_Puzzles](03_Consumption_Based_AP_Puzzles) | [05_Cross_Section_Factor_Models](05_Cross_Section_Factor_Models) | [cards/Predictive_Regression_Stambaugh_Bias](cards/Predictive_Regression_Stambaugh_Bias) | [cards/Out_of_Sample_R2](cards/Out_of_Sample_R2)
+导航：[03_Consumption_Based_AP_Puzzles](03_Consumption_Based_AP_Puzzles) | [05_Cross_Section_Factor_Models](05_Cross_Section_Factor_Models) | [cards/Predictive_Regression_Stambaugh_Bias](cards/Predictive_Regression_Stambaugh_Bias) | [cards/Out_of_Sample_R2](cards/Out_of_Sample_R2)
 
 **Data construction.**
 
@@ -65,7 +65,7 @@ $$
 课件提醒：overlapping observations 会导致 residual serial correlation，必须使用 HAC/Newey-West 或其他校正。
 
 :::{admonition} Lemma: Overlapping return residual 的 MA($k-1$) 结构
-**WTS：** 若 one-period shocks 不相关，$k$-period overlapping return regression 的误差至少具有 $k-1$ 阶 serial correlation。
+**要证：** 若 one-period shocks 不相关，$k$-period overlapping return regression 的误差至少具有 $k-1$ 阶 serial correlation。
 
 **连续求解：**
 设
@@ -95,7 +95,7 @@ $$
 OLS 估计 $\hat \rho$ 在有限样本中有 bias。
 
 :::{admonition} Lemma: Kendall bias 的一阶近似
-**WTS：**
+**要证：**
 $$ E(\hat\rho-\rho) \approx -\frac{1+3\rho}{T}. $$
 
 **联立系统：**
@@ -131,7 +131,7 @@ $$
 若 $\varepsilon_{t+1}$ 与 $\nu_{t+1}$ 相关，则 $\hat\beta$ 与 $\hat\rho$ 的偏误相连。
 
 :::{admonition} Lemma: Stambaugh bias
-**WTS：**
+**要证：**
 $$ E(\hat\beta-\beta) = \frac{\operatorname{Cov}(\varepsilon_t,\nu_t)} {\operatorname{Var}(\nu_t)} E(\hat\rho-\rho). $$
 
 **联立系统：**

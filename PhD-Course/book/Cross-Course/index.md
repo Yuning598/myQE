@@ -53,15 +53,3 @@ Causal estimand -> endogeneity threat -> identification assumption -> empirical 
 ### Dynamic programming / HJB
 
 State variable -> Bellman recursion -> envelope / FOC -> HJB or stopping boundary -> verification.
-
-```{toctree}
-:hidden:
-
-QE_Knowledge_Map
-bridges/State_Prices_SDF_Complete_Markets
-bridges/Risk_Aversion_Mean_Variance_CAPM
-bridges/Projection_Beta_Pricing
-bridges/GMM_Euler_Equation
-bridges/Identification_Corporate_Finance
-bridges/Dynamic_Programming_HJB
-```

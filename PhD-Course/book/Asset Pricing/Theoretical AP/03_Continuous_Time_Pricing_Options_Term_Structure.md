@@ -28,7 +28,7 @@ $$
 
 :::
 
-**WTS：** 从 $\Lambda_tB_t$ 与 $\Lambda_tS_t$ 为局部鞅推出漂移与风险溢价。
+**要证：** 从 $\Lambda_tB_t$ 与 $\Lambda_tS_t$ 为局部鞅推出漂移与风险溢价。
 
 **联立系统：**
 
@@ -224,7 +224,7 @@ $$
 
 :::
 
-**WTS：** 用 $d(\Lambda P)+\Lambda\,dD$ 的鞅条件推出总收益风险溢价。
+**要证：** 用 $d(\Lambda P)+\Lambda\,dD$ 的鞅条件推出总收益风险溢价。
 
 **联立系统：**
 
@@ -704,7 +704,7 @@ $$
 
 :::
 
-**WTS：** 构造局部无风险组合，消去 $dW_t$ 项。
+**要证：** 构造局部无风险组合，消去 $dW_t$ 项。
 
 **联立系统：** Itô 公式给出
 
@@ -1130,7 +1130,7 @@ $$
 \end{aligned}
 $$
 
-积分区间自然变成 $y\in(0,\infty)$。把 Gaussian kernel 与指数项合并、配方，再用 [正态分布 pdf/cdf](Asset Pricing/Theoretical AP/cards/part3/正态分布 - pdf cdf mgf#^def-standard-normal-pdf-cdf) 的尾积分公式，就得到两个 cumulative normal 项。也就是说：
+积分区间自然变成 $y\in(0,\infty)$。把 Gaussian kernel 与指数项合并、配方，再用 [正态分布 pdf/cdf](cards/part3/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%20-%20pdf%20cdf%20mgf.md#def-standard-normal-pdf-cdf) 的尾积分公式，就得到两个 cumulative normal 项。也就是说：
 
 $$
 \begin{aligned}
@@ -1310,7 +1310,7 @@ $$
 \end{aligned}
 $$
 
-这两条式子说明：$S_T$ 与 $\Lambda_T$ 都是标准正态 \(\varepsilon\) 的指数函数，因此它们的联合分布已经完全确定。
+这两条式子说明：$S_T$ 与 $\Lambda_T$ 都是标准正态 $\varepsilon$ 的指数函数，因此它们的联合分布已经完全确定。
 
 ##### 8.2.3.5 把期望写成对正态密度的积分
 
@@ -1343,7 +1343,7 @@ $$
 
 ##### 8.2.3.6 Completing the square
 
-先用 [正态分布](Asset Pricing/Theoretical AP/cards/part3/正态分布 - pdf cdf mgf) 的 [pdf/cdf](Asset Pricing/Theoretical AP/cards/part3/正态分布 - pdf cdf mgf#^def-standard-normal-pdf-cdf) 与 [mgf](Asset Pricing/Theoretical AP/cards/part3/正态分布 - pdf cdf mgf#^def-normal-mgf) 记号。
+先用 [正态分布](cards/part3/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%20-%20pdf%20cdf%20mgf.md) 的 [pdf/cdf](cards/part3/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%20-%20pdf%20cdf%20mgf.md#def-standard-normal-pdf-cdf) 与 [mgf](cards/part3/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%20-%20pdf%20cdf%20mgf.md#def-normal-mgf) 记号。
 
 再代入
 
@@ -1506,7 +1506,7 @@ $$
 
 :::
 
-**WTS：** 把 $P$ 测度下的风险溢价吸收到 Brownian motion 的漂移调整中。
+**要证：** 把 $P$ 测度下的风险溢价吸收到 Brownian motion 的漂移调整中。
 
 **联立系统：**
 
@@ -2782,7 +2782,7 @@ $$
 
 :::
 
-**WTS：** 由 $\Lambda_tF(t,r_t)$ 为鞅推出 PDE。
+**要证：** 由 $\Lambda_tF(t,r_t)$ 为鞅推出 PDE。
 
 **联立系统：**
 
@@ -3006,7 +3006,7 @@ $$
 
 :::
 
-**WTS：** 将指数仿射猜测代入零息债券 PDE，按 $r$ 的常数项与一次项配平。
+**要证：** 将指数仿射猜测代入零息债券 PDE，按 $r$ 的常数项与一次项配平。
 
 **联立系统：** 在 $N=T-t$ 记号下，
 
@@ -3164,7 +3164,7 @@ $$
 
 :::
 
-**WTS：** 解释为什么 CIR 的 $B$ 方程多出 $B^2$ 项。
+**要证：** 解释为什么 CIR 的 $B$ 方程多出 $B^2$ 项。
 
 **联立系统：**
 

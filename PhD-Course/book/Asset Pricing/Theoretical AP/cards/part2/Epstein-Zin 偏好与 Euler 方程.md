@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # Epstein-Zin 偏好与 Euler 方程
 
-来源：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#6.3 Recursive Preferences and Epstein-Zin](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#6.3 Recursive Preferences and Epstein-Zin)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
 
-返回：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing)
 
 :::{admonition} Definition (Definition)
 Epstein-Zin 偏好把风险厌恶 $\gamma$ 与跨期替代弹性 $\psi$ 分开，因此不再像 CRRA 那样把两者绑在一起。

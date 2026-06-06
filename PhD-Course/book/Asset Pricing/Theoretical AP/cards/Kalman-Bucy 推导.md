@@ -4,6 +4,8 @@ orphan: true
 
 # Kalman‑Bucy 过滤器的推导
 
+导航：[Asset Pricing index](../../index.md) · [Theoretical AP](../../Theoretical_Asset_Pricing.md)
+
 ## 背景
 连续时间 Kalman‑Bucy 过滤器是针对 **线性高斯** 系统的最优状态估计器。它给出在观察过程 $\mathcal{F}_t^{Y}$ 条件下的 **最小均方误差**（MMSE）估计 $\hat{x}_t = \mathbb{E}[x_t\mid\mathcal{F}_t^{Y}]$，以及对应的误差协方差矩阵 $P_t$ 的演化方程。
 

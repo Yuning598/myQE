@@ -4,17 +4,19 @@ orphan: true
 
 # MLE Consistency
 
-Parent: [04_MLE_Fisher_CRLB_and_ML_Tests](04_MLE_Fisher_CRLB_and_ML_Tests)
+导航：[Econometrics index](../../index.md)
+
+Parent: [04_MLE_Fisher_CRLB_and_ML_Tests](../04_MLE_Fisher_CRLB_and_ML_Tests.md)
 
 :::{admonition} Lemma: Extremum consistency
 If
-\[
+$$
 \sup_{\theta\in\Theta}|L_n(\theta)-L(\theta)|\to_p0
-\]
-and \(L(\theta)\) is uniquely maximized at \(\theta_0\), then any approximate maximizer \(\hat\theta\) satisfies
-\[
+$$
+and $L(\theta)$ is uniquely maximized at $\theta_0$, then any approximate maximizer $\hat\theta$ satisfies
+$$
 \hat\theta\to_p\theta_0.
-\]
+$$
 
 :::
 

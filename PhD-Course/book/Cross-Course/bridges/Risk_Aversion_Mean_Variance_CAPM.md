@@ -21,6 +21,8 @@ tags:
 
 # Risk Aversion, Mean-Variance, and CAPM
 
+导航：[Cross-Course Hub](../index.md) · [Microeconomic](../../Microeconomic/index.md) · [Asset Pricing](../../Asset%20Pricing/index.md)
+
 ## 1. 一句话主线
 
 风险厌恶是共同对象：Micro 用凹效用、Jensen inequality、certainty equivalent 和 Arrow-Pratt 度量风险态度；Asset Pricing 把同一个二阶近似或 CARA-Normal 结构变成 mean-variance demand，并进一步推出 CAPM。
@@ -124,4 +126,3 @@ $$
 2. [Micro card: Risk aversion and Jensen](../../Microeconomic/cards/Risk%20aversion%20and%20Jensen.md)
 3. [Asset Pricing: Single-Period Models](../../Asset%20Pricing/Theoretical%20AP/01_Single_Period_Models.md)
 4. [AP card: CARA-Normal framework](../../Asset%20Pricing/Theoretical%20AP/cards/CARA-Normal%20framework%20-%20%E5%9D%87%E5%80%BC%E6%96%B9%E5%B7%AE%E7%AD%89%E4%BB%B7%E4%B8%8E%E6%9C%80%E4%BC%98%E9%9C%80%E6%B1%82.md)
-

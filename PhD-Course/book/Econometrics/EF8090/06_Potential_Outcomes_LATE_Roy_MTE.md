@@ -59,13 +59,12 @@ E[Y\mid D=1]-E[Y\mid D=0]
 $$
 
 :::{admonition} Lemma (Difference in means identifies ATE under random assignment)
-:::
-
-**Proof.**
-
 $$
 E[Y\mid D=1]-E[Y\mid D=0]=ATE.
 $$
+:::
+
+**Proof.**
 
 $$
 Y=DY(1)+(1-D)Y(0), \qquad (Y(1),Y(0))\perp D.
@@ -203,13 +202,12 @@ $$
 ### Balancing Score
 
 :::{admonition} Lemma (Propensity score is a balancing score)
-:::
-
-**Proof.**
-
 $$
 D\perp X\mid p(X).
 $$
+:::
+
+**Proof.**
 
 $$
 p(X)=P(D=1\mid X).
@@ -420,13 +418,12 @@ $$
 ### Wald = LATE
 
 :::{admonition} Lemma (LATE theorem)
-:::
-
-**Proof.**
-
 $$
 \frac{E[Y\mid Z=1]-E[Y\mid Z=0]}{E[D\mid Z=1]-E[D\mid Z=0]} =E[Y(1)-Y(0)\mid D(1)>D(0)].
 $$
+:::
+
+**Proof.**
 
 $$
 D=ZD(1)+(1-Z)D(0),

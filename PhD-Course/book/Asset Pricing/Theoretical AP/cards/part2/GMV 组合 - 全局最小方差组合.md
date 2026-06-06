@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # GMV 组合 - 全局最小方差组合
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#2.4 Mean-Variance Frontier without a Risk-Free Asset](Asset Pricing/Theoretical AP/01_Single_Period_Models#2.4 Mean-Variance Frontier without a Risk-Free Asset)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Definition (Definition)
 GMV 组合是在“完全投资于风险资产”约束下，使方差最小的组合。

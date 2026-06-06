@@ -1,7 +1,7 @@
 # 07 Behavioral Empirical Asset Pricing Overview
 
 Source: EF8083 slides, pp. 323-362  
-Links: [06_Subjective_Expectations_Learning](06_Subjective_Expectations_Learning) | [08_Limits_to_Arbitrage_Prospect_Theory](08_Limits_to_Arbitrage_Prospect_Theory) | [09_Beliefs_Attention_Sentiment_Credit](09_Beliefs_Attention_Sentiment_Credit)
+导航：[06_Subjective_Expectations_Learning](06_Subjective_Expectations_Learning) | [08_Limits_to_Arbitrage_Prospect_Theory](08_Limits_to_Arbitrage_Prospect_Theory) | [09_Beliefs_Attention_Sentiment_Credit](09_Beliefs_Attention_Sentiment_Credit)
 
 ## 1. Overview
 
@@ -90,7 +90,7 @@ $$
 其中 $P_t^*$ 是 fundamental value，$m_t$ 是 mispricing。
 
 :::{admonition} Lemma: Mispricing 与未来收益
-**WTS：** 若 mispricing mean-reverts，则高 $m_t$ 预测低未来收益。
+**要证：** 若 mispricing mean-reverts，则高 $m_t$ 预测低未来收益。
 
 **联立系统：**
 $$ P_t=P_t^*+m_t,\qquad E_t[m_{t+1}]=\phi m_t,\quad |\phi|<1. $$

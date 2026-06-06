@@ -5,7 +5,7 @@ orphan: true
 # ARCH Unconditional Variance
 
 Source: EF8083 slides, pp. 11-14  
-Backlinks: [01_Volatility_ARCH_GARCH](../01_Volatility_ARCH_GARCH)
+导航：[Asset Pricing index](../../index.md) · [Empirical AP MOC](../00-MOC_EF8083_Empirical_Asset_Pricing.md) · 来源：[01_Volatility_ARCH_GARCH](../01_Volatility_ARCH_GARCH)
 
 ARCH(1):
 

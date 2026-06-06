@@ -7,7 +7,9 @@ orphan: true
 
 # Risk aversion and Jensen
 
-Main note: [Microeconomic/02_Choice_under_Uncertainty_and_State_Contingent_Equilibrium](../Microeconomic/02_Choice_under_Uncertainty_and_State_Contingent_Equilibrium)
+导航：[Microeconomic index](../index.md)
+
+Main note: [Microeconomic/02_Choice_under_Uncertainty_and_State_Contingent_Equilibrium](../02_Choice_under_Uncertainty_and_State_Contingent_Equilibrium.md)
 
 Risk aversion:
 

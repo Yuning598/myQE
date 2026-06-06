@@ -25,7 +25,7 @@ $$
 
 :::
 
-^assumption-1-1
+(assumption-1-1)=
 
 给定样本 $\{(y_i,\mathbf{x}_i)\}_{i=1}^n$，其中
 
@@ -77,7 +77,7 @@ $$
 
 :::
 
-^assumption-1-2
+(assumption-1-2)=
 
 在该假设下还有
 
@@ -114,7 +114,7 @@ $$
 
 :::
 
-^assumption-1-3-1-4
+(assumption-1-3-1-4)=
 
 :::{admonition} Note
 Time-Series Reminder
@@ -338,7 +338,7 @@ $$
 
 :::
 
-^prop-1-1
+(prop-1-1)=
 
 :::{admonition} Note
 Proof Sketch for Proposition 1.1
@@ -387,7 +387,7 @@ $$
 
 :::
 
-^prop-1-2
+(prop-1-2)=
 
 :::{admonition} Note
 Proof Sketch for Proposition 1.2
@@ -472,8 +472,7 @@ $$
 
 :::
 
-^prop-1-3
-
+(prop-1-3)=
 :::{admonition} Note
 Proof Sketch for Proposition 1.3
 在 $H_0:\omega_k=\omega_k^0$ 下，
@@ -571,8 +570,7 @@ $$
 
 :::
 
-^prop-1-4
-
+(prop-1-4)=
 :::{admonition} Note
 Proof Sketch for Proposition 1.4
 在 $H_0:R\omega=r$ 下，
@@ -629,7 +627,7 @@ $$
 
 :::
 
-^testing-normality-ch1
+(testing-normality-ch1)=
 
 ---
 
@@ -713,7 +711,7 @@ $$
 
 :::
 
-^prop-1-5
+(prop-1-5)=
 
 :::{admonition} Note
 Proof Sketch for Proposition 1.5
@@ -847,7 +845,7 @@ $$
 
 :::
 
-^prop-1-6
+(prop-1-6)=
 
 :::{admonition} Note
 Proof Sketch for Proposition 1.6
@@ -898,7 +896,7 @@ F =
 \tag{1.5.19}
 $$
 
-^ml-ch1
+(ml-ch1)=
 
 ---
 
@@ -990,7 +988,7 @@ $$
 
 :::
 
-^prop-1-7
+(prop-1-7)=
 
 :::{admonition} Note
 Proof Sketch for Proposition 1.7
@@ -1026,7 +1024,7 @@ $$
 
 当 $\mathbf{V}$ 为对角阵时，GLS 退化为 WLS。
 
-^gls-ch1
+(gls-ch1)=
 
 ---
 
@@ -1148,11 +1146,11 @@ Residual Plot (slide 68)
 
 :::
 
-^app-returns-to-scale
+(app-returns-to-scale)=
 
 ---
 
 **Cross-References**
 
-- 下一章：[Econometrics/MS8956/09_Large_Sample_Theory](Econometrics/MS8956/09_Large_Sample_Theory)
-- 内生性与 IV/GMM：[Econometrics/MS8956/10_Single_Equation_GMM](Econometrics/MS8956/10_Single_Equation_GMM)
+- 下一章：[09_Large_Sample_Theory](09_Large_Sample_Theory.md)
+- 内生性与 IV/GMM：[10_Single_Equation_GMM](10_Single_Equation_GMM.md)

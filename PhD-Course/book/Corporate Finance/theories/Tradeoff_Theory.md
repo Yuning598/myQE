@@ -37,7 +37,7 @@ $$
 
 ## 2. 基准模型
 
-```{admonition} Definition: Trade-off valuation
+:::{admonition} Definition: Trade-off valuation
 :class: important
 
 简化版本通常写成 trade-off 估值：
@@ -60,9 +60,9 @@ C'(D)>0,
 C''(D)>0.
 $$
 
-^definition-tradeoff-valuation
+(definition-tradeoff-valuation)=
 
-```
+:::
 
 完整版本包含所有收益和成本项：
 
@@ -83,7 +83,7 @@ $$
 
 ## 3. 最优杠杆推导
 
-```{admonition} Proposition: Interior optimal leverage
+:::{admonition} Proposition: Interior optimal leverage
 :class: important
 
 若 tax shield 的边际收益递减或债务成本凸，则最优债务 $D^\ast$ 满足：
@@ -101,9 +101,9 @@ $$
 \end{aligned}
 $$
 
-^prop-interior-optimal-leverage
+(prop-interior-optimal-leverage)=
 
-```
+:::
 
 在简化模型 $V_L(D)=V_U+\tau_C D-C(D)$ 下：
 

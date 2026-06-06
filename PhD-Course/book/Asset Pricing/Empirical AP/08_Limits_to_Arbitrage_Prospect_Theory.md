@@ -1,7 +1,7 @@
 # 08 Limits to Arbitrage, Prospect Theory, Ambiguity
 
 Source: EF8083 slides, pp. 363-428  
-Links: [07_Behavioral_Empirical_AP_Overview](07_Behavioral_Empirical_AP_Overview) | [09_Beliefs_Attention_Sentiment_Credit](09_Beliefs_Attention_Sentiment_Credit) | [cards/Limits_to_Arbitrage](cards/Limits_to_Arbitrage) | [cards/Prospect_Theory_Lottery_Preference](cards/Prospect_Theory_Lottery_Preference)
+导航：[07_Behavioral_Empirical_AP_Overview](07_Behavioral_Empirical_AP_Overview) | [09_Beliefs_Attention_Sentiment_Credit](09_Beliefs_Attention_Sentiment_Credit) | [cards/Limits_to_Arbitrage](cards/Limits_to_Arbitrage) | [cards/Prospect_Theory_Lottery_Preference](cards/Prospect_Theory_Lottery_Preference)
 
 ## 1. Roadmap
 
@@ -45,7 +45,7 @@ $$
 套利者买入一单位，未来 mispricing 以概率 $p$ 收敛，以概率 $1-p$ 继续扩大并被迫平仓。
 
 :::{admonition} Lemma: 有 forced liquidation 时的套利条件
-**WTS：** 期望收益为正不够；还要满足融资约束下的 downside condition。
+**要证：** 期望收益为正不够；还要满足融资约束下的 downside condition。
 
 **联立系统：**
 
@@ -182,7 +182,7 @@ $$
 若投资者 overweight small probabilities，会偏好极端正偏 payoff。需求推高价格，压低未来收益。
 
 :::{admonition} Lemma: Lottery demand 对 expected return 的影响
-**WTS：** 如果投资者愿意为正偏彩票型 payoff 付出额外溢价，均衡 expected return 下降。
+**要证：** 如果投资者愿意为正偏彩票型 payoff 付出额外溢价，均衡 expected return 下降。
 
 **联立系统：**
 设 fundamental price under standard SDF：

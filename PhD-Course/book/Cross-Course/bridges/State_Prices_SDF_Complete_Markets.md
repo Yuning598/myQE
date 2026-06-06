@@ -24,6 +24,8 @@ tags:
 
 # State Prices, SDF, and Complete Markets
 
+导航：[Cross-Course Hub](../index.md) · [Microeconomic](../../Microeconomic/index.md) · [Asset Pricing](../../Asset%20Pricing/index.md) · [ProblemSet](../../ProblemSet/index.md)
+
 ## 1. 一句话主线
 
 状态价格（state prices）是共同对象：在 Micro 里它是 Arrow-Debreu 状态商品的 date-0 价格，在 Asset Pricing 里它等价于 physical probability 乘以 SDF，在 QE 题里它决定无套利价格区间和套利组合。

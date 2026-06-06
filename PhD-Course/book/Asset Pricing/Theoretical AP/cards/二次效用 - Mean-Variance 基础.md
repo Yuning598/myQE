@@ -4,9 +4,8 @@ orphan: true
 
 # 二次效用 - Quadratic Utility
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#1.5 Classic Utility Functions Comparison](Asset Pricing/Theoretical AP/01_Single_Period_Models#1.5 Classic Utility Functions Comparison)
+导航：[Asset Pricing index](../../index.md) · [Theoretical AP](../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning](Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning)
 
 ## 定义
 
@@ -36,4 +35,4 @@ $$
 
 ## 使用提醒
 
-二次效用常用于说明均值—方差思想，但在很多资产定价模型里，研究者更偏好 [Asset Pricing/Theoretical AP/cards/CARA 效用 - 常绝对风险厌恶](Asset Pricing/Theoretical AP/cards/CARA 效用 - 常绝对风险厌恶) 或 [Asset Pricing/Theoretical AP/cards/CRRA 效用 - 常相对风险厌恶](Asset Pricing/Theoretical AP/cards/CRRA 效用 - 常相对风险厌恶)。
+二次效用常用于说明均值—方差思想，但在很多资产定价模型里，研究者更偏好 [CARA 效用 - 常绝对风险厌恶](CARA%20%E6%95%88%E7%94%A8%20-%20%E5%B8%B8%E7%BB%9D%E5%AF%B9%E9%A3%8E%E9%99%A9%E5%8E%8C%E6%81%B6.md) 或 [CRRA 效用 - 常相对风险厌恶](CRRA%20%E6%95%88%E7%94%A8%20-%20%E5%B8%B8%E7%9B%B8%E5%AF%B9%E9%A3%8E%E9%99%A9%E5%8E%8C%E6%81%B6.md)。

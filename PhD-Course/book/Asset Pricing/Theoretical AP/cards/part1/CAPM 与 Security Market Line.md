@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # CAPM 与 Security Market Line
 
-来源：[Part1](Asset Pricing/Theoretical AP/01_Single_Period_Models#^def-3-2-2-sml)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[Part1](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Proposition: Proposition
 CAPM 写作

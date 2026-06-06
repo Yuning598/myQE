@@ -64,7 +64,7 @@ $$
 - 多元情形使用 Cramer-Wold device。
 - 常用结论：continuous mapping, Slutsky, delta method（后续反复使用）。
 
-^ch2-convergence
+(ch2-convergence)=
 
 ---
 
@@ -154,7 +154,7 @@ E(u_tu_{t-j})=0,\ j\ge 1.
 \tag{2.2.15}
 $$
 
-^ch2-processes
+(ch2-processes)=
 
 ---
 
@@ -212,7 +212,7 @@ $$
 
 这为渐近标准误与 Wald 推断提供可行替代。
 
-^ch2-ols-asym
+(ch2-ols-asym)=
 
 ---
 
@@ -263,7 +263,7 @@ n\,g(b)'[G\,\widehat{\mathrm{Avar}}(b)\,G']^{-1}g(b)
 \tag{2.4.11}
 $$
 
-^ch2-robust-testing
+(ch2-robust-testing)=
 
 ---
 
@@ -291,7 +291,7 @@ $$
 \tag{2.5.4’}
 $$
 
-^ch2-s-estimation
+(ch2-s-estimation)=
 
 ---
 
@@ -331,11 +331,11 @@ $$
 :::{admonition} Note
 Link to Chapter 1
 在该条件下，大样本下 t/F 与 Chapter 1 的 `(1.4.5)`、`(1.4.9)` 对齐。  
-对应可回看 [Proposition 1.3 (t-ratio)](Econometrics/MS8956/08_Finite_Sample_Properties_of_OLS#^prop-1-3) 与 [Proposition 1.4 (F-ratio)](Econometrics/MS8956/08_Finite_Sample_Properties_of_OLS#^prop-1-4)。
+对应可回看 [Proposition 1.3 (t-ratio)](08_Finite_Sample_Properties_of_OLS.md#prop-1-3) 与 [Proposition 1.4 (F-ratio)](08_Finite_Sample_Properties_of_OLS.md#prop-1-4)。
 
 :::
 
-^ch2-homosked
+(ch2-homosked)=
 
 ---
 
@@ -370,7 +370,7 @@ T_n=n\,\hat h'\,\hat V_h^{-1}\,\hat h \xrightarrow{d}\chi^2_{d_h}.
 \tag{2.7.4}
 $$
 
-^ch2-test-homosked
+(ch2-test-homosked)=
 
 ---
 
@@ -394,7 +394,7 @@ $$
 
 若 $\hat\omega_i\to_p\omega_i$ 且常规矩条件成立，则 FGLS 与可行 WLS 一致并渐近正态。
 
-^ch2-wls
+(ch2-wls)=
 
 ---
 
@@ -416,7 +416,7 @@ $$
 
 样本 OLS 对应投影系数的一致估计。
 
-^ch2-prediction
+(ch2-prediction)=
 
 ---
 
@@ -541,7 +541,7 @@ LM=T\cdot R^2_{aux}\xrightarrow{d}\chi_m^2.
 \tag{2.10.21}
 $$
 
-^ch2-serial-corr
+(ch2-serial-corr)=
 
 ---
 
@@ -565,7 +565,7 @@ $$
 
 如果 $R_t$ 非严格外生，需回到第 10 节的 predetermined-regressor 检验框架。
 
-^ch2-emh
+(ch2-emh)=
 
 ---
 
@@ -668,14 +668,14 @@ $$
 
 :::
 
-^ch2-time-regression
+(ch2-time-regression)=
 
 ---
 
 **Cross-References**
 
-- 上一章：[Econometrics/MS8956/08_Finite_Sample_Properties_of_OLS](Econometrics/MS8956/08_Finite_Sample_Properties_of_OLS)
-- 下一章：[Econometrics/MS8956/10_Single_Equation_GMM](Econometrics/MS8956/10_Single_Equation_GMM)
+- 上一章：[08_Finite_Sample_Properties_of_OLS](08_Finite_Sample_Properties_of_OLS.md)
+- 下一章：[10_Single_Equation_GMM](10_Single_Equation_GMM.md)
 
 ---
 

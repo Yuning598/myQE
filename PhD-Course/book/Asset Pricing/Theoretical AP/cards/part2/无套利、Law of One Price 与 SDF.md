@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # 无套利、Law of One Price 与 SDF
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#2.2 Arrow Securities, Risk-Neutral Probability, and SDF Existence](Asset Pricing/Theoretical AP/01_Single_Period_Models#2.2 Arrow Securities, Risk-Neutral Probability, and SDF Existence)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Definition (Definition)
 Law of One Price：若两个组合产生相同支付，则它们必须有相同价格。

@@ -1,7 +1,7 @@
 # 06 Subjective Expectations, Learning, and Return Beliefs
 
 Source: EF8083 slides, pp. 242-322  
-Links: [03_Consumption_Based_AP_Puzzles](03_Consumption_Based_AP_Puzzles) | [04_Return_Predictability_Econometrics](04_Return_Predictability_Econometrics) | [07_Behavioral_Empirical_AP_Overview](07_Behavioral_Empirical_AP_Overview) | [cards/Bayesian_Learning_Return_Predictability](cards/Bayesian_Learning_Return_Predictability) | [cards/Survey_Expectations](cards/Survey_Expectations) | [cards/Experience_Based_Learning](cards/Experience_Based_Learning) | [cards/Martin_Option_Implied_Lower_Bound](cards/Martin_Option_Implied_Lower_Bound)
+导航：[03_Consumption_Based_AP_Puzzles](03_Consumption_Based_AP_Puzzles) | [04_Return_Predictability_Econometrics](04_Return_Predictability_Econometrics) | [07_Behavioral_Empirical_AP_Overview](07_Behavioral_Empirical_AP_Overview) | [cards/Bayesian_Learning_Return_Predictability](cards/Bayesian_Learning_Return_Predictability) | [cards/Survey_Expectations](cards/Survey_Expectations) | [cards/Experience_Based_Learning](cards/Experience_Based_Learning) | [cards/Martin_Option_Implied_Lower_Bound](cards/Martin_Option_Implied_Lower_Bound)
 
 ## 1. Rational expectations vs rationality
 
@@ -39,7 +39,7 @@ $$
 $$
 
 :::{admonition} Lemma: Bayesian posterior with unknown mean
-**WTS：**
+**要证：**
 $$ \mu\mid H_t\sim N\left(\bar D_t,\frac{\sigma^2}{t}\right). $$
 
 **联立系统：**
@@ -84,7 +84,7 @@ P_t^* =
 $$
 
 :::{admonition} Lemma: Bayesian learning 下的 realized return
-**WTS：**
+**要证：**
 $$ R_{t+1} = \frac{1}{1-\beta} \left(1-\frac{\beta t}{t+1}\right) (D_{t+1}-\bar D_t). $$
 
 **联立系统：**
@@ -155,7 +155,7 @@ $$
 其中近期或年轻时经历可能被赋予更大权重。
 
 :::{admonition} Lemma: Experience-based belief as weighted average
-**WTS：** 投资者 $i$ 的主观均值是历史收益的加权平均：
+**要证：** 投资者 $i$ 的主观均值是历史收益的加权平均：
 $$ \tilde \mu_{i,t}=\sum_{k=1}^{age_i}w_{i,k}R_{t-k}. $$
 
 **联立系统：**
@@ -184,7 +184,7 @@ $$
 $$
 
 :::{admonition} Lemma: Constant-gain learning 的无限滞后表示
-**WTS：**
+**要证：**
 $$ \tilde\mu_t = g\sum_{j=0}^{\infty}(1-g)^jD_{t-j}. $$
 
 **连续求解：**
@@ -204,7 +204,7 @@ $$
 Martin-type bound 的直觉：若 option prices 显示 risk-neutral variance 很高，则 expected market return 必须足够高来补偿风险。
 
 :::{admonition} Lemma: Option-implied lower-bound intuition
-**WTS：**
+**要证：**
 在一般定价关系下，risk-neutral variance 可为 expected excess return 提供下界。
 
 **联立系统：**

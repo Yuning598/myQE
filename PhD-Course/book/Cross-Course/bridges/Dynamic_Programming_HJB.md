@@ -21,6 +21,8 @@ tags:
 
 # Dynamic Programming and HJB
 
+导航：[Cross-Course Hub](../index.md) · [Microeconomic](../../Microeconomic/index.md) · [Asset Pricing](../../Asset%20Pricing/index.md)
+
 ## 1. 一句话主线
 
 value function 是共同对象：Micro 用 Bellman equation 处理动态选择、承诺、激励约束和 continuation value；Asset Pricing 把离散时间递归定价推广到连续时间 HJB、optimal stopping、smooth pasting 和 verification。
@@ -128,4 +130,3 @@ $$
 2. [Micro: Principal-Agent Models](../../Microeconomic/07_Principal-Agent_Models_Moral_Hazard_and_Screening.md)
 3. [Asset Pricing: Dynamic Asset Pricing](../../Asset%20Pricing/Theoretical%20AP/02_Dynamic_Asset_Pricing.md)
 4. [Asset Pricing: Continuous-Time Pricing](../../Asset%20Pricing/Theoretical%20AP/03_Continuous_Time_Pricing_Options_Term_Structure.md)
-

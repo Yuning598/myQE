@@ -4,22 +4,24 @@ orphan: true
 
 # IV Identification
 
-Parent: [05_IV_2SLS_Weak_Instruments](05_IV_2SLS_Weak_Instruments)
+导航：[Econometrics index](../../index.md)
+
+Parent: [05_IV_2SLS_Weak_Instruments](../05_IV_2SLS_Weak_Instruments.md)
 
 :::{admonition} Definition (IV conditions)
-For \(Y=X'\beta+u\), instruments \(Z\) require
-\[
+For $Y=X'\beta+u$, instruments $Z$ require
+$$
 E[Zu]=0,
 \qquad
 \operatorname{rank}E[ZX']=k.
-\]
+$$
 
 **Lemma:** Identification
-\[
+$$
 E[ZY]=E[ZX']\beta
 \quad\Rightarrow\quad
 \beta=(E[ZX'])^{-1}E[ZY]
-\]
+$$
 in the just-identified case.
 
 :::

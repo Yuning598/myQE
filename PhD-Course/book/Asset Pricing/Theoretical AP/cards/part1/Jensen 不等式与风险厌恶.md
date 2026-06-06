@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # Jensen 不等式与风险厌恶
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#1.1 Concavity and Risk Aversion](Asset Pricing/Theoretical AP/01_Single_Period_Models#1.1 Concavity and Risk Aversion)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Definition (Definition)
 若对任意满足 $E[\tilde w]=w$ 的随机财富 $\tilde w$，都有

@@ -7,7 +7,9 @@ orphan: true
 
 # Hotelling lemma and supply response
 
-Main note: [Microeconomic/04_Theory_of_the_Firm_and_Supply](../Microeconomic/04_Theory_of_the_Firm_and_Supply)
+导航：[Microeconomic index](../index.md)
+
+Main note: [Microeconomic/04_Theory_of_the_Firm_and_Supply](../04_Theory_of_the_Firm_and_Supply.md)
 
 If
 
@@ -22,4 +24,4 @@ $$
 \frac{\partial\pi}{\partial w_i}=-x_i^*(p,w).
 $$
 
-Convexity of \(\pi\) gives upward-sloping supply and downward-sloping own input demand under differentiability.
+Convexity of $\pi$ gives upward-sloping supply and downward-sloping own input demand under differentiability.

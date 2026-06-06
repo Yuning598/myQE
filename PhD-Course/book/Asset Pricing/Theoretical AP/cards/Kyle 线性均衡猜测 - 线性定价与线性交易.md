@@ -4,11 +4,10 @@ orphan: true
 
 # Kyle 线性均衡猜测 - 线性定价与线性交易
 
-来源：[Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#10.4.2 线性均衡猜测](Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#10.4.2 线性均衡猜测)
+导航：[Asset Pricing index](../../index.md) · [Theoretical AP](../../Theoretical_Asset_Pricing.md) · 来源：[04_Information_Beliefs_and_Learning](../04_Information_Beliefs_and_Learning.md)
 
-返回：[Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning](Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning)
 
-相关：[Grossman-Stiglitz](Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#10.2 Grossman-Stiglitz Model) · [贝叶斯更新](Asset Pricing/Theoretical AP/cards/贝叶斯更新 - 先验、信号、似然、后验) · [CARA-Normal](Asset Pricing/Theoretical AP/cards/CARA-Normal framework - 均值方差等价与最优需求)
+相关：[Grossman-Stiglitz](../04_Information_Beliefs_and_Learning.md) · [贝叶斯更新](%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%9B%B4%E6%96%B0%20-%20%E5%85%88%E9%AA%8C%E3%80%81%E4%BF%A1%E5%8F%B7%E3%80%81%E4%BC%BC%E7%84%B6%E3%80%81%E5%90%8E%E9%AA%8C.md) · [CARA-Normal](CARA-Normal%20framework%20-%20%E5%9D%87%E5%80%BC%E6%96%B9%E5%B7%AE%E7%AD%89%E4%BB%B7%E4%B8%8E%E6%9C%80%E4%BC%98%E9%9C%80%E6%B1%82.md)
 
 ## 1. 做市商为什么线性定价
 
@@ -151,7 +150,7 @@ x=\beta(v-v_0),
 p=v_0+\lambda X.
 $$
 
-这就是 Kyle 和 [Grossman-Stiglitz](Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#10.2 Grossman-Stiglitz Model) 常从线性均衡猜测出发的原因：
+这就是 Kyle 和 [Grossman-Stiglitz](../04_Information_Beliefs_and_Learning.md) 常从线性均衡猜测出发的原因：
 
 $$
 \text{normal prior}+\text{normal noise}+\text{linear signal}

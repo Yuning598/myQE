@@ -4377,7 +4377,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428115441.png](../attachment/pasted-image-20260428115441.png)
+![Pasted-image-20260428115441.png](../attachment/pasted-image-20260428115441.png)
 
 ::::{solution}
 
@@ -4490,7 +4490,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428101237.png](../attachment/pasted-image-20260428101237.png)
+![Pasted-image-20260428101237.png](../attachment/pasted-image-20260428101237.png)
 
 ::::{solution}
 
@@ -4588,7 +4588,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428104131.png](../attachment/pasted-image-20260428104131.png)
+![Pasted-image-20260428104131.png](../attachment/pasted-image-20260428104131.png)
 
 ::::{solution}
 
@@ -4735,7 +4735,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428110613.png](../attachment/pasted-image-20260428110613.png)
+![Pasted-image-20260428110613.png](../attachment/pasted-image-20260428110613.png)
 
 ::::{solution}
 
@@ -4882,7 +4882,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428122408.png](../attachment/pasted-image-20260428122408.png)
+![Pasted-image-20260428122408.png](../attachment/pasted-image-20260428122408.png)
 
 ::::{solution}
 
@@ -4993,7 +4993,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428125930.png](../attachment/pasted-image-20260428125930.png)
+![Pasted-image-20260428125930.png](../attachment/pasted-image-20260428125930.png)
 
 ::::{solution}
 
@@ -5080,7 +5080,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428133349.png](../attachment/pasted-image-20260428133349.png)
+![Pasted-image-20260428133349.png](../attachment/pasted-image-20260428133349.png)
 
 ::::{solution}
 
@@ -5126,8 +5126,7 @@ $$
 
 **和 Part1 的关系**：CAPM 是 single-factor model，factor 是 market return；更一般的 factor model 等价于 SDF 的 affine representation，也和 mean-variance efficiency 相连。
 
-^qe-ps-factor-model-review
-
+(qe-ps-factor-model-review)=
 **设定**：存在 risk-free asset。令 risky asset returns 向量为 $\widetilde R^{vec}$，均值和协方差为
 
 $$
@@ -5220,7 +5219,7 @@ $$
 
 因此 $\widetilde R_*$ 正好是 mean-variance frontier 上的 return。
 
-^qe-ps-q6-1-frontier-weight
+(qe-ps-q6-1-frontier-weight)=
 
 **第二步：frontier return $\Rightarrow$ factor pricing form**。若 $\widetilde R_*$ 又可以由 factors 线性表示：
 
@@ -5304,7 +5303,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428141951.png](../attachment/pasted-image-20260428141951.png)
+![Pasted-image-20260428141951.png](../attachment/pasted-image-20260428141951.png)
 
 ::::{solution}
 
@@ -5591,7 +5590,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428151130.png](../attachment/pasted-image-20260428151130.png)
+![Pasted-image-20260428151130.png](../attachment/pasted-image-20260428151130.png)
 
 ::::{solution}
 
@@ -5752,7 +5751,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428151432.png](../attachment/pasted-image-20260428151432.png)
+![Pasted-image-20260428151432.png](../attachment/pasted-image-20260428151432.png)
 
 ::::{solution}
 
@@ -5892,7 +5891,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428155824.png](../attachment/pasted-image-20260428155824.png)
+![Pasted-image-20260428155824.png](../attachment/pasted-image-20260428155824.png)
 
 ::::{solution}
 
@@ -6049,7 +6048,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428162212.png](../attachment/pasted-image-20260428162212.png)
+![Pasted-image-20260428162212.png](../attachment/pasted-image-20260428162212.png)
 
 **（a）** 设 $\tau\phi=\int_0^1\tau_h\phi_h\,dh$。Investor $h$ 的 risky asset demand $\theta_h$ 与 market clearing 联立如下；出清条件是 aggregate demand 等于随机总供给 $\widetilde y$：
 
@@ -6426,7 +6425,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428183959.png](../attachment/pasted-image-20260428183959.png)
+![Pasted-image-20260428183959.png](../attachment/pasted-image-20260428183959.png)
 
 ::::{solution}
 
@@ -6571,7 +6570,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428194818.png](../attachment/pasted-image-20260428194818.png)
+![Pasted-image-20260428194818.png](../attachment/pasted-image-20260428194818.png)
 
 ::::{solution}
 
@@ -6775,7 +6774,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428195122.png](../attachment/pasted-image-20260428195122.png)
+![Pasted-image-20260428195122.png](../attachment/pasted-image-20260428195122.png)
 
 ::::{solution}
 
@@ -6870,7 +6869,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428203158.png](../attachment/pasted-image-20260428203158.png)
+![Pasted-image-20260428203158.png](../attachment/pasted-image-20260428203158.png)
 
 ::::{solution}
 
@@ -6918,7 +6917,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428204347.png](../attachment/pasted-image-20260428204347.png)
+![Pasted-image-20260428204347.png](../attachment/pasted-image-20260428204347.png)
 
 ::::{solution}
 
@@ -7039,7 +7038,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428205902.png](../attachment/pasted-image-20260428205902.png)
+![Pasted-image-20260428205902.png](../attachment/pasted-image-20260428205902.png)
 
 ::::{solution}
 
@@ -7166,7 +7165,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428214804.png](../attachment/pasted-image-20260428214804.png)
+![Pasted-image-20260428214804.png](../attachment/pasted-image-20260428214804.png)
 
 ::::{solution}
 
@@ -7272,7 +7271,7 @@ $$
 
 **Question**
 
-![Pasted image 20260428221909.png](../attachment/pasted-image-20260428221909.png)
+![Pasted-image-20260428221909.png](../attachment/pasted-image-20260428221909.png)
 
 ::::{solution}
 
@@ -8048,7 +8047,7 @@ $$
 
 若课程把 efficient frontier 严格指 upper branch，还需要 $\lambda=E[\widetilde R]-R_z>0$；若只要求 mean-variance frontier，则 $E[\widetilde R]\ne R_z$ 已足够排除 GMV/zero-premium 退化情形。
 
-^qe-ps-q6-2a-single-factor-frontier
+(qe-ps-q6-2a-single-factor-frontier)=
 
 ::::
 
@@ -12617,7 +12616,7 @@ $$
 0
 &=-A'-B'\eta-\frac12C'\eta^2-(\gamma-1)r\\
 &\quad
-+\left[\kappa\theta_\eta+(s_\eta-\kappa)\eta\right](B+C\eta)
++\left[\kappa\theta_\eta+(s_\eta-\kappa)\eta\right]\!(B+C\eta)
 +\frac12s_\eta^2C\\
 &\quad
 +\frac{s_\eta^2}{2\gamma}(B+C\eta)^2

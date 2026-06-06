@@ -7,7 +7,9 @@ orphan: true
 
 # Full insurance with common beliefs
 
-Main note: [Microeconomic/06_Equilibrium_Under_Uncertainty](../Microeconomic/06_Equilibrium_Under_Uncertainty)
+导航：[Microeconomic index](../index.md)
+
+Main note: [Microeconomic/06_Equilibrium_Under_Uncertainty](../06_Equilibrium_Under_Uncertainty.md)
 
 With common beliefs and one risk-neutral agent, prices reflect common probabilities:
 

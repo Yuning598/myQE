@@ -4,13 +4,12 @@ orphan: true
 
 # CARA-Normal framework - 均值方差等价与最优需求
 
-来源：[Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#10.2.4 CARA-Normal 下的最优需求](Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#10.2.4 CARA-Normal 下的最优需求)
+导航：[Asset Pricing index](../../index.md) · [Theoretical AP](../../Theoretical_Asset_Pricing.md) · 来源：[04_Information_Beliefs_and_Learning](../04_Information_Beliefs_and_Learning.md)
 
-返回：[Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning](Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning)
 
 ## 它是什么
 
-[CARA](CARA 效用 - Constant Absolute Risk Aversion) 指效用函数满足
+CARA 指效用函数满足
 
 $$
 U(W)=-e^{-\lambda W},\qquad \lambda>0.
@@ -22,7 +21,7 @@ $$
 W\mid \mathcal I\sim N\big(\mu_{\mathcal I},\Sigma_{\mathcal I}\big).
 $$
 
-因此 [CARA-Normal](Asset Pricing/Theoretical AP/cards/CARA-Normal framework - 均值方差等价与最优需求) 不是两个独立假设随便并列，而是
+因此 [CARA-Normal](CARA-Normal%20framework%20-%20%E5%9D%87%E5%80%BC%E6%96%B9%E5%B7%AE%E7%AD%89%E4%BB%B7%E4%B8%8E%E6%9C%80%E4%BC%98%E9%9C%80%E6%B1%82.md) 不是两个独立假设随便并列，而是
 
 $$
 \text{CARA utility}+\text{conditional normality}

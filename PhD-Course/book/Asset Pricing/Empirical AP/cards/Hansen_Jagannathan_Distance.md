@@ -5,7 +5,7 @@ orphan: true
 # Hansen-Jagannathan Distance
 
 Source: EF8083 slides, pp. 213-224; Hansen and Jagannathan (1997)  
-Backlinks: [Cross-section factor models: HJ distance](../05_Cross_Section_Factor_Models.md)
+导航：[Asset Pricing index](../../index.md) · [Empirical AP MOC](../00-MOC_EF8083_Empirical_Asset_Pricing.md) · 来源：[Cross-section factor models: HJ distance](../05_Cross_Section_Factor_Models.md)
 
 HJ distance measures how far a candidate SDF is from the set of SDFs that price the test assets.
 

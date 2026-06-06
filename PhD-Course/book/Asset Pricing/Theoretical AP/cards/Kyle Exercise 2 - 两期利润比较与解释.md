@@ -4,9 +4,8 @@ orphan: true
 
 # Kyle Exercise 2 - 两期利润比较与解释
 
-来源：[Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#^exercise-kyle-two-period](Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#^exercise-kyle-two-period)
+导航：[Asset Pricing index](../../index.md) · [Theoretical AP](../../Theoretical_Asset_Pricing.md) · 来源：[04 Information, Beliefs and Learning](../04_Information_Beliefs_and_Learning.md)
 
-返回：[Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning](Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning)
 
 ## 目标
 
@@ -86,7 +85,7 @@ p=E[v\mid X] =
 v_0+\frac{\operatorname{Cov}(v,X)}{\operatorname{Var}(X)}X.
 $$
 
-这里直接套用 [Asset Pricing/Theoretical AP/cards/正态条件期望 - 线性形式](Asset Pricing/Theoretical AP/cards/正态条件期望 - 线性形式)。
+这里直接套用 [正态条件期望 - 线性形式](%E6%AD%A3%E6%80%81%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B%20-%20%E7%BA%BF%E6%80%A7%E5%BD%A2%E5%BC%8F.md)。
 由 $X=\beta(v-v_0)+u$ 且 $u\perp v$，
 
 $$
@@ -332,7 +331,7 @@ $$
 u_1\sim N(0,\sigma^2/2).
 $$
 
-由 [Asset Pricing/Theoretical AP/cards/正态条件方差](Asset Pricing/Theoretical AP/cards/正态条件方差)，
+由 [正态条件方差](%E6%AD%A3%E6%80%81%E6%9D%A1%E4%BB%B6%E6%96%B9%E5%B7%AE.md)，
 
 $$
 \begin{aligned}

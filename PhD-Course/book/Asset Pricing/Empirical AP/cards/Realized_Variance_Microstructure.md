@@ -5,7 +5,7 @@ orphan: true
 # Realized Variance and Microstructure Noise
 
 Source: EF8083 slides, pp. 24-36  
-Backlinks: [01_Volatility_ARCH_GARCH](../01_Volatility_ARCH_GARCH) | [Source of volatility](../01_Volatility_ARCH_GARCH#Source of volatility) | [02_Implied_Volatility_VIX_VRP](../02_Implied_Volatility_VIX_VRP) | [EF8077 Bid-Ask Spread](../../../ProblemSet/Theoretical%20Asset%20Pricing.md)
+导航：[Asset Pricing index](../../index.md) · [Empirical AP MOC](../00-MOC_EF8083_Empirical_Asset_Pricing.md) · 来源：[01_Volatility_ARCH_GARCH](../01_Volatility_ARCH_GARCH)
 
 Continuous-time benchmark:
 

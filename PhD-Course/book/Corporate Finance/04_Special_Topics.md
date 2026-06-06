@@ -652,9 +652,9 @@ ESG 三个维度（与公司金融映射）：
 - 因此 ESG 不只是“非财务披露”，而是会进入企业成本、风险与资本配置（investment/financing）决策。
 
 可挂接卡片（后续展开）：
-- [Asset Pricing/Theoretical AP/cards/Shareholder-Primacy-vs-Stakeholder-Theory](Asset Pricing/Theoretical AP/cards/Shareholder-Primacy-vs-Stakeholder-Theory)
-- [Asset Pricing/Theoretical AP/cards/Stakeholder-Objective-and-Firm-Value](Asset Pricing/Theoretical AP/cards/Stakeholder-Objective-and-Firm-Value)
-- [Asset Pricing/Theoretical AP/cards/ESG-Labor-Channel-in-Corporate-Finance](Asset Pricing/Theoretical AP/cards/ESG-Labor-Channel-in-Corporate-Finance)
+- Shareholder-Primacy-vs-Stakeholder-Theory
+- Stakeholder-Objective-and-Firm-Value
+- ESG-Labor-Channel-in-Corporate-Finance
 
 ## 9. Labor Perspective of Firms’ E&S Practices
 
@@ -755,9 +755,9 @@ Greenwashing（漂绿）与真实能力的辨析：
   - Implementation & operational governance tasks：更可能产生**直接的环境改善（direct environmental improvements）**。
 
 可挂接卡片（后续展开）：
-- [Asset Pricing/Theoretical AP/cards/Green-Human-Capital-Measurement](Asset Pricing/Theoretical AP/cards/Green-Human-Capital-Measurement)
-- [Asset Pricing/Theoretical AP/cards/Job-Postings-as-E-S-Demand-Signal](Asset Pricing/Theoretical AP/cards/Job-Postings-as-E-S-Demand-Signal)
-- [Asset Pricing/Theoretical AP/cards/Greenwashing-Marketing-vs-Engineering-Tasks](Asset Pricing/Theoretical AP/cards/Greenwashing-Marketing-vs-Engineering-Tasks)
+- Green-Human-Capital-Measurement
+- Job-Postings-as-E-S-Demand-Signal
+- Greenwashing-Marketing-vs-Engineering-Tasks
 
 ## 11. Balancing E & S Practices
 
@@ -795,8 +795,8 @@ E 与 S 投资可能会在以下方面产生竞争（compete for）：
 - **机制探讨**：由于合规所需要的财务约束（financial constraints）与运营调整（operational adjustments）带来了压力。
 
 可挂接卡片（后续展开）：
-- [Asset Pricing/Theoretical AP/cards/Trade-offs-in-ESG-Dimensions](Asset Pricing/Theoretical AP/cards/Trade-offs-in-ESG-Dimensions)
-- [Asset Pricing/Theoretical AP/cards/Substitution-between-E-and-S](Asset Pricing/Theoretical AP/cards/Substitution-between-E-and-S)
+- Trade-offs-in-ESG-Dimensions
+- Substitution-between-E-and-S
 
 ## 12. Climate Change and the Labor Market
 
@@ -823,9 +823,9 @@ E 与 S 投资可能会在以下方面产生竞争（compete for）：
 - 检验 adaptation 的缓释效应：高温地区中，先行投资降温/安全措施的企业是否损失更小。
 
 可挂接卡片（后续展开）：
-- [Asset Pricing/Theoretical AP/cards/Heat-Risk-and-Workplace-Safety](Asset Pricing/Theoretical AP/cards/Heat-Risk-and-Workplace-Safety)
-- [Asset Pricing/Theoretical AP/cards/Climate-Labor-Productivity-Channel](Asset Pricing/Theoretical AP/cards/Climate-Labor-Productivity-Channel)
-- [Asset Pricing/Theoretical AP/cards/Adaptation-CAPEX-and-Firm-Value](Asset Pricing/Theoretical AP/cards/Adaptation-CAPEX-and-Firm-Value)
+- Heat-Risk-and-Workplace-Safety
+- Climate-Labor-Productivity-Channel
+- Adaptation-CAPEX-and-Firm-Value
 
 ### 12.2 Heat-Induced Labor Costs（slide 31/61）
 
@@ -857,9 +857,9 @@ E 与 S 投资可能会在以下方面产生竞争（compete for）：
 - adaptation proxy：空调/降温设备投资、安全培训、高温停工规则、班次调整。
 
 可挂接卡片（后续展开）：
-- [Asset Pricing/Theoretical AP/cards/Heat-Induced-Labor-Cost-Channels](Asset Pricing/Theoretical AP/cards/Heat-Induced-Labor-Cost-Channels)
-- [Asset Pricing/Theoretical AP/cards/Heat-Exposure-and-Firm-Performance](Asset Pricing/Theoretical AP/cards/Heat-Exposure-and-Firm-Performance)
-- [Asset Pricing/Theoretical AP/cards/Climate-Adaptation-vs-Financial-Constraint](Asset Pricing/Theoretical AP/cards/Climate-Adaptation-vs-Financial-Constraint)
+- Heat-Induced-Labor-Cost-Channels
+- Heat-Exposure-and-Firm-Performance
+- Climate-Adaptation-vs-Financial-Constraint
 
 ### 12.3 Mechanism: Human Capital Efficiency and Labor Market Frictions（slide 32/61）
 
@@ -912,9 +912,9 @@ $$
 - transition 更偏政策冲击下的估值重定价与融资约束变化（policy-induced repricing）。
 
 可挂接卡片（后续展开）：
-- [Asset Pricing/Theoretical AP/cards/Mitigation-vs-Adaptation-vs-Transition](Asset Pricing/Theoretical AP/cards/Mitigation-vs-Adaptation-vs-Transition)
-- [Asset Pricing/Theoretical AP/cards/Climate-Policy-Transition-Risk-and-Firm-Value](Asset Pricing/Theoretical AP/cards/Climate-Policy-Transition-Risk-and-Firm-Value)
-- [Asset Pricing/Theoretical AP/cards/Adaptation-Investment-and-Labor-Resilience](Asset Pricing/Theoretical AP/cards/Adaptation-Investment-and-Labor-Resilience)
+- Mitigation-vs-Adaptation-vs-Transition
+- Climate-Policy-Transition-Risk-and-Firm-Value
+- Adaptation-Investment-and-Labor-Resilience
 
 ### 12.5 Adaptation to Heat Risk and Real Impact（slide 36/61）
 
@@ -939,9 +939,9 @@ $$
 - 资产定价与信贷评估需纳入“适应能力差异”（adaptation capacity heterogeneity）。
 
 可挂接卡片（后续展开）：
-- [Asset Pricing/Theoretical AP/cards/Heat-Adaptation-Reallocation-and-Firm-Boundaries](Asset Pricing/Theoretical AP/cards/Heat-Adaptation-Reallocation-and-Firm-Boundaries)
-- [Asset Pricing/Theoretical AP/cards/Heat-Risk-Capital-Deepening-and-Automation](Asset Pricing/Theoretical AP/cards/Heat-Risk-Capital-Deepening-and-Automation)
-- [Asset Pricing/Theoretical AP/cards/Climate-Risk-and-Market-Concentration](Asset Pricing/Theoretical AP/cards/Climate-Risk-and-Market-Concentration)
+- Heat-Adaptation-Reallocation-and-Firm-Boundaries
+- Heat-Risk-Capital-Deepening-and-Automation
+- Climate-Risk-and-Market-Concentration
 
 ### 12.6 Ortiz-Molina, Xiao and Zheng (2023): HIPS Policy Variation（slide 37/61）
 
@@ -1007,9 +1007,9 @@ $$
 $$
 
 可挂接卡片（后续展开）：
-- [Asset Pricing/Theoretical AP/cards/AI-as-GPT-and-Firm-Production](Asset Pricing/Theoretical AP/cards/AI-as-GPT-and-Firm-Production)
-- [Asset Pricing/Theoretical AP/cards/AI-Adoption-Labor-Demand-and-Skill-Composition](Asset Pricing/Theoretical AP/cards/AI-Adoption-Labor-Demand-and-Skill-Composition)
-- [Asset Pricing/Theoretical AP/cards/AI-Investment-Intangible-Capital-and-Valuation](Asset Pricing/Theoretical AP/cards/AI-Investment-Intangible-Capital-and-Valuation)
+- AI-as-GPT-and-Firm-Production
+- AI-Adoption-Labor-Demand-and-Skill-Composition
+- AI-Investment-Intangible-Capital-and-Valuation
 
 ### 13.2 Babina et al. (2024): Measurement, Identification, and Mechanisms（slide 41-48/61）
 
@@ -1119,10 +1119,10 @@ $$
 - 因此估值上行可更多理解为增长期权（growth option）重估，而非短期利润率机械抬升。
 
 可挂接卡片（后续展开）：
-- [Asset Pricing/Theoretical AP/cards/Babina-et-al-2024-AI-Investment-Measurement](Asset Pricing/Theoretical AP/cards/Babina-et-al-2024-AI-Investment-Measurement)
-- [Asset Pricing/Theoretical AP/cards/AI-Skill-Exposure-w_sAI-Construction](Asset Pricing/Theoretical AP/cards/AI-Skill-Exposure-w_sAI-Construction)
-- [Asset Pricing/Theoretical AP/cards/AI-Intensity-Growth-and-Innovation-Channel](Asset Pricing/Theoretical AP/cards/AI-Intensity-Growth-and-Innovation-Channel)
-- [Asset Pricing/Theoretical AP/cards/AI-Product-Innovation-vs-Process-Innovation-Channel](Asset Pricing/Theoretical AP/cards/AI-Product-Innovation-vs-Process-Innovation-Channel)
+- Babina-et-al-2024-AI-Investment-Measurement
+- AI-Skill-Exposure-w_sAI-Construction
+- AI-Intensity-Growth-and-Innovation-Channel
+- AI-Product-Innovation-vs-Process-Innovation-Channel
 
 ### 13.3 Eisfeldt et al. (2025): GenAI Exposure and Firm Outcomes（slide 49-52/61）
 
@@ -1173,6 +1173,6 @@ $$
 - 企业 GenAI 暴露度 $X^f$ 可作为解释异质性的重要状态变量（state variable）。
 
 可挂接卡片（后续展开）：
-- [Asset Pricing/Theoretical AP/cards/Eisfeldt-et-al-2025-GenAI-Exposure-Framework](Asset Pricing/Theoretical AP/cards/Eisfeldt-et-al-2025-GenAI-Exposure-Framework)
-- [Asset Pricing/Theoretical AP/cards/Task-to-Occupation-AI-Exposure-Aggregation](Asset Pricing/Theoretical AP/cards/Task-to-Occupation-AI-Exposure-Aggregation)
-- [Asset Pricing/Theoretical AP/cards/GenAI-Productivity-vs-Demand-Creation-Channel](Asset Pricing/Theoretical AP/cards/GenAI-Productivity-vs-Demand-Creation-Channel)
+- Eisfeldt-et-al-2025-GenAI-Exposure-Framework
+- Task-to-Occupation-AI-Exposure-Aggregation
+- GenAI-Productivity-vs-Demand-Creation-Channel

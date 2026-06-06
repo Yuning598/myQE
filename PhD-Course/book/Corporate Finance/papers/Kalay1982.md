@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # Reading Note: Kalay (1982)
 
 <a href="../01_Empirical_Corporate_Finance.html">Back to the main note</a>

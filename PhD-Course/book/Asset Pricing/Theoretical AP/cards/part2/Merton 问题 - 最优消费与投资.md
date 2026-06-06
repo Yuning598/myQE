@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # Merton 问题 - 最优消费与投资
 
-来源：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#5.3 Merton Special Case](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#5.3 Merton Special Case)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
 
-返回：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing)
 
 :::{admonition} Proposition: Proposition
 若投资机会集常数、效用为 CRRA，则最优风险资产权重为

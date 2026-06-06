@@ -21,6 +21,8 @@ tags:
 
 # GMM and Euler Equation
 
+导航：[Cross-Course Hub](../index.md) · [Econometrics](../../Econometrics/index.md) · [Asset Pricing](../../Asset%20Pricing/index.md)
+
 ## 1. 一句话主线
 
 moment condition 是共同对象：Econometrics 给出 $E[g(Z,\theta_0)]=0$、weighting matrix 和 overidentification test；Asset Pricing 把 Euler equation 写成 $E[m(\theta)R]=1$ 或 $E[m(\theta)R^e]=0$，再用 GMM 估计和检验 SDF。
@@ -120,4 +122,3 @@ $$
 2. [Econometrics: Multiple-Equation GMM](../../Econometrics/MS8956/11_Multiple_Equation_GMM.md)
 3. [Empirical AP card: SDF Euler Equation](../../Asset%20Pricing/Empirical%20AP/cards/SDF_Euler_Equation.md)
 4. [Empirical AP card: GMM Asset Pricing](../../Asset%20Pricing/Empirical%20AP/cards/GMM_Asset_Pricing.md)
-

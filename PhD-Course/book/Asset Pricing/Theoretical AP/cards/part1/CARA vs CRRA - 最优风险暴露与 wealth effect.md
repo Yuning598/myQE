@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # CARA vs CRRA - 最优风险暴露与 wealth effect
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#1.6.2 Single Risky Asset](Asset Pricing/Theoretical AP/01_Single_Period_Models#1.6.2 Single Risky Asset) · [Asset Pricing/Theoretical AP/01_Single_Period_Models#1.6.1 CARA-Normal Model](Asset Pricing/Theoretical AP/01_Single_Period_Models#1.6.1 CARA-Normal Model)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 ## CARA
 
@@ -130,20 +133,20 @@ A(m)&=-\frac{u''(m)}{u'(m)}.
 \end{aligned}
 $$
 
-> [!proof]- 二阶近似
-> $$
-> \begin{aligned}
-> E[u(\tilde w)]
-> &\approx u(m)+\frac12u''(m)\operatorname{Var}(\tilde w),\\
-> u(CE)=u(m-\Delta)
-> &\approx u(m)-u'(m)\Delta,\\
-> \Delta
-> &\approx -\frac{u''(m)}{2u'(m)}\operatorname{Var}(\tilde w)
-> =\frac12A(m)\operatorname{Var}(\tilde w),\\
-> CE
-> &\approx m-\frac12A(m)\operatorname{Var}(\tilde w).
-> \end{aligned}
-> $$
+**Proof: 二阶近似**
+$$
+\begin{aligned}
+E[u(\tilde w)]
+&\approx u(m)+\frac12u''(m)\operatorname{Var}(\tilde w),\\
+u(CE)=u(m-\Delta)
+&\approx u(m)-u'(m)\Delta,\\
+\Delta
+&\approx -\frac{u''(m)}{2u'(m)}\operatorname{Var}(\tilde w)
+&=\frac12A(m)\operatorname{Var}(\tilde w),\\
+CE
+&\approx m-\frac12A(m)\operatorname{Var}(\tilde w).
+\end{aligned}
+$$
 
 代入 $A(m)=\rho/m$，并再用局部近似 $m\approx w_0$，得到 certainty equivalent
 
@@ -187,6 +190,6 @@ $$
 \end{aligned}
 $$
 
-^card-cara-vs-crra-wealth-effect
+(card-cara-vs-crra-wealth-effect)=
 
-Related section: [Single Risky Asset](Asset Pricing/Theoretical AP/01_Single_Period_Models#1.6.2 Single Risky Asset)
+Related section: [Single Risky Asset](../../01_Single_Period_Models.md)

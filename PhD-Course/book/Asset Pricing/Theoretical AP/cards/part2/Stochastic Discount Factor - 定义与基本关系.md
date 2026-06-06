@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # Stochastic Discount Factor - 定义与基本关系
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#2.1 Definition of SDF](Asset Pricing/Theoretical AP/01_Single_Period_Models#2.1 Definition of SDF)；[Asset Pricing/Theoretical AP/01_Single_Period_Models#2.3 Risk Premia and Hansen-Jagannathan Bound](Asset Pricing/Theoretical AP/01_Single_Period_Models#2.3 Risk Premia and Hansen-Jagannathan Bound)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Definition (Definition)
 随机贴现因子（SDF）是任意随机变量 $\tilde m$，满足对每个资产 $i$ 都有

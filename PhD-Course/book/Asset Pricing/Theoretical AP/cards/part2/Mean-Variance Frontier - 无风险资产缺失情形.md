@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # Mean-Variance Frontier - 无风险资产缺失情形
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#2.4 Mean-Variance Frontier without a Risk-Free Asset](Asset Pricing/Theoretical AP/01_Single_Period_Models#2.4 Mean-Variance Frontier without a Risk-Free Asset)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Definition (Definition)
 在无风险资产时，均值—方差前沿由以下问题定义：

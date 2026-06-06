@@ -4,13 +4,11 @@ orphan: true
 
 # MM tax shield proofs and APV decomposition
 
+导航：[Corporate Finance index](../index.md)
+
 这张卡保存 <a href="../01_Empirical_Corporate_Finance.html#sec-tax-shield-capital-structure">Taxes and Levered Value</a> 中的详细设定、corporate tax proof、personal tax proof 和 APV decomposition。
 
 (card-mm-tax-shield-proofs-apv)=
-(^card-mm-tax-shield-proofs-apv)=
-
-^card-mm-tax-shield-proofs-apv
-
 ## Basic setting
 
 $$
@@ -67,7 +65,7 @@ V_L
 \end{aligned}
 $$
 
-通用等比数列推导见 [Geometric series sum - a1 q](Geometric series sum - a1 q)，这里的 perpetuity 特例见 [Geometric series sum - perpetuity special case](Geometric series sum - perpetuity special case)。
+通用等比数列推导见 [Geometric series sum - a1 q](Geometric%20series%20sum%20-%20a1%20q.md)，这里的 perpetuity 特例见 [Geometric series sum - perpetuity special case](Geometric%20series%20sum%20-%20perpetuity%20special%20case.md)。
 
 ## MM proposition with personal taxes
 
@@ -119,4 +117,4 @@ V_L
 \end{aligned}
 $$
 
-等价地，levered firm 的可分配现金流可以写成 unlevered cash flow plus tax shield. 这就是 [APV](APV - Adjusted Present Value) 的核心。
+等价地，levered firm 的可分配现金流可以写成 unlevered cash flow plus tax shield. 这就是 [APV](APV%20-%20Adjusted%20Present%20Value.md) 的核心。

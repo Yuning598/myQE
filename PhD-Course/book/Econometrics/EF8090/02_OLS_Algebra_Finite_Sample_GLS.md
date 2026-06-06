@@ -206,13 +206,12 @@ $$
 则在 scalar $X_1$ 情形有：
 
 :::{admonition} Lemma (Scalar omitted variable bias)
-:::
-
-#### Proof of Lemma (Scalar omitted variable bias)
-
 $$
 \beta_1^*=\beta_1+\frac{\operatorname{Cov}(X_1,X_2)}{\operatorname{Var}(X_1)}\beta_2.
 $$
+:::
+
+#### Proof of Lemma (Scalar omitted variable bias)
 
 $$
 \beta_1^*=\operatorname{Var}(X_1)^{-1}\operatorname{Cov}(X_1,Y), \qquad Y=\beta_0+\beta_1X_1+\beta_2X_2+U.
@@ -319,13 +318,12 @@ $$
 则允许 heteroskedasticity；若 $D=\sigma^2I$，就是 homoskedastic spherical errors。
 
 :::{admonition} Lemma (Conditional unbiasedness of OLS)
-:::
-
-#### Proof of Lemma (Conditional unbiasedness of OLS)
-
 $$
 E[\hat\beta\mid X]=\beta.
 $$
+:::
+
+#### Proof of Lemma (Conditional unbiasedness of OLS)
 
 $$
 \hat\beta=(X'X)^{-1}X'Y, \qquad Y=X\beta+e, \qquad E[e\mid X]=0.
@@ -343,13 +341,12 @@ $$
 **结论：** 在 $E[e\mid X]=0$ 下，OLS 条件无偏，因此也无条件无偏。
 
 :::{admonition} Lemma (Conditional variance of OLS)
-:::
-
-#### Proof of Lemma (Conditional variance of OLS)
-
 $$
 \operatorname{Var}(\hat\beta\mid X)=(X'X)^{-1}X'DX(X'X)^{-1}.
 $$
+:::
+
+#### Proof of Lemma (Conditional variance of OLS)
 
 $$
 \hat\beta-\beta=(X'X)^{-1}X'e, \qquad E[ee'\mid X]=D.

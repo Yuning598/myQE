@@ -4,6 +4,8 @@ orphan: true
 
 # ITT vs LATE - Estimand distinction
 
+导航：[Corporate Finance index](../index.md)
+
 :::{admonition} Note
 Assignment effect vs treatment effect
 
@@ -75,8 +77,4 @@ $$
 :::
 
 (card-itt-late-distinction)=
-(^card-itt-late-distinction)=
-
-^card-itt-late-distinction
-
 相关章节：[Corporate Finance IV chapter](../02_Econometric_Methods_in_Corporate_Finance.md)

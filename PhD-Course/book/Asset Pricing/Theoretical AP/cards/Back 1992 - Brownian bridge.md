@@ -4,7 +4,7 @@ orphan: true
 
 # Back 1992 - Brownian bridge
 
-来源：[Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#11.4 Brownian bridge 解释](Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#11.4 Brownian bridge 解释)
+导航：[Asset Pricing index](../../index.md) · [Theoretical AP](../../Theoretical_Asset_Pricing.md) · 来源：[04_Information_Beliefs_and_Learning](../04_Information_Beliefs_and_Learning.md)
 
 ## 核心推导
 

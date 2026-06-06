@@ -5,7 +5,7 @@ orphan: true
 # Beta-SDF Equivalence
 
 Source: EF8083 slides, pp. 195-210; EF8077/Theoretical AP factor-model proof  
-Backlinks: [Empirical AP: Linear SDF implies beta pricing](../05_Cross_Section_Factor_Models.md) | [EF8077: Factor Models Are Equivalent to SDFs](../../Theoretical AP/01_Single_Period_Models.md) | [QE-PS: Factor model review](../../../ProblemSet/ProblemSet.md)
+导航：[Asset Pricing index](../../index.md) · [Empirical AP MOC](../00-MOC_EF8083_Empirical_Asset_Pricing.md) · 来源：[Empirical AP: Linear SDF implies beta pricing](../05_Cross_Section_Factor_Models.md)
 
 :::{admonition} Proposition: Beta-SDF Equivalence
 Linear / affine SDF 与 beta pricing 是同一个横截面限制的两种写法。
@@ -25,7 +25,7 @@ $$
 
 :::
 
-^prop-beta-sdf-equivalence
+(prop-beta-sdf-equivalence)=
 
 **推导**
 
@@ -59,4 +59,4 @@ E[R_i^e]=\beta_i'\lambda.
 \end{aligned}
 $$
 
-Single-factor model 只是 $K=1$；若 factor 是 traded excess return，则 $\lambda=E[f]$，与 [QE-PS factor review](../../../ProblemSet/ProblemSet.md) 的公式一致。
+Single-factor model 只是 $K=1$；若 factor 是 traded excess return，则 $\lambda=E[f]$，与 [QE-PS factor review](../../../ProblemSet/Theoretical%20Asset%20Pricing.md#qe-ps-factor-model-review) 的公式一致。

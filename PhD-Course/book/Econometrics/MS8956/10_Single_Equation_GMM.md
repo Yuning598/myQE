@@ -27,28 +27,28 @@ $$
 - **Definition**: A regressor (e.g., $p_i$) is **Endogenous** if it is not predetermined.
 - **Statistical Condition**: In the context of OLS, a regressor is endogenous if it does not satisfy the **orthogonality condition** (正交条件)，即 $E(x_i u_i) \neq 0$。
 
-> [!info] Predetermined (预定/先定变量)
-> 如果一个解释变量 $x_t$ 与当期的扰动项 $u_t$ 正交，即满足以下条件：
->
+**Predetermined (预定/先定变量)**
+如果一个解释变量 $x_t$ 与当期的扰动项 $u_t$ 正交，即满足以下条件：
+
 $$
 E(x_t u_t) = 0 \quad \text{或更严谨地} \quad E(u_t | x_t, x_{t-1}, \dots, x_1) = 0
 $$
-> 则称该变量是 **Predetermined** 的。这意味着该变量的取值在 $u_t$ 产生之前就已经确定，或者其生成机制与当期随机冲击无关。
-> 
-> - **严格外生性 (Strict Exogeneity)**: 
->   要求解释变量与**所有时期**的扰动项都正交：
->
+则称该变量是 **Predetermined** 的。这意味着该变量的取值在 $u_t$ 产生之前就已经确定，或者其生成机制与当期随机冲击无关。
+
+- **严格外生性 (Strict Exogeneity)**:
+  要求解释变量与**所有时期**的扰动项都正交：
+
 $$
 E(u_t | \mathbf{x}_1, \mathbf{x}_2, \dots, \mathbf{x}_T) = 0, \quad \forall t
 $$
-> - **先定性 (Predetermination)**: 
->   只要求与**当前及过去**的扰动项无关：
->
+- **先定性 (Predetermination)**:
+  只要求与**当前及过去**的扰动项无关：
+
 $$
 E(u_t | x_t, x_{t-1}, \dots, x_1) = 0
 $$
->   *注：先定变量允许 $x_{t+1}$ 与 $u_t$ 相关（例如滞后因变量 $y_{t-1}$ 作为解释变量的情况）。*
-> - **Inference**: 在 OLS/GMM 推导中，先定性是保证估计量具有一致性（Consistency）的最低要求。
+  *注：先定变量允许 $x_{t+1}$ 与 $u_t$ 相关（例如滞后因变量 $y_{t-1}$ 作为解释变量的情况）。*
+- **Inference**: 在 OLS/GMM 推导中，先定性是保证估计量具有一致性（Consistency）的最低要求。
 
 
 **Equilibrium Endogeneity Derivation**
@@ -102,8 +102,8 @@ $$
     - 由于价格 $p_i$ 是由均衡产生的，它不可避免地包含了 $u_i$。
     - 因此，$p_i$ 与 $u_i$ 相关（违反正交性），导致 OLS 估计失效。
 
-> [!tip] Conclusion
-> 内生性在这里不是外部因素（如测量误差）造成的，而是**经济系统内部相互作用**的必然产物。只要系统是联立决定的，单方程回归就会面临内生性偏差。
+**Conclusion**
+内生性在这里不是外部因素（如测量误差）造成的，而是**经济系统内部相互作用**的必然产物。只要系统是联立决定的，单方程回归就会面临内生性偏差。
 
 
 **OLS Endogeneity Bias**
@@ -163,10 +163,10 @@ supply shifters move the supply curve along a fixed demand curve, and demand shi
 - **结果**: $Cov(p_i, v_i) = 0 \implies$ OLS 对 $\beta_1$ 一致。
 - **视觉直觉 (Figure 3.1b)**: 需求冲击 $u_i$ 驱动需求曲线在一条**固定的**供给曲线上移动。此时观测点的轨迹识别的是供给曲线。
 
-> [!tip] Identification Strategy (识别策略)
-> 要识别一个方程（如需求方程），该方程本身必须是**相对稳定**的，而系统中的其他部分（如供给侧）必须发生**移动**。
-> - **Shifter**: 这种“移动”在计量中对应的就是 **Instrumental Variables (IV)**。
-> - **内生性本质**: 当供需双方同时都在乱动（$u_i, v_i \neq 0$）时，观测点的轨迹既不是需求也不是供给，导致 OLS 估计失效。
+**Identification Strategy (识别策略)**
+要识别一个方程（如需求方程），该方程本身必须是**相对稳定**的，而系统中的其他部分（如供给侧）必须发生**移动**。
+- **Shifter**: 这种“移动”在计量中对应的就是 **Instrumental Variables (IV)**。
+- **内生性本质**: 当供需双方同时都在乱动（$u_i, v_i \neq 0$）时，观测点的轨迹既不是需求也不是供给，导致 OLS 估计失效。
 
 **OLS Bias as a Weighted Average**
 
@@ -206,11 +206,11 @@ $$\begin{aligned}
 
 如果数据中无法区分价格变动是由需求引起还是由供给引起，识别就会失败。
 
-> [!error] 什么是识别失败 (Identification Failure)?
-> 在计量经济学中，**识别 (Identification)** 是指能否从观测到的数据分布中唯一地推断出结构参数。
-> - **观测等价 (Observational Equivalence)**: 如果多组不同的参数设置（例如不同的需求斜率 $\alpha_1$）都能产生完全相同的 $(p, q)$ 数据轨迹，则称这些参数是不可识别的。
-> - **混合偏差 (Mixture Bias)**: 如 Section 5 所述，此时 OLS 得到的是 $\alpha_1$ 和 $\beta_1$ 的加权平均。这意味着你无法从数据中“提纯”出真正的需求弹性 $\alpha_1$。
-> - **后果**: 你无法进行政策评估（例如：如果人为调整价格 $p$，需求量 $q$ 会变动多少？由于识别失败，你手里的参数无法回答这个结构性问题）。
+**什么是识别失败 (Identification Failure)?**
+在计量经济学中，**识别 (Identification)** 是指能否从观测到的数据分布中唯一地推断出结构参数。
+- **观测等价 (Observational Equivalence)**: 如果多组不同的参数设置（例如不同的需求斜率 $\alpha_1$）都能产生完全相同的 $(p, q)$ 数据轨迹，则称这些参数是不可识别的。
+- **混合偏差 (Mixture Bias)**: 如 Section 5 所述，此时 OLS 得到的是 $\alpha_1$ 和 $\beta_1$ 的加权平均。这意味着你无法从数据中“提纯”出真正的需求弹性 $\alpha_1$。
+- **后果**: 你无法进行政策评估（例如：如果人为调整价格 $p$，需求量 $q$ 会变动多少？由于识别失败，你手里的参数无法回答这个结构性问题）。
 
 ## Supply-Side Shock Decomposition
 假设供给冲击 $v_i$ 可以被分解为：一个**可观测因子** $x_i$ 和一个**不可观测因子** $\zeta_i$。
@@ -224,13 +224,13 @@ $$
 - **$u_i$ (Unobservable)**: 消费者的口味偏好。
 
 ## IV Identification Logic
-> [!important] The Birth of Instrumental Variables
-> 此时，$x_i$ 满足以下两个核心条件：
-> 1.  **Relevance (相关性)**: $\beta_2 \neq 0$，即温度确实能“移动”供给曲线，从而带动价格 $p_i$ 变动。
-> 2.  **Exogeneity (外生性)**: $Cov(x_i, u_i) = 0$，即温度与需求侧的扰动项无关。
-> 
+**The Birth of Instrumental Variables**
+此时，$x_i$ 满足以下两个核心条件：
+1.  **Relevance (相关性)**: $\beta_2 \neq 0$，即温度确实能“移动”供给曲线，从而带动价格 $p_i$ 变动。
+2.  **Exogeneity (外生性)**: $Cov(x_i, u_i) = 0$，即温度与需求侧的扰动项无关。
+
 :::{admonition} 结果
-: 我们通过观察 $x_i$ 引起的供给侧“晃动”，能够看清 $p_i$ 变动时 $q_i$ 沿着固定需求曲线的移动，从而一致地估出需求参数 $\alpha_0, \alpha_1$。
+我们通过观察 $x_i$ 引起的供给侧“晃动”，能够看清 $p_i$ 变动时 $q_i$ 沿着固定需求曲线的移动，从而一致地估出需求参数 $\alpha_0, \alpha_1$。
 
 :::
 
@@ -271,8 +271,8 @@ $$
 \alpha_1 = \frac{Cov(x_i, q_i)}{Cov(x_i, p_i)} \quad (3.1.11)
 $$
 
-> [!success] 识别成功
-> 不同于 OLS 的混合偏差，通过工具变量 $x_i$，我们成功将需求参数 $\alpha_1$ 从复杂的联立系统中“提取”了出来。这就是 IV 估计量的本质：$\hat{\alpha}_{1, IV} = \frac{\widehat{Cov}(x, q)}{\widehat{Cov}(x, p)}$。
+**识别成功**
+不同于 OLS 的混合偏差，通过工具变量 $x_i$，我们成功将需求参数 $\alpha_1$ 从复杂的联立系统中“提取”了出来。这就是 IV 估计量的本质：$\hat{\alpha}_{1, IV} = \frac{\widehat{Cov}(x, q)}{\widehat{Cov}(x, p)}$。
 
 **Instrumental Variables Estimator**
 
@@ -388,8 +388,8 @@ $$
 
 ## 2SLS Numerical Equivalence Proof
 
-> [!info] Just-Identified Case: $\hat{\alpha_{2SLS}}=\hat{\alpha_{IV}}$
-> 在本例中（1个内生变量 $p_i$，1个工具变量 $x_i$），IV 估计量和 2SLS 估计量在数值上完全等价。
+**Just-Identified Case: $\hat{\alpha_{2SLS}}=\hat{\alpha_{IV}}$**
+在本例中（1个内生变量 $p_i$，1个工具变量 $x_i$），IV 估计量和 2SLS 估计量在数值上完全等价。
 
 **1. 原始形式 (Original Sample Formulas)**:
 - **IV 估计量**:
@@ -468,8 +468,8 @@ Cov(Y_i, u_i) &= Cov\left( \frac{\alpha_0 + I_i + u_i}{1 - \alpha_1}, u_i \right
   $$
   由于投资变动会引起国民收入的变动，满足相关性条件。
 
-> [!important] Conclusion
-> 在该模型中，由于 $Y_i$ 包含当期消费冲击 $u_i$，直接对消费函数进行 OLS 回归是不一致的。投资 $I_i$ 可以作为识别 MPC ($\alpha_1$) 的工具变量。
+**Conclusion**
+在该模型中，由于 $Y_i$ 包含当期消费冲击 $u_i$，直接对消费函数进行 OLS 回归是不一致的。投资 $I_i$ 可以作为识别 MPC ($\alpha_1$) 的工具变量。
 
 
 
@@ -488,13 +488,13 @@ $$
 - **观测消费**: $C_i = C_i^* + c_i \quad (3.2.4a)$
 - **观测收入**: $Y_i = Y_i^* + y_i \quad (3.2.4b)$
 
-> [!important] 经典测量误差假设 (Classical Measurement Error, CME)
-> 在 CME 模型中，我们假设测量误差 $c_i, y_i$ 满足以下性质：
-> 1. **独立性（核心假设）**: $Cov(y_i, Y_i^*) = 0$ 且 $Cov(c_i, C_i^*) = 0$。
->    - **为什么假设无关？**: 这是定义“随机噪音”的基石。如果误差 $y_i$ 与真实值 $Y_i^*$ 相关，说明测量偏差具有系统性规律（例如：收入越高的人越倾向于低报收入），此时误差就变成了“内生变量”的一部分，而非纯粹的噪音。
->    - **识别意义**: 如果不假设无关，观测到的相关性将混杂因果关系与误差规律，导致模型无法识别。
-> 2. **互不相关**: $Cov(c_i, y_i) = 0$，即不同变量的录入/统计错误是独立的。
-> 3. **均值齐性**: $E(c_i) = 0, E(y_i) = 0$。
+**经典测量误差假设 (Classical Measurement Error, CME)**
+在 CME 模型中，我们假设测量误差 $c_i, y_i$ 满足以下性质：
+1. **独立性（核心假设）**: $Cov(y_i, Y_i^*) = 0$ 且 $Cov(c_i, C_i^*) = 0$。
+   - **为什么假设无关？**: 这是定义“随机噪音”的基石。如果误差 $y_i$ 与真实值 $Y_i^*$ 相关，说明测量偏差具有系统性规律（例如：收入越高的人越倾向于低报收入），此时误差就变成了“内生变量”的一部分，而非纯粹的噪音。
+   - **识别意义**: 如果不假设无关，观测到的相关性将混杂因果关系与误差规律，导致模型无法识别。
+2. **互不相关**: $Cov(c_i, y_i) = 0$，即不同变量的录入/统计错误是独立的。
+3. **均值齐性**: $E(c_i) = 0, E(y_i) = 0$。
 
 ## Composite Regression Equation
 将观测值代入理论模型：
@@ -513,20 +513,20 @@ Cov(Y_i, u_i) &= Cov(Y_i^* + y_i, c_i - k y_i) \\
 &= -k Var(y_i) < 0
 \end{aligned}$$
 
-> [!danger] Attenuation Bias (衰减偏差)
-> 1. **方向**: 由于 $Cov(Y_i, u_i) < 0$，OLS 估计量 $\hat{k}$ 会产生向下的偏差。
-> 2. **量化 (Reliability Ratio)**: 
->    根据 OLS 极限公式：
->
+**Attenuation Bias (衰减偏差)**
+1. **方向**: 由于 $Cov(Y_i, u_i) < 0$，OLS 估计量 $\hat{k}$ 会产生向下的偏差。
+2. **量化 (Reliability Ratio)**:
+   根据 OLS 极限公式：
+
 $$
 \text{plim } \hat{k} = k + \frac{Cov(Y_i, u_i)}{Var(Y_i)} = k - k \frac{Var(y_i)}{Var(Y_i)} = k \cdot \underbrace{\frac{Var(Y_i^*)}{Var(Y_i^*) + Var(y_i)}}_{\lambda}
 $$
->    这里 $\lambda = \frac{Var(Y_i^*)}{Var(Y_i)}$ 被称为 **可靠性比例 (Reliability Ratio)** 或 **信噪比**：
->    - 由于 $\lambda < 1$，OLS 估计量 $\hat{k}$ 总是被“稀释”并向 0 靠拢。
->    - 误差 $Var(y_i)$ 越大，$\lambda$ 越小，估计量的衰减就越严重。
+   这里 $\lambda = \frac{Var(Y_i^*)}{Var(Y_i)}$ 被称为 **可靠性比例 (Reliability Ratio)** 或 **信噪比**：
+   - 由于 $\lambda < 1$，OLS 估计量 $\hat{k}$ 总是被“稀释”并向 0 靠拢。
+   - 误差 $Var(y_i)$ 越大，$\lambda$ 越小，估计量的衰减就越严重。
 
-> [!tip] Identification
-> 要解决此问题，需要寻找一个与真实收入 $Y_i^*$ 相关但与测量误差 $y_i$ 无关的工具变量 $Z_i$。此时 $Cov(Z_i, u_i) = 0$，IV 估计是一致的。
+**Identification**
+要解决此问题，需要寻找一个与真实收入 $Y_i^*$ 相关但与测量误差 $y_i$ 无关的工具变量 $Z_i$。此时 $Cov(Z_i, u_i) = 0$，IV 估计是一致的。
 
 **Production Function Transmission Bias**
 
@@ -577,11 +577,11 @@ $$
 - $\log L_i$ 是 $\log A_i$ 的函数。
 - 由于 $u_i$ 包含了 $\log A_i$ 的信息，因此 $Cov(\log L_i, u_i) \neq 0$。
 
-> [!important] Transmission Bias (传输偏误)
-> 1. **机制**: 厂商观察到自己的效率 $A_i$ 较高时，会更有动力增加投入 $L_i$。这种从“不可观测效率”到“可观测投入”的反馈过程被称为 **Transmission**。
-> 2. **结果**: $\log L_i$ 与扰动项中的 $u_i$ 正相关 ($Cov > 0$)。
-> 3. **偏差方向**: OLS 对产出弹性 $\phi_1$ 的估计将产生**正向偏差**（高估劳动力的贡献，因为一部分产出增加其实是由不可观测的高效率 $A_i$ 贡献的）。
-> 4. **本质**: 这也是一种特殊的**遗漏变量偏差 (Omitted Variable Bias)**。
+**Transmission Bias (传输偏误)**
+1. **机制**: 厂商观察到自己的效率 $A_i$ 较高时，会更有动力增加投入 $L_i$。这种从“不可观测效率”到“可观测投入”的反馈过程被称为 **Transmission**。
+2. **结果**: $\log L_i$ 与扰动项中的 $u_i$ 正相关 ($Cov > 0$)。
+3. **偏差方向**: OLS 对产出弹性 $\phi_1$ 的估计将产生**正向偏差**（高估劳动力的贡献，因为一部分产出增加其实是由不可观测的高效率 $A_i$ 贡献的）。
+4. **本质**: 这也是一种特殊的**遗漏变量偏差 (Omitted Variable Bias)**。
 
 **General IV-GMM Formulation**
 
@@ -675,8 +675,8 @@ $$
 | **内生解释变量** | $E(z_{il} \varepsilon_i) \neq 0$ | **需被替换**: 必须由 $\mathbf{x}_i$ 中的外部变量识别 | 是 | **否** |
 | **外部工具变量** | $E(x_{ik} \varepsilon_i) = 0$ | **辅助识别**: 仅用于提供额外的矩条件 | 否 | 是 |
 
-> [!important] 核心逻辑
-> 如果一个变量 $z_{il}$ 既是解释变量又是先定的（外生），那么在矩条件 $E[\mathbf{x}_i (y_i - \mathbf{z}_i' \boldsymbol{\delta})] = \mathbf{0}$ 中，对应的子条件 $E[z_{il} (y_i - \mathbf{z}_i' \boldsymbol{\delta})] = 0$ 实际上就是 OLS 能够一致估计该参数的条件。GMM 的本质是利用所有“清白”的信息（包括外生解释变量本身 and 额外的外部工具变量）来共同约束和估计参数。
+**核心逻辑**
+如果一个变量 $z_{il}$ 既是解释变量又是先定的（外生），那么在矩条件 $E[\mathbf{x}_i (y_i - \mathbf{z}_i' \boldsymbol{\delta})] = \mathbf{0}$ 中，对应的子条件 $E[z_{il} (y_i - \mathbf{z}_i' \boldsymbol{\delta})] = 0$ 实际上就是 OLS 能够一致估计该参数的条件。GMM 的本质是利用所有“清白”的信息（包括外生解释变量本身 and 额外的外部工具变量）来共同约束和估计参数。
 
 :::{admonition} Definition (Example 3.2 (Wage Equation))
 The wage equation is:
@@ -725,7 +725,7 @@ $$
 E[\mathbf{x}_i \cdot (y_i - \mathbf{z}_i' \boldsymbol{\delta})] = \mathbf{0} \quad (K \times 1) \quad (3.3.2)
 $$
 
-^g-from-orthogonality
+(g-from-orthogonality)=
 
 **2. 线性化推导**:
 利用期望的线性性质，将上式展开：
@@ -748,10 +748,10 @@ $$
 
 ## Identification Intuition
 
-> [!tip] 秩条件 = 相关性条件 (Relevance Condition)
-> 在单变量 IV 模型中，秩条件退化为 $E(x_i z_i) \neq 0$。
-> - **数学含义**: $\boldsymbol{\Sigma}_{xz}$ 满列秩意味着工具变量向量 $\mathbf{x}_i$ 与解释变量向量 $\mathbf{z}_i$ 之间存在足够强的线性相关性。
-> - **物理意义**: 工具变量必须能够通过“影响”解释变量，从而在 $y$ 的变动中为每一个 $\delta_l$ 提供足够的信息。如果某个内生变量与所有工具变量都不相关，那么它的系数就无法被“识别”出来。
+**秩条件 = 相关性条件 (Relevance Condition)**
+在单变量 IV 模型中，秩条件退化为 $E(x_i z_i) \neq 0$。
+- **数学含义**: $\boldsymbol{\Sigma}_{xz}$ 满列秩意味着工具变量向量 $\mathbf{x}_i$ 与解释变量向量 $\mathbf{z}_i$ 之间存在足够强的线性相关性。
+- **物理意义**: 工具变量必须能够通过“影响”解释变量，从而在 $y$ 的变动中为每一个 $\delta_l$ 提供足够的信息。如果某个内生变量与所有工具变量都不相关，那么它的系数就无法被“识别”出来。
 
 ## Order Condition and Identification Status
 
@@ -772,9 +772,9 @@ $$
 | **恰好识别 (Just Identified)** | $K = L$ | $\text{rank}(\boldsymbol{\Sigma}_{xz}) = L$ | 唯一解，退化为简单 IV / 2SLS |
 | **识别不足 (Underidentified)** | $K < L$ | 必然不满足 | 参数不可唯一确定 |
 
-> [!important] 核心逻辑 (Key Logic)
-> - **阶条件 (Order Condition)**: $K \ge L$ 是解方程组的**维数前提**（方程数 $\ge$ 未知数）。
-> - **秩条件 (Rank Condition)**: $\text{rank}(\boldsymbol{\Sigma}_{xz}) = L$ 是参数识别的**充要条件**（保证相关性与解的唯一性）。
+**核心逻辑 (Key Logic)**
+- **阶条件 (Order Condition)**: $K \ge L$ 是解方程组的**维数前提**（方程数 $\ge$ 未知数）。
+- **秩条件 (Rank Condition)**: $\text{rank}(\boldsymbol{\Sigma}_{xz}) = L$ 是参数识别的**充要条件**（保证相关性与解的唯一性）。
 
 **IV-GMM Asymptotic Normality**
 
@@ -783,7 +783,7 @@ $$
 :::{admonition} Definition (Assumption 3.5 ($\mathbf{g}_i$ is a MDS with finite second moments))
 Let $\mathbf{g}_i \equiv \mathbf{x}_i \cdot \varepsilon_i$. $\{\mathbf{g}_i\}$ is a **martingale difference sequence** (so $E(\mathbf{g}_i) = \mathbf{0}$). The $K \times K$ matrix of cross moments, $E(\mathbf{g}_i \mathbf{g}_i')$, is **nonsingular**. We use $\mathbf{S}$ for $\text{Avar}(\bar{\mathbf{g}})$ (i.e., the variance of the limiting distribution of $\sqrt{n}\bar{\mathbf{g}}$, where $\bar{\mathbf{g}} \equiv \frac{1}{n} \sum_{i=1}^n \mathbf{g}_i$). By Assumption 3.2 and the **ergodic stationary Martingale Differences CLT**, $\mathbf{S} = E(\mathbf{g}_i \mathbf{g}_i')$.
 
-[!question] 困惑卡：为什么定义 $\mathbf{g}_i=\mathbf{x}_i\varepsilon_i$？
+**Question: 困惑卡：为什么定义 $\mathbf{g}_i=\mathbf{x}_i\varepsilon_i$？**
 **困惑**：$\mathbf{g}_i$ 看起来就是“工具变量与扰动项的乘积”。为什么 GMM 要这样定义？
 
 **解答（直观）**：我们要估计的核心约束是正交性条件 $E(\mathbf{x}_i\varepsilon_i)=\mathbf{0}$。把每个样本点的“正交误差”定义成
@@ -795,14 +795,14 @@ $$
 
 **解答（技术）**：
 1. 维度正确：$\mathbf{x}_i\in\mathbb{R}^{K\times 1}$，$\varepsilon_i\in\mathbb{R}$，所以 $\mathbf{g}_i\in\mathbb{R}^{K\times 1}$，正好给出 $K$ 个矩条件。
-2. 与识别直接对应：$\mathbf{g}_i$ 的均值条件就是识别方程组来源（见 [正交性展开 (3.3.2)](#^g-from-orthogonality))。
-3. 与估计目标一致：GMM 目标函数本质是最小化 $\mathbf{g}_n(\delta)'W\mathbf{g}_n(\delta)$，即最小化“违背正交性”的加权距离（见 [矩函数定义](#^g-moment-function)）。
+2. 与识别直接对应：$\mathbf{g}_i$ 的均值条件就是识别方程组来源（见 [正交性展开 (3.3.2)](#g-from-orthogonality))。
+3. 与估计目标一致：GMM 目标函数本质是最小化 $\mathbf{g}_n(\delta)'W\mathbf{g}_n(\delta)$，即最小化“违背正交性”的加权距离（见 [矩函数定义](#g-moment-function)）。
 
 **一句话**：定义成乘积不是技巧，而是把“工具变量与误差应不相关”这条识别假设，直接转成可计算、可最小化的样本矩条件。
 
 :::
 
-^qa-g-definition
+(qa-g-definition)=
 
 ## MDS and Long-Run Variance Interpretation
 
@@ -847,7 +847,7 @@ $$
 \mathbf{g}(\mathbf{w}_i ; \tilde{\boldsymbol{\delta}}) \equiv \mathbf{x}_i \cdot \varepsilon_i(\tilde{\boldsymbol{\delta}}) = \mathbf{x}_i (y_i - \mathbf{z}_i' \tilde{\boldsymbol{\delta}}) \quad (K \times 1)
 $$
 
-^g-moment-function
+(g-moment-function)=
 
 ## Sample Moment Construction
 根据类比原则，定义总体矩 $E[\mathbf{g}(\mathbf{w}_i ; \boldsymbol{\delta})]$ 的样本对应物：
@@ -931,7 +931,7 @@ $$
    - 轴长与特征值 $\lambda_k$ 的平方根成反比。
 3. **投影本质**: $\hat{\boldsymbol{\delta}}$ 是样本矩轨迹（由 $\boldsymbol{\delta}$ 变动生成的 $L$ 维超平面）与最小椭球体的**切点**。
 
-![Wage equation example](../../attachment/Pasted image 20260503104338.png)
+![Wage equation example](../../attachment/Pasted-image-20260503104338.png)
 
 :::{admonition} Definition (Definition 3.1 (GMM Estimator))
 Let $\widehat{\mathbf{W}}$ be a $K \times K$ symmetric positive definite matrix, possibly dependent on the sample, such that $\widehat{\mathbf{W}} \xrightarrow{p} \mathbf{W}$ as $n \to \infty$. The **GMM estimator** of $\boldsymbol{\delta}$, denoted by $\hat{\boldsymbol{\delta}}(\widehat{\mathbf{W}})$, is defined as:
@@ -1000,11 +1000,11 @@ $$
 \hat{\boldsymbol{\delta}}(\widehat{\mathbf{W}}) - \boldsymbol{\delta} = (\mathbf{S}_{xz}' \widehat{\mathbf{W}} \mathbf{S}_{xz})^{-1} \mathbf{S}_{xz}' \widehat{\mathbf{W}} \bar{\mathbf{g}} \quad (3.4.11)
 $$
 
-> [!important] 结构分析
-> 该误差项由三部分组成：
-> 1. $(\mathbf{S}_{xz}' \widehat{\mathbf{W}} \mathbf{S}_{xz})^{-1}$: 测度信息的精确度。
-> 2. $\mathbf{S}_{xz}' \widehat{\mathbf{W}}$: 权重分配与投影方向。
-> 3. $\bar{\mathbf{g}}$: 矩条件的随机波动。由于 $E(\bar{\mathbf{g}}) = \mathbf{0}$，结合大数定律（LLN），当 $n \to \infty$ 时，$\bar{\mathbf{g}} \xrightarrow{p} \mathbf{0}$，从而保证了 $\hat{\boldsymbol{\delta}}$ 的一致性。
+**结构分析**
+该误差项由三部分组成：
+1. $(\mathbf{S}_{xz}' \widehat{\mathbf{W}} \mathbf{S}_{xz})^{-1}$: 测度信息的精确度。
+2. $\mathbf{S}_{xz}' \widehat{\mathbf{W}}$: 权重分配与投影方向。
+3. $\bar{\mathbf{g}}$: 矩条件的随机波动。由于 $E(\bar{\mathbf{g}}) = \mathbf{0}$，结合大数定律（LLN），当 $n \to \infty$ 时，$\bar{\mathbf{g}} \xrightarrow{p} \mathbf{0}$，从而保证了 $\hat{\boldsymbol{\delta}}$ 的一致性。
 
 **GMM Large-Sample Theory**
 
@@ -1086,8 +1086,7 @@ $$
 provided $E(\varepsilon_i^2)$ exists and is finite.
 :::
 
-^proposition-3-2
-
+(proposition-3-2)=
 **Proof of Proposition 3.2**
 
 由线性模型 $y_i = \mathbf{z}_i' \boldsymbol{\delta} + \varepsilon_i$，
@@ -1137,7 +1136,7 @@ $$\begin{aligned}
 \end{aligned}$$
 证毕。
 
-> 该结果说明：只要参数估计量本身是一致的，用样本残差平方均值替代不可观测的误差方差在大样本下是合法的。这正是后面讨论**条件同方差 (conditional homoskedasticity)** 时构造 $\hat{\sigma}^2$ 和简化最优权重矩阵的基础。
+该结果说明：只要参数估计量本身是一致的，用样本残差平方均值替代不可观测的误差方差在大样本下是合法的。这正是后面讨论**条件同方差 (conditional homoskedasticity)** 时构造 $\hat{\sigma}^2$ 和简化最优权重矩阵的基础。
 
 Based on the asymptotic normality (Proposition 3.1), we can perform statistical tests for structural parameters.
 
@@ -1184,15 +1183,15 @@ $$
 $$
 where $\hat{\varepsilon}_i = y_i - \mathbf{z}_i' \hat{\boldsymbol{\delta}}$ and $\hat{\boldsymbol{\delta}}$ is any consistent estimator for $\boldsymbol{\delta}$.
 
-> [!assumption] Assumption 3.6 (Finite Fourth Moments)
-> $E[(x_{ik} z_{i \ell})^2]$ exists and is finite for all $k (= 1, \dots, K)$ and $\ell (= 1, \dots, L)$.
+**Assumption 3.6 (Finite Fourth Moments)**
+$E[(x_{ik} z_{i \ell})^2]$ exists and is finite for all $k (= 1, \dots, K)$ and $\ell (= 1, \dots, L)$.
 
 :::{admonition} Proposition: Proposition 3.4 (Consistent Estimation of $\mathbf{S}$)
 Suppose the coefficient estimate $\hat{\boldsymbol{\delta}}$ used for calculating the residual $\hat{\varepsilon}_i$ for $\widehat{\mathbf{S}}$ in (3.5.10) is consistent, and suppose $\mathbf{S} = E(\mathbf{g}_i \mathbf{g}_i')$ exists and is finite. Then, under Assumptions 3.1, 3.2, and 3.6, $\widehat{\mathbf{S}}$ given in (3.5.10) is consistent for $\mathbf{S}$.
 
 :::
 
-**Proof: Consistency of $\widehat{\mathbf{S}}$ (WTS: $\widehat{S}_{kl} \xrightarrow{p} S_{kl}$)**
+**Proof: Consistency of $\widehat{\mathbf{S}}$ (要证： $\widehat{S}_{kl} \xrightarrow{p} S_{kl}$)**
 
 The $(k, l)$ element of $\widehat{\mathbf{S}}$ is $\widehat{S}_{kl} = \frac{1}{n} \sum_{i=1}^n \hat{\varepsilon}_i^2 x_{ik} x_{il}$. We need to show its convergence:
 
@@ -1375,8 +1374,8 @@ W &= n \cdot \mathbf{a}(\hat{\boldsymbol{\delta}})' \{ \mathbf{A}(\hat{\boldsymb
 
 ## Initial Weighting Matrix Choice
 
-> [!question] 
-> What are the typical choices of $\widehat{\mathbf{W}}$ in Step 1 (how about $\mathbf{S}_{xx}^{-1}$)?
+**Question**
+What are the typical choices of $\widehat{\mathbf{W}}$ in Step 1 (how about $\mathbf{S}_{xx}^{-1}$)?
 
 $\mathbf{S}_{xx}^{-1} = (\frac{1}{n} \mathbf{X}' \mathbf{X})^{-1}$ 是 Step 1 的典型选择，原因如下：
 - **与 2SLS 的联系**：如果我们在第一步选择 $\widehat{\mathbf{W}} = \mathbf{S}_{xx}^{-1}$，则第一步的 GMM 估计量在数值上等价于 **2SLS** 估计量。
@@ -1405,8 +1404,8 @@ $$
 \mu \equiv \frac{\gamma}{\sqrt{(\operatorname{Avar}(\hat{\boldsymbol{\delta}}(\widehat{\mathbf{W}})))_{\ell\ell}}}
 $$
 
-> [!tip] Intuition for Optimality
-> The power of the $t$-test depends on the non-centrality parameter $\mu$. For a fixed $\gamma$, maximizing the power is equivalent to maximizing $|\mu|$, which in turn requires **minimizing the asymptotic variance** $(\operatorname{Avar}(\hat{\boldsymbol{\delta}}))_{\ell\ell}$. This provides the statistical justification for seeking the **Efficient GMM Estimator**: it not only provides the most precise point estimates but also the most powerful hypothesis tests.
+**Intuition for Optimality**
+The power of the $t$-test depends on the non-centrality parameter $\mu$. For a fixed $\gamma$, maximizing the power is equivalent to maximizing $|\mu|$, which in turn requires **minimizing the asymptotic variance** $(\operatorname{Avar}(\hat{\boldsymbol{\delta}}))_{\ell\ell}$. This provides the statistical justification for seeking the **Efficient GMM Estimator**: it not only provides the most precise point estimates but also the most powerful hypothesis tests.
 
 **Overidentification and J Tests**
 
@@ -1415,7 +1414,7 @@ $$
 \mathbf{g}_n(\hat{\boldsymbol{\delta}}) = \mathbf{s}_{xy} - \mathbf{S}_{xz} \hat{\boldsymbol{\delta}} = \mathbf{0}
 $$
 
-> [!info] 数学直觉：类比原则 (Analogy Principle)
+**数学直觉：类比原则 (Analogy Principle)**
 :::{admonition} 1. 模型设定 (Model Setting)
 :
 $$
@@ -1514,10 +1513,10 @@ $$
 $$
 \mathbf{s}_{xy} = \mathbf{S}_{xz} \boldsymbol{\delta} + \bar{\mathbf{g}} \quad \text{其中 } \bar{\mathbf{g}} \equiv \frac{1}{n} \sum_{i=1}^n \mathbf{x}_i \varepsilon_i
 $$
-> [!info] 什么是 $\bar{\mathbf{g}}$？
-> - **定义**：$\bar{\mathbf{g}}$ 是在**真实的**参数 $\boldsymbol{\delta}$ 下计算得到的样本平均矩（Sample average of orthogonality conditions）。
-> - **直觉**：由于总体要求 $E[\mathbf{x}_i \varepsilon_i] = \mathbf{0}$，根据大数定律，当 $n \to \infty$ 时，$\bar{\mathbf{g}} \xrightarrow{p} \mathbf{0}$。
-> - **作用**：在有限样本中，$\bar{\mathbf{g}}$ 代表了工具变量正交性的“随机抽样波动”。GMM 的本质就是通过投影矩阵 $\hat{\mathbf{B}}$ 将这种波动从 $\mathbf{g}_n(\hat{\boldsymbol{\delta}})$ 中剥离出来。
+**什么是 $\bar{\mathbf{g}}$？**
+- **定义**：$\bar{\mathbf{g}}$ 是在**真实的**参数 $\boldsymbol{\delta}$ 下计算得到的样本平均矩（Sample average of orthogonality conditions）。
+- **直觉**：由于总体要求 $E[\mathbf{x}_i \varepsilon_i] = \mathbf{0}$，根据大数定律，当 $n \to \infty$ 时，$\bar{\mathbf{g}} \xrightarrow{p} \mathbf{0}$。
+- **作用**：在有限样本中，$\bar{\mathbf{g}}$ 代表了工具变量正交性的“随机抽样波动”。GMM 的本质就是通过投影矩阵 $\hat{\mathbf{B}}$ 将这种波动从 $\mathbf{g}_n(\hat{\boldsymbol{\delta}})$ 中剥离出来。
 
 
 :::{admonition} Definition (样本矩定义 (Sample Moment Definition))
@@ -1724,13 +1723,13 @@ $$
 \mathbf{S}_{11} - \mathbf{S}_{12} \mathbf{S}_{22}^{-1} \mathbf{S}_{21} \le \mathbf{S}_{11} \implies \mathbf{W}_{11} \ge \mathbf{S}_{11}^{-1} \quad (\text{按半正定秩次定义})
 $$
 
-> [!tip] 二次型完备化 (Completing the Quadratic Form)
-> 这是一个将标量代数中“配平方法” ($ax^2 + 2bxy + cy^2$) 推广到矩阵代数的技巧。对于二次型 $\mathbf{g}' \mathbf{W} \mathbf{g}$，我们通过构造一个全平方式项（包含 $\mathbf{g}_{2n}$）和一个剩余项（仅含 $\mathbf{g}_{1n}$）来分解目标函数：
->
+**二次型完备化 (Completing the Quadratic Form)**
+这是一个将标量代数中“配平方法” ($ax^2 + 2bxy + cy^2$) 推广到矩阵代数的技巧。对于二次型 $\mathbf{g}' \mathbf{W} \mathbf{g}$，我们通过构造一个全平方式项（包含 $\mathbf{g}_{2n}$）和一个剩余项（仅含 $\mathbf{g}_{1n}$）来分解目标函数：
+
 $$
 J = n \cdot \underbrace{(\mathbf{g}_{2n} + \mathbf{W}_{22}^{-1} \mathbf{W}_{21} \mathbf{g}_{1n})' \mathbf{W}_{22} (\mathbf{g}_{2n} + \mathbf{W}_{22}^{-1} \mathbf{W}_{21} \mathbf{g}_{1n})}_{\text{非负项 (Quadratic term)}} + n \cdot \mathbf{g}_{1n}' \underbrace{(\mathbf{W}_{11} - \mathbf{W}_{12} \mathbf{W}_{22}^{-1} \mathbf{W}_{21})}_{\text{Schur Complement} = \mathbf{S}_{11}^{-1}} \mathbf{g}_{1n}
 $$
-> 这种分解清晰地显示了：全集 $J$ 统计量等于子集 $J_1$ 加上一个由存疑变量引起的**非负额外偏差**。
+这种分解清晰地显示了：全集 $J$ 统计量等于子集 $J_1$ 加上一个由存疑变量引起的**非负额外偏差**。
 
 **2. 目标函数的比较 (Comparison of Objective Functions)**
 
@@ -1796,18 +1795,18 @@ LR \equiv J(\bar{\boldsymbol{\delta}}(\widehat{\mathbf{S}}^{-1}), \widehat{\math
 $$
 该统计量在大样本下服从卡方分布：$LR \xrightarrow{d} \chi^2(\#\text{restrictions})$。
 
-> [!important] 核心要求
-> 为了保证 $LR \ge 0$ 以及渐近分布的正确性，计算 $J(\bar{\boldsymbol{\delta}})$ 和 $J(\hat{\boldsymbol{\delta}})$ 时**必须使用同一个权重矩阵** $\widehat{\mathbf{S}}^{-1}$。
+**核心要求**
+为了保证 $LR \ge 0$ 以及渐近分布的正确性，计算 $J(\bar{\boldsymbol{\delta}})$ 和 $J(\hat{\boldsymbol{\delta}})$ 时**必须使用同一个权重矩阵** $\widehat{\mathbf{S}}^{-1}$。
 
 ## Connection to Classical Likelihood Ratio
 
-> [!info] 数学直觉
-> 在经典最大似然估计 (MLE) 中，似然比检验基于以下形式：
->
+**数学直觉**
+在经典最大似然估计 (MLE) 中，似然比检验基于以下形式：
+
 $$
 -2 \log \left( \frac{L(\text{data}; H_0)}{L(\text{data}; H_a)} \right) = 2 \log L(\text{data}; H_a) - 2 \log L(\text{data}; H_0)
 $$
-> 在 GMM 框架下，$J$ 统计量扮演了 $-2 \log L$ 的角色。因此，$LR = J(\text{restricted}) - J(\text{unrestricted})$ 实际上是对约束造成的拟合损失的度量。
+在 GMM 框架下，$J$ 统计量扮演了 $-2 \log L$ 的角色。因此，$LR = J(\text{restricted}) - J(\text{unrestricted})$ 实际上是对约束造成的拟合损失的度量。
 
 ## Wald and LR Comparison
 
@@ -1887,13 +1886,13 @@ LR &\equiv J(\bar{\boldsymbol{\delta}}) - J(\hat{\boldsymbol{\delta}}) \\
 &= W
 \end{aligned}$$
 
-> [!info] 为什么这是 Wald 统计量？
-> 这一结论源于 **Delta Method**。在有效 GMM 下，$\hat{\boldsymbol{\delta}}$ 的渐近方差估计量为 $\mathbf{M}^{-1}$。根据 Delta Method，约束函数 $\mathbf{a}(\hat{\boldsymbol{\delta}})$ 的渐近方差为 $\mathbf{A} \mathbf{M}^{-1} \mathbf{A}'$。Wald 统计量 $W$ 的本质是将 $\mathbf{a}(\hat{\boldsymbol{\delta}})$ 二次型化：
->
+**为什么这是 Wald 统计量？**
+这一结论源于 **Delta Method**。在有效 GMM 下，$\hat{\boldsymbol{\delta}}$ 的渐近方差估计量为 $\mathbf{M}^{-1}$。根据 Delta Method，约束函数 $\mathbf{a}(\hat{\boldsymbol{\delta}})$ 的渐近方差为 $\mathbf{A} \mathbf{M}^{-1} \mathbf{A}'$。Wald 统计量 $W$ 的本质是将 $\mathbf{a}(\hat{\boldsymbol{\delta}})$ 二次型化：
+
 $$
 W = [\sqrt{n}\mathbf{a}(\hat{\boldsymbol{\delta}})]' [\mathbf{A} \mathbf{M}^{-1} \mathbf{A}']^{-1} [\sqrt{n}\mathbf{a}(\hat{\boldsymbol{\delta}})]
 $$
-> 从而衡量了未受约束估计量对约束条件的偏离程度。
+从而衡量了未受约束估计量对约束条件的偏离程度。
 
 :::{admonition} Definition (Wald Statistic (Wald 统计量定义))
 给定零假设 $H_0: \mathbf{a}(\boldsymbol{\delta}) = \mathbf{0}$，Wald 统计量定义为：
@@ -1924,16 +1923,16 @@ $$
   $$
   其中 $\bar{\boldsymbol{\delta}}(\widehat{\mathbf{S}}^{-1})$ 是受约束的有效 GMM 估计量。
 
-> [!important] 结论
-> 根据 Proposition 3.8，该统计量渐近服从卡方分布。如果原假设 $H_0$ 是线性的，则该统计量在数值上与 Wald 统计量完全相等。
+**结论**
+根据 Proposition 3.8，该统计量渐近服从卡方分布。如果原假设 $H_0$ 是线性的，则该统计量在数值上与 Wald 统计量完全相等。
 
 **Conditional Homoskedasticity in IV-GMM**
 
 本节探讨当模型满足条件同方差假设时，GMM 估计量及其性质如何简化。
 
-> [!assumption] Assumption 3.7 (Conditional Homoskedasticity)
-> 扰动项的条件方差为常数：
->
+**Assumption 3.7 (Conditional Homoskedasticity)**
+扰动项的条件方差为常数：
+
 $$
 E(\varepsilon_i^2 | \mathbf{x}_i) = \sigma^2 \tag{3.8.0}
 $$
@@ -1963,10 +1962,10 @@ $$
 $$
 其中 $\hat{\sigma}^2$ 是 $\sigma^2$ 的任一一致估计量（如样本残差平方和均值）。
 
-> [!tip] 统计性质
-> 根据平稳遍历性，$\mathbf{S}_{xx} \xrightarrow{a.s.} \boldsymbol{\Sigma}_{xx}$。
-> - **优势**：在这种设定下，我们不再需要“存在有限四阶矩”的强假设（Assumption 3.6），因为 $\mathbf{S}$ 的估计仅依赖于变量的二阶矩。
-> - **2SLS 的地位**：在此假设下，最优权重矩阵为 $\mathbf{W} = (\sigma^2 \boldsymbol{\Sigma}_{xx})^{-1} \propto \boldsymbol{\Sigma}_{xx}^{-1}$。这正是 2SLS 所采用的权重，说明在条件同方差下，**2SLS 即为有效 GMM**。
+**统计性质**
+根据平稳遍历性，$\mathbf{S}_{xx} \xrightarrow{a.s.} \boldsymbol{\Sigma}_{xx}$。
+- **优势**：在这种设定下，我们不再需要“存在有限四阶矩”的强假设（Assumption 3.6），因为 $\mathbf{S}$ 的估计仅依赖于变量的二阶矩。
+- **2SLS 的地位**：在此假设下，最优权重矩阵为 $\mathbf{W} = (\sigma^2 \boldsymbol{\Sigma}_{xx})^{-1} \propto \boldsymbol{\Sigma}_{xx}^{-1}$。这正是 2SLS 所采用的权重，说明在条件同方差下，**2SLS 即为有效 GMM**。
 
 ## Efficient GMM Reduces to 2SLS
 
@@ -2214,9 +2213,9 @@ $$\begin{aligned}
 \end{aligned} \tag{Eq 3.8.17}$$
 由于两者不相等，第二阶段 OLS 估计的方差 $\hat{\sigma}^2_{\text{OLS}} = \frac{\hat{\boldsymbol{\varepsilon}}_{\text{wrong}}' \hat{\boldsymbol{\varepsilon}}_{\text{wrong}}}{n-L}$ 是 $\sigma^2$ 的非一致估计量。
 
-> [!danger] 结论
-> 进行统计推断（计算 $t$ 统计量、Wald 检验等）时，必须使用**原始变量 $\mathbf{Z}$** 来重新计算残差和方差估计量：
->
+**结论**
+进行统计推断（计算 $t$ 统计量、Wald 检验等）时，必须使用**原始变量 $\mathbf{Z}$** 来重新计算残差和方差估计量：
+
 $$
 \hat{\sigma}^2 = \frac{1}{n} \sum_{i=1}^n (y_i - \mathbf{z}_i' \hat{\boldsymbol{\delta}}_{2SLS})^2 \tag{Eq 3.8.18}
 $$
@@ -2238,8 +2237,8 @@ J(\tilde{\boldsymbol{\delta}}, (\hat{\sigma}^2 \cdot \mathbf{S}_{xx})^{-1}) &= \
 \end{aligned} \tag{3.8.14}$$
 其中 $\hat{\mathbf{y}} \equiv \mathbf{P}\mathbf{y}$ 是 $\mathbf{y}$ 在工具变量空间 $\mathbf{x}$ 上的投影。
 
-> [!tip] 推导要点
-> 上式中，第二项 $\frac{(\mathbf{y} - \hat{\mathbf{y}})' (\mathbf{y} - \hat{\mathbf{y}})}{\hat{\sigma}^2}$ 与参数 $\tilde{\boldsymbol{\delta}}$ 无关。因此，最小化 $J$ 统计量等价于最小化第一项，即最小化残差平方和 $(\mathbf{y} - \mathbf{Z} \tilde{\boldsymbol{\delta}})' (\mathbf{y} - \mathbf{Z} \tilde{\boldsymbol{\delta}})$。
+**推导要点**
+上式中，第二项 $\frac{(\mathbf{y} - \hat{\mathbf{y}})' (\mathbf{y} - \hat{\mathbf{y}})}{\hat{\sigma}^2}$ 与参数 $\tilde{\boldsymbol{\delta}}$ 无关。因此，最小化 $J$ 统计量等价于最小化第一项，即最小化残差平方和 $(\mathbf{y} - \mathbf{Z} \tilde{\boldsymbol{\delta}})' (\mathbf{y} - \mathbf{Z} \tilde{\boldsymbol{\delta}})$。
 
 ##### 结论与性质 (Conclusions & Properties)
 
@@ -2353,7 +2352,7 @@ $$
     - 在 $H_0$ 下，两个点应该收敛到同一个真相（$\text{plim}$ 相同），所以差值应该为 0。
     - 三明治中间的方差阵利用了“有效性”带来的简化：由于有效估计量与差值不相关，差值的方差直接等于两个方差相减，这使得 Hausman 统计量能够精准锁定由于**内生性或模型设定错误**导致的系统性位移。
 
-> [!important] 核心区别总结
+**核心区别总结**
 :::{admonition} Wald 检验
 通常用于参数显著性测试（例如：教育的回报率是否为 0？）；
 **Hausman 检验**通常用于模型稳健性或规范性测试（例如：OLS 是否因为内生性而失效？此时比较 OLS 和 2SLS）。

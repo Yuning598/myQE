@@ -4,22 +4,24 @@ orphan: true
 
 # MTE Weights
 
-Parent: [06_Potential_Outcomes_LATE_Roy_MTE](06_Potential_Outcomes_LATE_Roy_MTE)
+导航：[Econometrics index](../../index.md)
+
+Parent: [06_Potential_Outcomes_LATE_Roy_MTE](../06_Potential_Outcomes_LATE_Roy_MTE.md)
 
 :::{admonition} Definition (MTE)
-In \(D=1[U_D\le p(Z)]\),
-\[
+In $D=1[U_D\le p(Z)]$,
+$$
 MTE(u)=E[Y_1-Y_0\mid U_D=u].
-\]
+$$
 
 **Lemma:** Weighted averages
-\[
+$$
 ATE=\int_0^1MTE(u)du.
-\]
-If \(p(z)>p(z')\),
-\[
+$$
+If $p(z)>p(z')$,
+$$
 LATE(z,z')=\frac{\int_{p(z')}^{p(z)}MTE(u)du}{p(z)-p(z')}.
-\]
+$$
 
 :::
 

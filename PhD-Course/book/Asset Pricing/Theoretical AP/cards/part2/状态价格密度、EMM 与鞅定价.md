@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # 状态价格密度、EMM 与鞅定价
 
-来源：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#4.2 Arbitrage, SPD, and EMM](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#4.2 Arbitrage, SPD, and EMM)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
 
-返回：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing)
 
 :::{admonition} Definition (Definition)
 状态价格密度（SPD）$\xi_t$ 是严格正过程，使得 SPD 调整后的价格或收益过程成为鞅。

@@ -7,7 +7,9 @@ orphan: true
 
 # Complete vs incomplete markets
 
-Main note: [Microeconomic/06_Equilibrium_Under_Uncertainty](../Microeconomic/06_Equilibrium_Under_Uncertainty)
+导航：[Microeconomic index](../index.md)
+
+Main note: [Microeconomic/06_Equilibrium_Under_Uncertainty](../06_Equilibrium_Under_Uncertainty.md)
 
 Markets are complete if
 

@@ -32,7 +32,6 @@ sphinx:
       - tikz
     tikz_latex_preamble: "% keep standalone TikZ builds from inheriting JupyterBook's LaTeX preamble"
     mermaid_version: "10.6.1"
-    mermaid_init_js: "mermaid.initialize({startOnLoad:true});"
     tikz_proc_suite: GhostScript
     html_theme_options:
       repository_url: https://github.com/Yuning598/PhD-Course

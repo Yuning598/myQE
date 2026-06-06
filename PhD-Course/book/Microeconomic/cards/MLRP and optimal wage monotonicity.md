@@ -7,7 +7,9 @@ orphan: true
 
 # MLRP and optimal wage monotonicity
 
-Main note: [Microeconomic/07_Principal-Agent_Models_Moral_Hazard_and_Screening](../Microeconomic/07_Principal-Agent_Models_Moral_Hazard_and_Screening)
+导航：[Microeconomic index](../index.md)
+
+Main note: [Microeconomic/07_Principal-Agent_Models_Moral_Hazard_and_Screening](../07_Principal-Agent_Models_Moral_Hazard_and_Screening.md)
 
 MLRP:
 
@@ -22,4 +24,4 @@ $$
 \lambda+\mu\left(1-\frac{f(x|0)}{f(x|1)}\right).
 $$
 
-Under MLRP and \(\mu>0\), RHS increases with \(x\). Since \(u''<0\), \(w(x)\) increases with \(x\).
+Under MLRP and $\mu>0$, RHS increases with $x$. Since $u''<0$, $w(x)$ increases with $x$.

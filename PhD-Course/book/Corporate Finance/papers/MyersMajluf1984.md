@@ -1,4 +1,5 @@
 ---
+orphan: true
 title: "Corporate Financing and Investment Decisions When Firms Have Information That Investors Do Not Have"
 year: 1984
 journal: "Journal of Financial Economics"

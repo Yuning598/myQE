@@ -1,7 +1,14 @@
 # 00 Advanced Microeconomics (EF8070) - Course Notes
 
-## Course Overview
-本课程涵盖高级微观经济学的核心理论，主要包括个体决策（消费者与生产者理论）、市场互动以及一般均衡分析。
+Microeconomic 的导航入口。本课程主要提供偏好、风险、均衡、状态价格和信息问题的理论基础，后续会进入 Asset Pricing 与部分机制设计题。
+
+## Start Here
+
+- [ProblemSet](../ProblemSet/Microeconomics.md)
+- [Cross-Course Hub](../Cross-Course/index.md)
+- [State prices / SDF / 完备市场](../Cross-Course/bridges/State_Prices_SDF_Complete_Markets.md)
+- [风险厌恶 / 均值-方差 / CAPM](../Cross-Course/bridges/Risk_Aversion_Mean_Variance_CAPM.md)
+- [动态规划与 HJB](../Cross-Course/bridges/Dynamic_Programming_HJB.md)
 
 ## 笔记结构 (Chapter Structure)
 
@@ -42,3 +49,9 @@
 1. [Econ 701B Fall 2018 (UPenn)](https://www.xinchengqiu.com/teaching/701B.pdf)
 	- General Equilibrium
 	- 例子对FWT、SWT的理解很有帮助。
+
+## 跨课程导航
+
+- **后续应用**：[Asset Pricing](../Asset%20Pricing/index.md)（SDF、CAPM、动态资产定价）。
+- **相关课程**：[Asset Pricing](../Asset%20Pricing/index.md)、[Econometrics](../Econometrics/index.md)。
+- **总入口**：[Cross-Course 跨课复习 Hub](../Cross-Course/index.md)

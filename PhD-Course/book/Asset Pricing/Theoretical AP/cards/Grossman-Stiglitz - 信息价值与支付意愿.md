@@ -4,9 +4,9 @@ orphan: true
 
 # Grossman-Stiglitz - 信息价值与支付意愿
 
-来源：[Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#补充：她最多愿意为信息支付多少？](Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#补充：她最多愿意为信息支付多少？)
+导航：[Asset Pricing index](../../index.md) · [Theoretical AP](../../Theoretical_Asset_Pricing.md) · 来源：[04_Information_Beliefs_and_Learning](../04_Information_Beliefs_and_Learning.md)
 
-相关基础：[Asset Pricing/Theoretical AP/cards/part1/确定性等价与风险溢价](Asset Pricing/Theoretical AP/cards/part1/确定性等价与风险溢价)
+相关基础：[确定性等价与风险溢价](part1/%E7%A1%AE%E5%AE%9A%E6%80%A7%E7%AD%89%E4%BB%B7%E4%B8%8E%E9%A3%8E%E9%99%A9%E6%BA%A2%E4%BB%B7.md)
 
 ## 核心推导
 
@@ -32,30 +32,30 @@ X^*(\mathcal I)=\frac{\mu_{\mathcal I}-p}{\lambda\Sigma_{\mathcal I}}.
 \end{aligned}
 $$
 
->这里要区分两个对象：
->- 随机财富本身：$W=m+X(v-p)$；这是一个由终值 $v$ 决定的随机变量，本身没有“减去方差项”。
->- certainty equivalent（确定性等价）：是使投资者对“拿到一个确定金额”和“持有随机财富 $W$”无差异的确定数值。
->
->CE 的一般定义是
->$$
->U(CE)=E[U(W)],
->\qquad
->CE=U^{-1}(E[U(W)]).
->$$
->在 CARA 效用 $U(W)=-e^{-\lambda W}$ 下，
->$$
->CE=-\frac{1}{\lambda}\ln E[e^{-\lambda W}].
->$$
->若进一步 $W\sim N(\mu,\sigma^2)$，则
->$$
->CE=\mu-\frac{\lambda}{2}\sigma^2
->=E[W]-\frac{\lambda}{2}\operatorname{Var}(W).
->$$
->因此在 CARA 效用且财富正态时，最大化期望效用等价于最大化
->$$
->E[W]-\frac{\lambda}{2}\operatorname{Var}(W),
->$$
->也就是在期望财富中扣掉一个风险惩罚项 $-\frac{\lambda}{2}\operatorname{Var}(W)$。这个方差项不是财富定义的一部分，而是风险厌恶下对随机财富的折价。
+这里要区分两个对象：
+- 随机财富本身：$W=m+X(v-p)$；这是一个由终值 $v$ 决定的随机变量，本身没有“减去方差项”。
+- certainty equivalent（确定性等价）：是使投资者对“拿到一个确定金额”和“持有随机财富 $W$”无差异的确定数值。
+
+CE 的一般定义是
+$$
+U(CE)=E[U(W)],
+\qquad
+CE=U^{-1}(E[U(W)]).
+$$
+在 CARA 效用 $U(W)=-e^{-\lambda W}$ 下，
+$$
+CE=-\frac{1}{\lambda}\ln E[e^{-\lambda W}].
+$$
+若进一步 $W\sim N(\mu,\sigma^2)$，则
+$$
+CE=\mu-\frac{\lambda}{2}\sigma^2
+=E[W]-\frac{\lambda}{2}\operatorname{Var}(W).
+$$
+因此在 CARA 效用且财富正态时，最大化期望效用等价于最大化
+$$
+E[W]-\frac{\lambda}{2}\operatorname{Var}(W),
+$$
+也就是在期望财富中扣掉一个风险惩罚项 $-\frac{\lambda}{2}\operatorname{Var}(W)$。这个方差项不是财富定义的一部分，而是风险厌恶下对随机财富的折价。
 
 
 若支付信息成本 $c$ 观察私人信号 $s$，则

@@ -1,6 +1,14 @@
 # Econometrics
-## Overview
-This section collects the econometrics notes for EF8090, MS8956, and related review material.
+
+Econometrics 的导航入口。EF8090 是基础计量工具，MS8956 是 GMM / system / panel 的延伸；跨课应用主要进入 Asset Pricing 和 Corporate Finance。
+
+## Start Here
+
+- [ProblemSet](../ProblemSet/Econometrics.md)
+- [Cross-Course Hub](../Cross-Course/index.md)
+- [Projection 与 beta pricing](../Cross-Course/bridges/Projection_Beta_Pricing.md)
+- [GMM 与 Euler equation](../Cross-Course/bridges/GMM_Euler_Equation.md)
+- [识别策略与 Corporate Finance](../Cross-Course/bridges/Identification_Corporate_Finance.md)
 
 ## Chapter Map
 
@@ -22,9 +30,13 @@ This section collects the econometrics notes for EF8090, MS8956, and related rev
 1. [11 System GMM, 3SLS, and SUR](MS8956/11_Multiple_Equation_GMM.md)
 1. [12 Panel Data: Fixed Effects and Random Effects](MS8956/12_Panel_Data.md)
 
-Use the table of contents to move through the chapter sequence.
-
 ## Reference
 
 1. [Econ 480-3 (NorthwestU)](https://bpb-us-e1.wpmucdn.com/sites.northwestern.edu/dist/4/216/files/2022/07/LectureNotes-480.pdf)
 	- 包含了EF8090所有内容，可以作为更系统的参考材料。
+
+## 跨课程导航
+
+- **后续应用**：[Asset Pricing](../Asset%20Pricing/index.md)（因子模型、GMM 定价）、[Corporate Finance](../Corporate%20Finance/index.md)（因果识别、实证设计）。
+- **相关课程**：[Microeconomics](../Microeconomic/index.md)（计量背后的理论模型）。
+- **总入口**：[Cross-Course 跨课复习 Hub](../Cross-Course/index.md)

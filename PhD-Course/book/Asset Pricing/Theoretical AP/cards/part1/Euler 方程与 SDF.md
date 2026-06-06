@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # Euler 方程与 SDF
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#4.2 Euler Equation](Asset Pricing/Theoretical AP/01_Single_Period_Models#4.2 Euler Equation)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Proposition: Proposition
 两期消费—投资问题的一阶条件给出 Euler 方程：

@@ -1,4 +1,5 @@
 ---
+orphan: true
 title: "What Do We Know About Capital Structure? Some Evidence from International Data"
 year: 1995
 journal: "Journal of Finance"

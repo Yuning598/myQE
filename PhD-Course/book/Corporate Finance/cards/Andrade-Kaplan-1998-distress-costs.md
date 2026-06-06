@@ -4,12 +4,12 @@ orphan: true
 
 # Andrade and Kaplan (1998) - Distress Costs in Highly Leveraged Transactions
 
+导航：[Corporate Finance index](../index.md)
+
 这张卡对应 <a href="../01_Empirical_Corporate_Finance.html#sec-andrade-kaplan-1998">Supporting evidence: Andrade and Kaplan (1998)</a>. 这里把 highly leveraged transactions 里的 distress cost 细节集中起来。
 
 (card-andrade-kaplan-1998-distress-costs)=
-(^card-andrade-kaplan-1998-distress-costs)=
 
-^card-andrade-kaplan-1998-distress-costs
 
 ## Core question
 
@@ -156,8 +156,8 @@ $$
 - interpretation：它们对应的是 value destruction 的渠道，而不只是 leverage 本身
 - interpretation：asset substitution 说明 distress 之后会出现风险转移和投资扭曲
 
-![Andrade Kaplan result table 1](../../attachment/Pasted image 20260501161121.png)
+![Andrade Kaplan result table 1](../../attachment/Pasted-image-20260501161121.png)
 
-![Andrade Kaplan result table 2](../../attachment/Pasted image 20260501162031.png)
+![Andrade Kaplan result table 2](../../attachment/Pasted-image-20260501162031.png)
 
-![Andrade Kaplan result table 3](../../attachment/Pasted image 20260501162038.png)
+![Andrade Kaplan result table 3](../../attachment/Pasted-image-20260501162038.png)

@@ -1,4 +1,10 @@
+---
+orphan: true
+---
+
 # Euler Equation 推导
+
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md)
 
 先集中记号，是为了把 Epstein--Zin 递归改写成幂函数形式，后面一阶条件、homotheticity 和 SDF 推导都会明显更短：
 

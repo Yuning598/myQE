@@ -1,17 +1,20 @@
+---
+orphan: true
+---
+
 # binding（绑定）
 
-来源：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#5.5 Optimal Stopping](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#5.5 Optimal Stopping)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
 
-返回：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing)
 
-关联卡片：[Asset Pricing/Theoretical AP/cards/part2/最优停止与 smooth pasting](Asset Pricing/Theoretical AP/cards/part2/最优停止与 smooth pasting)
+关联卡片：[最优停止与 smooth pasting](%E6%9C%80%E4%BC%98%E5%81%9C%E6%AD%A2%E4%B8%8E%20smooth%20pasting.md)
 
 :::{admonition} Definition (Binding)
 “binding / 绑定” 指的是：在若干候选条件里，**真正以等号成立、决定最优值的那一条**。
 
 :::
 
-^def-binding
+(def-binding)=
 
 在最优停止里，常写
 

@@ -4,6 +4,8 @@ orphan: true
 
 # Threats to identification - empirical categories
 
+导航：[Corporate Finance index](../index.md)
+
 识别威胁本质上是：估计到的 $\hat\beta$ 不能只解释为目标机制的 causal effect。
 
 $$
@@ -140,6 +142,3 @@ $$
 - 税盾政策变化可能同时影响投资、利润、信贷供给和宏观融资环境。
 
 (card-threats-to-identification)=
-(^card-threats-to-identification)=
-
-^card-threats-to-identification

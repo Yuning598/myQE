@@ -4,6 +4,8 @@ orphan: true
 
 # APV - Adjusted Present Value
 
+导航：[Corporate Finance index](../index.md)
+
 APV（Adjusted Present Value，调整后现值）是把 **operating value** 和 **financing effects** 分开估值的方法。  
 核心想法是：
 
@@ -47,8 +49,6 @@ APV = V_U + T_C D
 $$
 
 (card-apv-adjusted-present-value)=
-(^card-apv-adjusted-present-value)=
 
-^card-apv-adjusted-present-value
 
 Related section: <a href="../01_Empirical_Corporate_Finance.html#sec-tax-shield-capital-structure">Taxes and Levered Value</a>

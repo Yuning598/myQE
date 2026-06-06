@@ -895,7 +895,7 @@ $$
 \end{aligned}
 $$
 
-这说明 $\phi^*$ 随 risk premium 上升而上升，随 variance 和 absolute risk aversion 上升而下降；并且 $\phi^*$ 与 $w_0$ 无关，[absence of wealth effect](Asset Pricing/Theoretical AP/cards/part1/CARA vs CRRA - 最优风险暴露与 wealth effect) 成立。
+这说明 $\phi^*$ 随 risk premium 上升而上升，随 variance 和 absolute risk aversion 上升而下降；并且 $\phi^*$ 与 $w_0$ 无关，[absence of wealth effect](cards/part1/CARA%20vs%20CRRA%20-%20%E6%9C%80%E4%BC%98%E9%A3%8E%E9%99%A9%E6%9A%B4%E9%9C%B2%E4%B8%8E%20wealth%20effect.md) 成立。
 
 #### 1.6.3 Multiple Risky Assets
 
@@ -1469,7 +1469,7 @@ $$
   \end{aligned}
 $$
 
-  所以 SDF 唯一（a.s.）。详细证明见 [Asset Pricing/Theoretical AP/cards/part1/市场完备性与 SDF 唯一性](Asset Pricing/Theoretical AP/cards/part1/市场完备性与 SDF 唯一性)。
+  所以 SDF 唯一（a.s.）。详细证明见 [市场完备性与 SDF 唯一性](cards/part1/%E5%B8%82%E5%9C%BA%E5%AE%8C%E5%A4%87%E6%80%A7%E4%B8%8E%20SDF%20%E5%94%AF%E4%B8%80%E6%80%A7.md)。
 
 - **风险中性概率的唯一性（Uniqueness of the Risk-Neutral Probability）**
   若无风险资产 $R_f$ 存在，则
@@ -1483,7 +1483,7 @@ $$
   因为 $\tilde m$ 唯一，所以 $Q$ 也唯一。
 
 - **Remark**
-  市场完备性比 Law of One Price 更强；没有完备性时，SDF 可以存在，但未必唯一。细节见 [Asset Pricing/Theoretical AP/cards/part1/市场完备性与 SDF 唯一性](Asset Pricing/Theoretical AP/cards/part1/市场完备性与 SDF 唯一性)。
+  市场完备性比 Law of One Price 更强；没有完备性时，SDF 可以存在，但未必唯一。细节见 [市场完备性与 SDF 唯一性](cards/part1/%E5%B8%82%E5%9C%BA%E5%AE%8C%E5%A4%87%E6%80%A7%E4%B8%8E%20SDF%20%E5%94%AF%E4%B8%80%E6%80%A7.md)。
 
 #### 2.2.5 Risk-Neutral Probability from SDF
 
@@ -2219,7 +2219,7 @@ $$
 $$
 
 直观上，若某个 frontier portfolio 的 expected return 还低于 GMV，则沿 frontier 向 GMV 移动会同时提高 expected return 并降低 variance；因此它不是 efficient。反过来，GMV 右侧的 frontier points 才是真正的 mean-variance trade-off 区域。
-![Mean-variance frontier illustration 1](../../attachment/Pasted image 20260423100816.png)
+![Mean-variance frontier illustration 1](../../attachment/Pasted-image-20260423100816.png)
 
 
 :::
@@ -2231,7 +2231,7 @@ $$
 ### 3.1 Frontier with a Risk-Free Asset
 
 
-![Mean-variance frontier illustration 2](../../attachment/Pasted image 20260423100917.png)
+![Mean-variance frontier illustration 2](../../attachment/Pasted-image-20260423100917.png)
 
 #### 3.1.1 One Risky Asset and One Risk-Free Asset
 
@@ -2700,7 +2700,7 @@ $$
 
 从这个表达式还可以看出：若切点组合的 expected return 高于 $R_f$，则它位于 efficient part；若低于 $R_f$，则对应的是下支，需要把方向翻转后才得到上支的切点基金.
 
-关联后文：[CAPM and Mean-Variance Efficiency](Asset Pricing/Theoretical AP/01_Single_Period_Models#^prop-3-2-4-mve)
+关联后文：[CAPM and Mean-Variance Efficiency](01_Single_Period_Models.md)
 
 设任意三个 frontier 组合满足
 
@@ -2962,7 +2962,7 @@ $$
 
 #### 3.2.4 Mean-Variance Efficiency
 
-关联前文：[mean-variance frontier with a risk-free asset](Asset Pricing/Theoretical AP/01_Single_Period_Models#3.1.2 Framework)、[tangency portfolio](Asset Pricing/Theoretical AP/01_Single_Period_Models#3.1.3 Tangency Portfolio)、[two-fund spanning](Asset Pricing/Theoretical AP/01_Single_Period_Models#3.1.4 Two-Fund Spanning)
+关联前文：[mean-variance frontier with a risk-free asset](01_Single_Period_Models.md)、[tangency portfolio](01_Single_Period_Models.md)、[two-fund spanning](01_Single_Period_Models.md)
 
 :::{admonition} Lemma: CAPM and Mean-Variance Efficiency
 CAPM 与 market portfolio 在 mean-variance frontier 上是等价的：
@@ -3210,7 +3210,7 @@ $\tilde m$ 可能对某些实现值为负。若 CAPM 成立，则有三种可能
 
 #### 3.2.6 General Factor Models
 
-QE-PS 速查：[Factor model 快速复习](ProblemSet/ProblemSet#^qe-ps-factor-model-review)
+QE-PS 速查：[Factor model 快速复习](../../ProblemSet/Theoretical%20Asset%20Pricing.md#qe-ps-factor-model-review)
 
 :::{admonition} Lemma: General Factor Models
 CAPM is a single factor model in which the factor is the market return.
@@ -3232,7 +3232,7 @@ $$
 
 #### 3.2.7 Single-Factor Model
 
-关联前文：[General Factor Models](Asset Pricing/Theoretical AP/01_Single_Period_Models#^prop-3-2-6-factor-models)
+关联前文：[General Factor Models](01_Single_Period_Models.md)
 
 :::{admonition} Lemma: Single-Factor Model
 设 factor 为 $\tilde f$。若存在常数 $R_z$ 和 $\lambda$，使得对任意 return $\tilde R$，
@@ -3622,7 +3622,7 @@ $$
 :::
 
 
-Empirical AP 连接：[Linear SDF implies beta pricing](../../Empirical AP/05_Cross_Section_Factor_Models.md) 是本命题在 excess-return / cross-sectional setting 下的写法；[Beta-SDF Equivalence](../../Empirical AP/cards/Beta_SDF_Equivalence.md) 汇总 EF8077 与 EF8083 的符号转换。
+Empirical AP 连接：[Linear SDF implies beta pricing](../Empirical%20AP/05_Cross_Section_Factor_Models.md) 是本命题在 excess-return / cross-sectional setting 下的写法；[Beta-SDF Equivalence](../Empirical%20AP/cards/Beta_SDF_Equivalence.md) 汇总 EF8077 与 EF8083 的符号转换。
 
 
 

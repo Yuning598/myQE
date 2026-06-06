@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # 分散化原理 - Idiosyncratic Risk 消失
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#2.4 Principle of Diversification](Asset Pricing/Theoretical AP/01_Single_Period_Models#2.4 Principle of Diversification)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Proposition: Proposition
 若 $n$ 个资产相互不相关且方差相同为 $\sigma^2$，等权组合满足

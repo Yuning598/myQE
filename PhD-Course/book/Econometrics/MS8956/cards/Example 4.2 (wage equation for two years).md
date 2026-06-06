@@ -1,3 +1,5 @@
+
+导航：[Econometrics index](../../index.md)
 ---
 orphan: true
 ---

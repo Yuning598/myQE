@@ -4,9 +4,8 @@ orphan: true
 
 # CARA 效用 - Constant Absolute Risk Aversion
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#1.5 Classic Utility Functions Comparison](Asset Pricing/Theoretical AP/01_Single_Period_Models#1.5 Classic Utility Functions Comparison)；[Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#10.2.1 Setup](Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#10.2.1 Setup)
+导航：[Asset Pricing index](../../index.md) · [Theoretical AP](../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning](Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning)
 
 ## 定义
 
@@ -34,4 +33,4 @@ $$
 
 ## 在本课程里的作用
 
-Grossman-Stiglitz 模型里采用 CARA 效用，是因为它和正态信号/正态终值一起构成 [Asset Pricing/Theoretical AP/cards/CARA-Normal framework - 均值方差等价与最优需求](Asset Pricing/Theoretical AP/cards/CARA-Normal framework - 均值方差等价与最优需求)。
+Grossman-Stiglitz 模型里采用 CARA 效用，是因为它和正态信号/正态终值一起构成 [CARA-Normal framework - 均值方差等价与最优需求](CARA-Normal%20framework%20-%20%E5%9D%87%E5%80%BC%E6%96%B9%E5%B7%AE%E7%AD%89%E4%BB%B7%E4%B8%8E%E6%9C%80%E4%BC%98%E9%9C%80%E6%B1%82.md)。

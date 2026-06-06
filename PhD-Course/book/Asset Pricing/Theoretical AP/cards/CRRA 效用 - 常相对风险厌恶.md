@@ -4,9 +4,8 @@ orphan: true
 
 # CRRA 效用 - Constant Relative Risk Aversion
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#1.5 Classic Utility Functions Comparison](Asset Pricing/Theoretical AP/01_Single_Period_Models#1.5 Classic Utility Functions Comparison)
+导航：[Asset Pricing index](../../index.md) · [Theoretical AP](../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning](Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning)
 
 ## 定义
 
@@ -40,4 +39,4 @@ $$
 
 ## 特例
 
-当 $\rho=1$ 时，就是对数效用，可联系 [Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#12.8 对数效用例子](Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#12.8 对数效用例子)。
+当 $\rho=1$ 时，就是对数效用，可联系 [04_Information_Beliefs_and_Learning](../04_Information_Beliefs_and_Learning.md)。

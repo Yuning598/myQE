@@ -4,6 +4,8 @@ orphan: true
 
 # Myers-Majluf dilution problem
 
+导航：[Corporate Finance index](../index.md)
+
 在 information asymmetry 下，外部投资者看不见 firm quality，所以 equity 的发行价往往按市场的平均判断来定。若好公司发行股票，发行价通常低于真实价值，于是融资会把一部分价值从 old shareholders 转移给 new shareholders，这就是 dilution problem。直观上，它不是单纯的“股数变多”，而是新股发行把一部分内在价值低价让渡给了新投资者。
 
 :::{admonition} Note
@@ -53,10 +55,6 @@ $$
 :::
 
 (card-myers-majluf-dilution)=
-(^card-myers-majluf-dilution)=
-
-^card-myers-majluf-dilution
-
 当市场怀疑 firm 被 overvalued 时，$\hat p$ 会更低，dilution 更严重，因此 equity 往往被放在融资顺序的最后，形成 pecking order。equity issuance 也容易被市场解读成 bad news，因为它不仅融资，还会透露 manager 对估值和 firm quality 的看法。
 
 

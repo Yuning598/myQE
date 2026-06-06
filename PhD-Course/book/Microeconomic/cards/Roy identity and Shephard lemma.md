@@ -7,7 +7,9 @@ orphan: true
 
 # Roy identity and Shephard lemma
 
-Main note: [Microeconomic/01_Static_Choice_Consumer_Demand_and_Integrability](../Microeconomic/01_Static_Choice_Consumer_Demand_and_Integrability)
+导航：[Microeconomic index](../index.md)
+
+Main note: [Microeconomic/01_Static_Choice_Consumer_Demand_and_Integrability](../01_Static_Choice_Consumer_Demand_and_Integrability.md)
 
 Roy:
 
@@ -23,5 +25,5 @@ $$
 
 Mnemonic:
 
-- Roy: indirect utility \(\Rightarrow\) Marshallian demand.
-- Shephard: expenditure \(\Rightarrow\) Hicksian demand.
+- Roy: indirect utility $\Rightarrow$ Marshallian demand.
+- Shephard: expenditure $\Rightarrow$ Hicksian demand.

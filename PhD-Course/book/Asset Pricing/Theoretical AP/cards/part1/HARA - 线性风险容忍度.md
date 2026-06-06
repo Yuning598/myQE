@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # HARA - 线性风险容忍度
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#1.4 Linear Risk Tolerance (HARA)](Asset Pricing/Theoretical AP/01_Single_Period_Models#1.4 Linear Risk Tolerance (HARA))
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#1.4 Linear Risk Tolerance (HARA)](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Definition (Definition)
 若风险容忍度是财富的线性函数，

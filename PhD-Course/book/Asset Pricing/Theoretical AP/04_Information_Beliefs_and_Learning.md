@@ -100,7 +100,7 @@ $$
 ##### Informed Agents
 
 ::::{admonition} Definition (Bayesian Learning Primitives)
-基础贝叶斯学习框架（[贝叶斯更新](Asset Pricing/Theoretical AP/cards/贝叶斯更新 - 先验、信号、似然、后验)）：
+基础贝叶斯学习框架（[贝叶斯更新](cards/%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%9B%B4%E6%96%B0%20-%20%E5%85%88%E9%AA%8C%E3%80%81%E4%BF%A1%E5%8F%B7%E3%80%81%E4%BC%BC%E7%84%B6%E3%80%81%E5%90%8E%E9%AA%8C.md)）：
 
 - **先验（prior）**：在观察信号之前，对未知变量 $v$ 的原始信念，这里是 $v\sim N(\bar v,1/\rho_v)$。
 - **信号（signal）**：投资者观察到的带噪信息，这里是 $s=v+\varepsilon$，其中 $\varepsilon\sim N(0,1/\rho_s)$。
@@ -276,7 +276,7 @@ $$
 
 ::::
 
-[CARA-Normal framework](Asset Pricing/Theoretical AP/cards/CARA-Normal framework - 均值方差等价与最优需求)（均值方差等价与最优需求）
+[CARA-Normal framework](cards/CARA-Normal%20framework%20-%20%E5%9D%87%E5%80%BC%E6%96%B9%E5%B7%AE%E7%AD%89%E4%BB%B7%E4%B8%8E%E6%9C%80%E4%BC%98%E9%9C%80%E6%B1%82.md)（均值方差等价与最优需求）
 
 因为后验下 $v$ 为正态，财富
 
@@ -304,7 +304,7 @@ E_i[-e^{-\lambda_i W_i}]
 \end{aligned}
 $$
 
-其中用到标准正态的矩母函数（MGF）$E[e^{tZ}]=e^{t^2/2}$，见 [MGF](Asset Pricing/Theoretical AP/cards/矩母函数（MGF）- 定义与正态分布公式)。因此
+其中用到标准正态的矩母函数（MGF）$E[e^{tZ}]=e^{t^2/2}$，见 [MGF](cards/%E7%9F%A9%E6%AF%8D%E5%87%BD%E6%95%B0%EF%BC%88MGF%EF%BC%89-%20%E5%AE%9A%E4%B9%89%E4%B8%8E%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E5%85%AC%E5%BC%8F.md)。因此
 
 $$
 \begin{aligned}
@@ -547,7 +547,7 @@ $$
 
 完全揭示下，买信息和不买信息对应同一个信息集，所以任何只依赖条件均值与条件方差的最优交易问题都相同。CARA-normal 下可直接写成下面的 certainty equivalent 差。
 
-[Asset Pricing/Theoretical AP/cards/Grossman-Stiglitz - 信息价值与支付意愿](Asset Pricing/Theoretical AP/cards/Grossman-Stiglitz - 信息价值与支付意愿)（信息价值与支付意愿）
+[Grossman-Stiglitz - 信息价值与支付意愿](cards/Grossman-Stiglitz%20-%20%E4%BF%A1%E6%81%AF%E4%BB%B7%E5%80%BC%E4%B8%8E%E6%94%AF%E4%BB%98%E6%84%8F%E6%84%BF.md)（信息价值与支付意愿）
 
 若代理人在交易前可以支付信息成本 $c$ 来观察 $s$，则其最高支付意愿由两个 certainty equivalent 的事前差值给出。记
 
@@ -978,7 +978,7 @@ $$
 \end{aligned}
 $$
 
-[线性定价与线性交易](Asset Pricing/Theoretical AP/cards/Kyle 线性均衡猜测 - 线性定价与线性交易)（线性均衡的完整推导）
+[线性定价与线性交易](cards/Kyle%20%E7%BA%BF%E6%80%A7%E5%9D%87%E8%A1%A1%E7%8C%9C%E6%B5%8B%20-%20%E7%BA%BF%E6%80%A7%E5%AE%9A%E4%BB%B7%E4%B8%8E%E7%BA%BF%E6%80%A7%E4%BA%A4%E6%98%93.md)（线性均衡的完整推导）
 
 $$
 p=p_0+\lambda X=p_0+\lambda(x+Z_u),
@@ -996,7 +996,7 @@ p=E[v\mid X]\text{ 线性}
 \text{知情者最优反应线性}.
 $$
 
-这和 [Grossman-Stiglitz](Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning#10.2 Grossman-Stiglitz Model) 共用同一个技术核心：
+这和 [Grossman-Stiglitz](04_Information_Beliefs_and_Learning.md) 共用同一个技术核心：
 
 $$
 \text{normal prior}+\text{normal noise}+\text{linear signal}
@@ -1268,7 +1268,7 @@ $$
 
 Solve a two-period Kyle model, in which trader can trade two times before the information is released. Assume that the liquidity trades are iid normal $N(0,\sigma^2/2)$ for both trading periods. Given the informed trader’s information $v$, what is the expected trading profit for the informed in the one-period and two-period models? What are the informed trading profit when $v=v_0$? It seems that the informed trader can make a trading profit even when his information is the same as the public. How do you interpret this?
 
-[Kyle Exercise 2](Asset Pricing/Theoretical AP/cards/Kyle Exercise 2 - 两期利润比较与解释)（两期利润比较与解释）
+[Kyle Exercise 2](cards/Kyle%20Exercise%202%20-%20%E4%B8%A4%E6%9C%9F%E5%88%A9%E6%B6%A6%E6%AF%94%E8%BE%83%E4%B8%8E%E8%A7%A3%E9%87%8A.md)（两期利润比较与解释）
 
 
 结论：记
@@ -1954,7 +1954,7 @@ $$
 \frac{\tilde v - \bar v}{\lambda} - Y_t = \frac{\tilde v - P_t}{\lambda}.
 $$
 
-该式表明：真实价值 $\tilde v$ 与先验均值 $\bar v$ 之间的标准化偏差减去已观测的净订单流 $Y_t$，正等价于**真实价值与当前报价** $P_t$ 之差的标准化形式，后者正是知情者能够利用的超额信息。[v-P 关系](Asset Pricing/Theoretical AP/cards/v-P 关系)
+该式表明：真实价值 $\tilde v$ 与先验均值 $\bar v$ 之间的标准化偏差减去已观测的净订单流 $Y_t$，正等价于**真实价值与当前报价** $P_t$ 之差的标准化形式，后者正是知情者能够利用的超额信息。[v-P 关系](cards/v-P%20%E5%85%B3%E7%B3%BB.md)
 
 | $t$         | $Y_t$                                             | $P_t$                  | 误差                                                      |
 | ----------- | ------------------------------------------------- | ---------------------- | ------------------------------------------------------- |
@@ -1981,7 +1981,7 @@ $$
 
 ### 11.3 做市商定价规则的验证：Kalman 滤波
 
-[Asset Pricing/Theoretical AP/cards/Back 1992 - 净订单流 SDE](Asset Pricing/Theoretical AP/cards/Back 1992 - 净订单流 SDE) · [Asset Pricing/Theoretical AP/cards/Kalman-Bucy - 一般公式](Asset Pricing/Theoretical AP/cards/Kalman-Bucy - 一般公式)（净订单流 SDE / Kalman-Bucy 一般公式）
+[Back 1992 - 净订单流 SDE](cards/Back%201992%20-%20%E5%87%80%E8%AE%A2%E5%8D%95%E6%B5%81%20SDE.md) · [Kalman-Bucy - 一般公式](cards/Kalman-Bucy%20-%20%E4%B8%80%E8%88%AC%E5%85%AC%E5%BC%8F.md)（净订单流 SDE / Kalman-Bucy 一般公式）
 
 
 The market maker know
@@ -2113,7 +2113,7 @@ K_t
 \end{aligned}
 $$
 
-从而一般 Kalman‑Bucy 公式为（详见 [Asset Pricing/Theoretical AP/cards/Kalman-Bucy - 一般公式](Asset Pricing/Theoretical AP/cards/Kalman-Bucy - 一般公式)）
+从而一般 Kalman‑Bucy 公式为（详见 [Kalman-Bucy - 一般公式](cards/Kalman-Bucy%20-%20%E4%B8%80%E8%88%AC%E5%85%AC%E5%BC%8F.md)）
 
 $$
 \begin{aligned}
@@ -2298,7 +2298,7 @@ dY_t^*
 \end{aligned}
 $$
 
-这正是一个从 $Y_0^*=0$ 出发、在终点被拉向 $\xi$ 的 [Brownian bridge 型 SDE](Asset Pricing/Theoretical AP/cards/Back 1992 - Brownian bridge#Brownian bridge 型 SDE 的显式解)，其显式解为
+这正是一个从 $Y_0^*=0$ 出发、在终点被拉向 $\xi$ 的 [Brownian bridge 型 SDE](cards/Back%201992%20-%20Brownian%20bridge.md)，其显式解为
 
 $$
 \begin{aligned}
@@ -2386,7 +2386,7 @@ $$
 
 ### 11.5 知情者最优性：HJB 推导
 
-[Asset Pricing/Theoretical AP/cards/Back 1992 - HJB 分解](Asset Pricing/Theoretical AP/cards/Back 1992 - HJB 分解)（HJB 分解）
+[Back 1992 - HJB 分解](cards/Back%201992%20-%20HJB%20%E5%88%86%E8%A7%A3.md)（HJB 分解）
 
 
 上一节已得 $\lambda=\sigma_v/\sigma_z$，因此价格动态可写成
@@ -2624,7 +2624,7 @@ $$
 
 ### 11.6 验证定理
 
-[Asset Pricing/Theoretical AP/cards/Back 1992 - 验证定理](Asset Pricing/Theoretical AP/cards/Back 1992 - 验证定理)（验证定理）
+[Back 1992 - 验证定理](cards/Back%201992%20-%20%E9%AA%8C%E8%AF%81%E5%AE%9A%E7%90%86.md)（验证定理）
 
 
 现在验证上一节得到的候选价值函数
@@ -2932,7 +2932,7 @@ $$
 
 ### 11.8 相关扩展模型（对应课件 11.2）
 
-[Asset Pricing/Theoretical AP/cards/Back 模型 - 相关扩展](Asset Pricing/Theoretical AP/cards/Back 模型 - 相关扩展)（相关扩展）
+[Back 模型 - 相关扩展](cards/Back%20%E6%A8%A1%E5%9E%8B%20-%20%E7%9B%B8%E5%85%B3%E6%89%A9%E5%B1%95.md)（相关扩展）
 
 
 下面几篇文章都可以看作是在 Back (1992) 连续时间 Kyle 框架上的不同方向扩展。
@@ -3659,7 +3659,7 @@ m_t&=v_t\left(v_0^{-1}m_0+\frac{Y_t}{\sigma^2}\right).
 \end{aligned}
 $$
 
-[Asset Pricing/Theoretical AP/cards/正态-正态更新 - 常数漂移学习](Asset Pricing/Theoretical AP/cards/正态-正态更新 - 常数漂移学习)（常数漂移学习）
+[正态-正态更新 - 常数漂移学习](cards/%E6%AD%A3%E6%80%81-%E6%AD%A3%E6%80%81%E6%9B%B4%E6%96%B0%20-%20%E5%B8%B8%E6%95%B0%E6%BC%82%E7%A7%BB%E5%AD%A6%E4%B9%A0.md)（常数漂移学习）
 
 
 假设代理人 $i$ 认为隐藏漂移实际上是常数：
@@ -3823,7 +3823,7 @@ $$
 a_0 = a_1 = a_2 = m_1 = m_2 = 0, \quad A_0 = A_2 = M_1 = 0, \quad A_1 = 1, \quad M_2 = \sigma.
 $$
 
-把 [Asset Pricing/Theoretical AP/cards/Kalman-Bucy - 一般公式](Asset Pricing/Theoretical AP/cards/Kalman-Bucy - 一般公式) 专门化到这里，innovation 为
+把 [Kalman-Bucy - 一般公式](cards/Kalman-Bucy%20-%20%E4%B8%80%E8%88%AC%E5%85%AC%E5%BC%8F.md) 专门化到这里，innovation 为
 
 $$
 \begin{aligned}
@@ -3970,7 +3970,7 @@ $$
 
 #### 12.1.4 情形二：OU 漂移的滤波
 
-[Asset Pricing/Theoretical AP/cards/OU 滤波 - Riccati 方程](Asset Pricing/Theoretical AP/cards/OU 滤波 - Riccati 方程)（OU 滤波）
+[OU 滤波 - Riccati 方程](cards/OU%20%E6%BB%A4%E6%B3%A2%20-%20Riccati%20%E6%96%B9%E7%A8%8B.md)（OU 滤波）
 
 
 若代理人 $i$ 认为隐藏漂移服从 OU 过程，
@@ -4045,7 +4045,7 @@ $$
 d\hat B_t^i:=\frac{1}{\sigma}(dY_t-\hat\mu_t^i\,dt).
 $$
 
-把上面的系数代入 [Kalman-Bucy 一般公式](Asset Pricing/Theoretical AP/cards/Kalman-Bucy - 一般公式)（推导见 [Kalman-Bucy 推导](Asset Pricing/Theoretical AP/cards/Kalman-Bucy 推导)），就得到
+把上面的系数代入 [Kalman-Bucy 一般公式](cards/Kalman-Bucy%20-%20%E4%B8%80%E8%88%AC%E5%85%AC%E5%BC%8F.md)（推导见 [Kalman-Bucy 推导](cards/Kalman-Bucy%20%E6%8E%A8%E5%AF%BC.md)），就得到
 
 $$
 \begin{aligned}
@@ -4107,7 +4107,7 @@ $$
 
 #### 12.1.5 不同信念之间的联系
 
-[Asset Pricing/Theoretical AP/cards/异质信念 - 创新布朗运动与状态价格密度](Asset Pricing/Theoretical AP/cards/异质信念 - 创新布朗运动与状态价格密度)（创新布朗运动与状态价格密度）
+[异质信念 - 创新布朗运动与状态价格密度](cards/%E5%BC%82%E8%B4%A8%E4%BF%A1%E5%BF%B5%20-%20%E5%88%9B%E6%96%B0%E5%B8%83%E6%9C%97%E8%BF%90%E5%8A%A8%E4%B8%8E%E7%8A%B6%E6%80%81%E4%BB%B7%E6%A0%BC%E5%AF%86%E5%BA%A6.md)（创新布朗运动与状态价格密度）
 
 
 因为同一个可观测过程 $Y_t$ 在两个代理人的滤波表示下都必须成立，
@@ -4273,7 +4273,7 @@ d\hat B_t^j.
 \end{aligned}
 $$
 
-所以 $\hat P^j$ 下的 Brownian motion 正是 $\hat B^j$；也就是说，这个密度过程恰好把 $\hat P^i$ 下看到的漂移 $+\beta_t^{ij}dt$ 吸收到测度里，所以它必然就是从 $\hat P^i$ 到 $\hat P^j$ 的测度变换密度。详见 [为什么测度密度是这个指数形式](Asset Pricing/Theoretical AP/cards/异质信念 - 创新布朗运动与状态价格密度#为什么测度密度是这个指数形式)。
+所以 $\hat P^j$ 下的 Brownian motion 正是 $\hat B^j$；也就是说，这个密度过程恰好把 $\hat P^i$ 下看到的漂移 $+\beta_t^{ij}dt$ 吸收到测度里，所以它必然就是从 $\hat P^i$ 到 $\hat P^j$ 的测度变换密度。详见 [为什么测度密度是这个指数形式](cards/%E5%BC%82%E8%B4%A8%E4%BF%A1%E5%BF%B5%20-%20%E5%88%9B%E6%96%B0%E5%B8%83%E6%9C%97%E8%BF%90%E5%8A%A8%E4%B8%8E%E7%8A%B6%E6%80%81%E4%BB%B7%E6%A0%BC%E5%AF%86%E5%BA%A6.md)。
 
 因此，所谓“信念差异”在连续时间中可以等价地表示成一个测度变换：不同代理人的主观概率，只是把同一个 innovation process 加上不同的漂移而已。
 
@@ -4295,7 +4295,7 @@ $$
 
 #### 12.2.2 资产与状态价格 (Asset and State Prices)
 
-[Asset Pricing/Theoretical AP/cards/异质信念 - 创新布朗运动与状态价格密度](Asset Pricing/Theoretical AP/cards/异质信念 - 创新布朗运动与状态价格密度)
+[异质信念 - 创新布朗运动与状态价格密度](cards/%E5%BC%82%E8%B4%A8%E4%BF%A1%E5%BF%B5%20-%20%E5%88%9B%E6%96%B0%E5%B8%83%E6%9C%97%E8%BF%90%E5%8A%A8%E4%B8%8E%E7%8A%B6%E6%80%81%E4%BB%B7%E6%A0%BC%E5%AF%86%E5%BA%A6.md)
 
 在金融市场中，我们将消费品的价格标准化为 1。
 
@@ -4554,7 +4554,7 @@ $$
 \sum_i c_t^i=\delta_t.
 $$
 
-这表示总消费等于总禀赋/总股利流，见 [消费市场出清](Asset Pricing/Theoretical AP/cards/消费市场出清条件 - 总消费等于总禀赋)。
+这表示总消费等于总禀赋/总股利流，见 [消费市场出清](cards/%E6%B6%88%E8%B4%B9%E5%B8%82%E5%9C%BA%E5%87%BA%E6%B8%85%E6%9D%A1%E4%BB%B6%20-%20%E6%80%BB%E6%B6%88%E8%B4%B9%E7%AD%89%E4%BA%8E%E6%80%BB%E7%A6%80%E8%B5%8B.md)。
 代入最优消费：
 
 $$

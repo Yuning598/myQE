@@ -7,7 +7,9 @@ orphan: true
 
 # Slutsky matrix and integrability
 
-Main note: [Microeconomic/01_Static_Choice_Consumer_Demand_and_Integrability](../Microeconomic/01_Static_Choice_Consumer_Demand_and_Integrability)
+导航：[Microeconomic index](../index.md)
+
+Main note: [Microeconomic/01_Static_Choice_Consumer_Demand_and_Integrability](../01_Static_Choice_Consumer_Demand_and_Integrability.md)
 
 Slutsky matrix:
 

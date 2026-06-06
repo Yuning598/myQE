@@ -1,15 +1,19 @@
+---
+orphan: true
+---
+
 # Mean-Variance Efficiency
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#2.4 Mean-Variance Frontier without a Risk-Free Asset](Asset Pricing/Theoretical AP/01_Single_Period_Models#2.4 Mean-Variance Frontier without a Risk-Free Asset)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Definition (Definition)
 若某前沿组合的期望收益低于 GMV 组合的期望收益，则它位于前沿的 inefficient 部分。
 
 :::
 
-:::{admonition} Definition: 若某前沿组合的期望收益高于 GMV 组合的期望收益，则它位于 efficient frontier 上。
+:::{admonition} Definition
+若某前沿组合的期望收益高于 GMV 组合的期望收益，则它位于 efficient frontier 上。
 
 :::
 

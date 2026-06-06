@@ -1,4 +1,10 @@
+---
+orphan: true
+---
+
 # 正态分布 - pdf cdf mgf
+
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md)
 
 :::{admonition} Definition (Standard normal)
 若 $Z\sim N(0,1)$，则其 probability density function (pdf) 为
@@ -20,8 +26,7 @@ $$
 
 :::
 
-^def-standard-normal-pdf-cdf
-
+(def-standard-normal-pdf-cdf)=
 :::{admonition} Definition (General normal)
 若 $X\sim N(\mu,\sigma^2)$，则其 pdf 为
 
@@ -44,7 +49,7 @@ $$
 
 :::
 
-^def-general-normal-pdf-cdf
+(def-general-normal-pdf-cdf)=
 
 由 cdf 的定义，常用尾积分写法是
 
@@ -134,8 +139,7 @@ $$
 
 :::
 
-^def-normal-mgf
-
+(def-normal-mgf)=
 mgf 的常用推论：若 $Z\sim N(0,1)$，则
 
 $$

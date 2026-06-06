@@ -4,13 +4,15 @@ orphan: true
 
 # Law of Iterated Expectations
 
-Parent: [01_CEF_and_Linear_Projection](01_CEF_and_Linear_Projection)
+导航：[Econometrics index](../../index.md)
+
+Parent: [01_CEF_and_Linear_Projection](../01_CEF_and_Linear_Projection.md)
 
 :::{admonition} Lemma: LIE
-**WTS:** \(E[E(Y\mid X)]=E[Y]\).
+**要证：** $E[E(Y\mid X)]=E[Y]$.
 
 **Proof sketch:**
-\[
+$$
 
 $$
 \begin{aligned}
@@ -21,7 +23,7 @@ E[E(Y\mid X)]
 \end{aligned}
 $$
 
-\]
+$$
 
 :::
 

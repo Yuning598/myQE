@@ -4,12 +4,12 @@ orphan: true
 
 # Leveraged recapitalization (recap)
 
+导航：[Corporate Finance index](../index.md)
+
 **Recap** 是 **recapitalization** 的缩写，常见于 corporate finance 里“改变资本结构”的语境。 
 
 (recap-definition)=
-(^recap-definition)=
 
-^recap-definition
 
 如果特别说 **leveraged recapitalization**，通常是指：
 
@@ -33,8 +33,6 @@ $$
 - 在现实世界里触发 taxes / distress / agency / signaling 等摩擦
 
 (card-leveraged-recapitalization-recap)=
-(^card-leveraged-recapitalization-recap)=
 
-^card-leveraged-recapitalization-recap
 
 Related section: <a href="../01_Empirical_Corporate_Finance.html#sec-mm-benchmark">MM as a Benchmark</a>

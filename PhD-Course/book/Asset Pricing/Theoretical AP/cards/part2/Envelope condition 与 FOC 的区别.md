@@ -1,10 +1,13 @@
+---
+orphan: true
+---
+
 # Envelope condition 与 FOC 的区别
 
-来源：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#5.1.3 Heuristic Derivation of the HJB Equation](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#5.1.3 Heuristic Derivation of the HJB Equation)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
 
-返回：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing)
 
-关联卡片：[Asset Pricing/Theoretical AP/cards/part2/价值函数](Asset Pricing/Theoretical AP/cards/part2/价值函数) · [Asset Pricing/Theoretical AP/cards/part2/Bellman equation](Asset Pricing/Theoretical AP/cards/part2/Bellman equation) · [Asset Pricing/Theoretical AP/cards/part2/HJB 方程与动态规划](Asset Pricing/Theoretical AP/cards/part2/HJB 方程与动态规划)
+关联卡片：[价值函数](%E4%BB%B7%E5%80%BC%E5%87%BD%E6%95%B0.md) · [Bellman equation](Bellman%20equation.md) · [HJB 方程与动态规划](HJB%20%E6%96%B9%E7%A8%8B%E4%B8%8E%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.md)
 
 :::{admonition} Definition (Envelope Condition)
 envelope condition 讨论的是：**最优值函数** 对状态变量的边际变化。

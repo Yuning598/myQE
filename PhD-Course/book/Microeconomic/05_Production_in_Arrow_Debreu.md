@@ -345,7 +345,7 @@ $$
 is a firm production equilibrium.
 :::
 
-^prop-5-1
+(prop-5-1)=
 
 **Proof.**
 

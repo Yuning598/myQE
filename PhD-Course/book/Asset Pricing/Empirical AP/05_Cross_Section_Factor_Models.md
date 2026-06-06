@@ -1,7 +1,7 @@
 # 05 Cross-Section of Returns and Factor Models
 
 Source: EF8083 slides, pp. 195-241  
-Links: [03_Consumption_Based_AP_Puzzles](03_Consumption_Based_AP_Puzzles) | [04_Return_Predictability_Econometrics](04_Return_Predictability_Econometrics) | [cards/Beta_SDF_Equivalence](cards/Beta_SDF_Equivalence) | [cards/Hansen_Jagannathan_Distance](cards/Hansen_Jagannathan_Distance) | [cards/Fama_MacBeth_Shanken](cards/Fama_MacBeth_Shanken) | [cards/GMM_Asset_Pricing](cards/GMM_Asset_Pricing) | [cards/Factor_Zoo_Multiple_Testing](cards/Factor_Zoo_Multiple_Testing)
+导航：[03_Consumption_Based_AP_Puzzles](03_Consumption_Based_AP_Puzzles) | [04_Return_Predictability_Econometrics](04_Return_Predictability_Econometrics) | [cards/Beta_SDF_Equivalence](cards/Beta_SDF_Equivalence) | [cards/Hansen_Jagannathan_Distance](cards/Hansen_Jagannathan_Distance) | [cards/Fama_MacBeth_Shanken](cards/Fama_MacBeth_Shanken) | [cards/GMM_Asset_Pricing](cards/GMM_Asset_Pricing) | [cards/Factor_Zoo_Multiple_Testing](cards/Factor_Zoo_Multiple_Testing)
 
 ## 1. 横截面问题
 
@@ -53,7 +53,7 @@ $$
 这说明 beta representation 的本质不是“回归技巧”，而是 SDF 定价式的 covariance 改写：资产平均收益由它和 SDF 的协动决定。
 
 :::{admonition} Lemma: Linear SDF implies factor beta pricing
-**WTS：**
+**要证：**
 $$ E[R_i^e]=\beta_i'\lambda, \qquad \beta_i=\operatorname{Cov}(R_i^e,f)\operatorname{Var}(f)^{-1}. $$
 
 **联立系统：**
@@ -86,7 +86,7 @@ $$ \lambda=\operatorname{Var}(f)\frac{b}{a-b'E[f]}. $$
 
 :::
 
-^lemma-linear-sdf-beta-pricing
+(lemma-linear-sdf-beta-pricing)=
 
 **课件中的两种 representation.**
 
@@ -132,37 +132,37 @@ M^*_{t+1}
 \left(R^e_{t+1}-E_t[R^e_{t+1}]\right).
 $$
 
-> [!important]+ 与 EF8077 的连接：SDF、single factor 与 beta representation
-> EF8077/Theoretical AP 的抽象证明见 [Factor Models Are Equivalent to SDFs](../../Theoretical AP/01_Single_Period_Models.md)；QE 速查见 [Factor model review](../../ProblemSet/ProblemSet.md)。
->
+**与 EF8077 的连接：SDF、single factor 与 beta representation**
+EF8077/Theoretical AP 的抽象证明见 [Factor Models Are Equivalent to SDFs](../Theoretical%20AP/01_Single_Period_Models.md)；QE 速查见 [Factor model review](../../ProblemSet/Theoretical%20Asset%20Pricing.md#qe-ps-factor-model-review)。
 
-> $$
-> \begin{aligned}
-> \text{EF8077 gross-return version:}\quad
-> \tilde m&=a+b'\tilde F
-> \Longleftrightarrow
-> E[\tilde R]=R_z+\lambda'\beta,\\
-> \text{EF8083 excess-return version:}\quad
-> M&=a-b'f
-> \Longleftrightarrow
-> E[R_i^e]=\beta_i'\lambda.
-> \end{aligned}
-> $$
 
->
-> Single-factor model 是上式取 $K=1$ 的特例：
+$$
+\begin{aligned}
+\text{EF8077 gross-return version:}\quad
+\tilde m&=a+b'\tilde F
+\Longleftrightarrow
+E[\tilde R]=R_z+\lambda'\beta,\\
+\text{EF8083 excess-return version:}\quad
+M&=a-b'f
+\Longleftrightarrow
+E[R_i^e]=\beta_i'\lambda.
+\end{aligned}
+$$
 
-> $$
-> \begin{aligned}
-> E[R_i^e]
-> &=\lambda\,\frac{\operatorname{Cov}(R_i^e,f)}{\operatorname{Var}(f)}.
-> \end{aligned}
-> $$
 
->
-> 这页负责 empirical cross-section 表达；EF8077 负责证明 affine SDF $\Longleftrightarrow$ factor pricing 的一般命题。汇总卡片：[cards/Beta_SDF_Equivalence](cards/Beta_SDF_Equivalence)。
+Single-factor model 是上式取 $K=1$ 的特例：
 
-^link-ef8077-factor-sdf
+$$
+\begin{aligned}
+E[R_i^e]
+&=\lambda\,\frac{\operatorname{Cov}(R_i^e,f)}{\operatorname{Var}(f)}.
+\end{aligned}
+$$
+
+
+这页负责 empirical cross-section 表达；EF8077 负责证明 affine SDF $\Longleftrightarrow$ factor pricing 的一般命题。汇总卡片：[cards/Beta_SDF_Equivalence](cards/Beta_SDF_Equivalence)。
+
+(link-ef8077-factor-sdf)=
 
 ## 3. Traded factor model
 
@@ -206,7 +206,7 @@ $$
 $$
 
 :::{admonition} Lemma: Fama-MacBeth two-pass estimator
-**WTS：**
+**要证：**
 $$ \hat\lambda=(\hat B'\hat B)^{-1}\hat B'\bar R^e. $$
 
 **联立系统：**
@@ -277,7 +277,7 @@ $$ E[g_t(\theta)]=0,\qquad g_t(\theta)=M_t(\theta)R_t^e. $$
 $$ \bar g_T(\theta)=\frac1T\sum_{t=1}^Tg_t(\theta). $$
 
 **Lemma:** GMM estimator
-**WTS：**
+**要证：**
 $$ \hat\theta = \arg\min_{\theta} \bar g_T(\theta)'W_T\bar g_T(\theta). $$
 
 **联立系统：**
@@ -390,7 +390,7 @@ $$
 
 | 概念 | 问的问题 | 核心公式 | 在这里的作用 |
 |---|---|---|---|
-| HJ bound (HJ 1991) | 任意可行 SDF 必须多 volatile？ | $\frac{\sigma(M)}{E[M]}\ge \frac{\lvert E[R^e]\rvert}{\sigma(R^e)}$ | 用在 [03_Consumption_Based_AP_Puzzles#7. Hansen-Jagannathan bound](03_Consumption_Based_AP_Puzzles#7. Hansen-Jagannathan bound)：consumption SDF 太平滑，解释不了高 Sharpe ratio |
+| HJ bound (HJ 1991) | 任意可行 SDF 必须多 volatile？ | $\frac{\sigma(M)}{E[M]}\ge \frac{\lvert E[R^e]\rvert}{\sigma(R^e)}$ | 用在 [03_Consumption_Based_AP_Puzzles](03_Consumption_Based_AP_Puzzles.md)：consumption SDF 太平滑，解释不了高 Sharpe ratio |
 | HJ distance (HJ 1997) | 候选 SDF 离“能定价 test assets 的 SDF 集合”有多远？ | $d_{HJ}^2=g'E[R^eR^{e'}]^{-1}g$ | 用来评价 / 比较 misspecified factor models；比单看 GRS 更像“模型距离” |
 | GRS test | traded-factor model 的所有 $\alpha_i$ 是否为零？ | $\hat\alpha'\hat\Sigma_\varepsilon^{-1}\hat\alpha$ 加 finite-sample scaling | 检验一个模型是否被拒绝；课件提醒不要用它直接比较模型优劣 |
 | EF8077 factor-SDF equivalence | factor model 为什么等价于 affine SDF？ | $\text{factor model}\Longleftrightarrow \text{affine SDF}$ | 理论基础：本节的 beta/SDF representations 是其 empirical version |
@@ -405,7 +405,7 @@ $$
 
 见 [cards/Hansen_Jagannathan_Distance](cards/Hansen_Jagannathan_Distance) 与 [cards/Hansen_Jagannathan_Bound](cards/Hansen_Jagannathan_Bound)。
 
-^hj-distance-comparison
+(hj-distance-comparison)=
 
 ## 9. Factor zoo and multiple testing
 
@@ -451,7 +451,7 @@ $$
 $$
 
 :::{admonition} Lemma: Cross-sectional omitted beta bias
-**WTS：**
+**要证：**
 $$ \operatorname{plim}\hat\lambda_1 = \lambda_1+ \frac{\operatorname{Cov}_{cs}(\beta_1,\beta_2)} {\operatorname{Var}_{cs}(\beta_1)}\lambda_2. $$
 
 **连续求解：**

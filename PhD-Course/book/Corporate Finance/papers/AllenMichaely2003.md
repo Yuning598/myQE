@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # Reading Note: Allen and Michaely (2003)
 
 <a href="../01_Empirical_Corporate_Finance.html#sec-allen-michaely-2003">Back to the main note</a>

@@ -1,7 +1,7 @@
 # 03 Consumption-Based Asset Pricing and Puzzles
 
 Source: EF8083 slides, pp. 73-122  
-Links: [00-MOC_EF8083_Empirical_Asset_Pricing](00-MOC_EF8083_Empirical_Asset_Pricing) | [04_Return_Predictability_Econometrics](04_Return_Predictability_Econometrics) | [cards/SDF_Euler_Equation](cards/SDF_Euler_Equation) | [cards/Hansen_Jagannathan_Bound](cards/Hansen_Jagannathan_Bound) | [cards/Campbell_Shiller_Decomposition](cards/Campbell_Shiller_Decomposition)
+导航：[00-MOC_EF8083_Empirical_Asset_Pricing](00-MOC_EF8083_Empirical_Asset_Pricing) | [04_Return_Predictability_Econometrics](04_Return_Predictability_Econometrics) | [cards/SDF_Euler_Equation](cards/SDF_Euler_Equation) | [cards/Hansen_Jagannathan_Bound](cards/Hansen_Jagannathan_Bound) | [cards/Campbell_Shiller_Decomposition](cards/Campbell_Shiller_Decomposition)
 
 ## 1. 资产定价的统一对象：SDF
 
@@ -37,7 +37,7 @@ $$
 ## 2. Euler equation 的推导
 
 :::{admonition} Lemma: Consumption Euler equation
-**WTS：**
+**要证：**
 $$ P_t=E_t\left[\beta\frac{u'(C_{t+1})}{u'(C_t)}X_{t+1}\right]. $$
 
 **联立系统：**
@@ -60,7 +60,7 @@ $$ M_{t+1}=\beta\frac{u'(C_{t+1})}{u'(C_t)}. $$
 从 $E_t[M R_i]=1$ 和 risk-free $R_f=1/E_t[M]$ 可以推出 expected return 由 covariance 决定。
 
 :::{admonition} Lemma: SDF covariance pricing
-**WTS：**
+**要证：**
 $$ E_t[R_{i,t+1}]-R_{f,t} = -R_{f,t}\operatorname{Cov}_t(M_{t+1},R_{i,t+1}). $$
 
 **联立系统：**
@@ -93,7 +93,7 @@ E_t[e^{m_{t+1}+r_{t+1}}]=1.
 $$
 
 :::{admonition} Lemma: Lognormal pricing formula
-**WTS：**
+**要证：**
 $$ \log E_t[R_{t+1}]-r_{f,t} = -\operatorname{Cov}_t(m_{t+1},r_{t+1}). $$
 
 **联立系统：**
@@ -166,7 +166,7 @@ m_{t+1} =
 $$
 
 :::{admonition} Lemma: Power utility 的 equity premium
-**WTS：**
+**要证：**
 $$ \log E_t[R_{t+1}]-r_{f,t} = \gamma \operatorname{Cov}_t(\Delta c_{t+1},r_{t+1}). $$
 
 **连续求解：**
@@ -178,7 +178,7 @@ $$
 **结论：** 股票必须在 consumption growth 低时表现差，才会有正 risk premium。
 
 **Lemma:** Power utility 的 risk-free rate
-**WTS：**
+**要证：**
 $$ r_{f,t} = \delta+\gamma E_t[\Delta c_{t+1}] -\frac12\gamma^2\operatorname{Var}_t(\Delta c_{t+1}). $$
 
 **联立系统：**
@@ -222,7 +222,7 @@ $$
 课件用 HJ bound 表达：任何能定价资产的 SDF 都必须足够 volatile。
 
 :::{admonition} Lemma: HJ bound
-**WTS：**
+**要证：**
 $$ \frac{\sigma(M)}{E[M]} \ge \frac{|E[R^e]|}{\sigma(R^e)}. $$
 
 **联立系统：**
@@ -267,7 +267,7 @@ r_{t+1}
 $$
 
 :::{admonition} Lemma: Campbell-Shiller present-value identity
-**WTS：**
+**要证：**
 $$ pd_t = \frac{\kappa}{1-\rho} +\sum_{j=1}^{\infty}\rho^{j-1}E_t[\Delta d_{t+j}] -\sum_{j=1}^{\infty}\rho^{j-1}E_t[r_{t+j}]. $$
 
 **连续求解：**

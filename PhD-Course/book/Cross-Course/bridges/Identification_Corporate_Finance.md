@@ -23,6 +23,8 @@ tags:
 
 # Identification and Corporate Finance
 
+导航：[Cross-Course Hub](../index.md) · [Econometrics](../../Econometrics/index.md) · [Corporate Finance](../../Corporate%20Finance/index.md)
+
 ## 1. 一句话主线
 
 identification assumption 是共同对象：Econometrics 提供 IV、LATE、DiD、RD 的 formal assumptions；Corporate Finance 把这些假设映射到资本结构、治理、股利、回购、并购等实证论文里的 endogeneity threats 和自然实验设计。
@@ -132,4 +134,3 @@ Corporate Finance 的自然实验通常不是自动有效；QE 答案要明确 s
 3. [Econometrics: DiD and RD](../../Econometrics/EF8090/07_DiD_RD_Nonparametric_Kernel.md)
 4. [Corporate Finance: Econometric Methods](../../Corporate%20Finance/02_Econometric_Methods_in_Corporate_Finance.md)
 5. [Corporate Finance card: Threats to identification](../../Corporate%20Finance/cards/Threats%20to%20identification%20-%20empirical%20categories.md)
-

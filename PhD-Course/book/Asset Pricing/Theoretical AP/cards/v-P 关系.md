@@ -4,6 +4,8 @@ orphan: true
 
 # v 与 P 的关系
 
+导航：[Asset Pricing index](../../index.md) · [Theoretical AP](../../Theoretical_Asset_Pricing.md)
+
 在 Kyle 连续时间模型中，做市商对资产价值 $\tilde v$ 的 **条件期望** 给出价格
 
 $$
@@ -35,4 +37,4 @@ $$
 
 ---
 
-**参考**：该推导在章节 [11.2 均衡猜测](11.2 均衡猜测) 中给出，可配合卡片 [Asset Pricing/Theoretical AP/cards/Back 1992 - 净订单流 SDE](Asset Pricing/Theoretical AP/cards/Back 1992 - 净订单流 SDE) 与 [Asset Pricing/Theoretical AP/cards/Kalman-Bucy - 一般公式](Asset Pricing/Theoretical AP/cards/Kalman-Bucy - 一般公式) 进一步阅读。
+**参考**：该推导在章节 11.2 均衡猜测 中给出，可配合卡片 [Back 1992 - 净订单流 SDE](Back%201992%20-%20%E5%87%80%E8%AE%A2%E5%8D%95%E6%B5%81%20SDE.md) 与 [Kalman-Bucy - 一般公式](Kalman-Bucy%20-%20%E4%B8%80%E8%88%AC%E5%85%AC%E5%BC%8F.md) 进一步阅读。

@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # CCAPM 与 Equity Premium Puzzle
 
-来源：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#6.1 Representative Agent and CCAPM](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#6.1 Representative Agent and CCAPM)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
 
-返回：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing)
 
 :::{admonition} Definition (Definition)
 若代表性消费者具有 CRRA 偏好，则定价核为

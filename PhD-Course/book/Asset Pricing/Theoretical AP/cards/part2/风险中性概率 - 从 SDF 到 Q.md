@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # 风险中性概率 - 从 SDF 到 Q
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#2.2 Arrow Securities, Risk-Neutral Probability, and SDF Existence](Asset Pricing/Theoretical AP/01_Single_Period_Models#2.2 Arrow Securities, Risk-Neutral Probability, and SDF Existence)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Definition (Definition)
 若存在无风险资产 $R_f$ 和严格正的 SDF $\tilde m$，则对任意事件 $A$ 定义

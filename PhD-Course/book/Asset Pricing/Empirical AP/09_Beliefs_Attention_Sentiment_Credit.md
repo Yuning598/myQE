@@ -1,7 +1,7 @@
 # 09 Beliefs, Attention, Sentiment, and Credit Market Cycle
 
 Source: EF8083 slides, pp. 429-520  
-Links: [06_Subjective_Expectations_Learning](06_Subjective_Expectations_Learning) | [07_Behavioral_Empirical_AP_Overview](07_Behavioral_Empirical_AP_Overview) | [08_Limits_to_Arbitrage_Prospect_Theory](08_Limits_to_Arbitrage_Prospect_Theory) | [cards/Heterogeneous_Beliefs_SSC](cards/Heterogeneous_Beliefs_SSC) | [cards/Limited_Attention_PEAD](cards/Limited_Attention_PEAD) | [cards/Investor_Sentiment_Credit_Cycle](cards/Investor_Sentiment_Credit_Cycle)
+导航：[06_Subjective_Expectations_Learning](06_Subjective_Expectations_Learning) | [07_Behavioral_Empirical_AP_Overview](07_Behavioral_Empirical_AP_Overview) | [08_Limits_to_Arbitrage_Prospect_Theory](08_Limits_to_Arbitrage_Prospect_Theory) | [cards/Heterogeneous_Beliefs_SSC](cards/Heterogeneous_Beliefs_SSC) | [cards/Limited_Attention_PEAD](cards/Limited_Attention_PEAD) | [cards/Investor_Sentiment_Credit_Cycle](cards/Investor_Sentiment_Credit_Cycle)
 
 ## 1. Psychology of beliefs
 
@@ -32,7 +32,7 @@ $$ s=\theta+\eta,\qquad \eta\sim N(0,\sigma_\eta^2), $$
 $$ \tilde\sigma_\eta^2<\sigma_\eta^2. $$
 
 **Lemma:** 过度自信放大 posterior reaction
-**WTS：** 信号噪声方差越低，posterior mean 对信号权重越高。
+**要证：** 信号噪声方差越低，posterior mean 对信号权重越高。
 
 **联立系统：**
 $$ \theta\sim N(\mu_0,\sigma_0^2),\qquad s=\theta+\eta,\qquad \eta\sim N(0,\tilde\sigma_\eta^2). $$
@@ -68,7 +68,7 @@ $$
 - 高 sentiment 后低未来收益。
 
 :::{admonition} Lemma: Extrapolative demand and reversal
-**WTS：** 若过去高收益推高主观预期与需求，价格上升；当 beliefs mean-revert，未来收益下降。
+**要证：** 若过去高收益推高主观预期与需求，价格上升；当 beliefs mean-revert，未来收益下降。
 
 **联立系统：**
 $$ D_t=\chi \tilde E_t[R_{t+1}],\qquad P_t=P_t^*+\lambda D_t. $$
@@ -96,7 +96,7 @@ $$ E_t[P_{t+1}-P_t] \approx -\lambda\chi b(R_{t-k,t}-\bar R). $$
 Difference of opinion 指投资者对同一资产 payoff 的主观分布不同。若短售受限，悲观投资者不能卖空，市场价格由乐观投资者边际定价。
 
 **Lemma:** Heterogeneous beliefs + short-sale constraints generates overpricing
-**WTS：** 在短售受限下，乐观者可以把价格推高到高于平均信念价值。
+**要证：** 在短售受限下，乐观者可以把价格推高到高于平均信念价值。
 
 **联立系统：**
 两类投资者对 payoff $X$ 的估值：
@@ -133,7 +133,7 @@ $$
 其中 $SUE$ 是 standardized unexpected earnings。若 $\beta>0$，说明盈利惊喜后价格继续漂移。
 
 :::{admonition} Lemma: Inattention generates delayed reaction
-**WTS：** 若只有比例 $\lambda$ 的投资者每期处理信息，价格逐步反映 shock。
+**要证：** 若只有比例 $\lambda$ 的投资者每期处理信息，价格逐步反映 shock。
 
 **联立系统：**
 fundamental shock $s$ 对价值影响为 $\Delta V=s$。价格每期反映剩余未吸收信息的比例 $\lambda$：
@@ -184,7 +184,7 @@ $$
 若 $\beta<0$，说明 sentiment 高时，难套利股票未来收益更低。
 
 :::{admonition} Lemma: Sentiment mean reversion predicts returns
-**WTS：** 如果 sentiment 推高价格且 sentiment mean-reverts，则高 sentiment 预测低未来收益。
+**要证：** 如果 sentiment 推高价格且 sentiment mean-reverts，则高 sentiment 预测低未来收益。
 
 **联立系统：**
 $$ P_t=V_t+aS_t,\qquad E_t[S_{t+1}]=\phi S_t,\quad 0<\phi<1. $$

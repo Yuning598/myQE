@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # 市场完备性与 SDF 唯一性
 
-来源：[Asset Pricing/Theoretical AP/01_Single_Period_Models#2.2.4 Market Completeness and Uniqueness of the SDF](Asset Pricing/Theoretical AP/01_Single_Period_Models#2.2.4 Market Completeness and Uniqueness of the SDF)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
-返回：[Asset Pricing/Theoretical AP/01_Single_Period_Models](Asset Pricing/Theoretical AP/01_Single_Period_Models)
 
 :::{admonition} Definition (Market Completeness)
 在有限状态模型中，若资产 payoff 的线性张成空间

@@ -32,13 +32,12 @@ $$
 如果 $Z$ 与 $X$ 维度相同且 $E[ZX']$ 可逆：
 
 :::{admonition} Lemma (IV identification)
-:::
-
-#### Proof of Lemma (IV identification)
-
 $$
 \beta=E[ZX']^{-1}E[ZY].
 $$
+:::
+
+#### Proof of Lemma (IV identification)
 
 $$
 Y=X'\beta+u, \qquad E[Zu]=0.

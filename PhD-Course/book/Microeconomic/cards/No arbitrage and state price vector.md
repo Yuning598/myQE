@@ -7,9 +7,11 @@ orphan: true
 
 # No arbitrage and state price vector
 
-Main note: [Microeconomic/06_Equilibrium_Under_Uncertainty](../Microeconomic/06_Equilibrium_Under_Uncertainty)
+导航：[Microeconomic index](../index.md)
 
-With payoff matrix \(A\in\mathbb R^{S\times J}\) and asset prices \(q\in\mathbb R^J\),
+Main note: [Microeconomic/06_Equilibrium_Under_Uncertainty](../06_Equilibrium_Under_Uncertainty.md)
+
+With payoff matrix $A\in\mathbb R^{S\times J}$ and asset prices $q\in\mathbb R^J$,
 
 $$
 q\text{ is arbitrage-free}
@@ -17,7 +19,7 @@ q\text{ is arbitrage-free}
 \exists \psi\gg0\text{ such that }q=A^\top\psi.
 $$
 
-If \(\theta\) is a portfolio,
+If $\theta$ is a portfolio,
 
 $$
 q^\top\theta=\psi^\top A\theta.

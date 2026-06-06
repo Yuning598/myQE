@@ -1,8 +1,11 @@
+---
+orphan: true
+---
+
 # 最优停止与 smooth pasting
 
-来源：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#5.4 Optimal Stopping](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#5.4 Optimal Stopping)
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
 
-返回：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing)
 
 :::{admonition} Definition (Definition)
 最优停止问题是在所有 stopping times 中选择 $\tau$，使
