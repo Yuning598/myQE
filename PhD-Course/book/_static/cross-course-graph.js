@@ -130,8 +130,11 @@
     const routeList = root.querySelector('[data-role="route-list"]');
     const neighborsEl = root.querySelector('[data-role="neighbors"]');
 
+    const initialNode = data.nodes.find((node) => node.id === data.defaultNode) || data.nodes[0] || {};
+    const initialTheme = initialNode.theme || "All";
+
     const state = {
-      theme: "All",
+      theme: initialTheme,
       courses: new Set(data.courses.map((course) => course.id)),
       examFocus: "All",
       query: "",
@@ -198,7 +201,8 @@
     }
 
     function themeLabel(theme) {
-      return typeof theme === "string" ? theme : theme.label;
+      if (typeof theme === "string") return theme;
+      return theme.id === "All" ? "All" : theme.label;
     }
 
     function countExamMatches(focus) {
@@ -230,12 +234,13 @@
         const label = themeLabel(theme);
         const button = document.createElement("button");
         button.type = "button";
-        button.className = `${className("chip")}${label === "All" ? " is-active" : ""}`;
+        button.className = `${className("chip")}${label === state.theme ? " is-active" : ""}`;
         button.textContent = label === "All" ? "All themes" : label;
         button.addEventListener("click", () => {
           state.theme = label;
           [...themeChips.children].forEach((child) => child.classList.toggle("is-active", child === button));
           selectFirstVisible();
+          applyFocusedRouteLayout();
           render();
           fitGraph();
         });
@@ -271,6 +276,7 @@
           if (input.checked) state.courses.add(course.id);
           else state.courses.delete(course.id);
           selectFirstVisible();
+          applyFocusedRouteLayout();
           render();
           fitGraph();
         });
@@ -400,6 +406,32 @@
       updateTransform();
     }
 
+    function applyFocusedRouteLayout() {
+      if (state.theme === "All") return;
+      const route = data.reviewRoutes[state.theme] || [];
+      const routeNodes = route.map((id) => layoutById.get(id)).filter(Boolean);
+      const extraNodes = layout.filter((node) => node.theme === state.theme && !route.includes(node.id));
+      const step = routeNodes.length <= 5 ? 148 : 126;
+      const startX = -((routeNodes.length - 1) * step) / 2;
+
+      routeNodes.forEach((node, index) => {
+        if (node.pinned) return;
+        node.x = startX + index * step;
+        node.y = node.course === "Bridge" ? -28 : 0;
+        node.vx = 0;
+        node.vy = 0;
+      });
+
+      extraNodes.forEach((node, index) => {
+        if (node.pinned) return;
+        node.x = startX + (index % Math.max(routeNodes.length, 1)) * step;
+        node.y = 118 + Math.floor(index / Math.max(routeNodes.length, 1)) * 82;
+        node.vx = 0;
+        node.vy = 0;
+      });
+      updatePositions();
+    }
+
     function settleLayout(iterations = 80) {
       for (let i = 0; i < iterations; i += 1) {
         data.edges.forEach((edge) => {
@@ -484,6 +516,7 @@
         group.classList.toggle("is-route", routeIds.has(id));
         const dim = focusVisible && id !== focusId && !neighborIds.has(id) && !routeIds.has(id);
         group.classList.toggle("is-dim", dim);
+        group.classList.toggle("is-label-hidden", !shouldShowNodeLabel(id, visible, neighborIds, routeIds, dim));
       });
 
       [...edgeLayer.children].forEach((line) => {
@@ -503,11 +536,22 @@
         const target = label.dataset.target;
         const visible = visibleIds.has(source) && visibleIds.has(target);
         const focus = focusVisible && (source === focusId || target === focusId);
-        label.classList.toggle("is-hidden", !visible || !focus);
+        label.classList.toggle("is-hidden", !visible || !focus || !state.hovered);
       });
 
       updateDetails();
       updateStats(visibleIds);
+    }
+
+    function shouldShowNodeLabel(id, visible, neighborIds, routeIds, dim) {
+      if (!visible || dim) return false;
+      const node = nodeById.get(id);
+      if (!node) return false;
+      if (id === state.selected || id === state.hovered) return true;
+      if (state.theme === "All") {
+        return node.course === "Bridge" || neighborIds.has(id);
+      }
+      return routeIds.has(id) || neighborIds.has(id);
     }
 
     function updateDetails() {
@@ -637,13 +681,16 @@
       });
 
       resetBtn.addEventListener("click", () => {
-        state.theme = "All";
+        state.theme = initialTheme;
         state.examFocus = "All";
         state.query = "";
         searchInput.value = "";
         state.courses = new Set(data.courses.map((course) => course.id));
         state.selected = data.defaultNode;
-        [...themeChips.children].forEach((child, index) => child.classList.toggle("is-active", index === 0));
+        [...themeChips.children].forEach((child) => {
+          const label = child.textContent === "All themes" ? "All" : child.textContent;
+          child.classList.toggle("is-active", label === initialTheme);
+        });
         [...examChips.children].forEach((child, index) => child.classList.toggle("is-active", index === 0));
         [...courseFilters.querySelectorAll("input")].forEach((input) => {
           input.checked = true;
@@ -652,6 +699,7 @@
           node.pinned = false;
         });
         settleLayout(40);
+        applyFocusedRouteLayout();
         fitGraph();
         render();
       });
@@ -689,6 +737,7 @@
     initInteractions();
     resize();
     settleLayout();
+    applyFocusedRouteLayout();
     fitGraph();
     render();
     window.addEventListener("resize", () => {

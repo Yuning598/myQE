@@ -14,10 +14,11 @@
   min-height: 900px;
   border: 1px solid var(--cc-line);
   border-radius: 8px;
-  overflow: hidden;
+  overflow: visible;
   background: var(--cc-bg);
   color: var(--cc-ink);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  container-type: inline-size;
 }
 
 .cc-graph * {
@@ -508,6 +509,10 @@
   display: none;
 }
 
+.cc-graph__node.is-label-hidden .cc-graph__node-label {
+  display: none;
+}
+
 .cc-graph__node.is-route circle {
   stroke: var(--cc-accent);
   stroke-width: 3px;
@@ -549,6 +554,77 @@
   color: var(--cc-muted);
   font-size: 13px;
   line-height: 1.5;
+}
+
+@container (max-width: 980px) {
+  .cc-graph__app {
+    height: auto;
+    min-height: inherit;
+    grid-template-rows: auto auto auto;
+  }
+
+  .cc-graph__topbar {
+    grid-template-columns: 1fr;
+  }
+
+  .cc-graph__controls {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .cc-graph__filter-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cc-graph__chips-compact {
+    max-width: none;
+    justify-content: flex-start;
+  }
+
+  .cc-graph__workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .cc-graph__shell {
+    min-height: 560px;
+  }
+
+  .cc-graph__svg {
+    min-height: 560px;
+  }
+
+  .cc-graph__detail {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .cc-graph__routebar {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .cc-graph__route-list {
+    grid-auto-columns: minmax(150px, 1fr);
+  }
+}
+
+@container (max-width: 720px) {
+  .cc-graph__controls {
+    grid-template-columns: 1fr;
+  }
+
+  .cc-graph__actions {
+    justify-content: flex-start;
+  }
+
+  .cc-graph__chip,
+  .cc-graph__course-toggle {
+    font-size: 11.5px;
+  }
+
+  .cc-graph__shell,
+  .cc-graph__svg {
+    min-height: 520px;
+  }
 }
 
 @media (max-width: 1080px) {
