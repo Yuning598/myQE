@@ -322,15 +322,17 @@
   padding: 0 12px;
   border-radius: 6px;
   background: var(--cc-accent);
-  color: #ffffff;
+  color: #ffffff !important;
   font-size: 13px;
   font-weight: 750;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
-.cc-graph__link-button:hover {
+.cc-graph__link-button:hover,
+.cc-graph__link-button:visited,
+.cc-graph__link-button:focus {
   background: #075e59;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .cc-graph__neighbor-list {
