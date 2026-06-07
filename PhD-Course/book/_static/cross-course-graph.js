@@ -45,7 +45,7 @@
 
     return {
       title: payload.title || "QE Knowledge Graph",
-      subtitle: payload.subtitle || "Cross-course routes for Microeconomics, Econometrics, Asset Pricing, Corporate Finance, and problem sets.",
+      subtitle: payload.subtitle || "Common restrictions behind Microeconomics, Econometrics, Asset Pricing, Corporate Finance, and problem sets.",
       defaultNode: graph.default_node || (nodes[0] && nodes[0].id),
       themes: [{ id: "All", label: "All themes", route: [] }, ...themeItems],
       themeItems,
@@ -97,9 +97,9 @@
           </aside>
         </main>
 
-        <footer class="${className("routebar")}" aria-label="Review route">
+        <footer class="${className("routebar")}" aria-label="Proof chain">
           <div>
-            <div class="${className("routebar-label")}">Review Route</div>
+            <div class="${className("routebar-label")}">Proof Chain</div>
             <div class="${className("routebar-title")}" data-role="route-title"></div>
           </div>
           <ol class="${className("route-list")}" data-role="route-list"></ol>
@@ -278,6 +278,38 @@
       });
     }
 
+    function labelParts(label, maxLineLength = 20, maxLines = 3) {
+      const words = String(label).split(/\s+/);
+      const lines = [];
+      words.forEach((word) => {
+        const current = lines[lines.length - 1] || "";
+        if (!current) {
+          lines.push(word);
+          return;
+        }
+        if (`${current} ${word}`.length <= maxLineLength) {
+          lines[lines.length - 1] = `${current} ${word}`;
+        } else if (lines.length < maxLines) {
+          lines.push(word);
+        } else {
+          lines[lines.length - 1] = `${lines[lines.length - 1]} ${word}`;
+        }
+      });
+      return lines;
+    }
+
+    function renderNodeLabel(text, label, baseDy) {
+      text.innerHTML = "";
+      const lines = labelParts(label);
+      lines.forEach((line, index) => {
+        const tspan = document.createElementNS(SVG_NS, "tspan");
+        tspan.setAttribute("x", "0");
+        tspan.setAttribute("dy", index === 0 ? String(baseDy) : "13");
+        tspan.textContent = line;
+        text.appendChild(tspan);
+      });
+    }
+
     function initGraphElements() {
       edgeLayer.innerHTML = "";
       edgeLabelLayer.innerHTML = "";
@@ -314,8 +346,7 @@
         const text = document.createElementNS(SVG_NS, "text");
         text.classList.add(className("node-label"));
         text.setAttribute("text-anchor", "middle");
-        text.setAttribute("dy", String(17 + Math.sqrt(node.weight) * 2.1));
-        text.textContent = node.label;
+        renderNodeLabel(text, node.label, 17 + Math.sqrt(node.weight) * 2.1);
 
         group.append(circle, text);
         group.addEventListener("click", (event) => {

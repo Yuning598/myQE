@@ -9,9 +9,9 @@
   --cc-accent: #0b7a75;
   --cc-accent-soft: #e7f4f2;
   --cc-route: #b55324;
-  --cc-shadow: 0 12px 34px rgba(25, 38, 58, 0.10);
+  --cc-shadow: 0 10px 26px rgba(25, 38, 58, 0.09);
   width: 100%;
-  min-height: 780px;
+  min-height: 900px;
   border: 1px solid var(--cc-line);
   border-radius: 8px;
   overflow: hidden;
@@ -27,10 +27,10 @@
 .cc-graph__app {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
-  gap: 10px;
+  gap: 8px;
   height: 100%;
   min-height: inherit;
-  padding: 10px;
+  padding: 8px;
 }
 
 .cc-graph__topbar,
@@ -44,11 +44,11 @@
 
 .cc-graph__topbar {
   display: grid;
-  grid-template-columns: minmax(220px, 0.8fr) minmax(320px, 1.2fr);
-  gap: 10px 16px;
+  grid-template-columns: minmax(190px, 0.62fr) minmax(320px, 1.38fr);
+  gap: 8px 12px;
   align-items: start;
   border-radius: 8px;
-  padding: 12px;
+  padding: 9px;
 }
 
 .cc-graph__heading {
@@ -56,8 +56,8 @@
 }
 
 .cc-graph__title {
-  margin: 0 0 4px;
-  font-size: 18px;
+  margin: 0 0 2px;
+  font-size: 17px;
   line-height: 1.22;
   letter-spacing: 0;
 }
@@ -65,8 +65,8 @@
 .cc-graph__subtitle {
   margin: 0;
   color: var(--cc-muted);
-  font-size: 13px;
-  line-height: 1.42;
+  font-size: 12px;
+  line-height: 1.35;
 }
 
 .cc-graph__controls {
@@ -78,7 +78,7 @@
 
 .cc-graph__search {
   width: 100%;
-  height: 36px;
+  height: 32px;
   padding: 0 11px;
   border: 1px solid var(--cc-line);
   border-radius: 6px;
@@ -99,7 +99,7 @@
 }
 
 .cc-graph__tool-btn {
-  height: 36px;
+  height: 32px;
   min-width: 48px;
   border: 1px solid var(--cc-line);
   border-radius: 6px;
@@ -149,8 +149,8 @@
   cursor: pointer;
   font-size: 12px;
   line-height: 1.2;
-  min-height: 30px;
-  padding: 6px 9px;
+  min-height: 28px;
+  padding: 5px 8px;
   transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
@@ -213,8 +213,8 @@
 
 .cc-graph__workspace {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 315px;
-  gap: 10px;
+  grid-template-columns: minmax(0, 1fr) 292px;
+  gap: 8px;
   min-height: 0;
 }
 
@@ -230,7 +230,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 540px;
+  min-height: 650px;
   background:
     linear-gradient(rgba(19, 31, 45, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(19, 31, 45, 0.035) 1px, transparent 1px),
@@ -287,7 +287,7 @@
   min-width: 0;
   overflow: auto;
   border-radius: 8px;
-  padding: 14px;
+  padding: 12px;
 }
 
 .cc-graph__detail-kicker {
@@ -301,7 +301,7 @@
 
 .cc-graph__detail-title {
   margin: 0 0 10px;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.24;
   letter-spacing: 0;
 }
@@ -402,11 +402,11 @@
 
 .cc-graph__routebar {
   display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
-  gap: 12px;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 8px;
   align-items: center;
   border-radius: 8px;
-  padding: 10px 12px;
+  padding: 8px 10px;
 }
 
 .cc-graph__routebar-label {
@@ -423,8 +423,8 @@
 .cc-graph__route-list {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(138px, 1fr);
-  gap: 8px;
+  grid-auto-columns: minmax(128px, 1fr);
+  gap: 6px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -436,12 +436,12 @@
   grid-template-columns: 22px 1fr;
   gap: 7px;
   align-items: start;
-  min-height: 54px;
+  min-height: 44px;
   border: 1px solid var(--cc-line);
   border-radius: 6px;
-  padding: 7px;
+  padding: 6px;
   background: var(--cc-panel-soft);
-  font-size: 12px;
+  font-size: 11.5px;
   line-height: 1.25;
 }
 
@@ -526,7 +526,7 @@
 .cc-graph__node-label {
   pointer-events: none;
   fill: #172033;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 750;
   paint-order: stroke;
   stroke: rgba(255, 255, 255, 0.9);

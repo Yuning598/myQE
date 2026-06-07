@@ -4,13 +4,13 @@
 # 2. Use a `theme` label that exactly matches one `themes[].label`.
 # 3. Set `url` to the published HTML path from the book root.
 # 4. Add one or more edges under `edges`.
-# 5. If it belongs on a shortest review path, add its id to `themes[].route`.
-# Keep labels short; put detailed explanations in bridge notes, not here.
+# 5. If it belongs in the theme's proof-chain highlight, add its id to `themes[].route`.
+# Keep labels short; put formulas and exam logic in bridge notes, not here.
 version: 1
 default_node: bridge_state_prices
 themes:
   - id: state_prices_sdf_complete_markets
-    label: State prices / SDF / complete markets
+    label: Payoff span and pricing functionals
     route:
       - micro_state_contingent
       - micro_arrow
@@ -18,14 +18,14 @@ themes:
       - ap_sdf
       - ps_payoff_matrix
   - id: risk_aversion_mean_variance_capm
-    label: Risk aversion / mean-variance / CAPM
+    label: Marginal utility and covariance pricing
     route:
       - micro_jensen
       - bridge_risk_capm
       - ap_cara_normal
       - ap_capm
   - id: projection_beta_pricing
-    label: Projection / beta pricing
+    label: Orthogonality and beta restrictions
     route:
       - metrics_projection
       - metrics_projection_matrix
@@ -33,7 +33,7 @@ themes:
       - ap_factor_beta
       - ap_fama_macbeth
   - id: gmm_euler_equation
-    label: GMM / Euler equation
+    label: Moment restrictions and pricing errors
     route:
       - metrics_gmm
       - metrics_overid
@@ -41,7 +41,7 @@ themes:
       - ap_euler
       - ap_gmm
   - id: identification_corporate_finance
-    label: Identification / corporate finance
+    label: Identification assumptions in empirical finance
     route:
       - metrics_iv
       - metrics_did_rd
@@ -49,7 +49,7 @@ themes:
       - corp_threats
       - corp_methods
   - id: dynamic_programming_hjb
-    label: Dynamic programming / HJB
+    label: Recursive value problems and verification
     route:
       - micro_uncertainty_dynamic
       - micro_contracts
@@ -139,10 +139,10 @@ exam_focuses:
       - recursive pricing
 nodes:
   - id: bridge_state_prices
-    label: State Prices / SDF / Complete Markets
+    label: Payoff Span and Pricing Functional
     type: bridge
     course: Bridge
-    theme: State prices / SDF / complete markets
+    theme: Payoff span and pricing functionals
     url: Cross-Course/bridges/State_Prices_SDF_Complete_Markets.html
     exam_modes:
       - rank
@@ -154,7 +154,7 @@ nodes:
     label: State-Contingent Commodities
     type: concept
     course: Microeconomics
-    theme: State prices / SDF / complete markets
+    theme: Payoff span and pricing functionals
     url: Microeconomic/02_Choice_under_Uncertainty_and_State_Contingent_Equilibrium.html
     exam_modes:
       - FOC
@@ -165,7 +165,7 @@ nodes:
     label: Arrow Securities
     type: concept
     course: Microeconomics
-    theme: State prices / SDF / complete markets
+    theme: Payoff span and pricing functionals
     url: Microeconomic/cards/Arrow%20securities%20and%20state%20prices.html
     exam_modes:
       - replication
@@ -175,7 +175,7 @@ nodes:
     label: SDF / Pricing Kernel
     type: concept
     course: Asset Pricing
-    theme: State prices / SDF / complete markets
+    theme: Payoff span and pricing functionals
     url: Asset%20Pricing/Theoretical%20AP/02_Dynamic_Asset_Pricing.html
     exam_modes:
       - Euler equation
@@ -185,17 +185,17 @@ nodes:
     label: Payoff Matrix Rank
     type: problem
     course: QE-PS
-    theme: State prices / SDF / complete markets
+    theme: Payoff span and pricing functionals
     url: ProblemSet/index.html
     exam_modes:
       - rank
       - arbitrage construction
     weight: 10
   - id: bridge_risk_capm
-    label: Risk Aversion / Mean-Variance / CAPM
+    label: Marginal Utility and Covariance Pricing
     type: bridge
     course: Bridge
-    theme: Risk aversion / mean-variance / CAPM
+    theme: Marginal utility and covariance pricing
     url: Cross-Course/bridges/Risk_Aversion_Mean_Variance_CAPM.html
     exam_modes:
       - Jensen
@@ -206,7 +206,7 @@ nodes:
     label: Jensen and Expected Utility
     type: concept
     course: Microeconomics
-    theme: Risk aversion / mean-variance / CAPM
+    theme: Marginal utility and covariance pricing
     url: Microeconomic/cards/Risk%20aversion%20and%20Jensen.html
     exam_modes:
       - risk premium
@@ -216,7 +216,7 @@ nodes:
     label: CARA-Normal Demand
     type: concept
     course: Asset Pricing
-    theme: Risk aversion / mean-variance / CAPM
+    theme: Marginal utility and covariance pricing
     url: Asset%20Pricing/Theoretical%20AP/cards/CARA-Normal%20framework%20-%20%E5%9D%87%E5%80%BC%E6%96%B9%E5%B7%AE%E7%AD%89%E4%BB%B7%E4%B8%8E%E6%9C%80%E4%BC%98%E9%9C%80%E6%B1%82.html
     exam_modes:
       - portfolio demand
@@ -226,17 +226,17 @@ nodes:
     label: CAPM and Frontier
     type: concept
     course: Asset Pricing
-    theme: Risk aversion / mean-variance / CAPM
+    theme: Marginal utility and covariance pricing
     url: Asset%20Pricing/Theoretical%20AP/01_Single_Period_Models.html
     exam_modes:
       - CAPM proof
       - two-fund separation
     weight: 11
   - id: bridge_projection_beta
-    label: Projection / Beta Pricing
+    label: Orthogonality and Beta Restrictions
     type: bridge
     course: Bridge
-    theme: Projection / beta pricing
+    theme: Orthogonality and beta restrictions
     url: Cross-Course/bridges/Projection_Beta_Pricing.html
     exam_modes:
       - orthogonality
@@ -247,7 +247,7 @@ nodes:
     label: Linear Projection
     type: concept
     course: Econometrics
-    theme: Projection / beta pricing
+    theme: Orthogonality and beta restrictions
     url: Econometrics/EF8090/01_CEF_and_Linear_Projection.html
     exam_modes:
       - normal equations
@@ -257,7 +257,7 @@ nodes:
     label: Projection Matrix
     type: concept
     course: Econometrics
-    theme: Projection / beta pricing
+    theme: Orthogonality and beta restrictions
     url: Econometrics/EF8090/cards/Projection_Matrix.html
     exam_modes:
       - idempotent
@@ -268,7 +268,7 @@ nodes:
     label: Beta and Factor Pricing
     type: concept
     course: Asset Pricing
-    theme: Projection / beta pricing
+    theme: Orthogonality and beta restrictions
     url: Asset%20Pricing/Empirical%20AP/05_Cross_Section_Factor_Models.html
     exam_modes:
       - beta pricing
@@ -278,17 +278,17 @@ nodes:
     label: Fama-MacBeth
     type: concept
     course: Asset Pricing
-    theme: Projection / beta pricing
+    theme: Orthogonality and beta restrictions
     url: Asset%20Pricing/Empirical%20AP/cards/Fama_MacBeth_Shanken.html
     exam_modes:
       - two-pass regression
       - Shanken correction
     weight: 9
   - id: bridge_gmm_euler
-    label: GMM / Euler Equation
+    label: Moment Restrictions and Pricing Errors
     type: bridge
     course: Bridge
-    theme: GMM / Euler equation
+    theme: Moment restrictions and pricing errors
     url: Cross-Course/bridges/GMM_Euler_Equation.html
     exam_modes:
       - moment condition
@@ -299,7 +299,7 @@ nodes:
     label: Single-Equation GMM
     type: concept
     course: Econometrics
-    theme: GMM / Euler equation
+    theme: Moment restrictions and pricing errors
     url: Econometrics/MS8956/10_Single_Equation_GMM.html
     exam_modes:
       - sample moments
@@ -309,7 +309,7 @@ nodes:
     label: Overidentification Tests
     type: concept
     course: Econometrics
-    theme: GMM / Euler equation
+    theme: Moment restrictions and pricing errors
     url: Econometrics/MS8956/11_Multiple_Equation_GMM.html
     exam_modes:
       - J-test
@@ -319,7 +319,7 @@ nodes:
     label: SDF Euler Tests
     type: concept
     course: Asset Pricing
-    theme: GMM / Euler equation
+    theme: Moment restrictions and pricing errors
     url: Asset%20Pricing/Empirical%20AP/cards/SDF_Euler_Equation.html
     exam_modes:
       - Euler equation
@@ -329,17 +329,17 @@ nodes:
     label: GMM Asset Pricing
     type: concept
     course: Asset Pricing
-    theme: GMM / Euler equation
+    theme: Moment restrictions and pricing errors
     url: Asset%20Pricing/Empirical%20AP/cards/GMM_Asset_Pricing.html
     exam_modes:
       - SDF estimation
       - HJ distance
     weight: 10
   - id: bridge_ident_cf
-    label: Identification / Corporate Finance
+    label: Identification Assumptions in Empirical Finance
     type: bridge
     course: Bridge
-    theme: Identification / corporate finance
+    theme: Identification assumptions in empirical finance
     url: Cross-Course/bridges/Identification_Corporate_Finance.html
     exam_modes:
       - endogeneity
@@ -352,7 +352,7 @@ nodes:
     label: IV / 2SLS / Weak Instruments
     type: concept
     course: Econometrics
-    theme: Identification / corporate finance
+    theme: Identification assumptions in empirical finance
     url: Econometrics/EF8090/05_IV_2SLS_Weak_Instruments.html
     exam_modes:
       - exclusion
@@ -363,7 +363,7 @@ nodes:
     label: DiD and RD
     type: concept
     course: Econometrics
-    theme: Identification / corporate finance
+    theme: Identification assumptions in empirical finance
     url: Econometrics/EF8090/07_DiD_RD_Nonparametric_Kernel.html
     exam_modes:
       - common trends
@@ -373,7 +373,7 @@ nodes:
     label: Identification Threats
     type: concept
     course: Corporate Finance
-    theme: Identification / corporate finance
+    theme: Identification assumptions in empirical finance
     url: Corporate%20Finance/cards/Threats%20to%20identification%20-%20empirical%20categories.html
     exam_modes:
       - paper critique
@@ -383,17 +383,17 @@ nodes:
     label: Corporate Finance Methods
     type: concept
     course: Corporate Finance
-    theme: Identification / corporate finance
+    theme: Identification assumptions in empirical finance
     url: Corporate%20Finance/02_Econometric_Methods_in_Corporate_Finance.html
     exam_modes:
       - empirical strategy
       - natural experiment
     weight: 10
   - id: bridge_dp_hjb
-    label: Dynamic Programming / HJB
+    label: Recursive Value Problems and Verification
     type: bridge
     course: Bridge
-    theme: Dynamic programming / HJB
+    theme: Recursive value problems and verification
     url: Cross-Course/bridges/Dynamic_Programming_HJB.html
     exam_modes:
       - Bellman equation
@@ -405,7 +405,7 @@ nodes:
     label: Bellman Logic in Contracts
     type: concept
     course: Microeconomics
-    theme: Dynamic programming / HJB
+    theme: Recursive value problems and verification
     url: Microeconomic/07_Principal-Agent_Models_Moral_Hazard_and_Screening.html
     exam_modes:
       - incentive constraints
@@ -415,7 +415,7 @@ nodes:
     label: Dynamic Choice under Uncertainty
     type: concept
     course: Microeconomics
-    theme: Dynamic programming / HJB
+    theme: Recursive value problems and verification
     url: Microeconomic/06_Equilibrium_Under_Uncertainty.html
     exam_modes:
       - state variable
@@ -425,7 +425,7 @@ nodes:
     label: HJB and Continuous-Time Pricing
     type: concept
     course: Asset Pricing
-    theme: Dynamic programming / HJB
+    theme: Recursive value problems and verification
     url: Asset%20Pricing/Theoretical%20AP/03_Continuous_Time_Pricing_Options_Term_Structure.html
     exam_modes:
       - HJB
@@ -436,7 +436,7 @@ nodes:
     label: Dynamic Asset Pricing
     type: concept
     course: Asset Pricing
-    theme: Dynamic programming / HJB
+    theme: Recursive value problems and verification
     url: Asset%20Pricing/Theoretical%20AP/02_Dynamic_Asset_Pricing.html
     exam_modes:
       - recursive pricing
@@ -446,200 +446,200 @@ edges:
   - source: bridge_state_prices
     target: micro_state_contingent
     relation: AD commodities
-    theme: State prices / SDF / complete markets
+    theme: Payoff span and pricing functionals
     strength: 2.8
   - source: bridge_state_prices
     target: micro_arrow
     relation: state claim
-    theme: State prices / SDF / complete markets
+    theme: Payoff span and pricing functionals
     strength: 2.5
   - source: bridge_state_prices
     target: ap_sdf
     relation: q = pi m
-    theme: State prices / SDF / complete markets
+    theme: Payoff span and pricing functionals
     strength: 3.0
   - source: bridge_state_prices
     target: ps_payoff_matrix
     relation: rank and arbitrage
-    theme: State prices / SDF / complete markets
+    theme: Payoff span and pricing functionals
     strength: 2.7
   - source: micro_arrow
     target: ps_payoff_matrix
     relation: replication
-    theme: State prices / SDF / complete markets
+    theme: Payoff span and pricing functionals
     strength: 1.8
   - source: ap_sdf
     target: ap_euler
     relation: SDF moments
-    theme: GMM / Euler equation
+    theme: Moment restrictions and pricing errors
     strength: 1.2
   - source: bridge_risk_capm
     target: micro_jensen
     relation: concavity
-    theme: Risk aversion / mean-variance / CAPM
+    theme: Marginal utility and covariance pricing
     strength: 2.8
   - source: bridge_risk_capm
     target: ap_cara_normal
     relation: normal payoff
-    theme: Risk aversion / mean-variance / CAPM
+    theme: Marginal utility and covariance pricing
     strength: 2.6
   - source: bridge_risk_capm
     target: ap_capm
     relation: market portfolio
-    theme: Risk aversion / mean-variance / CAPM
+    theme: Marginal utility and covariance pricing
     strength: 3.0
   - source: micro_jensen
     target: ap_cara_normal
     relation: risk premium
-    theme: Risk aversion / mean-variance / CAPM
+    theme: Marginal utility and covariance pricing
     strength: 1.7
   - source: ap_cara_normal
     target: ap_capm
     relation: MV demand
-    theme: Risk aversion / mean-variance / CAPM
+    theme: Marginal utility and covariance pricing
     strength: 1.9
   - source: bridge_projection_beta
     target: metrics_projection
     relation: L2 projection
-    theme: Projection / beta pricing
+    theme: Orthogonality and beta restrictions
     strength: 2.8
   - source: bridge_projection_beta
     target: metrics_projection_matrix
     relation: sample analog
-    theme: Projection / beta pricing
+    theme: Orthogonality and beta restrictions
     strength: 2.0
   - source: bridge_projection_beta
     target: ap_factor_beta
     relation: beta = slope
-    theme: Projection / beta pricing
+    theme: Orthogonality and beta restrictions
     strength: 3.0
   - source: bridge_projection_beta
     target: ap_fama_macbeth
     relation: two-pass beta
-    theme: Projection / beta pricing
+    theme: Orthogonality and beta restrictions
     strength: 2.4
   - source: metrics_projection
     target: ap_factor_beta
     relation: orthogonality
-    theme: Projection / beta pricing
+    theme: Orthogonality and beta restrictions
     strength: 2.0
   - source: ap_factor_beta
     target: ap_fama_macbeth
     relation: risk premia
-    theme: Projection / beta pricing
+    theme: Orthogonality and beta restrictions
     strength: 1.8
   - source: bridge_gmm_euler
     target: metrics_gmm
     relation: E[g(theta)] = 0
-    theme: GMM / Euler equation
+    theme: Moment restrictions and pricing errors
     strength: 2.9
   - source: bridge_gmm_euler
     target: metrics_overid
     relation: J-test
-    theme: GMM / Euler equation
+    theme: Moment restrictions and pricing errors
     strength: 2.2
   - source: bridge_gmm_euler
     target: ap_euler
     relation: E[mR - 1] = 0
-    theme: GMM / Euler equation
+    theme: Moment restrictions and pricing errors
     strength: 3.0
   - source: bridge_gmm_euler
     target: ap_gmm
     relation: pricing errors
-    theme: GMM / Euler equation
+    theme: Moment restrictions and pricing errors
     strength: 2.7
   - source: metrics_gmm
     target: ap_gmm
     relation: sample moments
-    theme: GMM / Euler equation
+    theme: Moment restrictions and pricing errors
     strength: 2.0
   - source: metrics_overid
     target: ap_euler
     relation: overidentifying restrictions
-    theme: GMM / Euler equation
+    theme: Moment restrictions and pricing errors
     strength: 1.8
   - source: bridge_ident_cf
     target: metrics_iv
     relation: exclusion
-    theme: Identification / corporate finance
+    theme: Identification assumptions in empirical finance
     strength: 2.8
   - source: bridge_ident_cf
     target: metrics_did_rd
     relation: design assumptions
-    theme: Identification / corporate finance
+    theme: Identification assumptions in empirical finance
     strength: 2.8
   - source: bridge_ident_cf
     target: corp_threats
     relation: threat taxonomy
-    theme: Identification / corporate finance
+    theme: Identification assumptions in empirical finance
     strength: 2.6
   - source: bridge_ident_cf
     target: corp_methods
     relation: paper design
-    theme: Identification / corporate finance
+    theme: Identification assumptions in empirical finance
     strength: 2.7
   - source: metrics_iv
     target: corp_methods
     relation: natural experiments
-    theme: Identification / corporate finance
+    theme: Identification assumptions in empirical finance
     strength: 1.9
   - source: metrics_did_rd
     target: corp_threats
     relation: validity checks
-    theme: Identification / corporate finance
+    theme: Identification assumptions in empirical finance
     strength: 1.7
   - source: bridge_dp_hjb
     target: micro_contracts
     relation: continuation value
-    theme: Dynamic programming / HJB
+    theme: Recursive value problems and verification
     strength: 2.5
   - source: bridge_dp_hjb
     target: micro_uncertainty_dynamic
     relation: state recursion
-    theme: Dynamic programming / HJB
+    theme: Recursive value problems and verification
     strength: 2.2
   - source: bridge_dp_hjb
     target: ap_hjb
     relation: continuous time
-    theme: Dynamic programming / HJB
+    theme: Recursive value problems and verification
     strength: 3.0
   - source: bridge_dp_hjb
     target: ap_dynamic
     relation: recursive pricing
-    theme: Dynamic programming / HJB
+    theme: Recursive value problems and verification
     strength: 2.6
   - source: ap_dynamic
     target: ap_hjb
     relation: limit to HJB
-    theme: Dynamic programming / HJB
+    theme: Recursive value problems and verification
     strength: 1.8
   - source: micro_contracts
     target: ap_hjb
     relation: value function
-    theme: Dynamic programming / HJB
+    theme: Recursive value problems and verification
     strength: 1.4
   - source: bridge_state_prices
     target: bridge_gmm_euler
     relation: SDF restrictions
-    theme: GMM / Euler equation
+    theme: Moment restrictions and pricing errors
     strength: 1.4
   - source: bridge_projection_beta
     target: bridge_gmm_euler
     relation: moment pricing
-    theme: Projection / beta pricing
+    theme: Orthogonality and beta restrictions
     strength: 1.3
   - source: bridge_risk_capm
     target: bridge_projection_beta
     relation: beta risk
-    theme: Projection / beta pricing
+    theme: Orthogonality and beta restrictions
     strength: 1.4
   - source: bridge_dp_hjb
     target: bridge_state_prices
     relation: recursive SDF
-    theme: Dynamic programming / HJB
+    theme: Recursive value problems and verification
     strength: 1.1
   - source: bridge_ident_cf
     target: bridge_gmm_euler
     relation: moments vs design
-    theme: Identification / corporate finance
+    theme: Identification assumptions in empirical finance
     strength: 1.1

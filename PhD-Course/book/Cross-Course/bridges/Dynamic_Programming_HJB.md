@@ -19,114 +19,128 @@ tags:
   - hjb
 ---
 
-# Dynamic Programming and HJB
+# Recursive Value Problems and Verification
 
 导航：[Cross-Course Hub](../index.md) · [Microeconomic](../../Microeconomic/index.md) · [Asset Pricing](../../Asset%20Pricing/index.md)
 
-## 1. 一句话主线
+## 共同对象
 
-value function 是共同对象：Micro 用 Bellman equation 处理动态选择、承诺、激励约束和 continuation value；Asset Pricing 把离散时间递归定价推广到连续时间 HJB、optimal stopping、smooth pasting 和 verification。
+共同对象不是 HJB 这个符号本身，而是 value function 作为一个递归 fixed point。Micro 里它表现为 continuation value、promised utility 或 incentive constraint；Asset Pricing 里它表现为 asset value、option value、stochastic discounting 下的 recursive price。
 
-## 2. 共同数学对象
-
-离散时间 Bellman equation:
+离散时间问题先写 state、control、transition：
 
 $$
-V(s)=\max_{a\in A(s)}
+\left\{
+\begin{aligned}
+s'&\sim Q(\cdot\mid s,a),\\
+V(s)&=\max_{a\in A(s)}
 \left\{
 u(s,a)+\beta E[V(s')\mid s,a]
 \right\}.
+\end{aligned}
+\right.
 $$
 
-连续时间状态过程：
+连续时间问题把 transition 换成 generator：
 
 $$
-dX_t=\mu(X_t,a_t)dt+\sigma(X_t,a_t)dW_t.
+\left\{
+\begin{aligned}
+dX_t&=\mu(X_t,a_t)dt+\sigma(X_t,a_t)dW_t.
+\end{aligned}
+\right.
 $$
 
-HJB:
-
 $$
-\rho V(x)=\max_a
+\begin{aligned}
+\rho V(x)&=\max_a
 \left\{
 u(x,a)+\mu(x,a)V_x(x)
 +\frac{1}{2}\sigma^2(x,a)V_{xx}(x)
 \right\}.
+\end{aligned}
 $$
 
-## 3. 跨课命名
+## 等价命题
 
-| 共同对象 | Microeconomics | Asset Pricing | QE 常见问法 |
+| 共同 restriction | Microeconomics | Asset Pricing | QE 中要写清 |
 | --- | --- | --- | --- |
-| value function | indirect utility, continuation value | asset value, option value | 写 Bellman/HJB |
-| state variable | wealth, type, promised utility | price, dividend, belief, state price density | 选状态变量 |
-| constraint | incentive compatibility, participation | boundary, solvency, stopping region | 找 binding condition |
-| envelope | marginal continuation value | delta, smooth pasting | verification |
+| fixed point | Bellman equation | recursive pricing equation | value 的定义域和 feasible controls |
+| generator | transition law | Itô term / HJB | $\mu V_x+\frac{1}{2}\sigma^2V_{xx}$ |
+| envelope | marginal continuation value | delta / marginal asset value | FOC 与 envelope 不能混用 |
+| boundary | participation / IC binding | stopping boundary / solvency constraint | value matching、smooth pasting、transversality |
 
-## 4. 核心公式
-
-### Recursive pricing
-
-若 payoff 为 $X_{t+1}$，价格满足
+递归资产定价也是 Bellman 结构。若 payoff 为 $D(s')+P(s')$，则
 
 $$
-P_t=E_t[m_{t+1}X_{t+1}].
+\begin{aligned}
+P_t&=E_t[m_{t+1}X_{t+1}],\\
+P(s)&=E[m(s,s')\{D(s')+P(s')\}\mid s].
+\end{aligned}
 $$
 
-递归资产价格可写为
+optimal stopping 是 Bellman fixed point 加 free boundary：
 
 $$
-P(s)=E[m(s,s')\{D(s')+P(s')\}\mid s].
+\begin{aligned}
+V(x)&=\max\{G(x),C(x)\},\\
+\rho V(x)&=\mathcal L V(x)+u(x) \qquad x\in \mathcal C,\\
+V(x^*)&=G(x^*),\\
+V_x(x^*)&=G_x(x^*).
+\end{aligned}
 $$
 
-### Optimal stopping
+## 跨课翻译
 
-停止问题：
+Micro 的动态题通常从 incentive constraint 或 promised utility 出发，难点是选状态；Asset Pricing 的动态题通常直接给 SDE，难点是把 Itô generator、boundary condition 和 verification 写完整。二者在形式上都是：
 
 $$
-V(x)=\max\left\{
-G(x),\ C(x)
+\begin{aligned}
+\text{candidate value}
+&\Longrightarrow \text{FOC / policy}\\
+&\Longrightarrow \text{law of motion under policy}\\
+&\Longrightarrow \text{HJB or Bellman holds}\\
+&\Longrightarrow \text{verification}.
+\end{aligned}
+$$
+
+## 考场写法
+
+**Bellman equation.** 先写状态 $s$ 和控制 $a$，再写 payoff 和 transition；不要直接写一个最大化式而不说明 $s'$ 如何产生。
+
+$$
+\begin{aligned}
+V(s)
+&=\max_{a\in A(s)}
+\left\{
+u(s,a)+\beta\int V(s')Q(ds'\mid s,a)
 \right\}.
+\end{aligned}
 $$
 
-在 continuation region，$V$ 满足 HJB；在 boundary $x^*$，常见条件是
+**HJB.** 先由 SDE 写 generator，再把 flow payoff、discounting 和 control maximization 放进去。
 
 $$
-V(x^*)=G(x^*),
-\qquad
-V_x(x^*)=G_x(x^*).
+\begin{aligned}
+\mathcal L^a V(x)
+&=\mu(x,a)V_x(x)+\frac{1}{2}\sigma^2(x,a)V_{xx}(x),\\
+\rho V(x)
+&=\max_a\{u(x,a)+\mathcal L^a V(x)\}.
+\end{aligned}
 $$
 
-第二个条件是 smooth pasting。
+**Verification.** 最后必须说明 candidate $V$ 满足 HJB、边界条件、growth / transversality condition，并且 candidate policy 达到 HJB 里的 maximum。
 
-## 5. QE 题型
+## 常见错误
 
-### 5.1 写 Bellman equation
+- 把 state variable 和 control 混在一起，导致 transition law 不闭合。
+- 写 HJB 时漏掉 $\frac{1}{2}\sigma^2V_{xx}$ 或 cross-variation term。
+- optimal stopping 只写 value matching，不写 smooth pasting。
+- verification 只说 “therefore optimal”，没有检查 boundary、growth condition 和 attainable policy。
 
-步骤：
+## 进入原始材料
 
-1. 定义 state variable。
-2. 定义 control。
-3. 写 per-period payoff。
-4. 写 transition law。
-5. 检查约束是否进入 feasible set 或 Lagrangian。
-
-### 5.2 写 HJB
-
-步骤：
-
-1. 写状态 SDE。
-2. 写 generator term $\mu V_x+\frac{1}{2}\sigma^2V_{xx}$。
-3. 加上 flow payoff 和 discounting。
-4. 对 control 最大化。
-
-### 5.3 verification 与 boundary
-
-答案要说明 candidate value function 满足 HJB、边界条件、transversality 或 growth condition，并且 policy 达到 HJB 中的 maximum。
-
-## 6. 最短复习路线
-
-1. [Micro: Equilibrium Under Uncertainty](../../Microeconomic/06_Equilibrium_Under_Uncertainty.md)
-2. [Micro: Principal-Agent Models](../../Microeconomic/07_Principal-Agent_Models_Moral_Hazard_and_Screening.md)
-3. [Asset Pricing: Dynamic Asset Pricing](../../Asset%20Pricing/Theoretical%20AP/02_Dynamic_Asset_Pricing.md)
-4. [Asset Pricing: Continuous-Time Pricing](../../Asset%20Pricing/Theoretical%20AP/03_Continuous_Time_Pricing_Options_Term_Structure.md)
+- [Micro: Equilibrium Under Uncertainty](../../Microeconomic/06_Equilibrium_Under_Uncertainty.md)
+- [Micro: Principal-Agent Models](../../Microeconomic/07_Principal-Agent_Models_Moral_Hazard_and_Screening.md)
+- [Asset Pricing: Dynamic Asset Pricing](../../Asset%20Pricing/Theoretical%20AP/02_Dynamic_Asset_Pricing.md)
+- [Asset Pricing: Continuous-Time Pricing](../../Asset%20Pricing/Theoretical%20AP/03_Continuous_Time_Pricing_Options_Term_Structure.md)

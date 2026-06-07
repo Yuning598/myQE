@@ -52,7 +52,7 @@ class CrossCourseGraphDirective(Directive):
             "title": self.options.get("title", "QE Knowledge Graph"),
             "subtitle": self.options.get(
                 "subtitle",
-                "Cross-course routes for Microeconomics, Econometrics, Asset Pricing, Corporate Finance, and problem sets.",
+                "Common restrictions behind Microeconomics, Econometrics, Asset Pricing, Corporate Finance, and problem sets.",
             ),
         }
         node["height"] = self.options.get("height", "760px")

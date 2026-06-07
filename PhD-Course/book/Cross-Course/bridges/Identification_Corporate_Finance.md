@@ -21,116 +21,142 @@ tags:
   - corporate-finance
 ---
 
-# Identification and Corporate Finance
+# Identification Assumptions in Empirical Finance
 
 导航：[Cross-Course Hub](../index.md) · [Econometrics](../../Econometrics/index.md) · [Corporate Finance](../../Corporate%20Finance/index.md)
 
-## 1. 一句话主线
+## 共同对象
 
-identification assumption 是共同对象：Econometrics 提供 IV、LATE、DiD、RD 的 formal assumptions；Corporate Finance 把这些假设映射到资本结构、治理、股利、回购、并购等实证论文里的 endogeneity threats 和自然实验设计。
+共同对象是 identifying assumption，而不是某个回归命令。Econometrics 给出 IV、DiD、RD、LATE 的 formal conditions；Corporate Finance 的任务是把资本结构、治理、股利、并购等问题里的 endogeneity threats 映射到这些 conditions 上。
 
-## 2. 共同数学对象
-
-目标通常是因果效应
+目标 estimand 通常是：
 
 $$
-\tau=E[Y(1)-Y(0)].
+\left\{
+\begin{aligned}
+\tau&=E[Y(1)-Y(0)],\\
+Y&=DY(1)+(1-D)Y(0).
+\end{aligned}
+\right.
 $$
 
-观测数据只给出
+观测数据永远缺 counterfactual，所以 QE 答案的核心不是“用了哪个 estimator”，而是：
 
 $$
-Y=DY(1)+(1-D)Y(0),
+\begin{aligned}
+\text{observed comparison}
+\overset{\text{identifying assumption}}{\Longrightarrow}
+\text{counterfactual comparison}.
+\end{aligned}
 $$
 
-所以需要识别假设连接 observed comparison 和 counterfactual comparison。
+## 等价命题
 
-## 3. 跨课命名
-
-| 共同对象 | Econometrics | Corporate Finance | QE 常见问法 |
+| 共同 restriction | Econometrics | Corporate Finance | QE 中要写清 |
 | --- | --- | --- | --- |
-| omitted variable | $E[u\mid X]\ne0$ | firm quality, governance, investment opportunity | 判断 bias 方向 |
-| instrument | relevance + exclusion | tax shock, regulation, index inclusion | 评价工具变量 |
-| DiD | common trends | treated/control firms around shock | 检查 parallel trends |
-| RD | continuity at cutoff | threshold rules, eligibility cutoffs | local effect 解释 |
-| LATE | compliers | affected firms only | 解释 external validity |
+| selection on unobservables | $E[u\mid D]\ne0$ | high-quality firms choose payout, leverage, governance | bias direction |
+| exclusion | $E[Zu]=0$ | regulation, tax shock, index inclusion | shock 是否只经 treatment 影响 outcome |
+| common trends | untreated parallel trends | treated/control firms around event | pre-trend 和 concurrent shocks |
+| continuity | potential outcomes continuous at cutoff | eligibility threshold, rule cutoff | manipulation / local estimand |
+| monotonicity | no defiers | affected firms are compliers | LATE 外推限制 |
 
-## 4. 核心公式
-
-### IV
-
-结构方程：
+遗漏变量偏误可直接写成：
 
 $$
-Y=\beta D+u.
+\begin{aligned}
+\plim \hat\beta_{OLS}
+&=\beta+\frac{\operatorname{Cov}(D,u)}{\operatorname{Var}(D)}.
+\end{aligned}
 $$
 
-有效工具变量 $Z$ 需要
+IV 的识别系统是：
 
 $$
-\operatorname{Cov}(Z,D)\ne0,
-\qquad
-E[Zu]=0.
+\left\{
+\begin{aligned}
+Y&=\beta D+u,\\
+\operatorname{Cov}(Z,D)&\ne0,\\
+E[Zu]&=0.
+\end{aligned}
+\right.
 $$
 
-Wald estimand:
+$$
+\begin{aligned}
+\beta_{IV}
+&=\frac{\operatorname{Cov}(Z,Y)}{\operatorname{Cov}(Z,D)}.
+\end{aligned}
+$$
+
+DiD 的识别等式是：
 
 $$
-\beta_{IV}=\frac{\operatorname{Cov}(Z,Y)}{\operatorname{Cov}(Z,D)}.
-$$
-
-### DiD
-
-两期两组 DiD:
-
-$$
+\begin{aligned}
 \tau_{DID}
-=\left(\bar Y_{T,post}-\bar Y_{T,pre}\right)
+&=\left(\bar Y_{T,post}-\bar Y_{T,pre}\right)
 -\left(\bar Y_{C,post}-\bar Y_{C,pre}\right).
+\end{aligned}
 $$
 
-核心假设是 untreated potential outcome 的 common trends。
-
-### RD
-
-cutoff 为 $c$，running variable 为 $X$：
+RD 的 local estimand 是：
 
 $$
+\begin{aligned}
 \tau_{RD}
-=\lim_{x\downarrow c}E[Y\mid X=x]
+&=\lim_{x\downarrow c}E[Y\mid X=x]
 -\lim_{x\uparrow c}E[Y\mid X=x].
+\end{aligned}
 $$
 
-核心假设是 potential outcomes 在 cutoff 附近连续。
+## 跨课翻译
 
-## 5. QE 题型
+Corporate Finance 论文里的 natural experiment 不是自动识别。它只是在 Econometrics 的 restriction 上提供一个候选来源：
 
-### 5.1 paper identification critique
+$$
+\begin{aligned}
+\text{policy / regulation / tax shock}
+&\Longrightarrow \text{variation in }D\\
+&\not\Longrightarrow \text{valid design unless exclusion/common trends/continuity holds}.
+\end{aligned}
+$$
 
-步骤：
+因此读 paper 时先填四个对象：unit、treatment、outcome、timing。再判断 shock 是否带来 selection、anticipation、spillover 或 simultaneous policy changes。
 
-1. 写清 treatment、outcome、unit、timing。
-2. 指出主要 endogeneity channel。
-3. 给出识别假设。
-4. 说明可检验 implication 与不能检验的核心假设。
+## 考场写法
 
-### 5.2 bias direction
+**Paper identification critique.** 一段合格答案应包含：
 
-步骤：
+- treatment、outcome、unit、timing；
+- primary endogeneity channel；
+- identifying assumption；
+- testable implication；
+- untestable maintained assumption。
 
-1. 写遗漏变量公式。
-2. 判断 omitted variable 与 treatment 的相关性。
-3. 判断 omitted variable 与 outcome 的相关性。
-4. 两个符号相乘得到 OLS bias 方向。
+**Bias direction.** 不要只说 “upward bias”。要写：
 
-### 5.3 natural experiment mapping
+$$
+\begin{aligned}
+\operatorname{sign}(\text{bias})
+&=\operatorname{sign}\{\operatorname{Cov}(D,u)\}\\
+&=\operatorname{sign}\{\operatorname{Cov}(D,\text{omitted factor})\}
+\cdot
+\operatorname{sign}\{\operatorname{Cov}(Y,\text{omitted factor})\}.
+\end{aligned}
+$$
 
-Corporate Finance 的自然实验通常不是自动有效；QE 答案要明确 shock 是否只通过 treatment 影响 outcome，以及是否有 anticipatory behavior、selection、spillover、simultaneous policy changes。
+**Natural experiment.** 先说明 shock 改变了什么 margin，再说明为什么 shock 不直接影响 outcome；如果做不到，答案应改成 threat，而不是硬说 valid。
 
-## 6. 最短复习路线
+## 常见错误
 
-1. [Econometrics: IV, 2SLS, Weak Instruments](../../Econometrics/EF8090/05_IV_2SLS_Weak_Instruments.md)
-2. [Econometrics: Potential Outcomes, LATE](../../Econometrics/EF8090/06_Potential_Outcomes_LATE_Roy_MTE.md)
-3. [Econometrics: DiD and RD](../../Econometrics/EF8090/07_DiD_RD_Nonparametric_Kernel.md)
-4. [Corporate Finance: Econometric Methods](../../Corporate%20Finance/02_Econometric_Methods_in_Corporate_Finance.md)
-5. [Corporate Finance card: Threats to identification](../../Corporate%20Finance/cards/Threats%20to%20identification%20-%20empirical%20categories.md)
+- 把 statistically significant first stage 当成 IV validity；exclusion restriction 仍然不可检验。
+- DiD 只画事件研究图，不说明 untreated potential outcomes 的 common trends。
+- RD 只说 cutoff 附近相似，不检查 manipulation 和 covariate balance。
+- Corporate Finance paper critique 只复述作者设计，没有指出 firm selection、anticipation、spillover 或 simultaneous shocks。
+
+## 进入原始材料
+
+- [Econometrics: IV, 2SLS, Weak Instruments](../../Econometrics/EF8090/05_IV_2SLS_Weak_Instruments.md)
+- [Econometrics: Potential Outcomes, LATE](../../Econometrics/EF8090/06_Potential_Outcomes_LATE_Roy_MTE.md)
+- [Econometrics: DiD and RD](../../Econometrics/EF8090/07_DiD_RD_Nonparametric_Kernel.md)
+- [Corporate Finance: Econometric Methods](../../Corporate%20Finance/02_Econometric_Methods_in_Corporate_Finance.md)
+- [Corporate Finance card: Threats to identification](../../Corporate%20Finance/cards/Threats%20to%20identification%20-%20empirical%20categories.md)

@@ -19,103 +19,145 @@ tags:
   - beta
 ---
 
-# Projection and Beta Pricing
+# Orthogonality and Beta Restrictions
 
 导航：[Cross-Course Hub](../index.md) · [Econometrics](../../Econometrics/index.md) · [Asset Pricing](../../Asset%20Pricing/index.md)
 
-## 1. 一句话主线
+## 共同对象
 
-linear projection 是共同对象：Econometrics 把它写成最小均方误差和正交条件；Asset Pricing 把同一个 projection slope 解释为 beta，并用 beta exposure 定价横截面收益。
+共同对象是 orthogonality condition。Econometrics 把它写成 projection residual 与 regressors 正交；Asset Pricing 把同一个 projection slope 解释为 beta，再用 beta exposure 组织 expected returns。
 
-## 2. 共同数学对象
-
-对随机变量 $Y$ 和因子 $F$，linear projection 是
+对随机变量 $Y$ 和因子 $F$，population linear projection 是：
 
 $$
-Y=\alpha+\beta^\top F+\varepsilon,
-\qquad
-E[\varepsilon]=0,\quad E[F\varepsilon]=0.
+\left\{
+\begin{aligned}
+Y&=\alpha+\beta^\top F+\varepsilon,\\
+E[\varepsilon]&=0,\\
+E[F\varepsilon]&=0.
+\end{aligned}
+\right.
 $$
 
 若 $F$ 已中心化，
 
 $$
-\beta=\operatorname{Var}(F)^{-1}\operatorname{Cov}(F,Y).
+\begin{aligned}
+\beta&=\operatorname{Var}(F)^{-1}\operatorname{Cov}(F,Y).
+\end{aligned}
 $$
 
 样本中，投影矩阵为
 
 $$
-P_X=X(X^\top X)^{-1}X^\top,
+\begin{aligned}
+P_X&=X(X^\top X)^{-1}X^\top,\\
 \qquad
-M_X=I-P_X.
+M_X&=I-P_X.
+\end{aligned}
 $$
 
-## 3. 跨课命名
+## 等价命题
 
-| 共同对象 | Econometrics | Asset Pricing | QE 常见问法 |
+| 共同 restriction | Econometrics | Asset Pricing | QE 中要写清 |
 | --- | --- | --- | --- |
-| projection slope | population linear projection | asset beta | 算 beta、解释 slope |
-| orthogonality | $E[Xu]=0$ | pricing error orthogonal to factors | 写 moment condition |
-| projection matrix | fitted values and residual maker | first-pass beta estimate | 证明 idempotent/rank |
-| cross-sectional projection | second-stage regression | Fama-MacBeth | 估计 risk premia |
+| normal equation | $E[Xu]=0$ | factor residual orthogonality | beta 是 projection slope |
+| covariance ratio | $\beta=\operatorname{Var}(F)^{-1}\operatorname{Cov}(F,Y)$ | beta exposure | covariance 与 beta 的换算 |
+| fitted/residual split | $P_X$ and $M_X$ | systematic and idiosyncratic returns | idempotent、symmetry、rank |
+| cross-sectional restriction | second-stage regression | Fama-MacBeth | risk premia $\lambda$ 的含义 |
 
-## 4. 核心公式
-
-时间序列 beta:
+时间序列 beta 先是 projection：
 
 $$
-R_{it}^e=\alpha_i+\beta_i^\top f_t+\varepsilon_{it},
+\begin{aligned}
+R_{it}^e&=\alpha_i+\beta_i^\top f_t+\varepsilon_{it},\\
 \qquad
-E[f_t\varepsilon_{it}]=0.
+E[f_t\varepsilon_{it}]&=0.
+\end{aligned}
 $$
 
-beta pricing 表示：
+beta pricing 是横截面的 restriction：
 
 $$
-E[R_i^e]=\beta_i^\top \lambda.
+\begin{aligned}
+E[R_i^e]&=\beta_i^\top \lambda.
+\end{aligned}
 $$
 
 若 SDF 线性依赖因子 $m=a-b^\top f$，则
 
 $$
-0=E[mR_i^e]
-=aE[R_i^e]-\operatorname{Cov}(R_i^e,f)^\top b,
+\begin{aligned}
+0&=E[mR_i^e]\\
+&=aE[R_i^e]-\operatorname{Cov}(R_i^e,f)^\top b\\
+&=aE[R_i^e]-\beta_i^\top \operatorname{Var}(f)b.
+\end{aligned}
 $$
 
-所以 expected return 只通过因子协方差或 beta 暴露进入。
+因此 expected return 只通过因子协方差或 beta 暴露进入。
 
-## 5. QE 题型
+## 跨课翻译
 
-### 5.1 从 projection 推 beta
-
-步骤：
-
-1. 写 population projection。
-2. 用正交条件 $E[f\varepsilon_i]=0$。
-3. 得 $\beta_i=\operatorname{Var}(f)^{-1}\operatorname{Cov}(f,R_i^e)$。
-
-### 5.2 证明 projection matrix 性质
-
-常用性质：
+Econometrics 的 projection 是 $L^2$ 几何；Asset Pricing 的 beta pricing 是同一个几何对象加上一个经济 restriction：
 
 $$
-P_X^2=P_X,\qquad P_X^\top=P_X,\qquad M_XX=0.
+\begin{aligned}
+\text{orthogonal residual}
+&\Longrightarrow \text{beta summarizes covariance with factors},\\
+\text{linear SDF}
+&\Longrightarrow E[R_i^e] \text{ depends only on beta}.
+\end{aligned}
 $$
 
-这些结论对应 beta 估计中的 fitted component 与 residual component 分解。
+## 考场写法
 
-### 5.3 Fama-MacBeth
+**从 projection 推 beta.** 写 population projection、正交条件和 covariance formula：
 
-步骤：
+$$
+\begin{aligned}
+0&=E[f(R_i^e-\alpha_i-\beta_i^\top f)]\\
+&=E[fR_i^e]-E[f]\alpha_i-E[ff^\top]\beta_i.
+\end{aligned}
+$$
 
-1. 第一阶段对每个资产做时间序列回归，估 $\hat\beta_i$。
-2. 第二阶段做横截面回归 $\bar R_i^e=\hat\beta_i^\top\lambda+\eta_i$。
-3. 解释 $\lambda$ 为 factor risk price。
+若 $E[f]=0$，
 
-## 6. 最短复习路线
+$$
+\begin{aligned}
+\beta_i
+&=E[ff^\top]^{-1}E[fR_i^e]
+&=\operatorname{Var}(f)^{-1}\operatorname{Cov}(f,R_i^e).
+\end{aligned}
+$$
 
-1. [Econometrics: CEF and Linear Projection](../../Econometrics/EF8090/01_CEF_and_Linear_Projection.md)
-2. [Econometrics card: Projection Matrix](../../Econometrics/EF8090/cards/Projection_Matrix.md)
-3. [Empirical AP: Cross-Section Factor Models](../../Asset%20Pricing/Empirical%20AP/05_Cross_Section_Factor_Models.md)
-4. [AP card: Fama-MacBeth and Shanken](../../Asset%20Pricing/Empirical%20AP/cards/Fama_MacBeth_Shanken.md)
+**Projection matrix.** 常用证明不要背结论，直接连等：
+
+$$
+\begin{aligned}
+P_X^2&=P_X,\qquad P_X^\top=P_X,\qquad M_XX=0.
+\end{aligned}
+$$
+
+**Fama-MacBeth.** 第一阶段估 $\hat\beta_i$；第二阶段做 cross-sectional projection：
+
+$$
+\begin{aligned}
+\bar R_i^e&=\hat\beta_i^\top\lambda+\eta_i.
+\end{aligned}
+$$
+
+这里 $\lambda$ 是 factor risk price；Shanken correction 处理 generated regressor problem。
+
+## 常见错误
+
+- 把 regression coefficient 和 causal effect 混淆；这里 beta 是 projection slope。
+- 只写 $E[R_i^e]=\beta_i\lambda$，没有说明 beta 从 covariance restriction 来。
+- 忘记 first-pass beta 是 estimated regressor，导致第二阶段标准误解释过强。
+- 把 residual orthogonality 当成 residual independence；projection 只给正交，不给独立。
+
+## 进入原始材料
+
+- [Econometrics: CEF and Linear Projection](../../Econometrics/EF8090/01_CEF_and_Linear_Projection.md)
+- [Econometrics card: Projection Matrix](../../Econometrics/EF8090/cards/Projection_Matrix.md)
+- [Empirical AP: Cross-Section Factor Models](../../Asset%20Pricing/Empirical%20AP/05_Cross_Section_Factor_Models.md)
+- [AP card: Fama-MacBeth and Shanken](../../Asset%20Pricing/Empirical%20AP/cards/Fama_MacBeth_Shanken.md)
