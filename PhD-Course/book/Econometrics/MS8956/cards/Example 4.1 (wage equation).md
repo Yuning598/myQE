@@ -1,8 +1,10 @@
-
-导航：[Econometrics index](../../index.md)
 ---
 orphan: true
 ---
+
+# Example 4.1 (wage equation)
+
+导航：[Econometrics index](../../index.md)
 
 :::{admonition} Example
 Example 4.1 (wage equation)
@@ -29,4 +31,3 @@ $$
 x_{i1} = x_{i2} = \begin{bmatrix} 1 \\ S_i \\ EXPR_i \\ MED_i \end{bmatrix} \tag{4.1.3}
 $$
 :::
-

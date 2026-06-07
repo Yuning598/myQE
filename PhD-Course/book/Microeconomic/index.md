@@ -45,7 +45,7 @@ Microeconomic 的导航入口。本课程主要提供偏好、风险、均衡、
 - 道德风险 (moral hazard)
 - 筛选与单交叉 (screening and single crossing)
 
-# reference
+## References
 1. [Econ 701B Fall 2018 (UPenn)](https://www.xinchengqiu.com/teaching/701B.pdf)
 	- General Equilibrium
 	- 例子对FWT、SWT的理解很有帮助。

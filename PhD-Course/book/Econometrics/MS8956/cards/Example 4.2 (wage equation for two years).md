@@ -1,8 +1,10 @@
-
-导航：[Econometrics index](../../index.md)
 ---
 orphan: true
 ---
+
+# Example 4.2 (wage equation for two years)
+
+导航：[Econometrics index](../../index.md)
 
 :::{admonition} Example
 Example 4.2 (wage equation for two years)
@@ -21,4 +23,3 @@ $$
 $$
 It would be interesting to test $H_0 : \beta_1 = \beta_2$ and $\pi_1 = \pi_2$ (the schooling and experience premia remained stable over time). The hypothesis can be written as $R\delta = r$. Nonlinear cross-equations restrictions can also be tested by Proposition 3.3 or Proposition 3.8.
 :::
-

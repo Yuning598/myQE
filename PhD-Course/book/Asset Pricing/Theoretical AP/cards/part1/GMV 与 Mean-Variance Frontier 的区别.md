@@ -1,8 +1,10 @@
-
-导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md)
 ---
 orphan: true
 ---
+
+# GMV 与 Mean-Variance Frontier 的区别
+
+导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md)
 
 :::{admonition} Definition (GMV 与 Mean-Variance Frontier 的区别)
 
@@ -52,4 +54,3 @@ $$
 $$
 若没有 $\mu'\pi=\mu_{target}$，最优解只会退化为一个“最稳”的单点；加入 $\mu_{target}$ 后，改变目标收益就会得到不同的最小方差组合，从而扫出整条 frontier。
 :::
-
