@@ -9,7 +9,6 @@ This book is a PhD course review system for asset pricing, corporate finance, ec
 | Read by course | [Asset Pricing](Asset%20Pricing/index.md), [Corporate Finance](Corporate%20Finance/index.md), [Econometrics](Econometrics/index.md), [Microeconomics](Microeconomic/index.md) |
 | Review by exam question | [Problem Sets](ProblemSet/index.md) |
 | Connect concepts across courses | [Cross-Course Links](Cross-Course/index.md) |
-| Maintain formatting and structure | [Book Style Guide](Book_Style_Guide.md) |
 
 ## Course Map
 

@@ -1,9 +1,6 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Book Guide
-    chapters:
-      - file: Book_Style_Guide
   - caption: Asset Pricing
     chapters:
       - file: Asset Pricing/index
