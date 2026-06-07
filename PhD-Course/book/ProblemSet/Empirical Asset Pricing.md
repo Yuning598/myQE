@@ -1,4 +1,4 @@
-# Empirical Asset Pricing Problem Set
+# Empirical Asset Pricing
 
 ### 1. ARCH(1) 基础计算
 

@@ -1,4 +1,4 @@
-# Microeconomics Problem Set
+# Microeconomics
 
 ### 1. Intertemporal Consumption and Competitive Equilibrium
 

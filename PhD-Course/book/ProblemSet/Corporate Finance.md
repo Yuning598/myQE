@@ -1,4 +1,4 @@
-# Corporate Finance Problem Set
+# Corporate Finance
 
 ### 1. Payout Policy: Dividends vs Repurchases
 

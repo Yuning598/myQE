@@ -1,4 +1,4 @@
-# Econometrics Problem Set
+# Econometrics
 
 ### 1. Residual Variance Consistency and CLT
 
