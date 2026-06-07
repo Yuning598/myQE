@@ -1,5 +1,6 @@
 ---
 type: bridge-note
+orphan: true
 qe_weight: high
 courses:
   - Microeconomics

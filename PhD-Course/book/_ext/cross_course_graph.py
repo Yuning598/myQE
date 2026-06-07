@@ -111,7 +111,7 @@ def visit_cross_course_graph_html(translator, node):
     payload = json.dumps(node["payload"], ensure_ascii=False).replace("</", "<\\/")
     height = node.get("height", "760px")
     translator.body.append(
-        f'<div class="cc-graph" data-book-root="{book_root}" style="height:{height}">'
+        f'<div class="cc-graph" data-book-root="{book_root}" style="min-height:{height}">'
         f'<script type="application/json" class="cc-graph-data">{payload}</script>'
         "</div>"
     )
