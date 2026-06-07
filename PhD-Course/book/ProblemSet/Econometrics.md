@@ -1,6 +1,6 @@
 # Econometrics Problem Set
 
-## Question 1
+### 1. Residual Variance Consistency and CLT
 
 Consider
 
@@ -21,7 +21,7 @@ Show the consistency and limiting distribution of $s^2$.
 
 ::::{collapse} Basic setup
 
-目标：修正 residual sum of squares decomposition 的 scaling，并证明
+目标是证明 residual sum of squares decomposition 的 scaling 下有
 
 $$
 \left\{
@@ -63,7 +63,7 @@ s^2
 \end{aligned}
 $$
 
-图片里的 cross term scaling 笔误在这里：两边都应是 $\frac1n\sum_{i=1}^n x_i\varepsilon_i$，中间是 $\left(\frac1n\sum_{i=1}^n x_ix_i'\right)^{-1}$。
+其中 cross term 的 scaling 为：两边都是 $\frac1n\sum_{i=1}^n x_i\varepsilon_i$，中间是 $\left(\frac1n\sum_{i=1}^n x_ix_i'\right)^{-1}$。
 
 **Consistency**
 
@@ -152,7 +152,7 @@ $$
 
 ::::
 
-## Question 2
+### 2. 2SLS Coefficient as One-Dimensional IV
 
 考虑一个含有一个内生变量 $D$、控制变量 $X$ 和 excluded instruments $Z$ 的 2SLS 模型：
 
@@ -274,9 +274,8 @@ $$
 
 ::::
 
----
 
-## Question 3
+### 3. Balanced Panel DID Mean Expressions
 
 考虑一个有前、后期划分的 balanced panel DiD 设计：
 
@@ -443,9 +442,8 @@ $$
 
 ::::
 
----
 
-## Question 4
+### 4. Fuzzy RDD Local Linear Wald Ratio
 
 Consider fuzzy RDD with uniform kernel and common bandwidth $h$:
 
@@ -544,11 +542,8 @@ $$
 
 ::::
 
----
 
-## Difference-in-Differences (DID)
-
-### Question: DID Estimator 与 ATE/ATT 推导
+### 5. DID Estimator 与 ATE/ATT 推导
 
 #DID #parallel_trends #ATE #ATT
 
@@ -749,11 +744,8 @@ $$
 
 
 
----
 
-## Difference-in-Difference-in-Differences (DDD / Triple Differences)
-
-### Question: DDD Estimator 推导
+### 6. DDD Estimator 推导
 
 #DDD #triple_differences #placebo_group
 
@@ -956,11 +948,8 @@ $$
 ::::
 
 
----
 
-## Two-Stage Least Squares (2SLS)
-
-### Question: 2SLS 推导与性质证明
+### 7. 2SLS 推导与性质证明
 
 #2SLS #IV_estimation #consistency #asymptotic_normality
 
@@ -1242,11 +1231,8 @@ $$
 
 
 
----
 
-## Frisch-Waugh-Lovell (FWL) Theorem
-
-### Question: FWL 定理证明与应用
+### 8. FWL 定理证明与应用
 
 #FWL_theorem #partial_regression #orthogonalization
 
@@ -1489,11 +1475,8 @@ $$
 
 
 
----
 
-## Maximum Likelihood Estimation (MLE)
-
-### Question: MLE 基础与性质
+### 9. MLE 基础与性质
 
 #MLE #Fisher_information #asymptotic_properties
 
@@ -1687,9 +1670,7 @@ E\left[\frac{\partial s(y; \theta)}{\partial \theta'}\right]
 \end{aligned}
 $$
 
-（这里推导有误，正确方法是利用 score 的性质）
-
-正确推导：
+利用 score 的性质：
 
 $$
 \begin{aligned}
@@ -1759,11 +1740,8 @@ $$
 
 
 
----
 
-## Logit Model
-
-### Question: Logit 模型推导与边际效应
+### 10. Logit 模型推导与边际效应
 
 #Logit_model #MLE #marginal_effects #odds_ratio
 
@@ -2014,25 +1992,8 @@ $$
 ::::
 
 
----
 
-## 题库总结
-
-本 Econometrics 题库现已补充以下关键内容：
-
-1. ✅ **DID (Difference-in-Differences)**：ATE vs ATT 推导
-2. ✅ **DDD (Triple Differences)**：三重差分估计量
-3. ✅ **2SLS**：两阶段最小二乘证明与性质
-4. ✅ **FWL 定理**：分块回归等价性
-5. ✅ **MLE**：最大似然估计基础与性质
-6. ✅ **Logit Model**：对数几率模型与边际效应
-
-
----
-
-## Panel Data: Fixed Effects vs Random Effects
-
-### Question: Panel Data Models
+### 11. Panel Data: Fixed Effects vs Random Effects
 
 #panel-data #fixed-effects #random-effects #Hausman-test
 
@@ -2224,11 +2185,8 @@ where $k$ is the dimension of $\beta$.
 ::::
 
 
----
 
-## Probit Model
-
-### Question: Probit Model and Marginal Effects
+### 12. Probit Model and Marginal Effects
 
 #probit #binary-choice #marginal-effects
 
@@ -2387,11 +2345,8 @@ AME preferred: averages over actual covariate distribution.
 
 ::::
 
----
 
-## 考场默写版：DID/DDD、2SLS、FWL、MLE 和 Logit
-
-### Question: Proof Drill for Core Econometrics
+### 13. 考场默写版：DID/DDD、2SLS、FWL、MLE 和 Logit
 
 #DID #DDD #ATT #ATE #2SLS #FWL #MLE #Logit
 

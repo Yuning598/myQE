@@ -1,6 +1,6 @@
 # Corporate Finance Problem Set
 
-## 1. Payout Policy: Dividends vs Repurchases
+### 1. Payout Policy: Dividends vs Repurchases
 
 #payout_policy #dividends #share_repurchases #MM_irrelevance
 
@@ -103,9 +103,8 @@
 
 ::::
 
----
 
-## 2. Research Design: Testing Payout Motives
+### 2. Research Design: Testing Payout Motives
 
 #research_design #payout_motives #market_timing #catering
 
@@ -305,9 +304,8 @@ Where $\text{Overinvestment} = \text{Capex}/\text{Sales} - \text{Industry Median
 ::::
 
 
----
 
-## 3. Payout Policy Channels: Tax vs Agency
+### 3. Payout Policy Channels: Tax vs Agency
 
 #tax_clientele #agency_costs #free_cash_flow #Jensen
 
@@ -536,9 +534,8 @@ $$
 
 
 
----
 
-## 4. 综合题：Payout Policy Research Proposal
+### 4. 综合题：Payout Policy Research Proposal
 
 #research_proposal #payout_determinants #empirical_design
 
@@ -808,9 +805,8 @@ Test whether market reaction differs by payout method and lifecycle
 
 ::::
 
----
 
-## 5. 简答题：Payout Policy 关键概念
+### 5. 简答题：Payout Policy 关键概念
 
 #payout_concepts #quick_review
 
@@ -869,9 +865,8 @@ Repurchases 减少 shares outstanding → EPS 上升，即使 net income 不变�
 
 
 
----
 
-## 6. Capital Structure: Trade-Off Theory
+### 6. Capital Structure: Trade-Off Theory
 
 #capital_structure #trade-off_theory #debt_tax_shield #financial_distress
 
@@ -1029,9 +1024,8 @@ $$
 
 
 
----
 
-## 7. Pecking Order Theory and Asymmetric Information
+### 7. Pecking Order Theory and Asymmetric Information
 
 #pecking_order #Myers-Majluf #asymmetric_information #adverse_selection
 
@@ -1252,9 +1246,8 @@ Where $DEF = \text{Investment} + \text{Dividends} - \text{Operating CF}$ (financ
 ::::
 
 
----
 
-## 8. Seasoned Equity Offerings (SEO)
+### 8. Seasoned Equity Offerings (SEO)
 
 #SEO #equity_issuance #announcement_effects #long-run_underperformance
 
@@ -1534,9 +1527,8 @@ $$
 ::::
 
 
----
 
-## 9. 考场重点：Payout Policy Motives, Literature Review, and Research Proposal
+### 9. 考场重点：Payout Policy Motives, Literature Review, and Research Proposal
 
 #payout_policy #literature_review #research_design #market_timing #agency #signaling
 

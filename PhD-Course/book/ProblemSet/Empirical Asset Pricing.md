@@ -1,7 +1,5 @@
 # Empirical Asset Pricing Problem Set
 
-## Part 1: 波动率建模（Volatility Modeling）
-
 ### 1. ARCH(1) 基础计算
 
 #ARCH（1） #unconditional_variance #stationarity
@@ -257,9 +255,6 @@ GARCH(1,1) 是带几何衰减权重的 ARCH($\infty$)，权重为 $\alpha_1 \bet
 ::::
 
 
----
-
-## Part 2: SDF 与 Asset Pricing Puzzles
 
 ### 3. Consumption SDF, Puzzles, and an Extra Factor
 
@@ -604,7 +599,7 @@ $$
 
 ::::
 
-## 2. Beta Representation and Linear SDF Equivalence
+### 4. Beta Representation and Linear SDF Equivalence
 
 **Question** Let $R_i^e$ be excess returns for test assets $i=1,\ldots,N$. Let $f$ be a $K\times 1$ vector of factors with nonsingular covariance matrix
 $$
@@ -788,9 +783,8 @@ $$
 
 ::::
 
----
 
-### 3. VIX 与 Variance Risk Premium 计算
+### 5. VIX 与 Variance Risk Premium 计算
 
 #VIX #static_replication #variance #risk_premium
 
@@ -859,9 +853,8 @@ $VRP_t > 0$ 意味着：
 
 
 
----
 
-### 4. Hansen-Jagannathan Bound 应用
+### 6. Hansen-Jagannathan Bound 应用
 
 #HJ_bound #SDF #volatility #Sharpe_ratio
 
@@ -930,9 +923,8 @@ $$
 
 
 
----
 
-### 5. Predictive Regression 与 Stambaugh Bias
+### 7. Predictive Regression 与 Stambaugh Bias
 
 #Predictive_regression #Stambaugh_bias #persistent #regressor
 
@@ -1046,9 +1038,8 @@ $$
 
 
 
----
 
-### 6. Fama-MacBeth 两步回归
+### 8. Fama-MacBeth 两步回归
 
 #Fama-MacBeth #two-pass_regression #Shanken_correction
 
@@ -1185,9 +1176,8 @@ $$
 
 
 
----
 
-### 7. Factor Zoo 与 Multiple Testing
+### 9. Factor Zoo 与 Multiple Testing
 
 #Multiple_testing #false_discovery #factor_zoo
 
@@ -1293,9 +1283,8 @@ $$
 
 
 
----
 
-### 8. Limits to Arbitrage
+### 10. Limits to Arbitrage
 
 #Limits_to_arbitrage #implementation_costs #risk
 
@@ -1451,9 +1440,8 @@ Limits to arbitrage 导致：
 
 
 
----
 
-### 9. Campbell-Shiller 分解与 Excess Volatility
+### 11. Campbell-Shiller 分解与 Excess Volatility
 
 #Campbell-Shiller_decomposition #variance_decomposition
 
@@ -1620,9 +1608,8 @@ Shiller (1981) 的经典发现：股价波动远超 dividends 的现值波动所
 
 
 
----
 
-### 10. GMM Estimation 与 J-Test
+### 12. GMM Estimation 与 J-Test
 
 #GMM_estimation #overidentification_test #optimal_weighting
 
@@ -1798,9 +1785,8 @@ $$
 
 
 
----
 
-### 11. EGARCH and Leverage Effect
+### 13. EGARCH and Leverage Effect
 
 #EGARCH #leverage-effect #asymmetric-volatility
 
@@ -1926,9 +1912,8 @@ $$
 ::::
 
 
----
 
-### 12. Out-of-Sample $R^2$ 和 Forecast Evaluation
+### 14. Out-of-Sample $R^2$ 和 Forecast Evaluation
 
 #out-of-sample-R2 #forecast-evaluation #predictability
 
@@ -2082,9 +2067,8 @@ Campbell & Thompson (2008) 建议：
 ::::
 
 
----
 
-### 13. 考场重点：VIX Option Expansion 与 Conditional Variance
+### 15. 考场重点：VIX Option Expansion 与 Conditional Variance
 
 #VIX #option_expansion #log_contract #conditional_variance
 
@@ -2276,9 +2260,8 @@ $$
 
 ::::
 
----
 
-### 14. 考场重点：Fama-MacBeth 两步回归默写版
+### 16. 考场重点：Fama-MacBeth 两步回归默写版
 
 #Fama-MacBeth #two_pass_regression #risk_premium #Shanken
 

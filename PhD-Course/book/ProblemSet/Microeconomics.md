@@ -1,6 +1,6 @@
 # Microeconomics Problem Set
 
-## 1. Intertemporal Consumption and Competitive Equilibrium
+### 1. Intertemporal Consumption and Competitive Equilibrium
 
 #general-equilibrium #intertemporal-choice #Euler-equation
 
@@ -150,9 +150,8 @@ If $\delta < 1$, then $u^{h'}(c_1^h) < u^{h'}(c_2^h)$, implying $c_1^h > c_2^h$ 
 ::::
 
 
----
 
-## 2. Contract Theory: Moral Hazard
+### 2. Contract Theory: Moral Hazard
 
 #contract-theory #moral-hazard #incentive-compatibility
 
@@ -285,9 +284,8 @@ $$
 ::::
 
 
----
 
-## 3. Adverse Selection: Screening
+### 3. Adverse Selection: Screening
 
 #adverse-selection #screening #mechanism-design
 
@@ -427,9 +425,8 @@ In contrast, $q_L$ is distorted downward to **reduce the information rent** paid
 
 
 
----
 
-## 4. Monopoly Pricing and Price Discrimination
+### 4. Monopoly Pricing and Price Discrimination
 
 #monopoly #price-discrimination #consumer-surplus
 
@@ -540,9 +537,8 @@ $$
 ::::
 
 
----
 
-## 5. Game Theory: Nash Equilibrium
+### 5. Game Theory: Nash Equilibrium
 
 #game-theory #Nash-equilibrium #best-response
 
