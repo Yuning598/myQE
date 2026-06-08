@@ -98,6 +98,7 @@ Therefore $c_1^1 > c_2^1$, and similarly $c_1^2 > c_2^2$.
 
 ::::
 
+
 **1.2** How does the answer change if the good is storable (endowment in period 1 can be held over to period 2)?
 
 ::::{solution}

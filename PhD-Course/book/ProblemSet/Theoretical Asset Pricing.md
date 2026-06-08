@@ -13079,6 +13079,391 @@ $$
 
 ::::
 
+**（c）** Derive the stochastic discount factor (SDF) process $\{m_t\}$ in this economy.
+
+::::{solution}
+
+SDF 定义为 intertemporal marginal rate of substitution。对于 recursive utility，SDF 的 instantaneous drift-diffusion 由下式刻画：
+
+$$
+\begin{aligned}
+\frac{dm_t}{m_t}
+&=-r_tdt-\lambda_tdB_t,
+\end{aligned}
+$$
+
+其中 $r_t$ 是 instantaneous risk-free rate，$\lambda_t$ 是 market price of risk vector。
+
+在 continuous-time recursive utility 框架下，SDF 可表为
+
+$$
+\begin{aligned}
+m_t
+&=
+\exp\left\{
+-\int_0^t r_sds
+\right\}
+\frac{\partial h(C_t,V_t)/\partial C_t}{\partial h(C_0,V_0)/\partial C_0}.
+\end{aligned}
+$$
+
+利用我们的猜测 $V(C,x)=\frac{C^{1-\gamma}}{1-\gamma}f(x)$ 和 aggregator 形式，可以得到
+
+$$
+\begin{aligned}
+\frac{\partial h/\partial C}
+&=
+\frac{\rho C^{-\psi^{-1}}}
+{\left((1-\gamma)V\right)^{\frac{\gamma-\psi^{-1}}{1-\gamma}}}\\
+&=
+\rho C^{-\psi^{-1}}
+\left(
+C^{1-\gamma}f(x)
+\right)^{-\frac{\gamma-\psi^{-1}}{1-\gamma}}\\
+&=
+\rho C^{-\gamma}f(x)^{-\frac{\gamma-\psi^{-1}}{1-\gamma}}.
+\end{aligned}
+$$
+
+因此
+
+$$
+\begin{aligned}
+m_t
+&=
+e^{-\rho t}
+\left(
+\frac{C_t}{C_0}
+\right)^{-\gamma}
+\left(
+\frac{f(x_t)}{f(x_0)}
+\right)^{-\frac{\gamma-\psi^{-1}}{1-\gamma}}.
+\end{aligned}
+$$
+
+取 log 并对时间求微分，得到 SDF 的 dynamics：
+
+$$
+\begin{aligned}
+d\log m_t
+&=-\rho dt-\gamma d\log C_t
+-\frac{\gamma-\psi^{-1}}{1-\gamma}d\log f(x_t)\\
+&=-\rho dt-\gamma\left[
+(\mu_C+x_t)dt+\sigma_CdB_t^c
+\right]\\
+&\quad
+-\frac{\gamma-\psi^{-1}}{1-\gamma}
+\left[
+\frac{f'(x_t)}{f(x_t)}dx_t
++\frac12\left(
+\frac{f''(x_t)}{f(x_t)}
+-\left(\frac{f'(x_t)}{f(x_t)}\right)^2
+\right)(dx_t)^2
+\right].
+\end{aligned}
+$$
+
+代入 $dx_t=-\kappa_xx_tdt+\sigma_xdB_t^x$ 和 $(dx_t)^2=\sigma_x^2dt$：
+
+$$
+\begin{aligned}
+d\log m_t
+&=
+\underbrace{
+\left[
+-\rho-\gamma(\mu_C+x_t)
++\frac{\gamma-\psi^{-1}}{1-\gamma}
+\left(
+\kappa_xx_t\frac{f'}{f}
+-\frac{\sigma_x^2}{2}
+\left(
+\frac{f''}{f}
+-\left(\frac{f'}{f}\right)^2
+\right)
+\right)
+\right]dt
+}_{-r_tdt}\\
+&\quad
+\underbrace{
+-\gamma\sigma_CdB_t^c
+-\frac{\gamma-\psi^{-1}}{1-\gamma}
+\sigma_x\frac{f'(x_t)}{f(x_t)}dB_t^x
+}_{-\lambda_t\cdot dB_t}.
+\end{aligned}
+$$
+
+::::
+
+**（d）** Consider a claim to the aggregate dividend stream $\{D_t\}$. Derive the price-dividend ratio $\frac{P_t}{D_t}$ for this equity claim, assuming it takes the form $\frac{P_t}{D_t}=g(x_t)$, and characterize the ODE satisfied by $g(x_t)$.
+
+::::{solution}
+
+股权 claim 的价格满足 Euler equation
+
+$$
+\begin{aligned}
+P_t
+&=E_t
+\left[
+\int_t^\infty m_{t,s}D_sds
+\right],
+\end{aligned}
+$$
+
+其中 $m_{t,s}=\frac{m_s}{m_t}$ 是 change of numeraire。
+
+猜测
+
+$$
+\begin{aligned}
+\frac{P_t}{D_t}
+&=g(x_t).
+\end{aligned}
+$$
+
+由 Itô lemma 对 $\log(P_t/D_t)=\log g(x_t)$ 求导：
+
+$$
+\begin{aligned}
+d\log\left(\frac{P_t}{D_t}\right)
+&=
+\frac{g'(x_t)}{g(x_t)}dx_t
++\frac12
+\left[
+\frac{g''(x_t)}{g(x_t)}
+-\left(\frac{g'(x_t)}{g(x_t)}\right)^2
+\right]
+\sigma_x^2dt\\
+&=
+\left[
+-\kappa_xx_t\frac{g'}{g}
++\frac{\sigma_x^2}{2}
+\left(
+\frac{g''}{g}
+-\left(\frac{g'}{g}\right)^2
+\right)
+\right]dt
+-\frac{g'(x_t)}{g(x_t)}\sigma_xdB_t^x.
+\end{aligned}
+$$
+
+股权 return 为
+
+$$
+\begin{aligned}
+\frac{dP_t+D_tdt}{P_t}
+&=d\log P_t+\frac{D_t}{P_t}dt+\frac12d\langle\log P\rangle_t\\
+&=d\log D_t+d\log\left(\frac{P_t}{D_t}\right)
++\frac{1}{g(x_t)}dt
++\frac12
+\left[
+\underbrace{\sigma_D^2}_{\text{from }D}
++\underbrace{\left(\frac{g'\sigma_x}{g}\right)^2}_{\text{from }P/D}
+\right]dt.
+\end{aligned}
+$$
+
+代入 $D$ 的 dynamics：
+
+$$
+\begin{aligned}
+\frac{dP_t+D_tdt}{P_t}
+&=
+\Bigg\{
+(\mu_C+\phi x_t)
++\left[
+-\kappa_xx_t\frac{g'}{g}
++\frac{\sigma_x^2}{2}
+\left(
+\frac{g''}{g}
+-\left(\frac{g'}{g}\right)^2
+\right)
+\right]\\
+&\quad
++\frac{1}{g}
++\frac12
+\left[
+\sigma_D^2
++\left(\frac{g'\sigma_x}{g}\right)^2
+\right]
+\Bigg\}dt\\
+&\quad
++\sigma_D\rho_{C,D}dB_t^c
++\sigma_D\sqrt{1-\rho_{C,D}^2}dB_t^d
+-\frac{g'\sigma_x}{g}dB_t^x.
+\end{aligned}
+$$
+
+Euler equation 要求
+
+$$
+\begin{aligned}
+E_t
+\left[
+\frac{dm_t}{m_t}\cdot\frac{dP_t+D_tdt}{P_t}
+\right]
+&=-\frac{dm_t}{m_t}\cdot\frac{dP_t+D_tdt}{P_t}\bigg|_{dt\text{项}}
+=0.
+\end{aligned}
+$$
+
+计算 cross-variation（only diffusion terms contribute）：
+
+$$
+\begin{aligned}
+d\log m_t\cdot d\log\left(\frac{P_t+D_tdt}{P_t}\right)
+&=
+\left(
+-\gamma\sigma_CdB_t^c
+-\frac{\gamma-\psi^{-1}}{1-\gamma}\frac{f'\sigma_x}{f}dB_t^x
+\right)\\
+&\quad\times
+\left(
+\sigma_D\rho_{C,D}dB_t^c
++\sigma_D\sqrt{1-\rho_{C,D}^2}dB_t^d
+-\frac{g'\sigma_x}{g}dB_t^x
+\right)\\
+&=
+-\gamma\sigma_C\sigma_D\rho_{C,D}dt
++\frac{\gamma-\psi^{-1}}{1-\gamma}
+\frac{f'}{f}\frac{g'}{g}\sigma_x^2dt.
+\end{aligned}
+$$
+
+由 no-arbitrage condition（Euler equation 的 $dt$ 项）：
+
+$$
+\begin{aligned}
+r_t
+&=
+\mu_C+\phi x_t
+-\kappa_xx_t\frac{g'}{g}
++\frac{\sigma_x^2}{2}
+\left(
+\frac{g''}{g}
+-\left(\frac{g'}{g}\right)^2
+\right)\\
+&\quad
++\frac{1}{g}
++\frac{\sigma_D^2}{2}
++\frac12\left(\frac{g'\sigma_x}{g}\right)^2
+-\gamma\sigma_C\sigma_D\rho_{C,D}
++\frac{\gamma-\psi^{-1}}{1-\gamma}
+\frac{f'}{f}\frac{g'}{g}\sigma_x^2.
+\end{aligned}
+$$
+
+同时由（c）小题，$r_t$ 的表达式（从 SDF）为
+
+$$
+\begin{aligned}
+r_t
+&=
+\rho+\gamma(\mu_C+x_t)
+-\frac{\gamma-\psi^{-1}}{1-\gamma}
+\left[
+\kappa_xx_t\frac{f'}{f}
+-\frac{\sigma_x^2}{2}
+\left(
+\frac{f''}{f}
+-\left(\frac{f'}{f}\right)^2
+\right)
+\right].
+\end{aligned}
+$$
+
+联立这两个表达式，消去 $r_t$ 和整理，可得 $g(x_t)$ 满足的 ODE：
+
+$$
+\begin{aligned}
+0
+&=
+\rho
++\gamma\mu_C
++(1+\gamma-\phi)x_t
+-\frac{\gamma-\psi^{-1}}{1-\gamma}\kappa_xx_t\frac{f'}{f}
++\kappa_xx_t\frac{g'}{g}\\
+&\quad
++\frac{\gamma-\psi^{-1}}{2(1-\gamma)}\sigma_x^2
+\left(
+\frac{f''}{f}
+-\left(\frac{f'}{f}\right)^2
+\right)
+-\frac{\sigma_x^2}{2}
+\left(
+\frac{g''}{g}
+-\left(\frac{g'}{g}\right)^2
+\right)\\
+&\quad
+-\frac{1}{g}
+-\frac{\sigma_D^2}{2}
+-\frac12\left(\frac{g'\sigma_x}{g}\right)^2
++\gamma\sigma_C\sigma_D\rho_{C,D}
+-\frac{\gamma-\psi^{-1}}{1-\gamma}
+\frac{f'}{f}\frac{g'}{g}\sigma_x^2.
+\end{aligned}
+$$
+
+或者等价地乘以 $-g(x)$：
+
+$$
+\begin{aligned}
+\frac{1}{g}
+&=
+-\rho
+-\gamma\mu_C
+-(1+\gamma-\phi)x
++\frac{\gamma-\psi^{-1}}{1-\gamma}\kappa_xx\frac{f'}{f}
+-\kappa_xxg'\\
+&\quad
+-\frac{\gamma-\psi^{-1}}{2(1-\gamma)}\sigma_x^2g
+\left(
+\frac{f''}{f}
+-\left(\frac{f'}{f}\right)^2
+\right)
++\frac{\sigma_x^2}{2}g''
+-\frac{\sigma_x^2}{2g}(g')^2\\
+&\quad
++\frac{\sigma_D^2}{2}g
++\frac{\sigma_x^2}{2g}(g')^2
+-\gamma\sigma_C\sigma_D\rho_{C,D}g
++\frac{\gamma-\psi^{-1}}{1-\gamma}
+\frac{f'}{f}g'\sigma_x^2.
+\end{aligned}
+$$
+
+简化后：
+
+$$
+\begin{aligned}
+1
+&=
+g(x)
+\Bigg[
+-\rho-\gamma\mu_C
+-(1+\gamma-\phi)x
++\frac{\gamma-\psi^{-1}}{1-\gamma}\kappa_xx\frac{f'}{f}\\
+&\quad
+-\frac{\gamma-\psi^{-1}}{2(1-\gamma)}\sigma_x^2
+\left(
+\frac{f''}{f}
+-\left(\frac{f'}{f}\right)^2
+\right)
++\frac{\sigma_D^2}{2}
+-\gamma\sigma_C\sigma_D\rho_{C,D}
+\Bigg]\\
+&\quad
+-\kappa_xxg'(x)
++\frac{\sigma_x^2}{2}g''(x)
++\frac{\gamma-\psi^{-1}}{1-\gamma}
+\frac{f'(x)}{f(x)}g'(x)\sigma_x^2.
+\end{aligned}
+$$
+
+这是刻画 price-dividend ratio $g(x_t)$ 的二阶 ODE，依赖于 value function 相关的 $f(x_t)$。
+
+::::
+
 
 ### 36. 考场题重构：State Economy, HJ Bound, and No-Risk-Free SDF
 
@@ -13626,3 +14011,4 @@ $$
 因此 $\mu$ 影响真实世界下股票的期望增长，但不进入可复制衍生品的无套利价格。
 
 ::::
+

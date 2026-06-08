@@ -3341,3 +3341,455 @@ $$
 因此即使没有 baseline selection，OLS 也会因为 selection on gains 而偏离 $ATE$；若 $E(Y_0\mid D=1)\neq E(Y_0\mid D=0)$，还会叠加 baseline selection bias。
 
 ::::
+
+
+
+### 15. Causal Inference: Medical Treatment, LATE, Probit, and IV
+
+#causal-inference #ATE #ATT #LATE #IV #2SLS #probit
+
+**Question** 回忆考题：$Y$ 是 health outcome，$D$ 是 actual medical treatment，$X$ 是 family background，$A$ 是 assignment / encouragement。
+
+相关概念见 [[Potential Outcomes: ATE, ATT, CATE]]、[[LATE and Compliers]]、[[2SLS as Projection]]、[[IV Identification]]。
+
+**15.1** 定义 $ATE$、$ATT$、$LATE$。
+
+::::{solution}
+
+**15.1 Definitions**
+
+令 $Y_i(1),Y_i(0)$ 是 treatment potential outcomes，$D_i(a)$ 是 assignment $A_i=a$ 下的 potential treatment take-up。
+
+$$
+\begin{aligned}
+ATE
+&=E[Y_i(1)-Y_i(0)],\\
+ATT
+&=E[Y_i(1)-Y_i(0)\mid D_i=1],\\
+LATE
+&=E[Y_i(1)-Y_i(0)\mid D_i(1)>D_i(0)]\\
+&=E[Y_i(1)-Y_i(0)\mid D_i(1)=1,D_i(0)=0].
+\end{aligned}
+$$
+
+其中 $D_i(1)=1,D_i(0)=0$ 的个体是 compliers。
+
+定义本身不需要假设；从 observed data 识别这些 estimands 才需要假设：
+
+| Estimand | 常见识别假设 | 识别式 |
+|---|---|---|
+| $ATE$ | Random assignment / unconfoundedness：$(Y_i(1),Y_i(0))\perp D_i$，或 conditional unconfoundedness：$(Y_i(1),Y_i(0))\perp D_i\mid X_i$，且 overlap | $E[Y\mid D=1]-E[Y\mid D=0]$；有 $X$ 时对 $CATE(X)$ 加权平均 |
+| $ATT$ | 只需 untreated counterfactual for treated 可识别：$Y_i(0)\perp D_i$ 或 $Y_i(0)\perp D_i\mid X_i$，且 treated 的 support 被 controls 覆盖 | $E[Y\mid D=1]-E[Y\mid D=0]$；有 $X$ 时在 treated 的 $X$ 分布上加权 |
+| $LATE$ | IV assumptions：independence、exclusion、relevance、monotonicity | $\dfrac{E[Y\mid A=1]-E[Y\mid A=0]}{E[D\mid A=1]-E[D\mid A=0]}$ |
+
+公式版：
+
+$$
+\begin{aligned}
+ATE\ \text{identified}
+&\Longleftarrow
+(Y_i(1),Y_i(0))\perp D_i
+\quad\text{or}\quad
+(Y_i(1),Y_i(0))\perp D_i\mid X_i,\\
+ATT\ \text{identified}
+&\Longleftarrow
+Y_i(0)\perp D_i
+\quad\text{or}\quad
+Y_i(0)\perp D_i\mid X_i,\\
+LATE\ \text{identified}
+&\Longleftarrow
+A_i\perp (Y_i(1),Y_i(0),D_i(1),D_i(0)),\\
+&\qquad
+Y_i=Y_i(D_i)\ \text{(exclusion)},\quad
+E[D_i\mid A_i=1]\neq E[D_i\mid A_i=0],\quad
+D_i(1)\ge D_i(0).
+\end{aligned}
+$$
+
+::::
+
+**15.2** 在这道题的语境下解释 $ATE$、$ATT$、$LATE$。
+
+::::{solution}
+
+**15.2 Interpretation**
+
+$$
+\begin{aligned}
+ATE
+&=E[\text{health if treated}-\text{health if untreated}],\\
+ATT
+&=E[\text{health gain from treatment}\mid \text{actually received treatment}],\\
+LATE
+&=E[\text{health gain from treatment}\mid \text{treatment status is changed by assignment}].
+\end{aligned}
+$$
+
+在本题中：
+
+- $ATE$ 是全体人群如果接受 medical treatment 相比不接受的平均 health effect。
+- $ATT$ 是实际接受 treatment 的人得到的平均 health effect。
+- $LATE$ 是因为 assignment / encouragement $A$ 才改变 treatment take-up 的 compliers 的平均 health effect，不是所有人的平均效应。
+
+::::
+
+**15.3** 给定数据，求 compliers fraction 并计算 $LATE$。
+
+| $D$ | $A$ | $Y$ | $n$ |
+|---:|---:|---:|---:|
+| $0$ | $0$ | $35$ | $10$ |
+| $0$ | $1$ | $20$ | $10$ |
+| $1$ | $1$ | $25$ | $30$ |
+| $1$ | $0$ | $30$ | $10$ |
+
+::::{solution}
+
+**15.3 Wald / LATE Calculation**
+
+按 $A$ 分组：
+
+$$
+\begin{aligned}
+E[D\mid A=0]
+&=\frac{10}{10+10}
+=\frac12,\\
+E[D\mid A=1]
+&=\frac{30}{10+30}
+=\frac34.
+\end{aligned}
+$$
+
+因此 first stage / complier fraction 为
+
+$$
+\begin{aligned}
+\Pr(\text{complier})
+&=E[D\mid A=1]-E[D\mid A=0]\\
+&=\frac34-\frac12\\
+&=\frac14.
+\end{aligned}
+$$
+
+Reduced form:
+
+$$
+\begin{aligned}
+E[Y\mid A=0]
+&=\frac{35\cdot 10+30\cdot 10}{10+10}
+=\frac{650}{20}
+=32.5,\\
+E[Y\mid A=1]
+&=\frac{20\cdot 10+25\cdot 30}{10+30}
+=\frac{950}{40}
+=23.75.
+\end{aligned}
+$$
+
+Wald estimand:
+
+$$
+\begin{aligned}
+LATE
+&=\frac{E[Y\mid A=1]-E[Y\mid A=0]}{E[D\mid A=1]-E[D\mid A=0]}\\
+&=\frac{23.75-32.5}{0.75-0.5}\\
+&=\frac{-8.75}{0.25}\\
+&=-35.
+\end{aligned}
+$$
+
+解释：在 IV assumptions 成立时，assignment 推动的 compliers 接受 treatment 后，health outcome 平均下降 $35$ 个单位。
+
+::::
+
+**15.4** 在存在 always-takers 时比较 $ATT$ 和 $LATE$ 的大小，并解释需要什么假设。
+
+::::{solution}
+
+**15.4 Always-Takers and $ATT$ vs $LATE$**
+
+令 compliance types 为
+
+$$
+\begin{aligned}
+C&=\{D(1)=1,D(0)=0\},\\
+AT&=\{D(1)=1,D(0)=1\},\\
+NT&=\{D(1)=0,D(0)=0\}.
+\end{aligned}
+$$
+
+在 monotonicity 下没有 defiers，$LATE$ 是 complier effect：
+
+$$
+LATE=E[Y(1)-Y(0)\mid C].
+$$
+
+$ATT$ 是 treated population 的平均 treatment effect。若 assignment 概率为 $p=\Pr(A=1)$，则 treated group 由 always-takers 和被 $A=1$ 推动接受治疗的 compliers 构成：
+
+$$
+\begin{aligned}
+ATT
+&=E[Y(1)-Y(0)\mid D=1]\\
+&=\frac{\Pr(AT)E[\tau_i\mid AT]+p\Pr(C)E[\tau_i\mid C]}
+{\Pr(AT)+p\Pr(C)}\\
+&=\omega_{AT}\tau_{AT}+\omega_C LATE,
+\end{aligned}
+$$
+
+其中 $\tau_i=Y_i(1)-Y_i(0)$，$\omega_{AT}+\omega_C=1$。
+
+所以
+
+$$
+\begin{aligned}
+ATT-LATE
+&=\omega_{AT}(\tau_{AT}-LATE).
+\end{aligned}
+$$
+
+结论：
+
+$$
+\begin{aligned}
+\tau_{AT}>LATE &\Rightarrow ATT>LATE,\\
+\tau_{AT}=LATE &\Rightarrow ATT=LATE,\\
+\tau_{AT}<LATE &\Rightarrow ATT<LATE.
+\end{aligned}
+$$
+
+需要的假设：
+
+- IV validity：$A$ 与 potential outcomes / potential treatments 独立，且 exclusion restriction 成立。
+- Relevance：$E[D\mid A=1]\neq E[D\mid A=0]$。
+- Monotonicity：$D_i(1)\ge D_i(0)$，没有 defiers。
+- 若要判断大小，需要额外假设 always-takers 的 treatment effect 与 compliers 的 treatment effect 谁更大；只靠 IV assumptions 不能比较 $ATT$ 和 $LATE$ 的大小。
+
+::::
+
+**15.5** 考虑 $X$，写出 probit model 的似然。
+
+::::{solution}
+
+**15.5 Probit Likelihood with Family Background**
+
+若 treatment take-up 由 assignment 和 family background 决定，设 latent index 为
+
+$$
+\left\{
+\begin{aligned}
+D_i^*
+&=\alpha+\pi A_i+X_i'\gamma+u_i,\\
+D_i
+&=\mathbf{1}\{D_i^*>0\},\\
+u_i\mid A_i,X_i
+&\sim N(0,1).
+\end{aligned}
+\right.
+$$
+
+则
+
+$$
+\begin{aligned}
+\Pr(D_i=1\mid A_i,X_i)
+&=\Phi(\alpha+\pi A_i+X_i'\gamma),\\
+\Pr(D_i=0\mid A_i,X_i)
+&=1-\Phi(\alpha+\pi A_i+X_i'\gamma).
+\end{aligned}
+$$
+
+Likelihood:
+
+$$
+\begin{aligned}
+L(\alpha,\pi,\gamma)
+&=\prod_{i=1}^n
+\left[\Phi(\alpha+\pi A_i+X_i'\gamma)\right]^{D_i}
+\left[1-\Phi(\alpha+\pi A_i+X_i'\gamma)\right]^{1-D_i}.
+\end{aligned}
+$$
+
+Log-likelihood:
+
+$$
+\begin{aligned}
+\ell(\alpha,\pi,\gamma)
+&=\sum_{i=1}^n
+\left\{
+D_i\log \Phi(\alpha+\pi A_i+X_i'\gamma)
++(1-D_i)\log \left[1-\Phi(\alpha+\pi A_i+X_i'\gamma)\right]
+\right\}.
+\end{aligned}
+$$
+
+若题目把 health outcome $Y_i$ 设为 binary，则把上式中的 $D_i$ 换成 $Y_i$，linear index 改为 $\alpha+\delta D_i+\pi A_i+X_i'\gamma$ 即可。
+
+::::
+
+**15.6** 如果 $Y(1)-Y(0)$ 不是常数，推导 2SLS，是否合理以及如何解释。
+
+::::{solution}
+
+**15.6 2SLS with Heterogeneous Treatment Effects**
+
+Observed outcome:
+
+$$
+\begin{aligned}
+Y_i
+&=Y_i(0)+D_i[Y_i(1)-Y_i(0)]\\
+&=Y_i(0)+D_i\tau_i.
+\end{aligned}
+$$
+
+若直接写线性方程 $Y_i=\alpha+\beta D_i+\varepsilon_i$，当 $\tau_i$ heterogeneous 时，
+
+$$
+\begin{aligned}
+\varepsilon_i
+&=Y_i(0)-\alpha+D_i(\tau_i-\beta).
+\end{aligned}
+$$
+
+如果 $\tau_i$ 与 selection into treatment 相关，则 $D_i$ 与 $\varepsilon_i$ 相关，OLS 不识别 $ATE$。
+
+使用 binary assignment $A_i$ 作 IV 时，just-identified 2SLS / Wald 为
+
+$$
+\begin{aligned}
+\beta_{IV}
+&=\frac{\operatorname{Cov}(A_i,Y_i)}{\operatorname{Cov}(A_i,D_i)}\\
+&=\frac{E[Y_i\mid A_i=1]-E[Y_i\mid A_i=0]}
+{E[D_i\mid A_i=1]-E[D_i\mid A_i=0]}.
+\end{aligned}
+$$
+
+在 independence、exclusion、relevance、monotonicity 下：
+
+$$
+\begin{aligned}
+E[Y\mid A=1]-E[Y\mid A=0]
+&=E[Y(D(1))-Y(D(0))]\\
+&=E[(D(1)-D(0))(Y(1)-Y(0))]\\
+&=\Pr(C)E[Y(1)-Y(0)\mid C],\\
+E[D\mid A=1]-E[D\mid A=0]
+&=E[D(1)-D(0)]\\
+&=\Pr(C).
+\end{aligned}
+$$
+
+因此
+
+$$
+\begin{aligned}
+\beta_{IV}
+&=\frac{\Pr(C)E[Y(1)-Y(0)\mid C]}{\Pr(C)}\\
+&=LATE.
+\end{aligned}
+$$
+
+是否合理取决于目标：
+
+- 如果目标是 all-population $ATE$，heterogeneous treatment effects 下 2SLS 一般不直接识别 $ATE$。
+- 如果目标是 assignment 推动的 marginal patients / compliers 的效应，2SLS 合理，解释为 $LATE$。
+- 若假设 constant treatment effect，即 $Y_i(1)-Y_i(0)=\tau$，则 $ATE=ATT=LATE=\tau$。
+
+::::
+
+**15.7** 推导 IV。
+
+::::{solution}
+
+**15.7 IV Derivation**
+
+考虑结构方程
+
+$$
+\begin{aligned}
+Y_i
+&=\alpha+\beta D_i+u_i,
+\end{aligned}
+$$
+
+其中 $D_i$ 可能 endogenous。若 $A_i$ 是 valid IV，则
+
+$$
+\left\{
+\begin{aligned}
+E[A_i u_i]&=0,\\
+\operatorname{Cov}(A_i,D_i)&\neq 0.
+\end{aligned}
+\right.
+$$
+
+Moment condition:
+
+$$
+\begin{aligned}
+E[A_i(Y_i-\alpha-\beta D_i)]
+&=0.
+\end{aligned}
+$$
+
+若模型含 intercept，使用 demeaned variables：
+
+$$
+\begin{aligned}
+0
+&=E[(A_i-EA_i)(Y_i-\alpha-\beta D_i)]\\
+&=E[(A_i-EA_i)Y_i]-\beta E[(A_i-EA_i)D_i].
+\end{aligned}
+$$
+
+因此 population IV coefficient 为
+
+$$
+\begin{aligned}
+\beta_{IV}
+&=\frac{E[(A_i-EA_i)Y_i]}{E[(A_i-EA_i)D_i]}\\
+&=\frac{\operatorname{Cov}(A_i,Y_i)}{\operatorname{Cov}(A_i,D_i)}.
+\end{aligned}
+$$
+
+Binary $A$ 下：
+
+$$
+\begin{aligned}
+\operatorname{Cov}(A,Y)
+&=\Pr(A=1)\Pr(A=0)\left\{E[Y\mid A=1]-E[Y\mid A=0]\right\},\\
+\operatorname{Cov}(A,D)
+&=\Pr(A=1)\Pr(A=0)\left\{E[D\mid A=1]-E[D\mid A=0]\right\}.
+\end{aligned}
+$$
+
+所以
+
+$$
+\begin{aligned}
+\beta_{IV}
+&=\frac{E[Y\mid A=1]-E[Y\mid A=0]}
+{E[D\mid A=1]-E[D\mid A=0]}.
+\end{aligned}
+$$
+
+样本 analog：
+
+$$
+\begin{aligned}
+\hat\beta_{IV}
+&=\frac{\sum_{i=1}^n(A_i-\bar A)(Y_i-\bar Y)}
+{\sum_{i=1}^n(A_i-\bar A)(D_i-\bar D)}.
+\end{aligned}
+$$
+
+多工具变量或加入 controls $X$ 时，对应 2SLS：
+
+$$
+\begin{aligned}
+\hat\beta_{2SLS}
+&=(W'P_ZW)^{-1}W'P_ZY,
+\end{aligned}
+$$
+
+其中 $W=(\mathbf{1},D,X)$，$Z=(\mathbf{1},A,X)$，$P_Z=Z(Z'Z)^{-1}Z'$。
+
+::::
