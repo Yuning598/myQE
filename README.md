@@ -2,7 +2,7 @@
 
 This repository maintains a Jupyter Book for PhD course review, QE preparation, and cross-course concept mapping. The notes are public so that future students and collaborators can reuse, correct, and extend them.
 
-Published site: <https://yuning598.github.io/PhD-Course/>
+Published site: <https://yuning598.github.io/myQE/>
 
 ## What This Book Covers
 
