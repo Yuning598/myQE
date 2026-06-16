@@ -4,7 +4,7 @@ orphan: true
 
 # 正态分布 - pdf cdf mgf
 
-导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md)
+导航：[Asset Pricing index](../../../index.md)
 
 :::{admonition} Definition (Standard normal)
 若 $Z\sim N(0,1)$，则其 probability density function (pdf) 为

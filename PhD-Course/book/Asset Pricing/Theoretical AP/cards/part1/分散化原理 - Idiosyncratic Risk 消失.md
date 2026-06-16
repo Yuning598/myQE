@@ -4,7 +4,7 @@ orphan: true
 
 # 分散化原理 - Idiosyncratic Risk 消失
 
-导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
+导航：[Asset Pricing index](../../../index.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
 
 :::{admonition} Proposition: Proposition

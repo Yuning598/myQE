@@ -4,7 +4,7 @@ orphan: true
 
 # v 与 P 的关系
 
-导航：[Asset Pricing index](../../index.md) · [Theoretical AP](../../Theoretical_Asset_Pricing.md)
+导航：[Asset Pricing index](../../index.md)
 
 在 Kyle 连续时间模型中，做市商对资产价值 $\tilde v$ 的 **条件期望** 给出价格
 

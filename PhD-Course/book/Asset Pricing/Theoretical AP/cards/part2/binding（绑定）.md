@@ -4,7 +4,7 @@ orphan: true
 
 # binding（绑定）
 
-导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
+导航：[Asset Pricing index](../../../index.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
 
 
 关联卡片：[最优停止与 smooth pasting](%E6%9C%80%E4%BC%98%E5%81%9C%E6%AD%A2%E4%B8%8E%20smooth%20pasting.md)

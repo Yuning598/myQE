@@ -17,12 +17,6 @@ This paper studies what drives dividend smoothing: which firm characteristics ar
 - It is a reduced-form outcome of multiple payout frictions.
 - Use this card to attach figures from the paper or lecture slides.
 
-## 4. Figure Slots
-
-![[attachment/Pasted image 20260502100602.png]]
-
-![[attachment/Pasted image 20260502100609.png]]
-
-## 5. Notes
+## 4. Notes
 - Add any regression tables, figures, or slide screenshots here.
 - Keep the main note concise; use this card for visual evidence and annotations.

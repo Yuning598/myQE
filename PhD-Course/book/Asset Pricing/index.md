@@ -1,16 +1,14 @@
 # Asset Pricing
 
-Asset Pricing 的导航入口。先选 empirical / theoretical track；需要跨课复习时再进入 bridge notes；长篇综合复习放在 Review Map。
+Asset Pricing 只保留一个课程入口。正文按 empirical / theoretical 两条 chapter track 读；共同概念进入 Cross-Course bridge；题目进入 ProblemSet。
 
 ## Start Here
 
-- [Empirical Asset Pricing](Empirical_Asset_Pricing.md)
-- [Theoretical Asset Pricing](Theoretical_Asset_Pricing.md)
-- [Asset Pricing Review Map](Asset%20Pricing%20Review.md)
 - [ProblemSet: Theoretical Asset Pricing](../ProblemSet/Theoretical%20Asset%20Pricing.md)
 - [ProblemSet: Empirical Asset Pricing](../ProblemSet/Empirical%20Asset%20Pricing.md)
+- [Cross-Course Hub](../Cross-Course/index.md)
 
-## Chapter Sequence
+## Chapter Structure
 
 ### Empirical Asset Pricing
 
@@ -31,11 +29,16 @@ Asset Pricing 的导航入口。先选 empirical / theoretical track；需要跨
 3. [Continuous-Time Pricing, Options, and Term Structure](Theoretical%20AP/03_Continuous_Time_Pricing_Options_Term_Structure.md)
 4. [Information, Beliefs, and Learning](Theoretical%20AP/04_Information_Beliefs_and_Learning.md)
 
-## 跨课程导航
+## Cards and Review Notes
 
-- [State prices / SDF / 完备市场](../Cross-Course/bridges/State_Prices_SDF_Complete_Markets.md)
-- [风险厌恶 / 均值-方差 / CAPM](../Cross-Course/bridges/Risk_Aversion_Mean_Variance_CAPM.md)
-- [Projection 与 beta pricing](../Cross-Course/bridges/Projection_Beta_Pricing.md)
-- [GMM 与 Euler equation](../Cross-Course/bridges/GMM_Euler_Equation.md)
-- [动态规划与 HJB](../Cross-Course/bridges/Dynamic_Programming_HJB.md)
-- [Cross-Course Hub](../Cross-Course/index.md)
+- Empirical cards: [volatility and GARCH](Empirical%20AP/cards/GARCH_Infinite_ARCH_and_Half_Life.md), [VIX replication](Empirical%20AP/cards/VIX_Static_Replication.md), [SDF Euler equation](Empirical%20AP/cards/SDF_Euler_Equation.md), [Fama-MacBeth and Shanken](Empirical%20AP/cards/Fama_MacBeth_Shanken.md), [limits to arbitrage](Empirical%20AP/cards/Limits_to_Arbitrage.md)。
+- Theoretical cards: [CARA utility](Theoretical%20AP/cards/CARA%20效用%20-%20常绝对风险厌恶.md), [Kalman-Bucy](Theoretical%20AP/cards/Kalman-Bucy%20推导.md), [Kyle linear equilibrium](Theoretical%20AP/cards/Kyle%20线性均衡猜测%20-%20线性定价与线性交易.md)。
+- Track-level cards live under the corresponding `cards/` folders and should be entered from chapter links or bridge notes.
+
+## Cross-Course
+
+- [State prices / SDF / complete markets](../Cross-Course/bridges/State_Prices_SDF_Complete_Markets.md)
+- [Risk aversion / mean-variance / CAPM](../Cross-Course/bridges/Risk_Aversion_Mean_Variance_CAPM.md)
+- [Projection / beta pricing](../Cross-Course/bridges/Projection_Beta_Pricing.md)
+- [GMM / Euler equation](../Cross-Course/bridges/GMM_Euler_Equation.md)
+- [Dynamic programming / HJB](../Cross-Course/bridges/Dynamic_Programming_HJB.md)

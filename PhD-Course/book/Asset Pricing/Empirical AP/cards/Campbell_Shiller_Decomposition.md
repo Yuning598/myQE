@@ -83,4 +83,4 @@ $$
 ---
 
 **来源**：EF8083 slides, pp. 104-122
-**导航**：[[../../index|Asset Pricing index]] · [[../00-MOC_EF8083_Empirical_Asset_Pricing|Empirical AP MOC]] · [[../03_Consumption_Based_AP_Puzzles|03_Consumption_Based_AP_Puzzles]]
+**导航**：[[../../index|Asset Pricing index]] · [[../03_Consumption_Based_AP_Puzzles|03_Consumption_Based_AP_Puzzles]]

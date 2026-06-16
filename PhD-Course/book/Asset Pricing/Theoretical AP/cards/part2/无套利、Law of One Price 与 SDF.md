@@ -4,7 +4,7 @@ orphan: true
 
 # 无套利、Law of One Price 与 SDF
 
-导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
+导航：[Asset Pricing index](../../../index.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
 
 :::{admonition} Definition (Definition)

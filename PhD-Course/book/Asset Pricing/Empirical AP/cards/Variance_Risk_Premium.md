@@ -64,4 +64,4 @@ implied variance 包含两部分：
 ---
 
 **来源**：EF8083 slides, pp. 55-72
-**导航**：[[../../index|Asset Pricing index]] · [[../00-MOC_EF8083_Empirical_AP_Pricing|Empirical AP MOC]] · [[../02_Implied_Volatility_VIX_VRP|02_Implied_Volatility_VIX_VRP]]
+**导航**：[[../../index|Asset Pricing index]] · [[../02_Implied_Volatility_VIX_VRP|02_Implied_Volatility_VIX_VRP]]

@@ -1,10 +1,10 @@
 # Itô process 与 Itô formula
 
-来源：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#5.4.1 A Stochastic Growth Model](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing#5.4.1 A Stochastic Growth Model)
+来源：[Dynamic Asset Pricing: A Stochastic Growth Model](../../02_Dynamic_Asset_Pricing.md#5.4.1%20A%20Stochastic%20Growth%20Model)
 
-返回：[Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing](Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing)
+返回：[Dynamic Asset Pricing](../../02_Dynamic_Asset_Pricing.md)
 
-关联卡片：[Asset Pricing/Theoretical AP/cards/part2/连续时间组合选择问题](Asset Pricing/Theoretical AP/cards/part2/连续时间组合选择问题) · [Asset Pricing/Theoretical AP/cards/part2/HJB 方程与动态规划](Asset Pricing/Theoretical AP/cards/part2/HJB 方程与动态规划)
+关联卡片：[连续时间组合选择问题](连续时间组合选择问题.md) · [HJB 方程与动态规划](HJB%20方程与动态规划.md)
 
 :::{admonition} Definition (Itô formula)
 设 $X_t$ 满足一维 Itô process

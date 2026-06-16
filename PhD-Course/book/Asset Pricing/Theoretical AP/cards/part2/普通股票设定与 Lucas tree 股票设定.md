@@ -4,7 +4,7 @@ orphan: true
 
 # 普通股票设定与 Lucas tree 股票设定
 
-导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
+导航：[Asset Pricing index](../../../index.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
 
 
 :::{admonition} Definition (两种 stock 设定)

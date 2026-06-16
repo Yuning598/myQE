@@ -4,7 +4,7 @@ orphan: true
 
 # GMV 与 Mean-Variance Frontier 的区别
 
-导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md)
+导航：[Asset Pricing index](../../../index.md)
 
 :::{admonition} Definition (GMV 与 Mean-Variance Frontier 的区别)
 

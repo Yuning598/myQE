@@ -4,7 +4,7 @@ orphan: true
 
 # Heterogeneous Beliefs and Short-Sale Constraints
 
-导航：[Asset Pricing index](../../index.md) · [Empirical AP MOC](../00-MOC_EF8083_Empirical_Asset_Pricing.md) · 来源：[09_Beliefs_Attention_Sentiment_Credit](../09_Beliefs_Attention_Sentiment_Credit)
+导航：[Asset Pricing index](../../index.md) · 来源：[09_Beliefs_Attention_Sentiment_Credit](../09_Beliefs_Attention_Sentiment_Credit)
 
 Two valuations:
 $$

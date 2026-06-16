@@ -4,7 +4,7 @@ orphan: true
 
 # Lucas tree model 与代表性消费者均衡
 
-导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
+导航：[Asset Pricing index](../../../index.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
 
 
 :::{admonition} Definition (Lucas Tree Model)

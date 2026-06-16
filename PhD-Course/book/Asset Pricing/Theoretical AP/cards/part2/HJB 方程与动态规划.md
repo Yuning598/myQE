@@ -4,7 +4,7 @@ orphan: true
 
 # HJB 方程与动态规划
 
-导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
+导航：[Asset Pricing index](../../../index.md) · 来源：[02_Dynamic_Asset_Pricing](../../02_Dynamic_Asset_Pricing.md)
 
 
 关联卡片：[Bellman equation](Bellman%20equation.md) · [价值函数](%E4%BB%B7%E5%80%BC%E5%87%BD%E6%95%B0.md)

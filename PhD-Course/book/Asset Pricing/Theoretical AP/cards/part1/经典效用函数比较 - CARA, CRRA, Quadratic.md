@@ -4,7 +4,7 @@ orphan: true
 
 # 经典效用函数比较 - CARA, CRRA, Quadratic
 
-导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
+导航：[Asset Pricing index](../../../index.md) · 来源：[01_Single_Period_Models](../../01_Single_Period_Models.md)
 
 
 ## 三类经典效用函数

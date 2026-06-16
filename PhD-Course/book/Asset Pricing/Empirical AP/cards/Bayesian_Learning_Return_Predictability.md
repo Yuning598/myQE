@@ -4,7 +4,7 @@ orphan: true
 
 # Bayesian Learning and Return Predictability
 
-导航：[Asset Pricing index](../../index.md) · [Empirical AP MOC](../00-MOC_EF8083_Empirical_Asset_Pricing.md) · 来源：[06_Subjective_Expectations_Learning](../06_Subjective_Expectations_Learning)
+导航：[Asset Pricing index](../../index.md) · 来源：[06_Subjective_Expectations_Learning](../06_Subjective_Expectations_Learning)
 
 Dividend process:
 $$

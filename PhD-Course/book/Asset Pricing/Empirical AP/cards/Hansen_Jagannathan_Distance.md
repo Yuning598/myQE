@@ -83,4 +83,4 @@ $$
 ---
 
 **来源**：EF8083 slides, pp. 213-224; Hansen and Jagannathan (1997)
-**导航**：[[../../index|Asset Pricing index]] · [[../00-MOC_EF8083_Empirical_Asset_Pricing|Empirical AP MOC]] · [[../05_Cross_Section_Factor_Models|Cross-section factor models]]
+**导航**：[[../../index|Asset Pricing index]] · [[../05_Cross_Section_Factor_Models|Cross-section factor models]]

@@ -4,29 +4,22 @@ parts:
   - caption: Asset Pricing
     chapters:
       - file: Asset Pricing/index
-      - file: Asset Pricing/Empirical_Asset_Pricing
-        sections:
-          - file: Asset Pricing/Empirical AP/00-MOC_EF8083_Empirical_Asset_Pricing
-          - file: Asset Pricing/Empirical AP/01_Volatility_ARCH_GARCH
-          - file: Asset Pricing/Empirical AP/02_Implied_Volatility_VIX_VRP
-          - file: Asset Pricing/Empirical AP/03_Consumption_Based_AP_Puzzles
-          - file: Asset Pricing/Empirical AP/04_Return_Predictability_Econometrics
-          - file: Asset Pricing/Empirical AP/05_Cross_Section_Factor_Models
-          - file: Asset Pricing/Empirical AP/06_Subjective_Expectations_Learning
-          - file: Asset Pricing/Empirical AP/07_Behavioral_Empirical_AP_Overview
-          - file: Asset Pricing/Empirical AP/08_Limits_to_Arbitrage_Prospect_Theory
-          - file: Asset Pricing/Empirical AP/09_Beliefs_Attention_Sentiment_Credit
-      - file: Asset Pricing/Theoretical_Asset_Pricing
-        sections:
-          - file: Asset Pricing/Theoretical AP/01_Single_Period_Models
-          - file: Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing
-          - file: Asset Pricing/Theoretical AP/03_Continuous_Time_Pricing_Options_Term_Structure
-          - file: Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning
+      - file: Asset Pricing/Empirical AP/01_Volatility_ARCH_GARCH
+      - file: Asset Pricing/Empirical AP/02_Implied_Volatility_VIX_VRP
+      - file: Asset Pricing/Empirical AP/03_Consumption_Based_AP_Puzzles
+      - file: Asset Pricing/Empirical AP/04_Return_Predictability_Econometrics
+      - file: Asset Pricing/Empirical AP/05_Cross_Section_Factor_Models
+      - file: Asset Pricing/Empirical AP/06_Subjective_Expectations_Learning
+      - file: Asset Pricing/Empirical AP/07_Behavioral_Empirical_AP_Overview
+      - file: Asset Pricing/Empirical AP/08_Limits_to_Arbitrage_Prospect_Theory
+      - file: Asset Pricing/Empirical AP/09_Beliefs_Attention_Sentiment_Credit
+      - file: Asset Pricing/Theoretical AP/01_Single_Period_Models
+      - file: Asset Pricing/Theoretical AP/02_Dynamic_Asset_Pricing
+      - file: Asset Pricing/Theoretical AP/03_Continuous_Time_Pricing_Options_Term_Structure
+      - file: Asset Pricing/Theoretical AP/04_Information_Beliefs_and_Learning
   - caption: Corporate Finance
     chapters:
       - file: Corporate Finance/index
-        sections:
-          - file: Corporate Finance/Corporate_Finance_Review_Map
       - file: Corporate Finance/01_Empirical_Corporate_Finance
       - file: Corporate Finance/02_Econometric_Methods_in_Corporate_Finance
       - file: Corporate Finance/03_Applied_Corporate_Finance_Theory
@@ -81,3 +74,10 @@ parts:
     chapters:
       - file: Cross-Course/index
         title: Cross Course
+        sections:
+          - file: Cross-Course/bridges/State_Prices_SDF_Complete_Markets
+          - file: Cross-Course/bridges/Risk_Aversion_Mean_Variance_CAPM
+          - file: Cross-Course/bridges/Projection_Beta_Pricing
+          - file: Cross-Course/bridges/GMM_Euler_Equation
+          - file: Cross-Course/bridges/Identification_Corporate_Finance
+          - file: Cross-Course/bridges/Dynamic_Programming_HJB

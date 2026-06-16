@@ -4,7 +4,7 @@ orphan: true
 
 # Back 模型 - 相关扩展
 
-导航：[Asset Pricing index](../../index.md) · [Theoretical AP](../../Theoretical_Asset_Pricing.md) · 来源：[04_Information_Beliefs_and_Learning](../04_Information_Beliefs_and_Learning.md)
+导航：[Asset Pricing index](../../index.md) · 来源：[04_Information_Beliefs_and_Learning](../04_Information_Beliefs_and_Learning.md)
 
 ## 核心内容
 

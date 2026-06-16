@@ -111,4 +111,4 @@ Limits to arbitrage 导致：
 ---
 
 **来源**：EF8083 slides, pp. 363-390
-**导航**：[[../../index|Asset Pricing index]] · [[../00-MOC_EF8083_Empirical_Asset_Pricing|Empirical AP MOC]] · [[../08_Limits_to_Arbitrage_Prospect_Theory|08_Limits_to_Arbitrage_Prospect_Theory]]
+**导航**：[[../../index|Asset Pricing index]] · [[../08_Limits_to_Arbitrage_Prospect_Theory|08_Limits_to_Arbitrage_Prospect_Theory]]

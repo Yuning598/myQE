@@ -4,7 +4,7 @@ orphan: true
 
 # Kyle Exercise 2 - 两期利润比较与解释
 
-导航：[Asset Pricing index](../../index.md) · [Theoretical AP](../../Theoretical_Asset_Pricing.md) · 来源：[04 Information, Beliefs and Learning](../04_Information_Beliefs_and_Learning.md)
+导航：[Asset Pricing index](../../index.md) · 来源：[04 Information, Beliefs and Learning](../04_Information_Beliefs_and_Learning.md)
 
 
 ## 目标

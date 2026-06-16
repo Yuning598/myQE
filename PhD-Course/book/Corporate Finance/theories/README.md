@@ -127,7 +127,7 @@ $$
 
 ---
 
-### 6. [SEO 理论](../SEO_Theory.md)
+### 6. [SEO 理论](SEO_Theory.md)
 **核心内容**：
 - Myers-Majluf (1984) 逆向选择
 - Baker-Wurgler (2002) 市场择时
@@ -277,7 +277,7 @@ $$
 
 ## 🔗 相关资源
 
-- **Paper Index**: `../Corporate_Finance_Paper_Index.md`
+- **Paper summaries**: `../index.md#paper-summaries`
 - **Empirical Notes**: `../01_Empirical_Corporate_Finance.md`
 - **Reading Guide**: `../Theory_Reading_Guide.md`
 

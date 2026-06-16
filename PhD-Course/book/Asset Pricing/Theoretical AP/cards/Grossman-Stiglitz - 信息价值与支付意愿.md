@@ -4,7 +4,7 @@ orphan: true
 
 # Grossman-Stiglitz - 信息价值与支付意愿
 
-导航：[Asset Pricing index](../../index.md) · [Theoretical AP](../../Theoretical_Asset_Pricing.md) · 来源：[04_Information_Beliefs_and_Learning](../04_Information_Beliefs_and_Learning.md)
+导航：[Asset Pricing index](../../index.md) · 来源：[04_Information_Beliefs_and_Learning](../04_Information_Beliefs_and_Learning.md)
 
 相关基础：[确定性等价与风险溢价](part1/%E7%A1%AE%E5%AE%9A%E6%80%A7%E7%AD%89%E4%BB%B7%E4%B8%8E%E9%A3%8E%E9%99%A9%E6%BA%A2%E4%BB%B7.md)
 

@@ -17,14 +17,6 @@ This review asks what the main empirical determinants of dividend policy are, an
 - Dividends and repurchases should be read together when the goal is to understand payout policy.
 - The card is intentionally left open for figures and slide screenshots.
 
-## 4. Figure Slots
-
-![[attachment/Pasted image 20260502095730.png]]
-
-![[attachment/Pasted image 20260502095742.png]]
-
-![[attachment/Pasted image 20260502095957.png]]
-
-## 5. Notes
+## 4. Notes
 - Add any figures from the review or the lecture slides here.
 - Keep the main note concise; use this card for images and longer annotations.

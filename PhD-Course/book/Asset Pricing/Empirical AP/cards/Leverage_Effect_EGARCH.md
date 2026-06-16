@@ -66,4 +66,4 @@ $$
 ---
 
 **来源**：EF8083 slides, pp. 23-36
-**导航**：[[../../index|Asset Pricing index]] · [[../00-MOC_EF8083_Empirical_Asset_Pricing|Empirical AP MOC]] · [[../01_Volatility_ARCH_GARCH|01_Volatility_ARCH_GARCH]]
+**导航**：[[../../index|Asset Pricing index]] · [[../01_Volatility_ARCH_GARCH|01_Volatility_ARCH_GARCH]]

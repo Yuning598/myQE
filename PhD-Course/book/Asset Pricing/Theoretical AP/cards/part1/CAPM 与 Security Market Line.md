@@ -4,7 +4,7 @@ orphan: true
 
 # CAPM 与 Security Market Line
 
-导航：[Asset Pricing index](../../../index.md) · [Theoretical AP](../../../Theoretical_Asset_Pricing.md) · 来源：[Part1](../../01_Single_Period_Models.md)
+导航：[Asset Pricing index](../../../index.md) · 来源：[Part1](../../01_Single_Period_Models.md)
 
 
 :::{admonition} Proposition: Proposition

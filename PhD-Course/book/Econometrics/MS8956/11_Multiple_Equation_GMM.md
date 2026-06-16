@@ -248,7 +248,7 @@ $$
 单方程 GMM 的大样本理论可直接推广至多方程模型。回顾 [Assumption 4.1](#assumption-4-1)、[Assumption 4.2](#assumption-4-2)、[Assumption 4.6](#assumption-4-6) 和 [Proposition 3.2](10_Single_Equation_GMM.md#proposition-3-2)。
 
 - **Hypothesis testing (假设检验)**:
-	- 可检验跨方程限制 (**cross-equation restrictions**)，如系数在不同方程间是否相等。 (见 [Example 4.2 (wage equation for two years)](<cards/Example 4.2 (wage equation for two years).md>))
+	- 可检验跨方程限制 (**cross-equation restrictions**)，如系数在不同方程间是否相等。 (见 [Example 4.2 (wage equation for two years)](cards/Example%204.2%20%28wage%20equation%20for%20two%20years%29.md))
 
 :::{admonition} Proposition: Proposition 4.1 (consistent estimation of contemporaneous error cross-equation moments)
 令 $\hat{\delta}_m$ 为 $\delta_m$ 的一致估计量，且令 $\hat{\epsilon}_{im} \equiv y_{im} - z'_{im}\hat{\delta}_m$ 为 $m = 1, 2, \dots, M$ 的隐含残差。
@@ -1598,5 +1598,5 @@ $$
 
 **Additional System GMM Examples**
 
-- [Example 4.1 (wage equation)](<cards/Example 4.1 (wage equation).md>)
-- [Example 4.2 (wage equation for two years)](<cards/Example 4.2 (wage equation for two years).md>)
+- [Example 4.1 (wage equation)](cards/Example%204.1%20%28wage%20equation%29.md)
+- [Example 4.2 (wage equation for two years)](cards/Example%204.2%20%28wage%20equation%20for%20two%20years%29.md)

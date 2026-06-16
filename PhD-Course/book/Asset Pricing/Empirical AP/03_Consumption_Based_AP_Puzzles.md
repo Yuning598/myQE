@@ -1,6 +1,6 @@
 # 03 Consumption-Based Asset Pricing and Puzzles
 
-导航：[Empirical AP MOC](00-MOC_EF8083_Empirical_Asset_Pricing.md) | [Return predictability](04_Return_Predictability_Econometrics.md) | [SDF Euler equation](cards/SDF_Euler_Equation.md) | [HJ bound](cards/Hansen_Jagannathan_Bound.md) | [Campbell-Shiller decomposition](cards/Campbell_Shiller_Decomposition.md)
+导航：[Asset Pricing index](../index.md) | [Return predictability](04_Return_Predictability_Econometrics.md) | [SDF Euler equation](cards/SDF_Euler_Equation.md) | [HJ bound](cards/Hansen_Jagannathan_Bound.md) | [Campbell-Shiller decomposition](cards/Campbell_Shiller_Decomposition.md)
 
 ## 1. 资产定价的统一对象：SDF
 

@@ -4,7 +4,7 @@ orphan: true
 
 # CRRA 效用 - Constant Relative Risk Aversion
 
-导航：[Asset Pricing index](../../index.md) · [Theoretical AP](../../Theoretical_Asset_Pricing.md) · 来源：[01_Single_Period_Models](../01_Single_Period_Models.md)
+导航：[Asset Pricing index](../../index.md) · 来源：[01_Single_Period_Models](../01_Single_Period_Models.md)
 
 
 ## 定义
