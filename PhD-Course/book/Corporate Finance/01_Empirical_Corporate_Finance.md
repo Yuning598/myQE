@@ -327,7 +327,7 @@ $$
 
 ##### Graham (2000)
 
-[Graham (2000)](cards/Graham-2000-tax-benefits-of-debt), *How Big Are the Tax Benefits of Debt?*
+[Graham (2000)](cards/Graham-2000-tax-benefits-of-debt.md), *How Big Are the Tax Benefits of Debt?*
 
 **Test object**：Graham estimates firm-specific **marginal tax benefit curves of debt**, then asks whether firms appear to use debt **conservatively** relative to their tax incentives.
 
@@ -622,7 +622,7 @@ $$
 
 ##### Andrade and Kaplan (1998)
 
-[Andrade and Kaplan (1998)](cards/Andrade-Kaplan-1998-distress-costs), *How Costly Is Financial (Not Economic) Distress? Evidence from Highly Leveraged Transactions That Became Distressed*
+[Andrade and Kaplan (1998)](cards/Andrade-Kaplan-1998-distress-costs.md), *How Costly Is Financial (Not Economic) Distress? Evidence from Highly Leveraged Transactions That Became Distressed*
 
 **Test object**：failed HLTs 是否从 pre-transaction 到 distress resolution destroy value，以及 value loss 中有多少来自 financial distress，而不是 economic distress / EBIT decline。样本用 failed HLT / LBO firms 来测量 **financial distress costs**。
 
@@ -1296,7 +1296,7 @@ flowchart LR
 ```
 
 - **dissipative signaling**：为了让信号可信，必须付出会被“烧掉”的真实成本；成本本身不回收，也不直接转给别的主体。典型例子是 [Ross (1977)](papers/Ross1977.md) 里的 leverage 信号，只有好公司更能承受 bankruptcy cost。
-- **non-dissipative signaling**：为了让信号可信，成本主要体现为财富转移而不是纯损失；总价值不一定下降，但信息被传递出去。典型例子是 [Vermaelen (1981)](cards/Vermaelen-1981-buybacks) 和 [Vermaelen (1984)](papers/Vermaelen1984.md) 的 buyback，若回购价高于 fair value，成本主要转给卖出股份的一方。
+- **non-dissipative signaling**：为了让信号可信，成本主要体现为财富转移而不是纯损失；总价值不一定下降，但信息被传递出去。典型例子是 [Vermaelen (1981)](cards/Vermaelen-1981-buybacks.md) 和 [Vermaelen (1984)](papers/Vermaelen1984.md) 的 buyback，若回购价高于 fair value，成本主要转给卖出股份的一方。
 
 **Testable predictions**
 
@@ -1590,7 +1590,7 @@ $$
 
 :::
 
-1. [Masulis (1980)](cards/Masulis-1980-exchange-offers), *The Effect of Capital Structure Change on Security Prices: A Study of Exchange Offers*
+1. [Masulis (1980)](cards/Masulis-1980-exchange-offers.md), *The Effect of Capital Structure Change on Security Prices: A Study of Exchange Offers*
 	- test object：
 		- use **exchange offers** as a clean event to test whether **capital structure changes** are priced by the market。
 		- exchange offer = one security is exchanged for another, so the firm directly changes leverage / claim priority without necessarily raising new cash or changing investment policy。
@@ -1632,7 +1632,7 @@ $$
 | Preferred for common | low：no debt tax shield                                 | mainly seniority / claim transfer       | weaker reaction；helps separate redistribution from tax shield |
 | Debt for preferred   | medium/high：debt tax shield $+$, distress risk $-$ | preferred may gain; risky debt may lose | positive but weaker than debt-for-common                      |
 
-2. [Vermaelen (1981)](cards/Vermaelen-1981-buybacks), *Common Stock Repurchases and Market Signaling*
+2. [Vermaelen (1981)](cards/Vermaelen-1981-buybacks.md), *Common Stock Repurchases and Market Signaling*
 	- test object：buybacks是否影响 stock prices，以及 fixed-price tender offers 和 open market repurchases 的机制是否不同。
 	- finding：
 		- summary statistics：buyback announcements usually generate positive price reactions
@@ -2793,7 +2793,7 @@ $$
    - finding：initiations 平均正反应，omissions 平均负反应且更强。
    - interpretation：市场把开始/停止 dividend 视为更强的信息事件。
 
-4. [La Porta et al. (2000)](cards/La-Porta-2000-Agency-Models-of-Dividends), *Agency Problems and Dividend Policies around the World*
+4. [La Porta et al. (2000)](cards/La-Porta-2000-Agency-Models-of-Dividends.md), *Agency Problems and Dividend Policies around the World*
 	- test object：dividend policy 是否反映 controlling shareholders / managers 与 minority shareholders 之间的 agency conflict。
 	- two agency models：
 
@@ -3202,7 +3202,7 @@ Share repurchase 不是单一机制，而是一组可检验 hypotheses：tax adv
 
 **Empirical paper**
 
-1. [Vermaelen (1981)](cards/Vermaelen-1981-buybacks), *Common Stock Repurchases and Market Signaling*
+1. [Vermaelen (1981)](cards/Vermaelen-1981-buybacks.md), *Common Stock Repurchases and Market Signaling*
    - test object：用 repurchase announcements 检验 buyback 是否产生正的 announcement return，以及 tender offer 的 premium / repurchase fraction 是否构成 costly signal。
    - finding：
      - summary statistics：buyback announcements 通常伴随正的 short-run $CAR$；tender offers 的市场反应更强。
@@ -3396,7 +3396,7 @@ Managers 比市场更了解 firm value。若股票被低估，公司用现金回
 
 **Empirical paper**
 
-1. [Vermaelen (1981)](cards/Vermaelen-1981-buybacks)
+1. [Vermaelen (1981)](cards/Vermaelen-1981-buybacks.md)
    - test object：repurchase announcement 是否向市场传递 undervaluation signal，以及 signal strength 是否随 tender-offer terms 上升。
    - finding：
      - summary statistics：repurchase announcements 的 $CAR$ 为正，tender offers 的反应更强。
@@ -3522,7 +3522,7 @@ Repurchase 减少 outstanding equity；若用 cash 或 debt financing 回购，l
      - empirical results：价格反应的方向和大小随 leverage change、security type 和 claim redistribution 改变。
    - interpretation：capital structure events 会通过 tax shield、bankruptcy cost、security-holder redistribution 和 information channels 改变 value。
 
-2. [Vermaelen (1981)](cards/Vermaelen-1981-buybacks)
+2. [Vermaelen (1981)](cards/Vermaelen-1981-buybacks.md)
    - test object：buyback announcements 是否影响 stock prices，并且是否能解释为 leverage-increasing payout event。
    - finding：
      - summary statistics：buyback announcements 通常产生正的 $CAR$。

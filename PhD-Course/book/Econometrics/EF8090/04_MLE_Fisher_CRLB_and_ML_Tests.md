@@ -44,7 +44,7 @@ $$
 
 :::
 
-#### Proof of Lemma (Poisson MLE)
+### Proof of Lemma (Poisson MLE)
 
 $$
 \hat\lambda=\bar X.
@@ -88,7 +88,7 @@ $$
 注意这里的 variance MLE uses $n$，not $n-1$。
 :::
 
-#### Proof of Lemma (Normal MLE)
+### Proof of Lemma (Normal MLE)
 
 $$
 \hat\mu=\bar Y, \qquad \hat\sigma^2=\frac1n\sum_i(Y_i-\bar Y)^2.
@@ -157,7 +157,7 @@ $$
 
 :::
 
-#### Proof of Lemma (Score has mean zero)
+### Proof of Lemma (Score has mean zero)
 
 $$
 S_\theta(y)=\frac{\partial\log f(y;\theta)}{\partial\theta} =\frac{\partial f(y;\theta)/\partial\theta}{f(y;\theta)}.
@@ -186,7 +186,7 @@ $$
 
 :::
 
-#### Proof of Lemma (Scalar Cramer-Rao bound)
+### Proof of Lemma (Scalar Cramer-Rao bound)
 
 $$
 E[\hat\theta]=\theta, \qquad S_\theta(Y)=\partial\log f(Y;\theta)/\partial\theta.
@@ -274,7 +274,7 @@ $$
 L_n(\theta)=\sum_i\{Y_i\log G(X_i'\theta)+(1-Y_i)\log[1-G(X_i'\theta)]\}.
 $$
 
-PS3 Q5 的 logit 数据可以被一个阈值完全分开：positive observations have larger $x$ than negative observations。于是 log-likelihood 沿着某个方向趋近 supremum，但没有 finite maximizer，MLE 不存在。见 [cards/Separation_in_Logit](cards/Separation_in_Logit)。
+PS3 Q5 的 logit 数据可以被一个阈值完全分开：positive observations have larger $x$ than negative observations。于是 log-likelihood 沿着某个方向趋近 supremum，但没有 finite maximizer，MLE 不存在。见 [cards/Separation_in_Logit](cards/Separation_in_Logit.md)。
 
 :::{admonition} Binary-response models at a glance
 Binary-response 模型通常写成 single-index 形式
@@ -588,7 +588,7 @@ $$
 
 :::
 
-#### Proof of Lemma (Wald z-test for a Bernoulli rate)
+### Proof of Lemma (Wald z-test for a Bernoulli rate)
 
 $$
 \sqrt n(\hat p-p_0)\to_d N(0,p_0(1-p_0)).

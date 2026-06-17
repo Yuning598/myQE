@@ -157,7 +157,6 @@ $$
 $$
 
 Then $(x^h,\theta^h)\in\mathcal B^h(p,\alpha)$, and any Arrow-feasible $(x,\theta)$ satisfies $\rho\cdot(x-e^h)\le0$. Since $x^h$ is $\rho$-optimal, it is also Arrow-optimal. Hence $(p,\alpha,((x^h,\theta^h))_h)$ is an Arrow security markets equilibrium.
-:::
 
 :::{admonition} Market structures and equilibrium concepts at a glance
 $$

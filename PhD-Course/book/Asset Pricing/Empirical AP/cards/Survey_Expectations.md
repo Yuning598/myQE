@@ -4,7 +4,7 @@ orphan: true
 
 # Survey Expectations
 
-导航：[Asset Pricing index](../../index.md) · 来源：[06_Subjective_Expectations_Learning](../06_Subjective_Expectations_Learning)
+导航：[Asset Pricing index](../../index.md) · 来源：[06_Subjective_Expectations_Learning](../06_Subjective_Expectations_Learning.md)
 
 Survey data directly measure subjective expectations:
 $$

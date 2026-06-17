@@ -4,7 +4,7 @@ orphan: true
 
 # Limited Attention and PEAD
 
-导航：[Asset Pricing index](../../index.md) · 来源：[09_Beliefs_Attention_Sentiment_Credit](../09_Beliefs_Attention_Sentiment_Credit)
+导航：[Asset Pricing index](../../index.md) · 来源：[09_Beliefs_Attention_Sentiment_Credit](../09_Beliefs_Attention_Sentiment_Credit.md)
 
 If only fraction $\lambda$ of information is incorporated each period:
 $$

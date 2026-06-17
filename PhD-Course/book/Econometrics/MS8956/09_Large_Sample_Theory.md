@@ -622,7 +622,7 @@ $$
 
 ## Original Draft Model Specification
 
-#### A.1.1 The Time Trend Model
+### A.1.1 The Time Trend Model
 
 We consider a regression case where the regressors are non-stationary, yet OLS remains applicable:
 
@@ -646,7 +646,7 @@ $$
 
 ## Original Draft Definitions
 
-#### A.2.1 时间趋势 (Time Trend)
+### A.2.1 时间趋势 (Time Trend)
 
 指一个变量随时间推移而呈现出的确定性系统性变化。  
 - 确定性：代表均值在时间轴上的系统性漂移，而非随机漂移。  
@@ -666,7 +666,7 @@ $$
 
 ## Original Draft Asymptotic Derivations
 
-#### A.3.1 OLS Estimator
+### A.3.1 OLS Estimator
 
 $$
 \mathbf{b}\equiv

@@ -1154,11 +1154,18 @@ $$
 在 regularity conditions 下：
 
 1. **Consistency**：
-   $$\hat\theta_{MLE} \overset{p}{\to} \theta_0,$$
+
+   $$
+   \hat\theta_{MLE} \overset{p}{\to} \theta_0,
+   $$
+
    其中 $\theta_0$ 是真实参数值。
 
 2. **Asymptotic normality**：
-   $$\sqrt{n}(\hat\theta_{MLE} - \theta_0) \overset{d}{\to} N(0, I(\theta_0)^{-1}),$$
+
+   $$
+   \sqrt{n}(\hat\theta_{MLE} - \theta_0) \overset{d}{\to} N(0, I(\theta_0)^{-1}),
+   $$
    其中 $I(\theta_0)$ 是 Fisher information matrix。
 
 3. **Asymptotic efficiency**：

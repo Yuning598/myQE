@@ -58,4 +58,4 @@ $$
 (card-ex-dividend-cashflow)=
 
 
-Related section: <a href="../01_Empirical_Corporate_Finance.html#sec-dividend-ex-date-tax-pricing">Do Stock Prices Reflect Personal Taxes?</a>
+Related section: [Do Stock Prices Reflect Personal Taxes?](../01_Empirical_Corporate_Finance.md#sec-dividend-ex-date-tax-pricing)

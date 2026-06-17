@@ -3,8 +3,7 @@ course: EF8070 Advanced Microeconomics
 topic: Information Economics, Moral Hazard, and Screening
 type: main-note
 sources:
-  - EF8070_slides.pdf: Principal-Agent Models, slides 1-37
-  - EF8070_slides.pdf: Principal-Agent Models - Monopolistic Screening, slides 1-53
+  - EF8070_slides.pdf: Principal-Agent Models, slides 1-37; Monopolistic Screening, slides 1-53
   - hmwk5_soln.pdf
 tags:
   - micro
@@ -931,8 +930,6 @@ $$
 Since $q(x)\ge0$ and $IR_1$ gives $U(1)\ge0$, it follows that $U(\theta)\ge0$ for all $\theta<1$.
 
 Clearly, $U(1)=0$: the least efficient type gets no information rent.
-
-:::
 
 For $q(\cdot)$ to be nonincreasing, the virtual cost function needs to be nondecreasing.
 

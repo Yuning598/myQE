@@ -37,7 +37,7 @@ $$
 $$
 :::
 
-#### Proof of Lemma (IV identification)
+### Proof of Lemma (IV identification)
 
 $$
 Y=X'\beta+u, \qquad E[Zu]=0.
@@ -81,7 +81,7 @@ X'P_Z(Y-X\hat\beta)=0.
 $$
 :::
 
-#### Proof of Lemma (2SLS normal equations)
+### Proof of Lemma (2SLS normal equations)
 
 $$
 \begin{aligned}
@@ -111,7 +111,7 @@ $$
 
 :::
 
-在 constant treatment effect 下，Wald identifies $\beta$。在 heterogeneous effect 下，它会变成 LATE，见 [06_Potential_Outcomes_LATE_Roy_MTE](06_Potential_Outcomes_LATE_Roy_MTE)。
+在 constant treatment effect 下，Wald identifies $\beta$。在 heterogeneous effect 下，它会变成 LATE，见 [06_Potential_Outcomes_LATE_Roy_MTE](06_Potential_Outcomes_LATE_Roy_MTE.md)。
 
 ## 2SLS Asymptotic Variance
 
@@ -156,7 +156,7 @@ Under validity and correct specification, $J\to_d\chi^2_{\#Z-\#X}$.
 
 注意：overidentification test 只能检验 instruments 之间是否互相一致，不能证明每个 instrument 都 valid。
 
-#### Hausman derivation
+### Hausman derivation
 
 $$
 \sqrt n(\hat\beta_{OLS}-\hat\beta_{2SLS})\xrightarrow{d}N\!\left(0,\,V_{2SLS}-V_{OLS}\right).
@@ -199,7 +199,7 @@ First-stage weakness inflates IV variance
 scalar just-identified IV 的 variance 随 $\operatorname{Cov}(Z,X)$ 变小而爆炸。
 :::
 
-#### Proof of Lemma (First-stage weakness inflates IV variance)
+### Proof of Lemma (First-stage weakness inflates IV variance)
 
 $$
 \hat\beta_{IV}-\beta\approx \frac{n^{-1}\sum_iZ_iu_i}{E[ZX]}.
@@ -233,7 +233,7 @@ $$
 $$
 :::
 
-#### Proof of Lemma (2SLS coefficient equals simple IV with residualized fitted first stage)
+### Proof of Lemma (2SLS coefficient equals simple IV with residualized fitted first stage)
 
 FWL partials out $X$ from $Y,D,Z$。Because $X$ contains a constant, $M_XY$ and $M_XD$ are demeaned relative to controls。
 

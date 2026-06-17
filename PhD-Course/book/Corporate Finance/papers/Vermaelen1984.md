@@ -19,6 +19,6 @@ Vermaelen asks how repurchase tender offers can credibly signal undervaluation a
 - the signal is more credible when managers have more skin in the game or when the premium / repurchase commitment is costly to mimic
 
 ## 3. Course Use
-- used together with <a href="../01_Empirical_Corporate_Finance.html#sec-signaling-cost-types">the main note</a> to illustrate non-dissipative signaling in buybacks
+- used together with [the main note](../01_Empirical_Corporate_Finance.md#sec-signaling-cost-types) to illustrate non-dissipative signaling in buybacks
 - complements [Vermaelen (1981)](../cards/Vermaelen-1981-buybacks.md) on repurchase signaling
 

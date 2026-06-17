@@ -402,7 +402,7 @@ $$
 2.  **全系统有效估计 ($\hat{\delta}_{sys}$)**:
     权重矩阵为 $\widehat{W}_{sys} = S^{-1}$（稠密矩阵）。
 
-#### 渐近方差的数学表达式
+### 渐近方差的数学表达式
 
 令 $B = S_{xz}$ 为块对角矩阵。
 
@@ -596,7 +596,7 @@ $$
 $$
 (equation-4-5-7)=
 
-#### Kronecker Product Representation
+### Kronecker Product Representation
 
 假设 $\mathbf{x}_i (= \mathbf{x}_{i1} = \mathbf{x}_{i2} = \dots = \mathbf{x}_{iM})$ 是维度为 $K$ 的共同工具变量集。
 矩条件向量 $g_i$ 可以表示为误差向量与工具变量向量的张量积：
@@ -867,7 +867,7 @@ $$
 
 当回归量是预定变量（predetermined）时，系统既可以使用 SUR 估计，也可以对每个方程分别进行 OLS 估计。它们之间的逻辑关系如下：
 
-#### 估计量演化逻辑 (Flowchart Intuition)
+### 估计量演化逻辑 (Flowchart Intuition)
 
 - **单方程路径**: `高效单方程 GMM` $\xrightarrow{\text{条件同方差}}$ `单方程 2SLS` $\xrightarrow{\mathbf{x}_i = \mathbf{z}_i}$ `单方程 OLS`
 - **全系统路径**: `高效多方程 GMM` $\xrightarrow{\text{条件同方差}}$ `FIVE` $\xrightarrow{\text{共同 IV}}$ `3SLS` $\xrightarrow{\mathbf{x}_i = \text{union}(\mathbf{z}_{im})}$ `SUR`
@@ -1047,7 +1047,7 @@ $$
   \hat{\delta} = \left( \sum_{m=1}^M \sum_{h=1}^M \hat{\sigma}^{mh} \widehat{A}_{mh} \right)^{-1} \left( \sum_{m=1}^M \sum_{h=1}^M \hat{\sigma}^{mh} \widehat{C}_{mh} \right)
 
 $$
-#### Random-Effects Estimator
+### Random-Effects Estimator
 If, in addition, the SUR condition [(4.5.18)](#equation-4-5-18) is assumed ($\mathbf{X}$ is the union of all regressors), then the efficient GMM estimator becomes the **random-effects estimator**:
 $$
 
@@ -1171,7 +1171,7 @@ $$
 
 (equation-4-6-16b)=
 
-#### Compact Random-Effects Formulas
+### Compact Random-Effects Formulas
 通过变换求和顺序并令 $\mathbf{C} = \widehat{\boldsymbol{\Sigma}}^{-1}$，可得：
 
 $$
@@ -1251,7 +1251,7 @@ $$
 \gamma_{jk} = \gamma_{kj} \quad (j, k = 1, 2, 3)
 
 $$
-#### Symmetry and Homogeneity Constraints (对称性与齐次性约束)
+### Symmetry and Homogeneity Constraints (对称性与齐次性约束)
 
 :::{admonition} Proposition: Symmetry and Homogeneity Constraints
 为使 Translog 成本函数关于要素价格满足一次齐次性 (homogeneity of degree one)，即 $C(\lambda p, Q) = \lambda C(p, Q)$，其参数必须满足以下约束：

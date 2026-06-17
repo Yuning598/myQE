@@ -4,7 +4,7 @@ orphan: true
 
 # Reading Note: Allen and Michaely (2003)
 
-<a href="../01_Empirical_Corporate_Finance.html#sec-allen-michaely-2003">Back to the main note</a>
+[Back to the main note](../01_Empirical_Corporate_Finance.md#sec-allen-michaely-2003)
 
 ## 1. Core Question
 How much of dividend policy and dividend recipient composition can be explained by tax clientele, and how much is left once transaction costs and trading opportunities are taken into account?

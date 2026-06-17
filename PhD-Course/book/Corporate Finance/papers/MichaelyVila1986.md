@@ -4,7 +4,7 @@ orphan: true
 
 # Reading Note: Michaely and Vila (1986)
 
-<a href="../01_Empirical_Corporate_Finance.html">Back to the main note</a>
+[Back to the main note](../01_Empirical_Corporate_Finance.md)
 
 ## 1. Core Question
 How do heterogeneous tax clienteles and short-term arbitrage trading affect ex-dividend day pricing and trading volume?

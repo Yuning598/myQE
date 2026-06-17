@@ -4,7 +4,7 @@ orphan: true
 
 # Investor Sentiment and Credit Cycle
 
-导航：[Asset Pricing index](../../index.md) · 来源：[09_Beliefs_Attention_Sentiment_Credit](../09_Beliefs_Attention_Sentiment_Credit)
+导航：[Asset Pricing index](../../index.md) · 来源：[09_Beliefs_Attention_Sentiment_Credit](../09_Beliefs_Attention_Sentiment_Credit.md)
 
 Sentiment pricing:
 $$

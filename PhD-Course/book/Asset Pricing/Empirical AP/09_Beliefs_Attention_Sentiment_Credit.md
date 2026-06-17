@@ -1,6 +1,6 @@
 # 09 Beliefs, Attention, Sentiment, and Credit Market Cycle
 
-导航：[06_Subjective_Expectations_Learning](06_Subjective_Expectations_Learning) | [07_Behavioral_Empirical_AP_Overview](07_Behavioral_Empirical_AP_Overview) | [08_Limits_to_Arbitrage_Prospect_Theory](08_Limits_to_Arbitrage_Prospect_Theory) | [cards/Heterogeneous_Beliefs_SSC](cards/Heterogeneous_Beliefs_SSC) | [cards/Limited_Attention_PEAD](cards/Limited_Attention_PEAD) | [cards/Investor_Sentiment_Credit_Cycle](cards/Investor_Sentiment_Credit_Cycle)
+导航：[06_Subjective_Expectations_Learning](06_Subjective_Expectations_Learning.md) | [07_Behavioral_Empirical_AP_Overview](07_Behavioral_Empirical_AP_Overview.md) | [08_Limits_to_Arbitrage_Prospect_Theory](08_Limits_to_Arbitrage_Prospect_Theory.md) | [cards/Heterogeneous_Beliefs_SSC](cards/Heterogeneous_Beliefs_SSC.md) | [cards/Limited_Attention_PEAD](cards/Limited_Attention_PEAD.md) | [cards/Investor_Sentiment_Credit_Cycle](cards/Investor_Sentiment_Credit_Cycle.md)
 
 ## 1. Psychology of beliefs
 
@@ -120,7 +120,7 @@ $$
 $$
 P^{SSC}\approx V^O>P^{avg}.
 $$
-disagreement 高且 short-sale constraints 强的股票更容易 overpricing，未来收益更低。见 [cards/Heterogeneous_Beliefs_SSC](cards/Heterogeneous_Beliefs_SSC)。
+disagreement 高且 short-sale constraints 强的股票更容易 overpricing，未来收益更低。见 [cards/Heterogeneous_Beliefs_SSC](cards/Heterogeneous_Beliefs_SSC.md)。
 
 :::
 
@@ -158,7 +158,7 @@ $$
 $$
 s-(P_{t+k}-P_t)=s(1-\lambda)^k.
 $$
-信息逐步进入价格，形成 momentum 或 announcement drift。见 [cards/Limited_Attention_PEAD](cards/Limited_Attention_PEAD)。
+信息逐步进入价格，形成 momentum 或 announcement drift。见 [cards/Limited_Attention_PEAD](cards/Limited_Attention_PEAD.md)。
 
 :::
 
@@ -232,7 +232,7 @@ Spread_t =
 ExpectedLoss_t+RiskPremium_t+SentimentDiscount_t.
 $$
 
-若 sentiment 过高，$SentimentDiscount_t$ 大，spread 被压低。之后当 default realization 或 risk appetite 反转，credit returns 变差。见 [cards/Investor_Sentiment_Credit_Cycle](cards/Investor_Sentiment_Credit_Cycle)。
+若 sentiment 过高，$SentimentDiscount_t$ 大，spread 被压低。之后当 default realization 或 risk appetite 反转，credit returns 变差。见 [cards/Investor_Sentiment_Credit_Cycle](cards/Investor_Sentiment_Credit_Cycle.md)。
 
 ## 9. 课程收束
 

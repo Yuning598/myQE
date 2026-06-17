@@ -56,7 +56,7 @@ Baker and Wurgler 增加的是第三条机制：
 - 这解释了为什么资本结构不是只看当期最优，而是包含历史路径依赖
 
 ## 4. Evidence Moved to Part 1
-这部分正文已经移动到 <a href="../01_Empirical_Corporate_Finance.html#section-bw02">Part</a>，这里仅保留入口。
+这部分正文已经移动到 [Part](../01_Empirical_Corporate_Finance.md#section-bw02)，这里仅保留入口。
 
 - 主讲义中的对应部分现在按三张图整理了 SEO、prior return、undervaluation index 的证据
 - 如果需要完整的课内读法和图注解释，以 Part 1 为准
@@ -100,7 +100,7 @@ Baker and Wurgler 增加的是第三条机制：
 ## 7. Course Use
 - 这篇是 market timing 理论的经典入口
 - 和 RZ95、FG09、SEO / repurchase literatures 放在一起看，逻辑最完整
-- 相关课堂笔记：<a href="../01_Empirical_Corporate_Finance.html#section-papers">Part 1 papers section</a>
+- 相关课堂笔记：[Part 1 papers section](../01_Empirical_Corporate_Finance.md#section-papers)
 
 ## 8. Symbol List
 

@@ -4,7 +4,7 @@ orphan: true
 
 # Reading Note: Modigliani and Miller (1961)
 
-<a href="../01_Empirical_Corporate_Finance.html#sec-mm-dividend-irrelevance">Back to the main note</a>
+[Back to the main note](../01_Empirical_Corporate_Finance.md#sec-mm-dividend-irrelevance)
 
 ## 1. Core Question
 What is the value relevance of dividend policy and financing policy in a frictionless capital market?

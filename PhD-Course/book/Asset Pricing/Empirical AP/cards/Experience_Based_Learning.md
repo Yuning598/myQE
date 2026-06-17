@@ -4,7 +4,7 @@ orphan: true
 
 # Experience-Based Learning
 
-导航：[Asset Pricing index](../../index.md) · 来源：[06_Subjective_Expectations_Learning](../06_Subjective_Expectations_Learning)
+导航：[Asset Pricing index](../../index.md) · 来源：[06_Subjective_Expectations_Learning](../06_Subjective_Expectations_Learning.md)
 
 Investor $i$'s subjective mean:
 $$

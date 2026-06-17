@@ -1,6 +1,6 @@
 # 05 Cross-Section of Returns and Factor Models
 
-导航：[03_Consumption_Based_AP_Puzzles](03_Consumption_Based_AP_Puzzles) | [04_Return_Predictability_Econometrics](04_Return_Predictability_Econometrics) | [cards/Beta_SDF_Equivalence](cards/Beta_SDF_Equivalence) | [cards/Hansen_Jagannathan_Distance](cards/Hansen_Jagannathan_Distance) | [cards/Fama_MacBeth_Shanken](cards/Fama_MacBeth_Shanken) | [cards/GMM_Asset_Pricing](cards/GMM_Asset_Pricing) | [cards/Factor_Zoo_Multiple_Testing](cards/Factor_Zoo_Multiple_Testing)
+导航：[03_Consumption_Based_AP_Puzzles](03_Consumption_Based_AP_Puzzles.md) | [04_Return_Predictability_Econometrics](04_Return_Predictability_Econometrics.md) | [cards/Beta_SDF_Equivalence](cards/Beta_SDF_Equivalence.md) | [cards/Hansen_Jagannathan_Distance](cards/Hansen_Jagannathan_Distance.md) | [cards/Fama_MacBeth_Shanken](cards/Fama_MacBeth_Shanken.md) | [cards/GMM_Asset_Pricing](cards/GMM_Asset_Pricing.md) | [cards/Factor_Zoo_Multiple_Testing](cards/Factor_Zoo_Multiple_Testing.md)
 
 ## 1. 横截面问题
 
@@ -86,7 +86,7 @@ $$
 $$
 \lambda=\operatorname{Var}(f)\frac{b}{a-b'E[f]}.
 $$
-beta pricing 与 linear SDF 是同一件事的两种表达。见 [cards/Beta_SDF_Equivalence](cards/Beta_SDF_Equivalence)。
+beta pricing 与 linear SDF 是同一件事的两种表达。见 [cards/Beta_SDF_Equivalence](cards/Beta_SDF_Equivalence.md)。
 
 :::
 
@@ -207,7 +207,7 @@ $$
 \begin{aligned} \frac{\partial Q}{\partial \lambda} &=-2\hat B'(\bar R^e-\hat B\lambda)=0\\ \hat B'\bar R^e-\hat B'\hat B\lambda &=0\\ \hat B'\hat B\lambda &=\hat B'\bar R^e\\ \hat\lambda &=(\hat B'\hat B)^{-1}\hat B'\bar R^e. \end{aligned}
 $$
 
-risk price 是用 beta 解释平均收益的横截面斜率。见 [cards/Fama_MacBeth_Shanken](cards/Fama_MacBeth_Shanken)。
+risk price 是用 beta 解释平均收益的横截面斜率。见 [cards/Fama_MacBeth_Shanken](cards/Fama_MacBeth_Shanken.md)。
 
 :::
 
@@ -279,7 +279,7 @@ $$
 $$
 D_T(\hat\theta)'W_T\bar g_T(\hat\theta)=0.
 $$
-GMM 直接最小化 pricing errors，不必先转成 beta regression。见 [cards/GMM_Asset_Pricing](cards/GMM_Asset_Pricing)。
+GMM 直接最小化 pricing errors，不必先转成 beta regression。见 [cards/GMM_Asset_Pricing](cards/GMM_Asset_Pricing.md)。
 
 :::
 
@@ -386,7 +386,7 @@ $$
 }
 $$
 
-见 [cards/Hansen_Jagannathan_Distance](cards/Hansen_Jagannathan_Distance) 与 [cards/Hansen_Jagannathan_Bound](cards/Hansen_Jagannathan_Bound)。
+见 [cards/Hansen_Jagannathan_Distance](cards/Hansen_Jagannathan_Distance.md) 与 [cards/Hansen_Jagannathan_Bound](cards/Hansen_Jagannathan_Bound.md)。
 
 (hj-distance-comparison)=
 
@@ -412,7 +412,7 @@ P(\text{at least one false discovery}) =
 1-(1-\alpha)^M,
 $$
 
-当 $M$ 很大时，即使每个假设的显著性水平是 5%，也会出现很多 false positives。见 [cards/Factor_Zoo_Multiple_Testing](cards/Factor_Zoo_Multiple_Testing)。
+当 $M$ 很大时，即使每个假设的显著性水平是 5%，也会出现很多 false positives。见 [cards/Factor_Zoo_Multiple_Testing](cards/Factor_Zoo_Multiple_Testing.md)。
 
 ## 10. Omitted factor problem
 

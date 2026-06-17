@@ -35,4 +35,4 @@ $$
 (card-leveraged-recapitalization-recap)=
 
 
-Related section: <a href="../01_Empirical_Corporate_Finance.html#sec-mm-benchmark">MM as a Benchmark</a>
+Related section: [MM as a Benchmark](../01_Empirical_Corporate_Finance.md#sec-mm-benchmark)

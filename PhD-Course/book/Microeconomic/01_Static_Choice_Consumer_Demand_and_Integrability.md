@@ -513,7 +513,6 @@ $$
 \frac{\partial x_1}{\partial w}>0,\qquad
 \frac{\partial x_2}{\partial w}>0.
 $$
-:::
 
 ## 5. Expenditure minimization, Hicksian demand, and expenditure function
 
@@ -741,7 +740,6 @@ $$
 $$
 
 The law of demand is the clean comparative-static statement on the EMP side.
-:::
 
 ## 7. Demand restrictions and Slutsky matrix
 

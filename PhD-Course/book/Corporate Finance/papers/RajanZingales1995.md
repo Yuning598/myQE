@@ -90,7 +90,7 @@ PO 主要关注信息不对称和内部融资优先：
 ## 5. Course Use
 - 这篇是国际资本结构证据的经典 benchmark
 - 和 Frank and Goyal (2009) 一起看，可以区分“美国样本规律”与“跨国稳健规律”
-- 相关课堂笔记：<a href="../01_Empirical_Corporate_Finance.html#section-papers">Part 1 papers section</a>
+- 相关课堂笔记：[Part 1 papers section](../01_Empirical_Corporate_Finance.md#section-papers)
 
 ## 6. Symbol List
 

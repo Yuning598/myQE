@@ -4,7 +4,7 @@ orphan: true
 
 # Reading Note: Allen, Bernardo and Welch (2000)
 
-<a href="../01_Empirical_Corporate_Finance.html">Back to the main note</a>
+[Back to the main note](../01_Empirical_Corporate_Finance.md)
 
 ## 1. Core Question
 How do dividends interact with institutional investors, tax clienteles, and agency costs?

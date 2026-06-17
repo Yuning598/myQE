@@ -4,7 +4,7 @@ orphan: true
 
 # Prospect Theory and Lottery Preference
 
-导航：[Asset Pricing index](../../index.md) · 来源：[08_Limits_to_Arbitrage_Prospect_Theory](../08_Limits_to_Arbitrage_Prospect_Theory)
+导航：[Asset Pricing index](../../index.md) · 来源：[08_Limits_to_Arbitrage_Prospect_Theory](../08_Limits_to_Arbitrage_Prospect_Theory.md)
 
 Prospect value:
 $$

@@ -35,4 +35,4 @@ $$
 (card-ex-dividend-before-after)=
 
 
-Related section: <a href="../01_Empirical_Corporate_Finance.html#sec-dividend-ex-date-arbitrage">Ex-dividend Arbitrage Trading Hypothesis</a>
+Related section: [Ex-dividend Arbitrage Trading Hypothesis](../01_Empirical_Corporate_Finance.md#sec-dividend-ex-date-arbitrage)

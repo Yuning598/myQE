@@ -271,7 +271,10 @@ Comparing first-best and second-best:
 The efficiency loss comes from two sources:
 
 1. **Risk premium**: The risk-averse agent requires higher expected wage to compensate for risk:
-   $$u(E[w^{SB}]) - c(e_H) > E[u(w^{SB})] - c(e_H) = \bar u.$$
+
+   $$
+   u(E[w^{SB}]) - c(e_H) > E[u(w^{SB})] - c(e_H) = \bar u.
+   $$
    This follows from Jensen's inequality (concave $u$).
 
 2. **Binding IC constraint**: The principal must "overpay" in the good state to separate $e_H$ from $e_L$.

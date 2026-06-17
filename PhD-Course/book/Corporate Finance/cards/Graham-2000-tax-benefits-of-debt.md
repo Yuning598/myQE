@@ -6,7 +6,7 @@ orphan: true
 
 导航：[Corporate Finance index](../index.md)
 
-这张卡对应 <a href="../01_Empirical_Corporate_Finance.html#sec-graham-2000-tax-benefits-of-debt">Supporting evidence: Graham (2000)</a>. 这里把 empirical paper 里的细节集中起来，主笔记只保留结构和结论。
+这张卡对应 [Supporting evidence: Graham (2000)](../01_Empirical_Corporate_Finance.md#sec-graham-2000-tax-benefits-of-debt). 这里把 empirical paper 里的细节集中起来，主笔记只保留结构和结论。
 
 (card-graham-2000-tax-benefits-of-debt)=
 

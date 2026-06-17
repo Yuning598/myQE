@@ -412,7 +412,6 @@ p\cdot\bar y^h
 $$
 
 so the household budget constraint is exactly the firm-economy budget constraint. If some firm $k$ had a profitable deviation $z^k\in Y^k$ with $p\cdot z^k>p\cdot y^k$, then household $h$ would obtain a higher income by replacing its share of that firm's plan, contradicting household optimality. Therefore each firm must maximize profit.
-:::
 
 ## 3. Planner characterization of Pareto efficiency
 

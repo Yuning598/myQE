@@ -4,7 +4,7 @@ orphan: true
 
 # Reading Note: Leary and Michaely (2011)
 
-<a href="../01_Empirical_Corporate_Finance.html#sec-leary-michaely-2011">Back to the main note</a>
+[Back to the main note](../01_Empirical_Corporate_Finance.md#sec-leary-michaely-2011)
 
 ## 1. Core Question
 This paper studies what drives dividend smoothing: which firm characteristics are associated with more or less smoothing, and how the cross-sectional patterns relate to signaling, agency frictions, and payout adjustment.

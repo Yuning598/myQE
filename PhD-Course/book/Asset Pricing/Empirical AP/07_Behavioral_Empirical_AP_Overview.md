@@ -1,6 +1,6 @@
 # 07 Behavioral Empirical Asset Pricing Overview
 
-导航：[06_Subjective_Expectations_Learning](06_Subjective_Expectations_Learning) | [08_Limits_to_Arbitrage_Prospect_Theory](08_Limits_to_Arbitrage_Prospect_Theory) | [09_Beliefs_Attention_Sentiment_Credit](09_Beliefs_Attention_Sentiment_Credit)
+导航：[06_Subjective_Expectations_Learning](06_Subjective_Expectations_Learning.md) | [08_Limits_to_Arbitrage_Prospect_Theory](08_Limits_to_Arbitrage_Prospect_Theory.md) | [09_Beliefs_Attention_Sentiment_Credit](09_Beliefs_Attention_Sentiment_Credit.md)
 
 ## 1. Overview
 
@@ -152,7 +152,7 @@ $$
 - leverage constraint 和 funding risk 限制反向套利；
 - mandate constraints 使一些资产不能被某些机构持有。
 
-因此，即使聪明资金知道 mispricing，也可能因为风险和约束无法完全修正价格。连接 [08_Limits_to_Arbitrage_Prospect_Theory](08_Limits_to_Arbitrage_Prospect_Theory)。
+因此，即使聪明资金知道 mispricing，也可能因为风险和约束无法完全修正价格。连接 [08_Limits_to_Arbitrage_Prospect_Theory](08_Limits_to_Arbitrage_Prospect_Theory.md)。
 
 ## 10. Behavioral explanations and empirical design
 

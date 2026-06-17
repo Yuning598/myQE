@@ -1,6 +1,6 @@
 # 06 Subjective Expectations, Learning, and Return Beliefs
 
-导航：[03_Consumption_Based_AP_Puzzles](03_Consumption_Based_AP_Puzzles) | [04_Return_Predictability_Econometrics](04_Return_Predictability_Econometrics) | [07_Behavioral_Empirical_AP_Overview](07_Behavioral_Empirical_AP_Overview) | [cards/Bayesian_Learning_Return_Predictability](cards/Bayesian_Learning_Return_Predictability) | [cards/Survey_Expectations](cards/Survey_Expectations) | [cards/Experience_Based_Learning](cards/Experience_Based_Learning) | [cards/Martin_Option_Implied_Lower_Bound](cards/Martin_Option_Implied_Lower_Bound)
+导航：[03_Consumption_Based_AP_Puzzles](03_Consumption_Based_AP_Puzzles.md) | [04_Return_Predictability_Econometrics](04_Return_Predictability_Econometrics.md) | [07_Behavioral_Empirical_AP_Overview](07_Behavioral_Empirical_AP_Overview.md) | [cards/Bayesian_Learning_Return_Predictability](cards/Bayesian_Learning_Return_Predictability.md) | [cards/Survey_Expectations](cards/Survey_Expectations.md) | [cards/Experience_Based_Learning](cards/Experience_Based_Learning.md) | [cards/Martin_Option_Implied_Lower_Bound](cards/Martin_Option_Implied_Lower_Bound.md)
 
 ## 1. Rational expectations vs rationality
 
@@ -108,7 +108,7 @@ $$
 \begin{aligned} R_{t+1} &= \frac{\beta}{1-\beta}\frac{t\bar D_t+D_{t+1}}{t+1} +D_{t+1} -\frac{1}{1-\beta}\bar D_t\\ &= \frac{1}{1-\beta} \left[ \frac{\beta t}{t+1}\bar D_t +\frac{\beta}{t+1}D_{t+1} +(1-\beta)D_{t+1} -\bar D_t \right]\\ &= \frac{1}{1-\beta} \left[ \left(\frac{\beta}{t+1}+1-\beta\right)D_{t+1} -\left(1-\frac{\beta t}{t+1}\right)\bar D_t \right]\\ &= \frac{1}{1-\beta} \left(1-\frac{\beta t}{t+1}\right) (D_{t+1}-\bar D_t). \end{aligned}
 $$
 
-returns depend on forecast errors relative to learned belief $\bar D_t$。见 [cards/Bayesian_Learning_Return_Predictability](cards/Bayesian_Learning_Return_Predictability)。
+returns depend on forecast errors relative to learned belief $\bar D_t$。见 [cards/Bayesian_Learning_Return_Predictability](cards/Bayesian_Learning_Return_Predictability.md)。
 
 :::
 
@@ -144,7 +144,7 @@ E_t[R_{t+1}] =
 a+c\,pd_t,
 $$
 
-其中高 $pd_t$ 通常对应低 future return。见 [cards/Survey_Expectations](cards/Survey_Expectations)。
+其中高 $pd_t$ 通常对应低 future return。见 [cards/Survey_Expectations](cards/Survey_Expectations.md)。
 
 ## 5. Learning from experience
 
@@ -177,7 +177,7 @@ $$
 \begin{aligned} \tilde \mu_{i,t} &= \frac{\sum_{k=1}^{age_i}\lambda^{k-1}R_{t-k}} {\sum_{j=1}^{age_i}\lambda^{j-1}}. \end{aligned}
 $$
 
-不同年龄 cohort 会因为经历不同而持有不同 beliefs，并可能影响 portfolio choice。见 [cards/Experience_Based_Learning](cards/Experience_Based_Learning)。
+不同年龄 cohort 会因为经历不同而持有不同 beliefs，并可能影响 portfolio choice。见 [cards/Experience_Based_Learning](cards/Experience_Based_Learning.md)。
 
 :::
 
@@ -233,7 +233,7 @@ $$
 $$
 Option prices pin down the risk-neutral variance. Under appropriate assumptions, this variance implies a lower bound for $E[R]-R_f$.
 
-options contain forward-looking information about expected market returns. 见 [cards/Martin_Option_Implied_Lower_Bound](cards/Martin_Option_Implied_Lower_Bound)。
+options contain forward-looking information about expected market returns. 见 [cards/Martin_Option_Implied_Lower_Bound](cards/Martin_Option_Implied_Lower_Bound.md)。
 
 :::
 

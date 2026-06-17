@@ -36,7 +36,7 @@ $$
 $$
 :::
 
-#### Proof of Lemma (Weak Law of Large Numbers under finite variance)
+### Proof of Lemma (Weak Law of Large Numbers under finite variance)
 
 $$
 \bar Y_n=\frac1n\sum_{i=1}^nY_i, \qquad E\bar Y_n=\mu, \qquad \operatorname{Var}(\bar Y_n)=\frac{\sigma^2}{n}.
@@ -66,7 +66,7 @@ $$
 $$
 :::
 
-#### Proof of Lemma (Lindeberg-Levy CLT)
+### Proof of Lemma (Lindeberg-Levy CLT)
 
 $$
 \sqrt n(\bar Y_n-\mu)=\frac1{\sqrt n}\sum_{i=1}^n(Y_i-\mu).
@@ -102,7 +102,7 @@ g(Z_n)\xrightarrow{p}g(Z).
 $$
 :::
 
-#### Proof of Lemma (Continuous Mapping Theorem)
+### Proof of Lemma (Continuous Mapping Theorem)
 
 sample moments 的连续函数也 consistent。例如 $\hat Q^{-1}\to_p Q^{-1}$ 需要 $Q$ nonsingular。
 
@@ -133,7 +133,7 @@ $$
 其中 $G=\nabla g(\theta_0)'$。
 :::
 
-#### Proof of Lemma (Delta method)
+### Proof of Lemma (Delta method)
 
 Taylor expansion:
 
@@ -193,7 +193,7 @@ o_p(1)+o_p(1)=o_p(1), \quad O_p(1)+o_p(1)=O_p(1), \quad O_p(1)o_p(1)=o_p(1).
 $$
 :::
 
-#### Proof of Lemma (Algebra of $o_p$ and $O_p$)
+### Proof of Lemma (Algebra of $o_p$ and $O_p$)
 
 For the product, if $X_n=O_p(1)$ and $Y_n=o_p(1)$, then for any $\varepsilon>0$, choose $M$ so that $P(|X_n|>M)<\varepsilon/2$. Then
 
@@ -243,7 +243,7 @@ $$
 在 $Q$ 正定且 $E[X_ie_i]=0$ 下，OLS estimator consistent.
 :::
 
-#### Proof of Lemma (OLS consistency)
+### Proof of Lemma (OLS consistency)
 
 $$
 \hat\beta\xrightarrow{p}\beta.
@@ -293,7 +293,7 @@ $$
 $$
 :::
 
-#### Proof of Lemma (Asymptotic distribution of OLS)
+### Proof of Lemma (Asymptotic distribution of OLS)
 
 $$
 \sqrt n(\hat\beta-\beta)\xrightarrow{d}N(0,Q^{-1}\Omega Q^{-1}).
@@ -359,7 +359,7 @@ $$
 $$
 :::
 
-#### Proof of Lemma (Consistency of robust covariance estimator)
+### Proof of Lemma (Consistency of robust covariance estimator)
 
 $$
 \hat V\xrightarrow{p}V.
@@ -456,7 +456,7 @@ $$
 $$
 :::
 
-#### Proof of Lemma (Asymptotic distribution of residual variance)
+### Proof of Lemma (Asymptotic distribution of residual variance)
 
 $$
 \hat e_i=e_i-X_i'(\hat\beta-\beta).
@@ -560,7 +560,7 @@ $$
 Under $H_0:r(\beta)=0$, the Wald statistic converges to a $\chi_q^2$ limit.
 :::
 
-#### Proof of Lemma (Wald statistic)
+### Proof of Lemma (Wald statistic)
 
 $$
 W_n=n r(\hat\beta)'[R(\hat\beta)\hat V R(\hat\beta)']^{-1}r(\hat\beta) \xrightarrow{d}\chi_q^2.
@@ -618,7 +618,7 @@ $$
 For the two linear restrictions in PS2 Q4, the Wald statistic is asymptotically $\chi_2^2$.
 :::
 
-#### Proof of Lemma (Wald test for PS2 Q4)
+### Proof of Lemma (Wald test for PS2 Q4)
 
 $$
 W_n=n(R\hat\beta)'(R\hat\Sigma R')^{-1}(R\hat\beta)\to_d\chi_2^2.
@@ -661,7 +661,7 @@ $$
 Rule “reject $H_0:\theta=\theta_0$ iff $\theta_0\notin\hat C$” is asymptotic 5%.
 :::
 
-#### Proof of Lemma (CI-test equivalence)
+### Proof of Lemma (CI-test equivalence)
 
 $$
 \begin{aligned}
@@ -685,7 +685,7 @@ P(W_n>\chi^2_{q,1-\alpha})\to1.
 $$
 :::
 
-#### Proof of Lemma (Wald test consistency under fixed alternatives)
+### Proof of Lemma (Wald test consistency under fixed alternatives)
 
 当 $r(\beta)\ne0$，
 $$

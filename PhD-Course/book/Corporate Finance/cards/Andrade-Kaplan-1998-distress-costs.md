@@ -6,7 +6,7 @@ orphan: true
 
 导航：[Corporate Finance index](../index.md)
 
-这张卡对应 <a href="../01_Empirical_Corporate_Finance.html#sec-andrade-kaplan-1998">Supporting evidence: Andrade and Kaplan (1998)</a>. 这里把 highly leveraged transactions 里的 distress cost 细节集中起来。
+这张卡对应 [Supporting evidence: Andrade and Kaplan (1998)](../01_Empirical_Corporate_Finance.md#sec-andrade-kaplan-1998). 这里把 highly leveraged transactions 里的 distress cost 细节集中起来。
 
 (card-andrade-kaplan-1998-distress-costs)=
 

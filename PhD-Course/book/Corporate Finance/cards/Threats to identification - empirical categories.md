@@ -20,7 +20,7 @@ $$
 ## 1. Differential trends / invalid counterfactual
 
 - 核心问题：treated 和 control 在没有政策或事件时，本来就会朝不同方向变化。
-- 对 DiD 来说，就是违反 <a href="../02_Econometric_Methods_in_Corporate_Finance.html#assumption-parallel-trends">parallel trends</a>。
+- 对 DiD 来说，就是违反 [parallel trends](../02_Econometric_Methods_in_Corporate_Finance.md#assumption-parallel-trends)。
 
 $$
 \begin{aligned}
@@ -136,7 +136,7 @@ $$
 1. Differential trends / invalid counterfactual：说明 treated 和 control 为什么本来趋势不同。
 2. Confounding shocks：说明还有什么同时发生的事件会影响 outcome。
 
-对 <a href="../01_Empirical_Corporate_Finance.html#sec-optimal-capital-structure-hypothesis">Optimal Capital Structure Hypothesis</a> 的政策设计，最自然的两个威胁就是：
+对 [Optimal Capital Structure Hypothesis](../01_Empirical_Corporate_Finance.md#sec-optimal-capital-structure-hypothesis) 的政策设计，最自然的两个威胁就是：
 
 - 高杠杆公司本来就可能有不同的融资趋势。
 - 税盾政策变化可能同时影响投资、利润、信贷供给和宏观融资环境。

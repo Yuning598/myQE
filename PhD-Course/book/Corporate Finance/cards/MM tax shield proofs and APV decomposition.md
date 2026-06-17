@@ -6,7 +6,7 @@ orphan: true
 
 导航：[Corporate Finance index](../index.md)
 
-这张卡保存 <a href="../01_Empirical_Corporate_Finance.html#sec-tax-shield-capital-structure">Taxes and Levered Value</a> 中的详细设定、corporate tax proof、personal tax proof 和 APV decomposition。
+这张卡保存 [Taxes and Levered Value](../01_Empirical_Corporate_Finance.md#sec-tax-shield-capital-structure) 中的详细设定、corporate tax proof、personal tax proof 和 APV decomposition。
 
 (card-mm-tax-shield-proofs-apv)=
 ## Basic setting

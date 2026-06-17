@@ -15,6 +15,6 @@ type: Course
 Managers know more about firm value than outside investors. As a result, equity issuance can be interpreted as bad news because it may signal overvaluation.
 
 ## 2. Course Use
-- canonical reference for <a href="../01_Empirical_Corporate_Finance.html#sec-information-asymmetry-capital-structure">information asymmetry and pecking order</a>
+- canonical reference for [information asymmetry and pecking order](../01_Empirical_Corporate_Finance.md#sec-information-asymmetry-capital-structure)
 - linked to the main note’s dilution example and issuance-announcement effects
 

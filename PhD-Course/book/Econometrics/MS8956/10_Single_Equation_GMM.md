@@ -160,7 +160,7 @@ supply shifters move the supply curve along a fixed demand curve, and demand shi
 
 观察偏差公式 $\text{plim } \hat{\alpha}_1 - \alpha_1 = \frac{Cov(p_i, u_i)}{Var(p_i)}$，可以发现特定条件下的特殊结论：
 
-#### 情况 A：无需求冲击 (No Demand Shifter)
+### 情况 A：无需求冲击 (No Demand Shifter)
 - **条件**: $u_i = 0$ (需求曲线固定)。
 - **结果**: $Cov(p_i, u_i) = 0 \implies$ OLS 对 $\alpha_1$ 一致。
 - **视觉直觉 (Figure 3.1a)**: 供给冲击 $v_i$ 驱动供给曲线在一条**固定的**需求曲线上上下移动。观测到的所有均衡点 $(p, q)$ 轨迹精确勾勒出需求曲线的形状。
@@ -693,7 +693,7 @@ $$
 $$
 其中 $\mathbf{x}_{i, excluded}$ 是不在解释方程中出现的**外部工具变量**（维数为 $K - L_1$）。
 
-#### 总结对比
+### 总结对比
 | 变量类型 | 数学特征 | 处理方式 | 包含在 $\mathbf{z}_i$？ | 包含在 $\mathbf{x}_i$？ |
 | :--- | :--- | :--- | :---: | :---: |
 | **先定解释变量** | $E(z_{il} \varepsilon_i) = 0$ | **自为工具**: 直接放入 $\mathbf{x}_i$ | 是 | 是 |
@@ -789,7 +789,7 @@ $$
 
 :::
 
-#### 识别状态概览 (Identification States Summary)
+### 识别状态概览 (Identification States Summary)
 
 | 识别状态 | 阶条件 (Necessary) | 秩条件 (Sufficient) | 估计特征 |
 | :--- | :---: | :---: | :--- |
@@ -949,7 +949,7 @@ $$
 $$
 其中 $\widehat{\mathbf{W}}$ 为权重矩阵。GMM 的目标是最小化样本矩 $\mathbf{g}_n(\tilde{\boldsymbol{\delta}})$ 与 $\mathbf{0}$ 向量之间的距离。
 
-#### 几何意义与等高线 (Geometric Interpretation)
+### 几何意义与等高线 (Geometric Interpretation)
 在 $\mathbb{R}^K$ 矩空间中，该距离函数定义了一组以原点为中心的**等高线 (Contour Lines)**：
 1. **等高线方程**: $\{\mathbf{g} \in \mathbb{R}^K \mid \mathbf{g}' \widehat{\mathbf{W}} \mathbf{g} = c\}$。
 2. **椭球体形状**: 由于 $\widehat{\mathbf{W}}$ 是正定的，这些等高线构成了 $K$ 维**椭球体**。
@@ -1891,7 +1891,7 @@ Suppose Assumptions 3.1–3.5 hold and suppose there is available a consistent e
 
 :::
 
-#### Proof of Proposition 3.8
+### Proof of Proposition 3.8
 我们首先定义信息矩阵 $\mathbf{M} \equiv \mathbf{S}_{xz}' \widehat{\mathbf{S}}^{-1} \mathbf{S}_{xz}$。
 *注：根据上述定义，$\mathbf{M}^{-1}$ 即为有效 GMM 估计量 $\hat{\boldsymbol{\delta}}$ 的样本渐近方差估计量 $\widehat{\operatorname{Avar}}(\hat{\boldsymbol{\delta}})$。*
 
@@ -2174,7 +2174,7 @@ $$
 
 :::
 
-#### Alternative Derivations of 2SLS
+### Alternative Derivations of 2SLS
 
 在条件同方差 Assumption 3.7 成立时，利用矩阵表示法，2SLS 的渐近性质与统计量可进一步总结如下：
 
@@ -2456,7 +2456,6 @@ $$
 - **Wald 检验**：通常用于参数显著性测试（例如：教育的回报率是否为 0？）。
 - **Hausman 检验**：通常用于模型稳健性或规范性测试（例如：OLS 是否因为内生性而失效？此时比较 OLS 和 2SLS）。
 
-::: 
 :::
 
 **Returns to Schooling IV Application**

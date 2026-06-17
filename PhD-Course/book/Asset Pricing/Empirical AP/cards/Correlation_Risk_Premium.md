@@ -4,7 +4,7 @@ orphan: true
 
 # Correlation Risk Premium
 
-导航：[Asset Pricing index](../../index.md) · 来源：[02_Implied_Volatility_VIX_VRP](../02_Implied_Volatility_VIX_VRP)
+导航：[Asset Pricing index](../../index.md) · 来源：[02_Implied_Volatility_VIX_VRP](../02_Implied_Volatility_VIX_VRP.md)
 
 Index variance:
 $$

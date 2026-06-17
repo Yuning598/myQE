@@ -27,7 +27,7 @@ E[E[Y\mid X]]=E[Y].
 $$
 :::
 
-#### Proof of Lemma (Law of iterated expectations)
+### Proof of Lemma (Law of iterated expectations)
 
 连续情形下，
 
@@ -107,7 +107,7 @@ E[h(X)e]=0.
 $$
 :::
 
-#### Proof of Lemma (CEF error orthogonality)
+### Proof of Lemma (CEF error orthogonality)
 
 先证明 conditional mean zero：
 
@@ -159,7 +159,7 @@ $$
 $$
 :::
 
-#### Proof of Lemma (Conditional variance formula)
+### Proof of Lemma (Conditional variance formula)
 
 令 $m(X)=E[Y\mid X]$。则
 
@@ -226,7 +226,7 @@ $$
 等号成立当且仅当 $g(X)=m(X)$ a.s.
 :::
 
-#### Proof of Lemma (CEF minimizes mean squared prediction error)
+### Proof of Lemma (CEF minimizes mean squared prediction error)
 
 令 $e=Y-m(X)$，则 $E[e\mid X]=0$。对任意 $g(X)$，
 
@@ -276,7 +276,7 @@ $$
 $$
 :::
 
-#### Proof of Lemma (Best linear predictor formula)
+### Proof of Lemma (Best linear predictor formula)
 
 目标函数为
 
@@ -384,7 +384,7 @@ $$
 $$
 :::
 
-#### Proof of Lemma (Linear probability model is heteroskedastic)
+### Proof of Lemma (Linear probability model is heteroskedastic)
 
 令 $U=Y-p(X)$。因为 $Y\in\{0,1\}$，所以 $Y^2=Y$。并且
 
@@ -411,6 +411,6 @@ $$
 
 ## Cross-References to Later Topics
 
-- OLS 是 $E[X(Y-X'\beta)]=0$ 的样本版本，见 [02_OLS_Algebra_Finite_Sample_GLS](02_OLS_Algebra_Finite_Sample_GLS)。
-- Heteroskedasticity 不破坏 OLS consistency，但会破坏错误的标准误，见 [03_Asymptotics_OLS_Inference_Hypothesis_Testing](03_Asymptotics_OLS_Inference_Hypothesis_Testing)。
-- Propensity score 的 balancing 证明本质上也是 conditioning theorem，见 [06_Potential_Outcomes_LATE_Roy_MTE](06_Potential_Outcomes_LATE_Roy_MTE)。
+- OLS 是 $E[X(Y-X'\beta)]=0$ 的样本版本，见 [02_OLS_Algebra_Finite_Sample_GLS](02_OLS_Algebra_Finite_Sample_GLS.md)。
+- Heteroskedasticity 不破坏 OLS consistency，但会破坏错误的标准误，见 [03_Asymptotics_OLS_Inference_Hypothesis_Testing](03_Asymptotics_OLS_Inference_Hypothesis_Testing.md)。
+- Propensity score 的 balancing 证明本质上也是 conditioning theorem，见 [06_Potential_Outcomes_LATE_Roy_MTE](06_Potential_Outcomes_LATE_Roy_MTE.md)。

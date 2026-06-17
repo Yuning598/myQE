@@ -28,7 +28,7 @@
 - Core capital structure: [Modigliani and Miller 1961](papers/ModiglianiMiller1961.md), [Myers and Majluf 1984](papers/MyersMajluf1984.md), [Rajan and Zingales 1995](papers/RajanZingales1995.md), [Frank and Goyal 2009](papers/FrankGoyal2009.md)。
 - Payout and repurchases: [Allen and Michaely 2003](papers/AllenMichaely2003.md), [Jagannathan, Stephens, and Weisbach 2000](papers/JagannathanStephensWeisbach2000.md), [Peyer and Vermaelen 2009](papers/PeyerVermaelen2009.md)。
 - Signaling, agency, and market timing: [Ross 1977](papers/Ross1977.md), [Baker and Wurgler 2002](papers/BakerWurgler2002.md), [Ma 2019](papers/Ma2019.md)。
-- Full paper notes live in [papers/](papers/) and source attachments live in [attachments/](attachments/)。
+- Full paper notes live in [papers/](papers/) and source attachments live in [attachment/](../attachment/)。
 
 ## Cards
 

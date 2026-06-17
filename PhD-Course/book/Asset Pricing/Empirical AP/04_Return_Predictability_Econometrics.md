@@ -1,6 +1,6 @@
 # 04 Return Predictability and Econometric Issues
 
-导航：[03_Consumption_Based_AP_Puzzles](03_Consumption_Based_AP_Puzzles) | [05_Cross_Section_Factor_Models](05_Cross_Section_Factor_Models) | [cards/Predictive_Regression_Stambaugh_Bias](cards/Predictive_Regression_Stambaugh_Bias) | [cards/Out_of_Sample_R2](cards/Out_of_Sample_R2)
+导航：[03_Consumption_Based_AP_Puzzles](03_Consumption_Based_AP_Puzzles.md) | [05_Cross_Section_Factor_Models](05_Cross_Section_Factor_Models.md) | [cards/Predictive_Regression_Stambaugh_Bias](cards/Predictive_Regression_Stambaugh_Bias.md) | [cards/Out_of_Sample_R2](cards/Out_of_Sample_R2.md)
 
 **Data construction.**
 
@@ -36,7 +36,7 @@ $$
 
 ## 2. Valuation ratio 的 present-value 逻辑
 
-由 [03_Consumption_Based_AP_Puzzles](03_Consumption_Based_AP_Puzzles) 的 Campbell-Shiller identity：
+由 [03_Consumption_Based_AP_Puzzles](03_Consumption_Based_AP_Puzzles.md) 的 Campbell-Shiller identity：
 
 $$
 pd_t =
@@ -163,7 +163,7 @@ $$
 $$
 E(\hat\beta-\beta) = \gamma E(\hat\rho-\rho) = \frac{\operatorname{Cov}(\varepsilon,\nu)} {\operatorname{Var}(\nu)} E(\hat\rho-\rho).
 $$
-若 $\operatorname{Cov}(\varepsilon,\nu)<0$ 且 $E(\hat\rho-\rho)<0$，则 $E(\hat\beta-\beta)>0$：predictability 会被夸大。见 [cards/Predictive_Regression_Stambaugh_Bias](cards/Predictive_Regression_Stambaugh_Bias)。
+若 $\operatorname{Cov}(\varepsilon,\nu)<0$ 且 $E(\hat\rho-\rho)<0$，则 $E(\hat\beta-\beta)>0$：predictability 会被夸大。见 [cards/Predictive_Regression_Stambaugh_Bias](cards/Predictive_Regression_Stambaugh_Bias.md)。
 
 :::
 
@@ -227,7 +227,7 @@ $$
 
 :::
 
-见 [cards/Out_of_Sample_R2](cards/Out_of_Sample_R2)。
+见 [cards/Out_of_Sample_R2](cards/Out_of_Sample_R2.md)。
 
 **9. Campbell-Thompson: 小 $R^2$ 的经济价值**
 

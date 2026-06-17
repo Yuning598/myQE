@@ -4,7 +4,7 @@ orphan: true
 
 # Reading Note: Aharony and Swary (1980)
 
-<a href="../01_Empirical_Corporate_Finance.html">Back to the main note</a>
+[Back to the main note](../01_Empirical_Corporate_Finance.md)
 
 ## 1. Core Question
 Do dividend announcements contain information about future cash flows, as reflected in announcement-window CARs?

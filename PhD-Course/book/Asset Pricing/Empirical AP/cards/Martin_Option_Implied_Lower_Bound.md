@@ -4,7 +4,7 @@ orphan: true
 
 # Martin Option-Implied Lower Bound
 
-导航：[Asset Pricing index](../../index.md) · 来源：[06_Subjective_Expectations_Learning](../06_Subjective_Expectations_Learning)
+导航：[Asset Pricing index](../../index.md) · 来源：[06_Subjective_Expectations_Learning](../06_Subjective_Expectations_Learning.md)
 
 Risk-neutral expectation:
 $$

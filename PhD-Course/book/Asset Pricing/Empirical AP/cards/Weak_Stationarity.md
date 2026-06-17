@@ -4,7 +4,7 @@ orphan: true
 
 # Weak Stationarity
 
-导航：[Asset Pricing index](../../index.md) · 来源：[01_Volatility_ARCH_GARCH](../01_Volatility_ARCH_GARCH)
+导航：[Asset Pricing index](../../index.md) · 来源：[01_Volatility_ARCH_GARCH](../01_Volatility_ARCH_GARCH.md)
 
 :::{admonition} Definition (Weak stationarity)
 $$

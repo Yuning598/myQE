@@ -4,7 +4,7 @@ orphan: true
 
 # Reading Note: Farre-Mensa, Michaely and Schmalz (2014)
 
-<a href="../01_Empirical_Corporate_Finance.html#sec-farre-mensa-2014">Back to the main note</a>
+[Back to the main note](../01_Empirical_Corporate_Finance.md#sec-farre-mensa-2014)
 
 ## 1. Core Question
 This review asks what the main empirical determinants of dividend policy are, and how much of payout behavior can be explained by investor demand, taxes, agency frictions, signaling, and lifecycle effects.

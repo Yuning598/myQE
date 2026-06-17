@@ -4,7 +4,7 @@ orphan: true
 
 # Reading Note: Kalay (1982)
 
-<a href="../01_Empirical_Corporate_Finance.html">Back to the main note</a>
+[Back to the main note](../01_Empirical_Corporate_Finance.md)
 
 ## 1. Core Question
 How far can ex-dividend day price drops deviate from the dividend amount once taxes and transaction costs are taken into account?

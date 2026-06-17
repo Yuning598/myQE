@@ -51,4 +51,4 @@ $$
 (card-apv-adjusted-present-value)=
 
 
-Related section: <a href="../01_Empirical_Corporate_Finance.html#sec-tax-shield-capital-structure">Taxes and Levered Value</a>
+Related section: [Taxes and Levered Value](../01_Empirical_Corporate_Finance.md#sec-tax-shield-capital-structure)

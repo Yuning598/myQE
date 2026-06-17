@@ -4,7 +4,7 @@ orphan: true
 
 # Reading Note: Peyer and Vermaelen (2009)
 
-<a href="../01_Empirical_Corporate_Finance.html#sec-buyback-theories-framework">Back to the buyback framework</a>
+[Back to the buyback framework](../01_Empirical_Corporate_Finance.md#sec-buyback-theories-framework)
 
 ## 1. Core Question
 Which buyback characteristics predict stronger and more persistent post-buyback abnormal returns?

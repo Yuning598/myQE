@@ -4,7 +4,7 @@ orphan: true
 
 # Reading Note: John and Knyazeva (2006)
 
-<a href="../01_Empirical_Corporate_Finance.html">Back to the main note</a>
+[Back to the main note](../01_Empirical_Corporate_Finance.md)
 
 ## 1. Core Question
 How does governance quality affect dividend payout, and does better governance reduce the need for dividends as a substitute mechanism?

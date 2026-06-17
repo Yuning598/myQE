@@ -34,7 +34,7 @@ X'(Y-X\hat\beta)=0.
 $$
 :::
 
-#### Proof of Lemma (OLS normal equations)
+### Proof of Lemma (OLS normal equations)
 
 $$
 S(b)=(Y-Xb)'(Y-Xb).
@@ -82,7 +82,7 @@ P_X'=P_X, \quad P_X^2=P_X, \quad M_X'=M_X, \quad M_X^2=M_X, \quad P_XX=X, \quad 
 $$
 :::
 
-#### Proof of Lemma (Algebra of $P_X$ and $M_X$)
+### Proof of Lemma (Algebra of $P_X$ and $M_X$)
 
 $$
 P_X=X(X'X)^{-1}X', \qquad M_X=I-P_X.
@@ -149,7 +149,7 @@ $$
 $$
 :::
 
-#### Proof of Lemma (FWL theorem)
+### Proof of Lemma (FWL theorem)
 
 OLS normal equations are
 $$
@@ -211,7 +211,7 @@ $$
 $$
 :::
 
-#### Proof of Lemma (Scalar omitted variable bias)
+### Proof of Lemma (Scalar omitted variable bias)
 
 $$
 \beta_1^*=\operatorname{Var}(X_1)^{-1}\operatorname{Cov}(X_1,Y), \qquad Y=\beta_0+\beta_1X_1+\beta_2X_2+U.
@@ -267,7 +267,7 @@ $$
 $$
 :::
 
-#### Proof of Lemma (Group demeaning solves dummy saturation)
+### Proof of Lemma (Group demeaning solves dummy saturation)
 
 令 $D$ 为 group dummy matrix，$M_D=I-D(D'D)^{-1}D'$。
 
@@ -323,7 +323,7 @@ E[\hat\beta\mid X]=\beta.
 $$
 :::
 
-#### Proof of Lemma (Conditional unbiasedness of OLS)
+### Proof of Lemma (Conditional unbiasedness of OLS)
 
 $$
 \hat\beta=(X'X)^{-1}X'Y, \qquad Y=X\beta+e, \qquad E[e\mid X]=0.
@@ -370,7 +370,7 @@ Gauss-Markov theorem
 在 $E[e\mid X]=0$、$\operatorname{Var}(e\mid X)=\sigma^2I$ 下，OLS 是 Best Linear Unbiased Estimator。
 :::
 
-#### Proof of Lemma (Gauss-Markov theorem)
+### Proof of Lemma (Gauss-Markov theorem)
 
 令任意线性估计量为
 $$
@@ -430,7 +430,7 @@ $$
 GLS 是把模型 whitening 后的 OLS。
 :::
 
-#### Proof of Lemma (GLS equals OLS on transformed data)
+### Proof of Lemma (GLS equals OLS on transformed data)
 
 令
 $$
@@ -517,7 +517,7 @@ Conditional mean and variance comparison
 三者都无偏，但 $\hat\beta$ 方差最小。
 :::
 
-#### Proof of Lemma (Conditional mean and variance comparison)
+### Proof of Lemma (Conditional mean and variance comparison)
 
 $$
 y_i=\beta x_i+\varepsilon_i.

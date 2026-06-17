@@ -6,7 +6,7 @@ orphan: true
 
 导航：[Corporate Finance index](../index.md)
 
-这张卡对应 <a href="../01_Empirical_Corporate_Finance.html#sec-vermaelen-1981-buybacks">Supporting evidence: Vermaelen (1981) and buybacks</a>. 这里先留双链和结构，后面再补图。
+这张卡对应 [Supporting evidence: Vermaelen (1981) and buybacks](../01_Empirical_Corporate_Finance.md#sec-vermaelen-1981-buybacks). 这里先留双链和结构，后面再补图。
 
 (card-vermaelen-1981-buybacks)=
 

@@ -4,7 +4,7 @@ orphan: true
 
 # Realized Variance and Microstructure Noise
 
-导航：[Asset Pricing index](../../index.md) · 来源：[01_Volatility_ARCH_GARCH](../01_Volatility_ARCH_GARCH)
+导航：[Asset Pricing index](../../index.md) · 来源：[01_Volatility_ARCH_GARCH](../01_Volatility_ARCH_GARCH.md)
 
 Continuous-time benchmark:
 

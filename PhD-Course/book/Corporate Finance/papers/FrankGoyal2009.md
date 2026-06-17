@@ -86,7 +86,7 @@ Frank and Goyal 关心的是：哪些 firm characteristics 能稳定预测 lever
 ## 5. Course Use
 - 这篇是资本结构经验研究的 benchmark
 - 适合作为后续分类的入口文献
-- 相关课堂笔记：<a href="../01_Empirical_Corporate_Finance.html#section-papers">Part 1 papers section</a>
+- 相关课堂笔记：[Part 1 papers section](../01_Empirical_Corporate_Finance.md#section-papers)
 
 ## 6. Symbol List
 
