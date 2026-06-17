@@ -96,7 +96,7 @@ $$
 \quad \text{for } m,h=1,2,\dots,M
 $$
 
-(5.1.8a) is typically not reasonable in panel data, because $\varepsilon_i$ captures time-invariant unobserved heterogeneity and is often correlated with $z_{im}$.
+SUR orthogonality is typically not reasonable in panel data, because $\varepsilon_i$ captures time-invariant unobserved heterogeneity and is often correlated with $z_{im}$.
 Hence, if $\mathbb{E}(z_{im}\varepsilon_i)\neq 0$, Random Effects is inconsistent and Fixed Effects is needed.
 
 :::
@@ -178,9 +178,9 @@ $$
 
 ## Between Transformation with Group Means
 
-存在一个常用估计量 `fixed-effects estimator`，它对 `(5.1.8a)` 失效是 robust 的（见 [Orthogonality (5.1.8)](#orth-5-1-8))。
+存在一个常用估计量 `fixed-effects estimator`，它对 `SUR orthogonality` 失效是 robust 的（见 [Orthogonality](#orth-5-1-8))。
 
-核心思路：把原始系统 `(5.1.1')` 变换为一个新的 $M$-equation system，使个体不随时间变化的成分被消除。
+核心思路：把原始系统变换为一个新的 $M$-equation system，使个体不随时间变化的成分被消除。
 
 用于变换的矩阵是与 $1_M$ 对应的 annihilator matrix：
 
@@ -202,7 +202,7 @@ $$
 
 ## Error-Components Reparameterization
 
-为说明变换后可识别性（与 [Group Means (5.1.10)](#group-means-5-1-10) 和 [Example 5.2](#ex-5-2-wage) 对应），将回归元分解为
+为说明变换后可识别性（与 [Group Means](#group-means-5-1-10) 和 [Example 5.2](#ex-5-2-wage) 对应），将回归元分解为
 
 $$
 Z_i=\bigl(F_i:1_M b_i'\bigr)
@@ -254,7 +254,7 @@ $$
 \mathbb{E}(QF_i\otimes x_i)\text{ is of full column rank}
 $$
 
-进一步地，在将 $Z_i$ 分解为 $F_i$ 与 $b_i$ 后，原始 $M$-equation system `(5.1.1')` 可重写为
+进一步地，在将 $Z_i$ 分解为 $F_i$ 与 $b_i$ 后，原始 $M$-equation system 可重写为
 
 $$
 \begin{aligned}
@@ -268,13 +268,13 @@ $$
 其中 $f_{im}'$ 是 $F_i$ 的第 $m$ 行。
 
 因此，error-components model 的一组工作假设可写为：
-`(5.1.1'')`（$M$ 线性方程）、`(5.1.2)`（random sample）、`(5.1.5)`（conditional homoskedasticity）、`(5.1.6)`（nonsingularity）、`(5.1.8b)`（SUR orthogonality）、以及 `(5.1.15)`（fixed-effects identification）。
+线性方程、random sample、conditional homoskedasticity、nonsingularity、SUR orthogonality、以及 fixed-effects identification。
 
 (reparam-5-1-15)=
 
 **Fixed-Effects Estimator**
 
-承接 [FE identification (5.1.15)](#reparam-5-1-15)，Fixed-Effects Estimator 通过组内去均值变换消除 $\varepsilon_i$，并据此构造可估计的样本矩条件。
+承接 [FE identification](#reparam-5-1-15)，Fixed-Effects Estimator 通过组内去均值变换消除 $\varepsilon_i$，并据此构造可估计的样本矩条件。
 
 Let $Q \equiv I_M - 1_M(1_M'1_M)^{-1}1_M'$ be the within-transformation matrix. Multiplying the original system from the left by $Q$, we obtain
 
@@ -341,13 +341,13 @@ $$
 $$
 
 **Proposition:** Proposition 5.1 (Large-Sample Properties of the Fixed-Effects Estimator)
-Consider the error-components model (consisting of `(5.1.1'')`, `(5.1.2)`, `(5.1.8)`, `(5.1.4)`-`(5.1.6)`, and `(5.1.15)`), and relax the SUR assumption `(5.1.8b)` by requiring only
+Consider the error-components model (consisting of the linear equations, random sample, orthogonality, conditional homoskedasticity assumptions, and fixed-effects identification), and relax the SUR assumption by requiring only
 
 $$
 \mathbb{E}(f_{im}'\eta_{ih})=0
 \quad \text{for all } m,h\;(=1,2,\dots,M)
 $$
-where $f_{im}'$ is the $m$-th row of $F_i$. Define $\tilde{y}_i,\tilde{F}_i,\tilde{\eta}_i$ by `(5.2.2)`. Then the fixed-effects estimator `(5.2.4)` is consistent and asymptotically normal with
+where $f_{im}'$ is the $m$-th row of $F_i$. Define $\tilde{y}_i,\tilde{F}_i,\tilde{\eta}_i$ by the within-group transformation. Then the fixed-effects estimator is consistent and asymptotically normal with
 
 $$
 \text{Avar}(\hat{\beta}_{FE}) =
@@ -421,7 +421,7 @@ $$
 
 ## Random Effects vs Fixed Effects
 
-Comparing `(5.2.6)` with `(5.1.8)`, the orthogonality conditions not required by the fixed-effects estimator are
+Compared with the SUR orthogonality conditions, the orthogonality conditions not required by the fixed-effects estimator are
 
 $$
 \mathbb{E}(f_{im}'\alpha_i)=0\ \text{for all }m,\qquad
@@ -453,7 +453,7 @@ $$
 $$
 
 :::{admonition} Proposition: Proposition 5.2 (Hausman Specification Test)
-Suppose the assumptions of the error-components model (`(5.1.1'')`, `(5.1.2)`, `(5.1.8)`, `(5.1.4)`-`(5.1.6)`, and `(5.1.15)`) hold. Define $\hat{q}$ and $\widehat{\text{Avar}}(\hat{q})$ as above. Then the Hausman statistic is
+Suppose the assumptions of the error-components model (linear equations, random sample, orthogonality, conditional homoskedasticity, and fixed-effects identification) hold. Define $\hat{q}$ and $\widehat{\text{Avar}}(\hat{q})$ as above. Then the Hausman statistic is
 
 $$
 H \equiv n\,\hat{q}'\left(\widehat{\text{Avar}}(\hat{q})\right)^{-1}\hat{q}
@@ -467,7 +467,7 @@ and is asymptotically $\chi^2$ with $\#\beta$ degrees of freedom.
 ## Relaxing Conditional Homoskedasticity
 
 :::{admonition} Proposition: Proposition 5.3 (Fixed-Effects Estimator without Conditional Homoskedasticity)
-Drop conditional homoskedasticity `(5.1.5)` from Proposition 5.1. Define $\tilde{y}_i,\tilde{F}_i,\tilde{\eta}_i$ by `(5.2.2)`. Then:
+Drop conditional homoskedasticity from Proposition 5.1. Define $\tilde{y}_i,\tilde{F}_i,\tilde{\eta}_i$ by the within-group transformation. Then:
 
 $$
 \text{Avar}(\hat{\beta}_{FE}) =
@@ -525,7 +525,7 @@ $$
 \log(q(t))=\log\!\left(\frac{Y(t)}{L(t)}\right)-\log(A(0))-g\,t
 $$
 
-将 `(5.4.5)` 代入 `(5.4.2)` 得
+将线性化结果代入上式得
 
 $$
 \log\!\left(\frac{Y(t_m)}{L(t_m)}\right) =
@@ -542,7 +542,7 @@ $$
 \phi_m \equiv g\,(t_m-\rho\,t_{m-1}).
 $$
 
-与 `(5.4.6)` 等价的一种写法是
+与上一步等价的一种写法是
 
 $$
 \log\!\left(\frac{Y(t_m)}{L(t_m)}\right) -
@@ -554,7 +554,7 @@ $$
 \phi_m
 $$
 
-这更直观地说明：初始人均收入越低，后续增长越高（conditional convergence）。但为选择估计方法，`(5.4.6)` 更直接。
+这更直观地说明：初始人均收入越低，后续增长越高（conditional convergence）。但为选择估计方法，上式更直接。
 
 若进一步假设收敛速度 $\lambda$ 与技术增长率 $g$ 在各国相同，则对国家 $i$ 可整理为：
 
@@ -578,7 +578,7 @@ $$
 
 ## Growth Regression Error Term
 
-应用计量中，常见做法是先从理论得到无误差项方程，再附加误差项用于估计。向 `(5.4.8)` 加入 $\eta_{im}$ 得
+应用计量中，常见做法是先从理论得到无误差项方程，再附加误差项用于估计。向理论方程加入 $\eta_{im}$ 得
 
 $$
 y_{im} = \phi_m + \rho y_{i,m-1} + \alpha_i + \eta_{im}
@@ -591,7 +591,7 @@ $$
 
 **The Treatment of $\alpha_i$**
 
-由 `(5.4.9)` 可见，`(5.4.10)` 中的 $\alpha_i$ 依赖于稳态水平 $q_i^*$ 与初始技术水平 $A_i(0)$。
+由上式可见，回归方程中的 $\alpha_i$ 依赖于稳态水平 $q_i^*$ 与初始技术水平 $A_i(0)$。
 
 若按 Cass-Koopmans 最优增长模型，稳态水平主要由劳动增长率决定。若知识国际流动使 $A_i(0)$ 在各国接近一致，则跨国 $\alpha_i$ 差异可主要由劳动增长率解释；此时在回归中加入劳动增长率控制项，OLS 可能一致。
 
@@ -601,7 +601,7 @@ $$
 
 ## Speed-of-Convergence Consistency
 
-给定 $M+1$ 个时点 $t_0,t_1,\dots,t_M$，方程 `(5.4.10)` 对 $m=1,\dots,M$ 构成一个动态的 $M$-equation system。虽然可对该系统应用 fixed-effects 技术，但在动态面板中并不一致，因为部分回归元是其他方程的被解释变量滞后值。
+给定 $M+1$ 个时点 $t_0,t_1,\dots,t_M$，上述回归方程对 $m=1,\dots,M$ 构成一个动态的 $M$-equation system。虽然可对该系统应用 fixed-effects 技术，但在动态面板中并不一致，因为部分回归元是其他方程的被解释变量滞后值。
 
 例如前两条方程：
 
